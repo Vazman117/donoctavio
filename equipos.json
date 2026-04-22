@@ -1,0 +1,146 @@
+{
+  "monterrey": {
+    "forma": 0.10,
+    "win_rate": 0.266,
+    "posicion": 14,
+    "goles_diff": 0,
+    "partidos": 15,
+    "escudo" : "escudos/monterrey.png"
+  },
+  "puebla": {
+    "forma": 0.10,
+    "win_rate": 0.20,
+    "posicion": 16,
+    "goles_diff": -11,
+    "partidos": 15,
+    "escudo" : "escudos/puebla.png"
+  },
+  "pumas": {
+    "forma": 0.73,
+    "win_rate": 0.53,
+    "posicion": 3,
+    "goles_diff": 13,
+    "partidos": 15,
+    "escudo" : "escudos/pumas.png"
+  },
+  "juarez": {
+    "forma": 0.33,
+    "win_rate": 0.26,
+    "posicion": 12,
+    "goles_diff": -5,
+    "partidos": 15,
+    "escudo" : "escudos/juarez.png"
+  },
+  "queretaro": {
+    "forma": 0.6,
+    "win_rate": 0.2,
+    "posicion": 13,
+    "goles_diff": -5,
+    "partidos": 15,
+    "escudo" : "escudos/queretaro.png"
+  },
+  "cruzazul": {
+    "forma": 0.2,
+    "win_rate": 0.53,
+    "posicion": 4,
+    "goles_diff": 10,
+    "partidos": 15,
+    "escudo" : "escudos/cruzazul.png"
+  },
+  "leon": {
+    "forma": 0.8,
+    "win_rate": 0.46,
+    "posicion": 8,
+    "goles_diff": -6,
+    "partidos": 15,
+    "escudo" : "escudos/leon.png"
+  },  
+  "america": {
+    "forma": 0.53,
+    "win_rate": 0.4,
+    "posicion": 6,
+    "goles_diff": 3,
+    "partidos": 15,
+    "escudo" : "escudos/america.png"
+  },
+  "atleticosanluis": {
+    "forma": 0.33,
+    "win_rate": 0.26,
+    "posicion": 15,
+    "goles_diff": -4,
+    "partidos": 15,
+    "escudo" : "escudos/atleticosanluis.png"
+  },
+  "santos": {
+    "forma": 0.26,
+    "win_rate": 0.13,
+    "posicion": 18,
+    "goles_diff": -19,
+    "partidos": 15,
+    "escudo" : "escudos/santos.png"
+  },
+  "mazatlan": {
+    "forma": 0.13,
+    "win_rate": 0.2,
+    "posicion": 17,
+    "goles_diff": -12,
+    "partidos": 15,
+    "escudo" : "escudos/mazatlan.png"
+  },
+  "toluca": {
+    "forma": 0.2,
+    "win_rate": 0.46,
+    "posicion": 5,
+    "goles_diff": 10,
+    "partidos": 15,
+    "escudo" : "escudos/toluca.png"
+  },
+  "atlas": {
+    "forma": 0.4,
+    "win_rate": 0.4,
+    "posicion": 7,
+    "goles_diff": -3,
+    "partidos": 15,
+    "escudo" : "escudos/atlas.png"
+  },
+  "tigres": {
+    "forma": 0.33,
+    "win_rate": 0.4,
+    "posicion": 9,
+    "goles_diff": 6,
+    "partidos": 15,
+    "escudo" : "escudos/tigres.png"
+  },
+  "necaxa": {
+    "forma": 0.53,
+    "win_rate": 0.33,
+    "posicion": 12,
+    "goles_diff": -3,
+    "partidos": 15,
+    "escudo" : "escudos/necaxa.png"
+  },
+  "chivas": {
+    "forma": 0.66,
+    "win_rate": 0.73,
+    "posicion": 1,
+    "goles_diff": 16,
+    "partidos": 15,
+    "escudo" : "escudos/chivas.png"
+  },
+  "tijuana": {
+    "forma": 0.46,
+    "win_rate": 0.26,
+    "posicion": 10,
+    "goles_diff": 0,
+    "partidos": 15,
+    "escudo" : "escudos/tijuana.png"
+  },
+  "pachuca": {
+    "forma": 0.73,
+    "win_rate": 0.6,
+    "posicion": 2,
+    "goles_diff": 10,
+    "partidos": 15,
+    "escudo" : "escudos/pachuca.png"
+  }
+}
