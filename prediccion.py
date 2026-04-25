@@ -2,93 +2,146 @@ import json
 import math
 
 
-# =============================
+# =========================
 # CONFIG
-# =============================
+# =========================
 
 TOTAL_EQUIPOS = 18
 
-MAX_FAVORITO = 0.72
+MAX_FAVORITO = 0.68
+K_LOGISTICO = 5.8
 MIN_PROB = 0.01
 
-K_LOGISTICO = 5.5   # sensibilidad del modelo
 
-# pesos reajustados
-PESO_FORMA = 0.34
-PESO_WINRATE = 0.25
-PESO_POS = 0.13
-PESO_GOLES = 0.18
-PESO_LOCALIA = 0.10
+# NUEVOS PESOS
+PESO_FORMA = 0.40
+PESO_WINRATE = 0.28
+PESO_GOLES = 0.20
+PESO_LOCALIA = 0.12
+PESO_POS = 0.05
 
 
-# =============================
-# CARGAR BASE
-# =============================
+
+# =========================
+# BASE
+# =========================
 
 def cargar_equipos():
-    with open("equipos.json","r",encoding="utf-8") as f:
+    with open(
+        "equipos.json",
+        "r",
+        encoding="utf-8"
+    ) as f:
         return json.load(f)
 
 
-def obtener_equipo(nombre, db):
-    key = nombre.lower().replace(" ","")
+def obtener_equipo(nombre,db):
+    key=nombre.lower().replace(" ","")
     return db.get(key)
 
 
-# =============================
-# UTILIDADES
-# =============================
 
-def limitar(valor,minimo,maximo):
-    return max(minimo,min(valor,maximo))
+def limitar(v,a,b):
+    return max(a,min(v,b))
 
 
-# =============================
-# NUEVA FUERZA
-# =============================
+
+# =========================
+# FUERZA
+# =========================
 
 def calcular_fuerza(
-        forma,
-        win_rate,
-        posicion,
-        goles_diff,
-        partidos,
-        es_local,
-        motivacion=1.0
+    forma,
+    win_rate,
+    posicion,
+    goles_diff,
+    partidos,
+    es_local,
+    motivacion=1.0
 ):
 
-    # posición normalizada (mejor que 1/pos)
-    pos_score = (TOTAL_EQUIPOS - posicion) / (TOTAL_EQUIPOS-1)
+    pos_score=(
+        TOTAL_EQUIPOS-posicion
+    )/(TOTAL_EQUIPOS-1)
 
-    # evitar extremos locos
-    goles_norm = limitar(
-        goles_diff / partidos,
+    goles_norm=limitar(
+        goles_diff/partidos,
         -1,
         1
     )
 
-    localia = PESO_LOCALIA if es_local else 0
+    localia=PESO_LOCALIA if es_local else 0
 
-    fuerza = (
-        (forma * PESO_FORMA) +
-        (win_rate * PESO_WINRATE) +
-        (pos_score * PESO_POS) +
-        (goles_norm * PESO_GOLES) +
+
+    fuerza=(
+        forma*PESO_FORMA+
+        win_rate*PESO_WINRATE+
+        goles_norm*PESO_GOLES+
+        pos_score*PESO_POS+
         localia
     )
 
-    fuerza *= motivacion
+    fuerza*=motivacion
 
     return fuerza
 
 
-# =============================
-# PREDICCIÓN
-# =============================
 
-def predecir_probabilidades(equipo_local,equipo_visitante):
+# =========================
+# SANITY RULE
+# evita favoritos absurdos
+# =========================
 
-    def filtrar_equipo(e):
+def dominancia_penalizacion(
+    local,
+    visita,
+    prob_local,
+    prob_visit
+):
+
+    local_domina=0
+    visita_domina=0
+
+    for campo in [
+        "forma",
+        "win_rate",
+        "goles_diff"
+    ]:
+
+        if local[campo]>visita[campo]:
+            local_domina+=1
+
+        elif visita[campo]>local[campo]:
+            visita_domina+=1
+
+
+    # si visitante domina todo
+    if visita_domina==3 and prob_local>0.55:
+        prob_local=0.55
+        prob_visit=0.45
+
+
+    # si local domina todo
+    if local_domina==3 and prob_visit>0.55:
+        prob_visit=0.55
+        prob_local=0.45
+
+
+    return prob_local,prob_visit
+
+
+
+
+# =========================
+# PREDICCION
+# =========================
+
+def predecir_probabilidades(
+    equipo_local,
+    equipo_visitante
+):
+
+    def datos(e):
         return {
             "forma":e["forma"],
             "win_rate":e["win_rate"],
@@ -96,136 +149,147 @@ def predecir_probabilidades(equipo_local,equipo_visitante):
             "goles_diff":e["goles_diff"],
             "partidos":e["partidos"],
             "es_local":e["es_local"],
-            "motivacion":e.get("motivacion",1.0)
+            "motivacion":e.get(
+                "motivacion",
+                1.0
+            )
         }
 
 
-    f_local = calcular_fuerza(**filtrar_equipo(equipo_local))
-    f_visit = calcular_fuerza(**filtrar_equipo(equipo_visitante))
-
-
-
-    # ==================================
-    # LOGÍSTICA (gran cambio)
-    # ==================================
-
-    score = f_local - f_visit
-
-    prob_local = 1/(1+math.exp(-K_LOGISTICO*score))
-    prob_visit = 1-prob_local
-
-
-    # ==================================
-    # DIFERENCIA RELATIVA
-    # ==================================
-
-    diferencia = abs(score)
-
-
-    # ==================================
-    # EMPATE DINÁMICO
-    # ==================================
-
-    prob_empate = (
-        0.26 *
-        (1/(1+diferencia*8))
+    f_local=calcular_fuerza(
+        **datos(equipo_local)
     )
 
-    # si muy parejos subir empate
-    if diferencia < 0.08:
-        prob_empate += 0.05
-
-
-    promedio_goles = (
-        equipo_local["goles_diff"] +
-        equipo_visitante["goles_diff"]
-    ) / (
-        equipo_local["partidos"] +
-        equipo_visitante["partidos"]
-    )
-
-    if promedio_goles < 0.10:
-        prob_empate += 0.03
-
-
-    prob_empate = limitar(
-        prob_empate,
-        0.15,
-        0.34
+    f_visit=calcular_fuerza(
+        **datos(equipo_visitante)
     )
 
 
-    ajuste = 1-prob_empate
+    # =========
+    # LOGISTICA
+    # =========
 
-    prob_local *= ajuste
-    prob_visit *= ajuste
+    score=f_local-f_visit
 
+    prob_local=1/(
+        1+math.exp(
+            -K_LOGISTICO*score
+        )
+    )
 
-
-    # ==================================
-    # CAP FAVORITOS EXTREMOS
-    # ==================================
-
-    if prob_local > MAX_FAVORITO:
-        exceso = prob_local-MAX_FAVORITO
-        prob_local = MAX_FAVORITO
-        prob_visit += exceso
-
-    if prob_visit > MAX_FAVORITO:
-        exceso = prob_visit-MAX_FAVORITO
-        prob_visit = MAX_FAVORITO
-        prob_local += exceso
+    prob_visit=1-prob_local
 
 
-    # mínimos
-    prob_local=max(MIN_PROB,prob_local)
-    prob_visit=max(MIN_PROB,prob_visit)
-    prob_empate=max(MIN_PROB,prob_empate)
+    # ======================
+    # SANITY CHECK
+    # ======================
+
+    prob_local,prob_visit=(
+        dominancia_penalizacion(
+            equipo_local,
+            equipo_visitante,
+            prob_local,
+            prob_visit
+        )
+    )
 
 
-    # normalizar
-    suma=prob_local+prob_visit+prob_empate
+    # ======================
+    # CAP FAVORITOS
+    # ======================
+
+    if prob_local>MAX_FAVORITO:
+        prob_local=MAX_FAVORITO
+        prob_visit=1-prob_local
+
+    if prob_visit>MAX_FAVORITO:
+        prob_visit=MAX_FAVORITO
+        prob_local=1-prob_visit
+
+
+    # ======================
+    # EMPATE SOLO ALERTA
+    # no roba masa fuerte
+    # ======================
+
+    diferencia=abs(score)
+
+    if diferencia<0.06:
+        prob_empate=0.25
+
+    elif diferencia<0.12:
+        prob_empate=0.18
+
+    else:
+        prob_empate=0.12
+
+
+    # sólo reduce poquito
+    ajuste=1-(prob_empate*0.35)
+
+    prob_local*=ajuste
+    prob_visit*=ajuste
+
+
+    suma=(
+        prob_local+
+        prob_visit+
+        prob_empate
+    )
 
     prob_local/=suma
     prob_visit/=suma
     prob_empate/=suma
 
 
+    # ======================
+    # CONFIANZA
+    # ======================
 
-    # ==================================
-    # CLASIFICAR CONFIANZA
-    # ==================================
-
-    gap=abs(prob_local-prob_visit)
+    gap=abs(
+        prob_local-prob_visit
+    )
 
     if gap<0.08:
-        nivel="coin_flip"
+        confianza="coin_flip"
+
     elif gap<0.15:
-        nivel="media"
+        confianza="media"
+
     else:
-        nivel="alta"
+        confianza="alta"
 
 
+    return{
 
-    return {
         "local":prob_local,
-        "empate":prob_empate,
         "visitante":prob_visit,
+        "empate":prob_empate,
+
         "fuerza_local":f_local,
         "fuerza_visitante":f_visit,
+
         "diferencia":diferencia,
-        "confianza":nivel
+        "confianza":confianza
     }
 
 
-# =============================
-# GUARDAR
-# =============================
 
-def guardar_resultado(partido,archivo="partidos.json"):
+# =========================
+# GUARDAR
+# =========================
+
+def guardar_resultado(
+    partido,
+    archivo="partidos.json"
+):
 
     try:
-        with open(archivo,"r",encoding="utf-8") as f:
+        with open(
+            archivo,
+            "r",
+            encoding="utf-8"
+        ) as f:
             data=json.load(f)
 
     except:
@@ -248,51 +312,55 @@ def guardar_resultado(partido,archivo="partidos.json"):
 
 
 
-# =============================
-# GENERAR PARTIDO
-# =============================
+# =========================
+# GENERAR
+# =========================
 
 def generar_partido(
-        id,
-        local_nombre,
-        visitante_nombre,
-        db
+    id,
+    local_nombre,
+    visitante_nombre,
+    db
 ):
 
-    local=obtener_equipo(local_nombre,db)
-    visitante=obtener_equipo(visitante_nombre,db)
+    local=obtener_equipo(
+        local_nombre,
+        db
+    )
 
-    if not local or not visitante:
+    visita=obtener_equipo(
+        visitante_nombre,
+        db
+    )
+
+
+    if not local or not visita:
         raise ValueError(
             "Equipo no encontrado"
         )
 
 
     local["es_local"]=True
-    visitante["es_local"]=False
+    visita["es_local"]=False
 
 
-    resultado=predecir_probabilidades(
+    r=predecir_probabilidades(
         local,
-        visitante
+        visita
     )
 
 
     if (
-       resultado["local"]>
-       resultado["visitante"]
-       and
-       resultado["local"]>
-       resultado["empate"]
+      r["local"]>r["visitante"]
+      and
+      r["local"]>r["empate"]
     ):
         pred=local_nombre
 
     elif (
-       resultado["visitante"]>
-       resultado["local"]
-       and
-       resultado["visitante"]>
-       resultado["empate"]
+      r["visitante"]>r["local"]
+      and
+      r["visitante"]>r["empate"]
     ):
         pred=visitante_nombre
 
@@ -308,21 +376,17 @@ def generar_partido(
         "local":local_nombre,
         "visitante":visitante_nombre,
 
-        "logo_local":local.get("escudo"),
-        "logo_visitante":visitante.get("escudo"),
+        "prob_local":r["local"],
+        "prob_empate":r["empate"],
+        "prob_visitante":r["visitante"],
 
-        "prob_local":resultado["local"],
-        "prob_empate":resultado["empate"],
-        "prob_visitante":resultado["visitante"],
+        "fuerza_local":r["fuerza_local"],
+        "fuerza_visitante":r["fuerza_visitante"],
 
-        "fuerza_local":resultado["fuerza_local"],
-        "fuerza_visitante":resultado["fuerza_visitante"],
-
-        "diferencia":resultado["diferencia"],
-        "confianza":resultado["confianza"],
-
+        "confianza":r["confianza"],
         "prediccion":pred
     }
+
 
     guardar_resultado(output)
 
@@ -330,9 +394,9 @@ def generar_partido(
 
 
 
-# =============================
+# =========================
 # TEST
-# =============================
+# =========================
 
 if __name__=="__main__":
 
@@ -345,4 +409,4 @@ if __name__=="__main__":
         db
     )
 
-    print("✅ Partido generado.")
+    print("✅ Partido generado")
