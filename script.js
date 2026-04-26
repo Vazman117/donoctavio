@@ -14,7 +14,6 @@ function renderLista() {
   const contenedor = document.getElementById('contenedor');
   contenedor.innerHTML = '';
 
-  /* Encabezado de columnas */
   const header = document.createElement('div');
   header.className = 'tabla-header';
   header.innerHTML = `
@@ -26,7 +25,6 @@ function renderLista() {
   `;
   contenedor.appendChild(header);
 
-  /* Filas */
   partidos.forEach((p, i) => {
     const fila = document.createElement('div');
     fila.className = 'fila';
@@ -67,69 +65,78 @@ function mostrarDetalle(i) {
   const pE = (p.prob_empate    * 100).toFixed(1);
   const pV = (p.prob_visitante * 100).toFixed(1);
 
-  const confianza = p.diferencia > 0.4
-    ? ['Alta',  'conf-alta']
-    : p.diferencia > 0.2
-    ? ['Media', 'conf-media']
-    : ['Baja',  'conf-baja'];
+  const confianza =
+    p.confianza === 'favorable'
+      ? ['Pronóstico favorable', 'conf-alta']
+      : p.confianza === 'moderado'
+      ? ['Pronóstico moderado',  'conf-media']
+      : ['Pronóstico ajustado',  'conf-baja'];
+
+  const razonesHTML = (p.razones || []).map(r => {
+    const esFavor = r.startsWith('✅');
+    const texto   = r.replace(/^✅\s*|^⚠️\s*/u, '');
+    const clase   = esFavor ? 'favor' : 'contra';
+    return `<div class="razon-item ${clase}">${texto}</div>`;
+  }).join('');
 
   document.getElementById('detalleContenido').innerHTML = `
-    <div class="detalle-match">
-      <div class="det-equipo">
-        <img src="${p.logo_local}" alt="${p.local}" onerror="this.style.visibility='hidden'">
-        <span class="det-equipo-nombre">${p.local}</span>
-      </div>
-      <span class="det-vs">vs</span>
-      <div class="det-equipo">
-        <img src="${p.logo_visitante}" alt="${p.visitante}" onerror="this.style.visibility='hidden'">
-        <span class="det-equipo-nombre">${p.visitante}</span>
-      </div>
-    </div>
 
-    <div class="det-seccion">
-      <div class="det-seccion-titulo">Probabilidades</div>
-      <div class="barra-row">
-        <span class="barra-label">${p.local} (Local)</span>
-        <div class="barra-track"><div class="barra-fill win" data-w="${pL}"></div></div>
-        <span class="barra-pct win">${pL}%</span>
-      </div>
-      <div class="barra-row">
-        <span class="barra-label">Empate</span>
-        <div class="barra-track"><div class="barra-fill draw" data-w="${pE}"></div></div>
-        <span class="barra-pct draw">${pE}%</span>
-      </div>
-      <div class="barra-row">
-        <span class="barra-label">${p.visitante} (Visitante)</span>
-        <div class="barra-track"><div class="barra-fill loss" data-w="${pV}"></div></div>
-        <span class="barra-pct loss">${pV}%</span>
-      </div>
-    </div>
-
-    <div class="det-seccion">
-      <div class="det-seccion-titulo">Resultado predicho</div>
-      <div class="det-resultado">
-        <div>
-          <div class="det-pred-valor">${p.prediccion}</div>
-          <span class="det-confianza ${confianza[1]}">Confianza ${confianza[0]}</span>
+    <div class="det-card">
+      <div class="det-match">
+        <div class="det-equipo">
+          <img src="${p.logo_local}" alt="${p.local}" onerror="this.style.visibility='hidden'">
+          <span class="det-equipo-nombre">${p.local}</span>
         </div>
-        <div class="det-meta">
-          <span class="det-meta-label">Diferencia</span>
-          <span class="det-meta-val">${p.diferencia.toFixed(3)}</span>
+        <span class="det-vs">vs</span>
+        <div class="det-equipo">
+          <img src="${p.logo_visitante}" alt="${p.visitante}" onerror="this.style.visibility='hidden'">
+          <span class="det-equipo-nombre">${p.visitante}</span>
+        </div>
+      </div>
+      <div class="det-divider"></div>
+      <div class="det-probs">
+        <div class="det-seccion-titulo">Probabilidades</div>
+        <div class="barra-row">
+          <span class="barra-label">${p.local} (Local)</span>
+          <div class="barra-track"><div class="barra-fill win" data-w="${pL}"></div></div>
+          <span class="barra-pct win">${pL}%</span>
+        </div>
+        <div class="barra-row">
+          <span class="barra-label">Empate</span>
+          <div class="barra-track"><div class="barra-fill draw" data-w="${pE}"></div></div>
+          <span class="barra-pct draw">${pE}%</span>
+        </div>
+        <div class="barra-row">
+          <span class="barra-label">${p.visitante} (Visitante)</span>
+          <div class="barra-track"><div class="barra-fill loss" data-w="${pV}"></div></div>
+          <span class="barra-pct loss">${pV}%</span>
         </div>
       </div>
     </div>
+
+    <div class="det-card">
+      <div class="det-seccion-titulo">Análisis</div>
+      <div class="det-razones-list">
+        ${razonesHTML}
+      </div>
+    </div>
+
+    <div class="det-card det-card-pred">
+      <div class="det-seccion-titulo">Predicción</div>
+      <div class="det-pred-valor">${p.prediccion}</div>
+      <span class="det-confianza ${confianza[1]}">${confianza[0]}</span>
+    </div>
+
   `;
 
-  /* Transición de vistas */
   document.getElementById('vista-lista').classList.add('hidden');
   document.getElementById('vista-detalle').classList.remove('hidden');
   document.getElementById('btnBack').style.display = 'flex';
-  document.getElementById('headerLabel').textContent = 'Jornada 16';
+  document.getElementById('headerLabel').textContent = 'Jornada 17';
   document.getElementById('headerTitle').textContent = p.local + ' · ' + p.visitante;
   document.getElementById('badgeWrap').style.display = 'none';
   window.scrollTo({ top: 0 });
 
-  /* Animar barras */
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       document.querySelectorAll('.barra-fill').forEach(el => {
@@ -144,7 +151,7 @@ function mostrarLista() {
   document.getElementById('vista-detalle').classList.add('hidden');
   document.getElementById('vista-lista').classList.remove('hidden');
   document.getElementById('btnBack').style.display = 'none';
-  document.getElementById('headerLabel').textContent = 'Jornada 16';
+  document.getElementById('headerLabel').textContent = 'Jornada 17';
   document.getElementById('headerTitle').textContent = 'Predicciones';
   document.getElementById('badgeWrap').style.display = '';
   window.scrollTo({ top: 0 });
