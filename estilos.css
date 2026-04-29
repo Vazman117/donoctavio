@@ -505,3 +505,231 @@ header h1 {
     height: 36px;
   }
 }
+
+/* ── Card de factor ─────────────────────────────────── */
+.det-card-factor {
+  padding: 1.25rem 1.5rem;
+}
+
+.factor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.factor-titulo {
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Badge de impacto */
+.factor-badge {
+  font-size: .62rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .18rem .55rem;
+  border-radius: 99px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+.impacto-alto  { color: var(--win); }
+.impacto-medio { color: var(--draw); }
+.impacto-bajo  { color: var(--muted); }
+
+/* Visual del factor */
+.factor-visual {
+  margin-bottom: .85rem;
+}
+
+/* Fila equipo + barra */
+.factor-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 40px;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .45rem;
+}
+.factor-row:last-child { margin-bottom: 0; }
+
+.factor-equipo-label {
+  font-size: .78rem;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.factor-barra-track {
+  height: 4px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.factor-barra-fill {
+  height: 100%;
+  border-radius: 99px;
+  width: 0;
+  transition: width 1s cubic-bezier(.4,0,.2,1);
+}
+.barra-win  { background: var(--win); }
+.barra-loss { background: var(--loss); }
+.barra-draw { background: var(--draw); }
+
+.factor-barra-pct {
+  font-size: .78rem;
+  font-weight: 500;
+  text-align: right;
+  color: var(--text);
+}
+
+.factor-detalle {
+  font-size: .72rem;
+  color: var(--muted);
+  padding-left: 130px;
+  margin-top: -.2rem;
+  margin-bottom: .4rem;
+}
+
+.factor-subgrupo-label {
+  font-size: .65rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .4rem;
+}
+
+.factor-valor {
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: right;
+  min-width: 32px;
+}
+
+/* Bolitas de forma */
+.factor-bolitas {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.bolita {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: .62rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+.bolita-w { background: var(--win); }
+.bolita-d { background: var(--draw); }
+.bolita-l { background: var(--loss); }
+
+/* H2H */
+.h2h-conteo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .75rem;
+}
+.h2h-bloque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .2rem;
+  flex: 1;
+}
+.h2h-bloque--center { flex: 0.6; }
+.h2h-num {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--text);
+  line-height: 1;
+}
+.h2h-num--emp { color: var(--muted); font-size: 1.2rem; }
+.h2h-lbl {
+  font-size: .65rem;
+  color: var(--muted);
+  text-align: center;
+  letter-spacing: .04em;
+}
+.h2h-barra-total {
+  display: flex;
+  height: 5px;
+  border-radius: 99px;
+  overflow: hidden;
+  gap: 2px;
+}
+.h2h-seg { height: 100%; transition: width .8s ease; }
+.h2h-seg--local { background: var(--win); border-radius: 99px 0 0 99px; }
+.h2h-seg--emp   { background: var(--border); }
+.h2h-seg--visit { background: var(--loss); border-radius: 0 99px 99px 0; }
+
+/* Vuelta en casa */
+.vuelta-info {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.vuelta-equipo {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .5rem .75rem;
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+.vuelta-destacado {
+  background: #eaf4ef;
+  border-left: 2px solid var(--win);
+}
+.vuelta-pos {
+  font-size: .72rem;
+  color: var(--muted);
+  min-width: 20px;
+}
+.vuelta-nombre {
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--text);
+  flex: 1;
+}
+.vuelta-badge {
+  font-size: .62rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--win);
+  border: 1px solid var(--win);
+  padding: .15rem .5rem;
+  border-radius: 99px;
+}
+
+/* Interpretación */
+.factor-interpretacion {
+  font-size: .8rem;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-top: .85rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .factor-row {
+    grid-template-columns: 90px 1fr 36px;
+    gap: .5rem;
+  }
+  .factor-detalle { padding-left: 90px; }
+  .h2h-num { font-size: 1.3rem; }
+}

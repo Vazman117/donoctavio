@@ -28,7 +28,7 @@ def obtener_equipo(nombre, db):
 
 
 # =============================
-# CONFIG BASE
+# CONFIG
 # =============================
 
 TOTAL_EQUIPOS     = 18
@@ -47,12 +47,6 @@ PESO_BASE         = 0.65
 PESO_H2H          = 0.20
 PESO_EXPERIENCIA  = 0.10
 PESO_VUELTA_CASA  = 0.05
-
-
-# =============================
-# EXPERIENCIA EN LIGUILLA
-# Actualizar cada torneo
-# =============================
 
 EXPERIENCIA_LIGUILLA = {
     "america":     0.94,
@@ -123,7 +117,7 @@ def calcular_fuerza_base(equipo, es_local):
 
 
 # =============================
-# H2H SCORE
+# H2H
 # =============================
 
 def calcular_h2h_score(nombre_local, nombre_visitante, h2h_data):
@@ -139,7 +133,7 @@ def calcular_h2h_score(nombre_local, nombre_visitante, h2h_data):
             break
 
     if not cruce:
-        return 0.5, 0, 0
+        return 0.5, 0, 0, []
 
     def win_rate_para(partidos, ref):
         if not partidos:
@@ -161,7 +155,7 @@ def calcular_h2h_score(nombre_local, nombre_visitante, h2h_data):
     total      = n_c + n_a
 
     if total == 0:
-        return 0.5, 0, 0
+        return 0.5, 0, 0, []
 
     if wr_c is None:
         score = wr_a
@@ -170,12 +164,11 @@ def calcular_h2h_score(nombre_local, nombre_visitante, h2h_data):
     else:
         score = (wr_c * 0.60) + (wr_a * 0.40)
 
-    return limitar(score, 0.0, 1.0), n_c, n_a
+    # Juntar partidos para mostrar en análisis
+    partidos_recientes = (cruce["clausura_2026"] + cruce["apertura_2025"])[:5]
 
+    return limitar(score, 0.0, 1.0), n_c, n_a, partidos_recientes
 
-# =============================
-# EXPERIENCIA
-# =============================
 
 def get_experiencia(nombre):
     key = normalizar_nombre(nombre)
@@ -187,19 +180,9 @@ def get_experiencia(nombre):
     return 0.50
 
 
-# =============================
-# VUELTA EN CASA
-# =============================
-
 def quien_juega_vuelta_en_casa(local, visitante):
-    if local["posicion"] <= visitante["posicion"]:
-        return "local"
-    return "visitante"
+    return "local" if local["posicion"] <= visitante["posicion"] else "visitante"
 
-
-# =============================
-# EMPATE DINAMICO
-# =============================
 
 def calcular_prob_empate(f_local, f_visitante):
     diferencia  = abs(f_local - f_visitante)
@@ -208,7 +191,7 @@ def calcular_prob_empate(f_local, f_visitante):
 
 
 # =============================
-# PROBABILIDADES LIGUILLA
+# PROBABILIDADES
 # =============================
 
 def predecir_probabilidades_liguilla(equipo_local, equipo_visitante, h2h_data, nombre_local, nombre_visitante):
@@ -216,8 +199,8 @@ def predecir_probabilidades_liguilla(equipo_local, equipo_visitante, h2h_data, n
     fb_local     = calcular_fuerza_base(equipo_local,     es_local=True)
     fb_visitante = calcular_fuerza_base(equipo_visitante, es_local=False)
 
-    h2h_local, n_c, n_a = calcular_h2h_score(nombre_local, nombre_visitante, h2h_data)
-    h2h_visitante        = 1.0 - h2h_local
+    h2h_local, n_c, n_a, partidos_h2h = calcular_h2h_score(nombre_local, nombre_visitante, h2h_data)
+    h2h_visitante = 1.0 - h2h_local
 
     exp_local     = get_experiencia(nombre_local)
     exp_visitante = get_experiencia(nombre_visitante)
@@ -261,12 +244,7 @@ def predecir_probabilidades_liguilla(equipo_local, equipo_visitante, h2h_data, n
     prob_empate   /= suma
 
     gap = abs(prob_local - prob_visitante)
-    if gap < 0.08:
-        confianza = "ajustado"
-    elif gap < 0.18:
-        confianza = "moderado"
-    else:
-        confianza = "favorable"
+    confianza = "ajustado" if gap < 0.08 else "moderado" if gap < 0.18 else "favorable"
 
     return {
         "local":            prob_local,
@@ -279,172 +257,278 @@ def predecir_probabilidades_liguilla(equipo_local, equipo_visitante, h2h_data, n
         "h2h_local":        h2h_local,
         "n_h2h_clausura":   n_c,
         "n_h2h_apertura":   n_a,
+        "partidos_h2h":     partidos_h2h,
         "vuelta_en_casa":   vuelta,
         "exp_local":        exp_local,
         "exp_visitante":    exp_visitante,
+        "fb_local":         fb_local,
+        "fb_visitante":     fb_visitante,
     }
 
 
 # =============================
-# RAZONES POR EQUIPO
-# Siempre al menos 1 pro y 1 contra por equipo
+# IMPACTO DE FACTOR
 # =============================
 
-def generar_razones(local, visitante, resultado, nombre_local, nombre_visitante):
+def nivel_impacto(diferencia_normalizada):
     """
-    Devuelve un dict con pros y contras separados por equipo.
-    Garantiza al menos 1 pro y 1 contra para cada uno.
-    Tono analítico y periodístico, sin emojis ni lenguaje de apuestas.
+    Dado que tan diferentes son dos equipos en un factor,
+    devuelve el nivel de impacto en la predicción.
     """
+    if diferencia_normalizada >= 0.25:
+        return "alto"
+    elif diferencia_normalizada >= 0.12:
+        return "medio"
+    else:
+        return "bajo"
 
-    pros_local    = []
-    contras_local = []
-    pros_visit    = []
-    contras_visit = []
 
-    # ── FORMA RECIENTE ──────────────────────────────
+# =============================
+# ANÁLISIS ESTRUCTURADO
+# =============================
+
+def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante):
+    """
+    Devuelve una lista de factores estructurados, cada uno con:
+    - factor: nombre del factor
+    - impacto: alto / medio / bajo
+    - tipo: forma | barras | h2h | experiencia | vuelta
+    - local: datos del equipo local para ese factor
+    - visitante: datos del equipo visitante para ese factor
+    - interpretacion: conclusión analítica con datos concretos
+    """
+    factores = []
+
+    # ── 1. FORMA RECIENTE ────────────────────────────
     fl = local["forma_ponderada"]
     fv = visitante["forma_ponderada"]
+    ul5_l = local.get("ultimos_5", [])
+    ul5_v = visitante.get("ultimos_5", [])
 
-    if fl >= 0.60:
-        pros_local.append(f"Momentum positivo: {round(fl * 5, 1)} de 5 puntos posibles en los últimos 5 partidos")
-    elif fl <= 0.35:
-        contras_local.append(f"Racha irregular: solo {round(fl * 5, 1)} de 5 puntos posibles en los últimos 5 partidos")
+    wins_l = ul5_l.count("W")
+    wins_v = ul5_v.count("W")
+    losses_l = ul5_l.count("L")
+    losses_v = ul5_v.count("L")
 
-    if fv >= 0.60:
-        pros_visit.append(f"Momentum positivo: {round(fv * 5, 1)} de 5 puntos posibles en los últimos 5 partidos")
-    elif fv <= 0.35:
-        contras_visit.append(f"Racha irregular: solo {round(fv * 5, 1)} de 5 puntos posibles en los últimos 5 partidos")
+    if fl > fv:
+        if wins_l >= 4:
+            interp = (f"{nombre_local} atraviesa su mejor racha del torneo: {wins_l} victorias "
+                     f"en los últimos 5 partidos (índice {fl:.2f}/1.0). "
+                     f"{nombre_visitante} muestra mayor irregularidad con {wins_v} victorias "
+                     f"y {losses_v} derrotas en ese mismo período (índice {fv:.2f}/1.0).")
+        else:
+            interp = (f"{nombre_local} llega con mejor momentum reciente: índice de forma {fl:.2f}/1.0 "
+                     f"frente a {fv:.2f}/1.0 de {nombre_visitante}. "
+                     f"En los últimos 5 partidos, {nombre_local} acumula {wins_l} victorias "
+                     f"contra {wins_v} del rival.")
+    elif fv > fl:
+        if wins_v >= 4:
+            interp = (f"{nombre_visitante} llega en su mejor momento: {wins_v} victorias "
+                     f"en los últimos 5 partidos (índice {fv:.2f}/1.0). "
+                     f"{nombre_local} muestra irregularidad con {wins_l} victorias "
+                     f"y {losses_l} derrotas recientes (índice {fl:.2f}/1.0).")
+        else:
+            interp = (f"{nombre_visitante} llega con mejor momentum: índice {fv:.2f}/1.0 "
+                     f"frente a {fl:.2f}/1.0 de {nombre_local}. "
+                     f"En los últimos 5 partidos, {nombre_visitante} acumula {wins_v} victorias "
+                     f"contra {wins_l} del rival.")
+    else:
+        interp = (f"Ambos equipos llegan en condiciones similares: "
+                 f"{nombre_local} con índice {fl:.2f}/1.0 y {nombre_visitante} con {fv:.2f}/1.0. "
+                 f"Ninguno tiene ventaja clara en momentum reciente.")
 
-    # ── WIN RATE SITUACIONAL ─────────────────────────
+    factores.append({
+        "factor":        "Forma reciente",
+        "impacto":       nivel_impacto(abs(fl - fv)),
+        "tipo":          "forma",
+        "local":         { "valor": round(fl, 2), "ultimos_5": ul5_l, "nombre": nombre_local },
+        "visitante":     { "valor": round(fv, 2), "ultimos_5": ul5_v, "nombre": nombre_visitante },
+        "interpretacion": interp,
+    })
+
+    # ── 2. RENDIMIENTO SITUACIONAL ───────────────────
     wrl = local["win_rate_local"]
     wrv = visitante["win_rate_visita"]
+    gl_l = local.get("ganados_local", 0)
+    el_l = local.get("empatados_local", 0)
+    pl_l = local.get("perdidos_local", 0)
+    gv_v = visitante.get("ganados_visita", 0)
+    ev_v = visitante.get("empatados_visita", 0)
+    pv_v = visitante.get("perdidos_visita", 0)
 
-    if wrl >= 0.55:
-        pros_local.append(f"Dominio en casa: {wrl*100:.0f}% de victorias como local en el torneo")
-    elif wrl <= 0.30:
-        contras_local.append(f"Bajo rendimiento en casa: {wrl*100:.0f}% de victorias como local")
-
-    if wrv >= 0.50:
-        pros_visit.append(f"Efectivo de visita: {wrv*100:.0f}% de victorias fuera de casa en el torneo")
-    elif wrv <= 0.25:
-        contras_visit.append(f"Rendimiento exterior limitado: {wrv*100:.0f}% de victorias como visitante")
-
-    # ── CAPACIDAD GOLEADORA ──────────────────────────
-    gfl = local["goles_favor_promedio"]
-    gfv = visitante["goles_favor_promedio"]
-    gcl = local["goles_contra_promedio"]
-    gcv = visitante["goles_contra_promedio"]
-
-    if gfl >= 1.8:
-        pros_local.append(f"Potencia ofensiva: {gfl:.2f} goles por partido a favor")
-    elif gfl <= 1.1:
-        contras_local.append(f"Producción ofensiva limitada: {gfl:.2f} goles por partido")
-
-    if gfv >= 1.8:
-        pros_visit.append(f"Potencia ofensiva: {gfv:.2f} goles por partido a favor")
-    elif gfv <= 1.1:
-        contras_visit.append(f"Producción ofensiva limitada: {gfv:.2f} goles por partido")
-
-    # ── SOLIDEZ DEFENSIVA ────────────────────────────
-    if gcl <= 1.0:
-        pros_local.append(f"Solidez defensiva: {gcl:.2f} goles recibidos por partido")
-    elif gcl >= 1.8:
-        contras_local.append(f"Vulnerabilidad defensiva: {gcl:.2f} goles recibidos por partido")
-
-    if gcv <= 1.0:
-        pros_visit.append(f"Solidez defensiva: {gcv:.2f} goles recibidos por partido")
-    elif gcv >= 1.8:
-        contras_visit.append(f"Vulnerabilidad defensiva: {gcv:.2f} goles recibidos por partido")
-
-    # ── RACHA SIN PERDER ────────────────────────────
-    sl = local["imbatido_streak"]
-    sv = visitante["imbatido_streak"]
-
-    if sl >= 4:
-        pros_local.append(f"Racha de invicto: {sl} partidos consecutivos sin perder")
-    elif sl == 0:
-        contras_local.append("Sin racha de invicto activa al inicio de la serie")
-
-    if sv >= 4:
-        pros_visit.append(f"Racha de invicto: {sv} partidos consecutivos sin perder")
-    elif sv == 0:
-        contras_visit.append("Sin racha de invicto activa al inicio de la serie")
-
-    # ── H2H ─────────────────────────────────────────
-    n_total = resultado["n_h2h_clausura"] + resultado["n_h2h_apertura"]
-    if n_total > 0:
-        h2h = resultado["h2h_local"]
-        if h2h >= 0.60:
-            pros_local.append(f"Ventaja histórica en este cruce: {h2h*100:.0f}% de victorias en {n_total} enfrentamientos recientes")
-            contras_visit.append(f"Historial desfavorable en este cruce: {(1-h2h)*100:.0f}% de victorias en {n_total} enfrentamientos recientes")
-        elif h2h <= 0.40:
-            pros_visit.append(f"Ventaja histórica en este cruce: {(1-h2h)*100:.0f}% de victorias en {n_total} enfrentamientos recientes")
-            contras_local.append(f"Historial desfavorable en este cruce: {h2h*100:.0f}% de victorias en {n_total} enfrentamientos recientes")
-        else:
-            pros_local.append(f"Historial equilibrado: {n_total} enfrentamientos recientes sin dominancia clara")
-            pros_visit.append(f"Historial equilibrado: {n_total} enfrentamientos recientes sin dominancia clara")
-
-    # ── EXPERIENCIA EN LIGUILLA ──────────────────────
-    exp_l = resultado["exp_local"]
-    exp_v = resultado["exp_visitante"]
-    diff_exp = exp_l - exp_v
-
-    if diff_exp >= 0.25:
-        pros_local.append(f"Mayor experiencia en instancias eliminatorias (índice {exp_l:.2f} vs {exp_v:.2f})")
-        contras_visit.append(f"Menor historial en rondas eliminatorias (índice {exp_v:.2f} vs {exp_l:.2f})")
-    elif diff_exp <= -0.25:
-        pros_visit.append(f"Mayor experiencia en instancias eliminatorias (índice {exp_v:.2f} vs {exp_l:.2f})")
-        contras_local.append(f"Menor historial en rondas eliminatorias (índice {exp_l:.2f} vs {exp_v:.2f})")
-
-    # ── VUELTA EN CASA ───────────────────────────────
-    vuelta = resultado["vuelta_en_casa"]
-    if vuelta == "local":
-        pros_local.append("Ventaja táctica: disputa el partido de vuelta en condición de local")
-        contras_visit.append("Deberá resolver la serie jugando la vuelta como visitante")
+    if wrl >= 0.55 and wrv <= 0.30:
+        interp = (f"Contraste situacional marcado: {nombre_local} gana el {wrl*100:.0f}% "
+                 f"de sus partidos en casa ({gl_l}G/{el_l}E/{pl_l}P como local), "
+                 f"mientras {nombre_visitante} apenas convierte el {wrv*100:.0f}% de visita "
+                 f"({gv_v}G/{ev_v}E/{pv_v}P como visitante). "
+                 f"La localía es un factor determinante en este cruce.")
+    elif wrl >= 0.55:
+        interp = (f"{nombre_local} es dominante en casa: {wrl*100:.0f}% de victorias "
+                 f"({gl_l}G/{el_l}E/{pl_l}P). {nombre_visitante} ha respondido con "
+                 f"{wrv*100:.0f}% de efectividad como visitante ({gv_v}G/{ev_v}E/{pv_v}P).")
+    elif wrv <= 0.30:
+        interp = (f"{nombre_visitante} tiene dificultades fuera de casa: solo {wrv*100:.0f}% "
+                 f"de victorias como visitante ({gv_v}G/{ev_v}E/{pv_v}P). "
+                 f"{nombre_local} ha aprovechado su condición local ganando el {wrl*100:.0f}% "
+                 f"de sus partidos en casa ({gl_l}G/{el_l}E/{pl_l}P).")
     else:
-        pros_visit.append("Ventaja táctica: disputa el partido de vuelta en condición de local")
-        contras_local.append("Deberá resolver la serie jugando la vuelta como visitante")
+        interp = (f"Rendimiento situacional equilibrado: {nombre_local} gana el {wrl*100:.0f}% "
+                 f"en casa ({gl_l}G/{el_l}E/{pl_l}P) y {nombre_visitante} el {wrv*100:.0f}% "
+                 f"de visita ({gv_v}G/{ev_v}E/{pv_v}P). "
+                 f"Ninguno tiene ventaja situacional clara.")
 
-    # ── POSICIÓN EN TABLA ────────────────────────────
-    diff_pos = visitante["posicion"] - local["posicion"]
-    if diff_pos >= 3:
-        pros_local.append(f"Mejor posición en tabla: {diff_pos} lugares por encima del rival al cierre del torneo")
-    elif diff_pos <= -3:
-        pros_visit.append(f"Mejor posición en tabla: {abs(diff_pos)} lugares por encima del rival al cierre del torneo")
-    elif diff_pos > 0:
-        contras_visit.append(f"Cierra el torneo {diff_pos} posiciones por debajo del rival en la tabla")
-    elif diff_pos < 0:
-        contras_local.append(f"Cierra el torneo {abs(diff_pos)} posiciones por debajo del rival en la tabla")
-
-    # ── GARANTÍA: mínimo 1 pro y 1 contra por equipo ─
-
-    # Si no hay pros para local → tomar el mejor dato disponible
-    if not pros_local:
-        pros_local.append(f"Clasificó entre los mejores ocho equipos del torneo con {local.get('puntos', 'N/A')} puntos")
-
-    # Si no hay contras para local → señalar la presión eliminatoria
-    if not contras_local:
-        contras_local.append("La condición eliminatoria exige un nivel de consistencia superior al de la fase regular")
-
-    # Si no hay pros para visitante
-    if not pros_visit:
-        pros_visit.append(f"Clasificó entre los mejores ocho equipos del torneo con {visitante.get('puntos', 'N/A')} puntos")
-
-    # Si no hay contras para visitante
-    if not contras_visit:
-        contras_visit.append("La condición eliminatoria exige un nivel de consistencia superior al de la fase regular")
-
-    return {
-        "local": {
-            "pros":    pros_local,
-            "contras": contras_local,
+    factores.append({
+        "factor":    "Rendimiento situacional",
+        "impacto":   nivel_impacto(abs(wrl - wrv)),
+        "tipo":      "barras",
+        "local":     {
+            "etiqueta": "Win rate local",
+            "valor":    round(wrl, 2),
+            "detalle":  f"{gl_l}G / {el_l}E / {pl_l}P",
+            "nombre":   nombre_local,
         },
         "visitante": {
-            "pros":    pros_visit,
-            "contras": contras_visit,
-        }
-    }
+            "etiqueta": "Win rate visita",
+            "valor":    round(wrv, 2),
+            "detalle":  f"{gv_v}G / {ev_v}E / {pv_v}P",
+            "nombre":   nombre_visitante,
+        },
+        "interpretacion": interp,
+    })
+
+    # ── 3. CAPACIDAD OFENSIVA Y DEFENSIVA ────────────
+    gf_l = local["goles_favor_promedio"]
+    gc_l = local["goles_contra_promedio"]
+    gf_v = visitante["goles_favor_promedio"]
+    gc_v = visitante["goles_contra_promedio"]
+
+    ventaja_of = gf_l - gf_v
+    ventaja_def = gc_v - gc_l   # positivo = local más sólido
+
+    if ventaja_of >= 0.4 and ventaja_def >= 0.3:
+        interp = (f"Superioridad ofensiva y defensiva de {nombre_local}: anota {gf_l:.2f} goles "
+                 f"por partido frente a {gf_v:.2f} del rival, y recibe {gc_l:.2f} frente "
+                 f"a {gc_v:.2f} de {nombre_visitante}. Dominio integral en ambas fases.")
+    elif ventaja_of >= 0.4:
+        interp = (f"{nombre_local} tiene mayor potencia ofensiva: {gf_l:.2f} goles por partido "
+                 f"contra {gf_v:.2f} de {nombre_visitante}. En defensa la diferencia es menor: "
+                 f"{gc_l:.2f} recibidos por partido frente a {gc_v:.2f}.")
+    elif ventaja_of <= -0.4:
+        interp = (f"{nombre_visitante} genera más peligro ofensivo: {gf_v:.2f} goles por partido "
+                 f"frente a {gf_l:.2f} de {nombre_local}. "
+                 f"En defensa, {nombre_local} recibe {gc_l:.2f} goles por partido "
+                 f"y {nombre_visitante} {gc_v:.2f}.")
+    else:
+        interp = (f"Producción ofensiva similar: {nombre_local} promedia {gf_l:.2f} goles "
+                 f"por partido y {nombre_visitante} {gf_v:.2f}. En defensa, "
+                 f"{nombre_local} recibe {gc_l:.2f} por partido frente a {gc_v:.2f} del rival.")
+
+    factores.append({
+        "factor":    "Potencial ofensivo y defensivo",
+        "impacto":   nivel_impacto(abs(ventaja_of) * 0.5 + abs(ventaja_def) * 0.5),
+        "tipo":      "doble_barra",
+        "local":     {
+            "nombre":        nombre_local,
+            "goles_favor":   round(gf_l, 2),
+            "goles_contra":  round(gc_l, 2),
+        },
+        "visitante": {
+            "nombre":        nombre_visitante,
+            "goles_favor":   round(gf_v, 2),
+            "goles_contra":  round(gc_v, 2),
+        },
+        "interpretacion": interp,
+    })
+
+    # ── 4. H2H ───────────────────────────────────────
+    n_total = resultado["n_h2h_clausura"] + resultado["n_h2h_apertura"]
+    if n_total > 0:
+        h2h    = resultado["h2h_local"]
+        n_c    = resultado["n_h2h_clausura"]
+        n_a    = resultado["n_h2h_apertura"]
+        wins_h2h_local = round(h2h * n_total)
+        wins_h2h_visit = n_total - wins_h2h_local
+
+        if h2h >= 0.60:
+            interp = (f"{nombre_local} domina el historial reciente con {wins_h2h_local} victorias "
+                     f"en {n_total} enfrentamientos ({n_c} del Clausura 2026, {n_a} del Apertura 2025). "
+                     f"{nombre_visitante} solo ha ganado {wins_h2h_visit} de esos cruces.")
+        elif h2h <= 0.40:
+            interp = (f"{nombre_visitante} lleva ventaja histórica: {wins_h2h_visit} victorias "
+                     f"en {n_total} enfrentamientos recientes ({n_c} del Clausura 2026, {n_a} del Apertura 2025). "
+                     f"{nombre_local} solo ha ganado {wins_h2h_local} de esos cruces.")
+        else:
+            interp = (f"Historial equilibrado entre ambos equipos: {wins_h2h_local} victorias "
+                     f"para {nombre_local} y {wins_h2h_visit} para {nombre_visitante} "
+                     f"en {n_total} enfrentamientos recientes. No hay dominancia clara.")
+
+        factores.append({
+            "factor":          "Historial directo",
+            "impacto":         nivel_impacto(abs(h2h - 0.5) * 2),
+            "tipo":            "h2h",
+            "local":           { "nombre": nombre_local,    "victorias": wins_h2h_local },
+            "visitante":       { "nombre": nombre_visitante, "victorias": wins_h2h_visit },
+            "partidos":        resultado["partidos_h2h"],
+            "total":           n_total,
+            "interpretacion":  interp,
+        })
+
+    # ── 5. EXPERIENCIA ELIMINATORIA ──────────────────
+    exp_l  = resultado["exp_local"]
+    exp_v  = resultado["exp_visitante"]
+    diff_exp = exp_l - exp_v
+
+    if abs(diff_exp) >= 0.15:
+        equipo_exp = nombre_local if diff_exp > 0 else nombre_visitante
+        equipo_inexp = nombre_visitante if diff_exp > 0 else nombre_local
+        exp_mayor = max(exp_l, exp_v)
+        exp_menor = min(exp_l, exp_v)
+
+        interp = (f"{equipo_exp} acumula mayor experiencia en instancias eliminatorias "
+                 f"(índice {exp_mayor:.2f}/1.0 vs {exp_menor:.2f}/1.0 de {equipo_inexp}), "
+                 f"basado en resultados de las últimas 4 liguillas. "
+                 f"La presión de los partidos de eliminación suele favorecer "
+                 f"a los equipos con mayor rodaje en estas instancias.")
+    else:
+        interp = (f"Experiencia eliminatoria similar entre ambos equipos: "
+                 f"{nombre_local} con índice {exp_l:.2f}/1.0 y {nombre_visitante} con {exp_v:.2f}/1.0. "
+                 f"Este factor no genera ventaja significativa para ninguno.")
+
+    factores.append({
+        "factor":    "Experiencia eliminatoria",
+        "impacto":   nivel_impacto(abs(diff_exp)),
+        "tipo":      "barras",
+        "local":     { "etiqueta": "Índice liguilla", "valor": round(exp_l, 2), "nombre": nombre_local },
+        "visitante": { "etiqueta": "Índice liguilla", "valor": round(exp_v, 2), "nombre": nombre_visitante },
+        "interpretacion": interp,
+    })
+
+    # ── 6. VENTAJA DE VUELTA EN CASA ─────────────────
+    vuelta = resultado["vuelta_en_casa"]
+    equipo_vuelta   = nombre_local   if vuelta == "local"     else nombre_visitante
+    equipo_sin_vuelta = nombre_visitante if vuelta == "local" else nombre_local
+    pos_l = local["posicion"]
+    pos_v = visitante["posicion"]
+
+    interp = (f"{equipo_vuelta} terminó mejor posicionado en la tabla "
+             f"(posición {pos_l if vuelta == 'local' else pos_v} vs "
+             f"{pos_v if vuelta == 'local' else pos_l}), "
+             f"lo que le otorga el derecho de disputar la vuelta en casa. "
+             f"Esta ventaja táctica le permite a {equipo_vuelta} especular en la ida "
+             f"y definir la serie ante su afición, mientras {equipo_sin_vuelta} "
+             f"deberá resolver la eliminatoria jugando el partido decisivo de visitante.")
+
+    factores.append({
+        "factor":         "Ventaja de vuelta en casa",
+        "impacto":        "medio",
+        "tipo":           "vuelta",
+        "equipo_vuelta":  equipo_vuelta,
+        "local":          { "nombre": nombre_local,    "posicion": pos_l },
+        "visitante":      { "nombre": nombre_visitante, "posicion": pos_v },
+        "interpretacion": interp,
+    })
+
+    return factores
 
 
 # =============================
@@ -485,7 +569,7 @@ def generar_partido_ida(id, local_nombre, visitante_nombre, db, h2h):
     else:
         pred = "Empate"
 
-    razones = generar_razones(local, visitante, resultado, local_nombre, visitante_nombre)
+    analisis = generar_analisis(local, visitante, resultado, local_nombre, visitante_nombre)
 
     output = {
         "id":               id,
@@ -503,7 +587,7 @@ def generar_partido_ida(id, local_nombre, visitante_nombre, db, h2h):
         "confianza":        resultado["confianza"],
         "prediccion":       pred,
         "vuelta_en_casa":   resultado["vuelta_en_casa"],
-        "razones":          razones,
+        "analisis":         analisis,
     }
 
     guardar_resultado(output)
@@ -518,6 +602,6 @@ if __name__ == "__main__":
     db  = cargar_equipos()
     h2h = cargar_h2h()
 
-    partido = generar_partido_ida(1, "Atlas", "Cruz Azul", db, h2h)
+    partido = generar_partido_ida(1, "Toluca", "Pachuca", db, h2h)
     print(json.dumps(partido, indent=2, ensure_ascii=False))
     print("\nPartido de ida generado y guardado en partidos_liguilla.json")
