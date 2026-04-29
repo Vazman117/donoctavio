@@ -21,7 +21,7 @@ function renderLista() {
     <span>Local</span>
     <span>Empate</span>
     <span>Visitante</span>
-    <span>Predicción</span>
+    <span>Favorito</span>
   `;
   contenedor.appendChild(header);
 
@@ -57,6 +57,48 @@ function renderLista() {
   });
 }
 
+/* ── Helpers razones ─────────────────────────────────── */
+function renderRazonesEquipo(razones) {
+  if (!razones) return '';
+  const pros    = (razones.pros    || []).map(t => `<div class="razon-item razon-pro">${t}</div>`).join('');
+  const contras = (razones.contras || []).map(t => `<div class="razon-item razon-contra">${t}</div>`).join('');
+  return pros + contras;
+}
+
+function renderAnalisis(p) {
+  /* Formato nuevo: razones es objeto {local, visitante} */
+  if (p.razones && !Array.isArray(p.razones)) {
+    return `
+      <div class="det-analisis-equipo">
+        <div class="det-analisis-escudo">
+          <img src="${p.logo_local}" alt="${p.local}" onerror="this.style.visibility='hidden'">
+          <span class="det-analisis-nombre">${p.local}</span>
+        </div>
+        <div class="det-analisis-razones">
+          ${renderRazonesEquipo(p.razones.local)}
+        </div>
+      </div>
+      <div class="det-analisis-divider"></div>
+      <div class="det-analisis-equipo det-analisis-equipo--visit">
+        <div class="det-analisis-razones">
+          ${renderRazonesEquipo(p.razones.visitante)}
+        </div>
+        <div class="det-analisis-escudo">
+          <img src="${p.logo_visitante}" alt="${p.visitante}" onerror="this.style.visibility='hidden'">
+          <span class="det-analisis-nombre">${p.visitante}</span>
+        </div>
+      </div>
+    `;
+  }
+
+  /* Formato legacy: razones es array de strings con emoji */
+  return (p.razones || []).map(r => {
+    const esFavor = r.startsWith('✅');
+    const texto   = r.replace(/^✅\s*|^⚠️\s*/u, '');
+    return `<div class="razon-item ${esFavor ? 'razon-pro' : 'razon-contra'}">${texto}</div>`;
+  }).join('');
+}
+
 /* ── Mostrar detalle ─────────────────────────────────── */
 function mostrarDetalle(i) {
   const p = partidos[i];
@@ -71,13 +113,6 @@ function mostrarDetalle(i) {
       : p.confianza === 'moderado'
       ? ['Pronóstico moderado',  'conf-media']
       : ['Pronóstico ajustado',  'conf-baja'];
-
-  const razonesHTML = (p.razones || []).map(r => {
-    const esFavor = r.startsWith('✅');
-    const texto   = r.replace(/^✅\s*|^⚠️\s*/u, '');
-    const clase   = esFavor ? 'favor' : 'contra';
-    return `<div class="razon-item ${clase}">${texto}</div>`;
-  }).join('');
 
   document.getElementById('detalleContenido').innerHTML = `
 
@@ -116,13 +151,13 @@ function mostrarDetalle(i) {
 
     <div class="det-card">
       <div class="det-seccion-titulo">Análisis</div>
-      <div class="det-razones-list">
-        ${razonesHTML}
+      <div class="det-analisis-wrap">
+        ${renderAnalisis(p)}
       </div>
     </div>
 
     <div class="det-card det-card-pred">
-      <div class="det-seccion-titulo">Predicción</div>
+      <div class="det-seccion-titulo">Favorito</div>
       <div class="det-pred-valor">${p.prediccion}</div>
       <span class="det-confianza ${confianza[1]}">${confianza[0]}</span>
     </div>
@@ -132,7 +167,9 @@ function mostrarDetalle(i) {
   document.getElementById('vista-lista').classList.add('hidden');
   document.getElementById('vista-detalle').classList.remove('hidden');
   document.getElementById('btnBack').style.display = 'flex';
-  document.getElementById('headerLabel').textContent = 'Jornada 17';
+  document.getElementById('headerLabel').textContent = p.fase
+    ? p.fase.replace('liguilla_ida', 'Cuartos de Final · Ida').replace('liguilla_vuelta', 'Cuartos de Final · Vuelta')
+    : 'Jornada Regular';
   document.getElementById('headerTitle').textContent = p.local + ' · ' + p.visitante;
   document.getElementById('badgeWrap').style.display = 'none';
   window.scrollTo({ top: 0 });
@@ -151,8 +188,8 @@ function mostrarLista() {
   document.getElementById('vista-detalle').classList.add('hidden');
   document.getElementById('vista-lista').classList.remove('hidden');
   document.getElementById('btnBack').style.display = 'none';
-  document.getElementById('headerLabel').textContent = 'Jornada 17';
-  document.getElementById('headerTitle').textContent = 'Predicciones';
+  document.getElementById('headerLabel').textContent = 'Cuartos de Final · Ida';
+  document.getElementById('headerTitle').textContent = 'Pronósticos';
   document.getElementById('badgeWrap').style.display = '';
   window.scrollTo({ top: 0 });
 }

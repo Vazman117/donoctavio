@@ -1,186 +1,174 @@
 [
   {
     "id": 1,
-    "local": "Puebla",
-    "visitante": "Querétaro",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/231.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/222.png",
-    "prob_local": 0.27984982523652707,
-    "prob_empate": 0.12546929613585278,
-    "prob_visitante": 0.5946808786276201,
-    "fuerza_local": 0.1849858823529412,
-    "fuerza_visitante": 0.5015411764705882,
-    "diferencia": 0.31655529411764693,
-    "confianza": "alta",
-    "prediccion": "Querétaro",
-    "razones": [
-      "⚠️ Querétaro llega con mejor forma reciente (0.73 vs 0.04)",
-      "⚠️ Puebla es débil como local (solo 22% de victorias en casa)",
-      "⚠️ Querétaro no rinde bien de visita (12% de victorias fuera)",
-      "✅ Querétaro lleva 8 partidos sin perder",
-      "⚠️ Querétaro está 6 lugares arriba en la tabla"
-    ]
-  },
-  {
-    "id": 2,
-    "local": "Pachuca",
-    "visitante": "Pumas UNAM",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
-    "prob_local": 0.27481865872091443,
-    "prob_empate": 0.14119169149714225,
-    "prob_visitante": 0.5839896497819432,
-    "fuerza_local": 0.5014482352941176,
-    "fuerza_visitante": 0.7754999999999999,
-    "diferencia": 0.2740517647058822,
-    "confianza": "alta",
-    "prediccion": "Pumas UNAM",
-    "razones": [
-      "⚠️ Pumas UNAM llega con mejor forma reciente (0.96 vs 0.40)",
-      "✅ Pachuca es sólido en casa (gana el 67% de sus partidos como local)",
-      "✅ Pumas UNAM es peligroso de visita (62% de victorias fuera)",
-      "✅ Pumas UNAM lleva 8 partidos sin perder",
-      "⚠️ Pumas UNAM anota más por partido (2.00 vs 1.47)"
-    ]
-  },
-  {
-    "id": 3,
-    "local": "Tigres UANL",
-    "visitante": "Mazatlán FC",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/232.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/20702.png",
-    "prob_local": 0.5981770762535069,
-    "prob_empate": 0.12032782903896036,
-    "prob_visitante": 0.2814950947075326,
-    "fuerza_local": 0.583784705882353,
-    "fuerza_visitante": 0.25355176470588237,
-    "diferencia": 0.3302329411764706,
-    "confianza": "alta",
-    "prediccion": "Tigres UANL",
-    "razones": [
-      "✅ Tigres UANL llega con mejor forma reciente (0.69 vs 0.35)",
-      "⚠️ Mazatlán FC no rinde bien de visita (11% de victorias fuera)",
-      "✅ Tigres UANL lleva 4 partidos sin perder",
-      "✅ Tigres UANL está 9 lugares arriba en la tabla"
-    ]
-  },
-  {
-    "id": 4,
-    "local": "Toluca",
-    "visitante": "León",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/223.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/228.png",
-    "prob_local": 0.5616157222403597,
-    "prob_empate": 0.17409452611711806,
-    "prob_visitante": 0.26428975164252216,
-    "fuerza_local": 0.5146223529411765,
-    "fuerza_visitante": 0.3329670588235294,
-    "diferencia": 0.18165529411764714,
-    "confianza": "alta",
-    "prediccion": "Toluca",
-    "razones": [
-      "✅ Toluca es sólido en casa (gana el 62% de sus partidos como local)",
-      "⚠️ León no rinde bien de visita (22% de victorias fuera)",
-      "✅ Toluca está 6 lugares arriba en la tabla"
-    ]
-  },
-  {
-    "id": 5,
-    "local": "Guadalajara",
-    "visitante": "Tijuana",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/10125.png",
-    "prob_local": 0.4637739817477202,
-    "prob_empate": 0.20771434113545229,
-    "prob_visitante": 0.32851167711682744,
-    "fuerza_local": 0.6199341176470589,
-    "fuerza_visitante": 0.5378329411764706,
-    "diferencia": 0.08210117647058823,
-    "confianza": "media",
-    "prediccion": "Guadalajara",
-    "razones": [
-      "⚠️ Tijuana llega con mejor forma reciente (0.72 vs 0.54)",
-      "✅ Guadalajara es sólido en casa (gana el 75% de sus partidos como local)",
-      "✅ Tijuana lleva 5 partidos sin perder",
-      "✅ Guadalajara anota más por partido (1.94 vs 1.12)",
-      "✅ Guadalajara está 7 lugares arriba en la tabla"
-    ]
-  },
-  {
-    "id": 6,
-    "local": "FC Juarez",
-    "visitante": "Atlético de San Luis",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/17851.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/15720.png",
-    "prob_local": 0.42176082295088163,
-    "prob_empate": 0.22145003408246902,
-    "prob_visitante": 0.3567891429666494,
-    "fuerza_local": 0.37361529411764705,
-    "fuerza_visitante": 0.3337835294117647,
-    "diferencia": 0.039831764705882344,
-    "confianza": "coin_flip",
-    "prediccion": "FC Juarez",
-    "razones": [
-      "⚠️ Atlético de San Luis no rinde bien de visita (25% de victorias fuera)"
-    ]
-  },
-  {
-    "id": 7,
+    "fase": "liguilla_ida",
     "local": "América",
-    "visitante": "Atlas",
+    "visitante": "Pumas UNAM",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/227.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/216.png",
-    "prob_local": 0.33128385497647544,
-    "prob_empate": 0.2090699797592315,
-    "prob_visitante": 0.459646165264293,
-    "fuerza_local": 0.4667788235294118,
-    "fuerza_visitante": 0.5447505882352941,
-    "diferencia": 0.0779717647058823,
-    "confianza": "media",
-    "prediccion": "Atlas",
-    "razones": [
-      "⚠️ Atlas llega con mejor forma reciente (0.73 vs 0.55)",
-      "✅ Atlas lleva 4 partidos sin perder"
-    ]
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "prob_local": 0.26946500995740746,
+    "prob_empate": 0.15792184388310151,
+    "prob_visitante": 0.572613146159491,
+    "fuerza_local": 0.47740623529411774,
+    "fuerza_visitante": 0.705075,
+    "diferencia": 0.22766876470588226,
+    "confianza": "favorable",
+    "prediccion": "Pumas UNAM",
+    "vuelta_en_casa": "visitante",
+    "razones": {
+      "local": {
+        "pros": [
+          "Solidez defensiva: 1.00 goles recibidos por partido",
+          "Mayor experiencia en instancias eliminatorias (índice 0.94 vs 0.31)"
+        ],
+        "contras": [
+          "Sin racha de invicto activa al inicio de la serie",
+          "Historial desfavorable en este cruce: 40% de victorias en 2 enfrentamientos recientes",
+          "Deberá resolver la serie jugando la vuelta como visitante"
+        ]
+      },
+      "visitante": {
+        "pros": [
+          "Momentum positivo: 4.8 de 5 puntos posibles en los últimos 5 partidos",
+          "Efectivo de visita: 62% de victorias fuera de casa en el torneo",
+          "Potencia ofensiva: 2.00 goles por partido a favor",
+          "Solidez defensiva: 1.00 goles recibidos por partido",
+          "Racha de invicto: 8 partidos consecutivos sin perder",
+          "Ventaja histórica en este cruce: 60% de victorias en 2 enfrentamientos recientes",
+          "Ventaja táctica: disputa el partido de vuelta en condición de local",
+          "Mejor posición en tabla: 7 lugares por encima del rival al cierre del torneo"
+        ],
+        "contras": [
+          "Menor historial en rondas eliminatorias (índice 0.31 vs 0.94)"
+        ]
+      }
+    }
   },
   {
-    "id": 8,
-    "local": "Santos",
-    "visitante": "Monterrey",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/225.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/220.png",
-    "prob_local": 0.2678040682910981,
-    "prob_empate": 0.16311228659031843,
-    "prob_visitante": 0.5690836451185836,
-    "fuerza_local": 0.17094,
-    "fuerza_visitante": 0.3839694117647059,
-    "diferencia": 0.21302941176470588,
-    "confianza": "alta",
-    "prediccion": "Monterrey",
-    "razones": [
-      "⚠️ Monterrey llega con mejor forma reciente (0.45 vs 0.14)",
-      "⚠️ Santos es débil como local (solo 14% de victorias en casa)",
-      "⚠️ Monterrey está 5 lugares arriba en la tabla"
-    ]
+    "id": 1,
+    "fase": "liguilla_ida",
+    "local": "Toluca",
+    "visitante": "Pachuca",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/223.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
+    "prob_local": 0.28541189639258785,
+    "prob_empate": 0.18611450632543383,
+    "prob_visitante": 0.5284735972819784,
+    "fuerza_local": 0.41244570588235296,
+    "fuerza_visitante": 0.5591265294117648,
+    "diferencia": 0.1466808235294118,
+    "confianza": "favorable",
+    "prediccion": "Pachuca",
+    "vuelta_en_casa": "visitante",
+    "razones": {
+      "local": {
+        "pros": [
+          "Dominio en casa: 62% de victorias como local en el torneo",
+          "Solidez defensiva: 0.94 goles recibidos por partido",
+          "Mayor experiencia en instancias eliminatorias (índice 0.81 vs 0.28)"
+        ],
+        "contras": [
+          "Historial desfavorable en este cruce: 0% de victorias en 2 enfrentamientos recientes",
+          "Deberá resolver la serie jugando la vuelta como visitante",
+          "Cierra el torneo 1 posiciones por debajo del rival en la tabla"
+        ]
+      },
+      "visitante": {
+        "pros": [
+          "Ventaja histórica en este cruce: 100% de victorias en 2 enfrentamientos recientes",
+          "Ventaja táctica: disputa el partido de vuelta en condición de local"
+        ],
+        "contras": [
+          "Sin racha de invicto activa al inicio de la serie",
+          "Menor historial en rondas eliminatorias (índice 0.28 vs 0.81)"
+        ]
+      }
+    }
   },
   {
-    "id": 9,
-    "local": "Cruz Azul",
-    "visitante": "Necaxa",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/229.png",
-    "prob_local": 0.5474763691666558,
-    "prob_empate": 0.17959338832227076,
-    "prob_visitante": 0.2729302425110735,
-    "fuerza_local": 0.5552964705882353,
-    "fuerza_visitante": 0.38955764705882345,
-    "diferencia": 0.16573882352941183,
-    "confianza": "alta",
+    "id": 1,
+    "fase": "liguilla_ida",
+    "local": "Tigres UANL",
+    "visitante": "Guadalajara",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/232.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
+    "prob_local": 0.40157656343325693,
+    "prob_empate": 0.2280285480383875,
+    "prob_visitante": 0.37039488852835567,
+    "fuerza_local": 0.5684600588235295,
+    "fuerza_visitante": 0.5492151764705884,
+    "diferencia": 0.019244882352941084,
+    "confianza": "ajustado",
+    "prediccion": "Tigres UANL",
+    "vuelta_en_casa": "visitante",
+    "razones": {
+      "local": {
+        "pros": [
+          "Momentum positivo: 3.5 de 5 puntos posibles en los últimos 5 partidos",
+          "Racha de invicto: 4 partidos consecutivos sin perder",
+          "Ventaja histórica en este cruce: 60% de victorias en 2 enfrentamientos recientes"
+        ],
+        "contras": [
+          "Deberá resolver la serie jugando la vuelta como visitante"
+        ]
+      },
+      "visitante": {
+        "pros": [
+          "Efectivo de visita: 56% de victorias fuera de casa en el torneo",
+          "Potencia ofensiva: 1.94 goles por partido a favor",
+          "Solidez defensiva: 1.00 goles recibidos por partido",
+          "Ventaja táctica: disputa el partido de vuelta en condición de local",
+          "Mejor posición en tabla: 5 lugares por encima del rival al cierre del torneo"
+        ],
+        "contras": [
+          "Historial desfavorable en este cruce: 40% de victorias en 2 enfrentamientos recientes"
+        ]
+      }
+    }
+  },
+  {
+    "id": 1,
+    "fase": "liguilla_ida",
+    "local": "Atlas",
+    "visitante": "Cruz Azul",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/216.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+    "prob_local": 0.27891808561011866,
+    "prob_empate": 0.12838098246837912,
+    "prob_visitante": 0.5927009319215023,
+    "fuerza_local": 0.3769548823529412,
+    "fuerza_visitante": 0.6857163529411765,
+    "diferencia": 0.3087614705882353,
+    "confianza": "favorable",
     "prediccion": "Cruz Azul",
-    "razones": [
-      "✅ Cruz Azul es sólido en casa (gana el 71% de sus partidos como local)",
-      "✅ Cruz Azul anota más por partido (1.69 vs 1.12)",
-      "✅ Cruz Azul está 10 lugares arriba en la tabla"
-    ]
+    "vuelta_en_casa": "visitante",
+    "razones": {
+      "local": {
+        "pros": [
+          "Momentum positivo: 3.7 de 5 puntos posibles en los últimos 5 partidos",
+          "Racha de invicto: 4 partidos consecutivos sin perder"
+        ],
+        "contras": [
+          "Producción ofensiva limitada: 0.94 goles por partido",
+          "Historial desfavorable en este cruce: 0% de victorias en 2 enfrentamientos recientes",
+          "Menor historial en rondas eliminatorias (índice 0.13 vs 0.75)",
+          "Deberá resolver la serie jugando la vuelta como visitante"
+        ]
+      },
+      "visitante": {
+        "pros": [
+          "Momentum positivo: 3.2 de 5 puntos posibles en los últimos 5 partidos",
+          "Potencia ofensiva: 1.82 goles por partido a favor",
+          "Racha de invicto: 4 partidos consecutivos sin perder",
+          "Ventaja histórica en este cruce: 100% de victorias en 2 enfrentamientos recientes",
+          "Mayor experiencia en instancias eliminatorias (índice 0.75 vs 0.13)",
+          "Ventaja táctica: disputa el partido de vuelta en condición de local",
+          "Mejor posición en tabla: 3 lugares por encima del rival al cierre del torneo"
+        ],
+        "contras": [
+          "La condición eliminatoria exige un nivel de consistencia superior al de la fase regular"
+        ]
+      }
+    }
   }
 ]
