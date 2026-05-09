@@ -13,6 +13,7 @@
     "diferencia": 0.31655529411764693,
     "confianza": "alta",
     "prediccion": "Querétaro",
+    "resultado": "Querétaro",
     "razones": [
       "⚠️ Querétaro llega con mejor forma reciente (0.73 vs 0.04)",
       "⚠️ Puebla es débil como local (solo 22% de victorias en casa)",
@@ -35,6 +36,7 @@
     "diferencia": 0.2740517647058822,
     "confianza": "alta",
     "prediccion": "Pumas UNAM",
+    "resultado": "Pumas UNAM",
     "razones": [
       "⚠️ Pumas UNAM llega con mejor forma reciente (0.96 vs 0.40)",
       "✅ Pachuca es sólido en casa (gana el 67% de sus partidos como local)",
@@ -57,6 +59,7 @@
     "diferencia": 0.3302329411764706,
     "confianza": "alta",
     "prediccion": "Tigres UANL",
+    "resultado": "Tigres UANL",
     "razones": [
       "✅ Tigres UANL llega con mejor forma reciente (0.69 vs 0.35)",
       "⚠️ Mazatlán FC no rinde bien de visita (11% de victorias fuera)",
@@ -78,6 +81,7 @@
     "diferencia": 0.18165529411764714,
     "confianza": "alta",
     "prediccion": "Toluca",
+    "resultado": "Toluca",
     "razones": [
       "✅ Toluca es sólido en casa (gana el 62% de sus partidos como local)",
       "⚠️ León no rinde bien de visita (22% de victorias fuera)",
@@ -98,6 +102,7 @@
     "diferencia": 0.08210117647058823,
     "confianza": "media",
     "prediccion": "Guadalajara",
+    "resultado": "Empate",
     "razones": [
       "⚠️ Tijuana llega con mejor forma reciente (0.72 vs 0.54)",
       "✅ Guadalajara es sólido en casa (gana el 75% de sus partidos como local)",
@@ -118,8 +123,9 @@
     "fuerza_local": 0.37361529411764705,
     "fuerza_visitante": 0.3337835294117647,
     "diferencia": 0.039831764705882344,
-    "confianza": "coin_flip",
+    "confianza": "alta",
     "prediccion": "FC Juarez",
+    "resultado": "FC Juarez",
     "razones": [
       "⚠️ Atlético de San Luis no rinde bien de visita (25% de victorias fuera)"
     ]
@@ -138,6 +144,7 @@
     "diferencia": 0.0779717647058823,
     "confianza": "media",
     "prediccion": "Atlas",
+    "resultado": "Atlas",
     "razones": [
       "⚠️ Atlas llega con mejor forma reciente (0.73 vs 0.55)",
       "✅ Atlas lleva 4 partidos sin perder"
@@ -157,6 +164,7 @@
     "diferencia": 0.21302941176470588,
     "confianza": "alta",
     "prediccion": "Monterrey",
+    "resultado": "Santos",
     "razones": [
       "⚠️ Monterrey llega con mejor forma reciente (0.45 vs 0.14)",
       "⚠️ Santos es débil como local (solo 14% de victorias en casa)",
@@ -177,6 +185,7 @@
     "diferencia": 0.16573882352941183,
     "confianza": "alta",
     "prediccion": "Cruz Azul",
+    "resultado": "Cruz Azul",
     "razones": [
       "✅ Cruz Azul es sólido en casa (gana el 71% de sus partidos como local)",
       "✅ Cruz Azul anota más por partido (1.69 vs 1.12)",

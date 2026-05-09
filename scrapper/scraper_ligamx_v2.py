@@ -14,6 +14,7 @@ HEADERS = {
 STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/soccer/mex.1/standings"
 TEAMS_URL     = "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/teams"
 SCHEDULE_URL  = "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/teams/{team_id}/schedule"
+LIGAS_SCHEDULE = ["mex.1", "concacaf.champions"]
 
 CLAUSURA_TYPE_ID = "8"
 PESOS_FORMA = [0.35, 0.25, 0.20, 0.12, 0.08]
@@ -180,49 +181,57 @@ def parsear_standings(data):
 # =============================
 
 def obtener_partidos_equipo(team_id):
-    url = SCHEDULE_URL.format(team_id=team_id)
-    r = requests.get(url, headers=HEADERS, timeout=10)
-    if r.status_code != 200 or len(r.text) < 100:
-        return []
-    data = r.json()
+    todos_partidos = []
+    fechas_vistas = set()
 
-    partidos = []
-    for evento in data.get("events", []):
-        if str(evento.get("seasonType", {}).get("id")) != CLAUSURA_TYPE_ID:
-            continue
-        comp = evento.get("competitions", [{}])[0]
-        if not comp.get("status", {}).get("type", {}).get("completed", False):
-            continue
-
-        competitors = comp.get("competitors", [])
-        if len(competitors) < 2:
-            continue
-
-        mi_equipo = next((c for c in competitors if str(c["id"]) == str(team_id)), None)
-        rival     = next((c for c in competitors if str(c["id"]) != str(team_id)), None)
-        if not mi_equipo or not rival:
-            continue
-
-        gane   = mi_equipo.get("winner", False)
-        empate = not gane and not rival.get("winner", False)
-
+    for liga in LIGAS_SCHEDULE:
+        url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{liga}/teams/{team_id}/schedule"
         try:
-            mis_goles   = int(float(mi_equipo.get("score", {}).get("displayValue", 0) or 0))
-            goles_rival = int(float(rival.get("score", {}).get("displayValue", 0) or 0))
+            r = requests.get(url, headers=HEADERS, timeout=10)
+            if r.status_code != 200 or len(r.text) < 100:
+                continue
+            data = r.json()
         except:
-            mis_goles = goles_rival = 0
+            continue
 
-        partidos.append({
-            "fecha":       evento.get("date"),
-            "es_local":    mi_equipo.get("homeAway") == "home",
-            "resultado":   "W" if gane else ("D" if empate else "L"),
-            "goles_favor": mis_goles,
-            "goles_contra": goles_rival,
-        })
+        for evento in data.get("events", []):
+            comp = evento.get("competitions", [{}])[0]
+            if not comp.get("status", {}).get("type", {}).get("completed", False):
+                continue
 
-    partidos.sort(key=lambda x: x["fecha"], reverse=True)
-    return partidos
+            competitors = comp.get("competitors", [])
+            if len(competitors) < 2:
+                continue
 
+            mi_equipo = next((c for c in competitors if str(c["id"]) == str(team_id)), None)
+            rival     = next((c for c in competitors if str(c["id"]) != str(team_id)), None)
+            if not mi_equipo or not rival:
+                continue
+
+            fecha = evento.get("date")
+            if fecha in fechas_vistas:
+                continue
+            fechas_vistas.add(fecha)
+
+            gane   = mi_equipo.get("winner", False)
+            empate = not gane and not rival.get("winner", False)
+
+            try:
+                mis_goles   = int(float(mi_equipo.get("score", {}).get("displayValue", 0) or 0))
+                goles_rival = int(float(rival.get("score", {}).get("displayValue", 0) or 0))
+            except:
+                mis_goles = goles_rival = 0
+
+            todos_partidos.append({
+                "fecha":        fecha,
+                "es_local":     mi_equipo.get("homeAway") == "home",
+                "resultado":    "W" if gane else ("D" if empate else "L"),
+                "goles_favor":  mis_goles,
+                "goles_contra": goles_rival,
+            })
+
+    todos_partidos.sort(key=lambda x: x["fecha"], reverse=True)
+    return todos_partidos
 
 def calcular_stats(partidos):
     if not partidos:

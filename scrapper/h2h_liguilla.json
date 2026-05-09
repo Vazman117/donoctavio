@@ -4,6 +4,14 @@
     "equipo_b": "América",
     "clausura_2026": [
       {
+        "fecha": "2026-05-03",
+        "temporada": "Clausura - Quarterfinals",
+        "local": "América",
+        "visitante": "Pumas UNAM",
+        "goles_local": 3,
+        "goles_visitante": 3
+      },
+      {
         "fecha": "2026-03-22",
         "temporada": "Torneo Clausura",
         "local": "Pumas UNAM",
@@ -24,9 +32,9 @@
     ],
     "resumen": {
       "clausura_2026": {
-        "partidos": 1,
+        "partidos": 2,
         "victorias_pumas_unam": 1,
-        "empates": 0,
+        "empates": 1,
         "victorias_américa": 0
       },
       "apertura_2025": {
@@ -36,9 +44,9 @@
         "victorias_américa": 1
       },
       "total": {
-        "partidos": 2,
+        "partidos": 3,
         "victorias_pumas_unam": 1,
-        "empates": 0,
+        "empates": 1,
         "victorias_américa": 1
       }
     }
@@ -47,6 +55,14 @@
     "equipo_a": "Guadalajara",
     "equipo_b": "Tigres UANL",
     "clausura_2026": [
+      {
+        "fecha": "2026-05-03",
+        "temporada": "Clausura - Quarterfinals",
+        "local": "Tigres UANL",
+        "visitante": "Guadalajara",
+        "goles_local": 3,
+        "goles_visitante": 1
+      },
       {
         "fecha": "2026-04-11",
         "temporada": "Torneo Clausura",
@@ -68,10 +84,10 @@
     ],
     "resumen": {
       "clausura_2026": {
-        "partidos": 1,
+        "partidos": 2,
         "victorias_guadalajara": 0,
         "empates": 0,
-        "victorias_tigres_uanl": 1
+        "victorias_tigres_uanl": 2
       },
       "apertura_2025": {
         "partidos": 1,
@@ -80,10 +96,10 @@
         "victorias_tigres_uanl": 0
       },
       "total": {
-        "partidos": 2,
+        "partidos": 3,
         "victorias_guadalajara": 0,
         "empates": 1,
-        "victorias_tigres_uanl": 1
+        "victorias_tigres_uanl": 2
       }
     }
   },
@@ -91,6 +107,14 @@
     "equipo_a": "Cruz Azul",
     "equipo_b": "Atlas",
     "clausura_2026": [
+      {
+        "fecha": "2026-05-03",
+        "temporada": "Clausura - Quarterfinals",
+        "local": "Atlas",
+        "visitante": "Cruz Azul",
+        "goles_local": 2,
+        "goles_visitante": 3
+      },
       {
         "fecha": "2026-01-14",
         "temporada": "Torneo Clausura",
@@ -112,8 +136,8 @@
     ],
     "resumen": {
       "clausura_2026": {
-        "partidos": 1,
-        "victorias_cruz_azul": 1,
+        "partidos": 2,
+        "victorias_cruz_azul": 2,
         "empates": 0,
         "victorias_atlas": 0
       },
@@ -124,8 +148,8 @@
         "victorias_atlas": 0
       },
       "total": {
-        "partidos": 2,
-        "victorias_cruz_azul": 1,
+        "partidos": 3,
+        "victorias_cruz_azul": 2,
         "empates": 1,
         "victorias_atlas": 0
       }
@@ -135,6 +159,14 @@
     "equipo_a": "Pachuca",
     "equipo_b": "Toluca",
     "clausura_2026": [
+      {
+        "fecha": "2026-05-04",
+        "temporada": "Clausura - Quarterfinals",
+        "local": "Toluca",
+        "visitante": "Pachuca",
+        "goles_local": 0,
+        "goles_visitante": 1
+      },
       {
         "fecha": "2026-03-22",
         "temporada": "Torneo Clausura",
@@ -156,8 +188,8 @@
     ],
     "resumen": {
       "clausura_2026": {
-        "partidos": 1,
-        "victorias_pachuca": 0,
+        "partidos": 2,
+        "victorias_pachuca": 1,
         "empates": 1,
         "victorias_toluca": 0
       },
@@ -168,8 +200,8 @@
         "victorias_toluca": 0
       },
       "total": {
-        "partidos": 2,
-        "victorias_pachuca": 0,
+        "partidos": 3,
+        "victorias_pachuca": 1,
         "empates": 2,
         "victorias_toluca": 0
       }

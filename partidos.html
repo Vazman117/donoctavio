@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuartos de Final – Proyecciones | Don Octavio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<header>
+  <button class="btn-back" id="btnBack" style="display:none;" onclick="mostrarLista()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+    Partidos
+  </button>
+  <button class="btn-back" id="btnInicio" style="display:flex;" onclick="window.location.href='index.html'">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+    Inicio
+  </button>
+  <div class="header-center">
+    <span class="header-label" id="headerLabel">Cuartos de Final - Vuelta</span>
+    <h1 id="headerTitle">Proyecciones</h1>
+  </div>
+</header>
+
+<!-- Vista: lista -->
+<div class="view" id="vista-lista">
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <span>Cargando…</span>
+  </div>
+  <div id="badgeWrap"></div>
+  <div class="tabla" id="contenedor"></div>
+</div>
+
+<!-- Vista: detalle -->
+<div class="view hidden" id="vista-detalle">
+  <div class="detalle-wrap" id="detalleContenido"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

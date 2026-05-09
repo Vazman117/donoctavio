@@ -1,531 +1,137 @@
 [
   {
     "id": 1,
-    "fase": "liguilla_ida",
-    "local": "América",
-    "visitante": "Pumas UNAM",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/227.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
-    "prob_local": 0.26946500995740746,
-    "prob_empate": 0.15792184388310151,
-    "prob_visitante": 0.572613146159491,
-    "fuerza_local": 0.47740623529411774,
-    "fuerza_visitante": 0.705075,
-    "diferencia": 0.22766876470588226,
+    "fase": "liguilla_vuelta",
+    "local": "Pachuca",
+    "visitante": "Toluca",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/223.png",
+    "prob_local": 0.20935169970239922,
+    "prob_empate": 0.226044891943734,
+    "prob_visitante": 0.5646034083538668,
+    "fuerza_local": 0.4807595294117648,
+    "fuerza_visitante": 0.7169757058823529,
+    "diferencia": 0.23621617647058812,
     "confianza": "favorable",
-    "prediccion": "Pumas UNAM",
-    "vuelta_en_casa": "visitante",
+    "prediccion": "Toluca",
+    "clasifica": "Pachuca",
+    "contexto_serie": {
+      "diferencia_global": 1,
+      "goles_vuelta_local_en_ida": 1,
+      "goles_vuelta_visitante_en_ida": 0,
+      "estado_local": "ganando_global",
+      "estado_visitante": "perdiendo_global",
+      "goles_necesita_local": 0,
+      "goles_necesita_visitante": 2,
+      "clasifica_empate_local": true,
+      "clasifica_empate_visitante": false,
+      "urgencia_local": "nula",
+      "urgencia_visitante": "alta",
+      "ventaja_tabla": "local"
+    },
     "analisis": [
       {
         "factor": "Forma reciente",
-        "impacto": "alto",
+        "impacto": "bajo",
         "tipo": "forma",
         "local": {
           "valor": 0.55,
           "ultimos_5": [
-            "L",
-            "W",
-            "W",
-            "D",
-            "D"
-          ],
-          "nombre": "America"
-        },
-        "visitante": {
-          "valor": 0.96,
-          "ultimos_5": [
-            "W",
-            "W",
-            "W",
-            "W",
-            "D"
-          ],
-          "nombre": "Pumas UNAM"
-        },
-        "interpretacion": "Pumas UNAM llega en su mejor momento: 4 victorias en los últimos 5 partidos (índice 0.96/1.0). America muestra irregularidad con 2 victorias y 1 derrotas recientes (índice 0.55/1.0)."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "medio",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 0.44,
-          "detalle": "4G / 1E / 4P",
-          "nombre": "America"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 0.62,
-          "detalle": "5G / 3E / 0P",
-          "nombre": "Pumas UNAM"
-        },
-        "interpretacion": "Rendimiento situacional equilibrado: America gana el 44% en casa (4G/1E/4P) y Pumas UNAM el 62% de visita (5G/3E/0P). Ninguno tiene ventaja situacional clara."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "alto",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "America",
-          "goles_favor": 1.18,
-          "goles_contra": 1.0
-        },
-        "visitante": {
-          "nombre": "Pumas UNAM",
-          "goles_favor": 2.0,
-          "goles_contra": 1.0
-        },
-        "interpretacion": "Pumas UNAM genera más peligro ofensivo: 2.00 goles por partido frente a 1.18 de America. En defensa, America recibe 1.00 goles por partido y Pumas UNAM 1.00."
-      },
-      {
-        "factor": "Historial directo",
-        "impacto": "medio",
-        "tipo": "h2h",
-        "local": {
-          "nombre": "America",
-          "victorias": 1
-        },
-        "visitante": {
-          "nombre": "Pumas UNAM",
-          "victorias": 1
-        },
-        "partidos": [
-          {
-            "fecha": "2026-03-22",
-            "temporada": "Torneo Clausura",
-            "local": "Pumas UNAM",
-            "visitante": "América",
-            "goles_local": 1,
-            "goles_visitante": 0
-          },
-          {
-            "fecha": "2025-09-28",
-            "temporada": "Torneo Apertura",
-            "local": "América",
-            "visitante": "Pumas UNAM",
-            "goles_local": 4,
-            "goles_visitante": 1
-          }
-        ],
-        "total": 2,
-        "interpretacion": "Pumas UNAM lleva ventaja histórica: 1 victorias en 2 enfrentamientos recientes (1 del Clausura 2026, 1 del Apertura 2025). America solo ha ganado 1 de esos cruces."
-      },
-      {
-        "factor": "Experiencia eliminatoria",
-        "impacto": "alto",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Índice liguilla",
-          "valor": 0.94,
-          "nombre": "America"
-        },
-        "visitante": {
-          "etiqueta": "Índice liguilla",
-          "valor": 0.31,
-          "nombre": "Pumas UNAM"
-        },
-        "interpretacion": "America acumula mayor experiencia en instancias eliminatorias (índice 0.94/1.0 vs 0.31/1.0 de Pumas UNAM), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
-      },
-      {
-        "factor": "Ventaja de vuelta en casa",
-        "impacto": "medio",
-        "tipo": "vuelta",
-        "equipo_vuelta": "Pumas UNAM",
-        "local": {
-          "nombre": "America",
-          "posicion": 8
-        },
-        "visitante": {
-          "nombre": "Pumas UNAM",
-          "posicion": 1
-        },
-        "interpretacion": "Pumas UNAM terminó mejor posicionado en la tabla (posición 1 vs 8), lo que le otorga el derecho de disputar la vuelta en casa. Esta ventaja táctica le permite a Pumas UNAM especular en la ida y definir la serie ante su afición, mientras America deberá resolver la eliminatoria jugando el partido decisivo de visitante."
-      }
-    ]
-  },
-  {
-    "id": 1,
-    "fase": "liguilla_ida",
-    "local": "Atlas",
-    "visitante": "Cruz Azul",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/216.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
-    "prob_local": 0.27891808561011866,
-    "prob_empate": 0.12838098246837912,
-    "prob_visitante": 0.5927009319215023,
-    "fuerza_local": 0.3769548823529412,
-    "fuerza_visitante": 0.6857163529411765,
-    "diferencia": 0.3087614705882353,
-    "confianza": "favorable",
-    "prediccion": "Cruz Azul",
-    "vuelta_en_casa": "visitante",
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "bajo",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.73,
-          "ultimos_5": [
-            "W",
-            "D",
-            "W",
-            "D",
-            "L"
-          ],
-          "nombre": "Atlas"
-        },
-        "visitante": {
-          "valor": 0.64,
-          "ultimos_5": [
-            "W",
-            "D",
-            "D",
-            "D",
-            "L"
-          ],
-          "nombre": "Cruz Azul"
-        },
-        "interpretacion": "Atlas llega con mejor momentum reciente: índice de forma 0.73/1.0 frente a 0.64/1.0 de Cruz Azul. En los últimos 5 partidos, Atlas acumula 2 victorias contra 1 del rival."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "bajo",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 0.44,
-          "detalle": "4G / 4E / 1P",
-          "nombre": "Atlas"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 0.33,
-          "detalle": "3G / 5E / 1P",
-          "nombre": "Cruz Azul"
-        },
-        "interpretacion": "Rendimiento situacional equilibrado: Atlas gana el 44% en casa (4G/4E/1P) y Cruz Azul el 33% de visita (3G/5E/1P). Ninguno tiene ventaja situacional clara."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "alto",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Atlas",
-          "goles_favor": 0.94,
-          "goles_contra": 1.06
-        },
-        "visitante": {
-          "nombre": "Cruz Azul",
-          "goles_favor": 1.82,
-          "goles_contra": 1.06
-        },
-        "interpretacion": "Cruz Azul genera más peligro ofensivo: 1.82 goles por partido frente a 0.94 de Atlas. En defensa, Atlas recibe 1.06 goles por partido y Cruz Azul 1.06."
-      },
-      {
-        "factor": "Historial directo",
-        "impacto": "alto",
-        "tipo": "h2h",
-        "local": {
-          "nombre": "Atlas",
-          "victorias": 0
-        },
-        "visitante": {
-          "nombre": "Cruz Azul",
-          "victorias": 2
-        },
-        "partidos": [
-          {
-            "fecha": "2026-01-14",
-            "temporada": "Torneo Clausura",
-            "local": "Cruz Azul",
-            "visitante": "Atlas",
-            "goles_local": 2,
-            "goles_visitante": 0
-          },
-          {
-            "fecha": "2025-07-20",
-            "temporada": "Torneo Apertura",
-            "local": "Atlas",
-            "visitante": "Cruz Azul",
-            "goles_local": 3,
-            "goles_visitante": 3
-          }
-        ],
-        "total": 2,
-        "interpretacion": "Cruz Azul lleva ventaja histórica: 2 victorias en 2 enfrentamientos recientes (1 del Clausura 2026, 1 del Apertura 2025). Atlas solo ha ganado 0 de esos cruces."
-      },
-      {
-        "factor": "Experiencia eliminatoria",
-        "impacto": "alto",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Índice liguilla",
-          "valor": 0.13,
-          "nombre": "Atlas"
-        },
-        "visitante": {
-          "etiqueta": "Índice liguilla",
-          "valor": 0.75,
-          "nombre": "Cruz Azul"
-        },
-        "interpretacion": "Cruz Azul acumula mayor experiencia en instancias eliminatorias (índice 0.75/1.0 vs 0.13/1.0 de Atlas), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
-      },
-      {
-        "factor": "Ventaja de vuelta en casa",
-        "impacto": "medio",
-        "tipo": "vuelta",
-        "equipo_vuelta": "Cruz Azul",
-        "local": {
-          "nombre": "Atlas",
-          "posicion": 6
-        },
-        "visitante": {
-          "nombre": "Cruz Azul",
-          "posicion": 3
-        },
-        "interpretacion": "Cruz Azul terminó mejor posicionado en la tabla (posición 3 vs 6), lo que le otorga el derecho de disputar la vuelta en casa. Esta ventaja táctica le permite a Cruz Azul especular en la ida y definir la serie ante su afición, mientras Atlas deberá resolver la eliminatoria jugando el partido decisivo de visitante."
-      }
-    ]
-  },
-  {
-    "id": 1,
-    "fase": "liguilla_ida",
-    "local": "Tigres UANL",
-    "visitante": "Guadalajara",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/232.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
-    "prob_local": 0.40157656343325693,
-    "prob_empate": 0.2280285480383875,
-    "prob_visitante": 0.37039488852835567,
-    "fuerza_local": 0.5684600588235295,
-    "fuerza_visitante": 0.5492151764705884,
-    "diferencia": 0.019244882352941084,
-    "confianza": "ajustado",
-    "prediccion": "Tigres UANL",
-    "vuelta_en_casa": "visitante",
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "medio",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.69,
-          "ultimos_5": [
-            "W",
-            "D",
-            "D",
-            "W",
-            "L"
-          ],
-          "nombre": "Tigres UANL"
-        },
-        "visitante": {
-          "valor": 0.54,
-          "ultimos_5": [
-            "D",
-            "D",
-            "W",
-            "L",
-            "D"
-          ],
-          "nombre": "Guadalajara"
-        },
-        "interpretacion": "Tigres UANL llega con mejor momentum reciente: índice de forma 0.69/1.0 frente a 0.54/1.0 de Guadalajara. En los últimos 5 partidos, Tigres UANL acumula 2 victorias contra 1 del rival."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "bajo",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 0.5,
-          "detalle": "4G / 2E / 2P",
-          "nombre": "Tigres UANL"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 0.56,
-          "detalle": "5G / 1E / 3P",
-          "nombre": "Guadalajara"
-        },
-        "interpretacion": "Rendimiento situacional equilibrado: Tigres UANL gana el 50% en casa (4G/2E/2P) y Guadalajara el 56% de visita (5G/1E/3P). Ninguno tiene ventaja situacional clara."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "medio",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Tigres UANL",
-          "goles_favor": 1.65,
-          "goles_contra": 1.06
-        },
-        "visitante": {
-          "nombre": "Guadalajara",
-          "goles_favor": 1.94,
-          "goles_contra": 1.0
-        },
-        "interpretacion": "Producción ofensiva similar: Tigres UANL promedia 1.65 goles por partido y Guadalajara 1.94. En defensa, Tigres UANL recibe 1.06 por partido frente a 1.00 del rival."
-      },
-      {
-        "factor": "Historial directo",
-        "impacto": "medio",
-        "tipo": "h2h",
-        "local": {
-          "nombre": "Tigres UANL",
-          "victorias": 1
-        },
-        "visitante": {
-          "nombre": "Guadalajara",
-          "victorias": 1
-        },
-        "partidos": [
-          {
-            "fecha": "2026-04-11",
-            "temporada": "Torneo Clausura",
-            "local": "Tigres UANL",
-            "visitante": "Guadalajara",
-            "goles_local": 4,
-            "goles_visitante": 1
-          },
-          {
-            "fecha": "2025-09-18",
-            "temporada": "Torneo Apertura",
-            "local": "Guadalajara",
-            "visitante": "Tigres UANL",
-            "goles_local": 0,
-            "goles_visitante": 0
-          }
-        ],
-        "total": 2,
-        "interpretacion": "Tigres UANL domina el historial reciente con 1 victorias en 2 enfrentamientos (1 del Clausura 2026, 1 del Apertura 2025). Guadalajara solo ha ganado 1 de esos cruces."
-      },
-      {
-        "factor": "Experiencia eliminatoria",
-        "impacto": "medio",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Índice liguilla",
-          "valor": 0.69,
-          "nombre": "Tigres UANL"
-        },
-        "visitante": {
-          "etiqueta": "Índice liguilla",
-          "valor": 0.44,
-          "nombre": "Guadalajara"
-        },
-        "interpretacion": "Tigres UANL acumula mayor experiencia en instancias eliminatorias (índice 0.69/1.0 vs 0.44/1.0 de Guadalajara), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
-      },
-      {
-        "factor": "Ventaja de vuelta en casa",
-        "impacto": "medio",
-        "tipo": "vuelta",
-        "equipo_vuelta": "Guadalajara",
-        "local": {
-          "nombre": "Tigres UANL",
-          "posicion": 7
-        },
-        "visitante": {
-          "nombre": "Guadalajara",
-          "posicion": 2
-        },
-        "interpretacion": "Guadalajara terminó mejor posicionado en la tabla (posición 2 vs 7), lo que le otorga el derecho de disputar la vuelta en casa. Esta ventaja táctica le permite a Guadalajara especular en la ida y definir la serie ante su afición, mientras Tigres UANL deberá resolver la eliminatoria jugando el partido decisivo de visitante."
-      }
-    ]
-  },
-  {
-    "id": 1,
-    "fase": "liguilla_ida",
-    "local": "Toluca",
-    "visitante": "Pachuca",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/223.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
-    "prob_local": 0.28541189639258785,
-    "prob_empate": 0.18611450632543383,
-    "prob_visitante": 0.5284735972819784,
-    "fuerza_local": 0.41244570588235296,
-    "fuerza_visitante": 0.5591265294117648,
-    "diferencia": 0.1466808235294118,
-    "confianza": "favorable",
-    "prediccion": "Pachuca",
-    "vuelta_en_casa": "visitante",
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "bajo",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.41,
-          "ultimos_5": [
             "W",
             "L",
             "L",
-            "D",
-            "L"
-          ],
-          "nombre": "Toluca"
-        },
-        "visitante": {
-          "valor": 0.4,
-          "ultimos_5": [
-            "L",
-            "L",
-            "W",
             "W",
             "W"
           ],
           "nombre": "Pachuca"
         },
-        "interpretacion": "Toluca llega con mejor momentum reciente: índice de forma 0.41/1.0 frente a 0.40/1.0 de Pachuca. En los últimos 5 partidos, Toluca acumula 1 victorias contra 3 del rival."
+        "visitante": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Toluca"
+        },
+        "interpretacion": "Pachuca llega con mejor momentum reciente: índice de forma 0.55/1.0 frente a 0.47/1.0 de Toluca. En los últimos 5 partidos, Pachuca acumula 3 victorias contra 2 del rival."
       },
       {
         "factor": "Rendimiento situacional",
-        "impacto": "alto",
+        "impacto": "medio",
         "tipo": "barras",
         "local": {
           "etiqueta": "Win rate local",
-          "valor": 0.62,
-          "detalle": "5G / 3E / 0P",
-          "nombre": "Toluca"
+          "valor": 0.56,
+          "detalle": "10G / 2E / 6P",
+          "nombre": "Pachuca"
         },
         "visitante": {
           "etiqueta": "Win rate visita",
-          "valor": 0.38,
-          "detalle": "3G / 2E / 3P",
-          "nombre": "Pachuca"
+          "valor": 0.43,
+          "detalle": "10G / 5E / 8P",
+          "nombre": "Toluca"
         },
-        "interpretacion": "Toluca es dominante en casa: 62% de victorias (5G/3E/0P). Pachuca ha respondido con 38% de efectividad como visitante (3G/2E/3P)."
+        "interpretacion": "Pachuca es dominante en casa: 56% de victorias (10G/2E/6P). Toluca ha respondido con 44% de efectividad como visitante (10G/5E/8P)."
       },
       {
         "factor": "Potencial ofensivo y defensivo",
         "impacto": "medio",
         "tipo": "doble_barra",
         "local": {
-          "nombre": "Toluca",
-          "goles_favor": 1.65,
-          "goles_contra": 0.94
-        },
-        "visitante": {
           "nombre": "Pachuca",
           "goles_favor": 1.47,
           "goles_contra": 1.12
         },
-        "interpretacion": "Producción ofensiva similar: Toluca promedia 1.65 goles por partido y Pachuca 1.47. En defensa, Toluca recibe 0.94 por partido frente a 1.12 del rival."
+        "visitante": {
+          "nombre": "Toluca",
+          "goles_favor": 1.65,
+          "goles_contra": 0.94
+        },
+        "interpretacion": "Producción ofensiva similar: Pachuca promedia 1.47 goles por partido y Toluca 1.65. En defensa, Pachuca recibe 1.12 por partido frente a 0.94 del rival."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.11,
+          "detalle": "4 empates en 17 partidos | 0D últimos 5",
+          "nombre": "Pachuca"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.22,
+          "detalle": "6 empates en 17 partidos | 0D últimos 5",
+          "nombre": "Toluca"
+        },
+        "interpretacion": "Ambos equipos tienden a resolver sin empate: Pachuca empata el 11% en casa y Toluca el 22% de visita. El partido debería tener un ganador."
       },
       {
         "factor": "Historial directo",
         "impacto": "alto",
         "tipo": "h2h",
         "local": {
+          "nombre": "Pachuca",
+          "victorias": 1
+        },
+        "visitante": {
           "nombre": "Toluca",
           "victorias": 0
         },
-        "visitante": {
-          "nombre": "Pachuca",
-          "victorias": 2
-        },
+        "empates": 2,
         "partidos": [
+          {
+            "fecha": "2026-05-04",
+            "temporada": "Clausura - Quarterfinals",
+            "local": "Toluca",
+            "visitante": "Pachuca",
+            "goles_local": 0,
+            "goles_visitante": 1
+          },
           {
             "fecha": "2026-03-22",
             "temporada": "Torneo Clausura",
@@ -543,8 +149,8 @@
             "goles_visitante": 2
           }
         ],
-        "total": 2,
-        "interpretacion": "Pachuca lleva ventaja histórica: 2 victorias en 2 enfrentamientos recientes (1 del Clausura 2026, 1 del Apertura 2025). Toluca solo ha ganado 0 de esos cruces."
+        "total": 3,
+        "interpretacion": "Toluca lleva ventaja histórica: 0 victorias en 3 enfrentamientos recientes (2 del Clausura 2026, 1 del Apertura 2025). Pachuca ha ganado 1 y hubo 2 empate(s)."
       },
       {
         "factor": "Experiencia eliminatoria",
@@ -552,30 +158,2150 @@
         "tipo": "barras",
         "local": {
           "etiqueta": "Índice liguilla",
-          "valor": 0.81,
-          "nombre": "Toluca"
+          "valor": 0.28,
+          "nombre": "Pachuca"
         },
         "visitante": {
           "etiqueta": "Índice liguilla",
-          "valor": 0.28,
-          "nombre": "Pachuca"
+          "valor": 0.81,
+          "nombre": "Toluca"
         },
         "interpretacion": "Toluca acumula mayor experiencia en instancias eliminatorias (índice 0.81/1.0 vs 0.28/1.0 de Pachuca), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
       },
       {
-        "factor": "Ventaja de vuelta en casa",
-        "impacto": "medio",
-        "tipo": "vuelta",
-        "equipo_vuelta": "Pachuca",
+        "factor": "Contexto de serie",
+        "impacto": "alto",
+        "tipo": "serie",
+        "diferencia_global": 1,
+        "goles_local_en_ida": 1,
+        "goles_visitante_en_ida": 0,
+        "clasifica_empate_local": true,
+        "clasifica_empate_visitante": false,
         "local": {
-          "nombre": "Toluca",
-          "posicion": 5
+          "nombre": "Pachuca",
+          "estado": "ganando_global"
         },
         "visitante": {
-          "nombre": "Pachuca",
-          "posicion": 4
+          "nombre": "Toluca",
+          "estado": "perdiendo_global"
         },
-        "interpretacion": "Pachuca terminó mejor posicionado en la tabla (posición 4 vs 5), lo que le otorga el derecho de disputar la vuelta en casa. Esta ventaja táctica le permite a Pachuca especular en la ida y definir la serie ante su afición, mientras Toluca deberá resolver la eliminatoria jugando el partido decisivo de visitante."
+        "interpretacion": "Pachuca llega con ventaja en el marcador global: ganó la ida 1-0 y además tiene mejor posición en tabla. Le basta con no perder por 2 o más goles para clasificar. Puede especular tácticamente desde el inicio."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Pachuca",
+          "urgencia": "nula",
+          "goles_necesita": 0,
+          "bonus_aplicado": 0.0
+        },
+        "visitante": {
+          "nombre": "Toluca",
+          "urgencia": "alta",
+          "goles_necesita": 2,
+          "bonus_aplicado": 0.18
+        },
+        "interpretacion": "Toluca necesita 2 goles para clasificar. Deberá abrir el partido desde el inicio, lo que generará espacios para el rival y aumenta la probabilidad de un partido con más goles. Pachuca puede gestionar el partido sin arriesgar: clasifica incluso si la vuelta termina en empate. Probablemente opte por un bloque defensivo y contraataques."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "fase": "liguilla_vuelta",
+    "local": "Pumas UNAM",
+    "visitante": "América",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/227.png",
+    "prob_local": 0.3116943184885091,
+    "prob_empate": 0.3423865764425771,
+    "prob_visitante": 0.3459191050689138,
+    "fuerza_local": 0.5993670000000001,
+    "fuerza_visitante": 0.6241722352941176,
+    "diferencia": 0.02480523529411749,
+    "confianza": "ajustado",
+    "prediccion": "América",
+    "clasifica": "Pumas UNAM",
+    "contexto_serie": {
+      "diferencia_global": 0,
+      "goles_vuelta_local_en_ida": 3,
+      "goles_vuelta_visitante_en_ida": 3,
+      "estado_local": "global_empatado",
+      "estado_visitante": "global_empatado",
+      "goles_necesita_local": 0,
+      "goles_necesita_visitante": 1,
+      "clasifica_empate_local": true,
+      "clasifica_empate_visitante": false,
+      "urgencia_local": "nula",
+      "urgencia_visitante": "media",
+      "ventaja_tabla": "local"
+    },
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.82,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "valor": 0.49,
+          "ultimos_5": [
+            "D",
+            "L",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "América"
+        },
+        "interpretacion": "Pumas UNAM atraviesa su mejor racha del torneo: 4 victorias en los últimos 5 partidos (índice 0.82/1.0). América muestra mayor irregularidad con 2 victorias y 2 derrotas en ese mismo período (índice 0.49/1.0)."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.44,
+          "detalle": "8G / 6E / 4P",
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.38,
+          "detalle": "8G / 8E / 5P",
+          "nombre": "América"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Pumas UNAM gana el 44% en casa (8G/6E/4P) y América el 38% de visita (8G/8E/5P). Ninguno tiene ventaja situacional clara."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "goles_favor": 2.0,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "América",
+          "goles_favor": 1.18,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Pumas UNAM tiene mayor potencia ofensiva: 2.00 goles por partido contra 1.18 de América. En defensa la diferencia es menor: 1.00 recibidos por partido frente a 1.00."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.33,
+          "detalle": "6 empates en 17 partidos | 1D últimos 5",
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.38,
+          "detalle": "4 empates en 17 partidos | 1D últimos 5",
+          "nombre": "América"
+        },
+        "interpretacion": "Perfil empatador moderado: Pumas UNAM empata el 33% en casa (6 empates en 17 partidos) y América el 38% de visita (4 empates en 17 partidos). El empate es una opción real. En el contexto de esta serie, un empate en el partido beneficia a Pumas UNAM, que clasifica por tabla."
+      },
+      {
+        "factor": "Historial directo",
+        "impacto": "alto",
+        "tipo": "h2h",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "victorias": 1
+        },
+        "visitante": {
+          "nombre": "América",
+          "victorias": 1
+        },
+        "empates": 1,
+        "partidos": [
+          {
+            "fecha": "2026-05-03",
+            "temporada": "Clausura - Quarterfinals",
+            "local": "América",
+            "visitante": "Pumas UNAM",
+            "goles_local": 3,
+            "goles_visitante": 3
+          },
+          {
+            "fecha": "2026-03-22",
+            "temporada": "Torneo Clausura",
+            "local": "Pumas UNAM",
+            "visitante": "América",
+            "goles_local": 1,
+            "goles_visitante": 0
+          },
+          {
+            "fecha": "2025-09-28",
+            "temporada": "Torneo Apertura",
+            "local": "América",
+            "visitante": "Pumas UNAM",
+            "goles_local": 4,
+            "goles_visitante": 1
+          }
+        ],
+        "total": 3,
+        "interpretacion": "América lleva ventaja histórica: 1 victorias en 3 enfrentamientos recientes (2 del Clausura 2026, 1 del Apertura 2025). Pumas UNAM ha ganado 1 y hubo 1 empate(s)."
+      },
+      {
+        "factor": "Experiencia eliminatoria",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.31,
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.94,
+          "nombre": "América"
+        },
+        "interpretacion": "América acumula mayor experiencia en instancias eliminatorias (índice 0.94/1.0 vs 0.31/1.0 de Pumas UNAM), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
+      },
+      {
+        "factor": "Contexto de serie",
+        "impacto": "alto",
+        "tipo": "serie",
+        "diferencia_global": 0,
+        "goles_local_en_ida": 3,
+        "goles_visitante_en_ida": 3,
+        "clasifica_empate_local": true,
+        "clasifica_empate_visitante": false,
+        "local": {
+          "nombre": "Pumas UNAM",
+          "estado": "global_empatado"
+        },
+        "visitante": {
+          "nombre": "América",
+          "estado": "global_empatado"
+        },
+        "interpretacion": "Serie completamente abierta: empate global 3-3. Si la vuelta termina empatada, clasifica Pumas UNAM por mejor posición en tabla. América está obligado a ganar para avanzar."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "medio",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "urgencia": "nula",
+          "goles_necesita": 0,
+          "bonus_aplicado": 0.0
+        },
+        "visitante": {
+          "nombre": "América",
+          "urgencia": "media",
+          "goles_necesita": 1,
+          "bonus_aplicado": 0.1
+        },
+        "interpretacion": "América necesita 1 gol para avanzar. Atacará con orden, sin sacrificar la estructura defensiva. Pumas UNAM puede gestionar el partido sin arriesgar: clasifica incluso si la vuelta termina en empate. Probablemente opte por un bloque defensivo y contraataques."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "fase": "liguilla_vuelta",
+    "local": "Guadalajara",
+    "visitante": "Tigres UANL",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/232.png",
+    "prob_local": 0.16327584866869255,
+    "prob_empate": 0.329893767254902,
+    "prob_visitante": 0.5068303840764055,
+    "fuerza_local": 0.5995551764705882,
+    "fuerza_visitante": 0.8692540588235294,
+    "diferencia": 0.26969888235294115,
+    "confianza": "favorable",
+    "prediccion": "Tigres UANL",
+    "clasifica": "Tigres UANL",
+    "contexto_serie": {
+      "diferencia_global": -2,
+      "goles_vuelta_local_en_ida": 1,
+      "goles_vuelta_visitante_en_ida": 3,
+      "estado_local": "perdiendo_global",
+      "estado_visitante": "ganando_global",
+      "goles_necesita_local": 3,
+      "goles_necesita_visitante": 0,
+      "clasifica_empate_local": false,
+      "clasifica_empate_visitante": false,
+      "urgencia_local": "alta",
+      "urgencia_visitante": "alta",
+      "ventaja_tabla": "local"
+    },
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.34,
+          "ultimos_5": [
+            "L",
+            "D",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Guadalajara"
+        },
+        "visitante": {
+          "valor": 0.96,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Tigres UANL"
+        },
+        "interpretacion": "Tigres UANL llega en su mejor momento: 4 victorias en los últimos 5 partidos (índice 0.96/1.0). Guadalajara muestra irregularidad con 1 victorias y 2 derrotas recientes (índice 0.34/1.0)."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.61,
+          "detalle": "11G / 4E / 3P",
+          "nombre": "Guadalajara"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.33,
+          "detalle": "8G / 8E / 8P",
+          "nombre": "Tigres UANL"
+        },
+        "interpretacion": "Guadalajara es dominante en casa: 61% de victorias (11G/4E/3P). Tigres UANL ha respondido con 33% de efectividad como visitante (8G/8E/8P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Guadalajara",
+          "goles_favor": 1.94,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Tigres UANL",
+          "goles_favor": 1.65,
+          "goles_contra": 1.06
+        },
+        "interpretacion": "Producción ofensiva similar: Guadalajara promedia 1.94 goles por partido y Tigres UANL 1.65. En defensa, Guadalajara recibe 1.00 por partido frente a 1.06 del rival."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.22,
+          "detalle": "3 empates en 17 partidos | 2D últimos 5",
+          "nombre": "Guadalajara"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.33,
+          "detalle": "4 empates en 17 partidos | 1D últimos 5",
+          "nombre": "Tigres UANL"
+        },
+        "interpretacion": "Perfil empatador moderado: Guadalajara empata el 22% en casa (3 empates en 17 partidos) y Tigres UANL el 33% de visita (4 empates en 17 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Historial directo",
+        "impacto": "alto",
+        "tipo": "h2h",
+        "local": {
+          "nombre": "Guadalajara",
+          "victorias": 0
+        },
+        "visitante": {
+          "nombre": "Tigres UANL",
+          "victorias": 2
+        },
+        "empates": 1,
+        "partidos": [
+          {
+            "fecha": "2026-05-03",
+            "temporada": "Clausura - Quarterfinals",
+            "local": "Tigres UANL",
+            "visitante": "Guadalajara",
+            "goles_local": 3,
+            "goles_visitante": 1
+          },
+          {
+            "fecha": "2026-04-11",
+            "temporada": "Torneo Clausura",
+            "local": "Tigres UANL",
+            "visitante": "Guadalajara",
+            "goles_local": 4,
+            "goles_visitante": 1
+          },
+          {
+            "fecha": "2025-09-18",
+            "temporada": "Torneo Apertura",
+            "local": "Guadalajara",
+            "visitante": "Tigres UANL",
+            "goles_local": 0,
+            "goles_visitante": 0
+          }
+        ],
+        "total": 3,
+        "interpretacion": "Tigres UANL lleva ventaja histórica: 2 victorias en 3 enfrentamientos recientes (2 del Clausura 2026, 1 del Apertura 2025). Guadalajara ha ganado 0 y hubo 1 empate(s)."
+      },
+      {
+        "factor": "Experiencia eliminatoria",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.44,
+          "nombre": "Guadalajara"
+        },
+        "visitante": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.69,
+          "nombre": "Tigres UANL"
+        },
+        "interpretacion": "Tigres UANL acumula mayor experiencia en instancias eliminatorias (índice 0.69/1.0 vs 0.44/1.0 de Guadalajara), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
+      },
+      {
+        "factor": "Contexto de serie",
+        "impacto": "alto",
+        "tipo": "serie",
+        "diferencia_global": -2,
+        "goles_local_en_ida": 1,
+        "goles_visitante_en_ida": 3,
+        "clasifica_empate_local": false,
+        "clasifica_empate_visitante": false,
+        "local": {
+          "nombre": "Guadalajara",
+          "estado": "perdiendo_global"
+        },
+        "visitante": {
+          "nombre": "Tigres UANL",
+          "estado": "ganando_global"
+        },
+        "interpretacion": "Tigres UANL llega con ventaja en el marcador global: ganó la ida 3-1. Guadalajara necesita ganar por 3 o más goles para clasificar directamente, o por 2 para igualar el global — pero en ese caso perdería por tabla. Obligado a atacar desde el primer minuto."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Guadalajara",
+          "urgencia": "alta",
+          "goles_necesita": 3,
+          "bonus_aplicado": 0.18
+        },
+        "visitante": {
+          "nombre": "Tigres UANL",
+          "urgencia": "alta",
+          "goles_necesita": 0,
+          "bonus_aplicado": 0.18
+        },
+        "interpretacion": "Guadalajara necesita 3 goles para clasificar. Deberá abrir el partido desde el inicio, lo que generará espacios para el rival y aumenta la probabilidad de un partido con más goles. Tigres UANL necesita 0 goles para clasificar. Deberá abrir el partido desde el inicio, lo que generará espacios para el rival y aumenta la probabilidad de un partido con más goles."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "fase": "liguilla_vuelta",
+    "local": "Cruz Azul",
+    "visitante": "Atlas",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/216.png",
+    "prob_local": 0.44714185442886073,
+    "prob_empate": 0.3216402549197861,
+    "prob_visitante": 0.23121789065135318,
+    "fuerza_local": 0.6942203529411766,
+    "fuerza_visitante": 0.5371928823529413,
+    "diferencia": 0.1570274705882353,
+    "confianza": "favorable",
+    "prediccion": "Cruz Azul",
+    "clasifica": "Cruz Azul",
+    "contexto_serie": {
+      "diferencia_global": 1,
+      "goles_vuelta_local_en_ida": 3,
+      "goles_vuelta_visitante_en_ida": 2,
+      "estado_local": "ganando_global",
+      "estado_visitante": "perdiendo_global",
+      "goles_necesita_local": 0,
+      "goles_necesita_visitante": 2,
+      "clasifica_empate_local": true,
+      "clasifica_empate_visitante": false,
+      "urgencia_local": "nula",
+      "urgencia_visitante": "alta",
+      "ventaja_tabla": "local"
+    },
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.8,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "D",
+            "D"
+          ],
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "valor": 0.51,
+          "ultimos_5": [
+            "L",
+            "W",
+            "D",
+            "W",
+            "D"
+          ],
+          "nombre": "Atlas"
+        },
+        "interpretacion": "Cruz Azul llega con mejor momentum reciente: índice de forma 0.80/1.0 frente a 0.51/1.0 de Atlas. En los últimos 5 partidos, Cruz Azul acumula 2 victorias contra 2 del rival."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.64,
+          "detalle": "14G / 6E / 2P",
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.23,
+          "detalle": "4G / 3E / 10P",
+          "nombre": "Atlas"
+        },
+        "interpretacion": "Contraste situacional marcado: Cruz Azul gana el 64% de sus partidos en casa (14G/6E/2P como local), mientras Atlas apenas convierte el 24% de visita (4G/3E/10P como visitante). La localía es un factor determinante en este cruce."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Cruz Azul",
+          "goles_favor": 1.82,
+          "goles_contra": 1.06
+        },
+        "visitante": {
+          "nombre": "Atlas",
+          "goles_favor": 0.94,
+          "goles_contra": 1.06
+        },
+        "interpretacion": "Cruz Azul tiene mayor potencia ofensiva: 1.82 goles por partido contra 0.94 de Atlas. En defensa la diferencia es menor: 1.06 recibidos por partido frente a 1.06."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.27,
+          "detalle": "6 empates en 17 partidos | 3D últimos 5",
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.18,
+          "detalle": "5 empates en 17 partidos | 2D últimos 5",
+          "nombre": "Atlas"
+        },
+        "interpretacion": "Perfil empatador moderado: Cruz Azul empata el 27% en casa (6 empates en 17 partidos) y Atlas el 18% de visita (5 empates en 17 partidos). El empate es una opción real. En el contexto de esta serie, un empate en el partido beneficia a Cruz Azul, que clasifica por tabla."
+      },
+      {
+        "factor": "Historial directo",
+        "impacto": "medio",
+        "tipo": "h2h",
+        "local": {
+          "nombre": "Cruz Azul",
+          "victorias": 2
+        },
+        "visitante": {
+          "nombre": "Atlas",
+          "victorias": 0
+        },
+        "empates": 1,
+        "partidos": [
+          {
+            "fecha": "2026-05-03",
+            "temporada": "Clausura - Quarterfinals",
+            "local": "Atlas",
+            "visitante": "Cruz Azul",
+            "goles_local": 2,
+            "goles_visitante": 3
+          },
+          {
+            "fecha": "2026-01-14",
+            "temporada": "Torneo Clausura",
+            "local": "Cruz Azul",
+            "visitante": "Atlas",
+            "goles_local": 2,
+            "goles_visitante": 0
+          },
+          {
+            "fecha": "2025-07-20",
+            "temporada": "Torneo Apertura",
+            "local": "Atlas",
+            "visitante": "Cruz Azul",
+            "goles_local": 3,
+            "goles_visitante": 3
+          }
+        ],
+        "total": 3,
+        "interpretacion": "Cruz Azul domina el historial reciente con 2 victorias en 3 enfrentamientos (2 del Clausura 2026, 1 del Apertura 2025). Atlas ha ganado 0 y hubo 1 empate(s)."
+      },
+      {
+        "factor": "Experiencia eliminatoria",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.75,
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.13,
+          "nombre": "Atlas"
+        },
+        "interpretacion": "Cruz Azul acumula mayor experiencia en instancias eliminatorias (índice 0.75/1.0 vs 0.13/1.0 de Atlas), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
+      },
+      {
+        "factor": "Contexto de serie",
+        "impacto": "alto",
+        "tipo": "serie",
+        "diferencia_global": 1,
+        "goles_local_en_ida": 3,
+        "goles_visitante_en_ida": 2,
+        "clasifica_empate_local": true,
+        "clasifica_empate_visitante": false,
+        "local": {
+          "nombre": "Cruz Azul",
+          "estado": "ganando_global"
+        },
+        "visitante": {
+          "nombre": "Atlas",
+          "estado": "perdiendo_global"
+        },
+        "interpretacion": "Cruz Azul llega con ventaja en el marcador global: ganó la ida 3-2 y además tiene mejor posición en tabla. Le basta con no perder por 2 o más goles para clasificar. Puede especular tácticamente desde el inicio."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Cruz Azul",
+          "urgencia": "nula",
+          "goles_necesita": 0,
+          "bonus_aplicado": 0.0
+        },
+        "visitante": {
+          "nombre": "Atlas",
+          "urgencia": "alta",
+          "goles_necesita": 2,
+          "bonus_aplicado": 0.18
+        },
+        "interpretacion": "Atlas necesita 2 goles para clasificar. Deberá abrir el partido desde el inicio, lo que generará espacios para el rival y aumenta la probabilidad de un partido con más goles. Cruz Azul puede gestionar el partido sin arriesgar: clasifica incluso si la vuelta termina en empate. Probablemente opte por un bloque defensivo y contraataques."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "fase": "fase_regular",
+    "local": "Real Sociedad",
+    "visitante": "Betis",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/89.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/244.png",
+    "prob_local": 0.3131030944197986,
+    "prob_empate": 0.23245838823529413,
+    "prob_visitante": 0.4544385173449072,
+    "fuerza_local": 0.4697729411764706,
+    "fuerza_visitante": 0.5584705882352942,
+    "diferencia": 0.08869764705882355,
+    "confianza": "moderado",
+    "prediccion": "Betis",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "L",
+            "D",
+            "L",
+            "D",
+            "W"
+          ],
+          "nombre": "Real Sociedad"
+        },
+        "visitante": {
+          "valor": 0.73,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Betis"
+        },
+        "interpretacion": "Betis llega con mejor momentum: índice 0.73/1.0 frente a 0.60/1.0 de Real Sociedad. En los últimos 5, Betis acumula 3 victorias contra 1 del rival. Nota: Real Sociedad suma 2 empate(s) y Betis 1 empate(s) en sus últimos 5, lo que eleva la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.47,
+          "detalle": "8G / 4E / 5P",
+          "nombre": "Real Sociedad"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.35,
+          "detalle": "6G / 4E / 7P",
+          "nombre": "Betis"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Real Sociedad gana el 47% en casa (8G/4E/5P) y Betis el 35% de visita (6G/4E/7P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Real Sociedad",
+          "goles_favor": 1.53,
+          "goles_contra": 1.56
+        },
+        "visitante": {
+          "nombre": "Betis",
+          "goles_favor": 1.47,
+          "goles_contra": 1.24
+        },
+        "interpretacion": "Producción ofensiva similar: Real Sociedad promedia 1.53 goles/partido y Betis 1.47. En defensa: 1.56 vs 1.24."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.24,
+          "detalle": "10 empates en 34 partidos | 2D últimos 5",
+          "nombre": "Real Sociedad"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.24,
+          "detalle": "9 empates en 34 partidos | 1D últimos 5",
+          "nombre": "Betis"
+        },
+        "interpretacion": "Ambos equipos tienden a resolver sin empate: Real Sociedad empata el 24% en casa y Betis el 24% de visita. El partido debería tener un ganador."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 9,
+          "detalle": "Tendencia: -1",
+          "nombre": "Real Sociedad"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 6,
+          "detalle": "Tendencia: +1",
+          "nombre": "Betis"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Real Sociedad #9, Betis #6."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 0,
+          "detalle": "0 consecutivos",
+          "nombre": "Real Sociedad"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 4,
+          "detalle": "4 consecutivos",
+          "nombre": "Betis"
+        },
+        "interpretacion": "Betis llega con racha de 4 partidos sin perder, convirtiéndolo en rival incómodo. Real Sociedad lleva 0."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "fase": "fase_regular",
+    "local": "Barcelona",
+    "visitante": "Real Madrid",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/83.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/86.png",
+    "prob_local": 0.4870330493848415,
+    "prob_empate": 0.1833407529411765,
+    "prob_visitante": 0.32962619767398205,
+    "fuerza_local": 0.78816,
+    "fuerza_visitante": 0.695214117647059,
+    "diferencia": 0.09294588235294099,
+    "confianza": "moderado",
+    "prediccion": "Barcelona",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.87,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Barcelona"
+        },
+        "visitante": {
+          "valor": 0.8,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Real Madrid"
+        },
+        "interpretacion": "Barcelona atraviesa su mejor racha del torneo: 4 victorias en los últimos 5 partidos (índice 0.87/1.0). Real Madrid muestra mayor irregularidad con 4 victorias y 0 derrotas en ese mismo período (índice 0.80/1.0)."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.82,
+          "detalle": "14G / 2E / 1P",
+          "nombre": "Barcelona"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.59,
+          "detalle": "10G / 3E / 4P",
+          "nombre": "Real Madrid"
+        },
+        "interpretacion": "Barcelona es dominante en casa: 82% de victorias (14G/2E/1P). Real Madrid respondió con 59% de efectividad de visita (10G/3E/4P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Barcelona",
+          "goles_favor": 2.62,
+          "goles_contra": 0.94
+        },
+        "visitante": {
+          "nombre": "Real Madrid",
+          "goles_favor": 2.18,
+          "goles_contra": 0.91
+        },
+        "interpretacion": "Barcelona tiene mayor potencia ofensiva: 2.62 goles/partido contra 2.18 de Real Madrid. En defensa: 0.94 vs 0.91."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.12,
+          "detalle": "5 empates en 34 partidos | 1D últimos 5",
+          "nombre": "Barcelona"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.18,
+          "detalle": "6 empates en 34 partidos | 1D últimos 5",
+          "nombre": "Real Madrid"
+        },
+        "interpretacion": "Ambos equipos tienden a resolver sin empate: Barcelona empata el 12% en casa y Real Madrid el 18% de visita. El partido debería tener un ganador."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 1,
+          "detalle": "Tendencia: 0",
+          "nombre": "Barcelona"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 2,
+          "detalle": "Tendencia: 0",
+          "nombre": "Real Madrid"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Barcelona #1, Real Madrid #2."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 5,
+          "detalle": "5 consecutivos",
+          "nombre": "Barcelona"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 5,
+          "detalle": "5 consecutivos",
+          "nombre": "Real Madrid"
+        },
+        "interpretacion": "Ambos llegan con rachas similares: Barcelona con 5 y Real Madrid con 5 partidos sin perder."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "fase": "fase_regular",
+    "local": "Fulham",
+    "visitante": "Bournemouth",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/370.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/349.png",
+    "prob_local": 0.29508773619350953,
+    "prob_empate": 0.24819576732026147,
+    "prob_visitante": 0.45671649648622903,
+    "fuerza_local": 0.4265411764705883,
+    "fuerza_visitante": 0.5305388235294118,
+    "diferencia": 0.10399764705882353,
+    "confianza": "moderado",
+    "prediccion": "Bournemouth",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "L",
+            "W",
+            "D",
+            "L",
+            "W"
+          ],
+          "nombre": "Fulham"
+        },
+        "visitante": {
+          "valor": 0.67,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Bournemouth"
+        },
+        "interpretacion": "Bournemouth llega con mejor momentum: índice 0.67/1.0 frente a 0.47/1.0 de Fulham. En los últimos 5, Bournemouth acumula 3 victorias contra 2 del rival."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.44,
+          "detalle": "8G / 5E / 5P",
+          "nombre": "Fulham"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.39,
+          "detalle": "7G / 5E / 6P",
+          "nombre": "Bournemouth"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Fulham gana el 44% en casa (8G/5E/5P) y Bournemouth el 39% de visita (7G/5E/6P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Fulham",
+          "goles_favor": 1.42,
+          "goles_contra": 1.39
+        },
+        "visitante": {
+          "nombre": "Bournemouth",
+          "goles_favor": 1.53,
+          "goles_contra": 1.19
+        },
+        "interpretacion": "Producción ofensiva similar: Fulham promedia 1.42 goles/partido y Bournemouth 1.53. En defensa: 1.39 vs 1.19."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.28,
+          "detalle": "8 empates en 36 partidos | 1D últimos 5",
+          "nombre": "Fulham"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.28,
+          "detalle": "10 empates en 36 partidos | 1D últimos 5",
+          "nombre": "Bournemouth"
+        },
+        "interpretacion": "Perfil empatador moderado: Fulham empata el 28% en casa (8 empates en 36 partidos) y Bournemouth el 28% de visita (10 empates en 36 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 11,
+          "detalle": "Tendencia: +1",
+          "nombre": "Fulham"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 8,
+          "detalle": "Tendencia: +1",
+          "nombre": "Bournemouth"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Fulham #11, Bournemouth #8."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 0,
+          "detalle": "0 consecutivos",
+          "nombre": "Fulham"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 3,
+          "detalle": "3 consecutivos",
+          "nombre": "Bournemouth"
+        },
+        "interpretacion": "Ningún equipo llega con racha notable: Fulham lleva 0 partido(s) sin perder y Bournemouth 3."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "fase": "fase_regular",
+    "local": "Crystal Palace",
+    "visitante": "Everton",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/384.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/368.png",
+    "prob_local": 0.424091190176197,
+    "prob_empate": 0.3050584784313725,
+    "prob_visitante": 0.2708503313924304,
+    "fuerza_local": 0.4330352941176472,
+    "fuerza_visitante": 0.32627764705882345,
+    "diferencia": 0.10675764705882373,
+    "confianza": "moderado",
+    "prediccion": "Crystal Palace",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "D"
+          ],
+          "nombre": "Crystal Palace"
+        },
+        "visitante": {
+          "valor": 0.4,
+          "ultimos_5": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "D"
+          ],
+          "nombre": "Everton"
+        },
+        "interpretacion": "Crystal Palace llega con mejor momentum reciente: índice 0.53/1.0 frente a 0.40/1.0 de Everton. En los últimos 5, Crystal Palace acumula 2 victorias contra 1 del rival. Nota: Crystal Palace suma 2 empate(s) y Everton 2 empate(s) en sus últimos 5, lo que eleva la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.33,
+          "detalle": "6G / 6E / 6P",
+          "nombre": "Crystal Palace"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.22,
+          "detalle": "4G / 4E / 10P",
+          "nombre": "Everton"
+        },
+        "interpretacion": "Everton tiene dificultades fuera de casa: 22% de victorias como visitante (4G/4E/10P). Crystal Palace gana el 33% en casa (6G/6E/6P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Crystal Palace",
+          "goles_favor": 1.28,
+          "goles_contra": 1.36
+        },
+        "visitante": {
+          "nombre": "Everton",
+          "goles_favor": 1.08,
+          "goles_contra": 1.5
+        },
+        "interpretacion": "Producción ofensiva similar: Crystal Palace promedia 1.28 goles/partido y Everton 1.08. En defensa: 1.36 vs 1.50."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.33,
+          "detalle": "11 empates en 36 partidos | 2D últimos 5",
+          "nombre": "Crystal Palace"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.22,
+          "detalle": "9 empates en 36 partidos | 2D últimos 5",
+          "nombre": "Everton"
+        },
+        "interpretacion": "Perfil empatador moderado: Crystal Palace empata el 33% en casa (11 empates en 36 partidos) y Everton el 22% de visita (9 empates en 36 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 12,
+          "detalle": "Tendencia: +1",
+          "nombre": "Crystal Palace"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 15,
+          "detalle": "Tendencia: 0",
+          "nombre": "Everton"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Crystal Palace #12, Everton #15."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 2,
+          "detalle": "2 consecutivos",
+          "nombre": "Crystal Palace"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 1,
+          "detalle": "1 consecutivos",
+          "nombre": "Everton"
+        },
+        "interpretacion": "Ningún equipo llega con racha notable: Crystal Palace lleva 2 partido(s) sin perder y Everton 1."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "fase": "fase_regular",
+    "local": "Stuttgart",
+    "visitante": "Leverkusen",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/134.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/131.png",
+    "prob_local": 0.34404457969628305,
+    "prob_empate": 0.2351861411764706,
+    "prob_visitante": 0.4207692791272464,
+    "fuerza_local": 0.6933023529411766,
+    "fuerza_visitante": 0.7412341176470589,
+    "diferencia": 0.04793176470588234,
+    "confianza": "ajustado",
+    "prediccion": "Leverkusen",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.8,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Stuttgart"
+        },
+        "visitante": {
+          "valor": 0.87,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Leverkusen"
+        },
+        "interpretacion": "Leverkusen llega en su mejor momento: 4 victorias en los últimos 5 partidos (índice 0.87/1.0). Stuttgart muestra irregularidad con 4 victorias y 0 derrotas recientes (índice 0.80/1.0)."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.69,
+          "detalle": "11G / 2E / 3P",
+          "nombre": "Stuttgart"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.69,
+          "detalle": "11G / 4E / 1P",
+          "nombre": "Leverkusen"
+        },
+        "interpretacion": "Stuttgart es dominante en casa: 69% de victorias (11G/2E/3P). Leverkusen respondió con 69% de efectividad de visita (11G/4E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Stuttgart",
+          "goles_favor": 2.0,
+          "goles_contra": 1.22
+        },
+        "visitante": {
+          "nombre": "Leverkusen",
+          "goles_favor": 2.31,
+          "goles_contra": 0.94
+        },
+        "interpretacion": "Producción ofensiva similar: Stuttgart promedia 2.00 goles/partido y Leverkusen 2.31. En defensa: 1.22 vs 0.94."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.12,
+          "detalle": "7 empates en 32 partidos | 1D últimos 5",
+          "nombre": "Stuttgart"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.25,
+          "detalle": "7 empates en 32 partidos | 1D últimos 5",
+          "nombre": "Leverkusen"
+        },
+        "interpretacion": "Perfil empatador moderado: Stuttgart empata el 12% en casa (7 empates en 32 partidos) y Leverkusen el 25% de visita (7 empates en 32 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 4,
+          "detalle": "Tendencia: +1",
+          "nombre": "Stuttgart"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 2,
+          "detalle": "Tendencia: 0",
+          "nombre": "Leverkusen"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Stuttgart #4, Leverkusen #2."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 5,
+          "detalle": "5 consecutivos",
+          "nombre": "Stuttgart"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 5,
+          "detalle": "5 consecutivos",
+          "nombre": "Leverkusen"
+        },
+        "interpretacion": "Ambos llegan con rachas similares: Stuttgart con 5 y Leverkusen con 5 partidos sin perder."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "fase": "fase_regular",
+    "local": "Auxerre",
+    "visitante": "Niza",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/307.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2502.png",
+    "prob_local": 0.2979686274586565,
+    "prob_empate": 0.2833359529411765,
+    "prob_visitante": 0.418695419600167,
+    "fuerza_local": 0.45568705882352945,
+    "fuerza_visitante": 0.5366764705882353,
+    "diferencia": 0.08098941176470587,
+    "confianza": "moderado",
+    "prediccion": "Niza",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "D",
+            "W"
+          ],
+          "nombre": "Auxerre"
+        },
+        "visitante": {
+          "valor": 0.67,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "L",
+            "W"
+          ],
+          "nombre": "Niza"
+        },
+        "interpretacion": "Niza llega con mejor momentum: índice 0.67/1.0 frente a 0.53/1.0 de Auxerre. En los últimos 5, Niza acumula 3 victorias contra 2 del rival. Nota: Auxerre suma 2 empate(s) y Niza 1 empate(s) en sus últimos 5, lo que eleva la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.41,
+          "detalle": "7G / 5E / 5P",
+          "nombre": "Auxerre"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.38,
+          "detalle": "6G / 5E / 5P",
+          "nombre": "Niza"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Auxerre gana el 41% en casa (7G/5E/5P) y Niza el 38% de visita (6G/5E/5P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Auxerre",
+          "goles_favor": 1.24,
+          "goles_contra": 1.42
+        },
+        "visitante": {
+          "nombre": "Niza",
+          "goles_favor": 1.64,
+          "goles_contra": 1.18
+        },
+        "interpretacion": "Producción ofensiva similar: Auxerre promedia 1.24 goles/partido y Niza 1.64. En defensa: 1.42 vs 1.18."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.29,
+          "detalle": "9 empates en 33 partidos | 2D últimos 5",
+          "nombre": "Auxerre"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.31,
+          "detalle": "8 empates en 33 partidos | 1D últimos 5",
+          "nombre": "Niza"
+        },
+        "interpretacion": "Perfil empatador moderado: Auxerre empata el 29% en casa (9 empates en 33 partidos) y Niza el 31% de visita (8 empates en 33 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 10,
+          "detalle": "Tendencia: +1",
+          "nombre": "Auxerre"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 5,
+          "detalle": "Tendencia: -1",
+          "nombre": "Niza"
+        },
+        "interpretacion": "Niza está 5 posiciones arriba en la tabla (#5 vs #10)."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 2,
+          "detalle": "2 consecutivos",
+          "nombre": "Auxerre"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 3,
+          "detalle": "3 consecutivos",
+          "nombre": "Niza"
+        },
+        "interpretacion": "Ningún equipo llega con racha notable: Auxerre lleva 2 partido(s) sin perder y Niza 3."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "fase": "fase_regular",
+    "local": "Groningen",
+    "visitante": "Nijmegen",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/679.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/1911.png",
+    "prob_local": 0.4005228734609316,
+    "prob_empate": 0.2472467411764706,
+    "prob_visitante": 0.35223038536259776,
+    "fuerza_local": 0.45061882352941174,
+    "fuerza_visitante": 0.4200270588235294,
+    "diferencia": 0.03059176470588232,
+    "confianza": "ajustado",
+    "prediccion": "Groningen",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "L",
+            "W",
+            "D",
+            "L",
+            "W"
+          ],
+          "nombre": "Groningen"
+        },
+        "visitante": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "D"
+          ],
+          "nombre": "Nijmegen"
+        },
+        "interpretacion": "Nijmegen llega con mejor momentum: índice 0.53/1.0 frente a 0.47/1.0 de Groningen. En los últimos 5, Nijmegen acumula 2 victorias contra 2 del rival. Nota: Groningen suma 1 empate(s) y Nijmegen 2 empate(s) en sus últimos 5, lo que eleva la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.5,
+          "detalle": "8G / 4E / 4P",
+          "nombre": "Groningen"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.25,
+          "detalle": "4G / 4E / 8P",
+          "nombre": "Nijmegen"
+        },
+        "interpretacion": "Nijmegen tiene dificultades fuera de casa: 25% de victorias como visitante (4G/4E/8P). Groningen gana el 50% en casa (8G/4E/4P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Groningen",
+          "goles_favor": 1.41,
+          "goles_contra": 1.44
+        },
+        "visitante": {
+          "nombre": "Nijmegen",
+          "goles_favor": 1.47,
+          "goles_contra": 1.53
+        },
+        "interpretacion": "Producción ofensiva similar: Groningen promedia 1.41 goles/partido y Nijmegen 1.47. En defensa: 1.44 vs 1.53."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.25,
+          "detalle": "8 empates en 32 partidos | 1D últimos 5",
+          "nombre": "Groningen"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.25,
+          "detalle": "9 empates en 32 partidos | 2D últimos 5",
+          "nombre": "Nijmegen"
+        },
+        "interpretacion": "Perfil empatador moderado: Groningen empata el 25% en casa (8 empates en 32 partidos) y Nijmegen el 25% de visita (9 empates en 32 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 8,
+          "detalle": "Tendencia: +1",
+          "nombre": "Groningen"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 10,
+          "detalle": "Tendencia: 0",
+          "nombre": "Nijmegen"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Groningen #8, Nijmegen #10."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 0,
+          "detalle": "0 consecutivos",
+          "nombre": "Groningen"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 2,
+          "detalle": "2 consecutivos",
+          "nombre": "Nijmegen"
+        },
+        "interpretacion": "Ningún equipo llega con racha notable: Groningen lleva 0 partido(s) sin perder y Nijmegen 2."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "fase": "fase_regular",
+    "local": "Atlanta",
+    "visitante": "L.A. Galaxy",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/18418.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/187.png",
+    "prob_local": 0.5075788146115306,
+    "prob_empate": 0.23541661176470588,
+    "prob_visitante": 0.25700457362376344,
+    "fuerza_local": 0.4125811764705883,
+    "fuerza_visitante": 0.2505435294117647,
+    "diferencia": 0.16203764705882356,
+    "confianza": "favorable",
+    "prediccion": "Atlanta",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.4,
+          "ultimos_5": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "D"
+          ],
+          "nombre": "Atlanta"
+        },
+        "visitante": {
+          "valor": 0.27,
+          "ultimos_5": [
+            "L",
+            "L",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "LA Galaxy"
+        },
+        "interpretacion": "Atlanta llega con mejor momentum reciente: índice 0.40/1.0 frente a 0.27/1.0 de LA Galaxy. En los últimos 5, Atlanta acumula 1 victorias contra 1 del rival. Nota: Atlanta suma 2 empate(s) y LA Galaxy 1 empate(s) en sus últimos 5, lo que eleva la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.5,
+          "detalle": "4G / 2E / 2P",
+          "nombre": "Atlanta"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.14,
+          "detalle": "1G / 1E / 5P",
+          "nombre": "LA Galaxy"
+        },
+        "interpretacion": "LA Galaxy tiene dificultades fuera de casa: 14% de victorias como visitante (1G/1E/5P). Atlanta gana el 50% en casa (4G/2E/2P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Atlanta",
+          "goles_favor": 1.47,
+          "goles_contra": 1.6
+        },
+        "visitante": {
+          "nombre": "LA Galaxy",
+          "goles_favor": 1.2,
+          "goles_contra": 1.93
+        },
+        "interpretacion": "Producción ofensiva similar: Atlanta promedia 1.47 goles/partido y LA Galaxy 1.20. En defensa: 1.60 vs 1.93."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.25,
+          "detalle": "4 empates en 15 partidos | 2D últimos 5",
+          "nombre": "Atlanta"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.14,
+          "detalle": "4 empates en 15 partidos | 1D últimos 5",
+          "nombre": "LA Galaxy"
+        },
+        "interpretacion": "Perfil empatador moderado: Atlanta empata el 25% en casa (4 empates en 15 partidos) y LA Galaxy el 14% de visita (4 empates en 15 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 11,
+          "detalle": "Tendencia: -1",
+          "nombre": "Atlanta"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 14,
+          "detalle": "Tendencia: 0",
+          "nombre": "LA Galaxy"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Atlanta #11, LA Galaxy #14."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 1,
+          "detalle": "1 consecutivos",
+          "nombre": "Atlanta"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 0,
+          "detalle": "0 consecutivos",
+          "nombre": "LA Galaxy"
+        },
+        "interpretacion": "Ningún equipo llega con racha notable: Atlanta lleva 1 partido(s) sin perder y LA Galaxy 0."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "fase": "fase_regular",
+    "local": "Corinthians",
+    "visitante": "Sao Paulo",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/874.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2026.png",
+    "prob_local": 0.32422872882323156,
+    "prob_empate": 0.39863685882352945,
+    "prob_visitante": 0.27713441235323905,
+    "fuerza_local": 0.5652588235294119,
+    "fuerza_visitante": 0.5278905882352941,
+    "diferencia": 0.03736823529411781,
+    "confianza": "ajustado",
+    "prediccion": "Empate",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Corinthians"
+        },
+        "visitante": {
+          "valor": 0.73,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Sao Paulo"
+        },
+        "interpretacion": "Sao Paulo llega con mejor momentum: índice 0.73/1.0 frente a 0.60/1.0 de Corinthians. En los últimos 5, Sao Paulo acumula 3 victorias contra 3 del rival."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.67,
+          "detalle": "4G / 1E / 1P",
+          "nombre": "Corinthians"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.17,
+          "detalle": "1G / 3E / 2P",
+          "nombre": "Sao Paulo"
+        },
+        "interpretacion": "Contraste situacional marcado: Corinthians gana el 67% en casa (4G/1E/1P), mientras Sao Paulo apenas convierte el 17% de visita (1G/3E/2P). La localía es determinante en este cruce."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Corinthians",
+          "goles_favor": 1.25,
+          "goles_contra": 1.08
+        },
+        "visitante": {
+          "nombre": "Sao Paulo",
+          "goles_favor": 1.42,
+          "goles_contra": 0.92
+        },
+        "interpretacion": "Producción ofensiva similar: Corinthians promedia 1.25 goles/partido y Sao Paulo 1.42. En defensa: 1.08 vs 0.92."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.17,
+          "detalle": "3 empates en 12 partidos | 1D últimos 5",
+          "nombre": "Corinthians"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.5,
+          "detalle": "5 empates en 12 partidos | 1D últimos 5",
+          "nombre": "Sao Paulo"
+        },
+        "interpretacion": "Sao Paulo es un equipo marcadamente empatador: empata el 50% de sus partidos en su rol situacional. En los últimos 5, ambos suman 2 empate(s), lo que refuerza la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 8,
+          "detalle": "Tendencia: +1",
+          "nombre": "Corinthians"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 6,
+          "detalle": "Tendencia: +1",
+          "nombre": "Sao Paulo"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Corinthians #8, Sao Paulo #6."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 3,
+          "detalle": "3 consecutivos",
+          "nombre": "Corinthians"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 4,
+          "detalle": "4 consecutivos",
+          "nombre": "Sao Paulo"
+        },
+        "interpretacion": "Sao Paulo llega con racha de 4 partidos sin perder, convirtiéndolo en rival incómodo. Corinthians lleva 3."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "fase": "fase_regular",
+    "local": "Gent",
+    "visitante": "Anderlecht",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/641.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/266.png",
+    "prob_local": 0.29552373145263183,
+    "prob_empate": 0.24929671393188857,
+    "prob_visitante": 0.4551795546154796,
+    "fuerza_local": 0.49974470588235304,
+    "fuerza_visitante": 0.6025882352941176,
+    "diferencia": 0.10284352941176461,
+    "confianza": "moderado",
+    "prediccion": "Anderlecht",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "D",
+            "L",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Gent"
+        },
+        "visitante": {
+          "valor": 0.73,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Anderlecht"
+        },
+        "interpretacion": "Anderlecht llega con mejor momentum: índice 0.73/1.0 frente a 0.53/1.0 de Gent. En los últimos 5, Anderlecht acumula 3 victorias contra 2 del rival. Nota: Gent suma 2 empate(s) y Anderlecht 1 empate(s) en sus últimos 5, lo que eleva la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.53,
+          "detalle": "10G / 5E / 4P",
+          "nombre": "Gent"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.42,
+          "detalle": "8G / 5E / 6P",
+          "nombre": "Anderlecht"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Gent gana el 53% en casa (10G/5E/4P) y Anderlecht el 42% de visita (8G/5E/6P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Gent",
+          "goles_favor": 1.47,
+          "goles_contra": 1.29
+        },
+        "visitante": {
+          "nombre": "Anderlecht",
+          "goles_favor": 1.71,
+          "goles_contra": 0.97
+        },
+        "interpretacion": "Producción ofensiva similar: Gent promedia 1.47 goles/partido y Anderlecht 1.71. En defensa: 1.29 vs 0.97."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.26,
+          "detalle": "10 empates en 38 partidos | 2D últimos 5",
+          "nombre": "Gent"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.26,
+          "detalle": "10 empates en 38 partidos | 1D últimos 5",
+          "nombre": "Anderlecht"
+        },
+        "interpretacion": "Perfil empatador moderado: Gent empata el 26% en casa (10 empates en 38 partidos) y Anderlecht el 26% de visita (10 empates en 38 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 7,
+          "detalle": "Tendencia: -1",
+          "nombre": "Gent"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 3,
+          "detalle": "Tendencia: 0",
+          "nombre": "Anderlecht"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Gent #7, Anderlecht #3."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 2,
+          "detalle": "2 consecutivos",
+          "nombre": "Gent"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 4,
+          "detalle": "4 consecutivos",
+          "nombre": "Anderlecht"
+        },
+        "interpretacion": "Anderlecht llega con racha de 4 partidos sin perder, convirtiéndolo en rival incómodo. Gent lleva 2."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "fase": "fase_regular",
+    "local": "Celtic",
+    "visitante": "Rangers",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/256.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/257.png",
+    "prob_local": 0.5313786993855756,
+    "prob_empate": 0.19928137585139322,
+    "prob_visitante": 0.26933992476303126,
+    "fuerza_local": 0.79348,
+    "fuerza_visitante": 0.631694117647059,
+    "diferencia": 0.161785882352941,
+    "confianza": "favorable",
+    "prediccion": "Celtic",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.87,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Celtic"
+        },
+        "visitante": {
+          "valor": 0.67,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Rangers"
+        },
+        "interpretacion": "Celtic atraviesa su mejor racha del torneo: 4 victorias en los últimos 5 partidos (índice 0.87/1.0). Rangers muestra mayor irregularidad con 3 victorias y 1 derrotas en ese mismo período (índice 0.67/1.0)."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.84,
+          "detalle": "16G / 2E / 1P",
+          "nombre": "Celtic"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.58,
+          "detalle": "11G / 4E / 4P",
+          "nombre": "Rangers"
+        },
+        "interpretacion": "Celtic es dominante en casa: 84% de victorias (16G/2E/1P). Rangers respondió con 58% de efectividad de visita (11G/4E/4P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Celtic",
+          "goles_favor": 2.5,
+          "goles_contra": 0.79
+        },
+        "visitante": {
+          "nombre": "Rangers",
+          "goles_favor": 2.16,
+          "goles_contra": 0.92
+        },
+        "interpretacion": "Producción ofensiva similar: Celtic promedia 2.50 goles/partido y Rangers 2.16. En defensa: 0.79 vs 0.92."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.11,
+          "detalle": "5 empates en 38 partidos | 1D últimos 5",
+          "nombre": "Celtic"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.21,
+          "detalle": "7 empates en 38 partidos | 1D últimos 5",
+          "nombre": "Rangers"
+        },
+        "interpretacion": "Ambos equipos tienden a resolver sin empate: Celtic empata el 11% en casa y Rangers el 21% de visita. El partido debería tener un ganador."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 1,
+          "detalle": "Tendencia: 0",
+          "nombre": "Celtic"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 2,
+          "detalle": "Tendencia: 0",
+          "nombre": "Rangers"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Celtic #1, Rangers #2."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 5,
+          "detalle": "5 consecutivos",
+          "nombre": "Celtic"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 3,
+          "detalle": "3 consecutivos",
+          "nombre": "Rangers"
+        },
+        "interpretacion": "Celtic lleva 5 partidos consecutivos sin perder, reflejo de estabilidad y confianza. Rangers lleva 3."
       }
     ]
   }

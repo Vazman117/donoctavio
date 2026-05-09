@@ -28,8 +28,8 @@ CRUCES_LIGUILLA = [
 
 # Temporadas a incluir (seasonType ids de ESPN)
 TEMPORADAS = {
-    "apertura_2025":          ["1", "5"],   # regular + liguilla
-    "clausura_2026":          ["8"],        # regular (liguilla se agrega cuando exista)
+    "apertura_2025":          ["1", "5", "6", "7"],   # regular + liguilla
+    "clausura_2026":          ["8", "12", "13", "14"],        # regular (liguilla se agrega cuando exista)
 }
 
 

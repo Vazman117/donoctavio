@@ -446,8 +446,25 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         h2h    = resultado["h2h_local"]
         n_c    = resultado["n_h2h_clausura"]
         n_a    = resultado["n_h2h_apertura"]
-        wins_h2h_local = round(h2h * n_total)
-        wins_h2h_visit = n_total - wins_h2h_local
+        # Por esto:
+        wins_h2h_local  = 0
+        wins_h2h_visit  = 0
+        empates_h2h     = 0
+        for p in resultado["partidos_h2h"]:
+            gl = p["goles_local"]
+            gv = p["goles_visitante"]
+            if gl == gv:
+                empates_h2h += 1
+            elif normalizar_nombre(p["local"]) == normalizar_nombre(nombre_local):
+                if gl > gv:
+                    wins_h2h_local += 1
+                else:
+                    wins_h2h_visit += 1
+            else:
+                if gv > gl:
+                    wins_h2h_local += 1
+                else:
+                    wins_h2h_visit += 1
 
         if h2h >= 0.60:
             interp = (f"{nombre_local} domina el historial reciente con {wins_h2h_local} victorias "

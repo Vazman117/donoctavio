@@ -1,0 +1,586 @@
+[
+  {
+    "id": 1,
+    "fase": "liguilla_ida",
+    "local": "América",
+    "visitante": "Pumas UNAM",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/227.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "prob_local": 0.26946500995740746,
+    "prob_empate": 0.15792184388310151,
+    "prob_visitante": 0.572613146159491,
+    "fuerza_local": 0.47740623529411774,
+    "fuerza_visitante": 0.705075,
+    "diferencia": 0.22766876470588226,
+    "confianza": "favorable",
+    "prediccion": "Pumas UNAM",
+    "resultado": "Empate",
+    "vuelta_en_casa": "visitante",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.55,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "D",
+            "D"
+          ],
+          "nombre": "America"
+        },
+        "visitante": {
+          "valor": 0.96,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "Pumas UNAM llega en su mejor momento: 4 victorias en los últimos 5 partidos (índice 0.96/1.0). America muestra irregularidad con 2 victorias y 1 derrotas recientes (índice 0.55/1.0)."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.44,
+          "detalle": "4G / 1E / 4P",
+          "nombre": "America"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.62,
+          "detalle": "5G / 3E / 0P",
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: America gana el 44% en casa (4G/1E/4P) y Pumas UNAM el 62% de visita (5G/3E/0P). Ninguno tiene ventaja situacional clara."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "America",
+          "goles_favor": 1.18,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Pumas UNAM",
+          "goles_favor": 2.0,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Pumas UNAM genera más peligro ofensivo: 2.00 goles por partido frente a 1.18 de America. En defensa, America recibe 1.00 goles por partido y Pumas UNAM 1.00."
+      },
+      {
+        "factor": "Historial directo",
+        "impacto": "medio",
+        "tipo": "h2h",
+        "local": {
+          "nombre": "America",
+          "victorias": 1
+        },
+        "visitante": {
+          "nombre": "Pumas UNAM",
+          "victorias": 1
+        },
+        "partidos": [
+          {
+            "fecha": "2026-03-22",
+            "temporada": "Torneo Clausura",
+            "local": "Pumas UNAM",
+            "visitante": "América",
+            "goles_local": 1,
+            "goles_visitante": 0
+          },
+          {
+            "fecha": "2025-09-28",
+            "temporada": "Torneo Apertura",
+            "local": "América",
+            "visitante": "Pumas UNAM",
+            "goles_local": 4,
+            "goles_visitante": 1
+          }
+        ],
+        "total": 2,
+        "interpretacion": "Pumas UNAM lleva ventaja histórica: 1 victorias en 2 enfrentamientos recientes (1 del Clausura 2026, 1 del Apertura 2025). America solo ha ganado 1 de esos cruces."
+      },
+      {
+        "factor": "Experiencia eliminatoria",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.94,
+          "nombre": "America"
+        },
+        "visitante": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.31,
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "America acumula mayor experiencia en instancias eliminatorias (índice 0.94/1.0 vs 0.31/1.0 de Pumas UNAM), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "Pumas UNAM",
+        "local": {
+          "nombre": "America",
+          "posicion": 8
+        },
+        "visitante": {
+          "nombre": "Pumas UNAM",
+          "posicion": 1
+        },
+        "interpretacion": "Pumas UNAM terminó mejor posicionado en la tabla (posición 1 vs 8), lo que le otorga el derecho de disputar la vuelta en casa. Esta ventaja táctica le permite a Pumas UNAM especular en la ida y definir la serie ante su afición, mientras America deberá resolver la eliminatoria jugando el partido decisivo de visitante."
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "fase": "liguilla_ida",
+    "local": "Atlas",
+    "visitante": "Cruz Azul",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/216.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+    "prob_local": 0.27891808561011866,
+    "prob_empate": 0.12838098246837912,
+    "prob_visitante": 0.5927009319215023,
+    "fuerza_local": 0.3769548823529412,
+    "fuerza_visitante": 0.6857163529411765,
+    "diferencia": 0.3087614705882353,
+    "confianza": "favorable",
+    "prediccion": "Cruz Azul",
+    "vuelta_en_casa": "visitante",
+    "resultado": "Cruz Azul",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.73,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "D",
+            "L"
+          ],
+          "nombre": "Atlas"
+        },
+        "visitante": {
+          "valor": 0.64,
+          "ultimos_5": [
+            "W",
+            "D",
+            "D",
+            "D",
+            "L"
+          ],
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Atlas llega con mejor momentum reciente: índice de forma 0.73/1.0 frente a 0.64/1.0 de Cruz Azul. En los últimos 5 partidos, Atlas acumula 2 victorias contra 1 del rival."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.44,
+          "detalle": "4G / 4E / 1P",
+          "nombre": "Atlas"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.33,
+          "detalle": "3G / 5E / 1P",
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Atlas gana el 44% en casa (4G/4E/1P) y Cruz Azul el 33% de visita (3G/5E/1P). Ninguno tiene ventaja situacional clara."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Atlas",
+          "goles_favor": 0.94,
+          "goles_contra": 1.06
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "goles_favor": 1.82,
+          "goles_contra": 1.06
+        },
+        "interpretacion": "Cruz Azul genera más peligro ofensivo: 1.82 goles por partido frente a 0.94 de Atlas. En defensa, Atlas recibe 1.06 goles por partido y Cruz Azul 1.06."
+      },
+      {
+        "factor": "Historial directo",
+        "impacto": "alto",
+        "tipo": "h2h",
+        "local": {
+          "nombre": "Atlas",
+          "victorias": 0
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "victorias": 2
+        },
+        "partidos": [
+          {
+            "fecha": "2026-01-14",
+            "temporada": "Torneo Clausura",
+            "local": "Cruz Azul",
+            "visitante": "Atlas",
+            "goles_local": 2,
+            "goles_visitante": 0
+          },
+          {
+            "fecha": "2025-07-20",
+            "temporada": "Torneo Apertura",
+            "local": "Atlas",
+            "visitante": "Cruz Azul",
+            "goles_local": 3,
+            "goles_visitante": 3
+          }
+        ],
+        "total": 2,
+        "interpretacion": "Cruz Azul lleva ventaja histórica: 2 victorias en 2 enfrentamientos recientes (1 del Clausura 2026, 1 del Apertura 2025). Atlas solo ha ganado 0 de esos cruces."
+      },
+      {
+        "factor": "Experiencia eliminatoria",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.13,
+          "nombre": "Atlas"
+        },
+        "visitante": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.75,
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Cruz Azul acumula mayor experiencia en instancias eliminatorias (índice 0.75/1.0 vs 0.13/1.0 de Atlas), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "Cruz Azul",
+        "local": {
+          "nombre": "Atlas",
+          "posicion": 6
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "posicion": 3
+        },
+        "interpretacion": "Cruz Azul terminó mejor posicionado en la tabla (posición 3 vs 6), lo que le otorga el derecho de disputar la vuelta en casa. Esta ventaja táctica le permite a Cruz Azul especular en la ida y definir la serie ante su afición, mientras Atlas deberá resolver la eliminatoria jugando el partido decisivo de visitante."
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "fase": "liguilla_ida",
+    "local": "Tigres UANL",
+    "visitante": "Guadalajara",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/232.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
+    "prob_local": 0.40157656343325693,
+    "prob_empate": 0.2280285480383875,
+    "prob_visitante": 0.37039488852835567,
+    "fuerza_local": 0.5684600588235295,
+    "fuerza_visitante": 0.5492151764705884,
+    "diferencia": 0.019244882352941084,
+    "confianza": "ajustado",
+    "prediccion": "Tigres UANL",
+    "resultado": "Tigres UANL",
+    "vuelta_en_casa": "visitante",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.69,
+          "ultimos_5": [
+            "W",
+            "D",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Tigres UANL"
+        },
+        "visitante": {
+          "valor": 0.54,
+          "ultimos_5": [
+            "D",
+            "D",
+            "W",
+            "L",
+            "D"
+          ],
+          "nombre": "Guadalajara"
+        },
+        "interpretacion": "Tigres UANL llega con mejor momentum reciente: índice de forma 0.69/1.0 frente a 0.54/1.0 de Guadalajara. En los últimos 5 partidos, Tigres UANL acumula 2 victorias contra 1 del rival."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.5,
+          "detalle": "4G / 2E / 2P",
+          "nombre": "Tigres UANL"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.56,
+          "detalle": "5G / 1E / 3P",
+          "nombre": "Guadalajara"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Tigres UANL gana el 50% en casa (4G/2E/2P) y Guadalajara el 56% de visita (5G/1E/3P). Ninguno tiene ventaja situacional clara."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Tigres UANL",
+          "goles_favor": 1.65,
+          "goles_contra": 1.06
+        },
+        "visitante": {
+          "nombre": "Guadalajara",
+          "goles_favor": 1.94,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Producción ofensiva similar: Tigres UANL promedia 1.65 goles por partido y Guadalajara 1.94. En defensa, Tigres UANL recibe 1.06 por partido frente a 1.00 del rival."
+      },
+      {
+        "factor": "Historial directo",
+        "impacto": "medio",
+        "tipo": "h2h",
+        "local": {
+          "nombre": "Tigres UANL",
+          "victorias": 1
+        },
+        "visitante": {
+          "nombre": "Guadalajara",
+          "victorias": 1
+        },
+        "partidos": [
+          {
+            "fecha": "2026-04-11",
+            "temporada": "Torneo Clausura",
+            "local": "Tigres UANL",
+            "visitante": "Guadalajara",
+            "goles_local": 4,
+            "goles_visitante": 1
+          },
+          {
+            "fecha": "2025-09-18",
+            "temporada": "Torneo Apertura",
+            "local": "Guadalajara",
+            "visitante": "Tigres UANL",
+            "goles_local": 0,
+            "goles_visitante": 0
+          }
+        ],
+        "total": 2,
+        "interpretacion": "Tigres UANL domina el historial reciente con 1 victorias en 2 enfrentamientos (1 del Clausura 2026, 1 del Apertura 2025). Guadalajara solo ha ganado 1 de esos cruces."
+      },
+      {
+        "factor": "Experiencia eliminatoria",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.69,
+          "nombre": "Tigres UANL"
+        },
+        "visitante": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.44,
+          "nombre": "Guadalajara"
+        },
+        "interpretacion": "Tigres UANL acumula mayor experiencia en instancias eliminatorias (índice 0.69/1.0 vs 0.44/1.0 de Guadalajara), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "Guadalajara",
+        "local": {
+          "nombre": "Tigres UANL",
+          "posicion": 7
+        },
+        "visitante": {
+          "nombre": "Guadalajara",
+          "posicion": 2
+        },
+        "interpretacion": "Guadalajara terminó mejor posicionado en la tabla (posición 2 vs 7), lo que le otorga el derecho de disputar la vuelta en casa. Esta ventaja táctica le permite a Guadalajara especular en la ida y definir la serie ante su afición, mientras Tigres UANL deberá resolver la eliminatoria jugando el partido decisivo de visitante."
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "fase": "liguilla_ida",
+    "local": "Toluca",
+    "visitante": "Pachuca",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/223.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
+    "prob_local": 0.28541189639258785,
+    "prob_empate": 0.18611450632543383,
+    "prob_visitante": 0.5284735972819784,
+    "fuerza_local": 0.41244570588235296,
+    "fuerza_visitante": 0.5591265294117648,
+    "diferencia": 0.1466808235294118,
+    "confianza": "favorable",
+    "prediccion": "Pachuca",
+    "resultado": "Pachuca",
+    "vuelta_en_casa": "visitante",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.41,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "D",
+            "L"
+          ],
+          "nombre": "Toluca"
+        },
+        "visitante": {
+          "valor": 0.4,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Toluca llega con mejor momentum reciente: índice de forma 0.41/1.0 frente a 0.40/1.0 de Pachuca. En los últimos 5 partidos, Toluca acumula 1 victorias contra 3 del rival."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.62,
+          "detalle": "5G / 3E / 0P",
+          "nombre": "Toluca"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.38,
+          "detalle": "3G / 2E / 3P",
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Toluca es dominante en casa: 62% de victorias (5G/3E/0P). Pachuca ha respondido con 38% de efectividad como visitante (3G/2E/3P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Toluca",
+          "goles_favor": 1.65,
+          "goles_contra": 0.94
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "goles_favor": 1.47,
+          "goles_contra": 1.12
+        },
+        "interpretacion": "Producción ofensiva similar: Toluca promedia 1.65 goles por partido y Pachuca 1.47. En defensa, Toluca recibe 0.94 por partido frente a 1.12 del rival."
+      },
+      {
+        "factor": "Historial directo",
+        "impacto": "alto",
+        "tipo": "h2h",
+        "local": {
+          "nombre": "Toluca",
+          "victorias": 0
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "victorias": 2
+        },
+        "partidos": [
+          {
+            "fecha": "2026-03-22",
+            "temporada": "Torneo Clausura",
+            "local": "Pachuca",
+            "visitante": "Toluca",
+            "goles_local": 1,
+            "goles_visitante": 1
+          },
+          {
+            "fecha": "2025-10-27",
+            "temporada": "Torneo Apertura",
+            "local": "Toluca",
+            "visitante": "Pachuca",
+            "goles_local": 2,
+            "goles_visitante": 2
+          }
+        ],
+        "total": 2,
+        "interpretacion": "Pachuca lleva ventaja histórica: 2 victorias en 2 enfrentamientos recientes (1 del Clausura 2026, 1 del Apertura 2025). Toluca solo ha ganado 0 de esos cruces."
+      },
+      {
+        "factor": "Experiencia eliminatoria",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.81,
+          "nombre": "Toluca"
+        },
+        "visitante": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.28,
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Toluca acumula mayor experiencia en instancias eliminatorias (índice 0.81/1.0 vs 0.28/1.0 de Pachuca), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "Pachuca",
+        "local": {
+          "nombre": "Toluca",
+          "posicion": 5
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "posicion": 4
+        },
+        "interpretacion": "Pachuca terminó mejor posicionado en la tabla (posición 4 vs 5), lo que le otorga el derecho de disputar la vuelta en casa. Esta ventaja táctica le permite a Pachuca especular en la ida y definir la serie ante su afición, mientras Toluca deberá resolver la eliminatoria jugando el partido decisivo de visitante."
+      }
+    ]
+  }
+]

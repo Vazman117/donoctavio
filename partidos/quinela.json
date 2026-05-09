@@ -1,0 +1,780 @@
+[
+  {
+    "id": 1,
+    "local": "Newcastle United",
+    "visitante": "Brighton",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/361.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/331.png",
+    "prob_local": 0.2847846328821641,
+    "prob_empate": 0.18579033455982863,
+    "prob_visitante": 0.5294250325580073,
+    "fuerza_local": 0.3297176470588235,
+    "fuerza_visitante": 0.4773505882352942,
+    "diferencia": 0.1476329411764707,
+    "confianza": "favorable",
+    "prediccion": "Brighton",
+    "resultado": "Newcastle United",
+    "razones": [
+      "⚠️ Brighton llega con mejor forma reciente (0.62 vs 0.24)",
+      "⚠️ Brighton no rinde bien de visita (21% de victorias fuera)",
+      "⚠️ Brighton está 9 lugares arriba en la tabla"
+    ]
+  },
+  {
+    "id": 2,
+    "local": "Manchester United",
+    "visitante": "Liverpool",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png",
+    "prob_local": 0.44293053076434435,
+    "prob_empate": 0.2145432400152118,
+    "prob_visitante": 0.34252622922044385,
+    "fuerza_local": 0.5503482352941177,
+    "fuerza_visitante": 0.4891423529411765,
+    "diferencia": 0.06120588235294122,
+    "confianza": "moderado",
+    "prediccion": "Manchester United",
+    "resultado": "Manchester United",
+    "razones": [
+      "✅ Manchester United es sólido en casa (gana el 59% de sus partidos como local)"
+    ]
+  },
+  {
+    "id": 3,
+    "fase": "fase_regular",
+    "local": "Hoffenheim",
+    "visitante": "Stuttgart",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2110.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2117.png",
+    "prob_local": 0.42628335742844337,
+    "prob_empate": 0.25462693333333336,
+    "prob_visitante": 0.31908970923822333,
+    "fuerza_local": 0.5791823529411765,
+    "fuerza_visitante": 0.5102223529411766,
+    "diferencia": 0.06895999999999991,
+    "confianza": "moderado",
+    "prediccion": "Hoffenheim",
+    "resultado": "Empate",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "L",
+            "W"
+          ],
+          "nombre": "Hoffenheim"
+        },
+        "visitante": {
+          "valor": 0.52,
+          "ultimos_5": [
+            "L",
+            "W",
+            "D",
+            "D",
+            "W"
+          ],
+          "nombre": "Stuttgart"
+        },
+        "interpretacion": "Hoffenheim llega con mejor momentum reciente: índice 0.60/1.0 frente a 0.52/1.0 de Stuttgart. En los últimos 5, Hoffenheim acumula 3 victorias contra 2 del rival. Nota: Hoffenheim suma 1 empate(s) y Stuttgart 2 empate(s) en sus últimos 5, lo que eleva la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.62,
+          "detalle": "10G / 3E / 3P",
+          "nombre": "Hoffenheim"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.47,
+          "detalle": "7G / 4E / 4P",
+          "nombre": "Stuttgart"
+        },
+        "interpretacion": "Hoffenheim es dominante en casa: 62% de victorias (10G/3E/3P). Stuttgart respondió con 47% de efectividad de visita (7G/4E/4P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Hoffenheim",
+          "goles_favor": 1.97,
+          "goles_contra": 1.45
+        },
+        "visitante": {
+          "nombre": "Stuttgart",
+          "goles_favor": 1.9,
+          "goles_contra": 1.26
+        },
+        "interpretacion": "Producción ofensiva similar: Hoffenheim promedia 1.97 goles/partido y Stuttgart 1.90. En defensa: 1.45 vs 1.26."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.19,
+          "detalle": "6 empates en 31 partidos | 1D últimos 5",
+          "nombre": "Hoffenheim"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.27,
+          "detalle": "9 empates en 31 partidos | 2D últimos 5",
+          "nombre": "Stuttgart"
+        },
+        "interpretacion": "Perfil empatador moderado: Hoffenheim empata el 19% en casa (6 empates en 31 partidos) y Stuttgart el 27% de visita (9 empates en 31 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 4,
+          "detalle": "Tendencia: +1",
+          "nombre": "Hoffenheim"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 4,
+          "detalle": "Tendencia: 0",
+          "nombre": "Stuttgart"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Hoffenheim #4, Stuttgart #4."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 2,
+          "detalle": "2 consecutivos",
+          "nombre": "Hoffenheim"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 1,
+          "detalle": "1 consecutivos",
+          "nombre": "Stuttgart"
+        },
+        "interpretacion": "Ningún equipo llega con racha notable: Hoffenheim lleva 2 partido(s) sin perder y Stuttgart 1."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "local": "Leverkusen",
+    "visitante": "Leipzig",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2097.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3716.png",
+    "prob_local": 0.3194716881530049,
+    "prob_empate": 0.20327243593135458,
+    "prob_visitante": 0.4772558759156405,
+    "fuerza_local": 0.5538205882352941,
+    "fuerza_visitante": 0.6493882352941176,
+    "diferencia": 0.09556764705882348,
+    "confianza": "moderado",
+    "prediccion": "Leipzig",
+    "resultado": "Leverkusen",
+    "razones": [
+      "⚠️ Leipzig llega con mejor forma reciente (0.72 vs 0.56)",
+      "✅ Leverkusen es sólido en casa (gana el 56% de sus partidos como local)",
+      "✅ Leipzig es peligroso de visita (60% de victorias fuera)",
+      "✅ Leipzig lleva 5 partidos sin perder"
+    ]
+  },
+  {
+    "id": 5,
+    "fase": "fase_regular",
+    "local": "Como",
+    "visitante": "Napoles",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/4051.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3026.png",
+    "prob_local": 0.2741387796732774,
+    "prob_empate": 0.2802129529411765,
+    "prob_visitante": 0.4456482673855461,
+    "fuerza_local": 0.4281588235294117,
+    "fuerza_visitante": 0.5438482352941176,
+    "diferencia": 0.11568941176470593,
+    "confianza": "moderado",
+    "prediccion": "Napoles",
+    "resultado":"Empate",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.48,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "D"
+          ],
+          "nombre": "Como"
+        },
+        "visitante": {
+          "valor": 0.62,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Napoles"
+        },
+        "interpretacion": "Napoles llega con mejor momentum: índice 0.62/1.0 frente a 0.48/1.0 de Como. En los últimos 5, Napoles acumula 3 victorias contra 2 del rival. Nota: Como suma 2 empate(s) y Napoles 1 empate(s) en sus últimos 5, lo que eleva la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.38,
+          "detalle": "6G / 5E / 5P",
+          "nombre": "Como"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.53,
+          "detalle": "8G / 1E / 6P",
+          "nombre": "Napoles"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Como gana el 38% en casa (6G/5E/5P) y Napoles el 53% de visita (8G/1E/6P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Como",
+          "goles_favor": 1.29,
+          "goles_contra": 1.55
+        },
+        "visitante": {
+          "nombre": "Napoles",
+          "goles_favor": 1.54,
+          "goles_contra": 1.04
+        },
+        "interpretacion": "Producción ofensiva similar: Como promedia 1.29 goles/partido y Napoles 1.54. En defensa: 1.55 vs 1.04."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.31,
+          "detalle": "9 empates en 31 partidos | 2D últimos 5",
+          "nombre": "Como"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.07,
+          "detalle": "5 empates en 28 partidos | 1D últimos 5",
+          "nombre": "Napoles"
+        },
+        "interpretacion": "Perfil empatador moderado: Como empata el 31% en casa (9 empates en 31 partidos) y Napoles el 7% de visita (5 empates en 28 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 8,
+          "detalle": "Tendencia: +1",
+          "nombre": "Como"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 3,
+          "detalle": "Tendencia: 0",
+          "nombre": "Napoles"
+        },
+        "interpretacion": "Napoles está 5 posiciones arriba en la tabla (#3 vs #8)."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 1,
+          "detalle": "1 consecutivos",
+          "nombre": "Como"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 0,
+          "detalle": "0 consecutivos",
+          "nombre": "Napoles"
+        },
+        "interpretacion": "Ningún equipo llega con racha notable: Como lleva 1 partido(s) sin perder y Napoles 0."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "fase": "fase_regular",
+    "local": "Ajax",
+    "visitante": "PSV",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/170.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/672.png",
+    "prob_local": 0.21429984423833506,
+    "prob_empate": 0.4110284117647059,
+    "prob_visitante": 0.37467174399695913,
+    "fuerza_local": 0.5288623529411766,
+    "fuerza_visitante": 0.66188,
+    "diferencia": 0.13301764705882346,
+    "confianza": "moderado",
+    "prediccion": "Empate",
+    "resultado":"Empate",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.46,
+          "ultimos_5": [
+            "D",
+            "D",
+            "D",
+            "D",
+            "W"
+          ],
+          "nombre": "Ajax"
+        },
+        "visitante": {
+          "valor": 0.72,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "PSV"
+        },
+        "interpretacion": "PSV llega en su mejor momento: 4 victorias en los últimos 5 partidos (índice 0.72/1.0). Ajax muestra irregularidad con 1 victorias y 0 derrotas recientes (índice 0.46/1.0). Nota: Ajax suma 4 empate(s) y PSV 0 empate(s) en sus últimos 5, lo que eleva la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.43,
+          "detalle": "6G / 7E / 1P",
+          "nombre": "Ajax"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.71,
+          "detalle": "10G / 1E / 3P",
+          "nombre": "PSV"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Ajax gana el 43% en casa (6G/7E/1P) y PSV el 71% de visita (10G/1E/3P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Ajax",
+          "goles_favor": 1.89,
+          "goles_contra": 1.25
+        },
+        "visitante": {
+          "nombre": "PSV",
+          "goles_favor": 2.79,
+          "goles_contra": 1.32
+        },
+        "interpretacion": "PSV genera más peligro ofensivo: 2.79 goles/partido frente a 1.89 de Ajax. En defensa: 1.25 vs 1.32."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.5,
+          "detalle": "12 empates en 28 partidos | 4D últimos 5",
+          "nombre": "Ajax"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.07,
+          "detalle": "2 empates en 28 partidos | 0D últimos 5",
+          "nombre": "PSV"
+        },
+        "interpretacion": "Ajax es un equipo marcadamente empatador: empata el 50% de sus partidos en su rol situacional. En los últimos 5, ambos suman 4 empate(s), lo que refuerza la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 4,
+          "detalle": "Tendencia: +1",
+          "nombre": "Ajax"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 1,
+          "detalle": "Tendencia: 0",
+          "nombre": "PSV"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Ajax #4, PSV #1."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 5,
+          "detalle": "5 consecutivos",
+          "nombre": "Ajax"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 0,
+          "detalle": "0 consecutivos",
+          "nombre": "PSV"
+        },
+        "interpretacion": "Ajax lleva 5 partidos consecutivos sin perder, reflejo de estabilidad y confianza. PSV lleva 0."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "fase": "fase_regular",
+    "local": "Rio Ave",
+    "visitante": "Gil Vicente",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/3762.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3764.png",
+    "prob_local": 0.3220826623399502,
+    "prob_empate": 0.3230920078431373,
+    "prob_visitante": 0.3548253298169125,
+    "fuerza_local": 0.38293529411764715,
+    "fuerza_visitante": 0.40598705882352937,
+    "diferencia": 0.023051764705882216,
+    "confianza": "ajustado",
+    "prediccion": "Gil Vicente",
+    "resultado":"Empate",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.46,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "D"
+          ],
+          "nombre": "Rio Ave"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "W",
+            "D",
+            "D",
+            "D",
+            "W"
+          ],
+          "nombre": "Gil Vicente"
+        },
+        "interpretacion": "Gil Vicente llega con mejor momentum: índice 0.50/1.0 frente a 0.46/1.0 de Rio Ave. En los últimos 5, Gil Vicente acumula 2 victorias contra 2 del rival. Nota: Rio Ave suma 2 empate(s) y Gil Vicente 3 empate(s) en sus últimos 5, lo que eleva la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.38,
+          "detalle": "6G / 4E / 6P",
+          "nombre": "Rio Ave"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.27,
+          "detalle": "4G / 5E / 6P",
+          "nombre": "Gil Vicente"
+        },
+        "interpretacion": "Gil Vicente tiene dificultades fuera de casa: 27% de victorias como visitante (4G/5E/6P). Rio Ave gana el 38% en casa (6G/4E/6P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Rio Ave",
+          "goles_favor": 1.03,
+          "goles_contra": 1.55
+        },
+        "visitante": {
+          "nombre": "Gil Vicente",
+          "goles_favor": 1.19,
+          "goles_contra": 1.45
+        },
+        "interpretacion": "Producción ofensiva similar: Rio Ave promedia 1.03 goles/partido y Gil Vicente 1.19. En defensa: 1.55 vs 1.45."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.25,
+          "detalle": "7 empates en 31 partidos | 2D últimos 5",
+          "nombre": "Rio Ave"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.33,
+          "detalle": "7 empates en 31 partidos | 3D últimos 5",
+          "nombre": "Gil Vicente"
+        },
+        "interpretacion": "Perfil empatador moderado: Rio Ave empata el 25% en casa (7 empates en 31 partidos) y Gil Vicente el 33% de visita (7 empates en 31 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 12,
+          "detalle": "Tendencia: -1",
+          "nombre": "Rio Ave"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 10,
+          "detalle": "Tendencia: 0",
+          "nombre": "Gil Vicente"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Rio Ave #12, Gil Vicente #10."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 1,
+          "detalle": "1 consecutivos",
+          "nombre": "Rio Ave"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 2,
+          "detalle": "2 consecutivos",
+          "nombre": "Gil Vicente"
+        },
+        "interpretacion": "Ningún equipo llega con racha notable: Rio Ave lleva 1 partido(s) sin perder y Gil Vicente 2."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "fase": "fase_regular",
+    "local": "Toronto FC",
+    "visitante": "San Jose",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/346.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/190.png",
+    "prob_local": 0.1953440790588235,
+    "prob_empate": 0.3895497529411765,
+    "prob_visitante": 0.41510616800000005,
+    "fuerza_local": 0.3973305882352941,
+    "fuerza_visitante": 0.7689999999999999,
+    "diferencia": 0.3716694117647058,
+    "confianza": "favorable",
+    "prediccion": "San Jose",
+    "resultado":"Empate",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.38,
+          "ultimos_5": [
+            "D",
+            "D",
+            "D",
+            "D",
+            "L"
+          ],
+          "nombre": "Toronto"
+        },
+        "visitante": {
+          "valor": 0.86,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "San Jose"
+        },
+        "interpretacion": "San Jose llega en su mejor momento: 5 victorias en los últimos 5 partidos (índice 0.86/1.0). Toronto muestra irregularidad con 0 victorias y 1 derrotas recientes (índice 0.38/1.0). Nota: Toronto suma 4 empate(s) y San Jose 0 empate(s) en sus últimos 5, lo que eleva la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.33,
+          "detalle": "2G / 3E / 1P",
+          "nombre": "Toronto"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.6,
+          "detalle": "3G / 0E / 2P",
+          "nombre": "San Jose"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Toronto gana el 33% en casa (2G/3E/1P) y San Jose el 60% de visita (3G/0E/2P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Toronto",
+          "goles_favor": 1.27,
+          "goles_contra": 1.18
+        },
+        "visitante": {
+          "nombre": "San Jose",
+          "goles_favor": 2.27,
+          "goles_contra": 0.55
+        },
+        "interpretacion": "San Jose genera más peligro ofensivo: 2.27 goles/partido frente a 1.27 de Toronto. En defensa: 1.18 vs 0.55."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.5,
+          "detalle": "5 empates en 11 partidos | 4D últimos 5",
+          "nombre": "Toronto"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.0,
+          "detalle": "0 empates en 11 partidos | 0D últimos 5",
+          "nombre": "San Jose"
+        },
+        "interpretacion": "Toronto es un equipo marcadamente empatador: empata el 50% de sus partidos en su rol situacional. En los últimos 5, ambos suman 4 empate(s), lo que refuerza la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 6,
+          "detalle": "Tendencia: 0",
+          "nombre": "Toronto"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 1,
+          "detalle": "Tendencia: 0",
+          "nombre": "San Jose"
+        },
+        "interpretacion": "San Jose está 5 posiciones arriba en la tabla (#1 vs #6)."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 0,
+          "detalle": "0 consecutivos",
+          "nombre": "Toronto"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 8,
+          "detalle": "8 consecutivos",
+          "nombre": "San Jose"
+        },
+        "interpretacion": "San Jose llega con racha de 8 partidos sin perder, convirtiéndolo en rival incómodo. Toronto lleva 0."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "local": "OFI Creta",
+    "visitante": "Aris",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2915.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2908.png",
+    "prob_local": 0.35676490656105303,
+    "prob_empate": 0.22143831597511893,
+    "prob_visitante": 0.421796777463828,
+    "fuerza_local": 0.3462964705882353,
+    "fuerza_visitante": 0.38616470588235297,
+    "diferencia": 0.03986823529411765,
+    "confianza": "ajustado",
+    "prediccion": "Aris",
+    "resultado": "Aris",
+    "razones": [
+      "⚖️ Partido muy parejo, no hay ventaja clara para ningún equipo"
+    ]
+  },
+  {
+    "id": 10,
+    "local": "PAOK",
+    "visitante": "Olympiacos",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2909.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2906.png",
+    "prob_local": 0.3930533049531226,
+    "prob_empate": 0.23080950478225365,
+    "prob_visitante": 0.37613719026462367,
+    "fuerza_local": 0.6759341176470589,
+    "fuerza_visitante": 0.66546,
+    "diferencia": 0.010474117647058856,
+    "confianza": "ajustado",
+    "prediccion": "PAOK",
+    "resultado": "PAOK",
+    "razones": [
+      "✅ PAOK es sólido en casa (gana el 79% de sus partidos como local)",
+      "✅ Olympiacos es peligroso de visita (64% de victorias fuera)",
+      "✅ PAOK lleva 4 partidos sin perder",
+      "✅ Olympiacos lleva 4 partidos sin perder"
+    ]
+  }
+]

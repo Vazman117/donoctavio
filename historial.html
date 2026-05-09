@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial de Proyecciones | Don Octavio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<header>
+  <button class="btn-back" onclick="window.location.href='index.html'" style="display:flex;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+    Inicio
+  </button>
+  <div class="header-center">
+    <span class="header-label">Don Octavio</span>
+    <h1>Historial de proyecciones</h1>
+  </div>
+</header>
+
+<div class="view" id="vista-historial">
+
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <span>Cargando historial…</span>
+  </div>
+
+  <div id="resumenMetricas" style="display:none;">
+    <div class="hist-metricas" id="histMetricas"></div>
+  </div>
+
+  <div class="tabla" id="contenedorHistorial" style="display:none;"></div>
+
+  <div class="hist-vacio" id="histVacio" style="display:none;">
+    <p>No hay proyecciones en el historial aún.</p>
+  </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay" onclick="cerrarModal(event)">
+  <div class="modal-card" id="modalCard">
+    <button class="modal-close" onclick="cerrarModal()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div id="modalContenido"></div>
+  </div>
+</div>
+
+<script>
+const CARPETA = 'partidos/';
+
+function fmt(n) { return (n * 100).toFixed(1) + '%'; }
+
+function obtenerFavorito(p) {
+  if (p.prediccion) return p.prediccion;
+  const max = Math.max(p.prob_local, p.prob_empate, p.prob_visitante);
+  if (max === p.prob_local)     return p.local;
+  if (max === p.prob_visitante) return p.visitante;
+  return 'Empate';
+}
+
+function obtenerPctFavorito(p, fav) {
+  if (fav === p.local)     return fmt(p.prob_local);
+  if (fav === p.visitante) return fmt(p.prob_visitante);
+  return fmt(p.prob_empate);
+}
+
+function calcularParidad(partidos) {
+  let totalParidad = 0;
+
+  for (const p of partidos) {
+    const probs = [p.prob_local, p.prob_empate, p.prob_visitante];
+    probs.sort((a, b) => b - a);
+
+    const diferencia = probs[0] - probs[1];
+
+    if (diferencia < 0.15) {
+      totalParidad++;
+    }
+  }
+
+  return totalParidad;
+}
+
+function clasificarResultado(p) {
+  if (!p.resultado) return 'pending';
+  const fav = obtenerFavorito(p);
+  if (fav === p.resultado) return 'acierto';
+
+  const probs = [p.prob_local, p.prob_empate, p.prob_visitante];
+  probs.sort((a, b) => b - a);
+  const diferencia = probs[0] - probs[1];
+
+  return diferencia < 0.15 ? 'parcial' : 'fallo';
+}
+
+function acerto(p) {
+  return p.resultado && obtenerFavorito(p) === p.resultado;
+}
+
+async function cargarJSON(ruta) {
+  const r = await fetch(ruta);
+  if (!r.ok) throw new Error(`Error cargando ${ruta}`);
+  return r.json();
+}
+
+async function cargarTodos() {
+  let archivos = [];
+  try { archivos = await cargarJSON(CARPETA + 'index.json'); }
+  catch (e) { console.warn('No se encontró partidos/index.json', e); return []; }
+
+  const resultados = await Promise.allSettled(
+    archivos.map(n => cargarJSON(CARPETA + n))
+  );
+
+  const partidos = [];
+  for (const res of resultados) {
+    if (res.status === 'fulfilled') {
+      const d = res.value;
+      if (Array.isArray(d))               partidos.push(...d);
+      else if (Array.isArray(d.partidos)) partidos.push(...d.partidos);
+    }
+  }
+  return partidos;
+}
+
+/* ── Métricas ── */
+function calcularEficiencia(partidos) {
+  const conResultado = partidos.filter(p => p.resultado);
+  if (!conResultado.length) return { pct: '—', aciertos: 0, fallos: 0, local: 0, empate: 0, visitante: 0 };
+
+  let aciertos = 0, parciales = 0, fallos = 0, local = 0, empate = 0, visitante = 0;
+
+  for (const p of conResultado) {
+    const tipo = clasificarResultado(p);
+    const fav  = obtenerFavorito(p);
+    if (tipo === 'acierto') {
+      aciertos++;
+      if (fav === p.local)          local++;
+      else if (fav === p.visitante) visitante++;
+      else                          empate++;
+    } else if (tipo === 'parcial') {
+      parciales++;
+    } else {
+      fallos++;
+    }
+  }
+  const pct = ((aciertos / conResultado.length) * 100).toFixed(1) + '%';
+  return { pct, aciertos, parciales, fallos, local, empate, visitante };
+}
+
+function renderMetricas(partidos) {
+  const el = document.getElementById('histMetricas');
+  if (!el) return;
+  const { pct, aciertos, fallos, local, empate, visitante, parciales } = calcularEficiencia(partidos);
+  const paridad = calcularParidad(partidos);
+
+  el.innerHTML = `
+    <div class="hist-metrica-card">
+      <span class="hist-metrica-val">${partidos.length}</span>
+      <span class="hist-metrica-lbl">Proyecciones</span>
+    </div>
+    <div class="hist-metrica-card">
+      <span class="hist-metrica-val hist-val-paridad">${paridad}</span>
+      <span class="hist-metrica-lbl">En Paridad</span>
+    </div>
+    <div class="hist-metrica-card">
+      <span class="hist-metrica-val hist-val-win">${aciertos}</span>
+      <span class="hist-metrica-lbl">Aciertos</span>
+    </div>
+    <div class="hist-metrica-card">
+      <span class="hist-metrica-val hist-val-parcial">${parciales}</span>
+      <span class="hist-metrica-lbl">Parciales</span>
+    </div>
+    <div class="hist-metrica-card">
+      <span class="hist-metrica-val hist-val-loss">${fallos}</span>
+      <span class="hist-metrica-lbl">Fallos</span>
+    </div>
+  `;
+}
+
+/* ── Tabla ── */
+function renderTabla(partidos) {
+  const el = document.getElementById('contenedorHistorial');
+  if (!el) return;
+
+  const header = `
+    <div class="tabla-header hist-tabla-header">
+      <span>Partido</span>
+      <span>Local</span>
+      <span>Empate</span>
+      <span>Visitante</span>
+      <span>Resultado</span>
+    </div>
+  `;
+
+  const filas = partidos.map((p, i) => {
+    const fav      = obtenerFavorito(p);
+    const pct      = obtenerPctFavorito(p, fav);
+    const tuvo     = !!p.resultado;
+    const ok       = tuvo && fav === p.resultado;
+    const tipo = clasificarResultado(p);
+    const rowClass = `fila hist-fila ${
+      tipo === 'acierto' ? 'fila--acierto' :
+      tipo === 'parcial' ? 'fila--parcial' :
+      tipo === 'fallo'   ? 'fila--fallo'   : ''
+    }`;
+
+    return `
+      <div class="${rowClass}" onclick="abrirModal(${i})" style="cursor:pointer;">
+        <div class="fila-equipo">
+          <div class="logos-pair">
+            <img src="${p.logo_local}"     alt="${p.local}"     onerror="this.style.display='none'">
+            <img src="${p.logo_visitante}" alt="${p.visitante}" onerror="this.style.display='none'">
+          </div>
+          <span class="fila-nombre">${p.local} <em>vs</em> ${p.visitante}</span>
+        </div>
+        <span class="fila-pct win">${fmt(p.prob_local)}</span>
+        <span class="fila-pct draw">${fmt(p.prob_empate)}</span>
+        <span class="fila-pct loss">${fmt(p.prob_visitante)}</span>
+        <span class="fila-resultado ${
+          tipo === 'acierto' ? 'res--ok' :
+          tipo === 'parcial' ? 'res--parcial' :
+          tipo === 'fallo'   ? 'res--fail' : 'res--pending'
+        }">
+          ${tuvo ? p.resultado : '—'}
+        </span>
+      </div>
+    `;
+  }).join('');
+
+  el.innerHTML = header + filas;
+}
+
+/* ── Modal ── */
+let _partidos = [];
+
+function abrirModal(i) {
+  const p   = _partidos[i];
+  const fav = obtenerFavorito(p);
+  const ok  = p.resultado && fav === p.resultado;
+  const tuvo = !!p.resultado;
+
+  const tipo = clasificarResultado(p);
+  const veredictoClass =
+    tipo === 'acierto' ? 'veredicto--ok' :
+    tipo === 'parcial' ? 'veredicto--parcial' :
+    tipo === 'fallo'   ? 'veredicto--fail' : 'veredicto--pending';
+  const veredictoTexto =
+    tipo === 'acierto' ? 'Acierto' :
+    tipo === 'parcial' ? 'Acierto parcial' :
+    tipo === 'fallo'   ? 'Fallo' : 'Sin resultado';
+  const veredictoIcon  = tuvo ? (ok ? `
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+  ` : `
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  `) : '';
+
+  document.getElementById('modalContenido').innerHTML = `
+    <div class="modal-equipos">
+      <div class="modal-equipo">
+        <img src="${p.logo_local}" alt="${p.local}" onerror="this.style.display='none'">
+        <span>${p.local}</span>
+      </div>
+      <span class="modal-vs">vs</span>
+      <div class="modal-equipo">
+        <img src="${p.logo_visitante}" alt="${p.visitante}" onerror="this.style.display='none'">
+        <span>${p.visitante}</span>
+      </div>
+    </div>
+
+    <div class="modal-detalle">
+      <div class="modal-fila">
+        <span class="modal-lbl">Proyección</span>
+        <span class="modal-val">${fav}</span>
+      </div>
+      <div class="modal-fila">
+        <span class="modal-lbl">Confianza</span>
+        <span class="modal-val">${p.confianza}</span>
+      </div>
+      <div class="modal-fila1">
+        <span class="modal-lbl">Probabilidades</span>
+        <span class="modal-val modal-probs">
+          <span class="prob-chip win">${p.local} ${fmt(p.prob_local)}</span>
+          <span class="prob-chip draw">Empate ${fmt(p.prob_empate)}</span>
+          <span class="prob-chip loss">${p.visitante} ${fmt(p.prob_visitante)}</span>
+        </span>
+      </div>
+      <div class="modal-fila">
+        <span class="modal-lbl">Resultado</span>
+        <span class="modal-val">${tuvo ? p.resultado : '—'}</span>
+      </div>
+    </div>
+
+    <div class="veredicto ${veredictoClass}">
+      ${veredictoIcon}
+      <span>${veredictoTexto}</span>
+    </div>
+  `;
+
+  document.getElementById('modalOverlay').classList.add('modal--visible');
+}
+
+function cerrarModal(e) {
+  if (e && e.target !== document.getElementById('modalOverlay') && !e.target.closest('.modal-close')) return;
+  if (!e) document.getElementById('modalOverlay').classList.remove('modal--visible');
+  else     document.getElementById('modalOverlay').classList.remove('modal--visible');
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.getElementById('modalOverlay').classList.remove('modal--visible');
+});
+
+/* ── Init ── */
+async function init() {
+  const loading         = document.getElementById('loading');
+  const resumenMetricas = document.getElementById('resumenMetricas');
+  const contenedor      = document.getElementById('contenedorHistorial');
+  const vacio           = document.getElementById('histVacio');
+
+  const partidos = await cargarTodos();
+  _partidos = partidos;
+
+  loading.style.display = 'none';
+
+  if (!partidos.length) { vacio.style.display = 'block'; return; }
+
+  resumenMetricas.style.display = 'block';
+  contenedor.style.display      = 'block';
+
+  renderMetricas(partidos);
+  renderTabla(partidos);
+}
+
+init();
+</script>
+
+<style>
+/* ── Métricas ── */
+.hist-metricas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: .75rem;
+  margin-bottom: 1.75rem;
+}
+
+.hist-metrica-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .3rem;
+  text-align: center;
+}
+
+.hist-metrica-val {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: var(--text);
+  line-height: 1;
+}
+.hist-val-win  { color: var(--win); }
+.hist-val-loss { color: var(--loss); }
+
+.hist-metrica-lbl {
+  font-size: .66rem;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* ── Tabla ── */
+.hist-tabla-header {
+  grid-template-columns: 1fr 90px 90px 90px 130px;
+}
+
+.hist-fila {
+  grid-template-columns: 1fr 90px 90px 90px 130px;
+  transition: background .15s;
+  align-items: center;
+}
+
+.fila--acierto {
+  background: rgba(39, 174, 96, 0.07);
+  border-left: 3px solid var(--win);
+}
+.fila--acierto:hover { background: rgba(39, 174, 96, 0.13); }
+
+.fila--fallo {
+  background: rgba(231, 76, 60, 0.07);
+  border-left: 3px solid var(--loss);
+}
+.fila--fallo:hover { background: rgba(231, 76, 60, 0.13); }
+
+.fila-pred-text {
+  font-size: .82rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.fila-resultado {
+  font-size: .82rem;
+  font-weight: 500;
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hist-val-parcial { color: #f39c12; }
+.hist-val-paridad { color: #1246f3dc; }
+
+.fila--parcial {
+  background: rgba(243, 156, 18, 0.07);
+  border-left: 3px solid #f39c12;
+}
+.fila--parcial:hover { background: rgba(243, 156, 18, 0.13); }
+
+.res--parcial {
+  background: rgba(243, 156, 18, .15);
+  color: #f39c12;
+}
+
+.veredicto--parcial {
+  background: rgba(243, 156, 18, .12);
+  color: #f39c12;
+  border: 1px solid rgba(243, 156, 18, .25);
+}
+.res--ok      { background: rgba(39,174,96,.15); color: var(--win); }
+.res--fail    { background: rgba(231,76,60,.15);  color: var(--loss); }
+.res--pending { color: var(--muted); }
+
+/* ── Modal overlay ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal--visible { display: flex; }
+
+.modal-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 1.5);
+  padding: 2rem 1.75rem 1.75rem;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  animation: modalIn .2s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(12px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  padding: .25rem;
+  border-radius: 50%;
+  display: flex;
+  transition: color .15s;
+}
+.modal-close:hover { color: var(--text); }
+
+/* Modal contenido */
+.modal-equipos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-equipo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.modal-equipo img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.modal-equipo span {
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: center;
+}
+
+.modal-vs {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.modal-detalle {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.modal-fila1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-lbl {
+  font-size: .78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.modal-val {
+  font-size: .88rem;
+  color: var(--text);
+  font-weight: 500;
+  text-align: right;
+}
+
+.modal-probs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  justify-content: center;
+}
+
+.prob-chip {
+  font-size: .72rem;
+  font-weight: 500;
+  padding: .2rem .55rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.prob-chip.win  { color: var(--win); }
+.prob-chip.draw { color: var(--draw); }
+.prob-chip.loss { color: var(--loss); }
+
+/* Veredicto */
+.veredicto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  padding: .9rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: .95rem;
+  letter-spacing: .02em;
+}
+
+.veredicto--ok {
+  background: rgba(39,174,96,.12);
+  color: var(--win);
+  border: 1px solid rgba(39,174,96,.25);
+}
+.veredicto--fail {
+  background: rgba(231,76,60,.12);
+  color: var(--loss);
+  border: 1px solid rgba(231,76,60,.25);
+}
+.veredicto--pending {
+  background: var(--surface);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+/* ── Vacío ── */
+.hist-vacio {
+  padding: 4rem 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .hist-tabla-header,
+  .hist-fila {
+    grid-template-columns: 1fr 70px 110px 80px;
+  }
+  .hist-tabla-header span:nth-child(3),
+  .hist-tabla-header span:nth-child(4),
+  .hist-fila .fila-pct.draw,
+  .hist-fila .fila-pct.loss { display: none; }
+}
+</style>
+
+</body>
+</html>

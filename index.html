@@ -3,46 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cuartos de Final – Pronósticos | Don Octavio</title>
+  <title>Don Octavio – Proyecciones estadísticos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="home.css">
   <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
 
 <header>
-  <button class="btn-back" id="btnBack" onclick="mostrarLista()">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-         stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"/>
-    </svg>
-    Partidos
-  </button>
-    <div class="header-right" id="badgeWrap">
-    <img src="assets/imagotipo.png" alt="Logo" class="header-logo" />
+  <div class="header-right">
+    <img src="assets/logotipo.png" alt="Logo" class="header-logo" />
   </div>
   <div class="header-center">
-    <span class="header-label" id="headerLabel">Cuartos de Final - Ida</span>
-    <h1 id="headerTitle">Pronósticos</h1>
+    <span class="header-label">Proyecciones estadísticos</span>
   </div>
 </header>
 
-  <!-- Vista: lista -->
-  <div class="view" id="vista-lista">
-    <div class="loading" id="loading">
-      <div class="spinner"></div>
-      <span>Cargando…</span>
+<main class="home-main">
+
+  <!-- ── Mitad izquierda: imagen Don Octavio ── -->
+  <section class="home-hero">
+    <img src="assets/donoctavio.png" alt="Don Octavio" class="hero-img" />
+    <p class="hero-tagline">El modelo que predice,<br>la estadística que no miente.</p>
+  </section>
+
+  <!-- ── Mitad derecha ── -->
+  <section class="home-right">
+
+    <!-- Fila superior: torneos -->
+    <div class="torneos-grid">
+
+      <a href="partidos.html" class="torneo-card">
+        <img src="assets/liga-mx3.png" alt="Liga MX" class="torneo-img" />
+        <span class="badge">Activo</span>
+      </a>
+
+      <div class="torneo-card torneo-card--pronto">
+        <img src="assets/mundial-2026.png" alt="Copa del Mundo 2026" class="torneo-img torneo-img--dim" />
+        <span class="badge badge--pronto">Próximamente</span>
+      </div>
+
     </div>
-    <div class="tabla" id="contenedor"></div>
-  </div>
 
-  <!-- Vista: detalle -->
-  <div class="view hidden" id="vista-detalle">
-    <div class="detalle-wrap" id="detalleContenido"></div>
-  </div>
+    <!-- Divisor -->
+    <div class="home-divider"></div>
 
-  <script src="script.js"></script>
+    <!-- Fila inferior: resumen de aciertos -->
+    <div class="resumen-wrap">
+      <p class="resumen-titulo">Últimas proyecciones</p>
+
+      <!-- Métricas rápidas -->
+      <div class="metricas-grid" id="metricas">
+        <!-- llenado por historial.js -->
+      </div>
+
+      <!-- Mini tabla de últimos partidos -->
+      <div class="mini-tabla" id="miniTabla">
+        <!-- llenado por historial.js -->
+      </div>
+
+      <a href="historial.html" class="ver-todos-btn">Ver todas las proyecciones →</a>
+    </div>
+
+  </section>
+</main>
+
+<script src="historial.js"></script>
 
 </body>
 </html>

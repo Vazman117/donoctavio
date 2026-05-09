@@ -1,17 +1,40 @@
 let partidos = [];
 
+/* ── Helpers defensivos ──────────────────────────────── */
+function setStyle(id, prop, val) {
+  const el = document.getElementById(id);
+  if (el) el.style[prop] = val;
+}
+function setText(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = val;
+}
+function setHTML(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = val;
+}
+function addClass(id, cls) {
+  const el = document.getElementById(id);
+  if (el) el.classList.add(cls);
+}
+function removeClass(id, cls) {
+  const el = document.getElementById(id);
+  if (el) el.classList.remove(cls);
+}
+
 /* ── Carga de datos ──────────────────────────────────── */
 fetch('partidos.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     partidos = data;
-    document.getElementById('loading').style.display = 'none';
+    setStyle('loading', 'display', 'none');
     renderLista();
-  })
+  });
 
 /* ── Render lista ────────────────────────────────────── */
 function renderLista() {
   const contenedor = document.getElementById('contenedor');
+  if (!contenedor) return;
   contenedor.innerHTML = '';
 
   const header = document.createElement('div');
@@ -228,12 +251,10 @@ function renderFactor(f) {
 
 /* ── Render análisis completo ────────────────────────── */
 function renderAnalisis(p) {
-  /* Formato nuevo: analisis es lista de factores */
   if (p.analisis && Array.isArray(p.analisis)) {
     return p.analisis.map(renderFactor).join('');
   }
 
-  /* Formato legacy: razones objeto {local, visitante} */
   if (p.razones && !Array.isArray(p.razones)) {
     function renderRazonesEquipo(razones) {
       if (!razones) return '';
@@ -265,7 +286,6 @@ function renderAnalisis(p) {
     `;
   }
 
-  /* Formato legacy array */
   return `<div class="det-card"><div class="det-analisis-wrap">${
     (p.razones || []).map(r => {
       const esFavor = r.startsWith('✅');
@@ -290,8 +310,7 @@ function mostrarDetalle(i) {
       ? ['Pronóstico moderado',  'conf-media']
       : ['Pronóstico ajustado',  'conf-baja'];
 
-  document.getElementById('detalleContenido').innerHTML = `
-
+  setHTML('detalleContenido', `
     <div class="det-card">
       <div class="det-match">
         <div class="det-equipo">
@@ -332,18 +351,22 @@ function mostrarDetalle(i) {
       <div class="det-pred-valor">${p.prediccion}</div>
       <span class="det-confianza ${confianza[1]}">${confianza[0]}</span>
     </div>
+  `);
 
-  `;
+  addClass('vista-lista',   'hidden');
+  removeClass('vista-detalle', 'hidden');
 
-  document.getElementById('vista-lista').classList.add('hidden');
-  document.getElementById('vista-detalle').classList.remove('hidden');
-  document.getElementById('btnBack').style.display = 'flex';
-  document.getElementById('headerLabel').textContent = p.fase
+  setStyle('btnBack',   'display', 'flex');
+  setStyle('btnInicio', 'display', 'none');
+  setStyle('badgeWrap', 'display', 'none');
+
+  const fase = p.fase
     ? p.fase.replace('liguilla_ida',    'Cuartos de Final · Ida')
             .replace('liguilla_vuelta', 'Cuartos de Final · Vuelta')
     : 'Jornada Regular';
-  document.getElementById('headerTitle').textContent = p.local + ' · ' + p.visitante;
-  document.getElementById('badgeWrap').style.display = 'none';
+  setText('headerLabel', fase);
+  setText('headerTitle', p.local + ' · ' + p.visitante);
+
   window.scrollTo({ top: 0 });
 
   requestAnimationFrame(() => {
@@ -360,11 +383,15 @@ function mostrarDetalle(i) {
 
 /* ── Volver a lista ──────────────────────────────────── */
 function mostrarLista() {
-  document.getElementById('vista-detalle').classList.add('hidden');
-  document.getElementById('vista-lista').classList.remove('hidden');
-  document.getElementById('btnBack').style.display = 'none';
-  document.getElementById('headerLabel').textContent = 'Cuartos de Final · Ida';
-  document.getElementById('headerTitle').textContent = 'Pronósticos';
-  document.getElementById('badgeWrap').style.display = '';
+  addClass('vista-detalle', 'hidden');
+  removeClass('vista-lista', 'hidden');
+
+  setStyle('btnBack',   'display', 'none');
+  setStyle('btnInicio', 'display', 'flex');
+  setStyle('badgeWrap', 'display', '');
+
+  setText('headerLabel', 'Cuartos de Final · Ida');
+  setText('headerTitle', 'Proyecciones');
+
   window.scrollTo({ top: 0 });
 }
