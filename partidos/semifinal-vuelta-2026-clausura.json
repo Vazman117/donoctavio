@@ -1226,5 +1226,140 @@
         "interpretacion": "Celtic lleva 5 partidos consecutivos sin perder, reflejo de estabilidad y confianza. Rangers lleva 3."
       }
     ]
+  },
+    {
+    "id": 8,
+    "fase": "fase_regular",
+    "local": "Crystal Palace",
+    "visitante": "Everton",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/384.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/368.png",
+    "prob_local": 0.424091190176197,
+    "prob_empate": 0.3050584784313725,
+    "prob_visitante": 0.2708503313924304,
+    "fuerza_local": 0.4330352941176472,
+    "fuerza_visitante": 0.32627764705882345,
+    "diferencia": 0.10675764705882373,
+    "confianza": "moderado",
+    "prediccion": "Crystal Palace",
+    "resultado": "empate",
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "D"
+          ],
+          "nombre": "Crystal Palace"
+        },
+        "visitante": {
+          "valor": 0.4,
+          "ultimos_5": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "D"
+          ],
+          "nombre": "Everton"
+        },
+        "interpretacion": "Crystal Palace llega con mejor momentum reciente: índice 0.53/1.0 frente a 0.40/1.0 de Everton. En los últimos 5, Crystal Palace acumula 2 victorias contra 1 del rival. Nota: Crystal Palace suma 2 empate(s) y Everton 2 empate(s) en sus últimos 5, lo que eleva la probabilidad de un resultado igualado."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.33,
+          "detalle": "6G / 6E / 6P",
+          "nombre": "Crystal Palace"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.22,
+          "detalle": "4G / 4E / 10P",
+          "nombre": "Everton"
+        },
+        "interpretacion": "Everton tiene dificultades fuera de casa: 22% de victorias como visitante (4G/4E/10P). Crystal Palace gana el 33% en casa (6G/6E/6P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Crystal Palace",
+          "goles_favor": 1.28,
+          "goles_contra": 1.36
+        },
+        "visitante": {
+          "nombre": "Everton",
+          "goles_favor": 1.08,
+          "goles_contra": 1.5
+        },
+        "interpretacion": "Producción ofensiva similar: Crystal Palace promedia 1.28 goles/partido y Everton 1.08. En defensa: 1.36 vs 1.50."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.33,
+          "detalle": "11 empates en 36 partidos | 2D últimos 5",
+          "nombre": "Crystal Palace"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.22,
+          "detalle": "9 empates en 36 partidos | 2D últimos 5",
+          "nombre": "Everton"
+        },
+        "interpretacion": "Perfil empatador moderado: Crystal Palace empata el 33% en casa (11 empates en 36 partidos) y Everton el 22% de visita (9 empates en 36 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Posición y tendencia en tabla",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Posición",
+          "valor": 12,
+          "detalle": "Tendencia: +1",
+          "nombre": "Crystal Palace"
+        },
+        "visitante": {
+          "etiqueta": "Posición",
+          "valor": 15,
+          "detalle": "Tendencia: 0",
+          "nombre": "Everton"
+        },
+        "interpretacion": "Posiciones cercanas en tabla: Crystal Palace #12, Everton #15."
+      },
+      {
+        "factor": "Racha sin perder",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 2,
+          "detalle": "2 consecutivos",
+          "nombre": "Crystal Palace"
+        },
+        "visitante": {
+          "etiqueta": "Partidos sin perder",
+          "valor": 1,
+          "detalle": "1 consecutivos",
+          "nombre": "Everton"
+        },
+        "interpretacion": "Ningún equipo llega con racha notable: Crystal Palace lleva 2 partido(s) sin perder y Everton 1."
+      }
+    ]
   }
 ]
