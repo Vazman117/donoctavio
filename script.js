@@ -390,7 +390,7 @@ function mostrarLista() {
   setStyle('btnInicio', 'display', 'flex');
   setStyle('badgeWrap', 'display', '');
 
-  setText('headerLabel', 'Cuartos de Final · Ida');
+  setText('headerLabel', 'Análisis Semanal');
   setText('headerTitle', 'Proyecciones');
 
   window.scrollTo({ top: 0 });

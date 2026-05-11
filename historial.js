@@ -114,18 +114,36 @@ function renderMetricas(partidos) {
   const el = document.getElementById('metricas');
   if (!el) return;
 
+  const conResultado = partidos.filter(p => p.resultado);
+  const total = conResultado.length;
+
+  let aciertos = 0, ajustados = 0;
+  for (const p of conResultado) {
+    const fav  = obtenerFavorito(p);
+    if (fav === p.resultado) {
+      aciertos++;
+    } else {
+      const probs = [p.prob_local, p.prob_empate, p.prob_visitante];
+      probs.sort((a, b) => b - a);
+      if (probs[0] - probs[1] < 0.15) ajustados++;
+    }
+  }
+
+  const eficiencia = total ? ((aciertos / total) * 100).toFixed(1) + '%' : '—';
+  const cobertura  = total ? (((aciertos + ajustados) / total) * 100).toFixed(1) + '%' : '—';
+
   el.innerHTML = `
     <div class="metrica-card">
       <div class="metrica-val">${partidos.length}</div>
       <div class="metrica-lbl">Proyecciones</div>
     </div>
     <div class="metrica-card">
-      <div class="metrica-val metrica-val--ok">${calcularEficiencia(partidos)}</div>
+      <div class="metrica-val metrica-val--ok">${eficiencia}</div>
       <div class="metrica-lbl">Eficiencia</div>
     </div>
     <div class="metrica-card">
-      <div class="metrica-val metrica-val--pct">${calcularEfectividadParidad(partidos)}</div>
-      <div class="metrica-lbl">Paridad</div>
+      <div class="metrica-val metrica-val--pct">${cobertura}</div>
+      <div class="metrica-lbl">Cobertura</div>
     </div>
   `;
 }
@@ -134,7 +152,7 @@ function renderMiniTabla(partidos) {
   const el = document.getElementById('miniTabla');
   if (!el) return;
 
-  const ultimos = partidos.slice(-MAX_MINI).reverse();
+  const ultimos = partidos.slice(0, MAX_MINI);
 
   if (ultimos.length === 0) {
     el.innerHTML = `

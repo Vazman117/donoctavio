@@ -32,9 +32,27 @@
     <span>Cargando historial…</span>
   </div>
 
-  <div id="resumenMetricas" style="display:none;">
-    <div class="hist-metricas" id="histMetricas"></div>
+<div id="resumenMetricas" style="display:none;">
+  <div class="hist-resumen-layout">
+
+    <div class="hist-dona-wrap" id="histDona" style="opacity:0; transition: opacity .3s;">
+      <div class="hist-dona-inner">
+        <canvas id="donaChart" role="img" aria-label="Distribución: aciertos, ajustados y fallos">Distribución de proyecciones.</canvas>
+        <div class="hist-dona-centro">
+          <span class="hist-dona-num" id="donaTotal">—</span>
+          <span class="hist-dona-sub">Proyecciones</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hist-resumen-derecha">
+      <div class="hist-metricas" id="histMetricas"></div>
+      <p class="hist-nota-paridad" id="histNotaParidad"></p>
+      <div class="hist-dona-leyenda" id="donaLeyenda"></div>
+    </div>
+
   </div>
+</div>
 
   <div class="tabla" id="contenedorHistorial" style="display:none;"></div>
 
@@ -61,6 +79,71 @@
 const CARPETA = 'partidos/';
 
 function fmt(n) { return (n * 100).toFixed(1) + '%'; }
+
+function renderDona(partidos) {
+  const el = document.getElementById('histDona');
+  if (!el) return;
+
+  const conResultado = partidos.filter(p => p.resultado);
+  if (!conResultado.length) return;
+
+  let aciertos = 0, ajustados = 0, fallos = 0;
+  for (const p of conResultado) {
+    const tipo = clasificarResultado(p);
+    if (tipo === 'acierto')      aciertos++;
+    else if (tipo === 'parcial') ajustados++;
+    else                         fallos++;
+  }
+
+  const total = conResultado.length;
+  document.getElementById('donaTotal').textContent = total;
+
+  document.getElementById('donaLeyenda').innerHTML = `
+    <span class="dona-item">
+      <span class="dona-dot" style="background:#27ae60;"></span>
+      <span class="dona-lbl">Aciertos</span>
+      <span class="dona-val">${Math.round(aciertos/total*100)}%</span>
+    </span>
+    <span class="dona-item">
+      <span class="dona-dot" style="background:#f39c12;"></span>
+      <span class="dona-lbl">Ajustados</span>
+      <span class="dona-val">${Math.round(ajustados/total*100)}%</span>
+    </span>
+    <span class="dona-item">
+      <span class="dona-dot" style="background:#e74c3c;"></span>
+      <span class="dona-lbl">Fallos</span>
+      <span class="dona-val">${Math.round(fallos/total*100)}%</span>
+    </span>
+  `;
+
+  el.style.opacity = '1';
+
+  if (window._donaChart) window._donaChart.destroy();
+  window._donaChart = new Chart(document.getElementById('donaChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Aciertos', 'Ajustados', 'Fallos'],
+      datasets: [{
+        data: [aciertos, ajustados, fallos],
+        backgroundColor: ['#27ae60', '#f39c12', '#e74c3c'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '72%',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.label}: ${ctx.raw} (${Math.round(ctx.raw/total*100)}%)`
+          }
+        }
+      }
+    }
+  });
+}
 
 function obtenerFavorito(p) {
   if (p.prediccion) return p.prediccion;
@@ -163,31 +246,26 @@ function calcularEficiencia(partidos) {
 function renderMetricas(partidos) {
   const el = document.getElementById('histMetricas');
   if (!el) return;
-  const { pct, aciertos, fallos, local, empate, visitante, parciales } = calcularEficiencia(partidos);
+  const { aciertos, parciales, fallos } = calcularEficiencia(partidos);
   const paridad = calcularParidad(partidos);
 
   el.innerHTML = `
-    <div class="hist-metrica-card">
-      <span class="hist-metrica-val">${partidos.length}</span>
-      <span class="hist-metrica-lbl">Proyecciones</span>
-    </div>
-    <div class="hist-metrica-card">
-      <span class="hist-metrica-val hist-val-paridad">${paridad}</span>
-      <span class="hist-metrica-lbl">En Paridad</span>
-    </div>
     <div class="hist-metrica-card">
       <span class="hist-metrica-val hist-val-win">${aciertos}</span>
       <span class="hist-metrica-lbl">Aciertos</span>
     </div>
     <div class="hist-metrica-card">
       <span class="hist-metrica-val hist-val-parcial">${parciales}</span>
-      <span class="hist-metrica-lbl">Parciales</span>
+      <span class="hist-metrica-lbl">Ajustados</span>
     </div>
     <div class="hist-metrica-card">
       <span class="hist-metrica-val hist-val-loss">${fallos}</span>
       <span class="hist-metrica-lbl">Fallos</span>
     </div>
   `;
+
+  const nota = document.getElementById('histNotaParidad');
+  if (nota) nota.textContent = `${paridad} de ${partidos.length} partidos fueron de alta paridad`;
 }
 
 /* ── Tabla ── */
@@ -341,18 +419,103 @@ async function init() {
 
   renderMetricas(partidos);
   renderTabla(partidos);
+
+  const script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js';
+  script.onload = () => renderDona(partidos);
+  document.head.appendChild(script);
 }
 
 init();
 </script>
 
 <style>
+  /* ── Dona ── */
+.hist-dona-wrap {
+  flex-shrink: 0;
+  width: 160px;
+  height: 160px;
+}
+
+.hist-dona-inner {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.hist-dona-inner canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px !important;
+  height: 160px !important;
+}
+/* ── Layout resumen ── */
+.hist-resumen-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.hist-dona-wrap {
+  flex-shrink: 0;
+}
+
+.hist-dona-inner {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.hist-dona-inner canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.hist-dona-centro {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hist-dona-num {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--text);
+  line-height: 1;
+}
+
+.hist-dona-sub {
+  font-size: .62rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-top: 3px;
+}
+
+/* ── Columna derecha ── */
+.hist-resumen-derecha {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* ── Métricas ── */
 .hist-metricas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  grid-template-columns: repeat(3, minmax(100px, 140px));
   gap: .75rem;
-  margin-bottom: 1.75rem;
+  justify-content: center;
 }
 
 .hist-metrica-card {
@@ -373,8 +536,10 @@ init();
   color: var(--text);
   line-height: 1;
 }
-.hist-val-win  { color: var(--win); }
-.hist-val-loss { color: var(--loss); }
+
+.hist-val-win     { color: var(--win); }
+.hist-val-loss    { color: var(--loss); }
+.hist-val-parcial { color: #f39c12; }
 
 .hist-metrica-lbl {
   font-size: .66rem;
@@ -382,6 +547,48 @@ init();
   font-weight: 500;
   letter-spacing: .06em;
   text-transform: uppercase;
+}
+
+/* ── Leyenda dona ── */
+.hist-dona-leyenda {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.dona-item {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.dona-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dona-lbl {
+  font-size: .75rem;
+  color: var(--muted);
+}
+
+.dona-val {
+  font-size: .75rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ── Nota paridad ── */
+.hist-nota-paridad {
+  font-size: .72rem;
+  color: var(--muted);
+  margin: 0;
+  text-align: center;
+  width: 100%;
 }
 
 /* ── Tabla ── */
@@ -396,16 +603,22 @@ init();
 }
 
 .fila--acierto {
-  background: rgba(39, 174, 96, 0.07);
+  background: transparent;
   border-left: 3px solid var(--win);
 }
-.fila--acierto:hover { background: rgba(39, 174, 96, 0.13); }
+.fila--acierto:hover { background: rgba(39, 174, 96, 0.07); }
 
 .fila--fallo {
-  background: rgba(231, 76, 60, 0.07);
+  background: transparent;
   border-left: 3px solid var(--loss);
 }
-.fila--fallo:hover { background: rgba(231, 76, 60, 0.13); }
+.fila--fallo:hover { background: rgba(231, 76, 60, 0.07); }
+
+.fila--parcial {
+  background: transparent;
+  border-left: 3px solid #f39c12;
+}
+.fila--parcial:hover { background: rgba(243, 156, 18, 0.07); }
 
 .fila-pred-text {
   font-size: .82rem;
@@ -424,27 +637,9 @@ init();
   justify-content: center;
 }
 
-.hist-val-parcial { color: #f39c12; }
-.hist-val-paridad { color: #1246f3dc; }
-
-.fila--parcial {
-  background: rgba(243, 156, 18, 0.07);
-  border-left: 3px solid #f39c12;
-}
-.fila--parcial:hover { background: rgba(243, 156, 18, 0.13); }
-
-.res--parcial {
-  background: rgba(243, 156, 18, .15);
-  color: #f39c12;
-}
-
-.veredicto--parcial {
-  background: rgba(243, 156, 18, .12);
-  color: #f39c12;
-  border: 1px solid rgba(243, 156, 18, .25);
-}
-.res--ok      { background: rgba(39,174,96,.15); color: var(--win); }
-.res--fail    { background: rgba(231,76,60,.15);  color: var(--loss); }
+.res--ok      { background: rgba(39,174,96,.15);  color: var(--win); }
+.res--parcial { background: rgba(243,156,18,.15);  color: #f39c12; }
+.res--fail    { background: rgba(231,76,60,.15);   color: var(--loss); }
 .res--pending { color: var(--muted); }
 
 /* ── Modal overlay ── */
@@ -490,7 +685,6 @@ init();
 }
 .modal-close:hover { color: var(--text); }
 
-/* Modal contenido */
 .modal-equipos {
   display: flex;
   align-items: center;
@@ -582,7 +776,7 @@ init();
 .prob-chip.draw { color: var(--draw); }
 .prob-chip.loss { color: var(--loss); }
 
-/* Veredicto */
+/* ── Veredicto ── */
 .veredicto {
   display: flex;
   align-items: center;
@@ -599,6 +793,11 @@ init();
   background: rgba(39,174,96,.12);
   color: var(--win);
   border: 1px solid rgba(39,174,96,.25);
+}
+.veredicto--parcial {
+  background: rgba(243,156,18,.12);
+  color: #f39c12;
+  border: 1px solid rgba(243,156,18,.25);
 }
 .veredicto--fail {
   background: rgba(231,76,60,.12);
@@ -620,6 +819,16 @@ init();
 }
 
 /* ── Responsive ── */
+@media (max-width: 560px) {
+  .hist-resumen-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hist-resumen-derecha {
+    width: 100%;
+  }
+}
+
 @media (max-width: 640px) {
   .hist-tabla-header,
   .hist-fila {
