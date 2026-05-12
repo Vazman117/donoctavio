@@ -8,13 +8,13 @@ import os
 # =============================
 
 def cargar_equipos():
-    ruta = os.path.join("scrapper", "equipos.json")
+    ruta = os.path.join("scrapper", "LIGA-MX","equipos.json")
     with open(ruta, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def cargar_h2h():
-    ruta = os.path.join("scrapper", "h2h_liguilla.json")
+    ruta = os.path.join("scrapper", "LIGA-MX","h2h_liguilla.json")
     with open(ruta, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -90,6 +90,78 @@ def normalizar_goles_favor(promedio):
 def normalizar_goles_contra(promedio):
     return limitar(1.0 - (promedio / 3.0), 0.0, 1.0)
 
+# =============================
+# PROMEDIO DE LIGA
+# =============================
+
+def calcular_promedio_liga(db):
+    equipos = [e for e in db.values() if e.get("partidos", 0) > 0]
+    if not equipos:
+        return 1.35
+    return sum(e["goles_favor_promedio"] for e in equipos) / len(equipos)
+
+
+# =============================
+# CONFIANZA POR JORNADA
+# =============================
+
+def peso_confianza(partidos_jugados):
+    if partidos_jugados < 5:
+        return 0.30
+    elif partidos_jugados < 10:
+        return 0.65
+    else:
+        return 1.0
+
+
+# =============================
+# IPO e ISD
+# =============================
+
+def calcular_ipo(equipo, es_local, promedio_liga):
+    peso = peso_confianza(equipo.get("partidos", 0))
+    ataque_normalizado = equipo["goles_favor_promedio"] / promedio_liga
+    ataque_normalizado = peso * ataque_normalizado + (1 - peso) * 1.0
+    modificador_forma     = 0.85 + (equipo["forma_ponderada"] * 0.30)
+    modificador_localidad = equipo["win_rate_local"] if es_local else equipo["win_rate_visita"]
+    modificador_localidad = 0.80 + (modificador_localidad * 0.40)
+    return ataque_normalizado * modificador_forma * modificador_localidad
+
+
+def calcular_isd(equipo, promedio_liga):
+    peso = peso_confianza(equipo.get("partidos", 0))
+    if equipo["goles_contra_promedio"] == 0:
+        defensa_normalizada = 2.0
+    else:
+        defensa_normalizada = promedio_liga / equipo["goles_contra_promedio"]
+    defensa_normalizada = peso * defensa_normalizada + (1 - peso) * 1.0
+    modificador_streak = 1.0 + (normalizar_streak(equipo["imbatido_streak"]) * 0.20)
+    return defensa_normalizada * modificador_streak
+
+
+def calcular_lambdas(equipo_local, equipo_visitante, promedio_liga):
+    ipo_local     = calcular_ipo(equipo_local,     es_local=True,  promedio_liga=promedio_liga)
+    ipo_visitante = calcular_ipo(equipo_visitante, es_local=False, promedio_liga=promedio_liga)
+    isd_local     = calcular_isd(equipo_local,     promedio_liga=promedio_liga)
+    isd_visitante = calcular_isd(equipo_visitante, promedio_liga=promedio_liga)
+    lambda_local     = ipo_local     * isd_visitante * promedio_liga
+    lambda_visitante = ipo_visitante * isd_local     * promedio_liga
+    return limitar(lambda_local, 0.3, 5.0), limitar(lambda_visitante, 0.3, 5.0)
+
+
+def probabilidades_poisson(lambda_local, lambda_visitante, max_goles=6):
+    from math import exp, factorial
+    def pmf(k, lam):
+        return (lam ** k) * exp(-lam) / factorial(k)
+    prob_local = prob_empate = prob_visitante = 0.0
+    for i in range(max_goles + 1):
+        for j in range(max_goles + 1):
+            p = pmf(i, lambda_local) * pmf(j, lambda_visitante)
+            if i > j:   prob_local     += p
+            elif i == j: prob_empate   += p
+            else:        prob_visitante += p
+    total = prob_local + prob_empate + prob_visitante
+    return prob_local/total, prob_empate/total, prob_visitante/total
 
 # =============================
 # FUERZA BASE
@@ -194,12 +266,25 @@ def calcular_prob_empate(f_local, f_visitante):
 # PROBABILIDADES
 # =============================
 
-def predecir_probabilidades_liguilla(equipo_local, equipo_visitante, h2h_data, nombre_local, nombre_visitante):
+ALPHA = 0.70
+BETA  = 0.30
 
+def predecir_probabilidades_liguilla(equipo_local, equipo_visitante, h2h_data, 
+                                      nombre_local, nombre_visitante, promedio_liga):
+
+    # — Capa 1: Poisson —
+    lambda_local, lambda_visitante = calcular_lambdas(
+        equipo_local, equipo_visitante, promedio_liga
+    )
+    p_local, p_empate, p_visitante = probabilidades_poisson(lambda_local, lambda_visitante)
+
+    # — Capa 2: fuerza con H2H y experiencia —
     fb_local     = calcular_fuerza_base(equipo_local,     es_local=True)
     fb_visitante = calcular_fuerza_base(equipo_visitante, es_local=False)
 
-    h2h_local, n_c, n_a, partidos_h2h = calcular_h2h_score(nombre_local, nombre_visitante, h2h_data)
+    h2h_local, n_c, n_a, partidos_h2h = calcular_h2h_score(
+        nombre_local, nombre_visitante, h2h_data
+    )
     h2h_visitante = 1.0 - h2h_local
 
     exp_local     = get_experiencia(nombre_local)
@@ -222,26 +307,24 @@ def predecir_probabilidades_liguilla(equipo_local, equipo_visitante, h2h_data, n
         vuelta_visit  * PESO_VUELTA_CASA
     )
 
-    score          = f_local - f_visitante
-    prob_local     = 1 / (1 + math.exp(-K_LOGISTICO * score))
-    prob_visitante = 1 - prob_local
+    score   = f_local - f_visitante
+    ratio_l = 1 / (1 + math.exp(-K_LOGISTICO * score))
+    ratio_v = 1 - ratio_l
 
-    if prob_local > MAX_FAVORITO:
-        prob_local     = MAX_FAVORITO
-        prob_visitante = 1 - prob_local
-    if prob_visitante > MAX_FAVORITO:
-        prob_visitante = MAX_FAVORITO
-        prob_local     = 1 - prob_visitante
+    prob_empate_f = calcular_prob_empate(f_local, f_visitante)
+    restante      = 1.0 - prob_empate_f
+    prob_local_f     = restante * ratio_l
+    prob_visitante_f = restante * ratio_v
 
-    prob_empate    = calcular_prob_empate(f_local, f_visitante)
-    ajuste         = 1 - (prob_empate * 0.30)
-    prob_local    *= ajuste
-    prob_visitante *= ajuste
+    # — Fusión —
+    prob_local     = ALPHA * p_local     + BETA * prob_local_f
+    prob_empate    = ALPHA * p_empate    + BETA * prob_empate_f
+    prob_visitante = ALPHA * p_visitante + BETA * prob_visitante_f
 
-    suma           = prob_local + prob_visitante + prob_empate
-    prob_local    /= suma
-    prob_visitante /= suma
-    prob_empate   /= suma
+    total          = prob_local + prob_empate + prob_visitante
+    prob_local    /= total
+    prob_empate   /= total
+    prob_visitante /= total
 
     gap = abs(prob_local - prob_visitante)
     confianza = "ajustado" if gap < 0.08 else "moderado" if gap < 0.18 else "favorable"
@@ -263,8 +346,9 @@ def predecir_probabilidades_liguilla(equipo_local, equipo_visitante, h2h_data, n
         "exp_visitante":    exp_visitante,
         "fb_local":         fb_local,
         "fb_visitante":     fb_visitante,
+        "lambda_local":     lambda_local,
+        "lambda_visitante": lambda_visitante,
     }
-
 
 # =============================
 # IMPACTO DE FACTOR
@@ -567,24 +651,28 @@ def guardar_resultado(partido, archivo="partidos_liguilla.json"):
 # GENERAR PARTIDO IDA
 # =============================
 
-def generar_partido_ida(id, local_nombre, visitante_nombre, db, h2h):
-
+def generar_partido_ida(id, etapa, local_nombre, visitante_nombre, db, h2h):
     local     = obtener_equipo(local_nombre, db)
     visitante = obtener_equipo(visitante_nombre, db)
 
     if not local or not visitante:
         raise ValueError(f"Equipo no encontrado: {'local' if not local else 'visitante'}")
 
+    promedio_liga = calcular_promedio_liga(db)  # ← nuevo
+
     resultado = predecir_probabilidades_liguilla(
-        local, visitante, h2h, local_nombre, visitante_nombre
+        local, visitante, h2h,
+        local_nombre, visitante_nombre,
+        promedio_liga  # ← nuevo
     )
 
-    if resultado["local"] > resultado["visitante"] and resultado["local"] > resultado["empate"]:
+    maxima = max(resultado["local"], resultado["empate"], resultado["visitante"])
+    if maxima == resultado["local"]:
         pred = local["nombre"]
-    elif resultado["visitante"] > resultado["local"] and resultado["visitante"] > resultado["empate"]:
-        pred = visitante["nombre"]
-    else:
+    elif maxima == resultado["empate"]:
         pred = "Empate"
+    else:
+        pred = visitante["nombre"]
 
     analisis = generar_analisis(local, visitante, resultado, local_nombre, visitante_nombre)
 
@@ -619,6 +707,18 @@ if __name__ == "__main__":
     db  = cargar_equipos()
     h2h = cargar_h2h()
 
-    partido = generar_partido_ida(1, "Toluca", "Pachuca", db, h2h)
-    print(json.dumps(partido, indent=2, ensure_ascii=False))
-    print("\nPartido de ida generado y guardado en partidos_liguilla.json")
+    casos = [
+        (1, "semifinal", "Pachuca", "Pumas UNAM"),
+        (2, "semifinal", "Cruz Azul", "Guadalajara"),
+    ]
+
+    for id, etapa, local, visitante in casos:
+        partido = generar_partido_ida(id, etapa, local, visitante, db, h2h)
+        print(f"\n{'='*50}")
+        print(f"  {partido['local']} vs {partido['visitante']} ({etapa})")
+        print(f"  Local:     {partido['prob_local']:.1%}")
+        print(f"  Empate:    {partido['prob_empate']:.1%}")
+        print(f"  Visitante: {partido['prob_visitante']:.1%}")
+        print(f"  → Predicción: {partido['prediccion']}")
+
+    print("\n✅ Partidos guardados en partidos_liguilla.json")

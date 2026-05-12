@@ -20,10 +20,8 @@ SCHEDULE_URL = "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/teams
 # Usa el nombre exacto como aparece en ESPN.
 
 CRUCES_LIGUILLA = [
-    ("Pumas UNAM",    "América"),
-    ("Guadalajara",   "Tigres UANL"),
-    ("Cruz Azul",     "Atlas"),
-    ("Pachuca",       "Toluca"),
+    ("Pumas UNAM",    "Pachuca"),
+    ("Guadalajara",   "Cruz Azul"),
 ]
 
 # Temporadas a incluir (seasonType ids de ESPN)

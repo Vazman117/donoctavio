@@ -825,12 +825,13 @@ def generar_partido_vuelta(
         contexto,
     )
 
-    if resultado["local"] > resultado["visitante"] and resultado["local"] > resultado["empate"]:
-        pred_partido = local["nombre"]
-    elif resultado["visitante"] > resultado["local"] and resultado["visitante"] > resultado["empate"]:
-        pred_partido = visitante["nombre"]
-    else:
+    gap = abs(resultado["local"] - resultado["visitante"])
+    if resultado["empate"] > 0.30 and gap < 0.08:
         pred_partido = "Empate"
+    elif resultado["local"] > resultado["visitante"]:
+        pred_partido = local["nombre"]
+    else:
+        pred_partido = visitante["nombre"]
 
     if resultado["local"] >= resultado["visitante"]:
         pred_clasifica = local_nombre
