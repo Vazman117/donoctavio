@@ -18,32 +18,32 @@
     "goles_contra_promedio": 1.0,
     "competencias": {
       "mex.1": {
-        "partidos": 37,
+        "partidos": 38,
         "ganados": 15,
         "empatados": 14,
-        "perdidos": 8,
+        "perdidos": 9,
         "goles_favor": 65,
-        "goles_contra": 51,
-        "goles_favor_promedio": 1.757,
-        "goles_contra_promedio": 1.378,
+        "goles_contra": 52,
+        "goles_favor_promedio": 1.711,
+        "goles_contra_promedio": 1.368,
         "partidos_local": 18,
         "ganados_local": 7,
         "empatados_local": 7,
         "perdidos_local": 4,
         "win_rate_local": 0.389,
-        "partidos_visita": 19,
+        "partidos_visita": 20,
         "ganados_visita": 8,
         "empatados_visita": 7,
-        "perdidos_visita": 4,
-        "win_rate_visita": 0.421,
+        "perdidos_visita": 5,
+        "win_rate_visita": 0.4,
         "ultimos_5": [
+          "L",
           "D",
           "D",
-          "W",
           "W",
           "W"
         ],
-        "imbatido_streak": 10
+        "imbatido_streak": 0
       },
       "concacaf.champions": {
         "partidos": 2,
@@ -71,16 +71,16 @@
         "imbatido_streak": 1
       }
     },
-    "forma_combinada": 0.7,
-    "forma_liga": 0.7,
+    "forma_combinada": 0.425,
+    "forma_liga": 0.425,
     "ultimos_5_liga": [
+      "L",
       "D",
       "D",
-      "W",
       "W",
       "W"
     ],
-    "imbatido_streak": 10
+    "imbatido_streak": 0
   },
   "guadalajara": {
     "nombre": "Guadalajara",
@@ -245,19 +245,19 @@
     "goles_contra_promedio": 1.118,
     "competencias": {
       "mex.1": {
-        "partidos": 38,
-        "ganados": 18,
+        "partidos": 39,
+        "ganados": 19,
         "empatados": 8,
         "perdidos": 12,
-        "goles_favor": 53,
+        "goles_favor": 54,
         "goles_contra": 43,
-        "goles_favor_promedio": 1.395,
-        "goles_contra_promedio": 1.132,
-        "partidos_local": 19,
-        "ganados_local": 11,
+        "goles_favor_promedio": 1.385,
+        "goles_contra_promedio": 1.103,
+        "partidos_local": 20,
+        "ganados_local": 12,
         "empatados_local": 2,
         "perdidos_local": 6,
-        "win_rate_local": 0.579,
+        "win_rate_local": 0.6,
         "partidos_visita": 19,
         "ganados_visita": 7,
         "empatados_visita": 6,
@@ -266,23 +266,23 @@
         "ultimos_5": [
           "W",
           "W",
+          "W",
           "L",
-          "L",
-          "W"
+          "L"
         ],
-        "imbatido_streak": 2
+        "imbatido_streak": 3
       }
     },
-    "forma_combinada": 0.68,
-    "forma_liga": 0.68,
+    "forma_combinada": 0.8,
+    "forma_liga": 0.8,
     "ultimos_5_liga": [
       "W",
       "W",
+      "W",
       "L",
-      "L",
-      "W"
+      "L"
     ],
-    "imbatido_streak": 2
+    "imbatido_streak": 3
   },
   "toluca": {
     "nombre": "Toluca",

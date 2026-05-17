@@ -4,6 +4,14 @@
     "equipo_b": "Pachuca",
     "clausura_2026": [
       {
+        "fecha": "2026-05-15",
+        "temporada": "Clausura - Semifinals",
+        "local": "Pachuca",
+        "visitante": "Pumas UNAM",
+        "goles_local": 1,
+        "goles_visitante": 0
+      },
+      {
         "fecha": "2026-04-25",
         "temporada": "Torneo Clausura",
         "local": "Pachuca",
@@ -24,10 +32,10 @@
     ],
     "resumen": {
       "clausura_2026": {
-        "partidos": 1,
+        "partidos": 2,
         "victorias_pumas_unam": 1,
         "empates": 0,
-        "victorias_pachuca": 0
+        "victorias_pachuca": 1
       },
       "apertura_2025": {
         "partidos": 1,
@@ -36,10 +44,10 @@
         "victorias_pachuca": 1
       },
       "total": {
-        "partidos": 2,
+        "partidos": 3,
         "victorias_pumas_unam": 1,
         "empates": 0,
-        "victorias_pachuca": 1
+        "victorias_pachuca": 2
       }
     }
   },
@@ -47,6 +55,14 @@
     "equipo_a": "Guadalajara",
     "equipo_b": "Cruz Azul",
     "clausura_2026": [
+      {
+        "fecha": "2026-05-14",
+        "temporada": "Clausura - Semifinals",
+        "local": "Cruz Azul",
+        "visitante": "Guadalajara",
+        "goles_local": 2,
+        "goles_visitante": 2
+      },
       {
         "fecha": "2026-02-22",
         "temporada": "Torneo Clausura",
@@ -84,9 +100,9 @@
     ],
     "resumen": {
       "clausura_2026": {
-        "partidos": 1,
+        "partidos": 2,
         "victorias_guadalajara": 0,
-        "empates": 0,
+        "empates": 1,
         "victorias_cruz_azul": 1
       },
       "apertura_2025": {
@@ -96,9 +112,9 @@
         "victorias_cruz_azul": 2
       },
       "total": {
-        "partidos": 4,
+        "partidos": 5,
         "victorias_guadalajara": 0,
-        "empates": 1,
+        "empates": 2,
         "victorias_cruz_azul": 3
       }
     }

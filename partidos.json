@@ -1,193 +1,62 @@
 [
   {
     "id": 1,
-    "fase": "liguilla_ida",
-    "local": "Pachuca",
-    "visitante": "Pumas UNAM",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
-    "prob_local": 0.3712447289870429,
-    "prob_empate": 0.1937897970856869,
-    "prob_visitante": 0.4349654739272702,
-    "fuerza_local": 0.4858985294117648,
-    "fuerza_visitante": 0.6352000000000001,
-    "diferencia": 0.14930147058823529,
-    "confianza": "ajustado",
-    "prediccion": "Pumas UNAM",
-    "vuelta_en_casa": "visitante",
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "bajo",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.68,
-          "ultimos_5": [
-            "W",
-            "W",
-            "L",
-            "L",
-            "W"
-          ],
-          "nombre": "Pachuca"
-        },
-        "visitante": {
-          "valor": 0.7,
-          "ultimos_5": [
-            "D",
-            "D",
-            "W",
-            "W",
-            "W"
-          ],
-          "nombre": "Pumas UNAM"
-        },
-        "interpretacion": "Pumas UNAM llega con mejor momentum: índice 0.70/1.0 frente a 0.68/1.0 de Pachuca. En los últimos 5 partidos, Pumas UNAM acumula 3 victorias contra 3 del rival."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "medio",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 0.58,
-          "detalle": "11G / 2E / 6P",
-          "nombre": "Pachuca"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 0.4,
-          "detalle": "8G / 7E / 5P",
-          "nombre": "Pumas UNAM"
-        },
-        "interpretacion": "Pachuca es dominante en casa: 58% de victorias (11G/2E/6P). Pumas UNAM ha respondido con 40% de efectividad como visitante (8G/7E/5P)."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "alto",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Pachuca",
-          "goles_favor": 1.47,
-          "goles_contra": 1.12
-        },
-        "visitante": {
-          "nombre": "Pumas UNAM",
-          "goles_favor": 2.0,
-          "goles_contra": 1.0
-        },
-        "interpretacion": "Pumas UNAM genera más peligro ofensivo: 2.00 goles por partido frente a 1.47 de Pachuca. En defensa, Pachuca recibe 1.12 goles por partido y Pumas UNAM 1.00."
-      },
-      {
-        "factor": "Historial directo",
-        "impacto": "medio",
-        "tipo": "h2h",
-        "local": {
-          "nombre": "Pachuca",
-          "victorias": 1
-        },
-        "visitante": {
-          "nombre": "Pumas UNAM",
-          "victorias": 1
-        },
-        "partidos": [
-          {
-            "fecha": "2026-04-25",
-            "temporada": "Torneo Clausura",
-            "local": "Pachuca",
-            "visitante": "Pumas UNAM",
-            "goles_local": 0,
-            "goles_visitante": 2
-          },
-          {
-            "fecha": "2025-07-20",
-            "temporada": "Torneo Apertura",
-            "local": "Pumas UNAM",
-            "visitante": "Pachuca",
-            "goles_local": 2,
-            "goles_visitante": 3
-          }
-        ],
-        "total": 2,
-        "interpretacion": "Pumas UNAM lleva ventaja histórica: 1 victorias en 2 enfrentamientos recientes (1 del Clausura 2026, 1 del Apertura 2025). Pachuca solo ha ganado 1 de esos cruces."
-      },
-      {
-        "factor": "Experiencia eliminatoria",
-        "impacto": "bajo",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Índice liguilla",
-          "valor": 0.28,
-          "nombre": "Pachuca"
-        },
-        "visitante": {
-          "etiqueta": "Índice liguilla",
-          "valor": 0.31,
-          "nombre": "Pumas UNAM"
-        },
-        "interpretacion": "Experiencia eliminatoria similar entre ambos equipos: Pachuca con índice 0.28/1.0 y Pumas UNAM con 0.31/1.0. Este factor no genera ventaja significativa para ninguno."
-      },
-      {
-        "factor": "Ventaja de vuelta en casa",
-        "impacto": "medio",
-        "tipo": "vuelta",
-        "equipo_vuelta": "Pumas UNAM",
-        "local": {
-          "nombre": "Pachuca",
-          "posicion": 4
-        },
-        "visitante": {
-          "nombre": "Pumas UNAM",
-          "posicion": 1
-        },
-        "interpretacion": "Pumas UNAM terminó mejor posicionado en la tabla (posición 1 vs 4), lo que le otorga el derecho de disputar la vuelta en casa. Esta ventaja táctica le permite a Pumas UNAM especular en la ida y definir la serie ante su afición, mientras Pachuca deberá resolver la eliminatoria jugando el partido decisivo de visitante."
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "fase": "liguilla_ida",
-    "local": "Cruz Azul",
-    "visitante": "Guadalajara",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
-    "prob_local": 0.483179645897739,
-    "prob_empate": 0.17564650335557444,
-    "prob_visitante": 0.3411738507466866,
-    "fuerza_local": 0.7258416862745098,
-    "fuerza_visitante": 0.48090584313725493,
-    "diferencia": 0.24493584313725492,
-    "confianza": "moderado",
+    "fase": "liguilla_vuelta",
+    "local": "Guadalajara",
+    "visitante": "Cruz Azul",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+    "prob_local": 0.11487649697588195,
+    "prob_empate": 0.42370467411764706,
+    "prob_visitante": 0.4614188289064709,
+    "fuerza_local": 0.4608561764705883,
+    "fuerza_visitante": 0.7919153529411765,
+    "diferencia": 0.33105917647058825,
+    "confianza": "favorable",
     "prediccion": "Cruz Azul",
-    "vuelta_en_casa": "visitante",
+    "clasifica": "Guadalajara",
+    "contexto_serie": {
+      "diferencia_global": 0,
+      "goles_vuelta_local_en_ida": 2,
+      "goles_vuelta_visitante_en_ida": 2,
+      "estado_local": "global_empatado",
+      "estado_visitante": "global_empatado",
+      "goles_necesita_local": 0,
+      "goles_necesita_visitante": 1,
+      "clasifica_empate_local": true,
+      "clasifica_empate_visitante": false,
+      "urgencia_local": "nula",
+      "urgencia_visitante": "media",
+      "ventaja_tabla": "local"
+    },
     "analisis": [
       {
         "factor": "Forma reciente",
         "impacto": "alto",
         "tipo": "forma",
         "local": {
-          "valor": 0.9,
+          "valor": 0.53,
           "ultimos_5": [
-            "W",
-            "W",
-            "W",
             "D",
+            "W",
+            "L",
+            "D",
+            "D"
+          ],
+          "nombre": "Guadalajara"
+        },
+        "visitante": {
+          "valor": 0.79,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "W",
             "D"
           ],
           "nombre": "Cruz Azul"
         },
-        "visitante": {
-          "valor": 0.59,
-          "ultimos_5": [
-            "W",
-            "L",
-            "D",
-            "D",
-            "W"
-          ],
-          "nombre": "Guadalajara"
-        },
-        "interpretacion": "Cruz Azul llega con mejor momentum reciente: índice de forma 0.90/1.0 frente a 0.59/1.0 de Guadalajara. En los últimos 5 partidos, Cruz Azul acumula 3 victorias contra 2 del rival."
+        "interpretacion": "Cruz Azul llega con mejor momentum: índice 0.79/1.0 frente a 0.53/1.0 de Guadalajara. En los últimos 5 partidos, Cruz Azul acumula 3 victorias contra 1 del rival."
       },
       {
         "factor": "Rendimiento situacional",
@@ -195,47 +64,74 @@
         "tipo": "barras",
         "local": {
           "etiqueta": "Win rate local",
-          "valor": 0.65,
-          "detalle": "15G / 6E / 2P",
-          "nombre": "Cruz Azul"
+          "valor": 0.63,
+          "detalle": "12G / 4E / 3P",
+          "nombre": "Guadalajara"
         },
         "visitante": {
           "etiqueta": "Win rate visita",
-          "valor": 0.47,
-          "detalle": "9G / 2E / 8P",
-          "nombre": "Guadalajara"
+          "valor": 0.4,
+          "detalle": "8G / 10E / 2P",
+          "nombre": "Cruz Azul"
         },
-        "interpretacion": "Cruz Azul es dominante en casa: 65% de victorias (15G/6E/2P). Guadalajara ha respondido con 47% de efectividad como visitante (9G/2E/8P)."
+        "interpretacion": "Guadalajara es dominante en casa: 63% de victorias (12G/4E/3P). Cruz Azul ha respondido con 40% de efectividad como visitante (8G/10E/2P)."
       },
       {
         "factor": "Potencial ofensivo y defensivo",
         "impacto": "bajo",
         "tipo": "doble_barra",
         "local": {
-          "nombre": "Cruz Azul",
-          "goles_favor": 1.82,
-          "goles_contra": 1.06
+          "nombre": "Guadalajara",
+          "goles_favor": 1.77,
+          "goles_contra": 1.21
         },
         "visitante": {
-          "nombre": "Guadalajara",
-          "goles_favor": 1.94,
-          "goles_contra": 1.0
+          "nombre": "Cruz Azul",
+          "goles_favor": 1.8,
+          "goles_contra": 1.12
         },
-        "interpretacion": "Producción ofensiva similar: Cruz Azul promedia 1.82 goles por partido y Guadalajara 1.94. En defensa, Cruz Azul recibe 1.06 por partido frente a 1.00 del rival."
+        "interpretacion": "Producción ofensiva similar: Guadalajara promedia 1.77 goles por partido y Cruz Azul 1.80. En defensa, Guadalajara recibe 1.21 por partido frente a 1.12 del rival."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.21,
+          "detalle": "7 empates en 39 partidos | 3D últimos 5",
+          "nombre": "Guadalajara"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.5,
+          "detalle": "15 empates en 41 partidos | 2D últimos 5",
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Cruz Azul es un equipo marcadamente empatador: empata el 50% de sus partidos en su rol situacional. En los últimos 5, ambos suman 5 empate(s), lo que eleva la probabilidad de un resultado igualado en el marcador. En el contexto de esta serie, un empate en el partido beneficia a Guadalajara, que clasifica por tabla."
       },
       {
         "factor": "Historial directo",
         "impacto": "alto",
         "tipo": "h2h",
         "local": {
-          "nombre": "Cruz Azul",
-          "victorias": 3
-        },
-        "visitante": {
           "nombre": "Guadalajara",
           "victorias": 0
         },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "victorias": 3
+        },
+        "empates": 2,
         "partidos": [
+          {
+            "fecha": "2026-05-14",
+            "temporada": "Clausura - Semifinals",
+            "local": "Cruz Azul",
+            "visitante": "Guadalajara",
+            "goles_local": 2,
+            "goles_visitante": 2
+          },
           {
             "fecha": "2026-02-22",
             "temporada": "Torneo Clausura",
@@ -269,8 +165,8 @@
             "goles_visitante": 2
           }
         ],
-        "total": 4,
-        "interpretacion": "Cruz Azul domina el historial reciente con 3 victorias en 4 enfrentamientos (1 del Clausura 2026, 3 del Apertura 2025). Guadalajara solo ha ganado 0 de esos cruces."
+        "total": 5,
+        "interpretacion": "Cruz Azul lleva ventaja histórica: 3 victorias en 5 enfrentamientos recientes (2 del Clausura 2026, 3 del Apertura 2025). Guadalajara ha ganado 0 y hubo 2 empate(s)."
       },
       {
         "factor": "Experiencia eliminatoria",
@@ -278,30 +174,260 @@
         "tipo": "barras",
         "local": {
           "etiqueta": "Índice liguilla",
-          "valor": 0.75,
-          "nombre": "Cruz Azul"
+          "valor": 0.44,
+          "nombre": "Guadalajara"
         },
         "visitante": {
           "etiqueta": "Índice liguilla",
-          "valor": 0.44,
-          "nombre": "Guadalajara"
+          "valor": 0.75,
+          "nombre": "Cruz Azul"
         },
         "interpretacion": "Cruz Azul acumula mayor experiencia en instancias eliminatorias (índice 0.75/1.0 vs 0.44/1.0 de Guadalajara), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
       },
       {
-        "factor": "Ventaja de vuelta en casa",
-        "impacto": "medio",
-        "tipo": "vuelta",
-        "equipo_vuelta": "Guadalajara",
+        "factor": "Contexto de serie",
+        "impacto": "alto",
+        "tipo": "serie",
+        "diferencia_global": 0,
+        "goles_local_en_ida": 2,
+        "goles_visitante_en_ida": 2,
+        "clasifica_empate_local": true,
+        "clasifica_empate_visitante": false,
         "local": {
-          "nombre": "Cruz Azul",
-          "posicion": 3
+          "nombre": "Guadalajara",
+          "estado": "global_empatado"
         },
         "visitante": {
-          "nombre": "Guadalajara",
-          "posicion": 2
+          "nombre": "Cruz Azul",
+          "estado": "global_empatado"
         },
-        "interpretacion": "Guadalajara terminó mejor posicionado en la tabla (posición 2 vs 3), lo que le otorga el derecho de disputar la vuelta en casa. Esta ventaja táctica le permite a Guadalajara especular en la ida y definir la serie ante su afición, mientras Cruz Azul deberá resolver la eliminatoria jugando el partido decisivo de visitante."
+        "interpretacion": "Serie completamente abierta: empate global 2-2. Si la vuelta termina empatada, clasifica Guadalajara por mejor posición en tabla. Cruz Azul está obligado a ganar para avanzar."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "medio",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Guadalajara",
+          "urgencia": "nula",
+          "goles_necesita": 0,
+          "bonus_aplicado": 0.0
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "urgencia": "media",
+          "goles_necesita": 1,
+          "bonus_aplicado": 0.1
+        },
+        "interpretacion": "Cruz Azul necesita 1 gol para avanzar. Atacará con orden, sin sacrificar la estructura defensiva. Guadalajara puede gestionar el partido sin arriesgar: clasifica incluso si la vuelta termina en empate. Probablemente opte por un bloque defensivo y contraataques."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "fase": "liguilla_vuelta",
+    "local": "Pumas UNAM",
+    "visitante": "Pachuca",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
+    "prob_local": 0.24600729209639216,
+    "prob_empate": 0.37025042013071896,
+    "prob_visitante": 0.3837422877728889,
+    "fuerza_local": 0.61792,
+    "fuerza_visitante": 0.7237795294117648,
+    "diferencia": 0.1058595294117648,
+    "confianza": "moderado",
+    "prediccion": "Pachuca",
+    "clasifica": "Pachuca",
+    "contexto_serie": {
+      "diferencia_global": -1,
+      "goles_vuelta_local_en_ida": 0,
+      "goles_vuelta_visitante_en_ida": 1,
+      "estado_local": "perdiendo_global",
+      "estado_visitante": "ganando_global",
+      "goles_necesita_local": 2,
+      "goles_necesita_visitante": 0,
+      "clasifica_empate_local": false,
+      "clasifica_empate_visitante": false,
+      "urgencia_local": "alta",
+      "urgencia_visitante": "alta",
+      "ventaja_tabla": "local"
+    },
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.42,
+          "ultimos_5": [
+            "L",
+            "D",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "valor": 0.8,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Pachuca llega con mejor momentum: índice 0.80/1.0 frente a 0.42/1.0 de Pumas UNAM. En los últimos 5 partidos, Pachuca acumula 3 victorias contra 2 del rival."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.39,
+          "detalle": "7G / 7E / 4P",
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.37,
+          "detalle": "7G / 6E / 6P",
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Pumas UNAM gana el 39% en casa (7G/7E/4P) y Pachuca el 37% de visita (7G/6E/6P). Ninguno tiene ventaja situacional clara."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "goles_favor": 1.71,
+          "goles_contra": 1.37
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "goles_favor": 1.39,
+          "goles_contra": 1.1
+        },
+        "interpretacion": "Producción ofensiva similar: Pumas UNAM promedia 1.71 goles por partido y Pachuca 1.39. En defensa, Pumas UNAM recibe 1.37 por partido frente a 1.10 del rival."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.39,
+          "detalle": "14 empates en 38 partidos | 2D últimos 5",
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.32,
+          "detalle": "8 empates en 39 partidos | 0D últimos 5",
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Perfil empatador moderado: Pumas UNAM empata el 39% en casa (14 empates en 38 partidos) y Pachuca el 32% de visita (8 empates en 39 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Historial directo",
+        "impacto": "alto",
+        "tipo": "h2h",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "victorias": 1
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "victorias": 2
+        },
+        "empates": 0,
+        "partidos": [
+          {
+            "fecha": "2026-05-15",
+            "temporada": "Clausura - Semifinals",
+            "local": "Pachuca",
+            "visitante": "Pumas UNAM",
+            "goles_local": 1,
+            "goles_visitante": 0
+          },
+          {
+            "fecha": "2026-04-25",
+            "temporada": "Torneo Clausura",
+            "local": "Pachuca",
+            "visitante": "Pumas UNAM",
+            "goles_local": 0,
+            "goles_visitante": 2
+          },
+          {
+            "fecha": "2025-07-20",
+            "temporada": "Torneo Apertura",
+            "local": "Pumas UNAM",
+            "visitante": "Pachuca",
+            "goles_local": 2,
+            "goles_visitante": 3
+          }
+        ],
+        "total": 3,
+        "interpretacion": "Pachuca lleva ventaja histórica: 2 victorias en 3 enfrentamientos recientes (2 del Clausura 2026, 1 del Apertura 2025). Pumas UNAM ha ganado 1 y hubo 0 empate(s)."
+      },
+      {
+        "factor": "Experiencia eliminatoria",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.31,
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.28,
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Experiencia eliminatoria similar entre ambos equipos: Pumas UNAM con índice 0.31/1.0 y Pachuca con 0.28/1.0. Este factor no genera ventaja significativa para ninguno."
+      },
+      {
+        "factor": "Contexto de serie",
+        "impacto": "alto",
+        "tipo": "serie",
+        "diferencia_global": -1,
+        "goles_local_en_ida": 0,
+        "goles_visitante_en_ida": 1,
+        "clasifica_empate_local": false,
+        "clasifica_empate_visitante": false,
+        "local": {
+          "nombre": "Pumas UNAM",
+          "estado": "perdiendo_global"
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "estado": "ganando_global"
+        },
+        "interpretacion": "Pachuca llega con ventaja en el marcador global: ganó la ida 1-0. Pumas UNAM necesita ganar por 2 o más goles para clasificar directamente, o por 1 para igualar el global — pero en ese caso perdería por tabla. Obligado a atacar desde el primer minuto."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "urgencia": "alta",
+          "goles_necesita": 2,
+          "bonus_aplicado": 0.18
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "urgencia": "alta",
+          "goles_necesita": 0,
+          "bonus_aplicado": 0.18
+        },
+        "interpretacion": "Pumas UNAM necesita 2 goles para clasificar. Deberá abrir el partido desde el inicio, lo que generará espacios para el rival y aumenta la probabilidad de un partido con más goles. Pachuca necesita 0 goles para clasificar. Deberá abrir el partido desde el inicio, lo que generará espacios para el rival y aumenta la probabilidad de un partido con más goles."
       }
     ]
   }

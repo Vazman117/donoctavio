@@ -1,0 +1,50 @@
+[
+  {
+    "posicion": 1,
+    "equipo": "AEK Athens",
+    "partidos": 31,
+    "ganados": 21,
+    "empatados": 8,
+    "perdidos": 2,
+    "goles_favor": 56,
+    "goles_contra": 19,
+    "diferencia_goles": 37,
+    "puntos": 71
+  },
+  {
+    "posicion": 2,
+    "equipo": "Olympiacos",
+    "partidos": 31,
+    "ganados": 19,
+    "empatados": 8,
+    "perdidos": 4,
+    "goles_favor": 50,
+    "goles_contra": 16,
+    "diferencia_goles": 34,
+    "puntos": 65
+  },
+  {
+    "posicion": 3,
+    "equipo": "PAOK Salonika",
+    "partidos": 31,
+    "ganados": 18,
+    "empatados": 9,
+    "perdidos": 4,
+    "goles_favor": 57,
+    "goles_contra": 23,
+    "diferencia_goles": 34,
+    "puntos": 63
+  },
+  {
+    "posicion": 4,
+    "equipo": "Panathinaikos",
+    "partidos": 31,
+    "ganados": 14,
+    "empatados": 9,
+    "perdidos": 8,
+    "goles_favor": 45,
+    "goles_contra": 31,
+    "diferencia_goles": 14,
+    "puntos": 51
+  }
+]

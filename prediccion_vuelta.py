@@ -8,13 +8,13 @@ import os
 # =============================
 
 def cargar_equipos():
-    ruta = os.path.join("scrapper", "equipos.json")
+    ruta = os.path.join("scrapper", "LIGA-MX", "equipos.json")
     with open(ruta, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def cargar_h2h():
-    ruta = os.path.join("scrapper", "h2h_liguilla.json")
+    ruta = os.path.join("scrapper", "LIGA-MX", "h2h_liguilla.json")
     with open(ruta, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -25,6 +25,63 @@ def obtener_equipo(nombre, db):
     for a, b in reemplazos.items():
         key = key.replace(a, b)
     return db.get(key)
+
+
+# =============================
+# ADAPTADOR DE FORMATO
+# =============================
+
+LIGA_KEY = "mex.1"
+
+def adaptar_equipo(equipo_raw):
+    """
+    Convierte el nuevo formato de equipos.json (con sub-objeto `competencias`)
+    al formato plano que usa internamente el modelo.
+    Usa los datos de la liga principal (mex.1) para todos los cálculos
+    situacionales y de rendimiento; los campos de raíz para posición y metadata.
+    """
+    liga = equipo_raw.get("competencias", {}).get(LIGA_KEY, {})
+
+    return {
+        # — Metadata —
+        "nombre":  equipo_raw.get("nombre", ""),
+        "escudo":  equipo_raw.get("escudo", ""),
+
+        # — Posición en tabla (raíz, refleja el torneo actual) —
+        "posicion":           equipo_raw.get("posicion", 9),
+        "tendencia_posicion": equipo_raw.get("tendencia_posicion", 0),
+
+        # — Forma y racha (raíz, ya calculada por el scraper) —
+        "forma_ponderada": equipo_raw.get("forma_liga", equipo_raw.get("forma_combinada", 0.5)),
+        "imbatido_streak": equipo_raw.get("imbatido_streak", 0),
+        "ultimos_5":       equipo_raw.get("ultimos_5_liga", []),
+
+        # — Rendimiento situacional (liga) —
+        "win_rate_local":  liga.get("win_rate_local",  0.0),
+        "win_rate_visita": liga.get("win_rate_visita", 0.0),
+
+        # — Goles (liga) —
+        "goles_favor_promedio":  liga.get("goles_favor_promedio",  0.0),
+        "goles_contra_promedio": liga.get("goles_contra_promedio", 0.0),
+
+        # — Totales de partido (liga) —
+        "partidos":  liga.get("partidos",  0),
+        "ganados":   liga.get("ganados",   0),
+        "empatados": liga.get("empatados", 0),
+        "perdidos":  liga.get("perdidos",  0),
+
+        # — Desglose local (liga) —
+        "partidos_local":  liga.get("partidos_local",  0),
+        "ganados_local":   liga.get("ganados_local",   0),
+        "empatados_local": liga.get("empatados_local", 0),
+        "perdidos_local":  liga.get("perdidos_local",  0),
+
+        # — Desglose visita (liga) —
+        "partidos_visita":  liga.get("partidos_visita",  0),
+        "ganados_visita":   liga.get("ganados_visita",   0),
+        "empatados_visita": liga.get("empatados_visita", 0),
+        "perdidos_visita":  liga.get("perdidos_visita",  0),
+    }
 
 
 # =============================
@@ -197,10 +254,6 @@ def calcular_h2h_score(nombre_local, nombre_visitante, h2h_data):
 
 
 def contar_resultados_h2h(partidos_h2h, nombre_local, nombre_visitante):
-    """
-    Cuenta victorias, empates y derrotas directamente desde los partidos,
-    sin estimarlos desde el score.
-    """
     wins_local   = 0
     wins_visita  = 0
     empates      = 0
@@ -628,14 +681,13 @@ def generar_analisis_vuelta(local, visitante, resultado, nombre_local, nombre_vi
         "interpretacion": interp,
     })
 
-    # ── 5. H2H  ← FIX: conteo real en vez de estimación ────────────────────
+    # ── 5. H2H ──────────────────────────────────────────────────────────────
     n_total = resultado["n_h2h_clausura"] + resultado["n_h2h_apertura"]
     if n_total > 0:
         h2h_score = resultado["h2h_local"]
         n_c       = resultado["n_h2h_clausura"]
         n_a       = resultado["n_h2h_apertura"]
 
-        # Conteo real desde los partidos
         wins_h2h_local, empates_h2h, wins_h2h_visit = contar_resultados_h2h(
             resultado["partidos_h2h"], nombre_local, nombre_visitante
         )
@@ -806,11 +858,17 @@ def generar_partido_vuelta(
     db,
     h2h,
 ):
-    local     = obtener_equipo(local_nombre,     db)
-    visitante = obtener_equipo(visitante_nombre, db)
+    local_raw     = obtener_equipo(local_nombre,     db)
+    visitante_raw = obtener_equipo(visitante_nombre, db)
 
-    if not local or not visitante:
-        raise ValueError(f"Equipo no encontrado: {'local' if not local else 'visitante'}")
+    if not local_raw:
+        raise ValueError(f"Equipo local no encontrado: '{local_nombre}'")
+    if not visitante_raw:
+        raise ValueError(f"Equipo visitante no encontrado: '{visitante_nombre}'")
+
+    # ── Adaptar al formato plano que usa el modelo internamente ─────────────
+    local     = adaptar_equipo(local_raw)
+    visitante = adaptar_equipo(visitante_raw)
 
     contexto = calcular_contexto_vuelta(
         goles_ida_local=goles_ida_local,
@@ -879,32 +937,18 @@ if __name__ == "__main__":
     PARTIDOS_VUELTA = [
         {
             "id": 1,
-            "local_nombre":          "Pachuca",
-            "visitante_nombre":      "Toluca",
-            "goles_ida_local":       0,
-            "goles_ida_visitante":   1,
+            "local_nombre":        "Guadalajara",
+            "visitante_nombre":    "Cruz Azul",
+            "goles_ida_local":     2,
+            "goles_ida_visitante": 2,
         },
         {
             "id": 2,
-            "local_nombre":          "Pumas UNAM",
-            "visitante_nombre":      "América",
-            "goles_ida_local":       3,
-            "goles_ida_visitante":   3,
-        },
-        {
-            "id": 3,
-            "local_nombre":          "Guadalajara",
-            "visitante_nombre":      "Tigres UANL",
-            "goles_ida_local":       3,
-            "goles_ida_visitante":   1,
-        },
-        {
-            "id": 4,
-            "local_nombre":          "Cruz Azul",
-            "visitante_nombre":      "Atlas",
-            "goles_ida_local":       2,
-            "goles_ida_visitante":   3,
-        },
+            "local_nombre":        "Pumas UNAM",
+            "visitante_nombre":    "Pachuca",
+            "goles_ida_local":     1,
+            "goles_ida_visitante": 0,
+        }
     ]
 
     todos_los_partidos = []

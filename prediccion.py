@@ -646,30 +646,31 @@ def generar_partido(id, local_nombre, visitante_nombre, db):
 if __name__ == "__main__":
 
     dbs = {
-        "belgian_pro_league": cargar_equipos("BELGIAN PRO LEAGUE"),
-        "brasileirao":        cargar_equipos("BRASILEIRAO SERIE A"),
+        "belgian_pro_league": cargar_equipos("BELGIAN-PRO-LEAGUE"),
+        "brasileirao":        cargar_equipos("BRASILEIRAO-SERIE-A"),
         "bundesliga":         cargar_equipos("BUNDESLIGA"),
         "eredivisie":         cargar_equipos("EREDIVISIE"),
         "la_liga":            cargar_equipos("LALIGA"),
-        "liga_mx":            cargar_equipos("LIGA MX"),
-        "ligue1":             cargar_equipos("LIGUE 1"),
+        "liga_mx":            cargar_equipos("LIGA-MX"),
+        "ligue1":             cargar_equipos("LIGUE-1"),
         "mls":                cargar_equipos("MLS"),
-        "premier":            cargar_equipos("PREMIER LEAGUE"),
-        "premiership":        cargar_equipos("SCOTTISH PREMIERSHIP"),
+        "premier":            cargar_equipos("PREMIER-LEAGUE"),
+        "premiership":        cargar_equipos("SCOTTISH-PREMIERSHIP"),
+        "grecia":        cargar_equipos("SUPERLIGA-GRECIA"),
+        "ligamx_expansion":        cargar_equipos("LIGA-MX-EXPANSION"),
+        "rusia":        cargar_equipos("LIGAPREMIER-RUSIA"),
     }
 
     casos = [
-        (5,  "Real Sociedad", "Betis",          "la_liga"),
-        (6,  "Barcelona",     "Real Madrid",    "la_liga"),
-        (7,  "Fulham",        "Bournemouth",    "premier"),
-        (8,  "Crystal Palace","Everton",        "premier"),
-        (9,  "Stuttgart",     "Leverkusen",     "bundesliga"),
-        (10, "Auxerre",       "Niza",           "ligue1"),
-        (11, "Groningen",     "Nijmegen",       "eredivisie"),
-        (12, "Atlanta",       "LA Galaxy",      "mls"),
-        (13, "Corinthians",   "Sao Paulo",      "brasileirao"),
-        (14, "Gent",          "Anderlecht",     "belgian_pro_league"),
-        (15, "Celtic",        "Rangers",        "premiership"),
+        (5,  "Tepatitlan",    "Tampico",        "ligamx_expansion"),
+        (6,  "Elche",         "Getafe",         "la_liga"),
+        (7,  "Leeds",         "Brighton",       "premier"),
+        (8,  "Eintracht Frankfurt",     "VFB Stuttgart",      "bundesliga"),
+        (9,  "ST. Pauli",     "VFL Wolfsburg",     "bundesliga"),
+        (10, "Red Bull New York",       "New York City FC",           "mls"),
+        (11, "Chapecoense",     "Remo",       "brasileirao"),
+        (12, "Dundee",       "Aberdeen",      "premiership"),
+        (13, "CSKA Moscow",   "Lokomotiv Moscow",      "rusia"),
     ]
 
     for id, local, visitante, liga in casos:
