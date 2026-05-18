@@ -1,5 +1,214 @@
 [
   {
+    "id": 2,
+    "fase": "liguilla_vuelta",
+    "local": "Pumas UNAM",
+    "visitante": "Pachuca",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
+    "prob_local": 0.24600729209639216,
+    "prob_empate": 0.37025042013071896,
+    "prob_visitante": 0.3837422877728889,
+    "fuerza_local": 0.61792,
+    "fuerza_visitante": 0.7237795294117648,
+    "diferencia": 0.1058595294117648,
+    "confianza": "moderado",
+    "prediccion": "Pachuca",
+    "resultado": "Pumas UNAM",
+    "clasifica": "Pachuca",
+    "contexto_serie": {
+      "diferencia_global": -1,
+      "goles_vuelta_local_en_ida": 0,
+      "goles_vuelta_visitante_en_ida": 1,
+      "estado_local": "perdiendo_global",
+      "estado_visitante": "ganando_global",
+      "goles_necesita_local": 2,
+      "goles_necesita_visitante": 0,
+      "clasifica_empate_local": false,
+      "clasifica_empate_visitante": false,
+      "urgencia_local": "alta",
+      "urgencia_visitante": "alta",
+      "ventaja_tabla": "local"
+    },
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.42,
+          "ultimos_5": [
+            "L",
+            "D",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "valor": 0.8,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Pachuca llega con mejor momentum: índice 0.80/1.0 frente a 0.42/1.0 de Pumas UNAM. En los últimos 5 partidos, Pachuca acumula 3 victorias contra 2 del rival."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.39,
+          "detalle": "7G / 7E / 4P",
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.37,
+          "detalle": "7G / 6E / 6P",
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Pumas UNAM gana el 39% en casa (7G/7E/4P) y Pachuca el 37% de visita (7G/6E/6P). Ninguno tiene ventaja situacional clara."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "goles_favor": 1.71,
+          "goles_contra": 1.37
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "goles_favor": 1.39,
+          "goles_contra": 1.1
+        },
+        "interpretacion": "Producción ofensiva similar: Pumas UNAM promedia 1.71 goles por partido y Pachuca 1.39. En defensa, Pumas UNAM recibe 1.37 por partido frente a 1.10 del rival."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.39,
+          "detalle": "14 empates en 38 partidos | 2D últimos 5",
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.32,
+          "detalle": "8 empates en 39 partidos | 0D últimos 5",
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Perfil empatador moderado: Pumas UNAM empata el 39% en casa (14 empates en 38 partidos) y Pachuca el 32% de visita (8 empates en 39 partidos). El empate es una opción real."
+      },
+      {
+        "factor": "Historial directo",
+        "impacto": "alto",
+        "tipo": "h2h",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "victorias": 1
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "victorias": 2
+        },
+        "empates": 0,
+        "partidos": [
+          {
+            "fecha": "2026-05-15",
+            "temporada": "Clausura - Semifinals",
+            "local": "Pachuca",
+            "visitante": "Pumas UNAM",
+            "goles_local": 1,
+            "goles_visitante": 0
+          },
+          {
+            "fecha": "2026-04-25",
+            "temporada": "Torneo Clausura",
+            "local": "Pachuca",
+            "visitante": "Pumas UNAM",
+            "goles_local": 0,
+            "goles_visitante": 2
+          },
+          {
+            "fecha": "2025-07-20",
+            "temporada": "Torneo Apertura",
+            "local": "Pumas UNAM",
+            "visitante": "Pachuca",
+            "goles_local": 2,
+            "goles_visitante": 3
+          }
+        ],
+        "total": 3,
+        "interpretacion": "Pachuca lleva ventaja histórica: 2 victorias en 3 enfrentamientos recientes (2 del Clausura 2026, 1 del Apertura 2025). Pumas UNAM ha ganado 1 y hubo 0 empate(s)."
+      },
+      {
+        "factor": "Experiencia eliminatoria",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.31,
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.28,
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Experiencia eliminatoria similar entre ambos equipos: Pumas UNAM con índice 0.31/1.0 y Pachuca con 0.28/1.0. Este factor no genera ventaja significativa para ninguno."
+      },
+      {
+        "factor": "Contexto de serie",
+        "impacto": "alto",
+        "tipo": "serie",
+        "diferencia_global": -1,
+        "goles_local_en_ida": 0,
+        "goles_visitante_en_ida": 1,
+        "clasifica_empate_local": false,
+        "clasifica_empate_visitante": false,
+        "local": {
+          "nombre": "Pumas UNAM",
+          "estado": "perdiendo_global"
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "estado": "ganando_global"
+        },
+        "interpretacion": "Pachuca llega con ventaja en el marcador global: ganó la ida 1-0. Pumas UNAM necesita ganar por 2 o más goles para clasificar directamente, o por 1 para igualar el global — pero en ese caso perdería por tabla. Obligado a atacar desde el primer minuto."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "urgencia": "alta",
+          "goles_necesita": 2,
+          "bonus_aplicado": 0.18
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "urgencia": "alta",
+          "goles_necesita": 0,
+          "bonus_aplicado": 0.18
+        },
+        "interpretacion": "Pumas UNAM necesita 2 goles para clasificar. Deberá abrir el partido desde el inicio, lo que generará espacios para el rival y aumenta la probabilidad de un partido con más goles. Pachuca necesita 0 goles para clasificar. Deberá abrir el partido desde el inicio, lo que generará espacios para el rival y aumenta la probabilidad de un partido con más goles."
+      }
+    ]
+  },
+  {
     "id": 1,
     "fase": "liguilla_vuelta",
     "local": "Guadalajara",
