@@ -1,6 +1,231 @@
 [
   {
     "id": 1,
+    "fase": "liguilla_vuelta",
+    "local": "Guadalajara",
+    "visitante": "Cruz Azul",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+    "prob_local": 0.11487649697588195,
+    "prob_empate": 0.42370467411764706,
+    "prob_visitante": 0.4614188289064709,
+    "fuerza_local": 0.4608561764705883,
+    "fuerza_visitante": 0.7919153529411765,
+    "diferencia": 0.33105917647058825,
+    "confianza": "favorable",
+    "prediccion": "Cruz Azul",
+    "resultado" : "Cruz Azul",
+    "clasifica": "Guadalajara",
+    "contexto_serie": {
+      "diferencia_global": 0,
+      "goles_vuelta_local_en_ida": 2,
+      "goles_vuelta_visitante_en_ida": 2,
+      "estado_local": "global_empatado",
+      "estado_visitante": "global_empatado",
+      "goles_necesita_local": 0,
+      "goles_necesita_visitante": 1,
+      "clasifica_empate_local": true,
+      "clasifica_empate_visitante": false,
+      "urgencia_local": "nula",
+      "urgencia_visitante": "media",
+      "ventaja_tabla": "local"
+    },
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "D",
+            "D"
+          ],
+          "nombre": "Guadalajara"
+        },
+        "visitante": {
+          "valor": 0.79,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Cruz Azul llega con mejor momentum: índice 0.79/1.0 frente a 0.53/1.0 de Guadalajara. En los últimos 5 partidos, Cruz Azul acumula 3 victorias contra 1 del rival."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.63,
+          "detalle": "12G / 4E / 3P",
+          "nombre": "Guadalajara"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.4,
+          "detalle": "8G / 10E / 2P",
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Guadalajara es dominante en casa: 63% de victorias (12G/4E/3P). Cruz Azul ha respondido con 40% de efectividad como visitante (8G/10E/2P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Guadalajara",
+          "goles_favor": 1.77,
+          "goles_contra": 1.21
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "goles_favor": 1.8,
+          "goles_contra": 1.12
+        },
+        "interpretacion": "Producción ofensiva similar: Guadalajara promedia 1.77 goles por partido y Cruz Azul 1.80. En defensa, Guadalajara recibe 1.21 por partido frente a 1.12 del rival."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.21,
+          "detalle": "7 empates en 39 partidos | 3D últimos 5",
+          "nombre": "Guadalajara"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.5,
+          "detalle": "15 empates en 41 partidos | 2D últimos 5",
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Cruz Azul es un equipo marcadamente empatador: empata el 50% de sus partidos en su rol situacional. En los últimos 5, ambos suman 5 empate(s), lo que eleva la probabilidad de un resultado igualado en el marcador. En el contexto de esta serie, un empate en el partido beneficia a Guadalajara, que clasifica por tabla."
+      },
+      {
+        "factor": "Historial directo",
+        "impacto": "alto",
+        "tipo": "h2h",
+        "local": {
+          "nombre": "Guadalajara",
+          "victorias": 0
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "victorias": 3
+        },
+        "empates": 2,
+        "partidos": [
+          {
+            "fecha": "2026-05-14",
+            "temporada": "Clausura - Semifinals",
+            "local": "Cruz Azul",
+            "visitante": "Guadalajara",
+            "goles_local": 2,
+            "goles_visitante": 2
+          },
+          {
+            "fecha": "2026-02-22",
+            "temporada": "Torneo Clausura",
+            "local": "Cruz Azul",
+            "visitante": "Guadalajara",
+            "goles_local": 2,
+            "goles_visitante": 1
+          },
+          {
+            "fecha": "2025-12-01",
+            "temporada": "Apertura - Quarterfinals",
+            "local": "Cruz Azul",
+            "visitante": "Guadalajara",
+            "goles_local": 3,
+            "goles_visitante": 2
+          },
+          {
+            "fecha": "2025-11-28",
+            "temporada": "Apertura - Quarterfinals",
+            "local": "Guadalajara",
+            "visitante": "Cruz Azul",
+            "goles_local": 0,
+            "goles_visitante": 0
+          },
+          {
+            "fecha": "2025-08-31",
+            "temporada": "Torneo Apertura",
+            "local": "Guadalajara",
+            "visitante": "Cruz Azul",
+            "goles_local": 1,
+            "goles_visitante": 2
+          }
+        ],
+        "total": 5,
+        "interpretacion": "Cruz Azul lleva ventaja histórica: 3 victorias en 5 enfrentamientos recientes (2 del Clausura 2026, 3 del Apertura 2025). Guadalajara ha ganado 0 y hubo 2 empate(s)."
+      },
+      {
+        "factor": "Experiencia eliminatoria",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.44,
+          "nombre": "Guadalajara"
+        },
+        "visitante": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.75,
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Cruz Azul acumula mayor experiencia en instancias eliminatorias (índice 0.75/1.0 vs 0.44/1.0 de Guadalajara), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias."
+      },
+      {
+        "factor": "Contexto de serie",
+        "impacto": "alto",
+        "tipo": "serie",
+        "diferencia_global": 0,
+        "goles_local_en_ida": 2,
+        "goles_visitante_en_ida": 2,
+        "clasifica_empate_local": true,
+        "clasifica_empate_visitante": false,
+        "local": {
+          "nombre": "Guadalajara",
+          "estado": "global_empatado"
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "estado": "global_empatado"
+        },
+        "interpretacion": "Serie completamente abierta: empate global 2-2. Si la vuelta termina empatada, clasifica Guadalajara por mejor posición en tabla. Cruz Azul está obligado a ganar para avanzar."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "medio",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Guadalajara",
+          "urgencia": "nula",
+          "goles_necesita": 0,
+          "bonus_aplicado": 0.0
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "urgencia": "media",
+          "goles_necesita": 1,
+          "bonus_aplicado": 0.1
+        },
+        "interpretacion": "Cruz Azul necesita 1 gol para avanzar. Atacará con orden, sin sacrificar la estructura defensiva. Guadalajara puede gestionar el partido sin arriesgar: clasifica incluso si la vuelta termina en empate. Probablemente opte por un bloque defensivo y contraataques."
+      }
+    ]
+  },
+  {
+    "id": 1,
     "fase": "liguilla_ida",
     "local": "Pachuca",
     "visitante": "Pumas UNAM",
