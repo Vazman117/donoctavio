@@ -305,10 +305,10 @@ function mostrarDetalle(i) {
 
   const confianza =
     p.confianza === 'favorable'
-      ? ['Pronóstico favorable', 'conf-alta']
+      ? ['Proyección favorable', 'conf-alta']
       : p.confianza === 'moderado'
-      ? ['Pronóstico moderado',  'conf-media']
-      : ['Pronóstico ajustado',  'conf-baja'];
+      ? ['Proyección moderado',  'conf-media']
+      : ['Proyección ajustado',  'conf-baja'];
 
   setHTML('detalleContenido', `
     <div class="det-card">
@@ -361,8 +361,8 @@ function mostrarDetalle(i) {
   setStyle('badgeWrap', 'display', 'none');
 
   const fase = p.fase
-    ? p.fase.replace('liguilla_ida',    'Cuartos de Final · Ida')
-            .replace('liguilla_vuelta', 'Cuartos de Final · Vuelta')
+    ? p.fase.replace('liguilla_ida',    'Semifinal · Ida')
+            .replace('liguilla_vuelta', 'Semifinal · Vuelta')
     : 'Jornada Regular';
   setText('headerLabel', fase);
   setText('headerTitle', p.local + ' · ' + p.visitante);
