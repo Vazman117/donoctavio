@@ -40,14 +40,64 @@ def adaptar_equipo(equipo_raw, liga_key=None):
     """
     Convierte el formato nuevo (con competencias{}) al formato plano
     que usa internamente el modelo.
-    liga_key: slug de la competencia principal a usar para stats situacionales.
-    Si es None, usa los campos de acceso rápido de raíz (forma_liga, ultimos_5_liga).
+
+    liga_key: slug de la competencia principal (ej: "mex.1", "uefa.europa").
+              Si es None, el equipo viene de un torneo copa sin liga_key definida
+              y se usan los campos de acceso rápido de raíz.
+
+    Lógica de forma:
+    ─────────────────────────────────────────────────────────────────
+    Liga regular  (liga_key definido):
+        forma_ponderada = forma_liga  (de la competencia principal)
+
+    Torneo copa   (liga_key=None):
+        Si hay stats del torneo Y forma_liga_local → mezcla 60/40
+        Si solo hay stats del torneo               → usa torneo
+        Si solo hay forma_liga_local               → usa liga local
+        Si no hay nada                             → 0.5 neutro
+
+    El mismo criterio aplica a ultimos_5 e imbatido_streak.
+    ─────────────────────────────────────────────────────────────────
     """
     liga = {}
     if liga_key:
+        # Liga regular: leer stats situacionales de la competencia principal
         liga = equipo_raw.get("competencias", {}).get(liga_key, {})
 
-    # Acceso rápido desde raíz (ya calculados por el scraper)
+    # ── Forma ponderada ──────────────────────────────────────────────────────
+    if liga_key:
+        # Liga regular: forma de esa liga directamente
+        forma_final  = equipo_raw.get("forma_liga", equipo_raw.get("forma_combinada", 0.5))
+        ultimos_5    = equipo_raw.get("ultimos_5_liga", [])
+        streak_final = equipo_raw.get("imbatido_streak", 0)
+    else:
+        # Torneo copa: mezclar forma del torneo con forma de liga local
+        comp_torneo  = list(equipo_raw.get("competencias", {}).values())
+        stats_torneo = comp_torneo[0] if comp_torneo else {}
+
+        forma_torneo     = stats_torneo.get("forma_ponderada", 0.0)
+        forma_liga_local = equipo_raw.get("forma_liga_local", 0.0) or 0.0
+
+        if forma_torneo > 0 and forma_liga_local > 0:
+            # Ambas disponibles: torneo pesa más (más relevante al contexto)
+            forma_final = round(forma_torneo * 0.60 + forma_liga_local * 0.40, 4)
+        elif forma_torneo > 0:
+            forma_final = forma_torneo
+        elif forma_liga_local > 0:
+            forma_final = forma_liga_local
+        else:
+            forma_final = equipo_raw.get("forma_liga", equipo_raw.get("forma_combinada", 0.5))
+
+        # ultimos_5: preferir los del torneo, fallback a liga local
+        ultimos_5_torneo     = stats_torneo.get("ultimos_5", [])
+        ultimos_5_liga_local = equipo_raw.get("ultimos_5_liga_local", []) or []
+        ultimos_5 = ultimos_5_torneo if ultimos_5_torneo else ultimos_5_liga_local
+
+        # streak: el más alto entre torneo y liga local (refleja mejor estado)
+        streak_torneo     = stats_torneo.get("imbatido_streak", 0)
+        streak_liga_local = equipo_raw.get("imbatido_streak", 0)
+        streak_final      = max(streak_torneo, streak_liga_local)
+
     return {
         "nombre":  equipo_raw.get("nombre", ""),
         "escudo":  equipo_raw.get("escudo", ""),
@@ -55,10 +105,12 @@ def adaptar_equipo(equipo_raw, liga_key=None):
         "posicion":           equipo_raw.get("posicion", 9),
         "tendencia_posicion": equipo_raw.get("tendencia_posicion", 0),
 
-        "forma_ponderada": equipo_raw.get("forma_liga", equipo_raw.get("forma_combinada", 0.5)),
-        "imbatido_streak": equipo_raw.get("imbatido_streak", 0),
-        "ultimos_5":       equipo_raw.get("ultimos_5_liga", []),
+        "forma_ponderada": forma_final,
+        "imbatido_streak": streak_final,
+        "ultimos_5":       ultimos_5,
 
+        # Stats situacionales — desde competencia principal si liga_key,
+        # desde raíz si torneo copa (el scraper los pone ahí como acceso rápido)
         "win_rate_local":  liga.get("win_rate_local",  equipo_raw.get("win_rate_local",  0.0)),
         "win_rate_visita": liga.get("win_rate_visita", equipo_raw.get("win_rate_visita", 0.0)),
 
@@ -145,7 +197,7 @@ PERFILES_TORNEO = {
         "TOTAL_EQUIPOS":    10,
         "usa_h2h":          False,
         "usa_experiencia":  False,
-        "usa_vuelta_casa":  True,
+        "usa_vuelta_casa":  False,
         "experiencia_db":   {},
         "PESO_BASE":        0.80,
         "PESO_H2H":         0.00,
@@ -185,7 +237,7 @@ PERFILES_TORNEO = {
         "TOTAL_EQUIPOS":    32,
         "usa_h2h":          True,
         "usa_experiencia":  False,
-        "usa_vuelta_casa":  True,
+        "usa_vuelta_casa":  False,
         "experiencia_db":   {},
         "PESO_BASE":        0.70,
         "PESO_H2H":         0.18,
@@ -224,7 +276,7 @@ PERFILES_TORNEO = {
         "ALPHA":            0.82,
         "BETA":             0.18,
         "TOTAL_EQUIPOS":    32,
-        "usa_h2h":          False,
+        "usa_h2h":          True,
         "usa_experiencia":  False,
         "usa_vuelta_casa":  False,
         "experiencia_db":   {},
@@ -1018,6 +1070,7 @@ if __name__ == "__main__":
         (8,  "Penarol",            "Corinthians",        "libertadores",  "libertadores",    "partidos.json"),
         (9,  "Santos",             "San Lorenzo",        "sudamericana",   "sudamericana",    "partidos.json"),
     ]
+
 
     # ── Ejecución ─────────────────────────────────────────────────────────────
     print(f"\n🚀 Generando {len(CASOS)} proyecciones...\n" + "="*55)

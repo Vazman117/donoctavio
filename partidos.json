@@ -156,24 +156,24 @@
     "visitante": "Aston Villa",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/126.png",
     "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
-    "prob_local": 0.4383862580513666,
-    "prob_empate": 0.17533700246360312,
-    "prob_visitante": 0.38627673948503033,
-    "fuerza_local": 0.36509398064516124,
-    "fuerza_visitante": 0.48629689677419363,
-    "diferencia": 0.12120291612903239,
+    "prob_local": 0.44814945424406344,
+    "prob_empate": 0.17496790109462093,
+    "prob_visitante": 0.37688264466131577,
+    "fuerza_local": 0.39258898064516135,
+    "fuerza_visitante": 0.41964189677419356,
+    "diferencia": 0.027052916129032212,
     "confianza": "ajustado",
     "prediccion": "SC Freiburg",
-    "vuelta_en_casa": "visitante",
-    "lambda_local": 3.216906453023935,
-    "lambda_visitante": 2.8808780158730167,
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 3.3333592925300652,
+    "lambda_visitante": 3.0073555873015874,
     "analisis": [
       {
         "factor": "Forma reciente",
         "impacto": "bajo",
         "tipo": "forma",
         "local": {
-          "valor": 0.41,
+          "valor": 0.53,
           "ultimos_5": [
             "W",
             "L",
@@ -184,7 +184,7 @@
           "nombre": "SC Freiburg"
         },
         "visitante": {
-          "valor": 0.41,
+          "valor": 0.56,
           "ultimos_5": [
             "W",
             "L",
@@ -194,7 +194,7 @@
           ],
           "nombre": "Aston Villa"
         },
-        "interpretacion": "Momentum similar: SC Freiburg 0.41/1.0 — Aston Villa 0.41/1.0."
+        "interpretacion": "Aston Villa llega con mejor momentum: índice 0.56/1.0 frente a 0.53/1.0 de SC Freiburg. Últimos 5: 4V/0E/1D vs 4V/0E/1D."
       },
       {
         "factor": "Rendimiento situacional",
@@ -229,21 +229,6 @@
           "goles_contra": 0.57
         },
         "interpretacion": "Producción similar: SC Freiburg 1.79 goles/partido — Aston Villa 2.00. Defensa: 0.71 vs 0.57."
-      },
-      {
-        "factor": "Ventaja de vuelta en casa",
-        "impacto": "medio",
-        "tipo": "vuelta",
-        "equipo_vuelta": "Aston Villa",
-        "local": {
-          "nombre": "SC Freiburg",
-          "posicion": 7
-        },
-        "visitante": {
-          "nombre": "Aston Villa",
-          "posicion": 2
-        },
-        "interpretacion": "Aston Villa jugará la vuelta en casa (posición 2 vs 7 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. SC Freiburg deberá avanzar jugando el partido decisivo de visitante."
       }
     ]
   },
@@ -255,15 +240,15 @@
     "visitante": "NJ/NY Gotham FC",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/22415.png",
     "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/15364.png",
-    "prob_local": 0.687719343336254,
-    "prob_empate": 0.13522641478282896,
-    "prob_visitante": 0.17705424188091712,
-    "fuerza_local": 0.732,
+    "prob_local": 0.6775554150333183,
+    "prob_empate": 0.13882641478282895,
+    "prob_visitante": 0.18361817018385268,
+    "fuerza_local": 0.5319999999999999,
     "fuerza_visitante": 0.3433066666666667,
-    "diferencia": 0.3886933333333333,
+    "diferencia": 0.1886933333333332,
     "confianza": "favorable",
     "prediccion": "América Femenil",
-    "vuelta_en_casa": "local",
+    "vuelta_en_casa": "ninguno",
     "lambda_local": 5.0,
     "lambda_visitante": 2.653645411620001,
     "analisis": [
@@ -328,21 +313,6 @@
           "goles_contra": 0.63
         },
         "interpretacion": "America Femenil más ofensivo: 3.18 vs 1.00 goles/partido. Defensa: 1.00 vs 0.63."
-      },
-      {
-        "factor": "Ventaja de vuelta en casa",
-        "impacto": "medio",
-        "tipo": "vuelta",
-        "equipo_vuelta": "America Femenil",
-        "local": {
-          "nombre": "America Femenil",
-          "posicion": 1
-        },
-        "visitante": {
-          "nombre": "Gotham FC",
-          "posicion": 4
-        },
-        "interpretacion": "America Femenil jugará la vuelta en casa (posición 1 vs 4 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Gotham FC deberá avanzar jugando el partido decisivo de visitante."
       }
     ]
   },
@@ -354,15 +324,15 @@
     "visitante": "Pachuca Femenil",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/17417.png",
     "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
-    "prob_local": 0.23377580039981816,
-    "prob_empate": 0.13062239787094881,
-    "prob_visitante": 0.6356018017292331,
-    "fuerza_local": 0.696817777777778,
+    "prob_local": 0.22346723539953792,
+    "prob_empate": 0.1342223978709488,
+    "prob_visitante": 0.6423103667295134,
+    "fuerza_local": 0.4968177777777779,
     "fuerza_visitante": 0.3092266666666667,
-    "diferencia": 0.3875911111111113,
+    "diferencia": 0.1875911111111112,
     "confianza": "favorable",
     "prediccion": "Pachuca Femenil",
-    "vuelta_en_casa": "local",
+    "vuelta_en_casa": "ninguno",
     "lambda_local": 2.4895410525193804,
     "lambda_visitante": 5.0,
     "analisis": [
@@ -427,21 +397,6 @@
           "goles_contra": 1.29
         },
         "interpretacion": "Pachuca Femenil más ofensivo: 2.47 vs 1.56 goles/partido. Defensa: 0.44 vs 1.29."
-      },
-      {
-        "factor": "Ventaja de vuelta en casa",
-        "impacto": "medio",
-        "tipo": "vuelta",
-        "equipo_vuelta": "Washington Spirit",
-        "local": {
-          "nombre": "Washington Spirit",
-          "posicion": 3
-        },
-        "visitante": {
-          "nombre": "Pachuca Femenil",
-          "posicion": 4
-        },
-        "interpretacion": "Washington Spirit jugará la vuelta en casa (posición 3 vs 4 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Pachuca Femenil deberá avanzar jugando el partido decisivo de visitante."
       }
     ]
   },
@@ -453,24 +408,24 @@
     "visitante": "Lanús",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/4816.png",
     "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/12.png",
-    "prob_local": 0.2928621366373336,
-    "prob_empate": 0.32373241813333603,
-    "prob_visitante": 0.38340544522933034,
-    "fuerza_local": 0.3078670967741935,
-    "fuerza_visitante": 0.4332435483870968,
-    "diferencia": 0.12537645161290328,
-    "confianza": "moderado",
-    "prediccion": "Lanús",
-    "vuelta_en_casa": "visitante",
-    "lambda_local": 0.7164247759434024,
-    "lambda_visitante": 0.8123258395906406,
+    "prob_local": 0.3806677844964974,
+    "prob_empate": 0.3134821952972999,
+    "prob_visitante": 0.30585002020620267,
+    "fuerza_local": 0.4237870967741936,
+    "fuerza_visitante": 0.29224354838709676,
+    "diferencia": 0.1315435483870968,
+    "confianza": "ajustado",
+    "prediccion": "Liga de Quito",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.8431227072721372,
+    "lambda_visitante": 0.787241150771578,
     "analisis": [
       {
         "factor": "Forma reciente",
-        "impacto": "bajo",
+        "impacto": "alto",
         "tipo": "forma",
         "local": {
-          "valor": 0.29,
+          "valor": 0.84,
           "ultimos_5": [
             "L",
             "L",
@@ -480,7 +435,7 @@
           "nombre": "Liga de Quito"
         },
         "visitante": {
-          "valor": 0.41,
+          "valor": 0.3,
           "ultimos_5": [
             "L",
             "W",
@@ -489,7 +444,7 @@
           ],
           "nombre": "Lanús"
         },
-        "interpretacion": "Lanús llega con mejor momentum: índice 0.41/1.0 frente a 0.29/1.0 de Liga de Quito. Últimos 5: 2V/0E/2D vs 2V/0E/2D."
+        "interpretacion": "Liga de Quito llega con mejor momentum: índice 0.84/1.0 frente a 0.30/1.0 de Lanús. Últimos 5: 2V/0E/2D vs 2V/0E/2D."
       },
       {
         "factor": "Rendimiento situacional",
@@ -524,21 +479,6 @@
           "goles_contra": 1.25
         },
         "interpretacion": "Producción similar: Liga de Quito 0.75 goles/partido — Lanús 0.50. Defensa: 0.75 vs 1.25."
-      },
-      {
-        "factor": "Ventaja de vuelta en casa",
-        "impacto": "medio",
-        "tipo": "vuelta",
-        "equipo_vuelta": "Lanús",
-        "local": {
-          "nombre": "Liga de Quito",
-          "posicion": 3
-        },
-        "visitante": {
-          "nombre": "Lanús",
-          "posicion": 2
-        },
-        "interpretacion": "Lanús jugará la vuelta en casa (posición 2 vs 3 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Liga de Quito deberá avanzar jugando el partido decisivo de visitante."
       }
     ]
   },
@@ -550,24 +490,24 @@
     "visitante": "Corinthians",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2683.png",
     "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/874.png",
-    "prob_local": 0.43598220288705714,
-    "prob_empate": 0.24450139620110894,
-    "prob_visitante": 0.31951640091183386,
-    "fuerza_local": 0.2759956451612903,
-    "fuerza_visitante": 0.581805,
-    "diferencia": 0.3058093548387097,
-    "confianza": "moderado",
+    "prob_local": 0.5306350155259317,
+    "prob_empate": 0.23042897156080044,
+    "prob_visitante": 0.2389360129132679,
+    "fuerza_local": 0.38698064516129027,
+    "fuerza_visitante": 0.4071,
+    "diferencia": 0.020119354838709747,
+    "confianza": "favorable",
     "prediccion": "Peñarol",
-    "vuelta_en_casa": "visitante",
-    "lambda_local": 1.579893403137945,
-    "lambda_visitante": 1.0195144528706783,
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.8541197965557799,
+    "lambda_visitante": 0.9437164654361128,
     "analisis": [
       {
         "factor": "Forma reciente",
         "impacto": "alto",
         "tipo": "forma",
         "local": {
-          "valor": 0.21,
+          "valor": 0.74,
           "ultimos_5": [
             "D",
             "L",
@@ -577,7 +517,7 @@
           "nombre": "Penarol"
         },
         "visitante": {
-          "valor": 0.67,
+          "valor": 0.41,
           "ultimos_5": [
             "D",
             "W",
@@ -586,7 +526,7 @@
           ],
           "nombre": "Corinthians"
         },
-        "interpretacion": "Corinthians llega con mejor momentum: índice 0.67/1.0 frente a 0.21/1.0 de Penarol. Últimos 5: 3V/1E/0D vs 0V/2E/2D."
+        "interpretacion": "Penarol llega con mejor momentum: índice 0.74/1.0 frente a 0.41/1.0 de Corinthians. Últimos 5: 0V/2E/2D vs 3V/1E/0D."
       },
       {
         "factor": "Rendimiento situacional",
@@ -621,21 +561,6 @@
           "goles_contra": 0.25
         },
         "interpretacion": "Corinthians más ofensivo: 1.75 vs 0.75 goles/partido. Defensa: 1.50 vs 0.25."
-      },
-      {
-        "factor": "Ventaja de vuelta en casa",
-        "impacto": "medio",
-        "tipo": "vuelta",
-        "equipo_vuelta": "Corinthians",
-        "local": {
-          "nombre": "Penarol",
-          "posicion": 4
-        },
-        "visitante": {
-          "nombre": "Corinthians",
-          "posicion": 1
-        },
-        "interpretacion": "Corinthians jugará la vuelta en casa (posición 1 vs 4 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Penarol deberá avanzar jugando el partido decisivo de visitante."
       }
     ]
   },
@@ -647,24 +572,24 @@
     "visitante": "San Lorenzo",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2674.png",
     "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/18.png",
-    "prob_local": 0.3635302302846086,
-    "prob_empate": 0.2886150001256322,
-    "prob_visitante": 0.3478547695897592,
-    "fuerza_local": 0.3235458064516129,
-    "fuerza_visitante": 0.505568,
-    "diferencia": 0.1820221935483871,
+    "prob_local": 0.3863131937246107,
+    "prob_empate": 0.28901530361505035,
+    "prob_visitante": 0.32467150266033895,
+    "fuerza_local": 0.3429858064516129,
+    "fuerza_visitante": 0.4736,
+    "diferencia": 0.1306141935483871,
     "confianza": "ajustado",
     "prediccion": "Santos",
     "vuelta_en_casa": "visitante",
-    "lambda_local": 1.1378960999999999,
-    "lambda_visitante": 0.9418566929999999,
+    "lambda_local": 1.17037305,
+    "lambda_visitante": 0.8993755499999999,
     "analisis": [
       {
         "factor": "Forma reciente",
-        "impacto": "medio",
+        "impacto": "bajo",
         "tipo": "forma",
         "local": {
-          "valor": 0.32,
+          "valor": 0.41,
           "ultimos_5": [
             "D",
             "D",
@@ -674,7 +599,7 @@
           "nombre": "Santos"
         },
         "visitante": {
-          "valor": 0.45,
+          "valor": 0.3,
           "ultimos_5": [
             "D",
             "D",
@@ -683,7 +608,7 @@
           ],
           "nombre": "San Lorenzo"
         },
-        "interpretacion": "San Lorenzo llega con mejor momentum: índice 0.45/1.0 frente a 0.32/1.0 de Santos. Últimos 5: 1V/3E/0D vs 0V/3E/1D."
+        "interpretacion": "Santos llega con mejor momentum: índice 0.41/1.0 frente a 0.30/1.0 de San Lorenzo. Últimos 5: 0V/3E/1D vs 1V/3E/0D."
       },
       {
         "factor": "Rendimiento situacional",
