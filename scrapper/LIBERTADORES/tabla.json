@@ -1,0 +1,50 @@
+[
+  {
+    "posicion": 1,
+    "equipo": "Flamengo",
+    "partidos": 3,
+    "ganados": 2,
+    "empatados": 1,
+    "perdidos": 0,
+    "goles_favor": 7,
+    "goles_contra": 2,
+    "diferencia_goles": 5,
+    "puntos": 7
+  },
+  {
+    "posicion": 2,
+    "equipo": "Estudiantes de La Plata",
+    "partidos": 4,
+    "ganados": 1,
+    "empatados": 3,
+    "perdidos": 0,
+    "goles_favor": 5,
+    "goles_contra": 4,
+    "diferencia_goles": 1,
+    "puntos": 6
+  },
+  {
+    "posicion": 3,
+    "equipo": "Independiente Medellín",
+    "partidos": 3,
+    "ganados": 1,
+    "empatados": 1,
+    "perdidos": 1,
+    "goles_favor": 3,
+    "goles_contra": 5,
+    "diferencia_goles": -2,
+    "puntos": 4
+  },
+  {
+    "posicion": 4,
+    "equipo": "Cusco FC",
+    "partidos": 4,
+    "ganados": 0,
+    "empatados": 1,
+    "perdidos": 3,
+    "goles_favor": 2,
+    "goles_contra": 6,
+    "diferencia_goles": -4,
+    "puntos": 1
+  }
+]

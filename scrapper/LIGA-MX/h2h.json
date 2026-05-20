@@ -1,0 +1,46 @@
+{
+  "pumas_unam_vs_cruz_azul": {
+    "equipo_a": "Pumas UNAM",
+    "equipo_b": "Cruz Azul",
+    "clausura_2026": [
+      {
+        "fecha": "2026-03-15",
+        "temporada": "Torneo Clausura",
+        "local": "Pumas UNAM",
+        "visitante": "Cruz Azul",
+        "goles_local": 2,
+        "goles_visitante": 2
+      }
+    ],
+    "apertura_2025": [
+      {
+        "fecha": "2025-11-09",
+        "temporada": "Torneo Apertura",
+        "local": "Cruz Azul",
+        "visitante": "Pumas UNAM",
+        "goles_local": 2,
+        "goles_visitante": 3
+      }
+    ],
+    "resumen": {
+      "clausura_2026": {
+        "partidos": 1,
+        "victorias_pumas_unam": 0,
+        "empates": 1,
+        "victorias_cruz_azul": 0
+      },
+      "apertura_2025": {
+        "partidos": 1,
+        "victorias_pumas_unam": 1,
+        "empates": 0,
+        "victorias_cruz_azul": 0
+      },
+      "total": {
+        "partidos": 2,
+        "victorias_pumas_unam": 1,
+        "empates": 1,
+        "victorias_cruz_azul": 0
+      }
+    }
+  }
+}

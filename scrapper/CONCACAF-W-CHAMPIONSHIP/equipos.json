@@ -1,0 +1,221 @@
+{
+  "americafemenil": {
+    "nombre": "América Femenil",
+    "abreviacion": "AME",
+    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/22415.png",
+
+    "posicion": 1,
+    "posicion_anterior": 1,
+    "tendencia_posicion": 0,
+
+    "partidos": 17,
+    "ganados": 14,
+    "empatados": 3,
+    "perdidos": 1,
+    "puntos": 45,
+    "goles_favor": 54,
+    "goles_contra": 17,
+    "goles_diff": 37,
+    "goles_favor_promedio": 3.18,
+    "goles_contra_promedio": 1.00,
+
+    "competencias": {
+      "mex.women.clausura": {
+        "partidos": 17,
+        "ganados": 14,
+        "empatados": 3,
+        "perdidos": 1,
+        "goles_favor": 54,
+        "goles_contra": 17,
+        "goles_favor_promedio": 3.18,
+        "goles_contra_promedio": 1.00,
+        "partidos_local": 9,
+        "ganados_local": 8,
+        "empatados_local": 1,
+        "perdidos_local": 0,
+        "win_rate_local": 0.889,
+        "partidos_visita": 8,
+        "ganados_visita": 6,
+        "empatados_visita": 2,
+        "perdidos_visita": 1,
+        "win_rate_visita": 0.75,
+        "ultimos_5": ["W", "W", "W", "W", "W"],
+        "imbatido_streak": 7
+      }
+    },
+
+    "forma_ponderada": 0.95,
+    "forma_liga": 0.95,
+    "ultimos_5_liga": ["W", "W", "W", "W", "W"],
+    "imbatido_streak": 7,
+
+    "forma_liga_local": 0.95,
+    "ultimos_5_liga_local": ["W", "W", "W", "W", "W"],
+    "liga_local_slug": "mex.women.clausura"
+  },
+
+  "gothamfc": {
+    "nombre": "NJ/NY Gotham FC",
+    "abreviacion": "GTH",
+    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/15364.png",
+
+    "posicion": 4,
+    "posicion_anterior": 5,
+    "tendencia_posicion": 1,
+
+    "partidos": 8,
+    "ganados": 3,
+    "empatados": 3,
+    "perdidos": 2,
+    "puntos": 12,
+    "goles_favor": 8,
+    "goles_contra": 5,
+    "goles_diff": 3,
+    "goles_favor_promedio": 1.00,
+    "goles_contra_promedio": 0.63,
+
+    "competencias": {
+      "usa.nwsl": {
+        "partidos": 8,
+        "ganados": 3,
+        "empatados": 3,
+        "perdidos": 2,
+        "goles_favor": 8,
+        "goles_contra": 5,
+        "goles_favor_promedio": 1.00,
+        "goles_contra_promedio": 0.63,
+        "partidos_local": 4,
+        "ganados_local": 2,
+        "empatados_local": 1,
+        "perdidos_local": 1,
+        "win_rate_local": 0.50,
+        "partidos_visita": 4,
+        "ganados_visita": 1,
+        "empatados_visita": 2,
+        "perdidos_visita": 1,
+        "win_rate_visita": 0.375,
+        "ultimos_5": ["D", "W", "W", "L", "W"],
+        "imbatido_streak": 2
+      }
+    },
+
+    "forma_ponderada": 0.62,
+    "forma_liga": 0.62,
+    "ultimos_5_liga": ["D", "W", "W", "L", "W"],
+    "imbatido_streak": 2,
+
+    "forma_liga_local": 0.62,
+    "ultimos_5_liga_local": ["D", "W", "W", "L", "W"],
+    "liga_local_slug": "usa.nwsl"
+  },
+
+  "washingtonspirit": {
+    "nombre": "Washington Spirit",
+    "abreviacion": "WAS",
+    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/17417.png",
+
+    "posicion": 3,
+    "posicion_anterior": 4,
+    "tendencia_posicion": 1,
+
+    "partidos": 9,
+    "ganados": 5,
+    "empatados": 3,
+    "perdidos": 1,
+    "puntos": 18,
+    "goles_favor": 14,
+    "goles_contra": 4,
+    "goles_diff": 10,
+    "goles_favor_promedio": 1.56,
+    "goles_contra_promedio": 0.44,
+
+    "competencias": {
+      "usa.nwsl": {
+        "partidos": 9,
+        "ganados": 5,
+        "empatados": 3,
+        "perdidos": 1,
+        "goles_favor": 14,
+        "goles_contra": 4,
+        "goles_favor_promedio": 1.56,
+        "goles_contra_promedio": 0.44,
+        "partidos_local": 4,
+        "ganados_local": 2,
+        "empatados_local": 2,
+        "perdidos_local": 0,
+        "win_rate_local": 0.50,
+        "partidos_visita": 5,
+        "ganados_visita": 3,
+        "empatados_visita": 1,
+        "perdidos_visita": 1,
+        "win_rate_visita": 0.60,
+        "ultimos_5": ["W", "W", "W", "W", "W"],
+        "imbatido_streak": 8
+      }
+    },
+
+    "forma_ponderada": 0.93,
+    "forma_liga": 0.93,
+    "ultimos_5_liga": ["W", "W", "W", "W", "W"],
+    "imbatido_streak": 8,
+
+    "forma_liga_local": 0.93,
+    "ultimos_5_liga_local": ["W", "W", "W", "W", "W"],
+    "liga_local_slug": "usa.nwsl"
+  },
+
+  "pachucafemenil": {
+    "nombre": "Pachuca Femenil",
+    "abreviacion": "PAC",
+    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
+
+    "posicion": 4,
+    "posicion_anterior": 3,
+    "tendencia_posicion": -1,
+
+    "partidos": 17,
+    "ganados": 10,
+    "empatados": 1,
+    "perdidos": 6,
+    "puntos": 31,
+    "goles_favor": 42,
+    "goles_contra": 22,
+    "goles_diff": 20,
+    "goles_favor_promedio": 2.47,
+    "goles_contra_promedio": 1.29,
+
+    "competencias": {
+      "mex.women.clausura": {
+        "partidos": 17,
+        "ganados": 10,
+        "empatados": 1,
+        "perdidos": 6,
+        "goles_favor": 42,
+        "goles_contra": 22,
+        "goles_favor_promedio": 2.47,
+        "goles_contra_promedio": 1.29,
+        "partidos_local": 9,
+        "ganados_local": 6,
+        "empatados_local": 0,
+        "perdidos_local": 3,
+        "win_rate_local": 0.667,
+        "partidos_visita": 8,
+        "ganados_visita": 4,
+        "empatados_visita": 1,
+        "perdidos_visita": 3,
+        "win_rate_visita": 0.50,
+        "ultimos_5": ["L", "W", "D", "W", "L"],
+        "imbatido_streak": 0
+      }
+    },
+
+    "forma_ponderada": 0.47,
+    "forma_liga": 0.47,
+    "ultimos_5_liga": ["L", "W", "D", "W", "L"],
+    "imbatido_streak": 0,
+
+    "forma_liga_local": 0.47,
+    "ultimos_5_liga_local": ["L", "W", "D", "W", "L"],
+    "liga_local_slug": "mex.women.clausura"
+  }
+}

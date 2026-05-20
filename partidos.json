@@ -1,3 +1,933 @@
 [
-
+  {
+    "id": 1,
+    "torneo": "Liga MX Liguilla",
+    "perfil": "liguilla_mx",
+    "local": "Cruz Azul",
+    "visitante": "Pumas UNAM",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "prob_local": 0.3578489928039479,
+    "prob_empate": 0.22735638741433206,
+    "prob_visitante": 0.41479461978172,
+    "fuerza_local": 0.5543543529411765,
+    "fuerza_visitante": 0.6185840000000001,
+    "diferencia": 0.06422964705882361,
+    "confianza": "ajustado",
+    "prediccion": "Pumas UNAM",
+    "vuelta_en_casa": "visitante",
+    "lambda_local": 2.250728881507502,
+    "lambda_visitante": 2.3678898614563,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.88,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "valor": 0.59,
+          "ultimos_5": [
+            "W",
+            "L",
+            "D",
+            "D",
+            "W"
+          ],
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "Cruz Azul llega con mejor momentum: índice 0.88/1.0 frente a 0.59/1.0 de Pumas UNAM. Últimos 5: 4V/1E/0D vs 2V/2E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 66.7,
+          "detalle": "14G/5E/2P",
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 40.0,
+          "detalle": "8G/7E/5P",
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "Cruz Azul domina en casa: 67% (14G/5E/2P). Pumas UNAM: 40% de visita (8G/7E/5P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Cruz Azul",
+          "goles_favor": 1.81,
+          "goles_contra": 1.12
+        },
+        "visitante": {
+          "nombre": "Pumas UNAM",
+          "goles_favor": 1.69,
+          "goles_contra": 1.33
+        },
+        "interpretacion": "Producción similar: Cruz Azul 1.81 goles/partido — Pumas UNAM 1.69. Defensa: 1.12 vs 1.33."
+      },
+      {
+        "factor": "Historial directo",
+        "impacto": "alto",
+        "tipo": "h2h",
+        "local": {
+          "nombre": "Cruz Azul",
+          "victorias": 0
+        },
+        "visitante": {
+          "nombre": "Pumas UNAM",
+          "victorias": 1
+        },
+        "empates": 1,
+        "partidos": [
+          {
+            "fecha": "2026-03-15",
+            "temporada": "Torneo Clausura",
+            "local": "Pumas UNAM",
+            "visitante": "Cruz Azul",
+            "goles_local": 2,
+            "goles_visitante": 2
+          },
+          {
+            "fecha": "2025-11-09",
+            "temporada": "Torneo Apertura",
+            "local": "Cruz Azul",
+            "visitante": "Pumas UNAM",
+            "goles_local": 2,
+            "goles_visitante": 3
+          }
+        ],
+        "total": 2,
+        "interpretacion": "Pumas UNAM lleva ventaja: 1V/1E/0D en 2 enfrentamientos recientes."
+      },
+      {
+        "factor": "Experiencia eliminatoria",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.75,
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.31,
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "Cruz Azul tiene mayor experiencia eliminatoria (índice 0.75 vs 0.31 de Pumas UNAM). La presión de eliminación suele favorecer al más rodado."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "Pumas UNAM",
+        "local": {
+          "nombre": "Cruz Azul",
+          "posicion": 3
+        },
+        "visitante": {
+          "nombre": "Pumas UNAM",
+          "posicion": 1
+        },
+        "interpretacion": "Pumas UNAM jugará la vuelta en casa (posición 1 vs 3 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Cruz Azul deberá avanzar jugando el partido decisivo de visitante."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "torneo": "UEFA Europa League",
+    "perfil": "europa_league",
+    "local": "SC Freiburg",
+    "visitante": "Aston Villa",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/126.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
+    "prob_local": 0.4383862580513666,
+    "prob_empate": 0.17533700246360312,
+    "prob_visitante": 0.38627673948503033,
+    "fuerza_local": 0.36509398064516124,
+    "fuerza_visitante": 0.48629689677419363,
+    "diferencia": 0.12120291612903239,
+    "confianza": "ajustado",
+    "prediccion": "SC Freiburg",
+    "vuelta_en_casa": "visitante",
+    "lambda_local": 3.216906453023935,
+    "lambda_visitante": 2.8808780158730167,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.41,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "SC Freiburg"
+        },
+        "visitante": {
+          "valor": 0.41,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Aston Villa"
+        },
+        "interpretacion": "Momentum similar: SC Freiburg 0.41/1.0 — Aston Villa 0.41/1.0."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "SC Freiburg"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Aston Villa"
+        },
+        "interpretacion": "Aston Villa sufre de visita: 0% (0G/0E/0P). SC Freiburg en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "SC Freiburg",
+          "goles_favor": 1.79,
+          "goles_contra": 0.71
+        },
+        "visitante": {
+          "nombre": "Aston Villa",
+          "goles_favor": 2.0,
+          "goles_contra": 0.57
+        },
+        "interpretacion": "Producción similar: SC Freiburg 1.79 goles/partido — Aston Villa 2.00. Defensa: 0.71 vs 0.57."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "Aston Villa",
+        "local": {
+          "nombre": "SC Freiburg",
+          "posicion": 7
+        },
+        "visitante": {
+          "nombre": "Aston Villa",
+          "posicion": 2
+        },
+        "interpretacion": "Aston Villa jugará la vuelta en casa (posición 2 vs 7 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. SC Freiburg deberá avanzar jugando el partido decisivo de visitante."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "torneo": "Concacaf W Champions Cup",
+    "perfil": "concacaf_w_champions",
+    "local": "América Femenil",
+    "visitante": "NJ/NY Gotham FC",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/22415.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/15364.png",
+    "prob_local": 0.687719343336254,
+    "prob_empate": 0.13522641478282896,
+    "prob_visitante": 0.17705424188091712,
+    "fuerza_local": 0.732,
+    "fuerza_visitante": 0.3433066666666667,
+    "diferencia": 0.3886933333333333,
+    "confianza": "favorable",
+    "prediccion": "América Femenil",
+    "vuelta_en_casa": "local",
+    "lambda_local": 5.0,
+    "lambda_visitante": 2.653645411620001,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.95,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "America Femenil"
+        },
+        "visitante": {
+          "valor": 0.62,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Gotham FC"
+        },
+        "interpretacion": "America Femenil llega con mejor momentum: índice 0.95/1.0 frente a 0.62/1.0 de Gotham FC. Últimos 5: 5V/0E/0D vs 3V/1E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "America Femenil"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Gotham FC"
+        },
+        "interpretacion": "Gotham FC sufre de visita: 0% (0G/0E/0P). America Femenil en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "America Femenil",
+          "goles_favor": 3.18,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Gotham FC",
+          "goles_favor": 1.0,
+          "goles_contra": 0.63
+        },
+        "interpretacion": "America Femenil más ofensivo: 3.18 vs 1.00 goles/partido. Defensa: 1.00 vs 0.63."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "America Femenil",
+        "local": {
+          "nombre": "America Femenil",
+          "posicion": 1
+        },
+        "visitante": {
+          "nombre": "Gotham FC",
+          "posicion": 4
+        },
+        "interpretacion": "America Femenil jugará la vuelta en casa (posición 1 vs 4 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Gotham FC deberá avanzar jugando el partido decisivo de visitante."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "torneo": "Concacaf W Champions Cup",
+    "perfil": "concacaf_w_champions",
+    "local": "Washington Spirit",
+    "visitante": "Pachuca Femenil",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/17417.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
+    "prob_local": 0.23377580039981816,
+    "prob_empate": 0.13062239787094881,
+    "prob_visitante": 0.6356018017292331,
+    "fuerza_local": 0.696817777777778,
+    "fuerza_visitante": 0.3092266666666667,
+    "diferencia": 0.3875911111111113,
+    "confianza": "favorable",
+    "prediccion": "Pachuca Femenil",
+    "vuelta_en_casa": "local",
+    "lambda_local": 2.4895410525193804,
+    "lambda_visitante": 5.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.93,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Washington Spirit"
+        },
+        "visitante": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "L",
+            "W",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Pachuca Femenil"
+        },
+        "interpretacion": "Washington Spirit llega con mejor momentum: índice 0.93/1.0 frente a 0.47/1.0 de Pachuca Femenil. Últimos 5: 5V/0E/0D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Washington Spirit"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Pachuca Femenil"
+        },
+        "interpretacion": "Pachuca Femenil sufre de visita: 0% (0G/0E/0P). Washington Spirit en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Washington Spirit",
+          "goles_favor": 1.56,
+          "goles_contra": 0.44
+        },
+        "visitante": {
+          "nombre": "Pachuca Femenil",
+          "goles_favor": 2.47,
+          "goles_contra": 1.29
+        },
+        "interpretacion": "Pachuca Femenil más ofensivo: 2.47 vs 1.56 goles/partido. Defensa: 0.44 vs 1.29."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "Washington Spirit",
+        "local": {
+          "nombre": "Washington Spirit",
+          "posicion": 3
+        },
+        "visitante": {
+          "nombre": "Pachuca Femenil",
+          "posicion": 4
+        },
+        "interpretacion": "Washington Spirit jugará la vuelta en casa (posición 3 vs 4 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Pachuca Femenil deberá avanzar jugando el partido decisivo de visitante."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "torneo": "CONMEBOL Libertadores",
+    "perfil": "libertadores",
+    "local": "Independiente Santa Fe",
+    "visitante": "Platense",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/5488.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/7764.png",
+    "prob_local": 0.273126277887226,
+    "prob_empate": 0.319981885959301,
+    "prob_visitante": 0.406891836153473,
+    "fuerza_local": 0.27780209677419354,
+    "fuerza_visitante": 0.5083185483870968,
+    "diferencia": 0.23051645161290324,
+    "confianza": "moderado",
+    "prediccion": "Platense",
+    "vuelta_en_casa": "visitante",
+    "lambda_local": 0.7407980609575299,
+    "lambda_visitante": 0.8734473225163885,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.21,
+          "ultimos_5": [
+            "D",
+            "L",
+            "L",
+            "D"
+          ],
+          "nombre": "Independiente Santa Fe"
+        },
+        "visitante": {
+          "valor": 0.56,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Platense"
+        },
+        "interpretacion": "Platense llega con mejor momentum: índice 0.56/1.0 frente a 0.21/1.0 de Independiente Santa Fe. Últimos 5: 2V/1E/1D vs 0V/2E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Independiente Santa Fe"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Platense"
+        },
+        "interpretacion": "Platense sufre de visita: 0% (0G/0E/0P). Independiente Santa Fe en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Independiente Santa Fe",
+          "goles_favor": 0.75,
+          "goles_contra": 1.5
+        },
+        "visitante": {
+          "nombre": "Platense",
+          "goles_favor": 1.25,
+          "goles_contra": 1.25
+        },
+        "interpretacion": "Platense más ofensivo: 1.25 vs 0.75 goles/partido. Defensa: 1.50 vs 1.25."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "Platense",
+        "local": {
+          "nombre": "Independiente Santa Fe",
+          "posicion": 3
+        },
+        "visitante": {
+          "nombre": "Platense",
+          "posicion": 2
+        },
+        "interpretacion": "Platense jugará la vuelta en casa (posición 2 vs 3 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Independiente Santa Fe deberá avanzar jugando el partido decisivo de visitante."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "torneo": "CONMEBOL Libertadores",
+    "perfil": "libertadores",
+    "local": "Boca Juniors",
+    "visitante": "Cruzeiro",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/5.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2022.png",
+    "prob_local": 0.3894299717634119,
+    "prob_empate": 0.27379748900475476,
+    "prob_visitante": 0.3367725392318335,
+    "fuerza_local": 0.3218670967741935,
+    "fuerza_visitante": 0.49319854838709676,
+    "diferencia": 0.17133145161290325,
+    "confianza": "ajustado",
+    "prediccion": "Boca Juniors",
+    "vuelta_en_casa": "visitante",
+    "lambda_local": 1.2092435112248465,
+    "lambda_visitante": 0.9019042701434389,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.29,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Boca Juniors"
+        },
+        "visitante": {
+          "valor": 0.49,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Cruzeiro"
+        },
+        "interpretacion": "Cruzeiro llega con mejor momentum: índice 0.49/1.0 frente a 0.29/1.0 de Boca Juniors. Últimos 5: 2V/1E/1D vs 2V/0E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Boca Juniors"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Cruzeiro"
+        },
+        "interpretacion": "Cruzeiro sufre de visita: 0% (0G/0E/0P). Boca Juniors en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Boca Juniors",
+          "goles_favor": 1.25,
+          "goles_contra": 0.75
+        },
+        "visitante": {
+          "nombre": "Cruzeiro",
+          "goles_favor": 0.75,
+          "goles_contra": 0.5
+        },
+        "interpretacion": "Boca Juniors más ofensivo: 1.25 vs 0.75 goles/partido. Defensa: 0.75 vs 0.50."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "Cruzeiro",
+        "local": {
+          "nombre": "Boca Juniors",
+          "posicion": 3
+        },
+        "visitante": {
+          "nombre": "Cruzeiro",
+          "posicion": 2
+        },
+        "interpretacion": "Cruzeiro jugará la vuelta en casa (posición 2 vs 3 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Boca Juniors deberá avanzar jugando el partido decisivo de visitante."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "torneo": "CONMEBOL Libertadores",
+    "perfil": "libertadores",
+    "local": "Liga de Quito",
+    "visitante": "Lanús",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/4816.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/12.png",
+    "prob_local": 0.2928621366373336,
+    "prob_empate": 0.32373241813333603,
+    "prob_visitante": 0.38340544522933034,
+    "fuerza_local": 0.3078670967741935,
+    "fuerza_visitante": 0.4332435483870968,
+    "diferencia": 0.12537645161290328,
+    "confianza": "moderado",
+    "prediccion": "Lanús",
+    "vuelta_en_casa": "visitante",
+    "lambda_local": 0.7164247759434024,
+    "lambda_visitante": 0.8123258395906406,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.29,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Liga de Quito"
+        },
+        "visitante": {
+          "valor": 0.41,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Lanús"
+        },
+        "interpretacion": "Lanús llega con mejor momentum: índice 0.41/1.0 frente a 0.29/1.0 de Liga de Quito. Últimos 5: 2V/0E/2D vs 2V/0E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Liga de Quito"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Lanús"
+        },
+        "interpretacion": "Lanús sufre de visita: 0% (0G/0E/0P). Liga de Quito en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Liga de Quito",
+          "goles_favor": 0.75,
+          "goles_contra": 0.75
+        },
+        "visitante": {
+          "nombre": "Lanús",
+          "goles_favor": 0.5,
+          "goles_contra": 1.25
+        },
+        "interpretacion": "Producción similar: Liga de Quito 0.75 goles/partido — Lanús 0.50. Defensa: 0.75 vs 1.25."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "Lanús",
+        "local": {
+          "nombre": "Liga de Quito",
+          "posicion": 3
+        },
+        "visitante": {
+          "nombre": "Lanús",
+          "posicion": 2
+        },
+        "interpretacion": "Lanús jugará la vuelta en casa (posición 2 vs 3 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Liga de Quito deberá avanzar jugando el partido decisivo de visitante."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "torneo": "CONMEBOL Libertadores",
+    "perfil": "libertadores",
+    "local": "Peñarol",
+    "visitante": "Corinthians",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2683.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/874.png",
+    "prob_local": 0.43598220288705714,
+    "prob_empate": 0.24450139620110894,
+    "prob_visitante": 0.31951640091183386,
+    "fuerza_local": 0.2759956451612903,
+    "fuerza_visitante": 0.581805,
+    "diferencia": 0.3058093548387097,
+    "confianza": "moderado",
+    "prediccion": "Peñarol",
+    "vuelta_en_casa": "visitante",
+    "lambda_local": 1.579893403137945,
+    "lambda_visitante": 1.0195144528706783,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.21,
+          "ultimos_5": [
+            "D",
+            "L",
+            "L",
+            "D"
+          ],
+          "nombre": "Penarol"
+        },
+        "visitante": {
+          "valor": 0.67,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Corinthians"
+        },
+        "interpretacion": "Corinthians llega con mejor momentum: índice 0.67/1.0 frente a 0.21/1.0 de Penarol. Últimos 5: 3V/1E/0D vs 0V/2E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Penarol"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Corinthians"
+        },
+        "interpretacion": "Corinthians sufre de visita: 0% (0G/0E/0P). Penarol en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Penarol",
+          "goles_favor": 0.75,
+          "goles_contra": 1.5
+        },
+        "visitante": {
+          "nombre": "Corinthians",
+          "goles_favor": 1.75,
+          "goles_contra": 0.25
+        },
+        "interpretacion": "Corinthians más ofensivo: 1.75 vs 0.75 goles/partido. Defensa: 1.50 vs 0.25."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "Corinthians",
+        "local": {
+          "nombre": "Penarol",
+          "posicion": 4
+        },
+        "visitante": {
+          "nombre": "Corinthians",
+          "posicion": 1
+        },
+        "interpretacion": "Corinthians jugará la vuelta en casa (posición 1 vs 4 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Penarol deberá avanzar jugando el partido decisivo de visitante."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "torneo": "CONMEBOL Sudamericana",
+    "perfil": "sudamericana",
+    "local": "Santos",
+    "visitante": "San Lorenzo",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2674.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/18.png",
+    "prob_local": 0.3635302302846086,
+    "prob_empate": 0.2886150001256322,
+    "prob_visitante": 0.3478547695897592,
+    "fuerza_local": 0.3235458064516129,
+    "fuerza_visitante": 0.505568,
+    "diferencia": 0.1820221935483871,
+    "confianza": "ajustado",
+    "prediccion": "Santos",
+    "vuelta_en_casa": "visitante",
+    "lambda_local": 1.1378960999999999,
+    "lambda_visitante": 0.9418566929999999,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.32,
+          "ultimos_5": [
+            "D",
+            "D",
+            "D",
+            "L"
+          ],
+          "nombre": "Santos"
+        },
+        "visitante": {
+          "valor": 0.45,
+          "ultimos_5": [
+            "D",
+            "D",
+            "W",
+            "D"
+          ],
+          "nombre": "San Lorenzo"
+        },
+        "interpretacion": "San Lorenzo llega con mejor momentum: índice 0.45/1.0 frente a 0.32/1.0 de Santos. Últimos 5: 1V/3E/0D vs 0V/3E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Santos"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "San Lorenzo"
+        },
+        "interpretacion": "San Lorenzo sufre de visita: 0% (0G/0E/0P). Santos en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Santos",
+          "goles_favor": 0.75,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "San Lorenzo",
+          "goles_favor": 1.0,
+          "goles_contra": 0.5
+        },
+        "interpretacion": "Producción similar: Santos 0.75 goles/partido — San Lorenzo 1.00. Defensa: 1.00 vs 0.50."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "San Lorenzo",
+        "local": {
+          "nombre": "Santos",
+          "posicion": 4
+        },
+        "visitante": {
+          "nombre": "San Lorenzo",
+          "posicion": 1
+        },
+        "interpretacion": "San Lorenzo jugará la vuelta en casa (posición 1 vs 4 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Santos deberá avanzar jugando el partido decisivo de visitante."
+      }
+    ]
+  }
 ]

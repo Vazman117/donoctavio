@@ -18,32 +18,32 @@
     "goles_contra_promedio": 1.0,
     "competencias": {
       "mex.1": {
-        "partidos": 38,
-        "ganados": 15,
+        "partidos": 39,
+        "ganados": 16,
         "empatados": 14,
         "perdidos": 9,
-        "goles_favor": 65,
+        "goles_favor": 66,
         "goles_contra": 52,
-        "goles_favor_promedio": 1.711,
-        "goles_contra_promedio": 1.368,
-        "partidos_local": 18,
-        "ganados_local": 7,
+        "goles_favor_promedio": 1.692,
+        "goles_contra_promedio": 1.333,
+        "partidos_local": 19,
+        "ganados_local": 8,
         "empatados_local": 7,
         "perdidos_local": 4,
-        "win_rate_local": 0.389,
+        "win_rate_local": 0.421,
         "partidos_visita": 20,
         "ganados_visita": 8,
         "empatados_visita": 7,
         "perdidos_visita": 5,
         "win_rate_visita": 0.4,
         "ultimos_5": [
+          "W",
           "L",
           "D",
           "D",
-          "W",
           "W"
         ],
-        "imbatido_streak": 0
+        "imbatido_streak": 1
       },
       "concacaf.champions": {
         "partidos": 2,
@@ -71,16 +71,19 @@
         "imbatido_streak": 1
       }
     },
-    "forma_combinada": 0.425,
-    "forma_liga": 0.425,
+    "forma_ponderada": 0.59,
+    "forma_liga": 0.59,
     "ultimos_5_liga": [
+      "W",
       "L",
       "D",
       "D",
-      "W",
       "W"
     ],
-    "imbatido_streak": 0
+    "imbatido_streak": 1,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "guadalajara": {
     "nombre": "Guadalajara",
@@ -101,44 +104,47 @@
     "goles_contra_promedio": 1.0,
     "competencias": {
       "mex.1": {
-        "partidos": 39,
+        "partidos": 40,
         "ganados": 21,
         "empatados": 7,
-        "perdidos": 11,
-        "goles_favor": 69,
-        "goles_contra": 47,
-        "goles_favor_promedio": 1.769,
-        "goles_contra_promedio": 1.205,
-        "partidos_local": 19,
+        "perdidos": 12,
+        "goles_favor": 70,
+        "goles_contra": 49,
+        "goles_favor_promedio": 1.75,
+        "goles_contra_promedio": 1.225,
+        "partidos_local": 20,
         "ganados_local": 12,
         "empatados_local": 4,
-        "perdidos_local": 3,
-        "win_rate_local": 0.632,
+        "perdidos_local": 4,
+        "win_rate_local": 0.6,
         "partidos_visita": 20,
         "ganados_visita": 9,
         "empatados_visita": 3,
         "perdidos_visita": 8,
         "win_rate_visita": 0.45,
         "ultimos_5": [
+          "L",
           "D",
           "W",
           "L",
-          "D",
           "D"
         ],
-        "imbatido_streak": 2
+        "imbatido_streak": 0
       }
     },
-    "forma_combinada": 0.525,
-    "forma_liga": 0.525,
+    "forma_ponderada": 0.365,
+    "forma_liga": 0.365,
     "ultimos_5_liga": [
+      "L",
       "D",
       "W",
       "L",
-      "D",
       "D"
     ],
-    "imbatido_streak": 2
+    "imbatido_streak": 0,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "cruzazul": {
     "nombre": "Cruz Azul",
@@ -159,32 +165,32 @@
     "goles_contra_promedio": 1.059,
     "competencias": {
       "mex.1": {
-        "partidos": 41,
-        "ganados": 22,
+        "partidos": 42,
+        "ganados": 23,
         "empatados": 15,
         "perdidos": 4,
-        "goles_favor": 74,
-        "goles_contra": 46,
-        "goles_favor_promedio": 1.805,
-        "goles_contra_promedio": 1.122,
+        "goles_favor": 76,
+        "goles_contra": 47,
+        "goles_favor_promedio": 1.81,
+        "goles_contra_promedio": 1.119,
         "partidos_local": 21,
         "ganados_local": 14,
         "empatados_local": 5,
         "perdidos_local": 2,
         "win_rate_local": 0.667,
-        "partidos_visita": 20,
-        "ganados_visita": 8,
+        "partidos_visita": 21,
+        "ganados_visita": 9,
         "empatados_visita": 10,
         "perdidos_visita": 2,
-        "win_rate_visita": 0.4,
+        "win_rate_visita": 0.429,
         "ultimos_5": [
+          "W",
           "D",
           "W",
           "W",
-          "W",
-          "D"
+          "W"
         ],
-        "imbatido_streak": 7
+        "imbatido_streak": 8
       },
       "concacaf.champions": {
         "partidos": 6,
@@ -215,16 +221,19 @@
         "imbatido_streak": 1
       }
     },
-    "forma_combinada": 0.785,
-    "forma_liga": 0.785,
+    "forma_ponderada": 0.875,
+    "forma_liga": 0.875,
     "ultimos_5_liga": [
+      "W",
       "D",
       "W",
       "W",
-      "W",
-      "D"
+      "W"
     ],
-    "imbatido_streak": 7
+    "imbatido_streak": 8,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "pachuca": {
     "nombre": "Pachuca",
@@ -245,44 +254,47 @@
     "goles_contra_promedio": 1.118,
     "competencias": {
       "mex.1": {
-        "partidos": 39,
+        "partidos": 40,
         "ganados": 19,
         "empatados": 8,
-        "perdidos": 12,
+        "perdidos": 13,
         "goles_favor": 54,
-        "goles_contra": 43,
-        "goles_favor_promedio": 1.385,
-        "goles_contra_promedio": 1.103,
+        "goles_contra": 44,
+        "goles_favor_promedio": 1.35,
+        "goles_contra_promedio": 1.1,
         "partidos_local": 20,
         "ganados_local": 12,
         "empatados_local": 2,
         "perdidos_local": 6,
         "win_rate_local": 0.6,
-        "partidos_visita": 19,
+        "partidos_visita": 20,
         "ganados_visita": 7,
         "empatados_visita": 6,
-        "perdidos_visita": 6,
-        "win_rate_visita": 0.368,
+        "perdidos_visita": 7,
+        "win_rate_visita": 0.35,
         "ultimos_5": [
-          "W",
-          "W",
-          "W",
           "L",
+          "W",
+          "W",
+          "W",
           "L"
         ],
-        "imbatido_streak": 3
+        "imbatido_streak": 0
       }
     },
-    "forma_combinada": 0.8,
-    "forma_liga": 0.8,
+    "forma_ponderada": 0.57,
+    "forma_liga": 0.57,
     "ultimos_5_liga": [
-      "W",
-      "W",
-      "W",
       "L",
+      "W",
+      "W",
+      "W",
       "L"
     ],
-    "imbatido_streak": 3
+    "imbatido_streak": 0,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "toluca": {
     "nombre": "Toluca",
@@ -359,7 +371,7 @@
         "imbatido_streak": 1
       }
     },
-    "forma_combinada": 0.23,
+    "forma_ponderada": 0.255,
     "forma_liga": 0.2,
     "ultimos_5_liga": [
       "L",
@@ -368,7 +380,10 @@
       "L",
       "L"
     ],
-    "imbatido_streak": 0
+    "imbatido_streak": 0,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "atlas": {
     "nombre": "Atlas",
@@ -417,7 +432,7 @@
         "imbatido_streak": 0
       }
     },
-    "forma_combinada": 0.34,
+    "forma_ponderada": 0.34,
     "forma_liga": 0.34,
     "ultimos_5_liga": [
       "L",
@@ -426,7 +441,10 @@
       "D",
       "W"
     ],
-    "imbatido_streak": 0
+    "imbatido_streak": 0,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "tigresuanl": {
     "nombre": "Tigres UANL",
@@ -503,7 +521,7 @@
         "imbatido_streak": 2
       }
     },
-    "forma_combinada": 0.502,
+    "forma_ponderada": 0.539,
     "forma_liga": 0.55,
     "ultimos_5_liga": [
       "L",
@@ -512,7 +530,10 @@
       "D",
       "D"
     ],
-    "imbatido_streak": 0
+    "imbatido_streak": 0,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "america": {
     "nombre": "América",
@@ -589,7 +610,7 @@
         "imbatido_streak": 0
       }
     },
-    "forma_combinada": 0.5,
+    "forma_ponderada": 0.5,
     "forma_liga": 0.5,
     "ultimos_5_liga": [
       "D",
@@ -598,7 +619,10 @@
       "W",
       "W"
     ],
-    "imbatido_streak": 2
+    "imbatido_streak": 2,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "tijuana": {
     "nombre": "Tijuana",
@@ -647,7 +671,7 @@
         "imbatido_streak": 5
       }
     },
-    "forma_combinada": 0.725,
+    "forma_ponderada": 0.725,
     "forma_liga": 0.725,
     "ultimos_5_liga": [
       "D",
@@ -656,7 +680,10 @@
       "W",
       "W"
     ],
-    "imbatido_streak": 5
+    "imbatido_streak": 5,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "leon": {
     "nombre": "León",
@@ -705,7 +732,7 @@
         "imbatido_streak": 0
       }
     },
-    "forma_combinada": 0.4,
+    "forma_ponderada": 0.4,
     "forma_liga": 0.4,
     "ultimos_5_liga": [
       "L",
@@ -714,7 +741,10 @@
       "W",
       "W"
     ],
-    "imbatido_streak": 0
+    "imbatido_streak": 0,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "queretaro": {
     "nombre": "Querétaro",
@@ -763,7 +793,7 @@
         "imbatido_streak": 8
       }
     },
-    "forma_combinada": 0.735,
+    "forma_ponderada": 0.735,
     "forma_liga": 0.735,
     "ultimos_5_liga": [
       "W",
@@ -772,7 +802,10 @@
       "W",
       "D"
     ],
-    "imbatido_streak": 8
+    "imbatido_streak": 8,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "fcjuarez": {
     "nombre": "FC Juarez",
@@ -821,7 +854,7 @@
         "imbatido_streak": 1
       }
     },
-    "forma_combinada": 0.39,
+    "forma_ponderada": 0.39,
     "forma_liga": 0.39,
     "ultimos_5_liga": [
       "W",
@@ -830,7 +863,10 @@
       "L",
       "D"
     ],
-    "imbatido_streak": 1
+    "imbatido_streak": 1,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "monterrey": {
     "nombre": "Monterrey",
@@ -906,7 +942,7 @@
         "imbatido_streak": 1
       }
     },
-    "forma_combinada": 0.31,
+    "forma_ponderada": 0.31,
     "forma_liga": 0.31,
     "ultimos_5_liga": [
       "L",
@@ -915,7 +951,10 @@
       "D",
       "L"
     ],
-    "imbatido_streak": 0
+    "imbatido_streak": 0,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "atleticodesanluis": {
     "nombre": "Atlético de San Luis",
@@ -964,7 +1003,7 @@
         "imbatido_streak": 0
       }
     },
-    "forma_combinada": 0.39,
+    "forma_ponderada": 0.39,
     "forma_liga": 0.39,
     "ultimos_5_liga": [
       "L",
@@ -973,7 +1012,10 @@
       "D",
       "W"
     ],
-    "imbatido_streak": 0
+    "imbatido_streak": 0,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "necaxa": {
     "nombre": "Necaxa",
@@ -1022,7 +1064,7 @@
         "imbatido_streak": 0
       }
     },
-    "forma_combinada": 0.305,
+    "forma_ponderada": 0.305,
     "forma_liga": 0.305,
     "ultimos_5_liga": [
       "L",
@@ -1031,7 +1073,10 @@
       "L",
       "W"
     ],
-    "imbatido_streak": 0
+    "imbatido_streak": 0,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "mazatlanfc": {
     "nombre": "Mazatlán FC",
@@ -1080,7 +1125,7 @@
         "imbatido_streak": 0
       }
     },
-    "forma_combinada": 0.35,
+    "forma_ponderada": 0.35,
     "forma_liga": 0.35,
     "ultimos_5_liga": [
       "L",
@@ -1089,7 +1134,10 @@
       "L",
       "L"
     ],
-    "imbatido_streak": 0
+    "imbatido_streak": 0,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "puebla": {
     "nombre": "Puebla",
@@ -1138,7 +1186,7 @@
         "imbatido_streak": 0
       }
     },
-    "forma_combinada": 0.04,
+    "forma_ponderada": 0.04,
     "forma_liga": 0.04,
     "ultimos_5_liga": [
       "L",
@@ -1147,7 +1195,10 @@
       "L",
       "D"
     ],
-    "imbatido_streak": 0
+    "imbatido_streak": 0,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   },
   "santos": {
     "nombre": "Santos",
@@ -1196,7 +1247,7 @@
         "imbatido_streak": 1
       }
     },
-    "forma_combinada": 0.39,
+    "forma_ponderada": 0.39,
     "forma_liga": 0.39,
     "ultimos_5_liga": [
       "W",
@@ -1205,6 +1256,9 @@
       "L",
       "D"
     ],
-    "imbatido_streak": 1
+    "imbatido_streak": 1,
+    "forma_liga_local": null,
+    "ultimos_5_liga_local": null,
+    "liga_local_slug": null
   }
 }
