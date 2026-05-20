@@ -1,5 +1,90 @@
 [
-    {
+  {
+    "id": 2,
+    "torneo": "UEFA Europa League",
+    "perfil": "europa_league",
+    "local": "SC Freiburg",
+    "visitante": "Aston Villa",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/126.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
+    "prob_local": 0.44814945424406344,
+    "prob_empate": 0.17496790109462093,
+    "prob_visitante": 0.37688264466131577,
+    "fuerza_local": 0.39258898064516135,
+    "fuerza_visitante": 0.41964189677419356,
+    "diferencia": 0.027052916129032212,
+    "confianza": "ajustado",
+    "prediccion": "SC Freiburg",
+    "resultado": "Aston Villa",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 3.3333592925300652,
+    "lambda_visitante": 3.0073555873015874,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "SC Freiburg"
+        },
+        "visitante": {
+          "valor": 0.56,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Aston Villa"
+        },
+        "interpretacion": "Aston Villa llega con mejor momentum: índice 0.56/1.0 frente a 0.53/1.0 de SC Freiburg. Últimos 5: 4V/0E/1D vs 4V/0E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "SC Freiburg"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Aston Villa"
+        },
+        "interpretacion": "Aston Villa sufre de visita: 0% (0G/0E/0P). SC Freiburg en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "SC Freiburg",
+          "goles_favor": 1.79,
+          "goles_contra": 0.71
+        },
+        "visitante": {
+          "nombre": "Aston Villa",
+          "goles_favor": 2.0,
+          "goles_contra": 0.57
+        },
+        "interpretacion": "Producción similar: SC Freiburg 1.79 goles/partido — Aston Villa 2.00. Defensa: 0.71 vs 0.57."
+      }
+    ]
+  },
+  {
     "id": 6,
     "torneo": "CONMEBOL Libertadores",
     "perfil": "libertadores",
