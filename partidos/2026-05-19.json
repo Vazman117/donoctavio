@@ -1,5 +1,188 @@
 [
   {
+    "id": 3,
+    "torneo": "Concacaf W Champions Cup",
+    "perfil": "concacaf_w_champions",
+    "local": "América Femenil",
+    "visitante": "NJ/NY Gotham FC",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/22415.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/15364.png",
+    "prob_local": 0.6775554150333183,
+    "prob_empate": 0.13882641478282895,
+    "prob_visitante": 0.18361817018385268,
+    "fuerza_local": 0.5319999999999999,
+    "fuerza_visitante": 0.3433066666666667,
+    "diferencia": 0.1886933333333332,
+    "confianza": "favorable",
+    "prediccion": "América Femenil",
+    "resultado": "América Femenil",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 5.0,
+    "lambda_visitante": 2.653645411620001,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.95,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "America Femenil"
+        },
+        "visitante": {
+          "valor": 0.62,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Gotham FC"
+        },
+        "interpretacion": "America Femenil llega con mejor momentum: índice 0.95/1.0 frente a 0.62/1.0 de Gotham FC. Últimos 5: 5V/0E/0D vs 3V/1E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "America Femenil"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Gotham FC"
+        },
+        "interpretacion": "Gotham FC sufre de visita: 0% (0G/0E/0P). America Femenil en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "America Femenil",
+          "goles_favor": 3.18,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Gotham FC",
+          "goles_favor": 1.0,
+          "goles_contra": 0.63
+        },
+        "interpretacion": "America Femenil más ofensivo: 3.18 vs 1.00 goles/partido. Defensa: 1.00 vs 0.63."
+      }
+    ]
+  },  
+  {
+    "id": 9,
+    "torneo": "CONMEBOL Sudamericana",
+    "perfil": "sudamericana",
+    "local": "Santos",
+    "visitante": "San Lorenzo",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2674.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/18.png",
+    "prob_local": 0.3863131937246107,
+    "prob_empate": 0.28901530361505035,
+    "prob_visitante": 0.32467150266033895,
+    "fuerza_local": 0.3429858064516129,
+    "fuerza_visitante": 0.4736,
+    "diferencia": 0.1306141935483871,
+    "confianza": "ajustado",
+    "prediccion": "Santos",
+    "resultado": "Empate",
+    "vuelta_en_casa": "visitante",
+    "lambda_local": 1.17037305,
+    "lambda_visitante": 0.8993755499999999,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.41,
+          "ultimos_5": [
+            "D",
+            "D",
+            "D",
+            "L"
+          ],
+          "nombre": "Santos"
+        },
+        "visitante": {
+          "valor": 0.3,
+          "ultimos_5": [
+            "D",
+            "D",
+            "W",
+            "D"
+          ],
+          "nombre": "San Lorenzo"
+        },
+        "interpretacion": "Santos llega con mejor momentum: índice 0.41/1.0 frente a 0.30/1.0 de San Lorenzo. Últimos 5: 0V/3E/1D vs 1V/3E/0D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Santos"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "San Lorenzo"
+        },
+        "interpretacion": "San Lorenzo sufre de visita: 0% (0G/0E/0P). Santos en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Santos",
+          "goles_favor": 0.75,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "San Lorenzo",
+          "goles_favor": 1.0,
+          "goles_contra": 0.5
+        },
+        "interpretacion": "Producción similar: Santos 0.75 goles/partido — San Lorenzo 1.00. Defensa: 1.00 vs 0.50."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "San Lorenzo",
+        "local": {
+          "nombre": "Santos",
+          "posicion": 4
+        },
+        "visitante": {
+          "nombre": "San Lorenzo",
+          "posicion": 1
+        },
+        "interpretacion": "San Lorenzo jugará la vuelta en casa (posición 1 vs 4 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Santos deberá avanzar jugando el partido decisivo de visitante."
+      }
+    ]
+  },
+  {
     "id": 2,
     "torneo": "UEFA Europa League",
     "perfil": "europa_league",
