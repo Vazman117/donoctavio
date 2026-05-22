@@ -72,10 +72,8 @@ def adaptar_equipo(equipo_raw, liga_key=None):
         streak_final = equipo_raw.get("imbatido_streak", 0)
     else:
         # Torneo copa: mezclar forma del torneo con forma de liga local
-        comp_torneo  = list(equipo_raw.get("competencias", {}).values())
-        stats_torneo = comp_torneo[0] if comp_torneo else {}
-
-        forma_torneo     = stats_torneo.get("forma_ponderada", 0.0)
+        # forma_liga de raíz = calculada por el scraper para la competencia principal
+        forma_torneo     = equipo_raw.get("forma_liga", equipo_raw.get("forma_combinada", 0.0))
         forma_liga_local = equipo_raw.get("forma_liga_local", 0.0) or 0.0
 
         if forma_torneo > 0 and forma_liga_local > 0:
@@ -86,17 +84,15 @@ def adaptar_equipo(equipo_raw, liga_key=None):
         elif forma_liga_local > 0:
             forma_final = forma_liga_local
         else:
-            forma_final = equipo_raw.get("forma_liga", equipo_raw.get("forma_combinada", 0.5))
+            forma_final = 0.5
 
-        # ultimos_5: preferir los del torneo, fallback a liga local
-        ultimos_5_torneo     = stats_torneo.get("ultimos_5", [])
+        # ultimos_5: los del torneo desde raíz, fallback a liga local
+        ultimos_5_torneo     = equipo_raw.get("ultimos_5_liga", [])
         ultimos_5_liga_local = equipo_raw.get("ultimos_5_liga_local", []) or []
         ultimos_5 = ultimos_5_torneo if ultimos_5_torneo else ultimos_5_liga_local
 
-        # streak: el más alto entre torneo y liga local (refleja mejor estado)
-        streak_torneo     = stats_torneo.get("imbatido_streak", 0)
-        streak_liga_local = equipo_raw.get("imbatido_streak", 0)
-        streak_final      = max(streak_torneo, streak_liga_local)
+        # streak: el del torneo directamente
+        streak_final = equipo_raw.get("imbatido_streak", 0)
 
     return {
         "nombre":  equipo_raw.get("nombre", ""),
@@ -167,7 +163,6 @@ PERFILES_TORNEO = {
     # ── Liga MX Liguilla ────────────────────────────────────────────────────
     "liguilla_mx": {
         "nombre":           "Liga MX Liguilla",
-        "liga_key":          "mex.1",
         "K_LOGISTICO":      4.2,
         "MAX_FAVORITO":     0.68,
         "ALPHA":            0.70,   # Poisson
@@ -189,7 +184,6 @@ PERFILES_TORNEO = {
     # K bajo porque la brecha entre ligas genera partidos más abiertos.
     "concacaf_w_champions": {
         "nombre":           "Concacaf W Champions Cup",
-        "liga_key":          None,
         "K_LOGISTICO":      3.8,
         "MAX_FAVORITO":     0.72,
         "ALPHA":            0.80,
@@ -208,7 +202,6 @@ PERFILES_TORNEO = {
     # ── Concacaf Champions Cup (varonil) ────────────────────────────────────
     "concacaf_champions": {
         "nombre":           "Concacaf Champions Cup",
-        "liga_key":          None,
         "K_LOGISTICO":      4.0,
         "MAX_FAVORITO":     0.70,
         "ALPHA":            0.75,
@@ -229,7 +222,6 @@ PERFILES_TORNEO = {
     # Localía muy importante (altitud, distancia de viaje).
     "libertadores": {
         "nombre":           "CONMEBOL Libertadores",
-        "liga_key":          None,
         "K_LOGISTICO":      4.0,
         "MAX_FAVORITO":     0.70,
         "ALPHA":            0.75,
@@ -249,7 +241,6 @@ PERFILES_TORNEO = {
     # Similar a Libertadores pero con equipos de menor jerarquía promedio.
     "sudamericana": {
         "nombre":           "CONMEBOL Sudamericana",
-        "liga_key":          None,
         "K_LOGISTICO":      3.9,
         "MAX_FAVORITO":     0.71,
         "ALPHA":            0.76,
@@ -257,7 +248,7 @@ PERFILES_TORNEO = {
         "TOTAL_EQUIPOS":    32,
         "usa_h2h":          True,
         "usa_experiencia":  False,
-        "usa_vuelta_casa":  True,
+        "usa_vuelta_casa":  False,
         "experiencia_db":   {},
         "PESO_BASE":        0.72,
         "PESO_H2H":         0.16,
@@ -270,7 +261,6 @@ PERFILES_TORNEO = {
     # Poco H2H reciente en el mismo torneo.
     "europa_league": {
         "nombre":           "UEFA Europa League",
-        "liga_key":          None,
         "K_LOGISTICO":      3.6,
         "MAX_FAVORITO":     0.74,
         "ALPHA":            0.82,
@@ -291,7 +281,6 @@ PERFILES_TORNEO = {
     # Poisson domina casi completamente.
     "champions_league": {
         "nombre":           "UEFA Champions League",
-        "liga_key":          None,
         "K_LOGISTICO":      3.5,
         "MAX_FAVORITO":     0.75,
         "ALPHA":            0.85,
@@ -310,7 +299,6 @@ PERFILES_TORNEO = {
     # ── Fase regular genérica (para uso con el otro modelo) ─────────────────
     "fase_regular": {
         "nombre":           "Fase Regular",
-        "liga_key":          "mex.1",
         "K_LOGISTICO":      4.2,
         "MAX_FAVORITO":     0.68,
         "ALPHA":            0.75,
@@ -468,7 +456,13 @@ def calcular_fuerza_base(equipo, es_local, cfg):
     PESO_STREAK       = 0.10
 
     forma          = equipo["forma_ponderada"]
-    win_rate       = equipo["win_rate_local"] if es_local else equipo["win_rate_visita"]
+
+    # Win rate suavizado por confianza según partidos en ese rol
+    partidos_sit   = equipo["partidos_local"] if es_local else equipo["partidos_visita"]
+    confianza_wr   = peso_confianza(partidos_sit)
+    win_rate_raw   = equipo["win_rate_local"] if es_local else equipo["win_rate_visita"]
+    win_rate       = confianza_wr * win_rate_raw + (1 - confianza_wr) * 0.45
+
     goles_favor    = normalizar_goles_favor(equipo["goles_favor_promedio"])
     goles_contra   = normalizar_goles_contra(equipo["goles_contra_promedio"])
     posicion       = normalizar_posicion(equipo["posicion"], cfg["TOTAL_EQUIPOS"])
@@ -930,15 +924,18 @@ def generar_partido(
     visitante_nombre,
     db,
     h2h            = None,
-    perfil_slug    = "liguilla_mx",
+    perfil_slug    = "fase_regular",
+    liga_key       = None,
     archivo_salida = "partidos.json",
 ):
     """
     Punto de entrada único para generar una proyección.
 
     Parámetros:
-    - perfil_slug: clave de PERFILES_TORNEO
-    - h2h: dict con datos de historial directo (None si no aplica)
+    - perfil_slug:    clave de PERFILES_TORNEO
+    - liga_key:       slug de la competencia dentro de competencias{}
+                      (se infiere desde DB_CONFIG si no se pasa)
+    - h2h:            dict con datos de historial directo (None si no aplica)
     - archivo_salida: dónde guardar el resultado
     """
     cfg = PERFILES_TORNEO.get(perfil_slug)
@@ -954,7 +951,6 @@ def generar_partido(
     if not visitante_raw:
         raise ValueError(f"Equipo visitante no encontrado: '{visitante_nombre}'")
 
-    liga_key  = cfg.get("liga_key")   # slug de competencia principal del perfil
     local     = adaptar_equipo(local_raw,     liga_key=liga_key)
     visitante = adaptar_equipo(visitante_raw, liga_key=liga_key)
 
@@ -1004,93 +1000,102 @@ def generar_partido(
 
 
 # =============================
+# CONFIGURACIÓN CENTRAL
+# =============================
+
+# Mapeo db_key → carpeta, perfil y liga_key
+# Agrega aquí cada liga o torneo que uses.
+# El sistema infiere perfil, liga_key y archivo de salida automáticamente.
+DB_CONFIG = {
+    # ── Ligas regulares ───────────────────────────────────────────────────────
+    "liga_mx":{
+        "carpeta": "LIGA-MX",
+        "perfil": "fase_regular",
+        "liga_key": "mex.1",
+        "salida": "partidos.json"
+    },
+    "liga_mx_exp":{"carpeta": "LIGA-MX-EXPANSION",      "perfil": "fase_regular",         "liga_key": "mex.2",                   "salida": "partidos.json"},
+    "premier":       {"carpeta": "PREMIER-LEAGUE",         "perfil": "fase_regular",         "liga_key": "eng.1",                   "salida": "partidos.json"},
+    "la_liga":       {"carpeta": "LALIGA",                 "perfil": "fase_regular",         "liga_key": "esp.1",                   "salida": "partidos.json"},
+    "bundesliga":    {"carpeta": "BUNDESLIGA",             "perfil": "fase_regular",         "liga_key": "ger.1",                   "salida": "partidos.json"},
+    "ligue1":        {"carpeta": "LIGUE-1",                "perfil": "fase_regular",         "liga_key": "fra.1",                   "salida": "partidos.json"},
+    "eredivisie":    {"carpeta": "EREDIVISIE",             "perfil": "fase_regular",         "liga_key": "ned.1",                   "salida": "partidos.json"},
+    "belgian":       {"carpeta": "BELGIAN-PRO-LEAGUE",     "perfil": "fase_regular",         "liga_key": "bel.1",                   "salida": "partidos.json"},
+    "brasileirao":   {"carpeta": "BRASILEIRAO-SERIE-A",    "perfil": "fase_regular",         "liga_key": "bra.1",                   "salida": "partidos.json"},
+    "mls":           {"carpeta": "MLS",                    "perfil": "fase_regular",         "liga_key": "usa.1",                   "salida": "partidos.json"},
+    "premiership":   {"carpeta": "SCOTTISH-PREMIERSHIP",   "perfil": "fase_regular",         "liga_key": "sco.1",                   "salida": "partidos.json"},
+    "grecia":        {"carpeta": "SUPERLIGA-GRECIA",       "perfil": "fase_regular",         "liga_key": "gre.1",                   "salida": "partidos.json"},
+    "rusia":         {"carpeta": "LIGAPREMIER-RUSIA",      "perfil": "fase_regular",         "liga_key": "rus.1",                   "salida": "partidos.json"},
+    # ── Torneos / eliminatorias ───────────────────────────────────────────────
+    "liguilla_mx":   {"carpeta": "LIGA-MX",               "perfil": "liguilla_mx",          "liga_key": "mex.1",                   "salida": "partidos.json",   "h2h_carpeta": "LIGA-MX"},
+    "concacaf_w":    {"carpeta": "CONCACAF-W-CHAMPIONSHIP",   "perfil": "concacaf_w_champions", "liga_key": None,"salida": "partidos.json"},
+    "libertadores":  {"carpeta": "LIBERTADORES",           "perfil": "libertadores",         "liga_key": "conmebol.libertadores",   "salida": "partidos.json"},
+    "sudamericana":  {"carpeta": "SUDAMERICANA",           "perfil": "sudamericana",         "liga_key": "conmebol.sudamericana",   "salida": "partidos.json"},
+    "europa_league": {"carpeta": "EUROPA-LEAGUE",          "perfil": "europa_league",        "liga_key": "uefa.europa",             "salida": "partidos.json"},
+}
+
+
+# =============================
 # MAIN
 # =============================
 
 if __name__ == "__main__":
 
-    # ── Bases de datos disponibles ────────────────────────────────────────────
-    # Agrega o quita según los torneos que vayas a proyectar ese día.
-    # carpeta → debe existir en scrapper/<CARPETA>/equipos.json
-    DBS = {
-        # Ligas regulares
-        "liga_mx":          cargar_equipos("LIGA-MX"),
-        "liga_mx_exp":      cargar_equipos("LIGA-MX-EXPANSION"),
-        "premier":          cargar_equipos("PREMIER-LEAGUE"),
-        "la_liga":          cargar_equipos("LALIGA"),
-        "bundesliga":       cargar_equipos("BUNDESLIGA"),
-        "ligue1":           cargar_equipos("LIGUE-1"),
-        "eredivisie":       cargar_equipos("EREDIVISIE"),
-        "belgian":          cargar_equipos("BELGIAN-PRO-LEAGUE"),
-        "brasileirao":      cargar_equipos("BRASILEIRAO-SERIE-A"),
-        "mls":              cargar_equipos("MLS"),
-        "premiership":      cargar_equipos("SCOTTISH-PREMIERSHIP"),
-        "grecia":           cargar_equipos("SUPERLIGA-GRECIA"),
-        "rusia":            cargar_equipos("LIGAPREMIER-RUSIA"),
-        # Torneos eliminatorios / internacionales
-        "liguilla_mx":      cargar_equipos("LIGA-MX"),
-        "concacaf_w":       cargar_equipos("CONCACAF-W-CHAMPIONSHIP"),
-        "libertadores":     cargar_equipos("LIBERTADORES"),
-        "sudamericana":     cargar_equipos("SUDAMERICANA"),
-        "europa_league":    cargar_equipos("EUROPA-LEAGUE"),
-    }
-
-    # ── H2H disponibles ───────────────────────────────────────────────────────
-    # Solo Liga MX tiene H2H por ahora. El resto devuelve {} automáticamente.
-    H2H = {
-        "liguilla_mx": cargar_h2h("LIGA-MX"),
-    }
+    # ── Cargar DBs y H2H automáticamente desde DB_CONFIG ─────────────────────
+    DBS = {}
+    H2H = {}
+    for key, cfg in DB_CONFIG.items():
+        try:
+            DBS[key] = cargar_equipos(cfg["carpeta"])
+            if "h2h_carpeta" in cfg:
+                H2H[key] = cargar_h2h(cfg["h2h_carpeta"])
+        except FileNotFoundError:
+            pass   # carpeta no scrapeada aún, se ignora
 
     # ── Casos a proyectar ─────────────────────────────────────────────────────
-    # Formato: (id, local, visitante, db_key, perfil_slug, archivo_salida)
-    #
-    # db_key      → clave en DBS de arriba
-    # perfil_slug → clave en PERFILES_TORNEO:
-    #               "fase_regular"        ligas normales (Premier, MX, etc.)
-    #               "liguilla_mx"         liguilla Liga MX ida
-    #               "concacaf_w_champions" Concacaf W Champions Cup
-    #               "concacaf_champions"  Concacaf Champions Cup varonil
-    #               "libertadores"        CONMEBOL Libertadores
-    #               "sudamericana"        CONMEBOL Sudamericana
-    #               "europa_league"       UEFA Europa League
-    #               "champions_league"    UEFA Champions League
-    #
-    # archivo_salida → JSON donde se guardan los resultados
+    # Formato mínimo: (id, local, visitante, db_key)
+    # Todo lo demás (perfil, liga_key, salida) se infiere desde DB_CONFIG.
     # ─────────────────────────────────────────────────────────────────────────
 
     CASOS = [
-        # id   local                 visitante              db_key          perfil               salida
-        (1,  "Cruz Azul",          "Pumas UNAM",         "liguilla_mx",   "liguilla_mx",     "partidos.json"),
-        (2,  "SC Freiburg",         "Aston Villa",        "europa_league", "europa_league",   "partidos.json"),
-        (3,  "America Femenil",    "Gotham FC",          "concacaf_w",    "concacaf_w_champions", "partidos.json"),
-        (4,  "Washington Spirit",  "Pachuca Femenil",    "concacaf_w",    "concacaf_w_champions", "partidos.json"),
-        (5,  "Independiente Santa Fe", "Platense",       "libertadores",  "libertadores",    "partidos.json"),
-        (6,  "Boca Juniors",       "Cruzeiro",           "libertadores",  "libertadores",    "partidos.json"),
-        (7,  "Liga de Quito",      "Lanús",              "libertadores",  "libertadores",    "partidos.json"),
-        (8,  "Penarol",            "Corinthians",        "libertadores",  "libertadores",    "partidos.json"),
-        (9,  "Santos",             "San Lorenzo",        "sudamericana",   "sudamericana",    "partidos.json"),
+        # id   local                   visitante
+        (1,  "Cruz Azul",             "Pumas UNAM",          "liguilla_mx"),
+        (2,  "Washington Spirit",     "Pachuca Femenil",     "concacaf_w"),
+        (3,  "America Femenil",       "Gotham FC",           "concacaf_w"),
+        (4,  "Santos",                "San Lorenzo",         "sudamericana"),
+        (5,  "SC Freiburg",           "Aston Villa",         "europa_league"),
+        (6,  "Liga de Quito",         "Lanus",               "libertadores"),
+        (7,  "Independiente Santa Fe","Platense",            "libertadores"),
+        (8,  "Penarol",               "Corinthians",         "libertadores"),
+        (9,  "Boca Juniors",          "Cruzeiro",            "libertadores"),
     ]
-
 
     # ── Ejecución ─────────────────────────────────────────────────────────────
     print(f"\n🚀 Generando {len(CASOS)} proyecciones...\n" + "="*55)
 
     for caso in CASOS:
-        id, local, visitante, db_key, perfil, salida = caso
-        try:
-            db  = DBS[db_key]
-            h2h = H2H.get(db_key, {})   # {} si no hay H2H para ese torneo
+        id, local, visitante, db_key = caso
+        cfg_db = DB_CONFIG.get(db_key)
+        if not cfg_db:
+            print(f"  ❌ db_key '{db_key}' no encontrado en DB_CONFIG")
+            continue
+        if db_key not in DBS:
+            print(f"  ❌ DB '{db_key}' no cargada — verifica que scrapper/{cfg_db['carpeta']} exista")
+            continue
 
+        try:
             p = generar_partido(
                 id, local, visitante,
-                db=db, h2h=h2h,
-                perfil_slug=perfil,
-                archivo_salida=salida,
+                db             = DBS[db_key],
+                h2h            = H2H.get(db_key, {}),
+                perfil_slug    = cfg_db["perfil"],
+                liga_key       = cfg_db["liga_key"],
+                archivo_salida = cfg_db["salida"],
             )
             print(f"  ⚽ {p['local']:<25} vs {p['visitante']:<25}")
             print(f"     {p['prob_local']:.1%} / {p['prob_empate']:.1%} / {p['prob_visitante']:.1%}"
                   f"  →  {p['prediccion']}  [{p['confianza']}]")
-            print(f"     Torneo: {p['torneo']} | Guardado: {salida}")
+            print(f"     {p['torneo']} → {cfg_db['salida']}")
             print()
         except Exception as e:
             print(f"  ❌ Error en partido {id} ({local} vs {visitante}): {e}")
