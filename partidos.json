@@ -368,7 +368,7 @@
             "W",
             "D"
           ],
-          "nombre": "Brighton & Hove Albion"
+          "nombre": "Brighton"
         },
         "visitante": {
           "valor": 0.88,
@@ -381,7 +381,7 @@
           ],
           "nombre": "Manchester United"
         },
-        "interpretacion": "Manchester United llega con mejor momentum: índice 0.88/1.0 frente a 0.41/1.0 de Brighton & Hove Albion. Últimos 5: 4V/1E/0D vs 2V/1E/2D."
+        "interpretacion": "Manchester United llega con mejor momentum: índice 0.88/1.0 frente a 0.41/1.0 de Brighton. Últimos 5: 4V/1E/0D vs 2V/1E/2D."
       },
       {
         "factor": "Rendimiento situacional",
@@ -391,7 +391,7 @@
           "etiqueta": "Win rate local",
           "valor": 50.0,
           "detalle": "9G/6E/3P",
-          "nombre": "Brighton & Hove Albion"
+          "nombre": "Brighton"
         },
         "visitante": {
           "etiqueta": "Win rate visita",
@@ -399,14 +399,14 @@
           "detalle": "6G/8E/4P",
           "nombre": "Manchester United"
         },
-        "interpretacion": "Equilibrio situacional: Brighton & Hove Albion 50% local — Manchester United 33% visita."
+        "interpretacion": "Equilibrio situacional: Brighton 50% local — Manchester United 33% visita."
       },
       {
         "factor": "Potencial ofensivo y defensivo",
         "impacto": "alto",
         "tipo": "doble_barra",
         "local": {
-          "nombre": "Brighton & Hove Albion",
+          "nombre": "Brighton",
           "goles_favor": 1.41,
           "goles_contra": 1.16
         },
@@ -415,7 +415,7 @@
           "goles_favor": 1.78,
           "goles_contra": 1.35
         },
-        "interpretacion": "Producción similar: Brighton & Hove Albion 1.41 goles/partido — Manchester United 1.78. Defensa: 1.16 vs 1.35."
+        "interpretacion": "Producción similar: Brighton 1.41 goles/partido — Manchester United 1.78. Defensa: 1.16 vs 1.35."
       }
     ]
   },

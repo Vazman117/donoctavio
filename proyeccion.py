@@ -1118,7 +1118,7 @@ if __name__ == "__main__":
         (2,  "Villarreal",            "Atletico Madrid",     "la_liga"),
         (3,  "Celta Vigo",            "Sevilla",             "la_liga"),
         (4,  "Girona",                "Elche",               "la_liga"),
-        (5,  "Brighton & Hove Albion","Manchester United",   "premier"),
+        (5,  "Brighton",              "Manchester United",   "premier"),
         (6,  "Fulham",                "Newcastle United",    "premier"),
         (7,  "Sunderland",            "Chelsea",             "premier"),
         (8,  "Tottenham Hotspur",     "Everton",             "premier"),
