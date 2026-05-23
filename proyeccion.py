@@ -1123,7 +1123,7 @@ if __name__ == "__main__":
         (7,  "Sunderland",            "Chelsea",             "premier"),
         (8,  "Tottenham Hotspur",     "Everton",             "premier"),
         (9,  "Minnesota United FC",   "Real Salt lake",      "mls"),
-        (10, "San Diego FC",             "Vancouver Whitecaps", "mls"),
+        (10, "San Diego FC",          "Vancouver Whitecaps", "mls"),
         (11, "Charlotte FC",          "New England Revolution",  "mls"),
         (12, "Vitoria",               "Internacional",       "brasileirao"),
         (13, "Flamengo",              "Palmeiras",           "brasileirao"),
