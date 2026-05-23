@@ -42,57 +42,40 @@ def adaptar_equipo(equipo_raw, liga_key=None):
     que usa internamente el modelo.
 
     liga_key: slug de la competencia principal (ej: "mex.1", "uefa.europa").
-              Si es None, el equipo viene de un torneo copa sin liga_key definida
-              y se usan los campos de acceso rápido de raíz.
+              Si es None, lee stats situacionales desde raíz.
 
     Lógica de forma:
     ─────────────────────────────────────────────────────────────────
-    Liga regular  (liga_key definido):
-        forma_ponderada = forma_liga  (de la competencia principal)
+    Siempre mezcla forma del torneo + forma de liga local si ambas
+    están disponibles (60% torneo / 40% liga local).
 
-    Torneo copa   (liga_key=None):
-        Si hay stats del torneo Y forma_liga_local → mezcla 60/40
-        Si solo hay stats del torneo               → usa torneo
-        Si solo hay forma_liga_local               → usa liga local
-        Si no hay nada                             → 0.5 neutro
+    Para Liga MX liguilla no cambia nada porque forma_liga y
+    forma_liga_local apuntan a la misma competencia.
 
-    El mismo criterio aplica a ultimos_5 e imbatido_streak.
+    Para torneos internacionales (Libertadores, Europa League, etc.)
+    la mezcla refleja mejor el estado real del equipo.
     ─────────────────────────────────────────────────────────────────
     """
     liga = {}
     if liga_key:
-        # Liga regular: leer stats situacionales de la competencia principal
         liga = equipo_raw.get("competencias", {}).get(liga_key, {})
 
     # ── Forma ponderada ──────────────────────────────────────────────────────
-    if liga_key:
-        # Liga regular: forma de esa liga directamente
-        forma_final  = equipo_raw.get("forma_liga", equipo_raw.get("forma_combinada", 0.5))
-        ultimos_5    = equipo_raw.get("ultimos_5_liga", [])
-        streak_final = equipo_raw.get("imbatido_streak", 0)
+    # Siempre mezcla torneo + liga local si ambas disponibles
+    forma_torneo     = equipo_raw.get("forma_liga", equipo_raw.get("forma_combinada", 0.0))
+    forma_liga_local = equipo_raw.get("forma_liga_local", 0.0) or 0.0
+
+    if forma_torneo > 0 and forma_liga_local > 0:
+        forma_final = round(forma_torneo * 0.60 + forma_liga_local * 0.40, 4)
+    elif forma_torneo > 0:
+        forma_final = forma_torneo
+    elif forma_liga_local > 0:
+        forma_final = forma_liga_local
     else:
-        # Torneo copa: mezclar forma del torneo con forma de liga local
-        # forma_liga de raíz = calculada por el scraper para la competencia principal
-        forma_torneo     = equipo_raw.get("forma_liga", equipo_raw.get("forma_combinada", 0.0))
-        forma_liga_local = equipo_raw.get("forma_liga_local", 0.0) or 0.0
+        forma_final = 0.5
 
-        if forma_torneo > 0 and forma_liga_local > 0:
-            # Ambas disponibles: torneo pesa más (más relevante al contexto)
-            forma_final = round(forma_torneo * 0.60 + forma_liga_local * 0.40, 4)
-        elif forma_torneo > 0:
-            forma_final = forma_torneo
-        elif forma_liga_local > 0:
-            forma_final = forma_liga_local
-        else:
-            forma_final = 0.5
-
-        # ultimos_5: los del torneo desde raíz, fallback a liga local
-        ultimos_5_torneo     = equipo_raw.get("ultimos_5_liga", [])
-        ultimos_5_liga_local = equipo_raw.get("ultimos_5_liga_local", []) or []
-        ultimos_5 = ultimos_5_torneo if ultimos_5_torneo else ultimos_5_liga_local
-
-        # streak: el del torneo directamente
-        streak_final = equipo_raw.get("imbatido_streak", 0)
+    ultimos_5    = equipo_raw.get("ultimos_5_liga", [])
+    streak_final = equipo_raw.get("imbatido_streak", 0)
 
     return {
         "nombre":  equipo_raw.get("nombre", ""),
@@ -105,8 +88,6 @@ def adaptar_equipo(equipo_raw, liga_key=None):
         "imbatido_streak": streak_final,
         "ultimos_5":       ultimos_5,
 
-        # Stats situacionales — desde competencia principal si liga_key,
-        # desde raíz si torneo copa (el scraper los pone ahí como acceso rápido)
         "win_rate_local":  liga.get("win_rate_local",  equipo_raw.get("win_rate_local",  0.0)),
         "win_rate_visita": liga.get("win_rate_visita", equipo_raw.get("win_rate_visita", 0.0)),
 
@@ -128,7 +109,6 @@ def adaptar_equipo(equipo_raw, liga_key=None):
         "empatados_visita": liga.get("empatados_visita", equipo_raw.get("empatados_visita", 0)),
         "perdidos_visita":  liga.get("perdidos_visita",  equipo_raw.get("perdidos_visita",  0)),
     }
-
 
 # =============================
 # PERFILES DE TORNEO
@@ -294,6 +274,23 @@ PERFILES_TORNEO = {
         "PESO_H2H":         0.12,
         "PESO_EXPERIENCIA": 0.00,
         "PESO_VUELTA_CASA": 0.08,
+    },
+
+    "dfb_pokal": {
+        "nombre":           "DFB-Pokal (Copa Alemana)",
+        "K_LOGISTICO":      3.7,
+        "MAX_FAVORITO":     0.67,
+        "ALPHA":            0.83,
+        "BETA":             0.17,
+        "TOTAL_EQUIPOS":    64,
+        "usa_h2h":          False,
+        "usa_experiencia":  False,
+        "usa_vuelta_casa":  False,
+        "experiencia_db":   {},
+        "PESO_BASE":        0.82,
+        "PESO_H2H":         0.00,
+        "PESO_EXPERIENCIA": 0.00,
+        "PESO_VUELTA_CASA": 0.18,
     },
 
     # ── Fase regular genérica (para uso con el otro modelo) ─────────────────
@@ -1014,24 +1011,82 @@ DB_CONFIG = {
         "liga_key": "mex.1",
         "salida": "partidos.json"
     },
-    "liga_mx_exp":{"carpeta": "LIGA-MX-EXPANSION",      "perfil": "fase_regular",         "liga_key": "mex.2",                   "salida": "partidos.json"},
-    "premier":       {"carpeta": "PREMIER-LEAGUE",         "perfil": "fase_regular",         "liga_key": "eng.1",                   "salida": "partidos.json"},
-    "la_liga":       {"carpeta": "LALIGA",                 "perfil": "fase_regular",         "liga_key": "esp.1",                   "salida": "partidos.json"},
-    "bundesliga":    {"carpeta": "BUNDESLIGA",             "perfil": "fase_regular",         "liga_key": "ger.1",                   "salida": "partidos.json"},
-    "ligue1":        {"carpeta": "LIGUE-1",                "perfil": "fase_regular",         "liga_key": "fra.1",                   "salida": "partidos.json"},
-    "eredivisie":    {"carpeta": "EREDIVISIE",             "perfil": "fase_regular",         "liga_key": "ned.1",                   "salida": "partidos.json"},
-    "belgian":       {"carpeta": "BELGIAN-PRO-LEAGUE",     "perfil": "fase_regular",         "liga_key": "bel.1",                   "salida": "partidos.json"},
-    "brasileirao":   {"carpeta": "BRASILEIRAO-SERIE-A",    "perfil": "fase_regular",         "liga_key": "bra.1",                   "salida": "partidos.json"},
+    "liga_mx_exp":{
+        "carpeta": "LIGA-MX-EXPANSION",      
+        "perfil": "fase_regular",         
+        "liga_key": "mex.2",                   
+        "salida": "partidos.json"
+    },
+    "premier":{
+        "carpeta": "PREMIER-LEAGUE",         
+        "perfil": "fase_regular",         
+        "liga_key": "eng.1",                   
+        "salida": "partidos.json"
+        },
+    "la_liga":{
+        "carpeta": "LALIGA",                 
+        "perfil": "fase_regular",         
+        "liga_key": "esp.1",                   
+        "salida": "partidos.json"
+    },
+    "bundesliga":{
+        "carpeta": "BUNDESLIGA",             
+        "perfil": "fase_regular",         
+        "liga_key": "ger.1",                   
+        "salida": "partidos.json"
+    },
+    "ligue1":{
+        "carpeta": "LIGUE-1",                
+        "perfil": "fase_regular",         
+        "liga_key": "fra.1",                   
+        "salida": "partidos.json"
+    },
+    "eredivisie":{
+        "carpeta": "EREDIVISIE",             
+        "perfil": "fase_regular",         
+        "liga_key": "ned.1",                   
+        "salida": "partidos.json"
+    },
+    "belgian":{
+        "carpeta": "BELGIAN-PRO-LEAGUE",     
+        "perfil": "fase_regular",         
+        "liga_key": "bel.1",                   
+        "salida": "partidos.json"
+    },
+    "brasileirao":{
+        "carpeta": "BRASILEIRAO-SERIE-A",    
+        "perfil": "fase_regular",         
+        "liga_key": "bra.1",                   
+        "salida": "partidos.json"
+    },
     "mls":           {"carpeta": "MLS",                    "perfil": "fase_regular",         "liga_key": "usa.1",                   "salida": "partidos.json"},
     "premiership":   {"carpeta": "SCOTTISH-PREMIERSHIP",   "perfil": "fase_regular",         "liga_key": "sco.1",                   "salida": "partidos.json"},
     "grecia":        {"carpeta": "SUPERLIGA-GRECIA",       "perfil": "fase_regular",         "liga_key": "gre.1",                   "salida": "partidos.json"},
     "rusia":         {"carpeta": "LIGAPREMIER-RUSIA",      "perfil": "fase_regular",         "liga_key": "rus.1",                   "salida": "partidos.json"},
+    "chilena":{
+        "carpeta": "LIGA-CHILENA",
+        "perfil": "fase_regular",
+        "liga_key": "chi.1",
+        "salida": "partidos.json"
+    },
+    "j1-league":{
+        "carpeta": "J1-LEAGUE",
+        "perfil": "fase_regular",
+        "liga_key": "jpn.1",
+        "salida": "partidos.json"
+    },
     # ── Torneos / eliminatorias ───────────────────────────────────────────────
     "liguilla_mx":   {"carpeta": "LIGA-MX",               "perfil": "liguilla_mx",          "liga_key": "mex.1",                   "salida": "partidos.json",   "h2h_carpeta": "LIGA-MX"},
     "concacaf_w":    {"carpeta": "CONCACAF-W-CHAMPIONSHIP",   "perfil": "concacaf_w_champions", "liga_key": None,"salida": "partidos.json"},
     "libertadores":  {"carpeta": "LIBERTADORES",           "perfil": "libertadores",         "liga_key": "conmebol.libertadores",   "salida": "partidos.json"},
     "sudamericana":  {"carpeta": "SUDAMERICANA",           "perfil": "sudamericana",         "liga_key": "conmebol.sudamericana",   "salida": "partidos.json"},
     "europa_league": {"carpeta": "EUROPA-LEAGUE",          "perfil": "europa_league",        "liga_key": "uefa.europa",             "salida": "partidos.json"},
+    "dfb":{
+        "carpeta": "DFB-POKAL",
+        "perfil": "dfb_pokal",
+        "liga_key": "ger.dfb_pokal",
+        "salida": "partidos.json"
+    }
 }
 
 
@@ -1059,15 +1114,24 @@ if __name__ == "__main__":
 
     CASOS = [
         # id   local                   visitante
-        (1,  "Cruz Azul",             "Pumas UNAM",          "liguilla_mx"),
-        (2,  "Washington Spirit",     "Pachuca Femenil",     "concacaf_w"),
-        (3,  "America Femenil",       "Gotham FC",           "concacaf_w"),
-        (4,  "Santos",                "San Lorenzo",         "sudamericana"),
-        (5,  "SC Freiburg",           "Aston Villa",         "europa_league"),
-        (6,  "Liga de Quito",         "Lanus",               "libertadores"),
-        (7,  "Independiente Santa Fe","Platense",            "libertadores"),
-        (8,  "Penarol",               "Corinthians",         "libertadores"),
-        (9,  "Boca Juniors",          "Cruzeiro",            "libertadores"),
+        (1,  "Espanyol",              "Real Sociedad",       "la_liga"),
+        (2,  "Villarreal",            "Atletico Madrid",     "la_liga"),
+        (3,  "Celta Vigo",            "Sevilla",             "la_liga"),
+        (4,  "Girona",                "Elche",               "la_liga"),
+        (5,  "Brighton & Hove Albion","Manchester United",   "premier"),
+        (6,  "Fulham",                "Newcastle United",    "premier"),
+        (7,  "Sunderland",            "Chelsea",             "premier"),
+        (8,  "Tottenham Hotspur",     "Everton",             "premier"),
+        (9,  "Minnesota United FC",   "Real Salt lake",      "mls"),
+        (10, "San Diego FC",             "Vancouver Whitecaps", "mls"),
+        (11, "Charlotte FC",          "New England Revolution",  "mls"),
+        (12, "Vitoria",               "Internacional",       "brasileirao"),
+        (13, "Flamengo",              "Palmeiras",           "brasileirao"),
+        (14, "Grêmio",                "Santos",              "brasileirao"),
+        (15, "Universidad Catolica",  "Colo Colo",           "chilena"),
+        (16, "Fagiano Okayama",       "Cerezo Osaka",        "j1-league"),
+        (17, "Shimizus-pulse",        "Gamba Osaka",         "j1-league"),
+        (18, "Bayern Munich",         "VFB Stuttgart",       "dfb"),
     ]
 
     # ── Ejecución ─────────────────────────────────────────────────────────────

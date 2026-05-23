@@ -18,32 +18,32 @@
     "goles_contra_promedio": 1.0,
     "competencias": {
       "mex.1": {
-        "partidos": 39,
+        "partidos": 40,
         "ganados": 16,
-        "empatados": 14,
+        "empatados": 15,
         "perdidos": 9,
         "goles_favor": 66,
         "goles_contra": 52,
-        "goles_favor_promedio": 1.692,
-        "goles_contra_promedio": 1.333,
+        "goles_favor_promedio": 1.65,
+        "goles_contra_promedio": 1.3,
         "partidos_local": 19,
         "ganados_local": 8,
         "empatados_local": 7,
         "perdidos_local": 4,
         "win_rate_local": 0.421,
-        "partidos_visita": 20,
+        "partidos_visita": 21,
         "ganados_visita": 8,
-        "empatados_visita": 7,
+        "empatados_visita": 8,
         "perdidos_visita": 5,
-        "win_rate_visita": 0.4,
+        "win_rate_visita": 0.381,
         "ultimos_5": [
+          "D",
           "W",
           "L",
           "D",
-          "D",
-          "W"
+          "D"
         ],
-        "imbatido_streak": 1
+        "imbatido_streak": 2
       },
       "concacaf.champions": {
         "partidos": 2,
@@ -71,16 +71,16 @@
         "imbatido_streak": 1
       }
     },
-    "forma_ponderada": 0.59,
-    "forma_liga": 0.59,
+    "forma_ponderada": 0.525,
+    "forma_liga": 0.525,
     "ultimos_5_liga": [
+      "D",
       "W",
       "L",
       "D",
-      "D",
-      "W"
+      "D"
     ],
-    "imbatido_streak": 1,
+    "imbatido_streak": 2,
     "forma_liga_local": null,
     "ultimos_5_liga_local": null,
     "liga_local_slug": null
@@ -165,32 +165,32 @@
     "goles_contra_promedio": 1.059,
     "competencias": {
       "mex.1": {
-        "partidos": 42,
+        "partidos": 43,
         "ganados": 23,
-        "empatados": 15,
+        "empatados": 16,
         "perdidos": 4,
         "goles_favor": 76,
         "goles_contra": 47,
-        "goles_favor_promedio": 1.81,
-        "goles_contra_promedio": 1.119,
-        "partidos_local": 21,
+        "goles_favor_promedio": 1.767,
+        "goles_contra_promedio": 1.093,
+        "partidos_local": 22,
         "ganados_local": 14,
-        "empatados_local": 5,
+        "empatados_local": 6,
         "perdidos_local": 2,
-        "win_rate_local": 0.667,
+        "win_rate_local": 0.636,
         "partidos_visita": 21,
         "ganados_visita": 9,
         "empatados_visita": 10,
         "perdidos_visita": 2,
         "win_rate_visita": 0.429,
         "ultimos_5": [
+          "D",
           "W",
           "D",
           "W",
-          "W",
           "W"
         ],
-        "imbatido_streak": 8
+        "imbatido_streak": 9
       },
       "concacaf.champions": {
         "partidos": 6,
@@ -221,16 +221,16 @@
         "imbatido_streak": 1
       }
     },
-    "forma_ponderada": 0.875,
-    "forma_liga": 0.875,
+    "forma_ponderada": 0.725,
+    "forma_liga": 0.725,
     "ultimos_5_liga": [
+      "D",
       "W",
       "D",
       "W",
-      "W",
       "W"
     ],
-    "imbatido_streak": 8,
+    "imbatido_streak": 9,
     "forma_liga_local": null,
     "ultimos_5_liga_local": null,
     "liga_local_slug": null

@@ -36,6 +36,7 @@ PESO_COMPETENCIA = {
     "arg.1":                  1.0,
     "col.1":                  1.0,
     "chi.1":                  1.0,
+    "jpn.1":                  1.0,
     "uru.1":                  1.0,
     "ven.1":                  1.0,
     "ecu.1":                  1.0,
@@ -48,19 +49,16 @@ PESO_COMPETENCIA = {
     "concacaf.champions":     0.70,
     "concacaf.w.champions":   0.70,
     "uefa.champions":         0.60,
+    "afc.champions":          0.60,
     "uefa.europa":            0.55,
     "uefa.europa.conf":       0.50,
     "eng.fa":                 0.40,
     "esp.copa":               0.40,
-    "ger.cup":                0.40,
+    "ger.dfb_pokal":          0.40,
     "fra.cup":                0.40,
     "mex.copa":               0.40,
 }
 
-
-# ─────────────────────────────────────────────
-# LIGAS REGULARES
-# ─────────────────────────────────────────────
 LIGAS_CONFIG = {
     "mex.1": {
         "nombre":                  "Liga MX",
@@ -101,7 +99,8 @@ LIGAS_CONFIG = {
     "ger.1": {
         "nombre":                  "Bundesliga",
         "carpeta":                 "BUNDESLIGA",
-        "copas":                   ["ger.1", "uefa.champions"],
+        # ger.dfb_pokal es el slug real de ESPN (no ger.cup)
+        "copas":                   ["ger.1", "uefa.champions", "ger.dfb_pokal"],
         "es_torneo_copa":          False,
         "liga_principal":          "ger.1",
         "tiene_apertura_clausura": False,
@@ -137,11 +136,15 @@ LIGAS_CONFIG = {
     "bra.1": {
         "nombre":                  "Brasileirao Serie A",
         "carpeta":                 "BRASILEIRAO-SERIE-A",
-        "copas":                   ["bra.1"],
+        # Se añaden libertadores y sudamericana como fuentes de partidos
+        "copas":                   ["bra.1", "conmebol.libertadores", "conmebol.sudamericana"],
         "es_torneo_copa":          False,
         "liga_principal":          "bra.1",
         "tiene_apertura_clausura": False,
         "season_type_id":          "2",
+        # NOTA: El Brasileirao a veces devuelve standings con children[]
+        # (grupos/fases). parsear_standings itera TODOS los children para
+        # capturar todos los equipos.
     },
     "usa.1": {
         "nombre":                  "MLS",
@@ -151,6 +154,10 @@ LIGAS_CONFIG = {
         "liga_principal":          "usa.1",
         "tiene_apertura_clausura": False,
         "season_type_id":          "2",
+        # NOTA: La MLS tiene standings divididos en Conferencia Este y Oeste
+        # (children[0] y children[1]). El código anterior solo leía children[0]
+        # y perdía todos los equipos del Oeste.
+        # parsear_standings ahora itera TODOS los children (fix principal).
     },
     "sco.1": {
         "nombre":                  "Scottish Premiership",
@@ -173,24 +180,53 @@ LIGAS_CONFIG = {
     "rus.1": {
         "nombre":                  "Liga Premier Rusia",
         "carpeta":                 "LIGAPREMIER-RUSIA",
+        # La Copa Rusa no tiene endpoint en la API de ESPN; se omite.
         "copas":                   ["rus.1"],
         "es_torneo_copa":          False,
         "liga_principal":          "rus.1",
         "tiene_apertura_clausura": False,
         "season_type_id":          "2",
     },
+    # ── NUEVAS LIGAS ──────────────────────────────────────────────────────
+    "chi.1": {
+        "nombre":                  "Liga Chilena Primera División",
+        "carpeta":                 "LIGA-CHILENA",
+        "copas":                   ["chi.1", "conmebol.libertadores", "conmebol.sudamericana"],
+        "es_torneo_copa":          False,
+        "liga_principal":          "chi.1",
+        "tiene_apertura_clausura": False,
+        "season_type_id":          "2",
+    },
+    "jpn.1": {
+        "nombre":                  "J1 League",
+        "carpeta":                 "J1-LEAGUE",
+        "copas":                   ["jpn.1", "afc.champions"],
+        "es_torneo_copa":          False,
+        "liga_principal":          "jpn.1",
+        "tiene_apertura_clausura": False,
+        "season_type_id":          "2",
+    },
+    # ── NUEVAS COPAS ─────────────────────────────────────────────────────
+    "ger.dfb_pokal": {
+        # Slug confirmado en ESPN: espndeportes.espn.com/futbol/liga/_/nombre/ger.dfb_pokal
+        "nombre":                  "DFB-Pokal (Copa Alemana)",
+        "carpeta":                 "DFB-POKAL",
+        "copas":                   ["ger.dfb_pokal"],
+        "es_torneo_copa":          True,
+        "liga_principal":          "ger.dfb_pokal",
+        "tiene_apertura_clausura": False,
+        "season_type_id":          "2",
+        "ligas_locales":           ["ger.1", "ger.2"],
+    },
+    # ── TORNEOS INTERNACIONALES ───────────────────────────────────────────
     "uefa.europa": {
         "nombre":                  "UEFA Europa League",
         "carpeta":                 "EUROPA-LEAGUE",
-        # El scraper busca partidos SOLO de este torneo.
-        # La forma de liga local se agrega como campo extra (forma_liga_local).
         "copas":                   ["uefa.europa"],
         "es_torneo_copa":          True,
         "liga_principal":          "uefa.europa",
         "tiene_apertura_clausura": False,
         "season_type_id":          "2",
-        # Slugs de ligas locales de los equipos participantes
-        # El scraper las consulta para obtener forma_liga_local
         "ligas_locales":           ["eng.1", "esp.1", "ger.1", "fra.1", "ita.1",
                                     "ned.1", "por.1", "bel.1", "sco.1", "gre.1"],
     },
@@ -234,8 +270,8 @@ LIGAS_CONFIG = {
 # ─────────────────────────────────────────────
 
 def diagnosticar(liga_slug):
-    standings_url = f"https://site.api.espn.com/apis/v2/sports/soccer/{liga_slug}/standings"
-    teams_url     = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{liga_slug}/teams"
+    standings_url  = f"https://site.api.espn.com/apis/v2/sports/soccer/{liga_slug}/standings"
+    teams_url      = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{liga_slug}/teams"
     scoreboard_url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{liga_slug}/scoreboard"
 
     print("🔎 DIAGNÓSTICO DE ENDPOINTS\n")
@@ -283,10 +319,6 @@ def normalizar(nombre):
 
 
 def calcular_forma_ponderada(partidos):
-    """
-    Forma ponderada por recencia Y por peso de competencia.
-    Toma los 5 más recientes de la lista (ya debe venir ordenada desc por fecha).
-    """
     ultimos = partidos[:5]
     while len(ultimos) < 5:
         ultimos.append(None)
@@ -315,108 +347,150 @@ def calcular_imbatido_streak(resultados):
 # PARSEAR STANDINGS
 # ─────────────────────────────────────────────
 
+def _parsear_entry(entry):
+    team    = entry.get("team", {})
+    stats   = entry.get("stats", [])
+    team_id = team.get("id")
+    if not team_id:
+        return None
+
+    ganados     = int(get_stat(stats, "wins"))
+    empatados   = int(get_stat(stats, "ties"))
+    perdidos    = int(get_stat(stats, "losses"))
+    partidos    = int(get_stat(stats, "gamesPlayed"))
+    puntos      = int(get_stat(stats, "points"))
+    gf          = int(get_stat(stats, "pointsFor"))
+    gc          = int(get_stat(stats, "pointsAgainst"))
+    posicion    = int(get_stat(stats, "rank"))
+    rank_change = int(get_stat(stats, "rankChange"))
+    logo_url    = team.get("logos", [{}])[0].get("href", "")
+
+    fila = {
+        "posicion":         posicion,
+        "equipo":           team["displayName"],
+        "id":               team_id,
+        "partidos":         partidos,
+        "ganados":          ganados,
+        "empatados":        empatados,
+        "perdidos":         perdidos,
+        "goles_favor":      gf,
+        "goles_contra":     gc,
+        "diferencia_goles": gf - gc,
+        "puntos":           puntos,
+    }
+
+    equipo = {
+        "nombre":               team["displayName"],
+        "abreviacion":          team.get("abbreviation", ""),
+        "escudo":               logo_url,
+        "posicion":             posicion,
+        "posicion_anterior":    posicion - rank_change,
+        "tendencia_posicion":   rank_change,
+        "partidos":             partidos,
+        "ganados":              ganados,
+        "empatados":            empatados,
+        "perdidos":             perdidos,
+        "puntos":               puntos,
+        "goles_favor":          gf,
+        "goles_contra":         gc,
+        "goles_diff":           gf - gc,
+        "goles_favor_promedio":  round(gf / partidos, 3) if partidos else 0,
+        "goles_contra_promedio": round(gc / partidos, 3) if partidos else 0,
+        "competencias":         {},
+        "forma_ponderada":      0.0,
+        "forma_liga":           0.0,
+        "ultimos_5_liga":       [],
+        "imbatido_streak":      0,
+        "forma_liga_local":     None,
+        "ultimos_5_liga_local": None,
+        "liga_local_slug":      None,
+    }
+    return team_id, fila, equipo
+
+
 def parsear_standings(data):
-    """Intenta distintas estructuras que ESPN puede devolver."""
+    """
+    Intenta distintas estructuras que ESPN puede devolver.
+
+    FIX MLS / Brasileirao / ligas con conferencias múltiples:
+    ──────────────────────────────────────────────────────────
+    La versión anterior solo leía children[0], perdiendo equipos
+    de las demás conferencias (MLS: Este/Oeste).
+    Ahora se itera TODOS los children y se hace merge por team_id.
+    """
     tabla        = []
     equipos_dict = {}
 
-    entries = None
+    # ── Estrategia 1: children[] (MLS Este+Oeste, grupos, etc.) ───────────
+    children = data.get("children", [])
+    if children:
+        for idx, child in enumerate(children):
+            child_name = child.get("name", f"grupo_{idx}")
+            entries = (
+                child.get("standings", {}).get("entries", [])
+                or child.get("entries", [])
+            )
+            if entries:
+                print(f"  children[{idx}] ({child_name}): {len(entries)} equipos ✅")
+                for entry in entries:
+                    resultado = _parsear_entry(entry)
+                    if resultado is None:
+                        continue
+                    team_id, fila, equipo = resultado
+                    if team_id not in equipos_dict:
+                        tabla.append(fila)
+                        equipos_dict[team_id] = equipo
+
+        if equipos_dict:
+            print(f"  Total tras merge de {len(children)} conferencia(s): {len(equipos_dict)} equipos ✅")
+            tabla.sort(key=lambda x: x["posicion"])
+            return tabla, equipos_dict
+
+    # ── Estrategia 2: standings.entries plano ─────────────────────────────
     try:
-        entries = data["children"][0]["standings"]["entries"]
-        print("  Estructura: children[0].standings.entries ✅")
-    except (KeyError, IndexError):
+        entries = data["standings"]["entries"]
+        print("  Estructura: standings.entries ✅")
+        for entry in entries:
+            resultado = _parsear_entry(entry)
+            if resultado is None:
+                continue
+            team_id, fila, equipo = resultado
+            if team_id not in equipos_dict:
+                tabla.append(fila)
+                equipos_dict[team_id] = equipo
+        if equipos_dict:
+            tabla.sort(key=lambda x: x["posicion"])
+            return tabla, equipos_dict
+    except (KeyError, TypeError):
         pass
 
-    if not entries:
-        try:
-            entries = data["standings"]["entries"]
-            print("  Estructura: standings.entries ✅")
-        except KeyError:
-            pass
+    # ── Estrategia 3: entries en raíz ─────────────────────────────────────
+    try:
+        entries = data["entries"]
+        print("  Estructura: entries ✅")
+        for entry in entries:
+            resultado = _parsear_entry(entry)
+            if resultado is None:
+                continue
+            team_id, fila, equipo = resultado
+            if team_id not in equipos_dict:
+                tabla.append(fila)
+                equipos_dict[team_id] = equipo
+        if equipos_dict:
+            tabla.sort(key=lambda x: x["posicion"])
+            return tabla, equipos_dict
+    except (KeyError, TypeError):
+        pass
 
-    if not entries:
-        try:
-            entries = data["entries"]
-            print("  Estructura: entries ✅")
-        except KeyError:
-            pass
-
-    if not entries:
-        print("  ❌ No se encontraron entries. Keys:", list(data.keys()))
-        return tabla, equipos_dict
-
-    for entry in entries:
-        team    = entry["team"]
-        stats   = entry["stats"]
-        team_id = team["id"]
-
-        ganados     = int(get_stat(stats, "wins"))
-        empatados   = int(get_stat(stats, "ties"))
-        perdidos    = int(get_stat(stats, "losses"))
-        partidos    = int(get_stat(stats, "gamesPlayed"))
-        puntos      = int(get_stat(stats, "points"))
-        gf          = int(get_stat(stats, "pointsFor"))
-        gc          = int(get_stat(stats, "pointsAgainst"))
-        posicion    = int(get_stat(stats, "rank"))
-        rank_change = int(get_stat(stats, "rankChange"))
-        logo_url    = team.get("logos", [{}])[0].get("href", "")
-
-        tabla.append({
-            "posicion":         posicion,
-            "equipo":           team["displayName"],
-            "id":               team_id,
-            "partidos":         partidos,
-            "ganados":          ganados,
-            "empatados":        empatados,
-            "perdidos":         perdidos,
-            "goles_favor":      gf,
-            "goles_contra":     gc,
-            "diferencia_goles": gf - gc,
-            "puntos":           puntos,
-        })
-
-        equipos_dict[team_id] = {
-            "nombre":               team["displayName"],
-            "abreviacion":          team.get("abbreviation", ""),
-            "escudo":               logo_url,
-            # Posición refleja la tabla del torneo/liga scrapeado
-            "posicion":             posicion,
-            "posicion_anterior":    posicion - rank_change,
-            "tendencia_posicion":   rank_change,
-            "partidos":             partidos,
-            "ganados":              ganados,
-            "empatados":            empatados,
-            "perdidos":             perdidos,
-            "puntos":               puntos,
-            "goles_favor":          gf,
-            "goles_contra":         gc,
-            "goles_diff":           gf - gc,
-            "goles_favor_promedio":  round(gf / partidos, 3) if partidos else 0,
-            "goles_contra_promedio": round(gc / partidos, 3) if partidos else 0,
-            # Se llena en el paso de partidos
-            "competencias":         {},
-            "forma_ponderada":      0.0,
-            "forma_liga":           0.0,
-            "ultimos_5_liga":       [],
-            "imbatido_streak":      0,
-            # Solo para torneos copa — se llena después
-            "forma_liga_local":     None,
-            "ultimos_5_liga_local": None,
-            "liga_local_slug":      None,
-        }
-
-    tabla.sort(key=lambda x: x["posicion"])
+    print("  ❌ No se encontraron entries. Keys:", list(data.keys()))
     return tabla, equipos_dict
 
 
 # ─────────────────────────────────────────────
 # FALLBACK: EQUIPOS DESDE MÚLTIPLES FUENTES
-# Para torneos copa donde standings no existe
-# o viene dividido por grupos (children[])
 # ─────────────────────────────────────────────
 
 def _extraer_equipo_info(team):
-    """Extrae los campos básicos de un objeto team de ESPN."""
     logos = team.get("logos", [])
     escudo = logos[0].get("href", "") if logos else team.get("logo", "")
     return {
@@ -427,11 +501,6 @@ def _extraer_equipo_info(team):
 
 
 def obtener_equipos_desde_standings_grupos(data):
-    """
-    Libertadores/Sudamericana tienen standings divididos por grupos:
-    data['children'] = [ {group_A}, {group_B}, ... ]
-    Itera todos los grupos y extrae los equipos de cada uno.
-    """
     equipos = {}
     children = data.get("children", [])
     if not children:
@@ -457,7 +526,6 @@ def obtener_equipos_desde_standings_grupos(data):
             puntos    = int(get_stat(stats, "points"))
             gf        = int(get_stat(stats, "pointsFor"))
             gc        = int(get_stat(stats, "pointsAgainst"))
-            # En grupos no hay rank global, usamos posición dentro del grupo
             posicion  = int(get_stat(stats, "rank")) or 9
             logos     = team.get("logos", [])
             escudo    = logos[0].get("href", "") if logos else ""
@@ -494,10 +562,6 @@ def obtener_equipos_desde_standings_grupos(data):
 
 
 def obtener_equipos_desde_teams(liga_slug):
-    """
-    Intenta el endpoint /teams para obtener todos los participantes.
-    Devuelve dict {team_id: info_basica}.
-    """
     url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{liga_slug}/teams"
     equipos = {}
     try:
@@ -519,17 +583,11 @@ def obtener_equipos_desde_teams(liga_slug):
 
 
 def obtener_equipos_desde_scoreboard(liga_slug, semanas=8):
-    """
-    Itera el scoreboard por varias fechas para capturar TODOS los equipos
-    que han jugado en el torneo, no solo los de la jornada actual.
-    Devuelve dict {team_id: info_basica}.
-    """
-    from datetime import datetime, timedelta
+    from datetime import datetime, timezone, timedelta
 
-    equipos  = {}
-    hoy      = datetime.utcnow()
+    equipos = {}
+    hoy     = datetime.now(timezone.utc)
 
-    # Genera fechas: desde 'semanas' semanas atrás hasta hoy, de 7 en 7 días
     fechas = []
     for i in range(semanas):
         fecha = hoy - timedelta(weeks=i)
@@ -559,31 +617,23 @@ def obtener_equipos_desde_scoreboard(liga_slug, semanas=8):
 
 
 def obtener_equipos_copa_cascada(liga_slug, standings_data):
-    """
-    Estrategia en cascada para torneos copa:
-    1. Standings por grupos (children[]) — el más completo si existe
-    2. Endpoint /teams
-    3. Scoreboard multi-fecha
-    Devuelve dict {team_id: equipo_dict} listo para usar.
-    """
-    # ── Estrategia 1: standings con grupos ──────────────
+    # Estrategia 1: standings con grupos
     equipos = obtener_equipos_desde_standings_grupos(standings_data or {})
     if len(equipos) >= 4:
         print(f"  ✅ Equipos obtenidos desde standings por grupos: {len(equipos)}")
         return equipos
 
-    # ── Estrategia 2: endpoint /teams ───────────────────
+    # Estrategia 2: endpoint /teams
     print("  ⚠️  Grupos insuficientes — intentando /teams...")
     equipos_teams = obtener_equipos_desde_teams(liga_slug)
     if len(equipos_teams) >= 4:
         print(f"  ✅ Equipos obtenidos desde /teams: {len(equipos_teams)}")
-        # Convertir info básica a estructura completa
         return {
             tid: construir_equipo_copa(tid, info)
             for tid, info in equipos_teams.items()
         }
 
-    # ── Estrategia 3: scoreboard multi-fecha ────────────
+    # Estrategia 3: scoreboard multi-fecha
     print("  ⚠️  /teams insuficiente — usando scoreboard multi-fecha...")
     equipos_sb = obtener_equipos_desde_scoreboard(liga_slug, semanas=10)
     if equipos_sb:
@@ -598,15 +648,11 @@ def obtener_equipos_copa_cascada(liga_slug, standings_data):
 
 
 def construir_equipo_copa(team_id, info):
-    """
-    Construye el dict base de un equipo para torneos copa
-    cuando no hay standings (posición neutra).
-    """
     return {
         "nombre":               info["nombre"],
         "abreviacion":          info["abreviacion"],
         "escudo":               info["escudo"],
-        "posicion":             9,   # neutro — no hay tabla lineal
+        "posicion":             9,
         "posicion_anterior":    9,
         "tendencia_posicion":   0,
         "partidos":             0,
@@ -635,10 +681,6 @@ def construir_equipo_copa(team_id, info):
 # ─────────────────────────────────────────────
 
 def obtener_partidos_equipo(team_id, copas):
-    """
-    Descarga el schedule del equipo para cada competencia en `copas`.
-    Devuelve lista de partidos ordenada por fecha desc, sin duplicados.
-    """
     todos_partidos = []
     fechas_vistas  = set()
 
@@ -699,7 +741,6 @@ def obtener_partidos_equipo(team_id, copas):
 # ─────────────────────────────────────────────
 
 def calcular_stats_competencia(partidos):
-    """Calcula todas las métricas para un subconjunto de partidos."""
     if not partidos:
         return {}
 
@@ -742,11 +783,6 @@ def calcular_stats_competencia(partidos):
 
 
 def calcular_stats(partidos, liga_principal):
-    """
-    Agrupa partidos por competencia y calcula stats para cada una.
-    También calcula forma_ponderada combinada (todos los partidos).
-    Devuelve (competencias_dict, forma_combinada).
-    """
     if not partidos:
         return {}, 0.0
 
@@ -764,15 +800,10 @@ def calcular_stats(partidos, liga_principal):
 
 
 # ─────────────────────────────────────────────
-# FORMA EN LIGA LOCAL (solo para torneos copa)
+# FORMA EN LIGA LOCAL (torneos copa)
 # ─────────────────────────────────────────────
 
 def obtener_forma_liga_local(team_id, ligas_locales):
-    """
-    Para un equipo de torneo internacional, busca su forma reciente
-    en la liga local consultando cada slug de liga_local hasta encontrar partidos.
-    Devuelve (forma_ponderada, ultimos_5, liga_slug_encontrado).
-    """
     for liga_slug in ligas_locales:
         try:
             partidos = obtener_partidos_equipo(team_id, [liga_slug])
@@ -808,7 +839,7 @@ def scrapear_liga(liga_slug):
         print(f"❌ Slug '{liga_slug}' no encontrado en LIGAS_CONFIG.")
         return
 
-    es_copa       = config.get("es_torneo_copa", False)
+    es_copa        = config.get("es_torneo_copa", False)
     liga_principal = config["liga_principal"]
     copas          = config["copas"]
     ligas_locales  = config.get("ligas_locales", [])
@@ -819,13 +850,11 @@ def scrapear_liga(liga_slug):
 
     datos = diagnosticar(liga_slug)
 
-    # ── Obtener equipos ──────────────────────────────
     print("📊 Procesando equipos...")
     tabla        = []
     equipos_dict = {}
 
     if not es_copa:
-        # Liga regular: standings lineal directo
         if datos.get("standings"):
             tabla, equipos_dict = parsear_standings(datos["standings"])
             print(f"  ✅ {len(equipos_dict)} equipos desde standings")
@@ -833,7 +862,6 @@ def scrapear_liga(liga_slug):
             print("  ❌ No hay standings para liga regular. Abortando.")
             return
     else:
-        # Torneo copa: cascada de 3 estrategias
         print("  → Torneo copa: usando estrategia en cascada...")
         equipos_dict = obtener_equipos_copa_cascada(liga_slug, datos.get("standings"))
 
@@ -841,7 +869,6 @@ def scrapear_liga(liga_slug):
         print("  ❌ No se encontraron equipos. Abortando.")
         return
 
-    # ── Partidos por equipo ──────────────────────────
     print(f"\n📅 Obteniendo partidos ({', '.join(copas)})...")
 
     for team_id in list(equipos_dict.keys()):
@@ -849,7 +876,6 @@ def scrapear_liga(liga_slug):
         print(f"  🔄 {nombre}...")
 
         try:
-            # 1. Partidos en las competencias de este torneo/liga
             partidos = obtener_partidos_equipo(team_id, copas)
             competencias, forma_combinada = calcular_stats(partidos, liga_principal)
 
@@ -857,7 +883,6 @@ def scrapear_liga(liga_slug):
             eq["competencias"]    = competencias
             eq["forma_ponderada"] = forma_combinada
 
-            # Acceso rápido a datos de la competencia principal
             stats_principal = competencias.get(liga_principal, {})
             eq["forma_liga"]      = calcular_forma_ponderada(
                 [p for p in partidos if p["liga"] == liga_principal]
@@ -865,8 +890,6 @@ def scrapear_liga(liga_slug):
             eq["ultimos_5_liga"]  = stats_principal.get("ultimos_5", [])
             eq["imbatido_streak"] = stats_principal.get("imbatido_streak", 0)
 
-            # Actualizar totales desde stats de la competencia principal si standings
-            # vino vacío (caso copa sin tabla)
             if es_copa and stats_principal:
                 eq["partidos"]               = stats_principal.get("partidos", 0)
                 eq["ganados"]                = stats_principal.get("ganados", 0)
@@ -878,7 +901,6 @@ def scrapear_liga(liga_slug):
                 eq["goles_favor_promedio"]   = stats_principal.get("goles_favor_promedio", 0.0)
                 eq["goles_contra_promedio"]  = stats_principal.get("goles_contra_promedio", 0.0)
 
-            # 2. Para torneos copa: forma en liga local (dato cruzado)
             if es_copa and ligas_locales:
                 print(f"     → Buscando forma en liga local...")
                 forma_local, ul5_local, liga_encontrada = obtener_forma_liga_local(
@@ -897,12 +919,10 @@ def scrapear_liga(liga_slug):
         except Exception as e:
             print(f"    ⚠️  Error procesando {nombre}: {e}")
 
-    # ── Guardar tabla.json (solo si hay standings) ───
     if tabla:
         tabla_export = [{k: v for k, v in t.items() if k != "id"} for t in tabla]
         guardar_json(tabla_export, config["carpeta"], "tabla.json")
 
-    # ── Guardar equipos.json ─────────────────────────
     equipos_final = {}
     for team_id, datos_equipo in equipos_dict.items():
         key = normalizar(datos_equipo["nombre"])
@@ -910,7 +930,6 @@ def scrapear_liga(liga_slug):
 
     guardar_json(equipos_final, config["carpeta"], "equipos.json")
 
-    # ── Resumen ──────────────────────────────────────
     print(f"\n📋 RESUMEN — {config['nombre']}")
     print(f"   Equipos scrapeados: {len(equipos_final)}")
     print(f"   Carpeta: {config['carpeta']}/")
@@ -935,10 +954,13 @@ if __name__ == "__main__":
         help=(
             "Slug de la liga o torneo. Ejemplos:\n"
             "  python scrapper.py --liga mex.1\n"
-            "  python scrapper.py --liga conmebol.libertadores\n"
+            "  python scrapper.py --liga usa.1\n"
+            "  python scrapper.py --liga chi.1\n"
+            "  python scrapper.py --liga jpn.1\n"
+            "  python scrapper.py --liga ger.dfb_pokal\n"
             "  python scrapper.py --liga all\n"
-            "  python scrapper.py --liga ligas   (solo ligas regulares)\n"
-            "  python scrapper.py --liga torneos (solo torneos copa)"
+            "  python scrapper.py --liga ligas\n"
+            "  python scrapper.py --liga torneos"
         )
     )
     args = parser.parse_args()
@@ -946,7 +968,6 @@ if __name__ == "__main__":
     if not args.liga:
         print("Uso:")
         print("  python scrapper.py --liga mex.1")
-        print("  python scrapper.py --liga conmebol.libertadores")
         print("  python scrapper.py --liga all")
         print("  python scrapper.py --liga ligas")
         print("  python scrapper.py --liga torneos")
@@ -955,7 +976,7 @@ if __name__ == "__main__":
         for slug, cfg in LIGAS_CONFIG.items():
             if not cfg.get("es_torneo_copa"):
                 print(f"    {slug:<30} {cfg['nombre']}")
-        print("\n  TORNEOS:")
+        print("\n  TORNEOS / COPAS:")
         for slug, cfg in LIGAS_CONFIG.items():
             if cfg.get("es_torneo_copa"):
                 print(f"    {slug:<30} {cfg['nombre']}")
