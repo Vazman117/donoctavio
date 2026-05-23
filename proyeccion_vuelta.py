@@ -324,6 +324,7 @@ def calcular_contexto_vuelta(
     goles_ida_visitante,
     tabla_local,
     tabla_visitante,
+    es_final=False,
 ):
     goles_vuelta_local_en_ida     = goles_ida_visitante
     goles_vuelta_visitante_en_ida = goles_ida_local
@@ -337,27 +338,37 @@ def calcular_contexto_vuelta(
         estado_visitante         = "perdiendo_global"
         goles_necesita_visitante = diferencia_global + 1
         goles_necesita_local     = 0
-        clasifica_empate_local   = True
-        clasifica_empate_visitante = False
-
     elif diferencia_global == 0:
         estado_local             = "global_empatado"
         estado_visitante         = "global_empatado"
-        goles_necesita_visitante = 1
-        goles_necesita_local     = 0
-        clasifica_empate_local   = True
-        clasifica_empate_visitante = False
-
+        # En la final ambos quieren ganar en 90 min; nadie "ya clasificó"
+        # En ronda normal el local clasifica con empate por tabla
+        if es_final:
+            goles_necesita_local     = 1
+            goles_necesita_visitante = 1
+        else:
+            goles_necesita_local     = 0
+            goles_necesita_visitante = 1
     else:
         estado_local             = "perdiendo_global"
         estado_visitante         = "ganando_global"
         goles_necesita_local     = abs(diferencia_global) + 1
         goles_necesita_visitante = 0
-        clasifica_empate_local   = False
+
+    # En la final el empate global lleva a tiempos extra y penales,
+    # nadie clasifica por tabla en ningún escenario.
+    if es_final:
+        clasifica_empate_local     = False
+        clasifica_empate_visitante = False
+    else:
+        clasifica_empate_local     = (diferencia_global >= 0)
         clasifica_empate_visitante = False
 
     def nivel_urgencia(goles_necesarios, clasifica_con_empate):
         if clasifica_con_empate:
+            return "nula"
+        elif goles_necesarios == 0:
+            # Ventaja global pero sin ventaja de tabla (ej. final): gestiona sin urgencia
             return "nula"
         elif goles_necesarios == 1:
             return "media"
@@ -380,6 +391,7 @@ def calcular_contexto_vuelta(
         "urgencia_local":                 urgencia_local,
         "urgencia_visitante":             urgencia_visitante,
         "ventaja_tabla":                  ventaja_tabla,
+        "es_final":                       es_final,
     }
 
 
@@ -434,7 +446,7 @@ def predecir_probabilidades_vuelta(
     f_local     = limitar(f_local     + bonus_local,     0.0, 1.0)
     f_visitante = limitar(f_visitante + bonus_visitante, 0.0, 1.0)
 
-    score          = f_local - f_visitante
+    score       = f_local - f_visitante
     prob_empate = calcular_prob_empate(
         f_local, f_visitante,
         equipo_local, equipo_visitante,
@@ -505,14 +517,15 @@ def nivel_impacto(diferencia_normalizada):
 
 def generar_analisis_vuelta(local, visitante, resultado, nombre_local, nombre_visitante, contexto):
     factores = []
+    es_final = contexto.get("es_final", False)
 
     # ── 1. FORMA RECIENTE ───────────────────────────────────────────────────
     fl = local["forma_ponderada"]
     fv = visitante["forma_ponderada"]
-    ul5_l  = local.get("ultimos_5", [])
-    ul5_v  = visitante.get("ultimos_5", [])
-    wins_l  = ul5_l.count("W")
-    wins_v  = ul5_v.count("W")
+    ul5_l    = local.get("ultimos_5", [])
+    ul5_v    = visitante.get("ultimos_5", [])
+    wins_l   = ul5_l.count("W")
+    wins_v   = ul5_v.count("W")
     losses_l = ul5_l.count("L")
     losses_v = ul5_v.count("L")
 
@@ -641,9 +654,13 @@ def generar_analisis_vuelta(local, visitante, resultado, nombre_local, nombre_vi
     d_v         = contar_empates_recientes(visitante.get("ultimos_5", []))
     tasa_max    = max(tasa_emp_l, tasa_emp_v)
 
+    # En la final, un empate en 90 min no define la serie: va a tiempos extra
     nota_vuelta = ""
     if tasa_max >= 0.25:
-        if contexto["clasifica_empate_local"] and not contexto["clasifica_empate_visitante"]:
+        if es_final:
+            nota_vuelta = (f" En la final, un empate al término de los 90 minutos "
+                           f"lleva la serie a tiempo extra y penales.")
+        elif contexto["clasifica_empate_local"] and not contexto["clasifica_empate_visitante"]:
             nota_vuelta = (f" En el contexto de esta serie, un empate en el partido "
                            f"beneficia a {nombre_local}, que clasifica por tabla.")
         elif not contexto["clasifica_empate_local"] and contexto["clasifica_empate_visitante"]:
@@ -727,11 +744,12 @@ def generar_analisis_vuelta(local, visitante, resultado, nombre_local, nombre_vi
         equipo_inexp = nombre_visitante if diff_exp > 0 else nombre_local
         exp_mayor    = max(exp_l, exp_v)
         exp_menor    = min(exp_l, exp_v)
+        sufijo_final = " En una final, saber manejar la presión máxima marca la diferencia." if es_final else ""
         interp = (f"{equipo_exp} acumula mayor experiencia en instancias eliminatorias "
                   f"(índice {exp_mayor:.2f}/1.0 vs {exp_menor:.2f}/1.0 de {equipo_inexp}), "
                   f"basado en resultados de las últimas 4 liguillas. "
                   f"La presión de los partidos de eliminación suele favorecer "
-                  f"a los equipos con mayor rodaje en estas instancias.")
+                  f"a los equipos con mayor rodaje en estas instancias." + sufijo_final)
     else:
         interp = (f"Experiencia eliminatoria similar entre ambos equipos: "
                   f"{nombre_local} con índice {exp_l:.2f}/1.0 y {nombre_visitante} con {exp_v:.2f}/1.0. "
@@ -752,20 +770,39 @@ def generar_analisis_vuelta(local, visitante, resultado, nombre_local, nombre_vi
     gol_v_ida = contexto["goles_vuelta_visitante_en_ida"]
 
     if dif > 0:
-        interp = (f"{nombre_local} llega con ventaja en el marcador global: "
-                  f"ganó la ida {gol_l_ida}-{gol_v_ida} y además tiene mejor posición en tabla. "
-                  f"Le basta con no perder por {dif + 1} o más goles para clasificar. "
-                  f"Puede especular tácticamente desde el inicio.")
+        if es_final:
+            interp = (f"{nombre_local} llega con ventaja en el marcador global: "
+                      f"ganó la ida {gol_l_ida}-{gol_v_ida}. "
+                      f"Le basta con no perder por {dif + 1} o más goles para ser campeón. "
+                      f"Si hay empate global al 90, se va a tiempo extra y penales.")
+        else:
+            interp = (f"{nombre_local} llega con ventaja en el marcador global: "
+                      f"ganó la ida {gol_l_ida}-{gol_v_ida} y además tiene mejor posición en tabla. "
+                      f"Le basta con no perder por {dif + 1} o más goles para clasificar. "
+                      f"Puede especular tácticamente desde el inicio.")
     elif dif == 0:
-        interp = (f"Serie completamente abierta: empate global {gol_l_ida}-{gol_v_ida}. "
-                  f"Si la vuelta termina empatada, clasifica {nombre_local} por mejor posición en tabla. "
-                  f"{nombre_visitante} está obligado a ganar para avanzar.")
+        if es_final:
+            interp = (f"Serie completamente abierta: empate global {gol_l_ida}-{gol_v_ida}. "
+                      f"Si la vuelta termina empatada al 90, habrá tiempo extra y penales — "
+                      f"nadie se corona por tabla en la final. "
+                      f"Ambos equipos buscarán ganar en los 90 minutos para coronarse.")
+        else:
+            interp = (f"Serie completamente abierta: empate global {gol_l_ida}-{gol_v_ida}. "
+                      f"Si la vuelta termina empatada, clasifica {nombre_local} por mejor posición en tabla. "
+                      f"{nombre_visitante} está obligado a ganar para avanzar.")
     else:
-        interp = (f"{nombre_visitante} llega con ventaja en el marcador global: "
-                  f"ganó la ida {gol_v_ida}-{gol_l_ida}. "
-                  f"{nombre_local} necesita ganar por {abs(dif) + 1} o más goles para clasificar directamente, "
-                  f"o por {abs(dif)} para igualar el global — pero en ese caso perdería por tabla. "
-                  f"Obligado a atacar desde el primer minuto.")
+        if es_final:
+            interp = (f"{nombre_visitante} llega con ventaja en el marcador global: "
+                      f"ganó la ida {gol_v_ida}-{gol_l_ida}. "
+                      f"{nombre_local} necesita ganar por {abs(dif) + 1} o más goles para coronarse directamente, "
+                      f"o por {abs(dif)} para igualar el global e ir a tiempo extra y penales. "
+                      f"Obligado a atacar desde el primer minuto.")
+        else:
+            interp = (f"{nombre_visitante} llega con ventaja en el marcador global: "
+                      f"ganó la ida {gol_v_ida}-{gol_l_ida}. "
+                      f"{nombre_local} necesita ganar por {abs(dif) + 1} o más goles para clasificar directamente, "
+                      f"o por {abs(dif)} para igualar el global — pero en ese caso perdería por tabla. "
+                      f"Obligado a atacar desde el primer minuto.")
 
     factores.append({
         "factor":                     "Contexto de serie",
@@ -776,6 +813,7 @@ def generar_analisis_vuelta(local, visitante, resultado, nombre_local, nombre_vi
         "goles_visitante_en_ida":     gol_v_ida,
         "clasifica_empate_local":     contexto["clasifica_empate_local"],
         "clasifica_empate_visitante": contexto["clasifica_empate_visitante"],
+        "es_final":                   es_final,
         "local":     {"nombre": nombre_local,     "estado": contexto["estado_local"]},
         "visitante": {"nombre": nombre_visitante, "estado": contexto["estado_visitante"]},
         "interpretacion": interp,
@@ -787,9 +825,14 @@ def generar_analisis_vuelta(local, visitante, resultado, nombre_local, nombre_vi
 
     def descripcion_urgencia(urgencia, goles_necesarios, nombre, clasifica_empate):
         if urgencia == "nula":
-            return (f"{nombre} puede gestionar el partido sin arriesgar: "
-                    f"clasifica incluso si la vuelta termina en empate. "
-                    f"Probablemente opte por un bloque defensivo y contraataques.")
+            if es_final:
+                return (f"{nombre} puede gestionar el partido con cierta comodidad desde el marcador global, "
+                        f"aunque en la final un empate al 90 lleva a tiempo extra y penales, "
+                        f"por lo que nunca habrá una situación de total especulación.")
+            else:
+                return (f"{nombre} puede gestionar el partido sin arriesgar: "
+                        f"clasifica incluso si la vuelta termina en empate. "
+                        f"Probablemente opte por un bloque defensivo y contraataques.")
         elif urgencia == "media":
             return (f"{nombre} necesita {goles_necesarios} gol para avanzar. "
                     f"Atacará con orden, sin sacrificar la estructura defensiva.")
@@ -857,6 +900,7 @@ def generar_partido_vuelta(
     goles_ida_visitante,
     db,
     h2h,
+    es_final=False,
 ):
     local_raw     = obtener_equipo(local_nombre,     db)
     visitante_raw = obtener_equipo(visitante_nombre, db)
@@ -875,6 +919,7 @@ def generar_partido_vuelta(
         goles_ida_visitante=goles_ida_visitante,
         tabla_local=local["posicion"],
         tabla_visitante=visitante["posicion"],
+        es_final=es_final,
     )
 
     resultado = predecir_probabilidades_vuelta(
@@ -891,10 +936,15 @@ def generar_partido_vuelta(
     else:
         pred_partido = visitante["nombre"]
 
-    if resultado["local"] >= resultado["visitante"]:
-        pred_clasifica = local_nombre
+    # En la final no hay ventaja de tabla: quien tenga más probabilidad avanza
+    # (el empate en 90 min va a tiempos extra, pero la predicción es del partido)
+    if es_final:
+        pred_clasifica = local_nombre if resultado["local"] >= resultado["visitante"] else visitante_nombre
     else:
-        pred_clasifica = visitante_nombre if not contexto["clasifica_empate_local"] else local_nombre
+        if resultado["local"] >= resultado["visitante"]:
+            pred_clasifica = local_nombre
+        else:
+            pred_clasifica = visitante_nombre if not contexto["clasifica_empate_local"] else local_nombre
 
     analisis = generar_analisis_vuelta(
         local, visitante, resultado,
@@ -904,7 +954,8 @@ def generar_partido_vuelta(
 
     output = {
         "id":               id,
-        "fase":             "liguilla_vuelta",
+        "fase":             "final_vuelta" if es_final else "liguilla_vuelta",
+        "es_final":         es_final,
         "local":            local["nombre"],
         "visitante":        visitante["nombre"],
         "logo_local":       local.get("escudo"),
@@ -937,17 +988,11 @@ if __name__ == "__main__":
     PARTIDOS_VUELTA = [
         {
             "id": 1,
-            "local_nombre":        "Guadalajara",
-            "visitante_nombre":    "Cruz Azul",
-            "goles_ida_local":     2,
-            "goles_ida_visitante": 2,
-        },
-        {
-            "id": 2,
             "local_nombre":        "Pumas UNAM",
-            "visitante_nombre":    "Pachuca",
-            "goles_ida_local":     1,
+            "visitante_nombre":    "Cruz Azul",
+            "goles_ida_local":     0,
             "goles_ida_visitante": 0,
+            "es_final":            True,
         }
     ]
 
@@ -963,6 +1008,7 @@ if __name__ == "__main__":
             goles_ida_visitante=p["goles_ida_visitante"],
             db=db,
             h2h=h2h,
+            es_final=p.get("es_final", False),
         )
         todos_los_partidos.append(partido)
         print(json.dumps(partido, indent=2, ensure_ascii=False))
