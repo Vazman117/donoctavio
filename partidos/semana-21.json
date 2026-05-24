@@ -1,5 +1,260 @@
 [  
   {
+    "id": 13,
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Flamengo",
+    "visitante": "Palmeiras",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/819.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2029.png",
+    "prob_local": 0.5298648517478539,
+    "prob_empate": 0.19815657192617497,
+    "prob_visitante": 0.27197857632597117,
+    "fuerza_local": 0.6828251176470588,
+    "fuerza_visitante": 0.64867,
+    "diferencia": 0.03415511764705881,
+    "confianza": "favorable",
+    "prediccion": "Flamengo",
+    "resultado": "Palmeiras",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 4.198478106928966,
+    "lambda_visitante": 2.940680294117647,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.72,
+          "ultimos_5": [
+            "D",
+            "W",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Flamengo"
+        },
+        "visitante": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "D",
+            "D",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Palmeiras"
+        },
+        "interpretacion": "Flamengo llega con mejor momentum: índice 0.72/1.0 frente a 0.60/1.0 de Palmeiras. Últimos 5: 3V/2E/0D vs 2V/3E/0D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 66.7,
+          "detalle": "4G/2E/0P",
+          "nombre": "Flamengo"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 50.0,
+          "detalle": "4G/3E/1P",
+          "nombre": "Palmeiras"
+        },
+        "interpretacion": "Flamengo domina en casa: 67% (4G/2E/0P). Palmeiras: 50% de visita (4G/3E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Flamengo",
+          "goles_favor": 1.87,
+          "goles_contra": 0.87
+        },
+        "visitante": {
+          "nombre": "Palmeiras",
+          "goles_favor": 1.62,
+          "goles_contra": 0.81
+        },
+        "interpretacion": "Producción similar: Flamengo 1.87 goles/partido — Palmeiras 1.62. Defensa: 0.87 vs 0.81."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Charlotte FC",
+    "visitante": "New England Revolution",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/21300.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/189.png",
+    "prob_local": 0.4449839322111974,
+    "prob_empate": 0.21793722807854127,
+    "prob_visitante": 0.33707883971026137,
+    "fuerza_local": 0.45291470588235294,
+    "fuerza_visitante": 0.5221982352941177,
+    "diferencia": 0.06928352941176474,
+    "confianza": "moderado",
+    "prediccion": "Charlotte FC",
+    "resultado": "Charlotte FC",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 2.052212714740061,
+    "lambda_visitante": 1.597846501119221,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.45,
+          "ultimos_5": [
+            "W",
+            "L",
+            "D",
+            "L",
+            "L"
+          ],
+          "nombre": "Charlotte FC"
+        },
+        "visitante": {
+          "valor": 0.71,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "New England Revolution"
+        },
+        "interpretacion": "New England Revolution llega con mejor momentum: índice 0.71/1.0 frente a 0.45/1.0 de Charlotte FC. Últimos 5: 3V/1E/1D vs 1V/1E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "4G/2E/2P",
+          "nombre": "Charlotte FC"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 20.0,
+          "detalle": "1G/1E/3P",
+          "nombre": "New England Revolution"
+        },
+        "interpretacion": "New England Revolution sufre de visita: 20% (1G/1E/3P). Charlotte FC en casa: 50% (4G/2E/2P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Charlotte FC",
+          "goles_favor": 1.64,
+          "goles_contra": 1.64
+        },
+        "visitante": {
+          "nombre": "New England Revolution",
+          "goles_favor": 1.69,
+          "goles_contra": 1.31
+        },
+        "interpretacion": "Producción similar: Charlotte FC 1.64 goles/partido — New England Revolution 1.69. Defensa: 1.64 vs 1.31."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "San Diego FC",
+    "visitante": "Vancouver Whitecaps",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/22529.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/9727.png",
+    "prob_local": 0.5787420295422916,
+    "prob_empate": 0.19381101577272902,
+    "prob_visitante": 0.2274469546849793,
+    "fuerza_local": 0.5057020588235294,
+    "fuerza_visitante": 0.53041,
+    "diferencia": 0.024707941176470682,
+    "confianza": "favorable",
+    "prediccion": "San Diego FC",
+    "resultado": "Vancouver Whitecaps",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 4.1202074035544,
+    "lambda_visitante": 2.3612639690462816,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.58,
+          "ultimos_5": [
+            "D",
+            "W",
+            "D",
+            "D",
+            "L"
+          ],
+          "nombre": "San Diego FC"
+        },
+        "visitante": {
+          "valor": 0.49,
+          "ultimos_5": [
+            "L",
+            "W",
+            "D",
+            "D",
+            "W"
+          ],
+          "nombre": "Vancouver Whitecaps"
+        },
+        "interpretacion": "San Diego FC llega con mejor momentum: índice 0.58/1.0 frente a 0.49/1.0 de Vancouver Whitecaps. Últimos 5: 1V/3E/1D vs 2V/2E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 37.5,
+          "detalle": "3G/3E/2P",
+          "nombre": "San Diego FC"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 40.0,
+          "detalle": "2G/2E/1P",
+          "nombre": "Vancouver Whitecaps"
+        },
+        "interpretacion": "Equilibrio situacional: San Diego FC 38% local — Vancouver Whitecaps 40% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "San Diego FC",
+          "goles_favor": 2.0,
+          "goles_contra": 1.64
+        },
+        "visitante": {
+          "nombre": "Vancouver Whitecaps",
+          "goles_favor": 2.31,
+          "goles_contra": 0.77
+        },
+        "interpretacion": "Producción similar: San Diego FC 2.00 goles/partido — Vancouver Whitecaps 2.31. Defensa: 1.64 vs 0.77."
+      }
+    ]
+  },
+  {
     "id": 14,
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
