@@ -420,90 +420,6 @@
     ]
   },
   {
-    "id": 9,
-    "torneo": "Fase Regular",
-    "perfil": "fase_regular",
-    "local": "Minnesota United FC",
-    "visitante": "Real Salt Lake",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/17362.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/4771.png",
-    "prob_local": 0.24364558148461019,
-    "prob_empate": 0.2308990246231889,
-    "prob_visitante": 0.5254553938922009,
-    "fuerza_local": 0.3338878235294117,
-    "fuerza_visitante": 0.5413582352941176,
-    "diferencia": 0.20747041176470593,
-    "confianza": "favorable",
-    "prediccion": "Real Salt Lake",
-    "vuelta_en_casa": "ninguno",
-    "lambda_local": 1.267151694641031,
-    "lambda_visitante": 1.955618127701334,
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "alto",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.22,
-          "ultimos_5": [
-            "L",
-            "L",
-            "D",
-            "W",
-            "L"
-          ],
-          "nombre": "Minnesota United FC"
-        },
-        "visitante": {
-          "valor": 0.72,
-          "ultimos_5": [
-            "W",
-            "W",
-            "L",
-            "W",
-            "L"
-          ],
-          "nombre": "Real Salt lake"
-        },
-        "interpretacion": "Real Salt lake llega con mejor momentum: índice 0.72/1.0 frente a 0.22/1.0 de Minnesota United FC. Últimos 5: 3V/0E/2D vs 1V/1E/3D."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "medio",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 33.3,
-          "detalle": "2G/2E/2P",
-          "nombre": "Minnesota United FC"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 20.0,
-          "detalle": "1G/1E/3P",
-          "nombre": "Real Salt lake"
-        },
-        "interpretacion": "Real Salt lake sufre de visita: 20% (1G/1E/3P). Minnesota United FC en casa: 33% (2G/2E/2P)."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "alto",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Minnesota United FC",
-          "goles_favor": 1.21,
-          "goles_contra": 1.5
-        },
-        "visitante": {
-          "nombre": "Real Salt lake",
-          "goles_favor": 1.92,
-          "goles_contra": 1.39
-        },
-        "interpretacion": "Real Salt lake más ofensivo: 1.92 vs 1.21 goles/partido. Defensa: 1.50 vs 1.39."
-      }
-    ]
-  },
-  {
     "id": 10,
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
@@ -668,90 +584,6 @@
           "goles_contra": 1.31
         },
         "interpretacion": "Producción similar: Charlotte FC 1.64 goles/partido — New England Revolution 1.69. Defensa: 1.64 vs 1.31."
-      }
-    ]
-  },
-  {
-    "id": 12,
-    "torneo": "Fase Regular",
-    "perfil": "fase_regular",
-    "local": "Vitória",
-    "visitante": "Internacional",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/3457.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/1936.png",
-    "prob_local": 0.43327254898878403,
-    "prob_empate": 0.2948159722854658,
-    "prob_visitante": 0.2719114787257501,
-    "fuerza_local": 0.4043955294117647,
-    "fuerza_visitante": 0.5265091764705883,
-    "diferencia": 0.12211364705882355,
-    "confianza": "moderado",
-    "prediccion": "Vitória",
-    "vuelta_en_casa": "ninguno",
-    "lambda_local": 1.6985047507200002,
-    "lambda_visitante": 1.1144850717791412,
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "alto",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.36,
-          "ultimos_5": [
-            "L",
-            "D",
-            "W",
-            "L",
-            "D"
-          ],
-          "nombre": "Vitoria"
-        },
-        "visitante": {
-          "valor": 0.73,
-          "ultimos_5": [
-            "W",
-            "D",
-            "W",
-            "D",
-            "L"
-          ],
-          "nombre": "Internacional"
-        },
-        "interpretacion": "Internacional llega con mejor momentum: índice 0.73/1.0 frente a 0.36/1.0 de Vitoria. Últimos 5: 2V/2E/1D vs 1V/2E/2D."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "alto",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 71.4,
-          "detalle": "5G/1E/1P",
-          "nombre": "Vitoria"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 28.6,
-          "detalle": "2G/4E/1P",
-          "nombre": "Internacional"
-        },
-        "interpretacion": "Contraste marcado: Vitoria gana el 71% en casa (5G/1E/1P), Internacional solo el 29% de visita (2G/4E/1P). La localía es determinante."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "medio",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Vitoria",
-          "goles_favor": 1.2,
-          "goles_contra": 1.47
-        },
-        "visitante": {
-          "nombre": "Internacional",
-          "goles_favor": 1.25,
-          "goles_contra": 1.06
-        },
-        "interpretacion": "Producción similar: Vitoria 1.20 goles/partido — Internacional 1.25. Defensa: 1.47 vs 1.06."
       }
     ]
   },
@@ -1175,7 +1007,7 @@
       }
     ]
   },
-    {
+  {
     "id": 1,
     "fase": "final_vuelta",
     "es_final": true,
