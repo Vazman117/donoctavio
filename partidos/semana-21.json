@@ -1,5 +1,515 @@
 [  
   {
+    "id": 15,
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Universidad Católica",
+    "visitante": "Colo Colo",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/885.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2688.png",
+    "prob_local": 0.6313699432901424,
+    "prob_empate": 0.1298231323542259,
+    "prob_visitante": 0.23880692435563178,
+    "fuerza_local": 0.5413323529411764,
+    "fuerza_visitante": 0.70973,
+    "diferencia": 0.16839764705882354,
+    "confianza": "favorable",
+    "prediccion": "Universidad Católica",
+    "resultado": "Colo Colo",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 4.367956801875333,
+    "lambda_visitante": 2.0227610147102326,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.55,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Universidad Catolica"
+        },
+        "visitante": {
+          "valor": 0.88,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Colo Colo"
+        },
+        "interpretacion": "Colo Colo llega con mejor momentum: índice 0.88/1.0 frente a 0.55/1.0 de Universidad Catolica. Últimos 5: 4V/0E/1D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 60.0,
+          "detalle": "3G/1E/1P",
+          "nombre": "Universidad Catolica"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 80.0,
+          "detalle": "4G/0E/1P",
+          "nombre": "Colo Colo"
+        },
+        "interpretacion": "Universidad Catolica domina en casa: 60% (3G/1E/1P). Colo Colo: 80% de visita (4G/0E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Universidad Catolica",
+          "goles_favor": 2.17,
+          "goles_contra": 1.42
+        },
+        "visitante": {
+          "nombre": "Colo Colo",
+          "goles_favor": 1.67,
+          "goles_contra": 0.75
+        },
+        "interpretacion": "Universidad Catolica más ofensivo: 2.17 vs 1.67 goles/partido. Defensa: 1.42 vs 0.75."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Tottenham Hotspur",
+    "visitante": "Everton",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/367.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/368.png",
+    "prob_local": 0.3684628826064967,
+    "prob_empate": 0.3018952332286439,
+    "prob_visitante": 0.32964188416485946,
+    "fuerza_local": 0.31378588235294114,
+    "fuerza_visitante": 0.3291552941176471,
+    "diferencia": 0.015369411764705965,
+    "confianza": "ajustado",
+    "prediccion": "Tottenham Hotspur",
+    "resultado": "Tottenham Hotspur",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.112433733935876,
+    "lambda_visitante": 0.9969014358510707,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.48,
+          "ultimos_5": [
+            "L",
+            "D",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Tottenham Hotspur"
+        },
+        "visitante": {
+          "valor": 0.23,
+          "ultimos_5": [
+            "L",
+            "D",
+            "D",
+            "L",
+            "L"
+          ],
+          "nombre": "Everton"
+        },
+        "interpretacion": "Tottenham Hotspur llega con mejor momentum: índice 0.48/1.0 frente a 0.23/1.0 de Everton. Últimos 5: 2V/2E/1D vs 0V/2E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 11.1,
+          "detalle": "2G/6E/10P",
+          "nombre": "Tottenham Hotspur"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 38.9,
+          "detalle": "7G/5E/6P",
+          "nombre": "Everton"
+        },
+        "interpretacion": "Equilibrio situacional: Tottenham Hotspur 11% local — Everton 39% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Tottenham Hotspur",
+          "goles_favor": 1.27,
+          "goles_contra": 1.54
+        },
+        "visitante": {
+          "nombre": "Everton",
+          "goles_favor": 1.27,
+          "goles_contra": 1.32
+        },
+        "interpretacion": "Producción similar: Tottenham Hotspur 1.27 goles/partido — Everton 1.27. Defensa: 1.54 vs 1.32."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Sunderland",
+    "visitante": "Chelsea",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/366.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/363.png",
+    "prob_local": 0.2873472899855245,
+    "prob_empate": 0.2564185905376796,
+    "prob_visitante": 0.456234119476796,
+    "fuerza_local": 0.4802670588235294,
+    "fuerza_visitante": 0.45273882352941175,
+    "diferencia": 0.02752823529411763,
+    "confianza": "moderado",
+    "prediccion": "Chelsea",
+    "resultado": "Sunderland",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.1476173861456225,
+    "lambda_visitante": 1.682985463393336,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.57,
+          "ultimos_5": [
+            "W",
+            "D",
+            "D",
+            "L",
+            "L"
+          ],
+          "nombre": "Sunderland"
+        },
+        "visitante": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "W",
+            "D",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Chelsea"
+        },
+        "interpretacion": "Sunderland llega con mejor momentum: índice 0.57/1.0 frente a 0.47/1.0 de Chelsea. Últimos 5: 1V/2E/2D vs 1V/1E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 44.4,
+          "detalle": "8G/6E/4P",
+          "nombre": "Sunderland"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 38.9,
+          "detalle": "7G/5E/6P",
+          "nombre": "Chelsea"
+        },
+        "interpretacion": "Equilibrio situacional: Sunderland 44% local — Chelsea 39% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Sunderland",
+          "goles_favor": 1.08,
+          "goles_contra": 1.27
+        },
+        "visitante": {
+          "nombre": "Chelsea",
+          "goles_favor": 1.54,
+          "goles_contra": 1.35
+        },
+        "interpretacion": "Chelsea más ofensivo: 1.54 vs 1.08 goles/partido. Defensa: 1.27 vs 1.35."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Fulham",
+    "visitante": "Newcastle United",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/370.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/361.png",
+    "prob_local": 0.3272642245035866,
+    "prob_empate": 0.2638792544668191,
+    "prob_visitante": 0.4088565210295944,
+    "fuerza_local": 0.3998694117647059,
+    "fuerza_visitante": 0.4642811764705883,
+    "diferencia": 0.06441176470588239,
+    "confianza": "moderado",
+    "prediccion": "Newcastle United",
+    "resultado": "Fulham",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.2068083585998306,
+    "lambda_visitante": 1.368009293913579,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.34,
+          "ultimos_5": [
+            "D",
+            "L",
+            "L",
+            "W",
+            "D"
+          ],
+          "nombre": "Fulham"
+        },
+        "visitante": {
+          "valor": 0.68,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Newcastle United"
+        },
+        "interpretacion": "Newcastle United llega con mejor momentum: índice 0.68/1.0 frente a 0.34/1.0 de Fulham. Últimos 5: 2V/1E/2D vs 1V/2E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 55.6,
+          "detalle": "10G/2E/6P",
+          "nombre": "Fulham"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 22.2,
+          "detalle": "4G/5E/9P",
+          "nombre": "Newcastle United"
+        },
+        "interpretacion": "Contraste marcado: Fulham gana el 56% en casa (10G/2E/6P), Newcastle United solo el 22% de visita (4G/5E/9P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Fulham",
+          "goles_favor": 1.22,
+          "goles_contra": 1.38
+        },
+        "visitante": {
+          "nombre": "Newcastle United",
+          "goles_favor": 1.43,
+          "goles_contra": 1.43
+        },
+        "interpretacion": "Producción similar: Fulham 1.22 goles/partido — Newcastle United 1.43. Defensa: 1.38 vs 1.43."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Brighton & Hove Albion",
+    "visitante": "Manchester United",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/331.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
+    "prob_local": 0.2531183981924401,
+    "prob_empate": 0.24103320445437015,
+    "prob_visitante": 0.5058483973531898,
+    "fuerza_local": 0.444484705882353,
+    "fuerza_visitante": 0.6236682352941177,
+    "diferencia": 0.17918352941176474,
+    "confianza": "favorable",
+    "prediccion": "Manchester United",
+    "resultado": "Manchester United",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.5356612509067362,
+    "lambda_visitante": 2.199036293017212,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.41,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "D"
+          ],
+          "nombre": "Brighton"
+        },
+        "visitante": {
+          "valor": 0.88,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Manchester United"
+        },
+        "interpretacion": "Manchester United llega con mejor momentum: índice 0.88/1.0 frente a 0.41/1.0 de Brighton. Últimos 5: 4V/1E/0D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "9G/6E/3P",
+          "nombre": "Brighton"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 33.3,
+          "detalle": "6G/8E/4P",
+          "nombre": "Manchester United"
+        },
+        "interpretacion": "Equilibrio situacional: Brighton 50% local — Manchester United 33% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Brighton",
+          "goles_favor": 1.41,
+          "goles_contra": 1.16
+        },
+        "visitante": {
+          "nombre": "Manchester United",
+          "goles_favor": 1.78,
+          "goles_contra": 1.35
+        },
+        "interpretacion": "Producción similar: Brighton 1.41 goles/partido — Manchester United 1.78. Defensa: 1.16 vs 1.35."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Villarreal",
+    "visitante": "Atlético Madrid",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/102.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+    "prob_local": 0.4740091061512,
+    "prob_empate": 0.20292370671945448,
+    "prob_visitante": 0.3230671871293455,
+    "fuerza_local": 0.5055482352941176,
+    "fuerza_visitante": 0.5729423529411766,
+    "diferencia": 0.06739411764705894,
+    "confianza": "moderado",
+    "prediccion": "Villarreal",
+    "resultado": "Villarreal",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 2.5046752133964025,
+    "lambda_visitante": 1.851008707074671,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.3,
+          "ultimos_5": [
+            "L",
+            "L",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Villarreal"
+        },
+        "visitante": {
+          "valor": 0.8,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Atletico Madrid"
+        },
+        "interpretacion": "Atletico Madrid llega con mejor momentum: índice 0.80/1.0 frente a 0.30/1.0 de Villarreal. Últimos 5: 4V/0E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 77.8,
+          "detalle": "14G/1E/3P",
+          "nombre": "Villarreal"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 33.3,
+          "detalle": "6G/5E/7P",
+          "nombre": "Atletico Madrid"
+        },
+        "interpretacion": "Villarreal domina en casa: 78% (14G/1E/3P). Atletico Madrid: 33% de visita (6G/5E/7P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Villarreal",
+          "goles_favor": 1.81,
+          "goles_contra": 1.22
+        },
+        "visitante": {
+          "nombre": "Atletico Madrid",
+          "goles_favor": 1.65,
+          "goles_contra": 1.05
+        },
+        "interpretacion": "Producción similar: Villarreal 1.81 goles/partido — Atletico Madrid 1.65. Defensa: 1.22 vs 1.05."
+      }
+    ]
+  },
+  {
     "id": 17,
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
