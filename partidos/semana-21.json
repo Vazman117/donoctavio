@@ -1,5 +1,217 @@
 [  
   {
+    "id": 1,
+    "fase": "final_vuelta",
+    "es_final": true,
+    "local": "Pumas UNAM",
+    "visitante": "Cruz Azul",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+    "prob_local": 0.2146735120932859,
+    "prob_empate": 0.4270482777591037,
+    "prob_visitante": 0.3582782101476104,
+    "fuerza_local": 0.5951780000000001,
+    "fuerza_visitante": 0.7171283529411764,
+    "diferencia": 0.12195035294117629,
+    "confianza": "moderado",
+    "prediccion": "Cruz Azul",
+    "resultado": "Cruz Azul",
+    "clasifica": "Cruz Azul",
+    "contexto_serie": {
+      "diferencia_global": 0,
+      "goles_vuelta_local_en_ida": 0,
+      "goles_vuelta_visitante_en_ida": 0,
+      "estado_local": "global_empatado",
+      "estado_visitante": "global_empatado",
+      "goles_necesita_local": 1,
+      "goles_necesita_visitante": 1,
+      "clasifica_empate_local": false,
+      "clasifica_empate_visitante": false,
+      "urgencia_local": "media",
+      "urgencia_visitante": "media",
+      "ventaja_tabla": "local",
+      "es_final": true
+    },
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "D",
+            "D"
+          ],
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "valor": 0.72,
+          "ultimos_5": [
+            "D",
+            "W",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Cruz Azul llega con mejor momentum: índice 0.72/1.0 frente a 0.53/1.0 de Pumas UNAM. En los últimos 5 partidos, Cruz Azul acumula 3 victorias contra 1 del rival."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.42,
+          "detalle": "8G / 7E / 4P",
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.43,
+          "detalle": "9G / 10E / 2P",
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Rendimiento situacional equilibrado: Pumas UNAM gana el 42% en casa (8G/7E/4P) y Cruz Azul el 43% de visita (9G/10E/2P). Ninguno tiene ventaja situacional clara."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "goles_favor": 1.65,
+          "goles_contra": 1.3
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "goles_favor": 1.77,
+          "goles_contra": 1.09
+        },
+        "interpretacion": "Producción ofensiva similar: Pumas UNAM promedia 1.65 goles por partido y Cruz Azul 1.77. En defensa, Pumas UNAM recibe 1.30 por partido frente a 1.09 del rival."
+      },
+      {
+        "factor": "Perfil empatador",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Tasa empate local",
+          "valor": 0.37,
+          "detalle": "15 empates en 40 partidos | 3D últimos 5",
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Tasa empate visita",
+          "valor": 0.48,
+          "detalle": "16 empates en 43 partidos | 2D últimos 5",
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Cruz Azul es un equipo marcadamente empatador: empata el 48% de sus partidos en su rol situacional. En los últimos 5, ambos suman 5 empate(s), lo que eleva la probabilidad de un resultado igualado en el marcador. En la final, un empate al término de los 90 minutos lleva la serie a tiempo extra y penales."
+      },
+      {
+        "factor": "Historial directo",
+        "impacto": "medio",
+        "tipo": "h2h",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "victorias": 1
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "victorias": 0
+        },
+        "empates": 2,
+        "partidos": [
+          {
+            "fecha": "2026-05-22",
+            "temporada": "Clausura - Finals",
+            "local": "Cruz Azul",
+            "visitante": "Pumas UNAM",
+            "goles_local": 0,
+            "goles_visitante": 0
+          },
+          {
+            "fecha": "2026-03-15",
+            "temporada": "Torneo Clausura",
+            "local": "Pumas UNAM",
+            "visitante": "Cruz Azul",
+            "goles_local": 2,
+            "goles_visitante": 2
+          },
+          {
+            "fecha": "2025-11-09",
+            "temporada": "Torneo Apertura",
+            "local": "Cruz Azul",
+            "visitante": "Pumas UNAM",
+            "goles_local": 2,
+            "goles_visitante": 3
+          }
+        ],
+        "total": 3,
+        "interpretacion": "Cruz Azul lleva ventaja histórica: 0 victorias en 3 enfrentamientos recientes (2 del Clausura 2026, 1 del Apertura 2025). Pumas UNAM ha ganado 1 y hubo 2 empate(s)."
+      },
+      {
+        "factor": "Experiencia eliminatoria",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.31,
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Índice liguilla",
+          "valor": 0.75,
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Cruz Azul acumula mayor experiencia en instancias eliminatorias (índice 0.75/1.0 vs 0.31/1.0 de Pumas UNAM), basado en resultados de las últimas 4 liguillas. La presión de los partidos de eliminación suele favorecer a los equipos con mayor rodaje en estas instancias. En una final, saber manejar la presión máxima marca la diferencia."
+      },
+      {
+        "factor": "Contexto de serie",
+        "impacto": "alto",
+        "tipo": "serie",
+        "diferencia_global": 0,
+        "goles_local_en_ida": 0,
+        "goles_visitante_en_ida": 0,
+        "clasifica_empate_local": false,
+        "clasifica_empate_visitante": false,
+        "es_final": true,
+        "local": {
+          "nombre": "Pumas UNAM",
+          "estado": "global_empatado"
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "estado": "global_empatado"
+        },
+        "interpretacion": "Serie completamente abierta: empate global 0-0. Si la vuelta termina empatada al 90, habrá tiempo extra y penales — nadie se corona por tabla en la final. Ambos equipos buscarán ganar en los 90 minutos para coronarse."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "medio",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "urgencia": "media",
+          "goles_necesita": 1,
+          "bonus_aplicado": 0.1
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "urgencia": "media",
+          "goles_necesita": 1,
+          "bonus_aplicado": 0.1
+        },
+        "interpretacion": "Pumas UNAM necesita 1 gol para avanzar. Atacará con orden, sin sacrificar la estructura defensiva. Cruz Azul necesita 1 gol para avanzar. Atacará con orden, sin sacrificar la estructura defensiva."
+      }
+    ]
+  },
+  {
     "id": 15,
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
