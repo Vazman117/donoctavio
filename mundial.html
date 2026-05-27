@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Mundial 2026 – Don Octavio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="mundial.css">
+</head>
+
+<body class="mundial-body">
+
+  <!-- HEADER -->
+  <header class="mundial-header">
+
+  <button class="btn-back" id="btnInicio" style="display:flex;" onclick="window.location.href='index.html'">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+    Inicio
+  </button>
+
+    <div class="header-center">
+      <span class="header-label">
+        Mundial 2026
+      </span>
+    </div>
+
+  </header>
+
+  <!-- MAIN -->
+  <main class="mundial-main">
+
+    <!-- TABS -->
+<div class="tabs-nav">
+
+  <button class="tab-btn active" data-tab="grupos">
+    Grupos
+  </button>
+
+  <button class="tab-btn" data-tab="tabla">
+    Tabla
+  </button>
+
+  <button class="tab-btn" data-tab="hoy">
+    Hoy
+  </button>
+
+</div>
+
+    <!-- CONTENIDO -->
+    <section id="contenidoMundial" class="mundial-content">
+
+    </section>
+
+  </main>
+
+  <script src="mundial.js"></script>
+
+</body>
+</html>

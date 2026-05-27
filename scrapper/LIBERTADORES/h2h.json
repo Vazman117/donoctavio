@@ -1,0 +1,402 @@
+{
+  "lanús_vs_mirassol": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Lanús",
+    "equipo_b": "Mirassol",
+    "partidos": [
+      {
+        "fecha": "2026-04-08",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Mirassol",
+        "visitante": "Lanús",
+        "goles_local": 1,
+        "goles_visitante": 0
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_lanús": 0,
+      "empates": 0,
+      "victorias_mirassol": 1,
+      "goles_favor_lanús": 0,
+      "goles_contra_lanús": 1
+    }
+  },
+  "liga_de_quito_vs_always_ready": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Liga de Quito",
+    "equipo_b": "Always Ready",
+    "partidos": [
+      {
+        "fecha": "2026-04-08",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Always Ready",
+        "visitante": "Liga de Quito",
+        "goles_local": 0,
+        "goles_visitante": 1
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_liga_de_quito": 1,
+      "empates": 0,
+      "victorias_always_ready": 0,
+      "goles_favor_liga_de_quito": 1,
+      "goles_contra_liga_de_quito": 0
+    }
+  },
+  "flamengo_vs_cusco_fc": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Flamengo",
+    "equipo_b": "Cusco FC",
+    "partidos": [
+      {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Cusco FC",
+        "visitante": "Flamengo",
+        "goles_local": 0,
+        "goles_visitante": 2
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_flamengo": 1,
+      "empates": 0,
+      "victorias_cusco_fc": 0,
+      "goles_favor_flamengo": 2,
+      "goles_contra_flamengo": 0
+    }
+  },
+  "estudiantes_de_la_plata_vs_independiente_medellín": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Estudiantes de La Plata",
+    "equipo_b": "Independiente Medellín",
+    "partidos": [
+      {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Independiente Medellín",
+        "visitante": "Estudiantes de La Plata",
+        "goles_local": 1,
+        "goles_visitante": 1
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_estudiantes_de_la_plata": 0,
+      "empates": 1,
+      "victorias_independiente_medellín": 0,
+      "goles_favor_estudiantes_de_la_plata": 1,
+      "goles_contra_estudiantes_de_la_plata": 1
+    }
+  },
+  "coquimbo_unido_vs_nacional": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Coquimbo Unido",
+    "equipo_b": "Nacional",
+    "partidos": [
+      {
+        "fecha": "2026-04-08",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Coquimbo Unido",
+        "visitante": "Nacional",
+        "goles_local": 1,
+        "goles_visitante": 1
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_coquimbo_unido": 0,
+      "empates": 1,
+      "victorias_nacional": 0,
+      "goles_favor_coquimbo_unido": 1,
+      "goles_contra_coquimbo_unido": 1
+    }
+  },
+  "universitario_vs_deportes_tolima": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Universitario",
+    "equipo_b": "Deportes Tolima",
+    "partidos": [
+      {
+        "fecha": "2026-04-08",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Deportes Tolima",
+        "visitante": "Universitario",
+        "goles_local": 0,
+        "goles_visitante": 0
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_universitario": 0,
+      "empates": 1,
+      "victorias_deportes_tolima": 0,
+      "goles_favor_universitario": 0,
+      "goles_contra_universitario": 0
+    }
+  },
+  "independiente_del_valle_vs_rosario_central": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Independiente del Valle",
+    "equipo_b": "Rosario Central",
+    "partidos": [
+      {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Rosario Central",
+        "visitante": "Independiente del Valle",
+        "goles_local": 0,
+        "goles_visitante": 0
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_independiente_del_valle": 0,
+      "empates": 1,
+      "victorias_rosario_central": 0,
+      "goles_favor_independiente_del_valle": 0,
+      "goles_contra_independiente_del_valle": 0
+    }
+  },
+  "universidad_central_vs_libertad": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Universidad Central",
+    "equipo_b": "Libertad",
+    "partidos": [
+      {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Universidad Central",
+        "visitante": "Libertad",
+        "goles_local": 3,
+        "goles_visitante": 1
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_universidad_central": 1,
+      "empates": 0,
+      "victorias_libertad": 0,
+      "goles_favor_universidad_central": 3,
+      "goles_contra_universidad_central": 1
+    }
+  },
+  "cerro_porteño_vs_sporting_cristal": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Cerro Porteño",
+    "equipo_b": "Sporting Cristal",
+    "partidos": [
+      {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Sporting Cristal",
+        "visitante": "Cerro Porteño",
+        "goles_local": 1,
+        "goles_visitante": 0
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_cerro_porteño": 0,
+      "empates": 0,
+      "victorias_sporting_cristal": 1,
+      "goles_favor_cerro_porteño": 0,
+      "goles_contra_cerro_porteño": 1
+    }
+  },
+  "palmeiras_vs_atlético_junior": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Palmeiras",
+    "equipo_b": "Atlético Junior",
+    "partidos": [
+      {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Atlético Junior",
+        "visitante": "Palmeiras",
+        "goles_local": 1,
+        "goles_visitante": 1
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_palmeiras": 0,
+      "empates": 1,
+      "victorias_atlético_junior": 0,
+      "goles_favor_palmeiras": 1,
+      "goles_contra_palmeiras": 1
+    }
+  },
+  "corinthians_vs_platense": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Corinthians",
+    "equipo_b": "Platense",
+    "partidos": [
+      {
+        "fecha": "2026-04-10",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Platense",
+        "visitante": "Corinthians",
+        "goles_local": 0,
+        "goles_visitante": 2
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_corinthians": 1,
+      "empates": 0,
+      "victorias_platense": 0,
+      "goles_favor_corinthians": 2,
+      "goles_contra_corinthians": 0
+    }
+  },
+  "peñarol_vs_independiente_santa_fe": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Peñarol",
+    "equipo_b": "Independiente Santa Fe",
+    "partidos": [
+      {
+        "fecha": "2026-04-10",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Independiente Santa Fe",
+        "visitante": "Peñarol",
+        "goles_local": 1,
+        "goles_visitante": 1
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_peñarol": 0,
+      "empates": 1,
+      "victorias_independiente_santa_fe": 0,
+      "goles_favor_peñarol": 1,
+      "goles_contra_peñarol": 1
+    }
+  },
+  "fluminense_vs_deportivo_la_guaira": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Fluminense",
+    "equipo_b": "Deportivo La Guaira",
+    "partidos": [
+      {
+        "fecha": "2026-04-07",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Deportivo La Guaira",
+        "visitante": "Fluminense",
+        "goles_local": 0,
+        "goles_visitante": 0
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_fluminense": 0,
+      "empates": 1,
+      "victorias_deportivo_la_guaira": 0,
+      "goles_favor_fluminense": 0,
+      "goles_contra_fluminense": 0
+    }
+  },
+  "bolívar_vs_independiente_rivadavia": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Bolívar",
+    "equipo_b": "Independiente Rivadavia",
+    "partidos": [
+      {
+        "fecha": "2026-04-07",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Independiente Rivadavia",
+        "visitante": "Bolívar",
+        "goles_local": 1,
+        "goles_visitante": 0
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_bolívar": 0,
+      "empates": 0,
+      "victorias_independiente_rivadavia": 1,
+      "goles_favor_bolívar": 0,
+      "goles_contra_bolívar": 1
+    }
+  },
+  "boca_juniors_vs_universidad_católica": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Boca Juniors",
+    "equipo_b": "Universidad Católica",
+    "partidos": [
+      {
+        "fecha": "2026-04-08",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Universidad Católica",
+        "visitante": "Boca Juniors",
+        "goles_local": 1,
+        "goles_visitante": 2
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_boca_juniors": 1,
+      "empates": 0,
+      "victorias_universidad_católica": 0,
+      "goles_favor_boca_juniors": 2,
+      "goles_contra_boca_juniors": 1
+    }
+  },
+  "cruzeiro_vs_barcelona_sc": {
+    "torneo": "Copa Libertadores 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Cruzeiro",
+    "equipo_b": "Barcelona SC",
+    "partidos": [
+      {
+        "fecha": "2026-04-08",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Barcelona SC",
+        "visitante": "Cruzeiro",
+        "goles_local": 0,
+        "goles_visitante": 1
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_cruzeiro": 1,
+      "empates": 0,
+      "victorias_barcelona_sc": 0,
+      "goles_favor_cruzeiro": 1,
+      "goles_contra_cruzeiro": 0
+    }
+  }
+}

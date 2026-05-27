@@ -1,0 +1,202 @@
+{
+  "academia_puerto_cabello_vs_atlético-mg": {
+    "torneo": "Copa Sudamericana 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Academia Puerto Cabello",
+    "equipo_b": "Atlético-MG",
+    "partidos": [
+      {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Academia Puerto Cabello",
+        "visitante": "Atlético-MG",
+        "goles_local": 2,
+        "goles_visitante": 1
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_academia_puerto_cabello": 1,
+      "empates": 0,
+      "victorias_atlético-mg": 0,
+      "goles_favor_academia_puerto_cabello": 2,
+      "goles_contra_academia_puerto_cabello": 1
+    }
+  },
+  "cienciano_del_cusco_vs_juventud": {
+    "torneo": "Copa Sudamericana 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Cienciano del Cusco",
+    "equipo_b": "Juventud",
+    "partidos": [
+      {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Juventud",
+        "visitante": "Cienciano del Cusco",
+        "goles_local": 1,
+        "goles_visitante": 1
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_cienciano_del_cusco": 0,
+      "empates": 1,
+      "victorias_juventud": 0,
+      "goles_favor_cienciano_del_cusco": 1,
+      "goles_contra_cienciano_del_cusco": 1
+    }
+  },
+  "club_olimpia_vs_audax_italiano": {
+    "torneo": "Copa Sudamericana 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Club Olimpia",
+    "equipo_b": "Audax Italiano",
+    "partidos": [
+      {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Audax Italiano",
+        "visitante": "Club Olimpia",
+        "goles_local": 0,
+        "goles_visitante": 2
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_club_olimpia": 1,
+      "empates": 0,
+      "victorias_audax_italiano": 0,
+      "goles_favor_club_olimpia": 2,
+      "goles_contra_club_olimpia": 0
+    }
+  },
+  "vasco_da_gama_vs_barracas_central": {
+    "torneo": "Copa Sudamericana 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Vasco da Gama",
+    "equipo_b": "Barracas Central",
+    "partidos": [
+      {
+        "fecha": "2026-04-07",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Barracas Central",
+        "visitante": "Vasco da Gama",
+        "goles_local": 0,
+        "goles_visitante": 0
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_vasco_da_gama": 0,
+      "empates": 1,
+      "victorias_barracas_central": 0,
+      "goles_favor_vasco_da_gama": 0,
+      "goles_contra_vasco_da_gama": 0
+    }
+  },
+  "racing_club_vs_independiente_petrolero": {
+    "torneo": "Copa Sudamericana 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Racing Club",
+    "equipo_b": "Independiente Petrolero",
+    "partidos": [
+      {
+        "fecha": "2026-04-07",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Independiente Petrolero",
+        "visitante": "Racing Club",
+        "goles_local": 1,
+        "goles_visitante": 3
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_racing_club": 1,
+      "empates": 0,
+      "victorias_independiente_petrolero": 0,
+      "goles_favor_racing_club": 3,
+      "goles_contra_racing_club": 1
+    }
+  },
+  "caracas_fc_vs_botafogo": {
+    "torneo": "Copa Sudamericana 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Caracas FC",
+    "equipo_b": "Botafogo",
+    "partidos": [
+      {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Botafogo",
+        "visitante": "Caracas FC",
+        "goles_local": 1,
+        "goles_visitante": 1
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_caracas_fc": 0,
+      "empates": 1,
+      "victorias_botafogo": 0,
+      "goles_favor_caracas_fc": 1,
+      "goles_contra_caracas_fc": 1
+    }
+  },
+  "river_plate_vs_blooming": {
+    "torneo": "Copa Sudamericana 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "River Plate",
+    "equipo_b": "Blooming",
+    "partidos": [
+      {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Blooming",
+        "visitante": "River Plate",
+        "goles_local": 1,
+        "goles_visitante": 1
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_river_plate": 0,
+      "empates": 1,
+      "victorias_blooming": 0,
+      "goles_favor_river_plate": 1,
+      "goles_contra_river_plate": 1
+    }
+  },
+  "red_bull_bragantino_vs_carabobo": {
+    "torneo": "Copa Sudamericana 2026",
+    "fase": "Fase de Grupos",
+    "equipo_a": "Red Bull Bragantino",
+    "equipo_b": "Carabobo",
+    "partidos": [
+      {
+        "fecha": "2026-04-10",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Carabobo",
+        "visitante": "Red Bull Bragantino",
+        "goles_local": 1,
+        "goles_visitante": 0
+      }
+    ],
+    "resumen": {
+      "partidos": 1,
+      "victorias_red_bull_bragantino": 0,
+      "empates": 0,
+      "victorias_carabobo": 1,
+      "goles_favor_red_bull_bragantino": 0,
+      "goles_contra_red_bull_bragantino": 1
+    }
+  }
+}
