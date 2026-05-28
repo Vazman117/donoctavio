@@ -928,9 +928,9 @@ if __name__ == "__main__":
 
     # ── Cargar datos ─────────────────────────────────────────────────────────
     # grupos.json es la única fuente — no se necesita equipos.json por separado
-    grupos_lib = cargar_grupos("conmebol.sudamericana")
-    db_lib     = cargar_equipos_desde_grupos("conmebol.sudamericana")
-    h2h_lib    = cargar_h2h("SUDAMERICANA")      # h2h.json del torneo
+    grupos_lib = cargar_grupos("conmebol.libertadores")
+    db_lib     = cargar_equipos_desde_grupos("conmebol.libertadores")
+    h2h_lib    = cargar_h2h("LIBERTADORES")      # h2h.json del torneo
 
     # ── Casos a proyectar ─────────────────────────────────────────────────────
     # Formato: local, visitante, torneo_slug, jornada, partido_paralelo, salida
@@ -945,79 +945,41 @@ if __name__ == "__main__":
         # ── Grupo E — Jornada 6 ──────────────────────────────────────────────
         {
             "id":              1,
-            "local":           "Atletico-MG",
-            "visitante":       "Academia Puerto Cabello",
-            "torneo_slug":     "conmebol.sudamericana",
+            "local":           "Cerro Porteño",
+            "visitante":       "Sporting Cristal",
+            "torneo_slug":     "conmebol.libertadores",
             "jornada":         5,
-            "partido_paralelo": {"local": "Cienciano del Cusco", "visitante": "Juventud"},
+            "partido_paralelo": {"local": "Palmeiras", "visitante": "Atlético Junior"},
             "salida":          "partidos_grupos_libertadores.json",
         },
         {
             "id":              2,
-            "local":           "Cienciano del Cusco",
-            "visitante":       "Juventud",
-            "torneo_slug":     "conmebol.sudamericana",
+            "local":           "Palmeiras",
+            "visitante":       "Atlético Junior",
+            "torneo_slug":     "conmebol.libertadores",
             "jornada":         5,
-            "partido_paralelo": {"local": "Atletico-MG", "visitante": "Academia Puerto Cabello"},
+            "partido_paralelo": {"local": "Cerro Porteño", "visitante": "Sporting Cristal"},
             "salida":          "partidos_grupos_libertadores.json",
         },
-        # ── Grupo A — Jornada 6 ──────────────────────────────────────────────
-        {
+                {
             "id":              3,
-            "local":           "Club Olimpia",
-            "visitante":       "Audax Italiano",
-            "torneo_slug":     "conmebol.sudamericana",
+            "local":           "Boca Juniors",
+            "visitante":       "Universidad Católica",
+            "torneo_slug":     "conmebol.libertadores",
             "jornada":         5,
-            "partido_paralelo": {"local": "Vasco Da Gama", "visitante": "Barracas Central"},
+            "partido_paralelo": {"local": "Cruzeiro", "visitante": "Barcelona SC"},
             "salida":          "partidos_grupos_libertadores.json",
         },
         {
             "id":              4,
-            "local":           "Vasco Da Gama",
-            "visitante":       "Barracas Central",
-            "torneo_slug":     "conmebol.sudamericana",
+            "local":           "Cruzeiro",
+            "visitante":       "Barcelona SC",
+            "torneo_slug":     "conmebol.libertadores",
             "jornada":         5,
-            "partido_paralelo": {"local": "Club Olimpia", "visitante": "Audax Italiano"},
+            "partido_paralelo": {"local": "Boca Juniors", "visitante": "Universidad Católica"},
             "salida":          "partidos_grupos_libertadores.json",
         },
-        # ── Grupo G — Jornada 6 ──────────────────────────────────────────────
-        {
-            "id":              5,
-            "local":           "Racing Club",
-            "visitante":       "Independiente Petrolero",
-            "torneo_slug":     "conmebol.sudamericana",
-            "jornada":         5,
-            "partido_paralelo": {"local": "Caracas FC", "visitante": "Botafogo"},
-            "salida":          "partidos_grupos_libertadores.json",
-        },
-        {
-            "id":              6,
-            "local":           "Caracas FC",
-            "visitante":       "Botafogo",
-            "torneo_slug":     "conmebol.sudamericana",
-            "jornada":         5,
-            "partido_paralelo": {"local": "Racing Club", "visitante": "Independiente Petrolero"},
-            "salida":          "partidos_grupos_libertadores.json",
-        },
-        {
-            "id":              7,
-            "local":           "River Plate",
-            "visitante":       "Blooming",
-            "torneo_slug":     "conmebol.sudamericana",
-            "jornada":         5,
-            "partido_paralelo": {"local": "Red Bull Bragantino", "visitante": "Carabobo"},
-            "salida":          "partidos_grupos_libertadores.json",
-        },
-        {
-            "id":              8,
-            "local":           "Red Bull Bragantino",
-            "visitante":       "Carabobo",
-            "torneo_slug":     "conmebol.sudamericana",
-            "jornada":         5,
-            "partido_paralelo": {"local": "River Plate", "visitante": "Blooming"},
-            "salida":          "partidos_grupos_libertadores.json",
-        },
-    ]
+       ]
 
     # ── Ejecución ─────────────────────────────────────────────────────────────
     print(f"\n🚀 Generando {len(CASOS)} proyecciones de fase de grupos...\n" + "="*60)

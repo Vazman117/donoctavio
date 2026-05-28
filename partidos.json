@@ -1,3 +1,1538 @@
 [
-
+  {
+    "id": 1,
+    "torneo": "CONMEBOL Sudamericana",
+    "torneo_slug": "conmebol.sudamericana",
+    "grupo": "Group A",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Tigre",
+    "visitante": "Alianza Atlético",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/7767.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/5267.png",
+    "prob_local": 0.5326736389228708,
+    "prob_empate": 0.14846942105427868,
+    "prob_visitante": 0.31885694002285053,
+    "fuerza_local": 0.2415493548387097,
+    "fuerza_visitante": 0.4437590322580645,
+    "diferencia": 0.2022096774193548,
+    "confianza": "favorable",
+    "prediccion": "Tigre",
+    "lambda_local": 2.4108503204987155,
+    "lambda_visitante": 1.7366796380115204,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "alta",
+    "urgencia_visitante": "nula_eliminado",
+    "h2h_grupo": {
+      "score_local": 0.5,
+      "ventaja_goles": 0,
+      "partido": {
+        "fecha": "2026-04-08",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Alianza Atlético",
+        "visitante": "Tigre",
+        "goles_local": 1,
+        "goles_visitante": 1
+      },
+      "descripcion": "Se enfrentaron el 2026-04-08: Alianza Atlético 1-1 Tigre. Empate."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Macará",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/18439.png",
+        "puntos": 9,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 3,
+        "perdidos": 0,
+        "goles_favor": 6,
+        "goles_contra": 3,
+        "diferencia": 3,
+        "zona": "clasificacion",
+        "estado": "en_zona",
+        "urgencia": "media",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "América de Cali",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/8109.png",
+        "puntos": 8,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 2,
+        "perdidos": 1,
+        "goles_favor": 6,
+        "goles_contra": 5,
+        "diferencia": 1,
+        "zona": "repechaje",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 2,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 3,
+        "equipo": "Tigre",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/7767.png",
+        "puntos": 6,
+        "partidos": 5,
+        "ganados": 1,
+        "empatados": 3,
+        "perdidos": 1,
+        "goles_favor": 6,
+        "goles_contra": 5,
+        "diferencia": 1,
+        "zona": "eliminacion",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 4,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 4,
+        "equipo": "Alianza Atlético",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/5267.png",
+        "puntos": 2,
+        "partidos": 5,
+        "ganados": 0,
+        "empatados": 2,
+        "perdidos": 3,
+        "goles_favor": 2,
+        "goles_contra": 7,
+        "diferencia": -5,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      }
+    ],
+    "partido_paralelo": {
+      "local": "América de Cali",
+      "visitante": "Macará"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Tigre",
+          "posicion": 3,
+          "puntos": 6,
+          "estado": "fuera_zona",
+          "urgencia": "alta",
+          "pts_necesita": 4,
+          "depende_paralelo": true
+        },
+        "visitante": {
+          "nombre": "Alianza Atlético",
+          "posicion": 4,
+          "puntos": 2,
+          "estado": "eliminado",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "partido_paralelo": {
+          "local": "América de Cali",
+          "visitante": "Macará"
+        },
+        "interpretacion": "Tigre necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 4 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Alianza Atlético. Su clasificación también depende del resultado del partido paralelo. Alianza Atlético está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto. Simultáneamente se juega América de Cali vs Macará, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "bajo",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Tigre",
+          "h2h_score": 0.5
+        },
+        "visitante": {
+          "nombre": "Alianza Atlético",
+          "h2h_score": 0.5
+        },
+        "partido": {
+          "fecha": "2026-04-08",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Alianza Atlético",
+          "visitante": "Tigre",
+          "goles_local": 1,
+          "goles_visitante": 1
+        },
+        "ventaja_goles": 0,
+        "interpretacion": "Se enfrentaron el 2026-04-08: Alianza Atlético 1-1 Tigre. Empate."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.39,
+          "ultimos_5": [
+            "D",
+            "D",
+            "W",
+            "L",
+            "D"
+          ],
+          "nombre": "Tigre"
+        },
+        "visitante": {
+          "valor": 0.35,
+          "ultimos_5": [
+            "D",
+            "L",
+            "L",
+            "L",
+            "D"
+          ],
+          "nombre": "Alianza Atlético"
+        },
+        "interpretacion": "Tigre llega con mejor momentum: índice 0.39/1.0 frente a 0.35/1.0 de Alianza Atlético. Últimos 5: 1V/3E/1D vs 0V/2E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "1G/0E/1P",
+          "nombre": "Tigre"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/1E/1P",
+          "nombre": "Alianza Atlético"
+        },
+        "interpretacion": "Alianza Atlético sufre de visita: 0% (0G/1E/1P). Tigre en casa: 50% (1G/0E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Tigre",
+          "goles_favor": 1.2,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Alianza Atlético",
+          "goles_favor": 0.67,
+          "goles_contra": 1.17
+        },
+        "interpretacion": "Tigre más ofensivo: 1.20 vs 0.67 goles/partido. Defensa: 1.00 vs 1.17."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Tigre",
+          "urgencia": "alta",
+          "pts_necesita": 4,
+          "bonus_aplicado": 0.16
+        },
+        "visitante": {
+          "nombre": "Alianza Atlético",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "bonus_aplicado": 0.05
+        },
+        "interpretacion": "Tigre necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 4 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Alianza Atlético. Su clasificación también depende del resultado del partido paralelo. Alianza Atlético está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "torneo": "CONMEBOL Sudamericana",
+    "torneo_slug": "conmebol.sudamericana",
+    "grupo": "Group A",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "América de Cali",
+    "visitante": "Macará",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/8109.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/18439.png",
+    "prob_local": 0.589278672972853,
+    "prob_empate": 0.07823365744058237,
+    "prob_visitante": 0.3324876695865646,
+    "fuerza_local": 0.2534506774193549,
+    "fuerza_visitante": 0.54031,
+    "diferencia": 0.28685932258064506,
+    "confianza": "favorable",
+    "prediccion": "América de Cali",
+    "lambda_local": 5.0,
+    "lambda_visitante": 3.3230524780876807,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "alta",
+    "urgencia_visitante": "media",
+    "h2h_grupo": {
+      "score_local": 0.5,
+      "ventaja_goles": 0,
+      "partido": {
+        "fecha": "2026-04-10",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Macará",
+        "visitante": "América de Cali",
+        "goles_local": 1,
+        "goles_visitante": 1
+      },
+      "descripcion": "Se enfrentaron el 2026-04-10: Macará 1-1 América de Cali. Empate."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Macará",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/18439.png",
+        "puntos": 9,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 3,
+        "perdidos": 0,
+        "goles_favor": 6,
+        "goles_contra": 3,
+        "diferencia": 3,
+        "zona": "clasificacion",
+        "estado": "en_zona",
+        "urgencia": "media",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "América de Cali",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/8109.png",
+        "puntos": 8,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 2,
+        "perdidos": 1,
+        "goles_favor": 6,
+        "goles_contra": 5,
+        "diferencia": 1,
+        "zona": "repechaje",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 2,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 3,
+        "equipo": "Tigre",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/7767.png",
+        "puntos": 6,
+        "partidos": 5,
+        "ganados": 1,
+        "empatados": 3,
+        "perdidos": 1,
+        "goles_favor": 6,
+        "goles_contra": 5,
+        "diferencia": 1,
+        "zona": "eliminacion",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 4,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 4,
+        "equipo": "Alianza Atlético",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/5267.png",
+        "puntos": 2,
+        "partidos": 5,
+        "ganados": 0,
+        "empatados": 2,
+        "perdidos": 3,
+        "goles_favor": 2,
+        "goles_contra": 7,
+        "diferencia": -5,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Tigre",
+      "visitante": "Alianza Atlético"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "América de Cali",
+          "posicion": 2,
+          "puntos": 8,
+          "estado": "fuera_zona",
+          "urgencia": "alta",
+          "pts_necesita": 2,
+          "depende_paralelo": true
+        },
+        "visitante": {
+          "nombre": "Macará",
+          "posicion": 1,
+          "puntos": 9,
+          "estado": "en_zona",
+          "urgencia": "media",
+          "pts_necesita": 1,
+          "depende_paralelo": true
+        },
+        "partido_paralelo": {
+          "local": "Tigre",
+          "visitante": "Alianza Atlético"
+        },
+        "interpretacion": "América de Cali necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 2 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Macará. Su clasificación también depende del resultado del partido paralelo. Macará necesita 1 punto(s) para asegurar su clasificación. Atacará con orden sin sacrificar la estructura defensiva. Su clasificación también depende del resultado del partido paralelo. Simultáneamente se juega Tigre vs Alianza Atlético, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "bajo",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "América de Cali",
+          "h2h_score": 0.5
+        },
+        "visitante": {
+          "nombre": "Macará",
+          "h2h_score": 0.5
+        },
+        "partido": {
+          "fecha": "2026-04-10",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Macará",
+          "visitante": "América de Cali",
+          "goles_local": 1,
+          "goles_visitante": 1
+        },
+        "ventaja_goles": 0,
+        "interpretacion": "Se enfrentaron el 2026-04-10: Macará 1-1 América de Cali. Empate."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.44,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "D"
+          ],
+          "nombre": "América de Cali"
+        },
+        "visitante": {
+          "valor": 0.43,
+          "ultimos_5": [
+            "D",
+            "D",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Macará"
+        },
+        "interpretacion": "América de Cali llega con mejor momentum: índice 0.44/1.0 frente a 0.43/1.0 de Macará. Últimos 5: 2V/2E/1D vs 2V/3E/0D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 66.7,
+          "detalle": "2G/1E/0P",
+          "nombre": "América de Cali"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 100.0,
+          "detalle": "3G/0E/0P",
+          "nombre": "Macará"
+        },
+        "interpretacion": "América de Cali domina en casa: 67% (2G/1E/0P). Macará: 100% de visita (3G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "América de Cali",
+          "goles_favor": 1.33,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Macará",
+          "goles_favor": 1.17,
+          "goles_contra": 0.5
+        },
+        "interpretacion": "Producción similar: América de Cali 1.33 — Macará 1.17 goles/partido. Defensa: 1.00 vs 0.50."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "América de Cali",
+          "urgencia": "alta",
+          "pts_necesita": 2,
+          "bonus_aplicado": 0.16
+        },
+        "visitante": {
+          "nombre": "Macará",
+          "urgencia": "media",
+          "pts_necesita": 1,
+          "bonus_aplicado": 0.08
+        },
+        "interpretacion": "América de Cali necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 2 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Macará. Su clasificación también depende del resultado del partido paralelo. Macará necesita 1 punto(s) para asegurar su clasificación. Atacará con orden sin sacrificar la estructura defensiva. Su clasificación también depende del resultado del partido paralelo."
+      }
+    ]
+  },
+    {
+    "id": 1,
+    "torneo": "CONMEBOL Libertadores",
+    "torneo_slug": "conmebol.libertadores",
+    "grupo": "Group F",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Cerro Porteño",
+    "visitante": "Sporting Cristal",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2671.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2673.png",
+    "prob_local": 0.09955546781049338,
+    "prob_empate": 0.08243309961849263,
+    "prob_visitante": 0.8180114325710139,
+    "fuerza_local": 0.30485,
+    "fuerza_visitante": 0.45637935483870967,
+    "diferencia": 0.15152935483870966,
+    "confianza": "favorable",
+    "prediccion": "Sporting Cristal",
+    "lambda_local": 2.2336125478723403,
+    "lambda_visitante": 5.0,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "nula_clasificado",
+    "urgencia_visitante": "alta",
+    "h2h_grupo": {
+      "score_local": 0.28,
+      "ventaja_goles": -1,
+      "partido": {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Sporting Cristal",
+        "visitante": "Cerro Porteño",
+        "goles_local": 1,
+        "goles_visitante": 0
+      },
+      "descripcion": "Se enfrentaron el 2026-04-09: Sporting Cristal 1-0 Cerro Porteño. Sporting Cristal ganó ese partido."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Cerro Porteño",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2671.png",
+        "puntos": 10,
+        "partidos": 5,
+        "ganados": 3,
+        "empatados": 1,
+        "perdidos": 1,
+        "goles_favor": 4,
+        "goles_contra": 2,
+        "diferencia": 2,
+        "zona": "clasificacion",
+        "estado": "clasificado",
+        "urgencia": "nula_clasificado",
+        "pts_necesita": 0,
+        "clasificado_mat": true,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "Palmeiras",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2029.png",
+        "puntos": 8,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 2,
+        "perdidos": 1,
+        "goles_favor": 6,
+        "goles_contra": 4,
+        "diferencia": 2,
+        "zona": "clasificacion",
+        "estado": "en_zona",
+        "urgencia": "media",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 3,
+        "equipo": "Sporting Cristal",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2673.png",
+        "puntos": 6,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 3,
+        "goles_favor": 6,
+        "goles_contra": 7,
+        "diferencia": -1,
+        "zona": "repechaje",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 3,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 4,
+        "equipo": "Atlético Junior",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/4815.png",
+        "puntos": 4,
+        "partidos": 5,
+        "ganados": 1,
+        "empatados": 1,
+        "perdidos": 3,
+        "goles_favor": 4,
+        "goles_contra": 7,
+        "diferencia": -3,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Palmeiras",
+      "visitante": "Atlético Junior"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Cerro Porteño",
+          "posicion": 1,
+          "puntos": 10,
+          "estado": "clasificado",
+          "urgencia": "nula_clasificado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "visitante": {
+          "nombre": "Sporting Cristal",
+          "posicion": 3,
+          "puntos": 6,
+          "estado": "fuera_zona",
+          "urgencia": "alta",
+          "pts_necesita": 3,
+          "depende_paralelo": true
+        },
+        "partido_paralelo": {
+          "local": "Palmeiras",
+          "visitante": "Atlético Junior"
+        },
+        "interpretacion": "Cerro Porteño ya tiene la clasificación matemáticamente asegurada. Puede especular tácticamente y administrar esfuerzos. Sporting Cristal necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 3 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Cerro Porteño. Su clasificación también depende del resultado del partido paralelo. Simultáneamente se juega Palmeiras vs Atlético Junior, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "alto",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Cerro Porteño",
+          "h2h_score": 0.28
+        },
+        "visitante": {
+          "nombre": "Sporting Cristal",
+          "h2h_score": 0.72
+        },
+        "partido": {
+          "fecha": "2026-04-09",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Sporting Cristal",
+          "visitante": "Cerro Porteño",
+          "goles_local": 1,
+          "goles_visitante": 0
+        },
+        "ventaja_goles": -1,
+        "interpretacion": "Se enfrentaron el 2026-04-09: Sporting Cristal 1-0 Cerro Porteño. Sporting Cristal ganó ese partido. Además, Sporting Cristal lleva ventaja de 1 gol(es) en el marcador acumulado, lo que podría ser decisivo en caso de empate en puntos."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.74,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Cerro Porteño"
+        },
+        "visitante": {
+          "valor": 0.36,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Sporting Cristal"
+        },
+        "interpretacion": "Cerro Porteño llega con mejor momentum: índice 0.74/1.0 frente a 0.36/1.0 de Sporting Cristal. Últimos 5: 3V/1E/1D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "1G/1E/0P",
+          "nombre": "Cerro Porteño"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 25.0,
+          "detalle": "1G/1E/2P",
+          "nombre": "Sporting Cristal"
+        },
+        "interpretacion": "Sporting Cristal sufre de visita: 25% (1G/1E/2P). Cerro Porteño en casa: 50% (1G/1E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Cerro Porteño",
+          "goles_favor": 0.8,
+          "goles_contra": 0.4
+        },
+        "visitante": {
+          "nombre": "Sporting Cristal",
+          "goles_favor": 1.11,
+          "goles_contra": 1.22
+        },
+        "interpretacion": "Producción similar: Cerro Porteño 0.80 — Sporting Cristal 1.11 goles/partido. Defensa: 0.40 vs 1.22."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Cerro Porteño",
+          "urgencia": "nula_clasificado",
+          "pts_necesita": 0,
+          "bonus_aplicado": -0.05
+        },
+        "visitante": {
+          "nombre": "Sporting Cristal",
+          "urgencia": "alta",
+          "pts_necesita": 3,
+          "bonus_aplicado": 0.16
+        },
+        "interpretacion": "Sporting Cristal necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 3 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Cerro Porteño. Su clasificación también depende del resultado del partido paralelo. Cerro Porteño ya tiene la clasificación matemáticamente asegurada. Puede especular tácticamente y administrar esfuerzos."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "torneo": "CONMEBOL Libertadores",
+    "torneo_slug": "conmebol.libertadores",
+    "grupo": "Group F",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Palmeiras",
+    "visitante": "Atlético Junior",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2029.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/4815.png",
+    "prob_local": 0.39591911594971424,
+    "prob_empate": 0.14287803252669765,
+    "prob_visitante": 0.46120285152358814,
+    "fuerza_local": 0.2570696774193548,
+    "fuerza_visitante": 0.46686903225806453,
+    "diferencia": 0.2097993548387097,
+    "confianza": "ajustado",
+    "prediccion": "Atlético Junior",
+    "lambda_local": 2.3344728812785704,
+    "lambda_visitante": 2.3664095874999997,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "media",
+    "urgencia_visitante": "nula_eliminado",
+    "h2h_grupo": {
+      "score_local": 0.5,
+      "ventaja_goles": 0,
+      "partido": {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Atlético Junior",
+        "visitante": "Palmeiras",
+        "goles_local": 1,
+        "goles_visitante": 1
+      },
+      "descripcion": "Se enfrentaron el 2026-04-09: Atlético Junior 1-1 Palmeiras. Empate."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Cerro Porteño",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2671.png",
+        "puntos": 10,
+        "partidos": 5,
+        "ganados": 3,
+        "empatados": 1,
+        "perdidos": 1,
+        "goles_favor": 4,
+        "goles_contra": 2,
+        "diferencia": 2,
+        "zona": "clasificacion",
+        "estado": "clasificado",
+        "urgencia": "nula_clasificado",
+        "pts_necesita": 0,
+        "clasificado_mat": true,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "Palmeiras",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2029.png",
+        "puntos": 8,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 2,
+        "perdidos": 1,
+        "goles_favor": 6,
+        "goles_contra": 4,
+        "diferencia": 2,
+        "zona": "clasificacion",
+        "estado": "en_zona",
+        "urgencia": "media",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 3,
+        "equipo": "Sporting Cristal",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2673.png",
+        "puntos": 6,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 3,
+        "goles_favor": 6,
+        "goles_contra": 7,
+        "diferencia": -1,
+        "zona": "repechaje",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 3,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 4,
+        "equipo": "Atlético Junior",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/4815.png",
+        "puntos": 4,
+        "partidos": 5,
+        "ganados": 1,
+        "empatados": 1,
+        "perdidos": 3,
+        "goles_favor": 4,
+        "goles_contra": 7,
+        "diferencia": -3,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Cerro Porteño",
+      "visitante": "Sporting Cristal"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Palmeiras",
+          "posicion": 2,
+          "puntos": 8,
+          "estado": "en_zona",
+          "urgencia": "media",
+          "pts_necesita": 1,
+          "depende_paralelo": true
+        },
+        "visitante": {
+          "nombre": "Atlético Junior",
+          "posicion": 4,
+          "puntos": 4,
+          "estado": "eliminado",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "partido_paralelo": {
+          "local": "Cerro Porteño",
+          "visitante": "Sporting Cristal"
+        },
+        "interpretacion": "Palmeiras necesita 1 punto(s) para asegurar su clasificación. Atacará con orden sin sacrificar la estructura defensiva. Su clasificación también depende del resultado del partido paralelo. Atlético Junior está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto. Simultáneamente se juega Cerro Porteño vs Sporting Cristal, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "bajo",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Palmeiras",
+          "h2h_score": 0.5
+        },
+        "visitante": {
+          "nombre": "Atlético Junior",
+          "h2h_score": 0.5
+        },
+        "partido": {
+          "fecha": "2026-04-09",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Atlético Junior",
+          "visitante": "Palmeiras",
+          "goles_local": 1,
+          "goles_visitante": 1
+        },
+        "ventaja_goles": 0,
+        "interpretacion": "Se enfrentaron el 2026-04-09: Atlético Junior 1-1 Palmeiras. Empate."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.56,
+          "ultimos_5": [
+            "L",
+            "W",
+            "D",
+            "W",
+            "D"
+          ],
+          "nombre": "Palmeiras"
+        },
+        "visitante": {
+          "valor": 0.52,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "D"
+          ],
+          "nombre": "Atlético Junior"
+        },
+        "interpretacion": "Palmeiras llega con mejor momentum: índice 0.56/1.0 frente a 0.52/1.0 de Atlético Junior. Últimos 5: 2V/2E/1D vs 1V/1E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "1G/0E/1P",
+          "nombre": "Palmeiras"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/2P",
+          "nombre": "Atlético Junior"
+        },
+        "interpretacion": "Atlético Junior sufre de visita: 0% (0G/0E/2P). Palmeiras en casa: 50% (1G/0E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Palmeiras",
+          "goles_favor": 1.2,
+          "goles_contra": 0.8
+        },
+        "visitante": {
+          "nombre": "Atlético Junior",
+          "goles_favor": 0.8,
+          "goles_contra": 1.4
+        },
+        "interpretacion": "Producción similar: Palmeiras 1.20 — Atlético Junior 0.80 goles/partido. Defensa: 0.80 vs 1.40."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "medio",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Palmeiras",
+          "urgencia": "media",
+          "pts_necesita": 1,
+          "bonus_aplicado": 0.08
+        },
+        "visitante": {
+          "nombre": "Atlético Junior",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "bonus_aplicado": 0.05
+        },
+        "interpretacion": "Palmeiras necesita 1 punto(s) para asegurar su clasificación. Atacará con orden sin sacrificar la estructura defensiva. Su clasificación también depende del resultado del partido paralelo. Atlético Junior está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "torneo": "CONMEBOL Libertadores",
+    "torneo_slug": "conmebol.libertadores",
+    "grupo": "Group D",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Boca Juniors",
+    "visitante": "Universidad Católica",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/5.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/885.png",
+    "prob_local": 0.41119000763452696,
+    "prob_empate": 0.1269131054066752,
+    "prob_visitante": 0.4618968869587979,
+    "fuerza_local": 0.4935443548387097,
+    "fuerza_visitante": 0.298845,
+    "diferencia": 0.19469935483870965,
+    "confianza": "ajustado",
+    "prediccion": "Universidad Católica",
+    "lambda_local": 3.7370974471874985,
+    "lambda_visitante": 4.743162881887499,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "alta",
+    "urgencia_visitante": "media",
+    "h2h_grupo": {
+      "score_local": 0.72,
+      "ventaja_goles": 1,
+      "partido": {
+        "fecha": "2026-04-08",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Universidad Católica",
+        "visitante": "Boca Juniors",
+        "goles_local": 1,
+        "goles_visitante": 2
+      },
+      "descripcion": "Se enfrentaron el 2026-04-08: Universidad Católica 1-2 Boca Juniors. Boca Juniors ganó ese partido."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Universidad Católica",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/885.png",
+        "puntos": 10,
+        "partidos": 5,
+        "ganados": 3,
+        "empatados": 1,
+        "perdidos": 1,
+        "goles_favor": 7,
+        "goles_contra": 4,
+        "diferencia": 3,
+        "zona": "clasificacion",
+        "estado": "en_zona",
+        "urgencia": "media",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "Cruzeiro",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2022.png",
+        "puntos": 8,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 2,
+        "perdidos": 1,
+        "goles_favor": 4,
+        "goles_contra": 3,
+        "diferencia": 1,
+        "zona": "clasificacion",
+        "estado": "en_zona",
+        "urgencia": "media",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 3,
+        "equipo": "Boca Juniors",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/5.png",
+        "puntos": 7,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 2,
+        "goles_favor": 6,
+        "goles_contra": 4,
+        "diferencia": 2,
+        "zona": "repechaje",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 2,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 4,
+        "equipo": "Barcelona SC",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2686.png",
+        "puntos": 3,
+        "partidos": 5,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 4,
+        "goles_favor": 2,
+        "goles_contra": 8,
+        "diferencia": -6,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Cruzeiro",
+      "visitante": "Barcelona SC"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Boca Juniors",
+          "posicion": 3,
+          "puntos": 7,
+          "estado": "fuera_zona",
+          "urgencia": "alta",
+          "pts_necesita": 2,
+          "depende_paralelo": true
+        },
+        "visitante": {
+          "nombre": "Universidad Católica",
+          "posicion": 1,
+          "puntos": 10,
+          "estado": "en_zona",
+          "urgencia": "media",
+          "pts_necesita": 1,
+          "depende_paralelo": true
+        },
+        "partido_paralelo": {
+          "local": "Cruzeiro",
+          "visitante": "Barcelona SC"
+        },
+        "interpretacion": "Boca Juniors necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 2 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Universidad Católica. Su clasificación también depende del resultado del partido paralelo. Universidad Católica necesita 1 punto(s) para asegurar su clasificación. Atacará con orden sin sacrificar la estructura defensiva. Su clasificación también depende del resultado del partido paralelo. Simultáneamente se juega Cruzeiro vs Barcelona SC, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "alto",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Boca Juniors",
+          "h2h_score": 0.72
+        },
+        "visitante": {
+          "nombre": "Universidad Católica",
+          "h2h_score": 0.28
+        },
+        "partido": {
+          "fecha": "2026-04-08",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Universidad Católica",
+          "visitante": "Boca Juniors",
+          "goles_local": 1,
+          "goles_visitante": 2
+        },
+        "ventaja_goles": 1,
+        "interpretacion": "Se enfrentaron el 2026-04-08: Universidad Católica 1-2 Boca Juniors. Boca Juniors ganó ese partido. Además, Boca Juniors lleva ventaja de 1 gol(es) en el marcador acumulado, lo que podría ser decisivo en caso de empate en puntos."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.45,
+          "ultimos_5": [
+            "D",
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Boca Juniors"
+        },
+        "visitante": {
+          "valor": 0.56,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Universidad Católica"
+        },
+        "interpretacion": "Universidad Católica llega con mejor momentum: índice 0.56/1.0 frente a 0.45/1.0 de Boca Juniors. Últimos 5: 3V/1E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "1G/1E/0P",
+          "nombre": "Boca Juniors"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 100.0,
+          "detalle": "2G/0E/0P",
+          "nombre": "Universidad Católica"
+        },
+        "interpretacion": "Equilibrio situacional: Boca Juniors 50% local — Universidad Católica 100% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Boca Juniors",
+          "goles_favor": 1.2,
+          "goles_contra": 0.8
+        },
+        "visitante": {
+          "nombre": "Universidad Católica",
+          "goles_favor": 1.4,
+          "goles_contra": 0.8
+        },
+        "interpretacion": "Producción similar: Boca Juniors 1.20 — Universidad Católica 1.40 goles/partido. Defensa: 0.80 vs 0.80."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Boca Juniors",
+          "urgencia": "alta",
+          "pts_necesita": 2,
+          "bonus_aplicado": 0.16
+        },
+        "visitante": {
+          "nombre": "Universidad Católica",
+          "urgencia": "media",
+          "pts_necesita": 1,
+          "bonus_aplicado": 0.08
+        },
+        "interpretacion": "Boca Juniors necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 2 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Universidad Católica. Su clasificación también depende del resultado del partido paralelo. Universidad Católica necesita 1 punto(s) para asegurar su clasificación. Atacará con orden sin sacrificar la estructura defensiva. Su clasificación también depende del resultado del partido paralelo."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "torneo": "CONMEBOL Libertadores",
+    "torneo_slug": "conmebol.libertadores",
+    "grupo": "Group D",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Cruzeiro",
+    "visitante": "Barcelona SC",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2022.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2686.png",
+    "prob_local": 0.3942975624956955,
+    "prob_empate": 0.08792698166774456,
+    "prob_visitante": 0.5177754558365599,
+    "fuerza_local": 0.5261396774193547,
+    "fuerza_visitante": 0.21342903225806453,
+    "diferencia": 0.3127106451612902,
+    "confianza": "moderado",
+    "prediccion": "Barcelona SC",
+    "lambda_local": 2.324362294509451,
+    "lambda_visitante": 3.4237997243999994,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "media",
+    "urgencia_visitante": "nula_eliminado",
+    "h2h_grupo": {
+      "score_local": 0.72,
+      "ventaja_goles": 1,
+      "partido": {
+        "fecha": "2026-04-08",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Barcelona SC",
+        "visitante": "Cruzeiro",
+        "goles_local": 0,
+        "goles_visitante": 1
+      },
+      "descripcion": "Se enfrentaron el 2026-04-08: Barcelona SC 0-1 Cruzeiro. Cruzeiro ganó ese partido."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Universidad Católica",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/885.png",
+        "puntos": 10,
+        "partidos": 5,
+        "ganados": 3,
+        "empatados": 1,
+        "perdidos": 1,
+        "goles_favor": 7,
+        "goles_contra": 4,
+        "diferencia": 3,
+        "zona": "clasificacion",
+        "estado": "en_zona",
+        "urgencia": "media",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "Cruzeiro",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2022.png",
+        "puntos": 8,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 2,
+        "perdidos": 1,
+        "goles_favor": 4,
+        "goles_contra": 3,
+        "diferencia": 1,
+        "zona": "clasificacion",
+        "estado": "en_zona",
+        "urgencia": "media",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 3,
+        "equipo": "Boca Juniors",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/5.png",
+        "puntos": 7,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 2,
+        "goles_favor": 6,
+        "goles_contra": 4,
+        "diferencia": 2,
+        "zona": "repechaje",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 2,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 4,
+        "equipo": "Barcelona SC",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2686.png",
+        "puntos": 3,
+        "partidos": 5,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 4,
+        "goles_favor": 2,
+        "goles_contra": 8,
+        "diferencia": -6,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Boca Juniors",
+      "visitante": "Universidad Católica"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Cruzeiro",
+          "posicion": 2,
+          "puntos": 8,
+          "estado": "en_zona",
+          "urgencia": "media",
+          "pts_necesita": 1,
+          "depende_paralelo": true
+        },
+        "visitante": {
+          "nombre": "Barcelona SC",
+          "posicion": 4,
+          "puntos": 3,
+          "estado": "eliminado",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "partido_paralelo": {
+          "local": "Boca Juniors",
+          "visitante": "Universidad Católica"
+        },
+        "interpretacion": "Cruzeiro necesita 1 punto(s) para asegurar su clasificación. Atacará con orden sin sacrificar la estructura defensiva. Su clasificación también depende del resultado del partido paralelo. Barcelona SC está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto. Simultáneamente se juega Boca Juniors vs Universidad Católica, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "alto",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Cruzeiro",
+          "h2h_score": 0.72
+        },
+        "visitante": {
+          "nombre": "Barcelona SC",
+          "h2h_score": 0.28
+        },
+        "partido": {
+          "fecha": "2026-04-08",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Barcelona SC",
+          "visitante": "Cruzeiro",
+          "goles_local": 0,
+          "goles_visitante": 1
+        },
+        "ventaja_goles": 1,
+        "interpretacion": "Se enfrentaron el 2026-04-08: Barcelona SC 0-1 Cruzeiro. Cruzeiro ganó ese partido. Además, Cruzeiro lleva ventaja de 1 gol(es) en el marcador acumulado, lo que podría ser decisivo en caso de empate en puntos."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.62,
+          "ultimos_5": [
+            "D",
+            "D",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Cruzeiro"
+        },
+        "visitante": {
+          "valor": 0.41,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Barcelona SC"
+        },
+        "interpretacion": "Cruzeiro llega con mejor momentum: índice 0.62/1.0 frente a 0.41/1.0 de Barcelona SC. Últimos 5: 2V/2E/1D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "1G/0E/1P",
+          "nombre": "Cruzeiro"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 50.0,
+          "detalle": "2G/0E/2P",
+          "nombre": "Barcelona SC"
+        },
+        "interpretacion": "Equilibrio situacional: Cruzeiro 50% local — Barcelona SC 50% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Cruzeiro",
+          "goles_favor": 0.8,
+          "goles_contra": 0.6
+        },
+        "visitante": {
+          "nombre": "Barcelona SC",
+          "goles_favor": 0.56,
+          "goles_contra": 1.11
+        },
+        "interpretacion": "Producción similar: Cruzeiro 0.80 — Barcelona SC 0.56 goles/partido. Defensa: 0.60 vs 1.11."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "medio",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Cruzeiro",
+          "urgencia": "media",
+          "pts_necesita": 1,
+          "bonus_aplicado": 0.08
+        },
+        "visitante": {
+          "nombre": "Barcelona SC",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "bonus_aplicado": 0.05
+        },
+        "interpretacion": "Cruzeiro necesita 1 punto(s) para asegurar su clasificación. Atacará con orden sin sacrificar la estructura defensiva. Su clasificación también depende del resultado del partido paralelo. Barcelona SC está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto."
+      }
+    ]
+  }
 ]

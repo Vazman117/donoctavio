@@ -29,14 +29,8 @@ SCHEDULE_URL_YEAR = (
 # CONFIGURA AQUÍ LOS CRUCES DE TU JORNADA 6
 # ============================================================
 CRUCES_JORNADA_6 = [
-    ("Academia Puerto Cabello", "Atlético-MG"),
-    ("Cienciano del Cusco", "Juventud"),
-    ("Club Olimpia", "Audax Italiano"),
-    ("Vasco Da Gama", "Barracas Central"),
-    ("Racing Club", "Independiente Petrolero"),
-    ("Caracas FC", "Botafogo"),
-    ("River Plate", "Blooming"),
-    ("Red Bull Bragantino", "Carabobo")
+    ("Tigre", "Alianza Atlético"),
+    ("América de Cali", "Macará")
 ]
 
 # Palabras clave para identificar Fase de Grupos en ESPN
