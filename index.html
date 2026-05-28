@@ -3,77 +3,576 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Don Octavio – Proyecciones estadísticos</title>
+  <title>Don Octavio – Proyecciones estadísticas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilos.css">
-  <link rel="stylesheet" href="home.css">
   <link rel="icon" type="image/png" href="assets/favicon.png">
-</head>
-<body>
+  <style>
 
-<header>
-  <div class="header-right">
-    <img src="assets/logotipo.png" alt="Logo" class="header-logo" />
-  </div>
-  <div class="header-center">
-    <span class="header-label">Proyecciones estadísticos</span>
-  </div>
+    body.home-page {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    /* ── Header ── */
+    .home-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      height: 60px;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .home-header-brand {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+    }
+    .home-header-brand img { height: 32px; width: auto; }
+    .home-header-nav { display: flex; gap: 2rem; }
+    .home-header-nav a {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .home-header-nav a:hover { color: var(--text); }
+
+    /* ── Layout: columna única, dos filas ── */
+    .home-main {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 60px);
+      overflow: hidden;
+    }
+
+    /* ── Fila superior: Don Octavio + bloque torneos ── */
+    .home-top {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--text);
+      padding: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Círculos decorativos de fondo */
+    .home-top::before {
+      content: '';
+      position: absolute;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    /* Don Octavio */
+    .home-oct {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+    .home-oct img {
+      width: clamp(160px, 26vh, 240px);
+      height: clamp(160px, 26vh, 240px);
+      object-fit: contain;
+      filter: drop-shadow(0 12px 28px rgba(0,0,0,0.45));
+      animation: fadeUp 0.55s ease both;
+      /* El tentáculo derecho "abraza" el bloque — lo acercamos */
+      margin-right: -20px;
+    }
+
+    /* Bloque de torneos */
+    .home-bloque {
+      position: relative;
+      z-index: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.1rem;
+      width: clamp(200px, 30vw, 260px);
+      animation: fadeUp 0.55s 0.08s ease both;
+    }
+
+    .home-bloque-label {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .torneo-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0.75rem;
+      border-radius: 7px;
+      margin-bottom: 0.45rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: background var(--transition), transform var(--transition);
+      cursor: pointer;
+    }
+    .torneo-row:last-child { margin-bottom: 0; }
+    .torneo-row.vivo {
+      background: var(--bg);
+      border: 1px solid var(--border);
+    }
+    .torneo-row.activo {
+      background: var(--bg);
+      border: 1px solid var(--border);
+    }
+    .torneo-row:hover {
+      background: #f0efe9;
+      transform: translateX(2px);
+    }
+    .torneo-row-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .torneo-row-left img {
+      width: 30px; height: 30px;
+      object-fit: contain;
+    }
+    .torneo-row-info { display: flex; flex-direction: column; gap: 1px; }
+    .torneo-row-nombre {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .torneo-row-sub {
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+    .t-badge {
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.55rem;
+      border-radius: 99px;
+      flex-shrink: 0;
+    }
+    .t-badge.verde { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+    .t-badge.azul  { background: #dbeafe; color: #1d4ed8; border: 1px solid #bfdbfe; }
+
+    /* Copy a la derecha del bloque (solo si hay espacio) */
+    .home-copy {
+      position: relative;
+      z-index: 2;
+      margin-left: 2rem;
+      animation: fadeUp 0.55s 0.16s ease both;
+    }
+    .home-pretitle {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(247,246,243,0.3);
+      margin-bottom: 0.5rem;
+    }
+    .home-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.3rem, 3vh, 1.7rem);
+      font-weight: 900;
+      color: #f7f6f3;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .home-title em {
+      font-style: italic;
+      color: rgba(247,246,243,0.4);
+    }
+    .home-tagline {
+      font-size: 0.75rem;
+      color: rgba(247,246,243,0.4);
+      line-height: 1.65;
+      max-width: 200px;
+      border-left: 2px solid rgba(247,246,243,0.15);
+      padding-left: 10px;
+      margin-bottom: 1.2rem;
+    }
+    .home-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #f7f6f3;
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      padding: 9px 18px;
+      border-radius: 99px;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+    .home-cta:hover { opacity: 0.85; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Fila inferior: métricas + historial ── */
+    .home-bottom {
+      flex-shrink: 0;
+      background: var(--bg);
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      height: auto;
+    }
+
+    /* Métricas */
+    .home-metricas {
+      padding: 1.1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .home-metricas-label {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .home-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+    .home-stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.6rem 0.5rem;
+      text-align: center;
+    }
+    .home-stat-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .home-stat-num.ok  { color: var(--win); }
+    .home-stat-num.med { color: var(--draw); }
+    .home-stat-num.mal { color: var(--loss); }
+    .home-stat-lbl {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+    .home-stat-sub {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Barra */
+    .home-barra {
+      display: flex;
+      height: 3px;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .home-barra span { height: 100%; transition: width 1s cubic-bezier(.4,0,.2,1); }
+    .home-barra .s-ok  { background: var(--win); }
+    .home-barra .s-med { background: var(--draw); }
+    .home-barra .s-mal { background: var(--loss); }
+
+    .home-leyenda {
+      display: flex;
+      gap: 0.9rem;
+    }
+    .home-leyenda-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+    .home-leyenda-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Separador vertical */
+    .home-sep { background: var(--border); }
+
+    /* Historial */
+    .home-historial {
+      padding: 1.1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+    .home-historial-nota {
+      font-size: 0.68rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .home-btn-historial {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.6rem 1rem;
+      text-decoration: none;
+      transition: background var(--transition), border-color var(--transition), color var(--transition);
+      cursor: pointer;
+    }
+    .home-btn-historial:hover {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      body.home-page { overflow: auto; height: auto; }
+      .home-main { height: auto; }
+      .home-top { flex-wrap: wrap; gap: 1.5rem; padding: 1.75rem 1.25rem; }
+      .home-oct img { margin-right: 0; width: 130px; height: 130px; }
+      .home-copy { margin-left: 0; }
+      .home-bottom { grid-template-columns: 1fr; }
+      .home-sep { display: none; }
+      .home-metricas, .home-historial { padding: 1rem 1.25rem; }
+    }
+  </style>
+</head>
+<body class="home-page">
+
+<!-- ── Header ── -->
+<header class="home-header">
+  <a href="index.html" class="home-header-brand">
+    <img src="assets/logotipo.png" alt="Don Octavio" />
+  </a>
+  <nav class="home-header-nav">
+    <a href="mundial.html">Mundial</a>
+    <a href="partidos.html">Temporada</a>
+    <a href="historial.html">Historial</a>
+  </nav>
 </header>
 
 <main class="home-main">
 
-  <!-- ── Mitad izquierda: imagen Don Octavio ── -->
-  <section class="home-hero">
-    <img src="assets/donoctavio.png" alt="Don Octavio" class="hero-img" />
-    <p class="hero-tagline">El modelo detrás del partido</p>
-  </section>
+  <!-- ── Fila superior ── -->
+  <div class="home-top">
 
-  <!-- ── Mitad derecha ── -->
-  <section class="home-right">
-
-    <!-- Fila superior: torneos -->
-    <div class="torneos-grid">
-
-      <a href="partidos.html" class="torneo-card">
-        <img src="assets/2026.png" alt="Temporada 2026" class="torneo-img" />
-        <span class="badge">Activo</span>
-      </a>
-
-      <a href="mundial.html" class="torneo-card">
-        <img src="assets/mundial-2026.png" 
-            alt="Copa del Mundo 2026" 
-            class="torneo-img" />
-
-        <span class="badge badge--pronto">Activo</span>
-      </a>
-
+    <!-- Don Octavio -->
+    <div class="home-oct">
+      <img src="assets/donoctavio.png" alt="Don Octavio" />
     </div>
 
-    <!-- Divisor -->
-    <div class="home-divider"></div>
+    <!-- Bloque torneos -->
+    <div class="home-bloque">
+      <p class="home-bloque-label">Activo ahora</p>
 
-    <!-- Fila inferior: resumen de aciertos -->
-    <div class="resumen-wrap">
-      <p class="resumen-titulo">Últimas proyecciones</p>
+      <a href="mundial.html" class="torneo-row vivo">
+        <div class="torneo-row-left">
+          <img src="assets/mundial-2026.png" alt="Copa del Mundo 2026" />
+          <div class="torneo-row-info">
+            <span class="torneo-row-nombre">Copa del Mundo 2026</span>
+            <span class="torneo-row-sub">11 de Junio</span>
+          </div>
+        </div>
+        <span class="t-badge verde">En vivo</span>
+      </a>
 
-      <!-- Métricas rápidas -->
-      <div class="metricas-grid" id="metricas">
-        <!-- llenado por historial.js -->
-      </div>
-
-      <!-- Mini tabla de últimos partidos -->
-      <div class="mini-tabla" id="miniTabla">
-        <!-- llenado por historial.js -->
-      </div>
-
-      <a href="historial.html" class="ver-todos-btn">Ver todas las proyecciones →</a>
+      <a href="partidos.html" class="torneo-row activo">
+        <div class="torneo-row-left">
+          <img src="assets/2026.png" alt="Temporada 2026" />
+          <div class="torneo-row-info">
+            <span class="torneo-row-nombre">Temporada 2026</span>
+            <span class="torneo-row-sub">Champions · Libertadores</span>
+          </div>
+        </div>
+        <span class="t-badge azul">Activo</span>
+      </a>
     </div>
 
-  </section>
+    <!-- Copy / headline -->
+    <div class="home-copy">
+      <p class="home-pretitle">Proyecciones estadísticas</p>
+      <h1 class="home-title">Don Octavio<br>no adivina.<br><em>Calcula.</em></h1>
+      <p class="home-tagline">Sin corazonadas. Solo datos reales y resultados verificables.</p>
+      <a href="mundial.html" class="home-cta">
+        Ver proyecciones del Mundial →
+      </a>
+    </div>
+
+  </div>
+
+  <!-- ── Fila inferior ── -->
+  <div class="home-bottom">
+
+    <div class="home-metricas">
+      <span class="home-metricas-label">Rendimiento del modelo</span>
+
+      <div class="home-stats-row">
+        <div class="home-stat">
+          <div class="home-stat-num ok"  id="m-aciertos">—</div>
+          <div class="home-stat-lbl">Aciertos</div>
+          <div class="home-stat-sub"     id="m-aciertos-n"></div>
+        </div>
+        <div class="home-stat">
+          <div class="home-stat-num med" id="m-ajustados">—</div>
+          <div class="home-stat-lbl">Ajustados</div>
+          <div class="home-stat-sub"     id="m-ajustados-n"></div>
+        </div>
+        <div class="home-stat">
+          <div class="home-stat-num mal" id="m-fallos">—</div>
+          <div class="home-stat-lbl">Fallos</div>
+          <div class="home-stat-sub"     id="m-fallos-n"></div>
+        </div>
+      </div>
+
+      <div class="home-barra">
+        <span class="s-ok"  id="s-ok"  style="width:0%"></span>
+        <span class="s-med" id="s-med" style="width:0%"></span>
+        <span class="s-mal" id="s-mal" style="width:0%"></span>
+      </div>
+
+      <div class="home-leyenda">
+        <span class="home-leyenda-item">
+          <span class="home-leyenda-dot" style="background:var(--win)"></span>Aciertos
+        </span>
+        <span class="home-leyenda-item">
+          <span class="home-leyenda-dot" style="background:var(--draw)"></span>Ajustados
+        </span>
+        <span class="home-leyenda-item">
+          <span class="home-leyenda-dot" style="background:var(--loss)"></span>Fallos
+        </span>
+      </div>
+    </div>
+
+    <div class="home-sep"></div>
+
+    <div class="home-historial">
+      <p class="home-historial-nota" id="nota-total">Cargando proyecciones…</p>
+      <a href="historial.html" class="home-btn-historial">
+        Ver historial completo de proyecciones →
+      </a>
+    </div>
+
+  </div>
+
 </main>
 
-<script src="historial.js"></script>
+<script>
+  const CARPETA = 'partidos/';
+
+  function obtenerFavorito(p) {
+    if (p.prediccion) return p.prediccion;
+    const max = Math.max(p.prob_local, p.prob_empate, p.prob_visitante);
+    if (max === p.prob_local)     return p.local;
+    if (max === p.prob_visitante) return p.visitante;
+    return 'Empate';
+  }
+
+  function esParidad(p) {
+    const probs = [p.prob_local, p.prob_empate, p.prob_visitante];
+    probs.sort((a, b) => b - a);
+    return (probs[0] - probs[1]) < 0.15;
+  }
+
+  async function cargarJSON(ruta) {
+    const r = await fetch(ruta);
+    if (!r.ok) throw new Error(`No se pudo cargar ${ruta}`);
+    return r.json();
+  }
+
+  async function cargarTodosLosPartidos() {
+    let archivos = [];
+    try { archivos = await cargarJSON(CARPETA + 'index.json'); }
+    catch (e) { return []; }
+    const resultados = await Promise.allSettled(
+      archivos.map(n => cargarJSON(CARPETA + n))
+    );
+    const partidos = [];
+    for (const res of resultados) {
+      if (res.status === 'fulfilled') {
+        const d = res.value;
+        if (Array.isArray(d))              partidos.push(...d);
+        else if (Array.isArray(d.partidos)) partidos.push(...d.partidos);
+      }
+    }
+    return partidos;
+  }
+
+  async function init() {
+    const partidos = await cargarTodosLosPartidos();
+    const conRes   = partidos.filter(p => p.resultado);
+    const total    = conRes.length;
+
+    let aciertos = 0, ajustados = 0;
+    for (const p of conRes) {
+      if (obtenerFavorito(p) === p.resultado) aciertos++;
+      else if (esParidad(p)) ajustados++;
+    }
+    const fallos = total - aciertos - ajustados;
+
+    const pA = total ? (aciertos  / total * 100) : 0;
+    const pJ = total ? (ajustados / total * 100) : 0;
+    const pF = total ? (fallos    / total * 100) : 0;
+
+    document.getElementById('m-aciertos').textContent   = total ? pA.toFixed(1)+'%' : '—';
+    document.getElementById('m-ajustados').textContent  = total ? pJ.toFixed(1)+'%' : '—';
+    document.getElementById('m-fallos').textContent     = total ? pF.toFixed(1)+'%' : '—';
+    document.getElementById('m-aciertos-n').textContent  = total ? aciertos+' partidos'  : '';
+    document.getElementById('m-ajustados-n').textContent = total ? ajustados+' partidos' : '';
+    document.getElementById('m-fallos-n').textContent    = total ? fallos+' partidos'    : '';
+
+    setTimeout(() => {
+      document.getElementById('s-ok').style.width  = pA.toFixed(1)+'%';
+      document.getElementById('s-med').style.width = pJ.toFixed(1)+'%';
+      document.getElementById('s-mal').style.width = pF.toFixed(1)+'%';
+    }, 200);
+
+    const efC = total ? ((aciertos+ajustados)/total*100).toFixed(1) : '—';
+    document.getElementById('nota-total').textContent = total
+      ? `${partidos.length} proyecciones totales · ${efC}% efectividad combinada`
+      : 'Sin proyecciones registradas aún.';
+  }
+
+  init();
+</script>
 
 </body>
 </html>
