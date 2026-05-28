@@ -1,5 +1,2061 @@
 [
   {
+    "id": 6,
+    "torneo": "CONMEBOL Sudamericana",
+    "torneo_slug": "conmebol.sudamericana",
+    "grupo": "Group E",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Caracas FC",
+    "visitante": "Botafogo",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/4811.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/6086.png",
+    "prob_local": 0.3527652583907501,
+    "prob_empate": 0.18719308563784862,
+    "prob_visitante": 0.4600416559714012,
+    "fuerza_local": 0.2944506774193548,
+    "fuerza_visitante": 0.59267,
+    "diferencia": 0.2982193225806452,
+    "confianza": "moderado",
+    "prediccion": "Botafogo",
+    "resultado": "Botafogo",
+    "lambda_local": 4.206691111011545,
+    "lambda_visitante": 5.0,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "nula_eliminado",
+    "urgencia_visitante": "nula_clasificado",
+    "h2h_grupo": {
+      "score_local": 0.5,
+      "ventaja_goles": 0,
+      "partido": {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Botafogo",
+        "visitante": "Caracas FC",
+        "goles_local": 1,
+        "goles_visitante": 1
+      },
+      "descripcion": "Se enfrentaron el 2026-04-09: Botafogo 1-1 Caracas FC. Empate."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Botafogo",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/6086.png",
+        "puntos": 13,
+        "partidos": 5,
+        "ganados": 4,
+        "empatados": 1,
+        "perdidos": 0,
+        "goles_favor": 12,
+        "goles_contra": 4,
+        "diferencia": 8,
+        "zona": "clasificacion",
+        "estado": "clasificado",
+        "urgencia": "nula_clasificado",
+        "pts_necesita": 0,
+        "clasificado_mat": true,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "Caracas FC",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/4811.png",
+        "puntos": 9,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 3,
+        "perdidos": 0,
+        "goles_favor": 8,
+        "goles_contra": 6,
+        "diferencia": 2,
+        "zona": "repechaje",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      },
+      {
+        "posicion": 3,
+        "equipo": "Racing Club",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/15.png",
+        "puntos": 5,
+        "partidos": 5,
+        "ganados": 1,
+        "empatados": 2,
+        "perdidos": 2,
+        "goles_favor": 9,
+        "goles_contra": 9,
+        "diferencia": 0,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      },
+      {
+        "posicion": 4,
+        "equipo": "Independiente Petrolero",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/20889.png",
+        "puntos": 0,
+        "partidos": 5,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 5,
+        "goles_favor": 3,
+        "goles_contra": 13,
+        "diferencia": -10,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Racing Club",
+      "visitante": "Independiente Petrolero"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Caracas FC",
+          "posicion": 2,
+          "puntos": 9,
+          "estado": "eliminado",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "visitante": {
+          "nombre": "Botafogo",
+          "posicion": 1,
+          "puntos": 13,
+          "estado": "clasificado",
+          "urgencia": "nula_clasificado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "partido_paralelo": {
+          "local": "Racing Club",
+          "visitante": "Independiente Petrolero"
+        },
+        "interpretacion": "Caracas FC está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto. Botafogo ya tiene la clasificación matemáticamente asegurada. Puede especular tácticamente y administrar esfuerzos. Simultáneamente se juega Racing Club vs Independiente Petrolero, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "bajo",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Caracas FC",
+          "h2h_score": 0.5
+        },
+        "visitante": {
+          "nombre": "Botafogo",
+          "h2h_score": 0.5
+        },
+        "partido": {
+          "fecha": "2026-04-09",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Botafogo",
+          "visitante": "Caracas FC",
+          "goles_local": 1,
+          "goles_visitante": 1
+        },
+        "ventaja_goles": 0,
+        "interpretacion": "Se enfrentaron el 2026-04-09: Botafogo 1-1 Caracas FC. Empate."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.58,
+          "ultimos_5": [
+            "D",
+            "W",
+            "D",
+            "W",
+            "D"
+          ],
+          "nombre": "Caracas FC"
+        },
+        "visitante": {
+          "valor": 0.69,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Botafogo"
+        },
+        "interpretacion": "Botafogo llega con mejor momentum: índice 0.69/1.0 frente a 0.58/1.0 de Caracas FC. Últimos 5: 4V/1E/0D vs 2V/3E/0D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 66.7,
+          "detalle": "2G/1E/0P",
+          "nombre": "Caracas FC"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 100.0,
+          "detalle": "2G/0E/0P",
+          "nombre": "Botafogo"
+        },
+        "interpretacion": "Caracas FC domina en casa: 67% (2G/1E/0P). Botafogo: 100% de visita (2G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Caracas FC",
+          "goles_favor": 1.33,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Botafogo",
+          "goles_favor": 2.4,
+          "goles_contra": 0.8
+        },
+        "interpretacion": "Botafogo más ofensivo: 2.40 vs 1.33 goles/partido. Defensa: 1.00 vs 0.80."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "medio",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Caracas FC",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "bonus_aplicado": 0.05
+        },
+        "visitante": {
+          "nombre": "Botafogo",
+          "urgencia": "nula_clasificado",
+          "pts_necesita": 0,
+          "bonus_aplicado": -0.05
+        },
+        "interpretacion": "Caracas FC está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto. Botafogo ya tiene la clasificación matemáticamente asegurada. Puede especular tácticamente y administrar esfuerzos."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "torneo": "CONMEBOL Sudamericana",
+    "torneo_slug": "conmebol.sudamericana",
+    "grupo": "Group E",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Racing Club",
+    "visitante": "Independiente Petrolero",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/15.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/20889.png",
+    "prob_local": 0.47436339950548245,
+    "prob_empate": 0.2643297051609234,
+    "prob_visitante": 0.26130689533359425,
+    "fuerza_local": 0.45462935483870964,
+    "fuerza_visitante": 0.18743903225806452,
+    "diferencia": 0.2671903225806451,
+    "confianza": "favorable",
+    "prediccion": "Racing Club",
+    "resultado": "Racing Club",
+    "lambda_local": 1.497019210395939,
+    "lambda_visitante": 1.0225840000000002,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "nula_eliminado",
+    "urgencia_visitante": "nula_eliminado",
+    "h2h_grupo": {
+      "score_local": 0.72,
+      "ventaja_goles": 2,
+      "partido": {
+        "fecha": "2026-04-07",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Independiente Petrolero",
+        "visitante": "Racing Club",
+        "goles_local": 1,
+        "goles_visitante": 3
+      },
+      "descripcion": "Se enfrentaron el 2026-04-07: Independiente Petrolero 1-3 Racing Club. Racing Club ganó ese partido."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Botafogo",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/6086.png",
+        "puntos": 13,
+        "partidos": 5,
+        "ganados": 4,
+        "empatados": 1,
+        "perdidos": 0,
+        "goles_favor": 12,
+        "goles_contra": 4,
+        "diferencia": 8,
+        "zona": "clasificacion",
+        "estado": "clasificado",
+        "urgencia": "nula_clasificado",
+        "pts_necesita": 0,
+        "clasificado_mat": true,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "Caracas FC",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/4811.png",
+        "puntos": 9,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 3,
+        "perdidos": 0,
+        "goles_favor": 8,
+        "goles_contra": 6,
+        "diferencia": 2,
+        "zona": "repechaje",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      },
+      {
+        "posicion": 3,
+        "equipo": "Racing Club",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/15.png",
+        "puntos": 5,
+        "partidos": 5,
+        "ganados": 1,
+        "empatados": 2,
+        "perdidos": 2,
+        "goles_favor": 9,
+        "goles_contra": 9,
+        "diferencia": 0,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      },
+      {
+        "posicion": 4,
+        "equipo": "Independiente Petrolero",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/20889.png",
+        "puntos": 0,
+        "partidos": 5,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 5,
+        "goles_favor": 3,
+        "goles_contra": 13,
+        "diferencia": -10,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Caracas FC",
+      "visitante": "Botafogo"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Racing Club",
+          "posicion": 3,
+          "puntos": 5,
+          "estado": "eliminado",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "visitante": {
+          "nombre": "Independiente Petrolero",
+          "posicion": 4,
+          "puntos": 0,
+          "estado": "eliminado",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "partido_paralelo": {
+          "local": "Caracas FC",
+          "visitante": "Botafogo"
+        },
+        "interpretacion": "Racing Club está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto. Independiente Petrolero está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto. Simultáneamente se juega Caracas FC vs Botafogo, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "alto",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Racing Club",
+          "h2h_score": 0.72
+        },
+        "visitante": {
+          "nombre": "Independiente Petrolero",
+          "h2h_score": 0.28
+        },
+        "partido": {
+          "fecha": "2026-04-07",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Independiente Petrolero",
+          "visitante": "Racing Club",
+          "goles_local": 1,
+          "goles_visitante": 3
+        },
+        "ventaja_goles": 2,
+        "interpretacion": "Se enfrentaron el 2026-04-07: Independiente Petrolero 1-3 Racing Club. Racing Club ganó ese partido. Además, Racing Club lleva ventaja de 2 gol(es) en el marcador acumulado, lo que podría ser decisivo en caso de empate en puntos."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.35,
+          "ultimos_5": [
+            "D",
+            "L",
+            "D",
+            "L",
+            "W"
+          ],
+          "nombre": "Racing Club"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Independiente Petrolero"
+        },
+        "interpretacion": "Independiente Petrolero llega con mejor momentum: índice 0.50/1.0 frente a 0.35/1.0 de Racing Club. Últimos 5: 0V/0E/5D vs 1V/2E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/1E/1P",
+          "nombre": "Racing Club"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/2P",
+          "nombre": "Independiente Petrolero"
+        },
+        "interpretacion": "Independiente Petrolero sufre de visita: 0% (0G/0E/2P). Racing Club en casa: 0% (0G/1E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Racing Club",
+          "goles_favor": 1.8,
+          "goles_contra": 1.8
+        },
+        "visitante": {
+          "nombre": "Independiente Petrolero",
+          "goles_favor": 0.5,
+          "goles_contra": 2.17
+        },
+        "interpretacion": "Superioridad integral de Racing Club: 1.80 goles/partido (vs 0.50) y solo 1.80 recibidos (vs 2.17)."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "medio",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Racing Club",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "bonus_aplicado": 0.05
+        },
+        "visitante": {
+          "nombre": "Independiente Petrolero",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "bonus_aplicado": 0.05
+        },
+        "interpretacion": "Racing Club está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto. Independiente Petrolero está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "torneo": "CONMEBOL Sudamericana",
+    "torneo_slug": "conmebol.sudamericana",
+    "grupo": "Group G",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Vasco da Gama",
+    "visitante": "Barracas Central",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/3454.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/10060.png",
+    "prob_local": 0.6683298536327449,
+    "prob_empate": 0.11182316114769277,
+    "prob_visitante": 0.2198469852195624,
+    "fuerza_local": 0.21973967741935485,
+    "fuerza_visitante": 0.41887903225806455,
+    "diferencia": 0.1991393548387097,
+    "confianza": "favorable",
+    "prediccion": "Vasco da Gama",
+    "resultado": "Vasco da Gama",
+    "lambda_local": 2.8461431040000003,
+    "lambda_visitante": 1.1689607333333336,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "alta",
+    "urgencia_visitante": "nula_eliminado",
+    "h2h_grupo": {
+      "score_local": 0.5,
+      "ventaja_goles": 0,
+      "partido": {
+        "fecha": "2026-04-07",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Barracas Central",
+        "visitante": "Vasco da Gama",
+        "goles_local": 0,
+        "goles_visitante": 0
+      },
+      "descripcion": "Se enfrentaron el 2026-04-07: Barracas Central 0-0 Vasco da Gama. Empate."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Club Olimpia",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2675.png",
+        "puntos": 10,
+        "partidos": 5,
+        "ganados": 3,
+        "empatados": 1,
+        "perdidos": 1,
+        "goles_favor": 7,
+        "goles_contra": 5,
+        "diferencia": 2,
+        "zona": "clasificacion",
+        "estado": "en_zona",
+        "urgencia": "media",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "Vasco da Gama",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/3454.png",
+        "puntos": 7,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 2,
+        "goles_favor": 7,
+        "goles_contra": 6,
+        "diferencia": 1,
+        "zona": "repechaje",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 4,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 3,
+        "equipo": "Audax Italiano",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/4138.png",
+        "puntos": 7,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 2,
+        "goles_favor": 6,
+        "goles_contra": 6,
+        "diferencia": 0,
+        "zona": "eliminacion",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 4,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 4,
+        "equipo": "Barracas Central",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/10060.png",
+        "puntos": 3,
+        "partidos": 5,
+        "ganados": 0,
+        "empatados": 3,
+        "perdidos": 2,
+        "goles_favor": 2,
+        "goles_contra": 5,
+        "diferencia": -3,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Club Olimpia",
+      "visitante": "Audax Italiano"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Vasco Da Gama",
+          "posicion": 2,
+          "puntos": 7,
+          "estado": "fuera_zona",
+          "urgencia": "alta",
+          "pts_necesita": 4,
+          "depende_paralelo": true
+        },
+        "visitante": {
+          "nombre": "Barracas Central",
+          "posicion": 4,
+          "puntos": 3,
+          "estado": "eliminado",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "partido_paralelo": {
+          "local": "Club Olimpia",
+          "visitante": "Audax Italiano"
+        },
+        "interpretacion": "Vasco da Gama necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 4 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Barracas Central. Su clasificación también depende del resultado del partido paralelo. Barracas Central está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto. Simultáneamente se juega Club Olimpia vs Audax Italiano, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "bajo",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Vasco Da Gama",
+          "h2h_score": 0.5
+        },
+        "visitante": {
+          "nombre": "Barracas Central",
+          "h2h_score": 0.5
+        },
+        "partido": {
+          "fecha": "2026-04-07",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Barracas Central",
+          "visitante": "Vasco da Gama",
+          "goles_local": 0,
+          "goles_visitante": 0
+        },
+        "ventaja_goles": 0,
+        "interpretacion": "Se enfrentaron el 2026-04-07: Barracas Central 0-0 Vasco da Gama. Empate."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.34,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "L",
+            "D"
+          ],
+          "nombre": "Vasco Da Gama"
+        },
+        "visitante": {
+          "valor": 0.23,
+          "ultimos_5": [
+            "L",
+            "L",
+            "D",
+            "D",
+            "D"
+          ],
+          "nombre": "Barracas Central"
+        },
+        "interpretacion": "Vasco Da Gama llega con mejor momentum: índice 0.34/1.0 frente a 0.23/1.0 de Barracas Central. Últimos 5: 2V/1E/2D vs 0V/3E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "1G/0E/1P",
+          "nombre": "Vasco Da Gama"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/1E/1P",
+          "nombre": "Barracas Central"
+        },
+        "interpretacion": "Barracas Central sufre de visita: 0% (0G/1E/1P). Vasco Da Gama en casa: 50% (1G/0E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Vasco Da Gama",
+          "goles_favor": 1.4,
+          "goles_contra": 1.2
+        },
+        "visitante": {
+          "nombre": "Barracas Central",
+          "goles_favor": 0.4,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Vasco Da Gama más ofensivo: 1.40 vs 0.40 goles/partido. Defensa: 1.20 vs 1.00."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Vasco Da Gama",
+          "urgencia": "alta",
+          "pts_necesita": 4,
+          "bonus_aplicado": 0.16
+        },
+        "visitante": {
+          "nombre": "Barracas Central",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "bonus_aplicado": 0.05
+        },
+        "interpretacion": "Vasco da Gama necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 4 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Barracas Central. Su clasificación también depende del resultado del partido paralelo. Barracas Central está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "torneo": "CONMEBOL Sudamericana",
+    "torneo_slug": "conmebol.sudamericana",
+    "grupo": "Group G",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Club Olimpia",
+    "visitante": "Audax Italiano",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2675.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/4138.png",
+    "prob_local": 0.34438316444821,
+    "prob_empate": 0.1318105808821219,
+    "prob_visitante": 0.5238062546696681,
+    "fuerza_local": 0.52495,
+    "fuerza_visitante": 0.2421203548387097,
+    "diferencia": 0.28282964516129033,
+    "confianza": "moderado",
+    "prediccion": "Audax Italiano",
+    "resultado": "Club Olimpia",
+    "lambda_local": 2.7021407981220062,
+    "lambda_visitante": 3.456072030770474,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "media",
+    "urgencia_visitante": "alta",
+    "h2h_grupo": {
+      "score_local": 0.72,
+      "ventaja_goles": 2,
+      "partido": {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Audax Italiano",
+        "visitante": "Club Olimpia",
+        "goles_local": 0,
+        "goles_visitante": 2
+      },
+      "descripcion": "Se enfrentaron el 2026-04-09: Audax Italiano 0-2 Club Olimpia. Club Olimpia ganó ese partido."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Club Olimpia",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2675.png",
+        "puntos": 10,
+        "partidos": 5,
+        "ganados": 3,
+        "empatados": 1,
+        "perdidos": 1,
+        "goles_favor": 7,
+        "goles_contra": 5,
+        "diferencia": 2,
+        "zona": "clasificacion",
+        "estado": "en_zona",
+        "urgencia": "media",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "Vasco da Gama",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/3454.png",
+        "puntos": 7,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 2,
+        "goles_favor": 7,
+        "goles_contra": 6,
+        "diferencia": 1,
+        "zona": "repechaje",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 4,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 3,
+        "equipo": "Audax Italiano",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/4138.png",
+        "puntos": 7,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 2,
+        "goles_favor": 6,
+        "goles_contra": 6,
+        "diferencia": 0,
+        "zona": "eliminacion",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 4,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 4,
+        "equipo": "Barracas Central",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/10060.png",
+        "puntos": 3,
+        "partidos": 5,
+        "ganados": 0,
+        "empatados": 3,
+        "perdidos": 2,
+        "goles_favor": 2,
+        "goles_contra": 5,
+        "diferencia": -3,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Vasco Da Gama",
+      "visitante": "Barracas Central"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Club Olimpia",
+          "posicion": 1,
+          "puntos": 10,
+          "estado": "en_zona",
+          "urgencia": "media",
+          "pts_necesita": 1,
+          "depende_paralelo": true
+        },
+        "visitante": {
+          "nombre": "Audax Italiano",
+          "posicion": 3,
+          "puntos": 7,
+          "estado": "fuera_zona",
+          "urgencia": "alta",
+          "pts_necesita": 4,
+          "depende_paralelo": true
+        },
+        "partido_paralelo": {
+          "local": "Vasco Da Gama",
+          "visitante": "Barracas Central"
+        },
+        "interpretacion": "Club Olimpia necesita 1 punto(s) para asegurar su clasificación. Atacará con orden sin sacrificar la estructura defensiva. Su clasificación también depende del resultado del partido paralelo. Audax Italiano necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 4 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Club Olimpia. Su clasificación también depende del resultado del partido paralelo. Simultáneamente se juega Vasco Da Gama vs Barracas Central, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "alto",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Club Olimpia",
+          "h2h_score": 0.72
+        },
+        "visitante": {
+          "nombre": "Audax Italiano",
+          "h2h_score": 0.28
+        },
+        "partido": {
+          "fecha": "2026-04-09",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Audax Italiano",
+          "visitante": "Club Olimpia",
+          "goles_local": 0,
+          "goles_visitante": 2
+        },
+        "ventaja_goles": 2,
+        "interpretacion": "Se enfrentaron el 2026-04-09: Audax Italiano 0-2 Club Olimpia. Club Olimpia ganó ese partido. Además, Club Olimpia lleva ventaja de 2 gol(es) en el marcador acumulado, lo que podría ser decisivo en caso de empate en puntos."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.59,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "D",
+            "W"
+          ],
+          "nombre": "Club Olimpia"
+        },
+        "visitante": {
+          "valor": 0.45,
+          "ultimos_5": [
+            "W",
+            "L",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Audax Italiano"
+        },
+        "interpretacion": "Club Olimpia llega con mejor momentum: índice 0.59/1.0 frente a 0.45/1.0 de Audax Italiano. Últimos 5: 3V/1E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "1G/1E/0P",
+          "nombre": "Club Olimpia"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 66.7,
+          "detalle": "2G/1E/0P",
+          "nombre": "Audax Italiano"
+        },
+        "interpretacion": "Equilibrio situacional: Club Olimpia 50% local — Audax Italiano 67% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Club Olimpia",
+          "goles_favor": 1.33,
+          "goles_contra": 0.83
+        },
+        "visitante": {
+          "nombre": "Audax Italiano",
+          "goles_favor": 1.17,
+          "goles_contra": 1.17
+        },
+        "interpretacion": "Producción similar: Club Olimpia 1.33 — Audax Italiano 1.17 goles/partido. Defensa: 0.83 vs 1.17."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Club Olimpia",
+          "urgencia": "media",
+          "pts_necesita": 1,
+          "bonus_aplicado": 0.08
+        },
+        "visitante": {
+          "nombre": "Audax Italiano",
+          "urgencia": "alta",
+          "pts_necesita": 4,
+          "bonus_aplicado": 0.16
+        },
+        "interpretacion": "Club Olimpia necesita 1 punto(s) para asegurar su clasificación. Atacará con orden sin sacrificar la estructura defensiva. Su clasificación también depende del resultado del partido paralelo. Audax Italiano necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 4 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Club Olimpia. Su clasificación también depende del resultado del partido paralelo."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "torneo": "CONMEBOL Sudamericana",
+    "torneo_slug": "conmebol.sudamericana",
+    "grupo": "Group B",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Cienciano del Cusco",
+    "visitante": "Juventud",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/3372.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/8416.png",
+    "prob_local": 0.3927942649173418,
+    "prob_empate": 0.15574109261181182,
+    "prob_visitante": 0.45146464247084633,
+    "fuerza_local": 0.23269967741935488,
+    "fuerza_visitante": 0.5156590322580645,
+    "diferencia": 0.28295935483870965,
+    "confianza": "ajustado",
+    "prediccion": "Juventud",
+    "resultado": "Empate",
+    "lambda_local": 2.484416702838001,
+    "lambda_visitante": 2.5323971658474727,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "alta",
+    "urgencia_visitante": "alta",
+    "h2h_grupo": {
+      "score_local": 0.5,
+      "ventaja_goles": 0,
+      "partido": {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Juventud",
+        "visitante": "Cienciano del Cusco",
+        "goles_local": 1,
+        "goles_visitante": 1
+      },
+      "descripcion": "Se enfrentaron el 2026-04-09: Juventud 1-1 Cienciano del Cusco. Empate."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Academia Puerto Cabello",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/18995.png",
+        "puntos": 7,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 2,
+        "goles_favor": 6,
+        "goles_contra": 8,
+        "diferencia": -2,
+        "zona": "clasificacion",
+        "estado": "en_zona",
+        "urgencia": "media",
+        "pts_necesita": 2,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "Cienciano del Cusco",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/3372.png",
+        "puntos": 7,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 2,
+        "goles_favor": 4,
+        "goles_contra": 6,
+        "diferencia": -2,
+        "zona": "repechaje",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 3,
+        "equipo": "Atlético-MG",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/7632.png",
+        "puntos": 7,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 2,
+        "goles_favor": 7,
+        "goles_contra": 6,
+        "diferencia": 1,
+        "zona": "eliminacion",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 4,
+        "equipo": "Juventud",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/8416.png",
+        "puntos": 6,
+        "partidos": 5,
+        "ganados": 1,
+        "empatados": 3,
+        "perdidos": 1,
+        "goles_favor": 9,
+        "goles_contra": 6,
+        "diferencia": 3,
+        "zona": "eliminacion",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 2,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Atletico-MG",
+      "visitante": "Academia Puerto Cabello"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Cienciano del Cusco",
+          "posicion": 2,
+          "puntos": 7,
+          "estado": "fuera_zona",
+          "urgencia": "alta",
+          "pts_necesita": 1,
+          "depende_paralelo": true
+        },
+        "visitante": {
+          "nombre": "Juventud",
+          "posicion": 4,
+          "puntos": 6,
+          "estado": "fuera_zona",
+          "urgencia": "alta",
+          "pts_necesita": 2,
+          "depende_paralelo": true
+        },
+        "partido_paralelo": {
+          "local": "Atletico-MG",
+          "visitante": "Academia Puerto Cabello"
+        },
+        "interpretacion": "Cienciano del Cusco necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 1 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Juventud. Su clasificación también depende del resultado del partido paralelo. Juventud necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 2 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Cienciano del Cusco. Su clasificación también depende del resultado del partido paralelo. Simultáneamente se juega Atletico-MG vs Academia Puerto Cabello, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "bajo",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Cienciano del Cusco",
+          "h2h_score": 0.5
+        },
+        "visitante": {
+          "nombre": "Juventud",
+          "h2h_score": 0.5
+        },
+        "partido": {
+          "fecha": "2026-04-09",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Juventud",
+          "visitante": "Cienciano del Cusco",
+          "goles_local": 1,
+          "goles_visitante": 1
+        },
+        "ventaja_goles": 0,
+        "interpretacion": "Se enfrentaron el 2026-04-09: Juventud 1-1 Cienciano del Cusco. Empate."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.39,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Cienciano del Cusco"
+        },
+        "visitante": {
+          "valor": 0.62,
+          "ultimos_5": [
+            "D",
+            "D",
+            "W",
+            "L",
+            "D"
+          ],
+          "nombre": "Juventud"
+        },
+        "interpretacion": "Juventud llega con mejor momentum: índice 0.62/1.0 frente a 0.39/1.0 de Cienciano del Cusco. Últimos 5: 1V/3E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 100.0,
+          "detalle": "3G/0E/0P",
+          "nombre": "Cienciano del Cusco"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/1E/1P",
+          "nombre": "Juventud"
+        },
+        "interpretacion": "Contraste marcado: Cienciano del Cusco gana el 100% en casa (3G/0E/0P), Juventud solo el 0% de visita (0G/1E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Cienciano del Cusco",
+          "goles_favor": 0.83,
+          "goles_contra": 1.17
+        },
+        "visitante": {
+          "nombre": "Juventud",
+          "goles_favor": 1.8,
+          "goles_contra": 1.2
+        },
+        "interpretacion": "Juventud más ofensivo: 1.80 vs 0.83 goles/partido. Defensa: 1.17 vs 1.20."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Cienciano del Cusco",
+          "urgencia": "alta",
+          "pts_necesita": 1,
+          "bonus_aplicado": 0.16
+        },
+        "visitante": {
+          "nombre": "Juventud",
+          "urgencia": "alta",
+          "pts_necesita": 2,
+          "bonus_aplicado": 0.16
+        },
+        "interpretacion": "Cienciano del Cusco necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 1 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Juventud. Su clasificación también depende del resultado del partido paralelo. Juventud necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 2 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Cienciano del Cusco. Su clasificación también depende del resultado del partido paralelo."
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "torneo": "CONMEBOL Sudamericana",
+    "torneo_slug": "conmebol.sudamericana",
+    "grupo": "Group B",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Atlético-MG",
+    "visitante": "Academia Puerto Cabello",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/7632.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/18995.png",
+    "prob_local": 0.6058791412428627,
+    "prob_empate": 0.04980748336547584,
+    "prob_visitante": 0.3443133753916614,
+    "fuerza_local": 0.2651093548387097,
+    "fuerza_visitante": 0.47475,
+    "diferencia": 0.20964064516129033,
+    "confianza": "favorable",
+    "prediccion": "Atlético-MG",
+    "resultado": "Atlético-MG",
+    "lambda_local": 2.959407083174314,
+    "lambda_visitante": 1.8095840810666675,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "alta",
+    "urgencia_visitante": "media",
+    "h2h_grupo": {
+      "score_local": 0.28,
+      "ventaja_goles": -1,
+      "partido": {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Academia Puerto Cabello",
+        "visitante": "Atlético-MG",
+        "goles_local": 2,
+        "goles_visitante": 1
+      },
+      "descripcion": "Se enfrentaron el 2026-04-09: Academia Puerto Cabello 2-1 Atlético-MG. Academia Puerto Cabello ganó ese partido."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Academia Puerto Cabello",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/18995.png",
+        "puntos": 7,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 2,
+        "goles_favor": 6,
+        "goles_contra": 8,
+        "diferencia": -2,
+        "zona": "clasificacion",
+        "estado": "en_zona",
+        "urgencia": "media",
+        "pts_necesita": 2,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "Cienciano del Cusco",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/3372.png",
+        "puntos": 7,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 2,
+        "goles_favor": 4,
+        "goles_contra": 6,
+        "diferencia": -2,
+        "zona": "repechaje",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 3,
+        "equipo": "Atlético-MG",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/7632.png",
+        "puntos": 7,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 2,
+        "goles_favor": 7,
+        "goles_contra": 6,
+        "diferencia": 1,
+        "zona": "eliminacion",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 1,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 4,
+        "equipo": "Juventud",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/8416.png",
+        "puntos": 6,
+        "partidos": 5,
+        "ganados": 1,
+        "empatados": 3,
+        "perdidos": 1,
+        "goles_favor": 9,
+        "goles_contra": 6,
+        "diferencia": 3,
+        "zona": "eliminacion",
+        "estado": "fuera_zona",
+        "urgencia": "alta",
+        "pts_necesita": 2,
+        "clasificado_mat": false,
+        "eliminado_mat": false
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Cienciano del Cusco",
+      "visitante": "Juventud"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Atletico-MG",
+          "posicion": 3,
+          "puntos": 7,
+          "estado": "fuera_zona",
+          "urgencia": "alta",
+          "pts_necesita": 1,
+          "depende_paralelo": true
+        },
+        "visitante": {
+          "nombre": "Academia Puerto Cabello",
+          "posicion": 1,
+          "puntos": 7,
+          "estado": "en_zona",
+          "urgencia": "media",
+          "pts_necesita": 2,
+          "depende_paralelo": true
+        },
+        "partido_paralelo": {
+          "local": "Cienciano del Cusco",
+          "visitante": "Juventud"
+        },
+        "interpretacion": "Atlético-MG necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 1 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Academia Puerto Cabello. Su clasificación también depende del resultado del partido paralelo. Academia Puerto Cabello necesita 2 punto(s) para asegurar su clasificación. Atacará con orden sin sacrificar la estructura defensiva. Su clasificación también depende del resultado del partido paralelo. Simultáneamente se juega Cienciano del Cusco vs Juventud, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "alto",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Atletico-MG",
+          "h2h_score": 0.28
+        },
+        "visitante": {
+          "nombre": "Academia Puerto Cabello",
+          "h2h_score": 0.72
+        },
+        "partido": {
+          "fecha": "2026-04-09",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Academia Puerto Cabello",
+          "visitante": "Atlético-MG",
+          "goles_local": 2,
+          "goles_visitante": 1
+        },
+        "ventaja_goles": -1,
+        "interpretacion": "Se enfrentaron el 2026-04-09: Academia Puerto Cabello 2-1 Atlético-MG. Academia Puerto Cabello ganó ese partido. Además, Academia Puerto Cabello lleva ventaja de 1 gol(es) en el marcador acumulado, lo que podría ser decisivo en caso de empate en puntos."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Atletico-MG"
+        },
+        "visitante": {
+          "valor": 0.48,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Academia Puerto Cabello"
+        },
+        "interpretacion": "Academia Puerto Cabello llega con mejor momentum: índice 0.48/1.0 frente a 0.47/1.0 de Atletico-MG. Últimos 5: 2V/1E/2D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 100.0,
+          "detalle": "2G/0E/0P",
+          "nombre": "Atletico-MG"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/2P",
+          "nombre": "Academia Puerto Cabello"
+        },
+        "interpretacion": "Contraste marcado: Atletico-MG gana el 100% en casa (2G/0E/0P), Academia Puerto Cabello solo el 0% de visita (0G/0E/2P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Atletico-MG",
+          "goles_favor": 1.4,
+          "goles_contra": 1.2
+        },
+        "visitante": {
+          "nombre": "Academia Puerto Cabello",
+          "goles_favor": 1.0,
+          "goles_contra": 1.33
+        },
+        "interpretacion": "Producción similar: Atletico-MG 1.40 — Academia Puerto Cabello 1.00 goles/partido. Defensa: 1.20 vs 1.33."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "alto",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Atletico-MG",
+          "urgencia": "alta",
+          "pts_necesita": 1,
+          "bonus_aplicado": 0.16
+        },
+        "visitante": {
+          "nombre": "Academia Puerto Cabello",
+          "urgencia": "media",
+          "pts_necesita": 2,
+          "bonus_aplicado": 0.08
+        },
+        "interpretacion": "Atlético-MG necesita ganar hoy sí o sí para mantenerse con vida. Necesita al menos 1 punto(s) más para alcanzar la zona de clasificación. Deberá atacar desde el inicio, generando espacios para Academia Puerto Cabello. Su clasificación también depende del resultado del partido paralelo. Academia Puerto Cabello necesita 2 punto(s) para asegurar su clasificación. Atacará con orden sin sacrificar la estructura defensiva. Su clasificación también depende del resultado del partido paralelo."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "torneo": "CONMEBOL Libertadores",
+    "torneo_slug": "conmebol.libertadores",
+    "grupo": "Group H",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Libertad",
+    "visitante": "Universidad Central",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2670.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/10094.png",
+    "prob_local": 0.3361365121213282,
+    "prob_empate": 0.21597798019282732,
+    "prob_visitante": 0.4478855076858444,
+    "fuerza_local": 0.18877903225806453,
+    "fuerza_visitante": 0.42689935483870967,
+    "diferencia": 0.23812032258064514,
+    "confianza": "moderado",
+    "prediccion": "Universidad Central",
+    "resultado": "Universidad Central",
+    "lambda_local": 1.0913181818181816,
+    "lambda_visitante": 1.1715559728333331,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "nula_eliminado",
+    "urgencia_visitante": "nula_eliminado",
+    "h2h_grupo": {
+      "score_local": 0.28,
+      "ventaja_goles": -2,
+      "partido": {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Universidad Central",
+        "visitante": "Libertad",
+        "goles_local": 3,
+        "goles_visitante": 1
+      },
+      "descripcion": "Se enfrentaron el 2026-04-09: Universidad Central 3-1 Libertad. Universidad Central ganó ese partido."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Rosario Central",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/17.png",
+        "puntos": 13,
+        "partidos": 5,
+        "ganados": 4,
+        "empatados": 1,
+        "perdidos": 0,
+        "goles_favor": 9,
+        "goles_contra": 0,
+        "diferencia": 9,
+        "zona": "clasificacion",
+        "estado": "clasificado",
+        "urgencia": "nula_clasificado",
+        "pts_necesita": 0,
+        "clasificado_mat": true,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "Independiente del Valle",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/17086.png",
+        "puntos": 10,
+        "partidos": 5,
+        "ganados": 3,
+        "empatados": 1,
+        "perdidos": 1,
+        "goles_favor": 10,
+        "goles_contra": 6,
+        "diferencia": 4,
+        "zona": "clasificacion",
+        "estado": "clasificado",
+        "urgencia": "nula_clasificado",
+        "pts_necesita": 0,
+        "clasificado_mat": true,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 3,
+        "equipo": "Universidad Central",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/10094.png",
+        "puntos": 6,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 3,
+        "goles_favor": 6,
+        "goles_contra": 11,
+        "diferencia": -5,
+        "zona": "repechaje",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      },
+      {
+        "posicion": 4,
+        "equipo": "Libertad",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2670.png",
+        "puntos": 0,
+        "partidos": 5,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 5,
+        "goles_favor": 4,
+        "goles_contra": 12,
+        "diferencia": -8,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Independiente del Valle",
+      "visitante": "Rosario Central"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Libertad",
+          "posicion": 4,
+          "puntos": 0,
+          "estado": "eliminado",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "visitante": {
+          "nombre": "Universidad Central",
+          "posicion": 3,
+          "puntos": 6,
+          "estado": "eliminado",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "partido_paralelo": {
+          "local": "Independiente del Valle",
+          "visitante": "Rosario Central"
+        },
+        "interpretacion": "Libertad está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto. Universidad Central está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto. Simultáneamente se juega Independiente del Valle vs Rosario Central, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "alto",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Libertad",
+          "h2h_score": 0.28
+        },
+        "visitante": {
+          "nombre": "Universidad Central",
+          "h2h_score": 0.72
+        },
+        "partido": {
+          "fecha": "2026-04-09",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Universidad Central",
+          "visitante": "Libertad",
+          "goles_local": 3,
+          "goles_visitante": 1
+        },
+        "ventaja_goles": -2,
+        "interpretacion": "Se enfrentaron el 2026-04-09: Universidad Central 3-1 Libertad. Universidad Central ganó ese partido. Además, Universidad Central lleva ventaja de 2 gol(es) en el marcador acumulado, lo que podría ser decisivo en caso de empate en puntos."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Libertad"
+        },
+        "visitante": {
+          "valor": 0.33,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Universidad Central"
+        },
+        "interpretacion": "Libertad llega con mejor momentum: índice 0.50/1.0 frente a 0.33/1.0 de Universidad Central. Últimos 5: 0V/0E/5D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/2P",
+          "nombre": "Libertad"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/2P",
+          "nombre": "Universidad Central"
+        },
+        "interpretacion": "Universidad Central sufre de visita: 0% (0G/0E/2P). Libertad en casa: 0% (0G/0E/2P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Libertad",
+          "goles_favor": 0.8,
+          "goles_contra": 2.4
+        },
+        "visitante": {
+          "nombre": "Universidad Central",
+          "goles_favor": 1.2,
+          "goles_contra": 2.2
+        },
+        "interpretacion": "Producción similar: Libertad 0.80 — Universidad Central 1.20 goles/partido. Defensa: 2.40 vs 2.20."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "medio",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Libertad",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "bonus_aplicado": 0.05
+        },
+        "visitante": {
+          "nombre": "Universidad Central",
+          "urgencia": "nula_eliminado",
+          "pts_necesita": 0,
+          "bonus_aplicado": 0.05
+        },
+        "interpretacion": "Libertad está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto. Universidad Central está matemáticamente eliminado sin importar el resultado. Jugará sin presión, lo que puede traducirse en un equipo más abierto."
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "torneo": "CONMEBOL Libertadores",
+    "torneo_slug": "conmebol.libertadores",
+    "grupo": "Group H",
+    "jornada": 5,
+    "jornadas_total": 6,
+    "local": "Independiente del Valle",
+    "visitante": "Rosario Central",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/17086.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/17.png",
+    "prob_local": 0.3740744955258363,
+    "prob_empate": 0.2611852014150213,
+    "prob_visitante": 0.3647403030591424,
+    "fuerza_local": 0.2988696774193549,
+    "fuerza_visitante": 0.6068100000000001,
+    "diferencia": 0.3079403225806452,
+    "confianza": "ajustado",
+    "prediccion": "Independiente del Valle",
+    "resultado": "Independiente del Valle",
+    "lambda_local": 4.781923363800002,
+    "lambda_visitante": 4.1521923156,
+    "peso_contexto_grupo": 0.9,
+    "urgencia_local": "nula_clasificado",
+    "urgencia_visitante": "nula_clasificado",
+    "h2h_grupo": {
+      "score_local": 0.5,
+      "ventaja_goles": 0,
+      "partido": {
+        "fecha": "2026-04-09",
+        "jornada": "?",
+        "temporada": "Group Stage",
+        "local": "Rosario Central",
+        "visitante": "Independiente del Valle",
+        "goles_local": 0,
+        "goles_visitante": 0
+      },
+      "descripcion": "Se enfrentaron el 2026-04-09: Rosario Central 0-0 Independiente del Valle. Empate."
+    },
+    "tabla_grupo": [
+      {
+        "posicion": 1,
+        "equipo": "Rosario Central",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/17.png",
+        "puntos": 13,
+        "partidos": 5,
+        "ganados": 4,
+        "empatados": 1,
+        "perdidos": 0,
+        "goles_favor": 9,
+        "goles_contra": 0,
+        "diferencia": 9,
+        "zona": "clasificacion",
+        "estado": "clasificado",
+        "urgencia": "nula_clasificado",
+        "pts_necesita": 0,
+        "clasificado_mat": true,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 2,
+        "equipo": "Independiente del Valle",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/17086.png",
+        "puntos": 10,
+        "partidos": 5,
+        "ganados": 3,
+        "empatados": 1,
+        "perdidos": 1,
+        "goles_favor": 10,
+        "goles_contra": 6,
+        "diferencia": 4,
+        "zona": "clasificacion",
+        "estado": "clasificado",
+        "urgencia": "nula_clasificado",
+        "pts_necesita": 0,
+        "clasificado_mat": true,
+        "eliminado_mat": false
+      },
+      {
+        "posicion": 3,
+        "equipo": "Universidad Central",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/10094.png",
+        "puntos": 6,
+        "partidos": 5,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 3,
+        "goles_favor": 6,
+        "goles_contra": 11,
+        "diferencia": -5,
+        "zona": "repechaje",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      },
+      {
+        "posicion": 4,
+        "equipo": "Libertad",
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2670.png",
+        "puntos": 0,
+        "partidos": 5,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 5,
+        "goles_favor": 4,
+        "goles_contra": 12,
+        "diferencia": -8,
+        "zona": "eliminacion",
+        "estado": "eliminado",
+        "urgencia": "nula_eliminado",
+        "pts_necesita": 0,
+        "clasificado_mat": false,
+        "eliminado_mat": true
+      }
+    ],
+    "partido_paralelo": {
+      "local": "Libertad",
+      "visitante": "Universidad Central"
+    },
+    "analisis": [
+      {
+        "factor": "Contexto de grupo",
+        "impacto": "alto",
+        "tipo": "grupo",
+        "peso_contexto": 0.9,
+        "local": {
+          "nombre": "Independiente del Valle",
+          "posicion": 2,
+          "puntos": 10,
+          "estado": "clasificado",
+          "urgencia": "nula_clasificado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "visitante": {
+          "nombre": "Rosario Central",
+          "posicion": 1,
+          "puntos": 13,
+          "estado": "clasificado",
+          "urgencia": "nula_clasificado",
+          "pts_necesita": 0,
+          "depende_paralelo": false
+        },
+        "partido_paralelo": {
+          "local": "Libertad",
+          "visitante": "Universidad Central"
+        },
+        "interpretacion": "Independiente del Valle ya tiene la clasificación matemáticamente asegurada. Puede especular tácticamente y administrar esfuerzos. Rosario Central ya tiene la clasificación matemáticamente asegurada. Puede especular tácticamente y administrar esfuerzos. Simultáneamente se juega Libertad vs Universidad Central, cuyo resultado puede afectar directamente la clasificación de ambos equipos en este partido."
+      },
+      {
+        "factor": "Historial en el torneo",
+        "impacto": "bajo",
+        "tipo": "h2h_grupo",
+        "local": {
+          "nombre": "Independiente del Valle",
+          "h2h_score": 0.5
+        },
+        "visitante": {
+          "nombre": "Rosario Central",
+          "h2h_score": 0.5
+        },
+        "partido": {
+          "fecha": "2026-04-09",
+          "jornada": "?",
+          "temporada": "Group Stage",
+          "local": "Rosario Central",
+          "visitante": "Independiente del Valle",
+          "goles_local": 0,
+          "goles_visitante": 0
+        },
+        "ventaja_goles": 0,
+        "interpretacion": "Se enfrentaron el 2026-04-09: Rosario Central 0-0 Independiente del Valle. Empate."
+      },
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.64,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Independiente del Valle"
+        },
+        "visitante": {
+          "valor": 0.75,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Rosario Central"
+        },
+        "interpretacion": "Rosario Central llega con mejor momentum: índice 0.75/1.0 frente a 0.64/1.0 de Independiente del Valle. Últimos 5: 4V/1E/0D vs 3V/1E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 100.0,
+          "detalle": "2G/0E/0P",
+          "nombre": "Independiente del Valle"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 100.0,
+          "detalle": "2G/0E/0P",
+          "nombre": "Rosario Central"
+        },
+        "interpretacion": "Independiente del Valle domina en casa: 100% (2G/0E/0P). Rosario Central: 100% de visita (2G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Independiente del Valle",
+          "goles_favor": 2.0,
+          "goles_contra": 1.2
+        },
+        "visitante": {
+          "nombre": "Rosario Central",
+          "goles_favor": 1.8,
+          "goles_contra": 0.0
+        },
+        "interpretacion": "Producción similar: Independiente del Valle 2.00 — Rosario Central 1.80 goles/partido. Defensa: 1.20 vs 0.00."
+      },
+      {
+        "factor": "Urgencia táctica",
+        "impacto": "medio",
+        "tipo": "urgencia",
+        "local": {
+          "nombre": "Independiente del Valle",
+          "urgencia": "nula_clasificado",
+          "pts_necesita": 0,
+          "bonus_aplicado": -0.05
+        },
+        "visitante": {
+          "nombre": "Rosario Central",
+          "urgencia": "nula_clasificado",
+          "pts_necesita": 0,
+          "bonus_aplicado": -0.05
+        },
+        "interpretacion": "Independiente del Valle ya tiene la clasificación matemáticamente asegurada. Puede especular tácticamente y administrar esfuerzos. Rosario Central ya tiene la clasificación matemáticamente asegurada. Puede especular tácticamente y administrar esfuerzos."
+      }
+    ]
+  },
+  {
     "id": 1,
     "torneo": "CONMEBOL Libertadores",
     "torneo_slug": "conmebol.libertadores",
