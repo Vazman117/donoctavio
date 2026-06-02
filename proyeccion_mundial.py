@@ -466,27 +466,57 @@ def calcular_ipo_seleccion(equipo, contexto, promedio_global):
 def calcular_isd_seleccion(equipo, contexto, promedio_global):
     """
     Índice de Solidez Defensiva para selecciones.
+
+    CONVENCIÓN: ISD es un "factor de concesión" que va en el DENOMINADOR
+    de la fórmula de lambda del rival.
+       lambda_rival = IPO_rival * promedio / ISD_este_equipo
+
+    ISD > 1.0 → buena defensa (reduce goles del rival)
+    ISD = 1.0 → defensa promedio
+    ISD < 1.0 → defensa débil (aumenta goles del rival)
+
+    Derivación:
+       ISD = promedio / goles_contra_promedio
+       → Si goles_contra = 0.2 y promedio = 1.35: ISD = 6.75 → capeamos a 2.5
+       → Regresión a la media según muestra disponible
+
+    Límites: [0.5, 2.5]
     """
     peso = peso_confianza(equipo.get("partidos", 0))
     altitud_sede = contexto.get("altitud_sede", 0)
     altitud_base = equipo.get("altitud_base", 0)
 
-    if equipo["goles_contra_promedio"] == 0:
-        defensa = 2.0
+    gc = equipo["goles_contra_promedio"]
+    if gc == 0:
+        isd_raw = 2.5   # defensa perfecta en muestra → máximo razonable
     else:
-        defensa = promedio_global / equipo["goles_contra_promedio"]
-    defensa = peso * defensa + (1 - peso) * 1.0
+        isd_raw = promedio_global / gc
 
-    mod_streak = 1.0 + (normalizar_streak(equipo["imbatido_streak"]) * 0.20)
+    # Capear: ninguna selección tiene defensa de 2.5x la media o peor que 0.5x
+    isd_raw = limitar(isd_raw, 0.5, 2.5)
 
-    # La altitud también afecta la defensa: equipos no aclimatados
-    # tienen peor movilidad defensiva
+    # Regresión a la media según confianza de la muestra
+    isd = peso * isd_raw + (1 - peso) * 1.0
+
+    # Streak de imbatibilidad suma hasta 10% adicional a la defensa
+    mod_streak = 1.0 + (normalizar_streak(equipo["imbatido_streak"]) * 0.10)
+    isd *= mod_streak
+
+    # La altitud también afecta movilidad defensiva del equipo no aclimatado
     factor_alt = calcular_factor_altitud(altitud_sede, altitud_base)
+    isd *= (0.7 + factor_alt * 0.3)   # impacto suavizado: altitud degrada la defensa levemente
 
-    return defensa * mod_streak * factor_alt
+    return limitar(isd, 0.5, 2.5)
 
 
 def calcular_lambdas(seleccion_local, seleccion_visitante, contexto, promedio_global):
+    """
+    Fórmula Dixon-Coles adaptada:
+        lambda_local     = IPO_local     * promedio / ISD_visitante
+        lambda_visitante = IPO_visitante * promedio / ISD_local
+
+    ISD en el denominador: defensa fuerte → reduce los goles del rival ✓
+    """
     contexto_l = {**contexto, "es_local": True,  "es_neutro": contexto.get("es_neutro", False)}
     contexto_v = {**contexto, "es_local": False, "es_neutro": contexto.get("es_neutro", False)}
 
@@ -495,8 +525,8 @@ def calcular_lambdas(seleccion_local, seleccion_visitante, contexto, promedio_gl
     isd_l = calcular_isd_seleccion(seleccion_local,     contexto_l, promedio_global)
     isd_v = calcular_isd_seleccion(seleccion_visitante, contexto_v, promedio_global)
 
-    lambda_local     = limitar(ipo_l * isd_v * promedio_global, 0.2, 5.0)
-    lambda_visitante = limitar(ipo_v * isd_l * promedio_global, 0.2, 5.0)
+    lambda_local     = limitar((ipo_l * promedio_global) / isd_v, 0.2, 5.0)
+    lambda_visitante = limitar((ipo_v * promedio_global) / isd_l, 0.2, 5.0)
     return lambda_local, lambda_visitante
 
 

@@ -1,110 +1,546 @@
 [
   {
-    "id": "401853575",
-    "fecha": "2026-06-02T01:00Z",
+    "id": "401856361",
+    "fecha": "2026-06-02T16:00Z",
     "torneo": "Amistoso Internacional",
     "perfil": "amistoso",
-    "local": "Canada",
-    "visitante": "Uzbekistan",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/206.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2570.png",
-    "estadio": "Commonwealth Stadium",
-    "ciudad_sede": "Edmonton",
-    "pais_sede": "Canada",
-    "altitud_sede": 671,
+    "local": "Croatia",
+    "visitante": "Belgium",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/477.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/459.png",
+    "estadio": "Stadion HNK Rijeka",
+    "ciudad_sede": "Rijeka",
+    "pais_sede": "Croatia",
+    "altitud_sede": 0,
     "es_neutro": false,
-    "prob_local": 0.423709610466602,
-    "prob_empate": 0.17497435827777585,
-    "prob_visitante": 0.4013160312556222,
-    "fuerza_local": 0.5874997982144566,
-    "fuerza_visitante": 0.36033798344155843,
-    "diferencia": 0.2271618147728982,
+    "prob_local": 0.35144917305693674,
+    "prob_empate": 0.22677899729393453,
+    "prob_visitante": 0.4217718296491288,
+    "fuerza_local": 0.607015985363978,
+    "fuerza_visitante": 0.5895078179340397,
+    "diferencia": 0.017508167429938326,
     "confianza": "ajustado",
-    "prediccion": "Canada",
-    "lambda_local": 1.879025960914619,
-    "lambda_visitante": 2.163997425742574,
-    "factor_altitud_local": 0.982,
-    "factor_altitud_visitante": 0.9892,
+    "prediccion": "Belgium",
+    "lambda_local": 1.07538874796748,
+    "lambda_visitante": 1.300256716819753,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
     "analisis": [
       {
         "factor": "Forma reciente",
         "impacto": "bajo",
         "tipo": "forma",
         "local": {
-          "valor": 0.55,
-          "ultimos_5": [
-            "L",
-            "W",
-            "L",
-            "L",
-            "L"
-          ],
-          "nombre": "Canada"
-        },
-        "visitante": {
           "valor": 0.5,
           "ultimos_5": [
             "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Croatia"
+        },
+        "visitante": {
+          "valor": 0.44,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Belgium"
+        },
+        "interpretacion": "Croatia llega con mejor momentum: índice 0.50/1.0 frente a 0.44/1.0 de Belgium. Últimos 5: 4V/0E/1D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#11 FIFA",
+          "valor": 0.952,
+          "puntos": 1717.1,
+          "nombre": "Croatia"
+        },
+        "visitante": {
+          "etiqueta": "#9 FIFA",
+          "valor": 0.962,
+          "puntos": 1734.7,
+          "nombre": "Belgium"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #11 vs #9. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Rijeka",
+        "local": {
+          "nombre": "Croatia",
+          "altitud_base": 65,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Belgium",
+          "altitud_base": 62,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Croatia",
+          "goles_favor": 1.29,
+          "goles_contra": 1.07
+        },
+        "visitante": {
+          "nombre": "Belgium",
+          "goles_favor": 1.81,
+          "goles_contra": 1.12
+        },
+        "interpretacion": "Belgium más ofensivo: 1.81 vs 1.29 goles/partido. Defensiva: 1.07 vs 1.12."
+      }
+    ]
+  },
+  {
+    "id": "401865145",
+    "fecha": "2026-06-02T17:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Georgia",
+    "visitante": "Romania",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/584.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/473.png",
+    "estadio": "Mikheil Meskhi Stadioni",
+    "ciudad_sede": "Tbilisi",
+    "pais_sede": "Georgia",
+    "altitud_sede": 490,
+    "es_neutro": false,
+    "prob_local": 0.3397182424410895,
+    "prob_empate": 0.20210603431991447,
+    "prob_visitante": 0.458175723238996,
+    "fuerza_local": 0.38299505490008035,
+    "fuerza_visitante": 0.567017120453993,
+    "diferencia": 0.18402206555391265,
+    "confianza": "moderado",
+    "prediccion": "Romania",
+    "lambda_local": 1.455514306139062,
+    "lambda_visitante": 1.5625201454838047,
+    "factor_altitud_local": 0.99795,
+    "factor_altitud_visitante": 0.97625,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.52,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Georgia"
+        },
+        "visitante": {
+          "valor": 0.53,
+          "ultimos_5": [
             "W",
             "L",
             "W",
-            "L"
+            "W",
+            "W"
           ],
-          "nombre": "Uzbekistan"
+          "nombre": "Romania"
         },
-        "interpretacion": "Canada llega con mejor momentum: índice 0.55/1.0 frente a 0.50/1.0 de Uzbekistan. Últimos 5: 1V/0E/4D vs 3V/0E/2D."
+        "interpretacion": "Romania llega con mejor momentum: índice 0.53/1.0 frente a 0.52/1.0 de Georgia. Últimos 5: 4V/0E/1D vs 3V/0E/2D."
       },
       {
         "factor": "Ranking FIFA",
         "impacto": "alto",
         "tipo": "barras",
         "local": {
-          "etiqueta": "#31 FIFA",
-          "valor": 0.856,
-          "puntos": 1548.2,
-          "nombre": "Canada"
-        },
-        "visitante": {
           "etiqueta": "#999 FIFA",
           "valor": 0.0,
           "puntos": 500.0,
-          "nombre": "Uzbekistan"
+          "nombre": "Georgia"
         },
-        "interpretacion": "Diferencia significativa en ranking FIFA: #31 Canada (1548 pts) vs #999 Uzbekistan (500 pts). Canada tiene ventaja objetiva de calidad."
+        "visitante": {
+          "etiqueta": "#43 FIFA",
+          "valor": 0.799,
+          "puntos": 1480.3,
+          "nombre": "Romania"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #999 Georgia (500 pts) vs #43 Romania (1480 pts). Romania tiene ventaja objetiva de calidad."
       },
       {
         "factor": "Factor altitud",
         "impacto": "bajo",
         "tipo": "altitud",
-        "altitud_sede": 671,
-        "ciudad_sede": "Edmonton",
+        "altitud_sede": 490,
+        "ciudad_sede": "Tbilisi",
         "local": {
-          "nombre": "Canada",
-          "altitud_base": 311,
-          "factor": 0.982
+          "nombre": "Georgia",
+          "altitud_base": 449,
+          "factor": 0.998
         },
         "visitante": {
-          "nombre": "Uzbekistan",
-          "altitud_base": 455,
-          "factor": 0.989
+          "nombre": "Romania",
+          "altitud_base": 15,
+          "factor": 0.976
         },
-        "interpretacion": "Sede en condiciones normales (671m). La altitud no es un factor diferenciador en este partido."
+        "interpretacion": "Sede en condiciones normales (490m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Georgia",
+          "goles_favor": 2.05,
+          "goles_contra": 1.24
+        },
+        "visitante": {
+          "nombre": "Romania",
+          "goles_favor": 1.8,
+          "goles_contra": 0.93
+        },
+        "interpretacion": "Producción similar: Georgia 2.05 — Romania 1.80 goles/partido. Defensa: 1.24 vs 0.93."
+      }
+    ]
+  },
+  {
+    "id": "401872680",
+    "fecha": "2026-06-02T17:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Morocco",
+    "visitante": "Madagascar",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2869.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/5533.png",
+    "estadio": "Stade Prince Moulay Abdallah",
+    "ciudad_sede": "Rabat",
+    "pais_sede": "Morocco",
+    "altitud_sede": 75,
+    "es_neutro": false,
+    "prob_local": 0.6880952532457386,
+    "prob_empate": 0.16916744235493733,
+    "prob_visitante": 0.14273730439932403,
+    "fuerza_local": 0.714401179030931,
+    "fuerza_visitante": 0.30165087397385365,
+    "diferencia": 0.4127503050570774,
+    "confianza": "favorable",
+    "prediccion": "Morocco",
+    "lambda_local": 1.951204822175834,
+    "lambda_visitante": 0.54156266328,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 0.997,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.73,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Morocco"
+        },
+        "visitante": {
+          "valor": 0.4,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Madagascar"
+        },
+        "interpretacion": "Morocco llega con mejor momentum: índice 0.73/1.0 frente a 0.40/1.0 de Madagascar. Últimos 5: 3V/0E/2D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#8 FIFA",
+          "valor": 0.967,
+          "puntos": 1755.9,
+          "nombre": "Morocco"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.0,
+          "puntos": 500.0,
+          "nombre": "Madagascar"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #8 Morocco (1756 pts) vs #999 Madagascar (500 pts). Morocco tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 75,
+        "ciudad_sede": "Rabat",
+        "local": {
+          "nombre": "Morocco",
+          "altitud_base": 191,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Madagascar",
+          "altitud_base": 15,
+          "factor": 0.997
+        },
+        "interpretacion": "Sede en condiciones normales (75m). La altitud no es un factor diferenciador en este partido."
       },
       {
         "factor": "Potencial ofensivo y defensivo",
         "impacto": "bajo",
         "tipo": "doble_barra",
         "local": {
-          "nombre": "Canada",
-          "goles_favor": 1.59,
-          "goles_contra": 0.91
+          "nombre": "Morocco",
+          "goles_favor": 1.4,
+          "goles_contra": 0.2
         },
         "visitante": {
-          "nombre": "Uzbekistan",
-          "goles_favor": 1.5,
-          "goles_contra": 1.2
+          "nombre": "Madagascar",
+          "goles_favor": 1.6,
+          "goles_contra": 1.8
         },
-        "interpretacion": "Producción similar: Canada 1.59 — Uzbekistan 1.50 goles/partido. Defensa: 0.91 vs 1.20."
+        "interpretacion": "Producción similar: Morocco 1.40 — Madagascar 1.60 goles/partido. Defensa: 0.20 vs 1.80."
+      }
+    ]
+  },
+  {
+    "id": "401863573",
+    "fecha": "2026-06-02T18:45Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Wales",
+    "visitante": "Ghana",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/578.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/4469.png",
+    "estadio": "Cardiff City Stadium",
+    "ciudad_sede": "Cardiff",
+    "pais_sede": "Wales",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.6016404830459107,
+    "prob_empate": 0.17592073430823266,
+    "prob_visitante": 0.2224387826458567,
+    "fuerza_local": 0.3525264285714286,
+    "fuerza_visitante": 0.41797490917634994,
+    "diferencia": 0.06544848060492137,
+    "confianza": "favorable",
+    "prediccion": "Wales",
+    "lambda_local": 1.9148648648648652,
+    "lambda_visitante": 0.6221190287984001,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Wales"
+        },
+        "visitante": {
+          "valor": 0.22,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Ghana"
+        },
+        "interpretacion": "Wales llega con mejor momentum: índice 0.50/1.0 frente a 0.22/1.0 de Ghana. Últimos 5: 2V/0E/3D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.0,
+          "puntos": 500.0,
+          "nombre": "Wales"
+        },
+        "visitante": {
+          "etiqueta": "#50 FIFA",
+          "valor": 0.766,
+          "puntos": 1435.7,
+          "nombre": "Ghana"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #999 Wales (500 pts) vs #50 Ghana (1436 pts). Ghana tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Cardiff",
+        "local": {
+          "nombre": "Wales",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Ghana",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Wales",
+          "goles_favor": 1.42,
+          "goles_contra": 0.75
+        },
+        "visitante": {
+          "nombre": "Ghana",
+          "goles_favor": 1.44,
+          "goles_contra": 2.0
+        },
+        "interpretacion": "Producción similar: Wales 1.42 — Ghana 1.44 goles/partido. Defensa: 0.75 vs 2.00."
+      }
+    ]
+  },
+  {
+    "id": "401871830",
+    "fecha": "2026-06-03T00:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Haiti",
+    "visitante": "New Zealand",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2654.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2666.png",
+    "estadio": "Chase Stadium",
+    "ciudad_sede": "Fort Lauderdale, Florida",
+    "pais_sede": "USA",
+    "altitud_sede": 0,
+    "es_neutro": true,
+    "prob_local": 0.6255745999146567,
+    "prob_empate": 0.15795196524023808,
+    "prob_visitante": 0.21647343484510526,
+    "fuerza_local": 0.3517271428571429,
+    "fuerza_visitante": 0.4085637220608339,
+    "diferencia": 0.05683657920369101,
+    "confianza": "favorable",
+    "prediccion": "Haiti",
+    "lambda_local": 2.187285665294925,
+    "lambda_visitante": 0.7092567,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.44,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Haiti"
+        },
+        "visitante": {
+          "valor": 0.25,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "New Zealand"
+        },
+        "interpretacion": "Haiti llega con mejor momentum: índice 0.44/1.0 frente a 0.25/1.0 de New Zealand. Últimos 5: 1V/0E/4D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.0,
+          "puntos": 500.0,
+          "nombre": "Haiti"
+        },
+        "visitante": {
+          "etiqueta": "#90 FIFA",
+          "valor": 0.574,
+          "puntos": 1262.3,
+          "nombre": "New Zealand"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #999 Haiti (500 pts) vs #90 New Zealand (1262 pts). New Zealand tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Fort Lauderdale, Florida",
+        "local": {
+          "nombre": "Haiti",
+          "altitud_base": 535,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "New Zealand",
+          "altitud_base": 22,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Haiti",
+          "goles_favor": 2.5,
+          "goles_contra": 1.06
+        },
+        "visitante": {
+          "nombre": "New Zealand",
+          "goles_favor": 1.08,
+          "goles_contra": 1.25
+        },
+        "interpretacion": "Haiti más ofensivo: 2.50 goles/partido (vs 1.08). Defensiva: 1.06 vs 1.25."
       }
     ]
   }

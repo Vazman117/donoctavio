@@ -1,5 +1,115 @@
 [
+  {
+    "id": "401853575",
+    "fecha": "2026-06-02T01:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Canada",
+    "visitante": "Uzbekistan",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/206.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2570.png",
+    "estadio": "Commonwealth Stadium",
+    "ciudad_sede": "Edmonton",
+    "pais_sede": "Canada",
+    "altitud_sede": 671,
+    "es_neutro": false,
+    "prob_local": 0.423709610466602,
+    "prob_empate": 0.17497435827777585,
+    "prob_visitante": 0.4013160312556222,
+    "fuerza_local": 0.5874997982144566,
+    "fuerza_visitante": 0.36033798344155843,
+    "diferencia": 0.2271618147728982,
+    "confianza": "ajustado",
+    "prediccion": "Canada",
+    "resultado": "Canada",
+    "lambda_local": 1.879025960914619,
+    "lambda_visitante": 2.163997425742574,
+    "factor_altitud_local": 0.982,
+    "factor_altitud_visitante": 0.9892,
+    "analisis": [
       {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.55,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Canada"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Uzbekistan"
+        },
+        "interpretacion": "Canada llega con mejor momentum: índice 0.55/1.0 frente a 0.50/1.0 de Uzbekistan. Últimos 5: 1V/0E/4D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#31 FIFA",
+          "valor": 0.856,
+          "puntos": 1548.2,
+          "nombre": "Canada"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.0,
+          "puntos": 500.0,
+          "nombre": "Uzbekistan"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #31 Canada (1548 pts) vs #999 Uzbekistan (500 pts). Canada tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 671,
+        "ciudad_sede": "Edmonton",
+        "local": {
+          "nombre": "Canada",
+          "altitud_base": 311,
+          "factor": 0.982
+        },
+        "visitante": {
+          "nombre": "Uzbekistan",
+          "altitud_base": 455,
+          "factor": 0.989
+        },
+        "interpretacion": "Sede en condiciones normales (671m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Canada",
+          "goles_favor": 1.59,
+          "goles_contra": 0.91
+        },
+        "visitante": {
+          "nombre": "Uzbekistan",
+          "goles_favor": 1.5,
+          "goles_contra": 1.2
+        },
+        "interpretacion": "Producción similar: Canada 1.59 — Uzbekistan 1.50 goles/partido. Defensa: 0.91 vs 1.20."
+      }
+    ]
+  },
+  {
     "id": "401866134",
     "fecha": "2026-06-01T23:00Z",
     "torneo": "Amistoso Internacional",
