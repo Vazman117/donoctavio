@@ -1,0 +1,38 @@
+[
+      {
+    "id": "401866134",
+    "fecha": "2026-06-01T23:00Z",
+    "estado": "pre",
+    "local": "Colombia",
+    "visitante": "Costa Rica",
+    "id_espn_local": "208",
+    "id_espn_visitante": "214",
+    "estadio": "Estadio Nemesio Camacho El Campín",
+    "ciudad_sede": "Bogota",
+    "pais_sede": "Colombia",
+    "altitud_sede": 2600,
+    "altitud_base_local": 233,
+    "altitud_base_visitante": 558,
+    "diferencia_altitud_local": 2367,
+    "diferencia_altitud_visitante": 2042,
+    "contexto_altitud": "Sede en altura extrema (2600m)"
+  },
+  {
+    "id": "401853575",
+    "fecha": "2026-06-02T01:00Z",
+    "estado": "pre",
+    "local": "Canada",
+    "visitante": "Uzbekistan",
+    "id_espn_local": "206",
+    "id_espn_visitante": "2570",
+    "estadio": "Commonwealth Stadium",
+    "ciudad_sede": "Edmonton",
+    "pais_sede": "Canada",
+    "altitud_sede": 671,
+    "altitud_base_local": 311,
+    "altitud_base_visitante": 455,
+    "diferencia_altitud_local": 360,
+    "diferencia_altitud_visitante": 216,
+    "contexto_altitud": "Sede a nivel de mar/bajo (671m)"
+  }
+]

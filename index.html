@@ -310,6 +310,7 @@
     .home-leyenda {
       display: flex;
       gap: 0.9rem;
+      justify-content: center;
     }
     .home-leyenda-item {
       display: flex;
@@ -412,7 +413,7 @@
             <span class="torneo-row-sub">11 de Junio</span>
           </div>
         </div>
-        <span class="t-badge verde">En vivo</span>
+        <span class="t-badge azul">Próximamente</span>
       </a>
 
       <a href="partidos.html" class="torneo-row activo">
@@ -420,7 +421,7 @@
           <img src="assets/2026.png" alt="Temporada 2026" />
           <div class="torneo-row-info">
             <span class="torneo-row-nombre">Temporada 2026</span>
-            <span class="torneo-row-sub">Champions · Libertadores</span>
+            <span class="torneo-row-sub">Amistosos Internacionales</span>
           </div>
         </div>
         <span class="t-badge azul">Activo</span>
@@ -442,50 +443,59 @@
   <!-- ── Fila inferior ── -->
   <div class="home-bottom">
 
-    <div class="home-metricas">
-      <span class="home-metricas-label">Rendimiento del modelo</span>
-
-      <div class="home-stats-row">
-        <div class="home-stat">
-          <div class="home-stat-num ok"  id="m-aciertos">—</div>
-          <div class="home-stat-lbl">Aciertos</div>
-          <div class="home-stat-sub"     id="m-aciertos-n"></div>
-        </div>
-        <div class="home-stat">
-          <div class="home-stat-num med" id="m-ajustados">—</div>
-          <div class="home-stat-lbl">Ajustados</div>
-          <div class="home-stat-sub"     id="m-ajustados-n"></div>
-        </div>
-        <div class="home-stat">
-          <div class="home-stat-num mal" id="m-fallos">—</div>
-          <div class="home-stat-lbl">Fallos</div>
-          <div class="home-stat-sub"     id="m-fallos-n"></div>
+  <div class="home-metricas">
+    <span class="home-metricas-label">Rendimiento del modelo</span>
+    
+    <div style="display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; overflow:hidden;">
+      
+      <div style="padding:1.5rem; display:flex; flex-direction:column; gap:6px;">
+        <span style="font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted);">Aciertos</span>
+        <span style="font-family:'Playfair Display',Georgia,serif; font-size:3rem; font-weight:700; line-height:1; color:var(--win);" id="m-aciertos">—</span>
+        <span style="font-size:12px; color:var(--muted);" id="m-aciertos-n"></span>
+        <div style="height:4px; border-radius:99px; overflow:hidden; background:var(--surface); margin-top:10px;">
+          <div style="height:100%; background:var(--win); width:0%; transition:width 1s cubic-bezier(.4,0,.2,1);" id="s-ok"></div>
         </div>
       </div>
 
-      <div class="home-barra">
-        <span class="s-ok"  id="s-ok"  style="width:0%"></span>
-        <span class="s-med" id="s-med" style="width:0%"></span>
-        <span class="s-mal" id="s-mal" style="width:0%"></span>
+      <div style="background:var(--border);"></div>
+
+      <div style="padding:1.5rem; display:flex; flex-direction:column; gap:6px;">
+        <span style="font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted);">Ajustados</span>
+        <span style="font-family:'Playfair Display',Georgia,serif; font-size:3rem; font-weight:700; line-height:1; color:var(--draw);" id="m-ajustados">—</span>
+        <span style="font-size:12px; color:var(--muted);" id="m-ajustados-n"></span>
+        <div style="height:4px; border-radius:99px; overflow:hidden; background:var(--surface); margin-top:10px;">
+          <div style="height:100%; background:var(--draw); width:0%; transition:width 1s cubic-bezier(.4,0,.2,1);" id="s-med"></div>
+        </div>
       </div>
 
-      <div class="home-leyenda">
-        <span class="home-leyenda-item">
-          <span class="home-leyenda-dot" style="background:var(--win)"></span>Aciertos
-        </span>
-        <span class="home-leyenda-item">
-          <span class="home-leyenda-dot" style="background:var(--draw)"></span>Ajustados
-        </span>
-        <span class="home-leyenda-item">
-          <span class="home-leyenda-dot" style="background:var(--loss)"></span>Fallos
-        </span>
+      <div style="background:var(--border);"></div>
+
+      <div style="padding:1.5rem; display:flex; flex-direction:column; gap:6px;">
+        <span style="font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted);">Fallos</span>
+        <span style="font-family:'Playfair Display',Georgia,serif; font-size:3rem; font-weight:700; line-height:1; color:var(--loss);" id="m-fallos">—</span>
+        <span style="font-size:12px; color:var(--muted);" id="m-fallos-n"></span>
+        <div style="height:4px; border-radius:99px; overflow:hidden; background:var(--surface); margin-top:10px;">
+          <div style="height:100%; background:var(--loss); width:0%; transition:width 1s cubic-bezier(.4,0,.2,1);" id="s-mal"></div>
+        </div>
       </div>
+
     </div>
+  </div>
 
     <div class="home-sep"></div>
 
     <div class="home-historial">
-      <p class="home-historial-nota" id="nota-total">Cargando proyecciones…</p>
+      <div style="display:flex; gap:2.5rem; align-items:flex-end; justify-content:center;">
+        <div style="text-align:center;">
+          <div style="font-family:'Playfair Display',Georgia,serif; font-size:2.4rem; font-weight:700; line-height:1; color:var(--text);" id="nota-total-num">—</div>
+          <div style="font-size:0.65rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-top:5px;">Proyecciones</div>
+        </div>
+        <div style="width:1px; height:40px; background:var(--border); margin-bottom:4px;"></div>
+        <div style="text-align:center;">
+          <div style="font-family:'Playfair Display',Georgia,serif; font-size:2.4rem; font-weight:700; line-height:1; color:var(--text);" id="nota-efect-num">—</div>
+          <div style="font-size:0.65rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-top:5px;">Cobertura</div>
+        </div>
+      </div>
       <a href="historial.html" class="home-btn-historial">
         Ver historial completo de proyecciones →
       </a>
@@ -566,9 +576,8 @@
     }, 200);
 
     const efC = total ? ((aciertos+ajustados)/total*100).toFixed(1) : '—';
-    document.getElementById('nota-total').textContent = total
-      ? `${partidos.length} proyecciones totales · ${efC}% efectividad combinada`
-      : 'Sin proyecciones registradas aún.';
+    document.getElementById('nota-total-num').textContent = total ? partidos.length : '—';
+    document.getElementById('nota-efect-num').textContent = total ? efC + '%' : '—';
   }
 
   init();
