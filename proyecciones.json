@@ -122,13 +122,13 @@
     "pais_sede": "Georgia",
     "altitud_sede": 490,
     "es_neutro": false,
-    "prob_local": 0.3397182424410895,
+    "prob_local": 0.37560902892959136,
     "prob_empate": 0.20210603431991447,
-    "prob_visitante": 0.458175723238996,
-    "fuerza_local": 0.38299505490008035,
-    "fuerza_visitante": 0.567017120453993,
-    "diferencia": 0.18402206555391265,
-    "confianza": "moderado",
+    "prob_visitante": 0.42228493675049417,
+    "fuerza_local": 0.5265618114790278,
+    "fuerza_visitante": 0.5535382702745671,
+    "diferencia": 0.026976458795539338,
+    "confianza": "ajustado",
     "prediccion": "Romania",
     "lambda_local": 1.455514306139062,
     "lambda_visitante": 1.5625201454838047,
@@ -165,21 +165,21 @@
       },
       {
         "factor": "Ranking FIFA",
-        "impacto": "alto",
+        "impacto": "bajo",
         "tipo": "barras",
         "local": {
-          "etiqueta": "#999 FIFA",
-          "valor": 0.0,
+          "etiqueta": "#72 FIFA",
+          "valor": 0.66,
           "puntos": 500.0,
           "nombre": "Georgia"
         },
         "visitante": {
-          "etiqueta": "#43 FIFA",
-          "valor": 0.799,
+          "etiqueta": "#56 FIFA",
+          "valor": 0.737,
           "puntos": 1480.3,
           "nombre": "Romania"
         },
-        "interpretacion": "Diferencia significativa en ranking FIFA: #999 Georgia (500 pts) vs #43 Romania (1480 pts). Romania tiene ventaja objetiva de calidad."
+        "interpretacion": "Leve diferencia en ranking: #72 Georgia vs #56 Romania. El factor puede influir en momentos clave."
       },
       {
         "factor": "Factor altitud",
