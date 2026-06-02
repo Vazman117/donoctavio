@@ -1,0 +1,112 @@
+[
+      {
+    "id": "401866134",
+    "fecha": "2026-06-01T23:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Colombia",
+    "visitante": "Costa Rica",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/208.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/214.png",
+    "estadio": "Estadio Nemesio Camacho El Campín",
+    "ciudad_sede": "Bogota",
+    "pais_sede": "Colombia",
+    "altitud_sede": 2600,
+    "es_neutro": false,
+    "prob_local": 0.41497795019004546,
+    "prob_empate": 0.20722018447505178,
+    "prob_visitante": 0.37780186533490273,
+    "fuerza_local": 0.6030275651132224,
+    "fuerza_visitante": 0.45670327816596357,
+    "diferencia": 0.14632428694725885,
+    "confianza": "ajustado",
+    "prediccion": "Colombia",
+    "resultado": "Colombia",
+    "lambda_local": 1.386864175325187,
+    "lambda_visitante": 1.4833106827358273,
+    "factor_altitud_local": 0.88165,
+    "factor_altitud_visitante": 0.8979,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.62,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Colombia"
+        },
+        "visitante": {
+          "valor": 0.38,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Costa Rica"
+        },
+        "interpretacion": "Colombia llega con mejor momentum: índice 0.62/1.0 frente a 0.38/1.0 de Costa Rica. Últimos 5: 2V/0E/3D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#13 FIFA",
+          "valor": 0.943,
+          "puntos": 1693.1,
+          "nombre": "Colombia"
+        },
+        "visitante": {
+          "etiqueta": "#46 FIFA",
+          "valor": 0.785,
+          "puntos": 1452.3,
+          "nombre": "Costa Rica"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #13 Colombia (1693 pts) vs #46 Costa Rica (1452 pts). Colombia tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 2600,
+        "ciudad_sede": "Bogota",
+        "local": {
+          "nombre": "Colombia",
+          "altitud_base": 233,
+          "factor": 0.882
+        },
+        "visitante": {
+          "nombre": "Costa Rica",
+          "altitud_base": 558,
+          "factor": 0.898
+        },
+        "interpretacion": "Sede en altura extrema (2600m). Ambas selecciones enfrentan condiciones similares de aclimatación (2367m vs 2042m de diferencia). Factor altitud: 0.88 vs 0.90."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Colombia",
+          "goles_favor": 1.88,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Costa Rica",
+          "goles_favor": 1.69,
+          "goles_contra": 1.5
+        },
+        "interpretacion": "Producción similar: Colombia 1.88 — Costa Rica 1.69 goles/partido. Defensa: 1.00 vs 1.50."
+      }
+    ]
+  }
+]
