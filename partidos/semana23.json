@@ -1,5 +1,115 @@
 [
   {
+    "id": "401863573",
+    "fecha": "2026-06-02T18:45Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Wales",
+    "visitante": "Ghana",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/578.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/4469.png",
+    "estadio": "Cardiff City Stadium",
+    "ciudad_sede": "Cardiff",
+    "pais_sede": "Wales",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.6016404830459107,
+    "prob_empate": 0.17592073430823266,
+    "prob_visitante": 0.2224387826458567,
+    "fuerza_local": 0.3525264285714286,
+    "fuerza_visitante": 0.41797490917634994,
+    "diferencia": 0.06544848060492137,
+    "confianza": "favorable",
+    "prediccion": "Wales",
+    "resultado": "Empate",
+    "lambda_local": 1.9148648648648652,
+    "lambda_visitante": 0.6221190287984001,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Wales"
+        },
+        "visitante": {
+          "valor": 0.22,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Ghana"
+        },
+        "interpretacion": "Wales llega con mejor momentum: índice 0.50/1.0 frente a 0.22/1.0 de Ghana. Últimos 5: 2V/0E/3D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.0,
+          "puntos": 500.0,
+          "nombre": "Wales"
+        },
+        "visitante": {
+          "etiqueta": "#50 FIFA",
+          "valor": 0.766,
+          "puntos": 1435.7,
+          "nombre": "Ghana"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #999 Wales (500 pts) vs #50 Ghana (1436 pts). Ghana tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Cardiff",
+        "local": {
+          "nombre": "Wales",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Ghana",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Wales",
+          "goles_favor": 1.42,
+          "goles_contra": 0.75
+        },
+        "visitante": {
+          "nombre": "Ghana",
+          "goles_favor": 1.44,
+          "goles_contra": 2.0
+        },
+        "interpretacion": "Producción similar: Wales 1.42 — Ghana 1.44 goles/partido. Defensa: 0.75 vs 2.00."
+      }
+    ]
+  },
+  {
     "id": "401872680",
     "fecha": "2026-06-02T17:00Z",
     "torneo": "Amistoso Internacional",
