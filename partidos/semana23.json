@@ -1,5 +1,114 @@
 [
   {
+    "id": "401873509",
+    "fecha": "2026-06-03T11:30Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Philippines",
+    "visitante": "Guam",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/7347.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/10529.png",
+    "estadio": "Rizal Memorial Stadium",
+    "ciudad_sede": "Manila",
+    "pais_sede": "Philippines",
+    "altitud_sede": 16,
+    "es_neutro": false,
+    "prob_local": 0.1693687238392847,
+    "prob_empate": 0.11418885048443486,
+    "prob_visitante": 0.7164424256762805,
+    "fuerza_local": 0.3321000901785715,
+    "fuerza_visitante": 0.47609649017857136,
+    "diferencia": 0.14399639999999986,
+    "confianza": "favorable",
+    "prediccion": "Guam",
+    "resultado": "Philippines",
+    "lambda_local": 1.3821399178494047,
+    "lambda_visitante": 3.5525544864924803,
+    "factor_altitud_local": 0.99995,
+    "factor_altitud_visitante": 0.99995,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.4,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Philippines"
+        },
+        "visitante": {
+          "valor": 0.75,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Guam"
+        },
+        "interpretacion": "Guam llega con mejor momentum: índice 0.75/1.0 frente a 0.40/1.0 de Philippines. Últimos 5: 3V/0E/1D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.0,
+          "puntos": 500.0,
+          "nombre": "Philippines"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.0,
+          "puntos": 500.0,
+          "nombre": "Guam"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #999 vs #999. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 16,
+        "ciudad_sede": "Manila",
+        "local": {
+          "nombre": "Philippines",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Guam",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (16m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Philippines",
+          "goles_favor": 1.2,
+          "goles_contra": 1.4
+        },
+        "visitante": {
+          "nombre": "Guam",
+          "goles_favor": 4.0,
+          "goles_contra": 1.25
+        },
+        "interpretacion": "Guam más ofensivo: 4.00 vs 1.20 goles/partido. Defensiva: 1.40 vs 1.25."
+      }
+    ]
+  },
+  {
     "id": "401871830",
     "fecha": "2026-06-03T00:00Z",
     "torneo": "Amistoso Internacional",
