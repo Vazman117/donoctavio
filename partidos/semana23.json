@@ -1,5 +1,445 @@
 [
   {
+    "id": "401871169",
+    "fecha": "2026-06-03T18:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Congo DR",
+    "visitante": "Denmark",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2850.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/479.png",
+    "estadio": "Stade Maurice Dufrasne",
+    "ciudad_sede": "Liege",
+    "pais_sede": "Belgium",
+    "altitud_sede": 0,
+    "es_neutro": true,
+    "prob_local": 0.32069314213001743,
+    "prob_empate": 0.2847883778850654,
+    "prob_visitante": 0.3945184799849172,
+    "fuerza_local": 0.5188659342105263,
+    "fuerza_visitante": 0.6414656102272728,
+    "diferencia": 0.12259967601674648,
+    "confianza": "ajustado",
+    "prediccion": "Denmark",
+    "resultado": "Empate",
+    "lambda_local": 0.7678518222682329,
+    "lambda_visitante": 0.8068420578567451,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.56,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Congo DR"
+        },
+        "visitante": {
+          "valor": 0.59,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Denmark"
+        },
+        "interpretacion": "Denmark llega con mejor momentum: índice 0.59/1.0 frente a 0.56/1.0 de Congo DR. Últimos 5: 3V/0E/2D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#100 FIFA",
+          "valor": 0.526,
+          "puntos": 1225.4,
+          "nombre": "Congo DR"
+        },
+        "visitante": {
+          "etiqueta": "#20 FIFA",
+          "valor": 0.909,
+          "puntos": 1620.8,
+          "nombre": "Denmark"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #100 Congo DR (1225 pts) vs #20 Denmark (1621 pts). Denmark tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Liege",
+        "local": {
+          "nombre": "Congo DR",
+          "altitud_base": 820,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Denmark",
+          "altitud_base": 16,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Congo DR",
+          "goles_favor": 1.33,
+          "goles_contra": 0.56
+        },
+        "visitante": {
+          "nombre": "Denmark",
+          "goles_favor": 1.65,
+          "goles_contra": 0.77
+        },
+        "interpretacion": "Producción similar: Congo DR 1.33 — Denmark 1.65 goles/partido. Defensa: 0.56 vs 0.77."
+      }
+    ]
+  },
+  {
+    "id": "401869325",
+    "fecha": "2026-06-03T18:45Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Luxembourg",
+    "visitante": "Italy",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/582.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/162.png",
+    "estadio": "Stade de Luxembourg",
+    "ciudad_sede": "Luxembourg City",
+    "pais_sede": "Luxembourg",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.21452087446784487,
+    "prob_empate": 0.18477835792860758,
+    "prob_visitante": 0.6007007676035476,
+    "fuerza_local": 0.3157031428571429,
+    "fuerza_visitante": 0.5764132619360902,
+    "diferencia": 0.2607101190789473,
+    "confianza": "favorable",
+    "prediccion": "Italy",
+    "resultado": "Italy",
+    "lambda_local": 1.013241923315124,
+    "lambda_visitante": 1.9387256910569108,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.33,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Luxembourg"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Italy"
+        },
+        "interpretacion": "Italy llega con mejor momentum: índice 0.50/1.0 frente a 0.33/1.0 de Luxembourg. Últimos 5: 2V/0E/3D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.0,
+          "puntos": 500.0,
+          "nombre": "Luxembourg"
+        },
+        "visitante": {
+          "etiqueta": "#12 FIFA",
+          "valor": 0.947,
+          "puntos": 1700.4,
+          "nombre": "Italy"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #999 Luxembourg (500 pts) vs #12 Italy (1700 pts). Italy tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Luxembourg City",
+        "local": {
+          "nombre": "Luxembourg",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Italy",
+          "altitud_base": 122,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Luxembourg",
+          "goles_favor": 1.07,
+          "goles_contra": 1.53
+        },
+        "visitante": {
+          "nombre": "Italy",
+          "goles_favor": 1.88,
+          "goles_contra": 1.31
+        },
+        "interpretacion": "Italy más ofensivo: 1.88 vs 1.07 goles/partido. Defensiva: 1.53 vs 1.31."
+      }
+    ]
+  },
+  {
+    "id": "401863500",
+    "fecha": "2026-06-03T18:45Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Netherlands",
+    "visitante": "Algeria",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/449.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/624.png",
+    "estadio": "De Kuip",
+    "ciudad_sede": "Rotterdam",
+    "pais_sede": "Netherlands",
+    "altitud_sede": -5,
+    "es_neutro": false,
+    "prob_local": 0.2008441504128846,
+    "prob_empate": 0.1375340243690299,
+    "prob_visitante": 0.6616218252180857,
+    "fuerza_local": 0.6036426647898154,
+    "fuerza_visitante": 0.6918843764524949,
+    "diferencia": 0.08824171166267947,
+    "confianza": "favorable",
+    "prediccion": "Algeria",
+    "resultado": "Algeria",
+    "lambda_local": 1.198238876634074,
+    "lambda_visitante": 2.8540899498829697,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Netherlands"
+        },
+        "visitante": {
+          "valor": 0.85,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Algeria"
+        },
+        "interpretacion": "Algeria llega con mejor momentum: índice 0.85/1.0 frente a 0.47/1.0 de Netherlands. Últimos 5: 4V/0E/1D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#7 FIFA",
+          "valor": 0.971,
+          "puntos": 1757.9,
+          "nombre": "Netherlands"
+        },
+        "visitante": {
+          "etiqueta": "#36 FIFA",
+          "valor": 0.833,
+          "puntos": 1518.2,
+          "nombre": "Algeria"
+        },
+        "interpretacion": "Leve diferencia en ranking: #7 Netherlands vs #36 Algeria. El factor puede influir en momentos clave."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": -5,
+        "ciudad_sede": "Rotterdam",
+        "local": {
+          "nombre": "Netherlands",
+          "altitud_base": 25,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "altitud_base": 141,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (-5m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Netherlands",
+          "goles_favor": 2.0,
+          "goles_contra": 1.27
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "goles_favor": 2.62,
+          "goles_contra": 0.85
+        },
+        "interpretacion": "Algeria más ofensivo: 2.62 vs 2.00 goles/partido. Defensiva: 1.27 vs 0.85."
+      }
+    ]
+  },
+  {
+    "id": "401867373",
+    "fecha": "2026-06-03T18:45Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Poland",
+    "visitante": "Nigeria",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/471.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/657.png",
+    "estadio": "PGE Narodowy",
+    "ciudad_sede": "Warsaw",
+    "pais_sede": "Poland",
+    "altitud_sede": 107,
+    "es_neutro": false,
+    "prob_local": 0.23876263960662908,
+    "prob_empate": 0.18719192286321273,
+    "prob_visitante": 0.5740454375301581,
+    "fuerza_local": 0.5865211565830513,
+    "fuerza_visitante": 0.6745074728997709,
+    "diferencia": 0.0879863163167196,
+    "confianza": "favorable",
+    "prediccion": "Nigeria",
+    "resultado": "Empate",
+    "lambda_local": 0.9518009017886179,
+    "lambda_visitante": 1.8892037012100262,
+    "factor_altitud_local": 0.99855,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Poland"
+        },
+        "visitante": {
+          "valor": 0.77,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Nigeria"
+        },
+        "interpretacion": "Nigeria llega con mejor momentum: índice 0.77/1.0 frente a 0.50/1.0 de Poland. Últimos 5: 4V/0E/1D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#28 FIFA",
+          "valor": 0.871,
+          "puntos": 1565.8,
+          "nombre": "Poland"
+        },
+        "visitante": {
+          "etiqueta": "#42 FIFA",
+          "valor": 0.804,
+          "puntos": 1485.7,
+          "nombre": "Nigeria"
+        },
+        "interpretacion": "Leve diferencia en ranking: #28 Poland vs #42 Nigeria. El factor puede influir en momentos clave."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 107,
+        "ciudad_sede": "Warsaw",
+        "local": {
+          "nombre": "Poland",
+          "altitud_base": 78,
+          "factor": 0.999
+        },
+        "visitante": {
+          "nombre": "Nigeria",
+          "altitud_base": 270,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (107m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Poland",
+          "goles_favor": 1.43,
+          "goles_contra": 1.14
+        },
+        "visitante": {
+          "nombre": "Nigeria",
+          "goles_favor": 1.92,
+          "goles_contra": 0.92
+        },
+        "interpretacion": "Nigeria más ofensivo: 1.92 vs 1.43 goles/partido. Defensiva: 1.14 vs 0.92."
+      }
+    ]
+  },
+  {
     "id": "401873509",
     "fecha": "2026-06-03T11:30Z",
     "torneo": "Amistoso Internacional",
