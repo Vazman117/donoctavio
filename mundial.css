@@ -1,254 +1,375 @@
-header{
-  background:#0f172a;
-  border-bottom:1px solid rgba(255,255,255,.05);
+/* ─── VARIABLES ────────────────────────────────────────── */
+:root {
+  --bg-app:      #090e1a;
+  --bg-card:     #0f1729;
+  --border:      rgba(255,255,255,.06);
+  --border-mid:  rgba(255,255,255,.10);
+  --txt:         #e2e8f0;
+  --muted:       rgba(255,255,255,.35);
+  --dim:         rgba(255,255,255,.20);
+  --font:        'DM Mono', 'Courier New', monospace;
+  --green:       #4ade80;
+  --yellow:      #fbbf24;
+  --red:         #f87171;
 }
 
-header h1,
-header a{
-  color:#cbd5e1;
+/* ─── BODY / LAYOUT ─────────────────────────────────────── */
+.mundial-body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-app);
+  font-family: var(--font);
+  color: var(--txt);
+  overflow: hidden;
 }
 
-.grupos-grid{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:10px;
-  width:100%;
+/* ─── HEADER OVERRIDES (mundial sobreescribe estilos.css) ── */
+/* estilos.css usa header{} global; aquí usamos .mundial-header */
+.mundial-header {
+  flex-shrink: 0;
+  background: var(--bg-app) !important;
+  border-bottom-color: var(--border) !important;
 }
 
-.grupo-card{
-  background:#111827;
-  border-radius:10px;
-  padding:8px;
-  overflow:hidden;
-  transition:.2s ease;
+/* El header usa selector genérico "header" en estilos.css,
+   así que necesitamos especificidad para los textos */
+.mundial-body .btn-back {
+  color: var(--muted) !important;
+  font-family: var(--font) !important;
+  font-size: 10px !important;
+  letter-spacing: .08em !important;
+}
+.mundial-body .btn-back:hover {
+  color: var(--txt) !important;
+}
+.mundial-body .btn-back svg {
+  stroke: currentColor;
 }
 
-.grupo-card h3{
-  color:white;
-  margin-bottom:6px;
-  font-size:12px;
-  text-align:center;
-  font-weight:600;
+.mundial-body .header-label {
+  color: var(--muted) !important;
+  font-family: var(--font) !important;
+  font-size: 10px !important;
+  letter-spacing: .16em !important;
 }
 
-.grupo-tabla{
-  width:100%;
-  border-collapse:collapse;
-  table-layout:fixed;
+.mundial-body header h1 {
+  color: var(--txt) !important;
+  font-family: var(--font) !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: .16em !important;
 }
 
-.grupo-tabla th,
-.grupo-tabla td{
-  padding:3px 2px;
-  text-align:center;
-  color:white;
-  font-size:9px;
-  border-bottom:1px solid rgba(255,255,255,.06);
+/* ─── MAIN ──────────────────────────────────────────────── */
+/* estilos.css define header con height:77px y position:sticky.
+   Usamos calc para restar header + tabs del viewport */
+.mundial-main {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: calc(100vh - 77px);
 }
 
-.grupo-tabla th{
-  opacity:.7;
-  font-size:8px;
+/* ─── TABS ──────────────────────────────────────────────── */
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 0;
+  flex-shrink: 0;
+  border-bottom: 0.5px solid var(--border);
 }
 
-.equipo-cell{
-  display:flex;
-  align-items:center;
-  gap:4px;
-  min-width:0;
-}
-
-.escudo-equipo{
-  width:12px;
-  height:12px;
-  object-fit:contain;
-  flex-shrink:0;
-}
-
-.equipo-cell span{
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  font-size:9px;
-}
-
-#contenidoMundial{
-  width:100%;
-  height:100%;
-  padding: 20px 40px;
-  box-sizing:border-box;
-}
-
-.btn-back {
-  justify-self: start;
-  display: none;
-  align-items: center;
-  gap: .35rem;
+.tab-btn {
+  border: 0.5px solid transparent;
   background: none;
-  border: none;
-  cursor: pointer;
   color: var(--muted);
-  font-family: var(--font-sans);
-  font-size: .8rem;
+  padding: 5px 22px;
+  border-radius: 6px;
+  font-family: var(--font);
+  font-size: 11px;
   font-weight: 500;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .2s;
+}
+.tab-btn:hover {
+  color: var(--txt);
+  background: rgba(255,255,255,.04);
+}
+.tab-btn.active {
+  background: rgba(255,255,255,.07);
+  border-color: var(--border-mid);
+  color: var(--txt);
+}
+
+/* ─── CONTENIDO ─────────────────────────────────────────── */
+.mundial-content {
+  flex: 1;
+  overflow: hidden;
+  padding: 10px 14px;
+  min-height: 0;
+}
+
+/* Tabla y Hoy: sí permiten scroll vertical */
+.mundial-content.vista-scroll {
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+/* ─── GRUPOS GRID ───────────────────────────────────────── */
+.grupos-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 7px;
+  height: 100%;
+}
+
+/* ─── GRUPO CARD ────────────────────────────────────────── */
+.grupo-card {
+  background: var(--bg-card);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.grupo-header {
+  margin: 0;
+  padding: 5px 8px;
+  border-bottom: 0.5px solid var(--border);
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--dim);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ─── TABLA GRUPO ───────────────────────────────────────── */
+.grupo-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.grupo-tabla th {
+  font-size: 8px;
+  color: var(--dim);
   letter-spacing: .05em;
   text-transform: uppercase;
-  transition: color var(--transition);
-  padding: 0;
+  font-weight: 400;
+  padding: 4px 3px 3px;
+  text-align: center;
 }
-.btn-back:hover { color: var(--text); }
-
-.tabs-nav{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-
-    margin:10px auto;
+.grupo-tabla th:first-child {
+  text-align: left;
+  padding-left: 8px;
 }
 
-.tab-btn{
-    border:none;
-
-    background:#111c36;
-
-    color:#cbd5e1;
-
-    padding:12px 20px;
-
-    border-radius:12px;
-
-    font-weight:600;
-    font-size:14px;
-
-    cursor:pointer;
-
-    transition:.25s ease;
+.grupo-tabla td {
+  font-size: 9px;
+  color: var(--txt);
+  padding: 4px 3px;
+  text-align: center;
+  border-top: 0.5px solid var(--border);
 }
 
-.tab-btn:hover{
-    background:#18284d;
-    color:white;
+.grupo-tabla tr.fila-favorito td:first-child {
+  box-shadow: inset 2px 0 0 var(--green);
 }
 
-.tab-btn.active{
-    background:#223764;
-    color:white;
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,.22);
+/* ─── CELDA EQUIPO ──────────────────────────────────────── */
+.equipo-cell {
+  display: flex !important;
+  align-items: center;
+  gap: 5px;
+  text-align: left !important;
+  padding-left: 8px !important;
 }
 
-.escudo-tabla{
-  width:18px;
-  height:18px;
-  object-fit:contain;
+.escudo-equipo {
+  width: 13px;
+  height: 13px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-.equipo-td{
-  display:flex;
-  align-items:center;
-  gap:8px;
+.equipo-cell span {
+  font-size: 9px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.tabla-wrap{
-  background:#111827;
-
-  border-radius:14px;
-
-  overflow:hidden;
-
-  border:1px solid rgba(255,255,255,.05);
-
-  box-shadow:
-    0 10px 24px rgba(0,0,0,.18);
+/* ─── CELDA PROB ────────────────────────────────────────── */
+.prob-cell {
+  padding: 3px 5px 3px 3px !important;
 }
 
-.tabla-general{
-  width:100%;
-  border-collapse:collapse;
+.prob-inner {
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 
-.tabla-general thead{
-  background:#0f172a;
+.prob-bar-bg {
+  flex: 1;
+  height: 3px;
+  background: rgba(255,255,255,.07);
+  border-radius: 99px;
+  overflow: hidden;
+  min-width: 0;
 }
 
-.tabla-general th{
-  color:rgba(255,255,255,.65);
-
-  font-size:11px;
-
-  font-weight:600;
-
-  padding:14px 10px;
-
-  text-align:center;
+.prob-bar-fill {
+  height: 100%;
+  border-radius: 99px;
 }
 
-.tabla-general td{
-  color:white;
-
-  padding:14px 10px;
-
-  border-bottom:
-    1px solid rgba(255,255,255,.05);
-
-  text-align:center;
-
-  font-size:13px;
+.prob-val {
+  font-size: 8px;
+  font-weight: 500;
+  min-width: 28px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
 
-.tabla-general tbody tr{
-  transition:.2s ease;
+.prob-alta  { color: var(--green); }
+.prob-media { color: var(--yellow); }
+.prob-baja  { color: var(--red); }
+
+/* ─── HOY ───────────────────────────────────────────────── */
+.vista-header h2 {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0 0 12px;
+  color: var(--txt);
 }
 
-.tabla-general tbody tr:hover{
-  background:rgba(255,255,255,.025);
+.partidos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
 }
 
-/* SEPARADORES */
-.separador-top td{
-  border-top:
-    2px solid rgba(255,255,255,.12);
+.partido-card {
+  background: var(--bg-card);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
 }
 
-/* EQUIPO */
-.equipo-info{
-  display:flex;
-  align-items:center;
-  gap:10px;
+.equipos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 12px;
 }
 
-.escudo-tabla{
-  width:22px;
-  height:22px;
-  object-fit:contain;
+.vs { color: var(--muted); font-size: 10px; }
+
+.probabilidades {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
 }
 
-/* POSICION */
-.pos-global{
-  font-weight:700;
-  color:#cbd5e1;
+.probabilidades small {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  margin-bottom: 2px;
 }
 
-/* LINEA ESTADO */
-.estado-linea{
-  width:4px;
-  height:34px;
-
-  border-radius:999px;
-
-  margin:auto;
+/* ─── TABLA GENERAL ─────────────────────────────────────── */
+.tabla-wrap {
+  background: var(--bg-card);
+  border-radius: 10px;
+  border: 0.5px solid var(--border);
+  overflow: hidden;
 }
 
-/* COLORES */
-.estado-verde{
-  background:#22c55e;
+.tabla-general { width: 100%; border-collapse: collapse; }
+
+.tabla-general thead { background: var(--bg-app); }
+
+.tabla-general th {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+  padding: 10px 8px;
+  text-align: center;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-bottom: 0.5px solid var(--border);
 }
 
-.estado-amarillo{
-  background:#facc15;
+.tabla-general td {
+  color: var(--txt);
+  padding: 10px 8px;
+  border-bottom: 0.5px solid var(--border);
+  text-align: center;
+  font-size: 12px;
 }
 
-.estado-rojo{
-  background:#ef4444;
+.tabla-general tbody tr:hover { background: rgba(255,255,255,.02); }
+
+.separador-top td { border-top: 1.5px solid var(--border-mid); }
+
+.equipo-info { display: flex; align-items: center; gap: 8px; }
+
+.escudo-tabla { width: 20px; height: 20px; object-fit: contain; }
+
+.pos-global { font-weight: 500; color: var(--muted); }
+
+.estado-linea {
+  width: 3px;
+  height: 28px;
+  border-radius: 99px;
+  margin: auto;
+}
+
+.estado-verde    { background: var(--green); }
+.estado-amarillo { background: var(--yellow); }
+.estado-rojo     { background: var(--red); }
+
+/* ─── RESPONSIVE ────────────────────────────────────────── */
+
+/* Tablet landscape: 4 col, habilitar scroll */
+@media (max-width: 1199px) {
+  .mundial-body    { height: auto; overflow: auto; }
+  .mundial-main    { overflow: auto; height: auto; }
+  .mundial-content { overflow: auto; }
+  .grupos-grid     { grid-template-columns: repeat(4, 1fr); grid-template-rows: none; height: auto; }
+}
+
+/* Tablet portrait: 3 col */
+@media (max-width: 900px) {
+  .grupos-grid   { grid-template-columns: repeat(3, 1fr); }
+  .mundial-header { padding: 0 14px; }
+}
+
+/* Mobile landscape: 2 col */
+@media (max-width: 767px) {
+  .grupos-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+}
+
+/* Mobile portrait */
+@media (max-width: 600px) {
+  .mundial-content { padding: 8px 10px; }
+  .header-label    { display: none; }
+  .tabs-nav        { gap: 4px; }
+  .tab-btn         { padding: 5px 12px; font-size: 10px; }
+}
+
+/* Mobile pequeño */
+@media (max-width: 360px) {
+  .grupos-grid { grid-template-columns: 1fr; }
 }
