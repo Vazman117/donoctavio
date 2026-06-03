@@ -2,20 +2,24 @@
 =============================================================
   MODELO DE PROBABILIDADES POR GRUPO — MUNDIAL 2026
   Don Octavio Web
+  v2.0 — Actualizado con factor SEDE y ALTITUD
 =============================================================
 
 MÉTRICA PRINCIPAL:
     prob_lider  →  % de veces que cada equipo queda 1° del grupo
                    Los 4 equipos de cada grupo suman exactamente 100%.
-                   Indica quién es el favorito a liderar e,
-                   indirectamente, quién tiene más chances de pasar.
 
-ESTRUCTURA ESPERADA:
-    mundial/
-    └── data/
-        ├── grupos.json
-        ├── selecciones.json
-        └── modelo_grupos.py  <- este archivo
+NOVEDADES v2.0:
+    ✦ Factor sede real: cada partido se juega en una ciudad
+      específica; si una selección es "local" (anfitriona) en
+      esa ciudad recibe un bono. Si ya está acostumbrada a la
+      altitud de esa ciudad, recibe un bono adicional.
+    ✦ Factor altitud: diferencia de metros s.n.m. entre
+      la ciudad de origen del equipo y la sede del partido.
+      A mayor diferencia → penalización de rendimiento.
+    ✦ Los dos factores se aplican partido a partido (no al
+      grupo en conjunto) y se promedian sobre los 3 partidos
+      de cada equipo para obtener un ajuste neto por equipo.
 
 USO:
     python mundial/data/modelo_grupos.py
@@ -46,8 +50,7 @@ RUTA_SALIDA = BASE_DIR / "probabilidades_grupos.json"
 
 
 # =============================================================
-#  PESOS DEL MODELO
-#  Basados en análisis estadístico de Mundiales 1994-2022.
+#  PESOS DEL MODELO (v1 — sin cambios)
 # =============================================================
 
 PESOS = {
@@ -63,6 +66,240 @@ FIFA_MAX = 1900.0
 
 
 # =============================================================
+#  SEDES DEL MUNDIAL 2026
+#  altitud_m : metros sobre el nivel del mar
+#  pais      : país anfitrión de la sede
+# =============================================================
+
+SEDES = {
+    "Mexico City":       {"altitud_m": 2240, "pais": "Mexico"},
+    "Guadalajara":       {"altitud_m": 1566, "pais": "Mexico"},
+    "Monterrey":         {"altitud_m":  538, "pais": "Mexico"},
+    "New York":          {"altitud_m":    5, "pais": "USA"},
+    "Los Angeles":       {"altitud_m":   71, "pais": "USA"},
+    "Dallas":            {"altitud_m":  183, "pais": "USA"},
+    "Atlanta":           {"altitud_m":  320, "pais": "USA"},
+    "Miami":             {"altitud_m":    2, "pais": "USA"},
+    "Houston":           {"altitud_m":   15, "pais": "USA"},
+    "Kansas City":       {"altitud_m":  270, "pais": "USA"},
+    "Philadelphia":      {"altitud_m":   12, "pais": "USA"},
+    "San Francisco":     {"altitud_m":   16, "pais": "USA"},
+    "Seattle":           {"altitud_m":   56, "pais": "USA"},
+    "Boston":            {"altitud_m":   43, "pais": "USA"},
+    "Toronto":           {"altitud_m":   76, "pais": "Canada"},
+    "Vancouver":         {"altitud_m":    2, "pais": "Canada"},
+}
+
+
+# =============================================================
+#  ALTITUD APROXIMADA DE LAS CAPITALES / CIUDADES PRINCIPALES
+#  DE CADA SELECCIÓN (metros s.n.m.)
+#  Usada para calcular la diferencia de altitud con la sede.
+# =============================================================
+
+ALTITUD_PAIS = {
+    # CONCACAF (anfitriones)
+    "Mexico":          2240,   # Ciudad de México
+    "USA":               15,   # promedio ponderado (NY, LA, etc.)
+    "Canada":            76,   # Toronto / Ottawa
+
+    # CONMEBOL
+    "Argentina":         25,
+    "Brazil":            10,
+    "Uruguay":           43,
+    "Colombia":        2625,   # Bogotá — ya acostumbrados a altitud
+    "Ecuador":         2850,   # Quito
+    "Paraguay":        124,
+    "Chile":           567,
+    "Bolivia":        3640,   # La Paz — extremo
+    "Venezuela":      900,
+    "Peru":           154,
+
+    # UEFA
+    "France":           35,
+    "England":          11,
+    "Spain":           655,
+    "Germany":         34,
+    "Portugal":         92,
+    "Netherlands":       5,
+    "Belgium":          37,
+    "Italy":            21,
+    "Switzerland":     540,
+    "Croatia":          158,
+    "Austria":          171,
+    "Sweden":            28,
+    "Norway":            23,
+    "Denmark":            7,
+    "Serbia":           117,
+    "Poland":            90,
+    "Czechia":          399,
+    "Slovakia":         152,
+    "Hungary":          108,
+    "Scotland":          35,
+    "Wales":             62,
+    "Turkey":           938,   # Ankara
+    "Romania":           69,
+    "Kosovo":           652,
+    "Bosnia and Herzegovina": 511,
+    "Ukraine":         179,
+    "Greece":            24,
+    "North Macedonia":  245,
+
+    # CAF
+    "Morocco":         590,
+    "Senegal":           22,
+    "Tunisia":           34,
+    "Algeria":          730,
+    "Egypt":             23,
+    "South Africa":    1753,   # Johannesburgo
+    "Nigeria":           41,
+    "Cameroon":        726,
+    "Ghana":            61,
+    "Ivory Coast":       23,
+    "DR Congo":        312,
+    "Haiti":             30,
+    "Cape Verde":        17,
+    "Curaçao":            3,
+
+    # AFC
+    "South Korea":       38,
+    "Japan":              17,
+    "Saudi Arabia":      648,
+    "Australia":          35,
+    "Iran":             1191,
+    "Iraq":              34,
+    "Jordan":           774,
+    "New Zealand":       37,
+    "Uzbekistan":       455,
+
+    # Por defecto para desconocidos
+    "_default":          50,
+}
+
+
+# =============================================================
+#  PARTIDOS DE GRUPO — Mundial 2026
+#  Fuente: calendario oficial FIFA / MLS Soccer / ESPN
+#  Formato: (equipo_1, equipo_2, sede)
+# =============================================================
+
+PARTIDOS_GRUPO = [
+    # ── GRUPO A ──────────────────────────────────────────────
+    ("Mexico",      "South Africa",  "Mexico City"),
+    ("South Korea", "Czechia",       "Guadalajara"),
+    ("Czechia",     "South Africa",  "Atlanta"),
+    ("Mexico",      "South Korea",   "Guadalajara"),
+    ("South Africa","South Korea",   "Monterrey"),
+    ("Czechia",     "Mexico",        "Mexico City"),
+
+    # ── GRUPO B ──────────────────────────────────────────────
+    ("Canada",      "Bosnia and Herzegovina", "Toronto"),
+    ("Qatar",       "Switzerland",            "San Francisco"),
+    ("Switzerland", "Bosnia and Herzegovina", "Los Angeles"),
+    ("Canada",      "Qatar",                  "Vancouver"),
+    ("Switzerland", "Canada",                 "Vancouver"),
+    ("Bosnia and Herzegovina", "Qatar",        "Seattle"),
+
+    # ── GRUPO C ──────────────────────────────────────────────
+    ("Brazil",      "Morocco",   "New York"),
+    ("Haiti",       "Scotland",  "Boston"),
+    ("Scotland",    "Morocco",   "Boston"),
+    ("Brazil",      "Haiti",     "Philadelphia"),
+    ("Morocco",     "Haiti",     "Atlanta"),
+    ("Scotland",    "Brazil",    "Philadelphia"),
+
+    # ── GRUPO D ──────────────────────────────────────────────
+    ("USA",         "Paraguay",  "Los Angeles"),
+    ("Australia",   "Turkey",    "Vancouver"),
+    ("USA",         "Australia", "Seattle"),
+    ("Turkey",      "Paraguay",  "San Francisco"),
+    ("Turkey",      "USA",       "Los Angeles"),
+    ("Paraguay",    "Australia", "Miami"),
+
+    # ── GRUPO E ──────────────────────────────────────────────
+    ("Germany",     "Curaçao",   "Houston"),
+    ("Ivory Coast", "Ecuador",   "Philadelphia"),
+    ("Ecuador",     "Curaçao",   "Kansas City"),
+    ("Germany",     "Ivory Coast","New York"),
+    ("Ecuador",     "Germany",   "New York"),
+    ("Curaçao",     "Ivory Coast","Miami"),
+
+    # ── GRUPO F ──────────────────────────────────────────────
+    ("Netherlands", "Japan",     "Dallas"),
+    ("Sweden",      "Tunisia",   "Monterrey"),
+    ("Netherlands", "Sweden",    "Houston"),
+    ("Japan",       "Tunisia",   "Monterrey"),
+    ("Japan",       "Sweden",    "Dallas"),
+    ("Tunisia",     "Netherlands","Kansas City"),
+
+    # ── GRUPO G ──────────────────────────────────────────────
+    ("Belgium",     "Egypt",     "Seattle"),
+    ("Iran",        "New Zealand","Los Angeles"),
+    ("Belgium",     "Iran",      "Los Angeles"),
+    ("Egypt",       "New Zealand","Miami"),
+    ("Belgium",     "New Zealand","San Francisco"),
+    ("Iran",        "Egypt",     "Dallas"),
+
+    # ── GRUPO H ──────────────────────────────────────────────
+    ("Spain",       "Cape Verde","Atlanta"),
+    ("Saudi Arabia","Uruguay",   "Miami"),
+    ("Spain",       "Saudi Arabia","Atlanta"),
+    ("Uruguay",     "Cape Verde","Houston"),
+    ("Uruguay",     "Spain",     "Guadalajara"),
+    ("Cape Verde",  "Saudi Arabia","Houston"),
+
+    # ── GRUPO I ──────────────────────────────────────────────
+    ("France",      "Senegal",   "New York"),
+    ("Iraq",        "Norway",    "Boston"),
+    ("Norway",      "France",    "Boston"),
+    ("Senegal",     "Iraq",      "Toronto"),
+    ("France",      "Iraq",      "Kansas City"),
+    ("Senegal",     "Norway",    "Philadelphia"),
+
+    # ── GRUPO J ──────────────────────────────────────────────
+    ("Argentina",   "Algeria",   "Kansas City"),
+    ("Austria",     "Jordan",    "San Francisco"),
+    ("Argentina",   "Austria",   "Dallas"),
+    ("Algeria",     "Jordan",    "Philadelphia"),
+    ("Jordan",      "Argentina", "Dallas"),
+    ("Algeria",     "Austria",   "Kansas City"),
+
+    # ── GRUPO K ──────────────────────────────────────────────
+    ("Portugal",    "DR Congo",  "Houston"),
+    ("Uzbekistan",  "Colombia",  "Mexico City"),
+    ("Portugal",    "Uzbekistan","Houston"),
+    ("Colombia",    "DR Congo",  "Guadalajara"),
+    ("Colombia",    "Portugal",  "Seattle"),
+    ("DR Congo",    "Uzbekistan","Atlanta"),
+
+    # ── GRUPO L ──────────────────────────────────────────────
+    ("England",     "Croatia",   "Dallas"),
+    ("Ghana",       "Panama",    "Toronto"),
+    ("England",     "Ghana",     "Boston"),
+    ("Panama",      "Croatia",   "New York"),
+    ("Croatia",     "Ghana",     "Philadelphia"),
+    ("Panama",      "England",   "Miami"),
+]
+
+
+# =============================================================
+#  NACIONES ANFITRIONAS y sus ventajas
+# =============================================================
+
+NACIONES_ANFITRIONAS = {
+    "Mexico":  "Mexico",
+    "USA":     "USA",
+    "Canada":  "Canada",
+}
+
+# Bono de localía: fracción que se suma a la fuerza del equipo
+# cuando juega en su propio país anfitrión.
+BONO_LOCAL   = 0.04   # 4% de la fuerza → ventaja de afición/logística
+# Penalización por altitud: reducción de fuerza por cada 1000 m de diferencia
+PENALIZACION_ALTITUD_POR_1000M = 0.025   # 2.5% por cada 1000 m de diferencia
+
+
+# =============================================================
 #  UTILIDADES
 # =============================================================
 
@@ -71,7 +308,6 @@ def clamp(valor, minimo=0.0, maximo=1.0):
 
 
 def normalizar_clave(nombre):
-    """'South Korea' -> 'south_korea',  'Côte d\\'Ivoire' -> 'cote_divoire'"""
     texto = nombre.lower().strip()
     reemplazos = {
         "á":"a","é":"e","í":"i","ó":"o","ú":"u","ü":"u","ñ":"n",
@@ -85,13 +321,7 @@ def normalizar_clave(nombre):
     return texto.strip("_")
 
 
-# =============================================================
-#  GENERADOR DE NÚMEROS NORMALES (Box-Muller)
-#  Reemplaza numpy.random.normal — sin dependencias externas
-# =============================================================
-
 def normal_sample(mu=0.0, sigma=1.0):
-    """Genera un valor de distribución normal via Box-Muller."""
     while True:
         u1 = random.random()
         u2 = random.random()
@@ -99,6 +329,59 @@ def normal_sample(mu=0.0, sigma=1.0):
             break
     z = math.sqrt(-2.0 * math.log(u1)) * math.cos(2.0 * math.pi * u2)
     return mu + sigma * z
+
+
+# =============================================================
+#  ALTITUD DE PAÍS (con fallback)
+# =============================================================
+
+def get_altitud_pais(nombre_equipo):
+    for k, v in ALTITUD_PAIS.items():
+        if normalizar_clave(k) == normalizar_clave(nombre_equipo):
+            return v
+    return ALTITUD_PAIS["_default"]
+
+
+# =============================================================
+#  CÁLCULO DE AJUSTE SEDE+ALTITUD PARA UN EQUIPO
+#
+#  Para cada partido del grupo en que participa el equipo:
+#    1. Bono local si juega en su país anfitrión
+#    2. Penalización por diferencia de altitud con la sede
+#  El ajuste neto se promedia sobre los 3 partidos.
+#
+#  Devuelve un multiplicador: 1.0 = sin efecto,
+#    > 1.0 = ventaja neta,  < 1.0 = desventaja neta.
+# =============================================================
+
+def calcular_ajuste_sede(nombre_equipo):
+    alt_origen = get_altitud_pais(nombre_equipo)
+    pais_anfitrion = NACIONES_ANFITRIONAS.get(nombre_equipo)
+
+    ajustes = []
+    for eq1, eq2, ciudad in PARTIDOS_GRUPO:
+        if normalizar_clave(eq1) != normalizar_clave(nombre_equipo) and \
+           normalizar_clave(eq2) != normalizar_clave(nombre_equipo):
+            continue
+
+        sede_info = SEDES.get(ciudad, {"altitud_m": 50, "pais": "USA"})
+        alt_sede  = sede_info["altitud_m"]
+
+        # Diferencia de altitud en metros
+        diff_alt = abs(alt_sede - alt_origen)
+        # Convertir a penalización (máximo ~10% a 4000 m de diferencia)
+        pen_alt  = (diff_alt / 1000.0) * PENALIZACION_ALTITUD_POR_1000M
+
+        # Bono local si el equipo es anfitrión y juega en su propio país
+        bono = BONO_LOCAL if (pais_anfitrion and sede_info["pais"] == pais_anfitrion) else 0.0
+
+        ajuste_partido = 1.0 + bono - pen_alt
+        ajustes.append(ajuste_partido)
+
+    if not ajustes:
+        return 1.0
+
+    return sum(ajustes) / len(ajustes)
 
 
 # =============================================================
@@ -126,12 +409,7 @@ def calcular_fuerza(sel):
 
 
 # =============================================================
-#  MONTE CARLO — Python puro
-#
-#  Simula n_sim veces el grupo con ruido gaussiano sobre las
-#  fuerzas y cuenta en qué posición queda cada equipo.
-#  Devuelve matriz probs[equipo][posicion] donde cada columna
-#  suma exactamente 1.0 (100%).
+#  MONTE CARLO — con fuerzas ajustadas por sede/altitud
 # =============================================================
 
 def monte_carlo(fuerzas, n_sim=100_000, seed=2026):
@@ -151,21 +429,18 @@ def monte_carlo(fuerzas, n_sim=100_000, seed=2026):
 
 
 # =============================================================
-#  BUSCAR SELECCIÓN EN EL DICT
+#  BUSCAR SELECCIÓN
 # =============================================================
 
 def buscar_seleccion(nombre_eq, selecciones):
     clave = normalizar_clave(nombre_eq)
-
     if clave in selecciones:
         return selecciones[clave]
-
     for k, v in selecciones.items():
         if normalizar_clave(k) == clave:
             return v
         if normalizar_clave(v.get("nombre", "")) == clave:
             return v
-
     return None
 
 
@@ -196,17 +471,24 @@ def calcular_grupo(grupo_raw, selecciones):
                 "win_rate_visita":      0.3,
             }
 
+        fuerza_base = max(0.01, calcular_fuerza(sel))
+
+        # ── Ajuste sede + altitud ──────────────────────────
+        ajuste_sede = calcular_ajuste_sede(nombre_eq)
+        fuerza_ajustada = max(0.01, fuerza_base * ajuste_sede)
+
         equipos.append({
-            "raw":    eq,
-            "sel":    sel,
-            "nombre": nombre_eq,
-            "fuerza": max(0.01, calcular_fuerza(sel)),
+            "raw":            eq,
+            "sel":            sel,
+            "nombre":         nombre_eq,
+            "fuerza_base":    fuerza_base,
+            "ajuste_sede":    round(ajuste_sede, 4),
+            "fuerza":         fuerza_ajustada,
         })
 
     fuerzas = [e["fuerza"] for e in equipos]
     probs   = monte_carlo(fuerzas)
 
-    # ── Construir resultado ──────────────────────────────────
     resultado_equipos = []
     for i, eq in enumerate(equipos):
         raw = eq["raw"]
@@ -218,16 +500,11 @@ def calcular_grupo(grupo_raw, selecciones):
             "posicion_sorteo": raw.get("posicion", i + 1),
             "ranking_fifa":    sel.get("ranking_fifa", 999),
             "puntos_fifa":     sel.get("puntos_fifa", 0),
-            "fuerza_modelo":   round(fuerzas[i], 4),
+            "fuerza_modelo":   round(eq["fuerza_base"], 4),
+            "ajuste_sede":     eq["ajuste_sede"],
+            "fuerza_ajustada": round(eq["fuerza"], 4),
 
-            # ── MÉTRICAS PRINCIPALES ──────────────────────────
-            # prob_lider: probabilidad de quedar 1° del grupo.
-            # Los 4 equipos del grupo suman exactamente 100%.
-            # Es el indicador principal de favorito y, de forma
-            # indirecta, de chances de pasar a octavos.
             "prob_lider":   round(probs[i][0] * 100, 2),
-
-            # Posiciones secundarias (también suman 100% por columna)
             "prob_segundo": round(probs[i][1] * 100, 2),
             "prob_tercero": round(probs[i][2] * 100, 2),
             "prob_cuarto":  round(probs[i][3] * 100, 2),
@@ -244,23 +521,19 @@ def calcular_grupo(grupo_raw, selecciones):
             },
         })
 
-    # Ordenar por prob_lider descendente
     resultado_equipos.sort(key=lambda x: x["prob_lider"], reverse=True)
-
-    # Marcar al favorito del grupo
     resultado_equipos[0]["es_favorito"] = True
     for eq in resultado_equipos[1:]:
         eq["es_favorito"] = False
 
-    # Verificación: los 4 prob_lider deben sumar ~100%
     suma = sum(eq["prob_lider"] for eq in resultado_equipos)
 
     return {
-        "grupo":          nombre_grupo,
-        "equipos":        resultado_equipos,
-        "favorito":       resultado_equipos[0]["equipo"],
-        "suma_prob_lider": round(suma, 2),   # debe ser ≈ 100.0
-        "no_encontrados": no_encontrados,
+        "grupo":           nombre_grupo,
+        "equipos":         resultado_equipos,
+        "favorito":        resultado_equipos[0]["equipo"],
+        "suma_prob_lider": round(suma, 2),
+        "no_encontrados":  no_encontrados,
     }
 
 
@@ -297,10 +570,12 @@ def main():
         for eq in resultado["equipos"]:
             marca = "★" if eq["es_favorito"] else " "
             print(
-                f"    {marca} {eq['equipo']:<22}"
+                f"    {marca} {eq['equipo']:<26}"
                 f"FIFA #{eq['ranking_fifa']:<4} "
-                f"Lider: {eq['prob_lider']:>5.1f}%  "
-                f"(2°:{eq['prob_segundo']:>5.1f}% / 3°:{eq['prob_tercero']:>5.1f}% / 4°:{eq['prob_cuarto']:>5.1f}%)"
+                f"Fuerza base:{eq['fuerza_modelo']:.4f} "
+                f"AjusteSede:{eq['ajuste_sede']:+.4f}  "
+                f"Lider:{eq['prob_lider']:>5.1f}%  "
+                f"(2°:{eq['prob_segundo']:>4.1f}% / 3°:{eq['prob_tercero']:>4.1f}% / 4°:{eq['prob_cuarto']:>4.1f}%)"
             )
         if resultado["no_encontrados"]:
             print(f"    ⚠  Sin datos: {resultado['no_encontrados']}")
@@ -310,12 +585,23 @@ def main():
         "meta": {
             "fuente":        "Don Octavio Web",
             "mundial":       "FIFA World Cup 2026",
-            "metodo":        "Fuerza compuesta + Monte Carlo 100k simulaciones",
+            "version":       "2.0",
+            "metodo":        "Fuerza compuesta + Ajuste Sede/Altitud + Monte Carlo 100k simulaciones",
             "metrica_clave": (
                 "prob_lider: % de veces que el equipo queda 1° del grupo. "
                 "Los 4 equipos de cada grupo suman 100%."
             ),
             "pesos_modelo":  PESOS,
+            "factores_v2": {
+                "bono_local_pct":           BONO_LOCAL * 100,
+                "penalizacion_por_1000m":   PENALIZACION_ALTITUD_POR_1000M * 100,
+                "descripcion_ajuste_sede": (
+                    "ajuste_sede es un multiplicador sobre la fuerza base. "
+                    "Se calcula partido a partido y se promedia. "
+                    "> 1.0 = ventaja neta (local + altitud favorable), "
+                    "< 1.0 = desventaja neta."
+                ),
+            },
         },
         "grupos": resultados,
     }
