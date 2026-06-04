@@ -1,5 +1,225 @@
 [
   {
+    "id": "401870033",
+    "fecha": "2026-06-04T17:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Andorra",
+    "visitante": "Liechtenstein",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/587.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/589.png",
+    "estadio": "Estadi de la FAF d'Encamp",
+    "ciudad_sede": "Encamp",
+    "pais_sede": "Andorra",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.2569413679884014,
+    "prob_empate": 0.435542268514919,
+    "prob_visitante": 0.30751636349667955,
+    "fuerza_local": 0.24160014285714287,
+    "fuerza_visitante": 0.21233428571428575,
+    "diferencia": 0.02926585714285712,
+    "confianza": "ajustado",
+    "prediccion": "Empate",
+    "resultado": "Andorra",
+    "lambda_local": 0.29402256562962964,
+    "lambda_visitante": 0.4141666666666666,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.08,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Andorra"
+        },
+        "visitante": {
+          "valor": 0.12,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Liechtenstein"
+        },
+        "interpretacion": "Liechtenstein llega con mejor momentum: índice 0.12/1.0 frente a 0.08/1.0 de Andorra. Últimos 5: 1V/0E/4D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Andorra"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Liechtenstein"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #999 vs #999. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Encamp",
+        "local": {
+          "nombre": "Andorra",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Liechtenstein",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Andorra",
+          "goles_favor": 0.25,
+          "goles_contra": 1.5
+        },
+        "visitante": {
+          "nombre": "Liechtenstein",
+          "goles_favor": 0.5,
+          "goles_contra": 2.06
+        },
+        "interpretacion": "Producción similar: Andorra 0.25 — Liechtenstein 0.50 goles/partido. Defensa: 1.50 vs 2.06."
+      }
+    ]
+  },
+  {
+    "id": "401870034",
+    "fecha": "2026-06-04T17:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Sweden",
+    "visitante": "Greece",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/466.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/455.png",
+    "estadio": "Friends Arena",
+    "ciudad_sede": "Stockholm",
+    "pais_sede": "Sweden",
+    "altitud_sede": 28,
+    "es_neutro": false,
+    "prob_local": 0.26451100639230607,
+    "prob_empate": 0.16707404903764295,
+    "prob_visitante": 0.568414944570051,
+    "fuerza_local": 0.6651916534518114,
+    "fuerza_visitante": 0.48590385714285705,
+    "diferencia": 0.17928779630895436,
+    "confianza": "favorable",
+    "prediccion": "Greece",
+    "resultado": "Empate",
+    "lambda_local": 1.0893426507200004,
+    "lambda_visitante": 2.3879465667099753,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Sweden"
+        },
+        "visitante": {
+          "valor": 0.67,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Greece"
+        },
+        "interpretacion": "Greece llega con mejor momentum: índice 0.67/1.0 frente a 0.60/1.0 de Sweden. Últimos 5: 3V/0E/2D vs 4V/0E/1D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#35 FIFA",
+          "valor": 0.837,
+          "puntos": 1524.8,
+          "nombre": "Sweden"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Greece"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #35 Sweden (1525 pts) vs #999 Greece (500 pts). Sweden tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 28,
+        "ciudad_sede": "Stockholm",
+        "local": {
+          "nombre": "Sweden",
+          "altitud_base": 28,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Greece",
+          "altitud_base": 74,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (28m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Sweden",
+          "goles_favor": 2.33,
+          "goles_contra": 1.4
+        },
+        "visitante": {
+          "nombre": "Greece",
+          "goles_favor": 2.13,
+          "goles_contra": 0.53
+        },
+        "interpretacion": "Producción similar: Sweden 2.33 — Greece 2.13 goles/partido. Defensa: 1.40 vs 0.53."
+      }
+    ]
+  },
+  {
     "id": "401867323",
     "fecha": "2026-06-04T16:00Z",
     "torneo": "Amistoso Internacional",
