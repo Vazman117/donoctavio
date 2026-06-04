@@ -1,5 +1,225 @@
 [
   {
+    "id": "401867323",
+    "fecha": "2026-06-04T16:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Slovenia",
+    "visitante": "Cyprus",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/472.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/445.png",
+    "estadio": "Stadion Stozice",
+    "ciudad_sede": "Ljubljana",
+    "pais_sede": "Slovenia",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.6200000000000001,
+    "prob_empate": 0.19211377327843346,
+    "prob_visitante": 0.18788622672156652,
+    "fuerza_local": 0.4305954285714286,
+    "fuerza_visitante": 0.24235400000000007,
+    "diferencia": 0.1882414285714285,
+    "confianza": "favorable",
+    "prediccion": "Slovenia",
+    "resultado": "Empate",
+    "lambda_local": 3.012895148885597,
+    "lambda_visitante": 0.23462697646340736,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Slovenia"
+        },
+        "visitante": {
+          "valor": 0.14,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Cyprus"
+        },
+        "interpretacion": "Slovenia llega con mejor momentum: índice 0.53/1.0 frente a 0.14/1.0 de Cyprus. Últimos 5: 3V/0E/2D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Slovenia"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Cyprus"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #999 vs #999. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Ljubljana",
+        "local": {
+          "nombre": "Slovenia",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Cyprus",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Slovenia",
+          "goles_favor": 1.47,
+          "goles_contra": 0.71
+        },
+        "visitante": {
+          "nombre": "Cyprus",
+          "goles_favor": 0.57,
+          "goles_contra": 2.64
+        },
+        "interpretacion": "Slovenia más ofensivo: 1.47 goles/partido (vs 0.57). Defensiva: 0.71 vs 2.64."
+      }
+    ]
+  },
+  {
+    "id": "401871360",
+    "fecha": "2026-06-04T16:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Northern Ireland",
+    "visitante": "Guinea",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/586.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2847.png",
+    "estadio": "Municipal de La Línea de la Concepción",
+    "ciudad_sede": "La Línea de la Concepción",
+    "pais_sede": "Spain",
+    "altitud_sede": 0,
+    "es_neutro": true,
+    "prob_local": 0.21048151343063642,
+    "prob_empate": 0.1695184865693636,
+    "prob_visitante": 0.62,
+    "fuerza_local": 0.31325,
+    "fuerza_visitante": 0.5395042112098427,
+    "diferencia": 0.22625421120984274,
+    "confianza": "favorable",
+    "prediccion": "Guinea",
+    "resultado": "Northern Ireland",
+    "lambda_local": 1.1340229927007297,
+    "lambda_visitante": 2.4750433066666657,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.25,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Northern Ireland"
+        },
+        "visitante": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Guinea"
+        },
+        "interpretacion": "Guinea llega con mejor momentum: índice 0.60/1.0 frente a 0.25/1.0 de Northern Ireland. Últimos 5: 3V/0E/2D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Northern Ireland"
+        },
+        "visitante": {
+          "etiqueta": "#99 FIFA",
+          "valor": 0.531,
+          "puntos": 1228.8,
+          "nombre": "Guinea"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #999 Northern Ireland (500 pts) vs #99 Guinea (1229 pts). Guinea tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "La Línea de la Concepción",
+        "local": {
+          "nombre": "Northern Ireland",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Guinea",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Northern Ireland",
+          "goles_favor": 1.33,
+          "goles_contra": 1.33
+        },
+        "visitante": {
+          "nombre": "Guinea",
+          "goles_favor": 3.0,
+          "goles_contra": 1.4
+        },
+        "interpretacion": "Guinea más ofensivo: 3.00 vs 1.33 goles/partido. Defensiva: 1.33 vs 1.40."
+      }
+    ]
+  },
+  {
     "id": "401873674",
     "fecha": "2026-06-04T12:00Z",
     "torneo": "Amistoso Internacional",
