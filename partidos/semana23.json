@@ -1,5 +1,225 @@
 [
   {
+    "id": "401870075",
+    "fecha": "2026-06-04T00:45Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Panama",
+    "visitante": "Dominican Republic",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2659.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2649.png",
+    "estadio": "Estadio Rommel Fernández Gutiérrez",
+    "ciudad_sede": "Panama City",
+    "pais_sede": "Panama",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.39436064267150556,
+    "prob_empate": 0.2022647812679957,
+    "prob_visitante": 0.40337457606049876,
+    "fuerza_local": 0.55131598632946,
+    "fuerza_visitante": 0.3468092857142857,
+    "diferencia": 0.20450670061517429,
+    "confianza": "ajustado",
+    "prediccion": "Dominican Republic",
+    "resultado": "Panama",
+    "lambda_local": 1.3126609173985184,
+    "lambda_visitante": 1.6344878772148146,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.52,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Panama"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Dominican Republic"
+        },
+        "interpretacion": "Panama llega con mejor momentum: índice 0.52/1.0 frente a 0.50/1.0 de Dominican Republic. Últimos 5: 1V/0E/4D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#65 FIFA",
+          "valor": 0.694,
+          "puntos": 1355.2,
+          "nombre": "Panama"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.0,
+          "puntos": 500.0,
+          "nombre": "Dominican Republic"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #65 Panama (1355 pts) vs #999 Dominican Republic (500 pts). Panama tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Panama City",
+        "local": {
+          "nombre": "Panama",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Dominican Republic",
+          "altitud_base": 375,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Panama",
+          "goles_favor": 1.62,
+          "goles_contra": 1.05
+        },
+        "visitante": {
+          "nombre": "Dominican Republic",
+          "goles_favor": 2.23,
+          "goles_contra": 1.04
+        },
+        "interpretacion": "Dominican Republic más ofensivo: 2.23 vs 1.62 goles/partido. Defensiva: 1.05 vs 1.04."
+      }
+    ]
+  },
+  {
+    "id": "401871496",
+    "fecha": "2026-06-04T01:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "South Korea",
+    "visitante": "El Salvador",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/451.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2650.png",
+    "estadio": "",
+    "ciudad_sede": "",
+    "pais_sede": "",
+    "altitud_sede": 0,
+    "es_neutro": true,
+    "prob_local": 0.5117444579958927,
+    "prob_empate": 0.22597146837194337,
+    "prob_visitante": 0.262284073632164,
+    "fuerza_local": 0.5866190397300068,
+    "fuerza_visitante": 0.44838435919343816,
+    "diferencia": 0.13823468053656868,
+    "confianza": "favorable",
+    "prediccion": "South Korea",
+    "resultado": "South Korea",
+    "lambda_local": 1.3848891671892993,
+    "lambda_visitante": 0.8639041457777541,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.56,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "South Korea"
+        },
+        "visitante": {
+          "valor": 0.33,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "El Salvador"
+        },
+        "interpretacion": "South Korea llega con mejor momentum: índice 0.56/1.0 frente a 0.33/1.0 de El Salvador. Últimos 5: 2V/0E/3D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#24 FIFA",
+          "valor": 0.89,
+          "puntos": 1590.1,
+          "nombre": "South Korea"
+        },
+        "visitante": {
+          "etiqueta": "#75 FIFA",
+          "valor": 0.646,
+          "puntos": 1310.8,
+          "nombre": "El Salvador"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #24 South Korea (1590 pts) vs #75 El Salvador (1311 pts). South Korea tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "",
+        "local": {
+          "nombre": "South Korea",
+          "altitud_base": 38,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "El Salvador",
+          "altitud_base": 658,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "South Korea",
+          "goles_favor": 1.44,
+          "goles_contra": 1.22
+        },
+        "visitante": {
+          "nombre": "El Salvador",
+          "goles_favor": 1.06,
+          "goles_contra": 1.28
+        },
+        "interpretacion": "Producción similar: South Korea 1.44 — El Salvador 1.06 goles/partido. Defensa: 1.22 vs 1.28."
+      }
+    ]
+  },
+  {
     "id": "401871169",
     "fecha": "2026-06-03T18:00Z",
     "torneo": "Amistoso Internacional",

@@ -34,10 +34,8 @@ def obtener_seleccion(nombre, db):
     key = nombre.lower().replace(" ", "")
     for a, b in reemplazos.items():
         key = key.replace(a, b)
-    # Búsqueda exacta
     if key in db:
         return db[key]
-    # Búsqueda parcial (ej: "costarica" dentro de las claves)
     for k, v in db.items():
         norm_k = k.lower().replace(" ", "")
         for a, b in reemplazos.items():
@@ -50,58 +48,24 @@ def obtener_seleccion(nombre, db):
 # =============================
 # MODELO DE ALTITUD
 # =============================
-# El fútbol de selecciones tiene un factor crucial que los clubes
-# casi no tienen: la sede puede estar a 3600m (Quito, La Paz, Bogotá).
-# El impacto es asimétrico: favorece al equipo más aclimatado
-# y penaliza al visitante que no está adaptado.
-#
-# ACLIMATACIÓN: se mide como la diferencia entre la altitud de
-# la sede y la altitud base del equipo (donde entrena/vive).
-# A mayor diferencia, mayor penalización fisiológica.
-#
-# UMBRALES:
-#   < 1000m  → sin impacto significativo
-#   1000-2000m → impacto leve
-#   2000-3000m → impacto moderado (Bogotá ~2600m)
-#   > 3000m  → impacto alto (La Paz ~3600m, Quito ~2850m)
-# ─────────────────────────────────────────────────────────────────
 
 def calcular_factor_altitud(altitud_sede, altitud_base_equipo):
-    """
-    Retorna un modificador de rendimiento basado en la diferencia
-    de altitud entre la sede y la base del equipo.
-
-    - Si el equipo ya vive/entrena a esa altitud → sin penalización
-    - Si viene de nivel del mar a 2600m → penalización notable
-    Devuelve valor entre 0.0 (máx penalización) y 1.0 (sin penalización).
-    """
     diferencia = altitud_sede - altitud_base_equipo
-
     if diferencia <= 0:
-        # El equipo está aclimatado o en condición igual/mejor
         return 1.0
-
-    # Penalización progresiva
-    # A 2600m de diferencia (Bogotá vs equipo de nivel del mar): ~0.88
-    # A 3600m (La Paz): ~0.84
-    penalizacion = diferencia / 20000.0   # escala suave
+    penalizacion = diferencia / 20000.0
     return max(0.80, 1.0 - penalizacion)
 
 
 def modificador_altitud_goles(altitud_sede, altitud_base_equipo):
-    """
-    En alta altitud el balón viaja más rápido y los jugadores se
-    fatigan antes → más goles abiertos, partidos más físicos.
-    Retorna multiplicador para lambda (goles esperados).
-    """
     if altitud_sede < 1500:
         return 1.0
     elif altitud_sede < 2500:
         return 1.03
     elif altitud_sede < 3200:
-        return 1.06   # Bogotá ~2600m → +6% de goles
+        return 1.06
     else:
-        return 1.09   # La Paz, Quito → +9%
+        return 1.09
 
 
 # =============================
@@ -121,12 +85,20 @@ def limitar(v, a, b):
 
 
 def normalizar_ranking_fifa(ranking, total=210):
-    """Ranking 1 = mejor → normalizar a 0..1 donde 1 es mejor."""
+    """
+    Ranking 1 = mejor → normalizar a 0..1 donde 1 es mejor.
+
+    CORRECCIÓN BUG 1: rankings >= total (ej: 999) ya no colapsan a 0.0.
+    - Equipos sin ranking real (999) reciben 0.25: son desconocidos,
+      no nulos. Evita que su fuerza_base se aplaste artificialmente
+      y que el favorito infle su probabilidad hasta 70%+.
+    """
+    if ranking >= total:
+        return 0.25   # equipo sin ranking FIFA real → fuerza modesta
     return limitar((total - ranking) / (total - 1), 0.0, 1.0)
 
 
 def normalizar_puntos_fifa(puntos, maximo=2000.0):
-    """Normaliza puntos FIFA a escala 0..1."""
     return limitar(puntos / maximo, 0.0, 1.0)
 
 
@@ -156,15 +128,6 @@ def nivel_impacto(diferencia_normalizada):
 # =============================
 
 def adaptar_seleccion(seleccion_raw):
-    """
-    Convierte los datos crudos de una selección al formato interno
-    que usa el motor de predicción.
-
-    Lógica de forma:
-    - Si hay partidos oficiales recientes, esos dominan (peso 0.70)
-    - Los amistosos recientes complementan (peso 0.30)
-    - Si solo hay una fuente, se usa directamente
-    """
     forma_oficial   = seleccion_raw.get("forma_oficial",   0.0) or 0.0
     forma_amistoso  = seleccion_raw.get("forma_amistosos", 0.0) or 0.0
 
@@ -177,12 +140,10 @@ def adaptar_seleccion(seleccion_raw):
     else:
         forma_final = 0.5
 
-    # Últimos 5: priorizar oficiales, rellenar con amistosos
     ul5_oficial  = seleccion_raw.get("ultimos_5_oficial",  []) or []
     ul5_amistoso = seleccion_raw.get("ultimos_5_amistoso", []) or []
     ul5_mixto = (ul5_oficial + ul5_amistoso)[:5]
 
-    # Partidos totales (oficial + amistoso)
     total_partidos = (
         seleccion_raw.get("partidos_oficial", 0) +
         seleccion_raw.get("partidos_amistoso", 0)
@@ -200,7 +161,6 @@ def adaptar_seleccion(seleccion_raw):
         seleccion_raw.get("perdidos_amistoso", 0)
     )
 
-    # Goles ponderados (oficial pesa más)
     gf_oficial  = seleccion_raw.get("goles_favor_oficial",  0.0) or 0.0
     gc_oficial  = seleccion_raw.get("goles_contra_oficial", 0.0) or 0.0
     gf_amistoso = seleccion_raw.get("goles_favor_amistoso", 0.0) or 0.0
@@ -223,46 +183,29 @@ def adaptar_seleccion(seleccion_raw):
         "nombre":     seleccion_raw.get("nombre", ""),
         "escudo":     seleccion_raw.get("escudo", ""),
         "confederacion": seleccion_raw.get("confederacion", ""),
-
-        # Ranking FIFA (factor de calidad objetiva)
         "ranking_fifa":  seleccion_raw.get("ranking_fifa",  50),
         "puntos_fifa":   seleccion_raw.get("puntos_fifa",   1000.0),
-
-        # Altitud base del equipo
         "altitud_base":  seleccion_raw.get("altitud_base", 0),
-
-        # Forma ponderada
         "forma_ponderada": forma_final,
         "imbatido_streak": seleccion_raw.get("imbatido_streak", 0),
         "ultimos_5":       ul5_mixto,
-
-        # Rendimiento situacional
         "win_rate_local":  seleccion_raw.get("win_rate_local",  0.5),
         "win_rate_visita": seleccion_raw.get("win_rate_visita", 0.5),
         "win_rate_neutro": seleccion_raw.get("win_rate_neutro", 0.5),
-
-        # Goles
         "goles_favor_promedio":  round(gf_ponderado, 3),
         "goles_contra_promedio": round(gc_ponderado, 3),
-
-        # Stats globales
         "partidos":  total_partidos,
         "ganados":   total_ganados,
         "empatados": total_empatados,
         "perdidos":  total_perdidos,
-
-        # Stats locales/visita (para referencia en análisis)
         "partidos_local":  seleccion_raw.get("partidos_local",  0),
         "ganados_local":   seleccion_raw.get("ganados_local",   0),
         "empatados_local": 0,
         "perdidos_local":  seleccion_raw.get("perdidos_local",  0),
-
         "partidos_visita":  seleccion_raw.get("partidos_visita",  0),
         "ganados_visita":   seleccion_raw.get("ganados_visita",   0),
         "empatados_visita": 0,
         "perdidos_visita":  seleccion_raw.get("perdidos_visita",  0),
-
-        # Detalle por tipo de partido (para análisis)
         "partidos_oficial":  seleccion_raw.get("partidos_oficial",  0),
         "forma_oficial":     forma_oficial,
         "ultimos_5_oficial": ul5_oficial,
@@ -274,25 +217,15 @@ def adaptar_seleccion(seleccion_raw):
 # =============================
 # PERFILES DE COMPETENCIA
 # =============================
-# Para selecciones los perfiles cambian respecto a clubes:
-# - El ranking FIFA es un factor objetivo de peso
-# - La altitud puede ser determinante
-# - Los empates son más frecuentes en partidos neutrales
-# - En mundiales el K_LOGISTICO sube (mayor diferencia entre selecciones)
-# - En amistosos baja (equipos no juegan al máximo)
-# ─────────────────────────────────────────────────────────────────
 
 PERFILES_SELECCIONES = {
 
-    # ── Amistoso internacional ──────────────────────────────────────────────
-    # Equipos no juegan al 100%, rotaciones frecuentes.
-    # La forma reciente y el ranking FIFA pesan más que el contexto.
     "amistoso": {
         "nombre":           "Amistoso Internacional",
         "K_LOGISTICO":      3.8,
-        "MAX_FAVORITO":     0.70,
-        "ALPHA":            0.72,   # Poisson
-        "BETA":             0.28,   # fuerza
+        "MAX_FAVORITO":     0.62,   # bajado de 0.70 → limita ratio antes de fusión
+        "ALPHA":            0.72,
+        "BETA":             0.28,
         "usa_h2h":          False,
         "usa_ranking_fifa": True,
         "usa_altitud":      True,
@@ -302,12 +235,10 @@ PERFILES_SELECCIONES = {
         "PESO_ALTITUD":     0.10,
     },
 
-    # ── Eliminatoria CONMEBOL ───────────────────────────────────────────────
-    # Altitud muy importante, H2H relevante, partidos de altísima tensión.
     "eliminatoria_conmebol": {
         "nombre":           "Eliminatoria CONMEBOL",
         "K_LOGISTICO":      4.2,
-        "MAX_FAVORITO":     0.68,
+        "MAX_FAVORITO":     0.62,
         "ALPHA":            0.70,
         "BETA":             0.30,
         "usa_h2h":          True,
@@ -319,11 +250,10 @@ PERFILES_SELECCIONES = {
         "PESO_ALTITUD":     0.10,
     },
 
-    # ── Eliminatoria CONCACAF ───────────────────────────────────────────────
     "eliminatoria_concacaf": {
         "nombre":           "Eliminatoria CONCACAF",
         "K_LOGISTICO":      4.0,
-        "MAX_FAVORITO":     0.70,
+        "MAX_FAVORITO":     0.63,
         "ALPHA":            0.72,
         "BETA":             0.28,
         "usa_h2h":          True,
@@ -335,11 +265,10 @@ PERFILES_SELECCIONES = {
         "PESO_ALTITUD":     0.08,
     },
 
-    # ── Copa América / CONCACAF Gold Cup ────────────────────────────────────
     "copa_america": {
         "nombre":           "Copa América / Torneo Continental",
         "K_LOGISTICO":      4.1,
-        "MAX_FAVORITO":     0.71,
+        "MAX_FAVORITO":     0.63,
         "ALPHA":            0.71,
         "BETA":             0.29,
         "usa_h2h":          True,
@@ -351,13 +280,10 @@ PERFILES_SELECCIONES = {
         "PESO_ALTITUD":     0.08,
     },
 
-    # ── Mundial FIFA — Fase de Grupos ────────────────────────────────────────
-    # El más competitivo. FIFA enforces sedes neutrales normalmente.
-    # El ranking FIFA es el factor más objetivo disponible.
     "mundial_grupos": {
         "nombre":           "Copa del Mundo FIFA — Fase de Grupos",
         "K_LOGISTICO":      4.3,
-        "MAX_FAVORITO":     0.72,
+        "MAX_FAVORITO":     0.64,
         "ALPHA":            0.68,
         "BETA":             0.32,
         "usa_h2h":          True,
@@ -369,12 +295,10 @@ PERFILES_SELECCIONES = {
         "PESO_ALTITUD":     0.08,
     },
 
-    # ── Mundial FIFA — Eliminatorias (octavos en adelante) ──────────────────
-    # Mayor presión, experiencia en grandes competencias cuenta más.
     "mundial_eliminatoria": {
         "nombre":           "Copa del Mundo FIFA — Eliminatorias",
         "K_LOGISTICO":      4.5,
-        "MAX_FAVORITO":     0.73,
+        "MAX_FAVORITO":     0.65,
         "ALPHA":            0.66,
         "BETA":             0.34,
         "usa_h2h":          True,
@@ -393,10 +317,9 @@ PERFILES_SELECCIONES = {
 # =============================
 
 def calcular_promedio_global(db):
-    """Promedio de goles por partido de todas las selecciones con datos."""
     selecciones = [v for v in db.values() if v.get("partidos", 0) > 0]
     if not selecciones:
-        return 1.35   # fallback internacional
+        return 1.35
     return sum(v.get("goles_favor_promedio", 1.35) for v in selecciones) / len(selecciones)
 
 
@@ -405,10 +328,6 @@ def calcular_promedio_global(db):
 # =============================
 
 def peso_confianza(partidos_jugados):
-    """
-    Las selecciones juegan mucho menos que los clubes.
-    Ajustamos los umbrales a la realidad de selecciones.
-    """
     if partidos_jugados < 3:
         return 0.35
     elif partidos_jugados < 6:
@@ -420,32 +339,21 @@ def peso_confianza(partidos_jugados):
 
 
 # =============================
-# IPO e ISD (adaptados para selecciones)
+# IPO e ISD
 # =============================
 
 def calcular_ipo_seleccion(equipo, contexto, promedio_global):
-    """
-    Índice de Potencial Ofensivo para selecciones.
-    Considera:
-    - Goles promedio ponderados por muestra
-    - Forma ponderada (oficial + amistosos)
-    - Win rate situacional (local/visita/neutro según sede)
-    - Factor de altitud (penalización si viene de muy abajo)
-    """
     peso   = peso_confianza(equipo.get("partidos", 0))
     altitud_sede = contexto.get("altitud_sede", 0)
     altitud_base = equipo.get("altitud_base", 0)
     es_local     = contexto.get("es_local", False)
     es_neutro    = contexto.get("es_neutro", False)
 
-    # Ataque normalizado por promedio global
     ataque = equipo["goles_favor_promedio"] / promedio_global if promedio_global else 1.0
-    ataque = peso * ataque + (1 - peso) * 1.0   # suavizado por muestra
+    ataque = peso * ataque + (1 - peso) * 1.0
 
-    # Forma reciente
     mod_forma = 0.85 + (equipo["forma_ponderada"] * 0.30)
 
-    # Win rate situacional
     if es_neutro:
         wr_raw = equipo.get("win_rate_neutro", 0.5)
     elif es_local:
@@ -454,9 +362,7 @@ def calcular_ipo_seleccion(equipo, contexto, promedio_global):
         wr_raw = equipo.get("win_rate_visita", 0.5)
     mod_localidad = 0.80 + (wr_raw * 0.40)
 
-    # Factor de altitud: penaliza si el equipo no está aclimatado
-    factor_alt = calcular_factor_altitud(altitud_sede, altitud_base)
-    # Modificador de goles por altitud (balón más rápido, más cansancio)
+    factor_alt    = calcular_factor_altitud(altitud_sede, altitud_base)
     mod_goles_alt = modificador_altitud_goles(altitud_sede, altitud_base)
 
     ipo = ataque * mod_forma * mod_localidad * factor_alt * mod_goles_alt
@@ -464,59 +370,29 @@ def calcular_ipo_seleccion(equipo, contexto, promedio_global):
 
 
 def calcular_isd_seleccion(equipo, contexto, promedio_global):
-    """
-    Índice de Solidez Defensiva para selecciones.
-
-    CONVENCIÓN: ISD es un "factor de concesión" que va en el DENOMINADOR
-    de la fórmula de lambda del rival.
-       lambda_rival = IPO_rival * promedio / ISD_este_equipo
-
-    ISD > 1.0 → buena defensa (reduce goles del rival)
-    ISD = 1.0 → defensa promedio
-    ISD < 1.0 → defensa débil (aumenta goles del rival)
-
-    Derivación:
-       ISD = promedio / goles_contra_promedio
-       → Si goles_contra = 0.2 y promedio = 1.35: ISD = 6.75 → capeamos a 2.5
-       → Regresión a la media según muestra disponible
-
-    Límites: [0.5, 2.5]
-    """
     peso = peso_confianza(equipo.get("partidos", 0))
     altitud_sede = contexto.get("altitud_sede", 0)
     altitud_base = equipo.get("altitud_base", 0)
 
     gc = equipo["goles_contra_promedio"]
     if gc == 0:
-        isd_raw = 2.5   # defensa perfecta en muestra → máximo razonable
+        isd_raw = 2.5
     else:
         isd_raw = promedio_global / gc
 
-    # Capear: ninguna selección tiene defensa de 2.5x la media o peor que 0.5x
     isd_raw = limitar(isd_raw, 0.5, 2.5)
-
-    # Regresión a la media según confianza de la muestra
     isd = peso * isd_raw + (1 - peso) * 1.0
 
-    # Streak de imbatibilidad suma hasta 10% adicional a la defensa
     mod_streak = 1.0 + (normalizar_streak(equipo["imbatido_streak"]) * 0.10)
     isd *= mod_streak
 
-    # La altitud también afecta movilidad defensiva del equipo no aclimatado
     factor_alt = calcular_factor_altitud(altitud_sede, altitud_base)
-    isd *= (0.7 + factor_alt * 0.3)   # impacto suavizado: altitud degrada la defensa levemente
+    isd *= (0.7 + factor_alt * 0.3)
 
     return limitar(isd, 0.5, 2.5)
 
 
 def calcular_lambdas(seleccion_local, seleccion_visitante, contexto, promedio_global):
-    """
-    Fórmula Dixon-Coles adaptada:
-        lambda_local     = IPO_local     * promedio / ISD_visitante
-        lambda_visitante = IPO_visitante * promedio / ISD_local
-
-    ISD en el denominador: defensa fuerte → reduce los goles del rival ✓
-    """
     contexto_l = {**contexto, "es_local": True,  "es_neutro": contexto.get("es_neutro", False)}
     contexto_v = {**contexto, "es_local": False, "es_neutro": contexto.get("es_neutro", False)}
 
@@ -546,18 +422,10 @@ def probabilidades_poisson(lambda_local, lambda_visitante, max_goles=8):
 
 
 # =============================
-# FUERZA BASE (selecciones)
+# FUERZA BASE
 # =============================
 
 def calcular_fuerza_base(seleccion, contexto, cfg):
-    """
-    Calcula la fuerza base de la selección combinando:
-    - Forma ponderada (oficial + amistosos)
-    - Win rate situacional
-    - Goles a favor / en contra
-    - Ranking FIFA normalizado (si el perfil lo usa)
-    - Imbatido streak
-    """
     PESO_FORMA        = 0.28
     PESO_WINRATE      = 0.20
     PESO_GOLES_FAVOR  = 0.12
@@ -565,10 +433,8 @@ def calcular_fuerza_base(seleccion, contexto, cfg):
     PESO_RANKING_FIFA = 0.18
     PESO_STREAK       = 0.10
 
-    # El ranking FIFA siempre está disponible para selecciones
     ranking_norm = normalizar_ranking_fifa(seleccion["ranking_fifa"])
     puntos_norm  = normalizar_puntos_fifa(seleccion["puntos_fifa"])
-    # Combinar ranking y puntos para mayor robustez
     factor_fifa  = ranking_norm * 0.50 + puntos_norm * 0.50
 
     forma = seleccion["forma_ponderada"]
@@ -601,9 +467,7 @@ def calcular_fuerza_base(seleccion, contexto, cfg):
         streak       * PESO_STREAK
     )
 
-    # Ajuste por altitud: reduce levemente la fuerza si hay penalización
     factor_alt = calcular_factor_altitud(altitud_sede, altitud_base)
-    # Solo aplicamos la mitad del impacto aquí (el resto ya está en IPO/ISD)
     fuerza *= (0.5 + factor_alt * 0.5)
 
     return fuerza
@@ -670,12 +534,8 @@ def contar_resultados_h2h(partidos_h2h, nombre_local, nombre_visitante):
 # =============================
 
 def calcular_tasa_empate(seleccion, es_neutro=False):
-    if es_neutro:
-        partidos  = seleccion.get("partidos", 0)
-        empatados = seleccion.get("empatados", 0)
-    else:
-        partidos  = seleccion.get("partidos", 0)
-        empatados = seleccion.get("empatados", 0)
+    partidos  = seleccion.get("partidos", 0)
+    empatados = seleccion.get("empatados", 0)
     if partidos == 0:
         return 0.22
     return limitar(empatados / partidos, 0.0, 1.0)
@@ -685,15 +545,20 @@ def contar_empates_recientes(ultimos_5):
     return ultimos_5.count("D")
 
 
-PESO_EMPATE_BASE      = 0.22
-PESO_EMPATE_HISTORICO = 0.63
+# CORRECCIÓN BUG 3: pendiente más suave (0.60 vs 0.40) y piso mínimo más alto (0.14 vs 0.10)
+# Además se reequilibran los pesos para que la base tenga más peso
+# y no se aplaste tanto en partidos disparejos.
+PESO_EMPATE_BASE      = 0.30   # antes: 0.22
+PESO_EMPATE_HISTORICO = 0.55   # antes: 0.63
 PESO_EMPATE_MOMENTUM  = 0.15
 
 def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neutro=False):
     diferencia = abs(f_local - f_visitante)
-    # En partidos neutros los empates son más probables
     base_empate = 0.30 if es_neutro else 0.26
-    base = limitar(base_empate - (diferencia / 0.40) * 0.15, 0.10, base_empate)
+
+    # Pendiente más suave: divide entre 0.60 en vez de 0.40
+    # Piso más alto: 0.14 en vez de 0.10
+    base = limitar(base_empate - (diferencia / 0.60) * 0.10, 0.14, base_empate)
 
     tasa_local     = calcular_tasa_empate(sel_local,     es_neutro)
     tasa_visitante = calcular_tasa_empate(sel_visitante, es_neutro)
@@ -707,7 +572,7 @@ def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neut
         base      * PESO_EMPATE_BASE      +
         historico * PESO_EMPATE_HISTORICO +
         momentum  * PESO_EMPATE_MOMENTUM,
-        0.10, 0.46
+        0.13, 0.46
     )
 
 
@@ -715,16 +580,39 @@ def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neut
 # MOTOR CENTRAL DE PREDICCIÓN
 # =============================
 
+def _aplicar_cap_final(prob_local, prob_empate, prob_visitante, max_favorito):
+    """
+    CORRECCIÓN BUG 2: aplica MAX_FAVORITO sobre la probabilidad fusionada final,
+    no solo sobre ratio_l antes de la fusión.
+
+    El exceso se redistribuye 55% al empate y 45% al rival, luego se renormaliza.
+    Esto garantiza que ningún equipo supere el techo definido en el perfil,
+    independientemente de lo que produzcan Poisson y fuerza por separado.
+    """
+    prob_max = max(prob_local, prob_visitante)
+    if prob_max <= max_favorito:
+        return prob_local, prob_empate, prob_visitante
+
+    if prob_local >= prob_visitante:
+        exceso = prob_local - max_favorito
+        prob_local    = max_favorito
+        prob_empate   += exceso * 0.55
+        prob_visitante += exceso * 0.45
+    else:
+        exceso = prob_visitante - max_favorito
+        prob_visitante = max_favorito
+        prob_empate   += exceso * 0.55
+        prob_local    += exceso * 0.45
+
+    total = prob_local + prob_empate + prob_visitante
+    return prob_local / total, prob_empate / total, prob_visitante / total
+
+
 def predecir_probabilidades(
     sel_local, sel_visitante,
     h2h_data, nombre_local, nombre_visitante,
     contexto, promedio_global, cfg,
 ):
-    """
-    Motor de predicción adaptado para selecciones.
-    cfg = perfil del torneo (PERFILES_SELECCIONES[slug]).
-    contexto = datos del partido (altitud_sede, es_neutro, etc.)
-    """
     es_neutro = contexto.get("es_neutro", False)
     ctx_l = {**contexto, "es_local": True}
     ctx_v = {**contexto, "es_local": False}
@@ -753,14 +641,13 @@ def predecir_probabilidades(
         rank_l = normalizar_ranking_fifa(sel_local["ranking_fifa"])
         rank_v = normalizar_ranking_fifa(sel_visitante["ranking_fifa"])
     else:
-        rank_l = rank_v = 0.5   # neutro
+        rank_l = rank_v = 0.5
 
-    # ── Altitud (como factor de fuerza relativa) ─────────────────────────────
+    # ── Altitud ──────────────────────────────────────────────────────────────
     if cfg["usa_altitud"]:
         alt_sede = contexto.get("altitud_sede", 0)
         factor_alt_l = calcular_factor_altitud(alt_sede, sel_local.get("altitud_base", 0))
         factor_alt_v = calcular_factor_altitud(alt_sede, sel_visitante.get("altitud_base", 0))
-        # Normalizar a 0..1 (si son iguales → 0.5 para ambos)
         total_alt = factor_alt_l + factor_alt_v
         alt_norm_l = factor_alt_l / total_alt if total_alt > 0 else 0.5
         alt_norm_v = factor_alt_v / total_alt if total_alt > 0 else 0.5
@@ -791,6 +678,7 @@ def predecir_probabilidades(
     ratio_l = 1 / (1 + math.exp(-cfg["K_LOGISTICO"] * score))
     ratio_v = 1 - ratio_l
 
+    # Cap sobre ratio (primera barrera)
     if ratio_l > cfg["MAX_FAVORITO"]:
         ratio_l = cfg["MAX_FAVORITO"]
         ratio_v = 1 - ratio_l
@@ -816,6 +704,11 @@ def predecir_probabilidades(
     prob_local    /= total
     prob_empate   /= total
     prob_visitante /= total
+
+    # ── CORRECCIÓN BUG 2: cap final sobre probabilidad fusionada ────────────
+    prob_local, prob_empate, prob_visitante = _aplicar_cap_final(
+        prob_local, prob_empate, prob_visitante, cfg["MAX_FAVORITO"]
+    )
 
     gap = abs(prob_local - prob_visitante)
     confianza = "ajustado" if gap < 0.08 else "moderado" if gap < 0.18 else "favorable"
@@ -1017,7 +910,6 @@ def guardar_resultado(partido, archivo="proyecciones.json"):
             data = json.load(f)
     except Exception:
         data = []
-    # Reemplazar si ya existe el mismo id
     data = [p for p in data if p.get("id") != partido.get("id")]
     data.append(partido)
     with open(archivo, "w", encoding="utf-8") as f:
@@ -1035,14 +927,6 @@ def generar_partido(
     perfil_slug    = "amistoso",
     archivo_salida = "proyecciones.json",
 ):
-    """
-    Genera la proyección de un partido a partir de un ítem del fixture.
-
-    fixture_item: dict con los datos del partido (del fixture.json)
-    db_selecciones: dict con todas las selecciones
-    h2h: dict con historial directo (opcional)
-    perfil_slug: clave de PERFILES_SELECCIONES
-    """
     cfg = PERFILES_SELECCIONES.get(perfil_slug)
     if not cfg:
         raise ValueError(f"Perfil '{perfil_slug}' no encontrado. "
@@ -1062,18 +946,14 @@ def generar_partido(
     local     = adaptar_seleccion(local_raw)
     visitante = adaptar_seleccion(visitante_raw)
 
-    # Contexto del partido (incluye altitud, sede, etc.)
     altitud_sede = fixture_item.get("altitud_sede", 0)
     pais_sede    = fixture_item.get("pais_sede", "")
-    es_neutro    = pais_sede.lower() not in [
+    es_neutro = pais_sede.lower() not in [
         normalizar_nombre(nombre_local),
         normalizar_nombre(nombre_visitante),
         local_raw.get("nombre", "").lower(),
         visitante_raw.get("nombre", "").lower(),
     ]
-    # Refinamiento: si el país de sede coincide con el nombre del local, no es neutro
-    # Esto es simplista; para una mayor precisión, se puede enriquecer con un campo
-    # "es_neutro" directamente en el fixture.
     es_neutro = fixture_item.get("es_neutro", es_neutro)
 
     contexto = {
@@ -1148,17 +1028,6 @@ DB_CONFIG = {
         "perfil":   "amistoso",
         "salida":   "proyecciones.json",
     },
-    # En el futuro:
-    # "mundial_grupos": {
-    #     "carpeta": "mundial-2026-grupos",
-    #     "perfil":  "mundial_grupos",
-    #     "salida":  "mundial_grupos.json",
-    # },
-    # "eliminatorias_conmebol": {
-    #     "carpeta": "eliminatorias-conmebol",
-    #     "perfil":  "eliminatoria_conmebol",
-    #     "salida":  "eliminatorias.json",
-    # },
 }
 
 
@@ -1168,27 +1037,24 @@ DB_CONFIG = {
 
 if __name__ == "__main__":
 
-    # ── Cargar DB y fixture ───────────────────────────────────────────────────
-    cfg_db = DB_CONFIG["amistosos_jun2026"]
+    cfg_db  = DB_CONFIG["amistosos_jun2026"]
     carpeta = cfg_db["carpeta"]
 
     print("📂 Cargando datos...\n")
     db_selecciones = cargar_selecciones(carpeta)
     fixture        = cargar_fixture(carpeta)
-    h2h_data       = cargar_h2h(carpeta)  # vacío si no existe
+    h2h_data       = cargar_h2h(carpeta)
 
     print(f"  ✓ {len(db_selecciones)} selecciones cargadas")
     print(f"  ✓ {len(fixture)} partidos en fixture")
     print(f"  ✓ H2H: {'cargado' if h2h_data else 'no disponible'}")
     print()
 
-    # ── Limpiar proyecciones anteriores ──────────────────────────────────────
     try:
         os.remove(cfg_db["salida"])
     except FileNotFoundError:
         pass
 
-    # ── Generar proyecciones ──────────────────────────────────────────────────
     print(f"🚀 Generando {len(fixture)} proyecciones...\n" + "="*60)
 
     errores = 0
@@ -1202,7 +1068,6 @@ if __name__ == "__main__":
                 archivo_salida = cfg_db["salida"],
             )
 
-            # Indicadores de altitud
             alt = p["altitud_sede"]
             tag_alt = ""
             if alt >= 2500:
@@ -1210,7 +1075,7 @@ if __name__ == "__main__":
             elif alt >= 1500:
                 tag_alt = f" ⛰ {alt}m"
 
-            sede = f"{p['ciudad_sede']}{tag_alt}"
+            sede   = f"{p['ciudad_sede']}{tag_alt}"
             neutro = " [NEUTRO]" if p["es_neutro"] else ""
 
             print(f"  ⚽ {p['local']:<20} vs {p['visitante']:<20}  {sede}{neutro}")
