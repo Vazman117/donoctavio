@@ -1,5 +1,223 @@
 [
   {
+    "id": "401871471",
+    "fecha": "2026-06-04T19:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Spain",
+    "visitante": "Iraq",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/164.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/4375.png",
+    "estadio": "Riazor",
+    "ciudad_sede": "La Coruña",
+    "pais_sede": "Spain",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.62,
+    "prob_empate": 0.18247122942505795,
+    "prob_visitante": 0.197528770574942,
+    "fuerza_local": 0.7732208301435407,
+    "fuerza_visitante": 0.5490577188995216,
+    "diferencia": 0.2241631112440191,
+    "confianza": "favorable",
+    "prediccion": "Spain",
+    "resultado": "Empate",
+    "lambda_local": 3.326099600103037,
+    "lambda_visitante": 0.9149689772817559,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.78,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Spain"
+        },
+        "visitante": {
+          "valor": 0.67,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Iraq"
+        },
+        "interpretacion": "Spain llega con mejor momentum: índice 0.78/1.0 frente a 0.67/1.0 de Iraq. Últimos 5: 3V/0E/2D vs 2V/0E/1D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#2 FIFA",
+          "valor": 0.995,
+          "puntos": 1876.4,
+          "nombre": "Spain"
+        },
+        "visitante": {
+          "etiqueta": "#63 FIFA",
+          "valor": 0.703,
+          "puntos": 1361.4,
+          "nombre": "Iraq"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #2 Spain (1876 pts) vs #63 Iraq (1361 pts). Spain tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "La Coruña",
+        "local": {
+          "nombre": "Spain",
+          "altitud_base": 25,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Iraq",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Spain",
+          "goles_favor": 2.67,
+          "goles_contra": 0.89
+        },
+        "visitante": {
+          "nombre": "Iraq",
+          "goles_favor": 1.33,
+          "goles_contra": 1.33
+        },
+        "interpretacion": "Spain más ofensivo: 2.67 goles/partido (vs 1.33). Defensiva: 0.89 vs 1.33."
+      }
+    ]
+  },
+  {
+    "id": "401864934",
+    "fecha": "2026-06-04T19:10Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "France",
+    "visitante": "Ivory Coast",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/478.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/4789.png",
+    "estadio": "Stade de la Beaujoire",
+    "ciudad_sede": "Nantes",
+    "pais_sede": "France",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.39608530836927364,
+    "prob_empate": 0.23054476316423755,
+    "prob_visitante": 0.3733699284664888,
+    "fuerza_local": 0.6596351214285716,
+    "fuerza_visitante": 0.5412325903110048,
+    "diferencia": 0.11840253111756682,
+    "confianza": "ajustado",
+    "prediccion": "France",
+    "resultado": "Ivory Coast",
+    "lambda_local": 1.2050442711407405,
+    "lambda_visitante": 1.2959569641998392,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.59,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "France"
+        },
+        "visitante": {
+          "valor": 0.43,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Ivory Coast"
+        },
+        "interpretacion": "France llega con mejor momentum: índice 0.59/1.0 frente a 0.43/1.0 de Ivory Coast. Últimos 5: 4V/0E/1D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#1 FIFA",
+          "valor": 1.0,
+          "puntos": 1877.3,
+          "nombre": "France"
+        },
+        "visitante": {
+          "etiqueta": "#38 FIFA",
+          "valor": 0.823,
+          "puntos": 1507.3,
+          "nombre": "Ivory Coast"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #1 France (1877 pts) vs #38 Ivory Coast (1507 pts). France tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Nantes",
+        "local": {
+          "nombre": "France",
+          "altitud_base": 102,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Ivory Coast",
+          "altitud_base": 304,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "France",
+          "goles_favor": 1.71,
+          "goles_contra": 1.18
+        },
+        "visitante": {
+          "nombre": "Ivory Coast",
+          "goles_favor": 1.64,
+          "goles_contra": 0.93
+        },
+        "interpretacion": "Producción similar: France 1.71 — Ivory Coast 1.64 goles/partido. Defensa: 1.18 vs 0.93."
+      }
+    ]
+  },
+  {
     "id": "401870033",
     "fecha": "2026-06-04T17:00Z",
     "torneo": "Amistoso Internacional",
