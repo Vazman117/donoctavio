@@ -85,16 +85,8 @@ def limitar(v, a, b):
 
 
 def normalizar_ranking_fifa(ranking, total=210):
-    """
-    Ranking 1 = mejor → normalizar a 0..1 donde 1 es mejor.
-
-    CORRECCIÓN BUG 1: rankings >= total (ej: 999) ya no colapsan a 0.0.
-    - Equipos sin ranking real (999) reciben 0.25: son desconocidos,
-      no nulos. Evita que su fuerza_base se aplaste artificialmente
-      y que el favorito infle su probabilidad hasta 70%+.
-    """
     if ranking >= total:
-        return 0.25   # equipo sin ranking FIFA real → fuerza modesta
+        return 0.25
     return limitar((total - ranking) / (total - 1), 0.0, 1.0)
 
 
@@ -220,12 +212,20 @@ def adaptar_seleccion(seleccion_raw):
 
 PERFILES_SELECCIONES = {
 
+    # ------------------------------------------------------------------
+    # AMISTOSO
+    # Cambios v2:
+    #   K_LOGISTICO  3.8 → 2.8  (curva más plana, menos amplificación)
+    #   MAX_FAVORITO 0.62 → 0.56 (techo más realista para fútbol de selecciones)
+    #   ALPHA        0.72 → 0.60 (menos peso fuerza base, más peso Poisson)
+    #   BETA         0.28 → 0.40
+    # ------------------------------------------------------------------
     "amistoso": {
         "nombre":           "Amistoso Internacional",
-        "K_LOGISTICO":      3.8,
-        "MAX_FAVORITO":     0.62,   # bajado de 0.70 → limita ratio antes de fusión
-        "ALPHA":            0.72,
-        "BETA":             0.28,
+        "K_LOGISTICO":      2.8,
+        "MAX_FAVORITO":     0.56,
+        "ALPHA":            0.60,
+        "BETA":             0.40,
         "usa_h2h":          False,
         "usa_ranking_fifa": True,
         "usa_altitud":      True,
@@ -235,6 +235,7 @@ PERFILES_SELECCIONES = {
         "PESO_ALTITUD":     0.10,
     },
 
+    # Sin cambios — competencias clasificatorias mantienen su calibración original
     "eliminatoria_conmebol": {
         "nombre":           "Eliminatoria CONMEBOL",
         "K_LOGISTICO":      4.2,
@@ -280,12 +281,21 @@ PERFILES_SELECCIONES = {
         "PESO_ALTITUD":     0.08,
     },
 
+    # ------------------------------------------------------------------
+    # MUNDIAL — FASE DE GRUPOS
+    # Fase donde cualquier selección puede sorprender.
+    # Cambios v2:
+    #   K_LOGISTICO  4.3 → 3.2  (menos amplificación, más incertidumbre)
+    #   MAX_FAVORITO 0.64 → 0.58
+    #   ALPHA        0.68 → 0.62
+    #   BETA         0.32 → 0.38
+    # ------------------------------------------------------------------
     "mundial_grupos": {
         "nombre":           "Copa del Mundo FIFA — Fase de Grupos",
-        "K_LOGISTICO":      4.3,
-        "MAX_FAVORITO":     0.64,
-        "ALPHA":            0.68,
-        "BETA":             0.32,
+        "K_LOGISTICO":      3.2,
+        "MAX_FAVORITO":     0.58,
+        "ALPHA":            0.62,
+        "BETA":             0.38,
         "usa_h2h":          True,
         "usa_ranking_fifa": True,
         "usa_altitud":      True,
@@ -295,12 +305,22 @@ PERFILES_SELECCIONES = {
         "PESO_ALTITUD":     0.08,
     },
 
+    # ------------------------------------------------------------------
+    # MUNDIAL — FASE ELIMINATORIA (octavos, cuartos, semis, final)
+    # Partidos a todo o nada: el favorito es más fiable, pero la
+    # incertidumbre sigue siendo alta en este deporte.
+    # Cambios v2:
+    #   K_LOGISTICO  4.5 → 3.6
+    #   MAX_FAVORITO 0.65 → 0.60
+    #   ALPHA        0.66 → 0.63
+    #   BETA         0.34 → 0.37
+    # ------------------------------------------------------------------
     "mundial_eliminatoria": {
         "nombre":           "Copa del Mundo FIFA — Eliminatorias",
-        "K_LOGISTICO":      4.5,
-        "MAX_FAVORITO":     0.65,
-        "ALPHA":            0.66,
-        "BETA":             0.34,
+        "K_LOGISTICO":      3.6,
+        "MAX_FAVORITO":     0.60,
+        "ALPHA":            0.63,
+        "BETA":             0.37,
         "usa_h2h":          True,
         "usa_ranking_fifa": True,
         "usa_altitud":      True,
@@ -545,20 +565,16 @@ def contar_empates_recientes(ultimos_5):
     return ultimos_5.count("D")
 
 
-# CORRECCIÓN BUG 3: pendiente más suave (0.60 vs 0.40) y piso mínimo más alto (0.14 vs 0.10)
-# Además se reequilibran los pesos para que la base tenga más peso
-# y no se aplaste tanto en partidos disparejos.
-PESO_EMPATE_BASE      = 0.30   # antes: 0.22
-PESO_EMPATE_HISTORICO = 0.55   # antes: 0.63
+PESO_EMPATE_BASE      = 0.30
+PESO_EMPATE_HISTORICO = 0.55
 PESO_EMPATE_MOMENTUM  = 0.15
 
 def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neutro=False):
     diferencia = abs(f_local - f_visitante)
     base_empate = 0.30 if es_neutro else 0.26
 
-    # Pendiente más suave: divide entre 0.60 en vez de 0.40
-    # Piso más alto: 0.14 en vez de 0.10
-    base = limitar(base_empate - (diferencia / 0.60) * 0.10, 0.14, base_empate)
+    # v2: piso subido de 0.13 → 0.18 para reflejar incertidumbre mínima real
+    base = limitar(base_empate - (diferencia / 0.60) * 0.10, 0.18, base_empate)
 
     tasa_local     = calcular_tasa_empate(sel_local,     es_neutro)
     tasa_visitante = calcular_tasa_empate(sel_visitante, es_neutro)
@@ -568,11 +584,12 @@ def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neut
     d_visitante = contar_empates_recientes(sel_visitante.get("ultimos_5", []))
     momentum    = limitar((d_local + d_visitante) * 0.07, 0.0, 0.35)
 
+    # v2: rango final 0.18–0.44 (era 0.13–0.46)
     return limitar(
         base      * PESO_EMPATE_BASE      +
         historico * PESO_EMPATE_HISTORICO +
         momentum  * PESO_EMPATE_MOMENTUM,
-        0.13, 0.46
+        0.18, 0.44
     )
 
 
@@ -582,12 +599,8 @@ def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neut
 
 def _aplicar_cap_final(prob_local, prob_empate, prob_visitante, max_favorito):
     """
-    CORRECCIÓN BUG 2: aplica MAX_FAVORITO sobre la probabilidad fusionada final,
-    no solo sobre ratio_l antes de la fusión.
-
-    El exceso se redistribuye 55% al empate y 45% al rival, luego se renormaliza.
-    Esto garantiza que ningún equipo supere el techo definido en el perfil,
-    independientemente de lo que produzcan Poisson y fuerza por separado.
+    Aplica MAX_FAVORITO sobre la probabilidad fusionada final.
+    El exceso se redistribuye 55% al empate y 45% al rival, luego renormaliza.
     """
     prob_max = max(prob_local, prob_visitante)
     if prob_max <= max_favorito:
@@ -678,7 +691,7 @@ def predecir_probabilidades(
     ratio_l = 1 / (1 + math.exp(-cfg["K_LOGISTICO"] * score))
     ratio_v = 1 - ratio_l
 
-    # Cap sobre ratio (primera barrera)
+    # Cap sobre ratio (primera barrera, conservada)
     if ratio_l > cfg["MAX_FAVORITO"]:
         ratio_l = cfg["MAX_FAVORITO"]
         ratio_v = 1 - ratio_l
@@ -705,7 +718,7 @@ def predecir_probabilidades(
     prob_empate   /= total
     prob_visitante /= total
 
-    # ── CORRECCIÓN BUG 2: cap final sobre probabilidad fusionada ────────────
+    # ── Cap final sobre probabilidad fusionada ───────────────────────────────
     prob_local, prob_empate, prob_visitante = _aplicar_cap_final(
         prob_local, prob_empate, prob_visitante, cfg["MAX_FAVORITO"]
     )
