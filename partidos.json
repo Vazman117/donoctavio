@@ -1,3 +1,980 @@
 [
-
+  {
+    "id": "401874169",
+    "fecha": "2026-06-07T13:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Kenya",
+    "visitante": "Lesotho",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2848.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/6640.png",
+    "estadio": "Lucas Masterpieces Moripe Stadium",
+    "ciudad_sede": "Pretoria",
+    "pais_sede": "South Africa",
+    "altitud_sede": 1339,
+    "es_neutro": true,
+    "prob_local": 0.5484339073447584,
+    "prob_empate": 0.21171762485739765,
+    "prob_visitante": 0.23984846779784397,
+    "fuerza_local": 0.44053239706602554,
+    "fuerza_visitante": 0.37531348782683155,
+    "diferencia": 0.06521890923919399,
+    "confianza": "favorable",
+    "prediccion": "Kenya",
+    "lambda_local": 1.7241641152172176,
+    "lambda_visitante": 0.7156387084635513,
+    "factor_altitud_local": 0.9785,
+    "factor_altitud_visitante": 0.9338,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.56,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Kenya"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "W"
+          ],
+          "nombre": "Lesotho"
+        },
+        "interpretacion": "Kenya llega con mejor momentum: índice 0.56/1.0 frente a 0.50/1.0 de Lesotho. Últimos 5: 2V/0E/3D vs 1V/0E/1D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Kenya"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Lesotho"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #999 vs #999. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 1339,
+        "ciudad_sede": "Pretoria",
+        "local": {
+          "nombre": "Kenya",
+          "altitud_base": 909,
+          "factor": 0.979
+        },
+        "visitante": {
+          "nombre": "Lesotho",
+          "altitud_base": 15,
+          "factor": 0.934
+        },
+        "interpretacion": "Sede en condiciones normales (1339m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Kenya",
+          "goles_favor": 1.67,
+          "goles_contra": 0.67
+        },
+        "visitante": {
+          "nombre": "Lesotho",
+          "goles_favor": 1.5,
+          "goles_contra": 1.5
+        },
+        "interpretacion": "Producción similar: Kenya 1.67 — Lesotho 1.50 goles/partido. Defensa: 0.67 vs 1.50."
+      }
+    ]
+  },
+  {
+    "id": "401871527",
+    "fecha": "2026-06-07T13:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Liechtenstein",
+    "visitante": "Cyprus",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/589.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/445.png",
+    "estadio": "Rheinpark Stadion",
+    "ciudad_sede": "Vaduz",
+    "pais_sede": "Liechtenstein",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.35837628308567576,
+    "prob_empate": 0.298869053965199,
+    "prob_visitante": 0.34275466294912527,
+    "fuerza_local": 0.23083828571428572,
+    "fuerza_visitante": 0.24235400000000007,
+    "diferencia": 0.011515714285714351,
+    "confianza": "ajustado",
+    "prediccion": "Liechtenstein",
+    "lambda_local": 0.7436447281207132,
+    "lambda_visitante": 0.6852702910305184,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.12,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Liechtenstein"
+        },
+        "visitante": {
+          "valor": 0.14,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Cyprus"
+        },
+        "interpretacion": "Cyprus llega con mejor momentum: índice 0.14/1.0 frente a 0.12/1.0 de Liechtenstein. Últimos 5: 1V/0E/4D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Liechtenstein"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Cyprus"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #999 vs #999. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Vaduz",
+        "local": {
+          "nombre": "Liechtenstein",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Cyprus",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Liechtenstein",
+          "goles_favor": 0.5,
+          "goles_contra": 2.06
+        },
+        "visitante": {
+          "nombre": "Cyprus",
+          "goles_favor": 0.57,
+          "goles_contra": 2.64
+        },
+        "interpretacion": "Producción similar: Liechtenstein 0.50 — Cyprus 0.57 goles/partido. Defensa: 2.06 vs 2.64."
+      }
+    ]
+  },
+  {
+    "id": "401871170",
+    "fecha": "2026-06-07T16:30Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Denmark",
+    "visitante": "Ukraine",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/479.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/457.png",
+    "estadio": "Nature Energy Park",
+    "ciudad_sede": "Odense",
+    "pais_sede": "Denmark",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.56,
+    "prob_empate": 0.20706523866253349,
+    "prob_visitante": 0.23293476133746646,
+    "fuerza_local": 0.6664766102272728,
+    "fuerza_visitante": 0.5347106377306904,
+    "diferencia": 0.1317659724965824,
+    "confianza": "favorable",
+    "prediccion": "Denmark",
+    "lambda_local": 2.0492079100560003,
+    "lambda_visitante": 0.7410814837398373,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.59,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Denmark"
+        },
+        "visitante": {
+          "valor": 0.44,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Ukraine"
+        },
+        "interpretacion": "Denmark llega con mejor momentum: índice 0.59/1.0 frente a 0.44/1.0 de Ukraine. Últimos 5: 3V/0E/2D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#20 FIFA",
+          "valor": 0.909,
+          "puntos": 1620.8,
+          "nombre": "Denmark"
+        },
+        "visitante": {
+          "etiqueta": "#25 FIFA",
+          "valor": 0.885,
+          "puntos": 1582.4,
+          "nombre": "Ukraine"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #20 vs #25. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Odense",
+        "local": {
+          "nombre": "Denmark",
+          "altitud_base": 16,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Ukraine",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Denmark",
+          "goles_favor": 1.65,
+          "goles_contra": 0.77
+        },
+        "visitante": {
+          "nombre": "Ukraine",
+          "goles_favor": 1.44,
+          "goles_contra": 1.5
+        },
+        "interpretacion": "Producción similar: Denmark 1.65 — Ukraine 1.44 goles/partido. Defensa: 0.77 vs 1.50."
+      }
+    ]
+  },
+  {
+    "id": "401872604",
+    "fecha": "2026-06-07T18:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Kosovo",
+    "visitante": "Andorra",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/18272.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/587.png",
+    "estadio": "Stadiumi Fadil Vokrri",
+    "ciudad_sede": "Prishtina",
+    "pais_sede": "Kosovo",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.56,
+    "prob_empate": 0.21314605016530325,
+    "prob_visitante": 0.22685394983469673,
+    "fuerza_local": 0.5518082857142858,
+    "fuerza_visitante": 0.21010014285714285,
+    "diferencia": 0.3417081428571429,
+    "confianza": "favorable",
+    "prediccion": "Kosovo",
+    "lambda_local": 2.751423746498222,
+    "lambda_visitante": 0.2,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.71,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Kosovo"
+        },
+        "visitante": {
+          "valor": 0.08,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Andorra"
+        },
+        "interpretacion": "Kosovo llega con mejor momentum: índice 0.71/1.0 frente a 0.08/1.0 de Andorra. Últimos 5: 5V/0E/0D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Kosovo"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Andorra"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #999 vs #999. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Prishtina",
+        "local": {
+          "nombre": "Kosovo",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Andorra",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Kosovo",
+          "goles_favor": 2.14,
+          "goles_contra": 1.14
+        },
+        "visitante": {
+          "nombre": "Andorra",
+          "goles_favor": 0.25,
+          "goles_contra": 1.5
+        },
+        "interpretacion": "Kosovo más ofensivo: 2.14 goles/partido (vs 0.25). Defensiva: 1.14 vs 1.50."
+      }
+    ]
+  },
+  {
+    "id": "401856623",
+    "fecha": "2026-06-07T18:45Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Croatia",
+    "visitante": "Slovenia",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/477.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/472.png",
+    "estadio": "Stadion Andjelko Herjavec",
+    "ciudad_sede": "Varazdin",
+    "pais_sede": "Croatia",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.3176514570849555,
+    "prob_empate": 0.26044739604365863,
+    "prob_visitante": 0.42190114687138597,
+    "fuerza_local": 0.607015985363978,
+    "fuerza_visitante": 0.40892342857142855,
+    "diferencia": 0.1980925567925495,
+    "confianza": "moderado",
+    "prediccion": "Slovenia",
+    "lambda_local": 0.6917378377481481,
+    "lambda_visitante": 1.136892216416901,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Croatia"
+        },
+        "visitante": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Slovenia"
+        },
+        "interpretacion": "Slovenia llega con mejor momentum: índice 0.53/1.0 frente a 0.50/1.0 de Croatia. Últimos 5: 3V/0E/2D vs 4V/0E/1D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#11 FIFA",
+          "valor": 0.952,
+          "puntos": 1717.1,
+          "nombre": "Croatia"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Slovenia"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #11 Croatia (1717 pts) vs #999 Slovenia (500 pts). Croatia tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Varazdin",
+        "local": {
+          "nombre": "Croatia",
+          "altitud_base": 65,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Slovenia",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Croatia",
+          "goles_favor": 1.29,
+          "goles_contra": 1.07
+        },
+        "visitante": {
+          "nombre": "Slovenia",
+          "goles_favor": 1.47,
+          "goles_contra": 0.71
+        },
+        "interpretacion": "Producción similar: Croatia 1.29 — Slovenia 1.47 goles/partido. Defensa: 1.07 vs 0.71."
+      }
+    ]
+  },
+  {
+    "id": "401870630",
+    "fecha": "2026-06-07T19:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Greece",
+    "visitante": "Italy",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/455.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/162.png",
+    "estadio": "Pankritio Stadium",
+    "ciudad_sede": "Crete",
+    "pais_sede": "Greece",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.56,
+    "prob_empate": 0.18693201742575596,
+    "prob_visitante": 0.2530679825742441,
+    "fuerza_local": 0.48590385714285705,
+    "fuerza_visitante": 0.5764132619360902,
+    "diferencia": 0.09050940479323316,
+    "confianza": "favorable",
+    "prediccion": "Greece",
+    "lambda_local": 2.3217663332897276,
+    "lambda_visitante": 0.6999900000000001,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.67,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Greece"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Italy"
+        },
+        "interpretacion": "Greece llega con mejor momentum: índice 0.67/1.0 frente a 0.50/1.0 de Italy. Últimos 5: 3V/0E/2D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Greece"
+        },
+        "visitante": {
+          "etiqueta": "#12 FIFA",
+          "valor": 0.947,
+          "puntos": 1700.4,
+          "nombre": "Italy"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #999 Greece (500 pts) vs #12 Italy (1700 pts). Italy tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Crete",
+        "local": {
+          "nombre": "Greece",
+          "altitud_base": 74,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Italy",
+          "altitud_base": 122,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Greece",
+          "goles_favor": 2.13,
+          "goles_contra": 0.53
+        },
+        "visitante": {
+          "nombre": "Italy",
+          "goles_favor": 1.88,
+          "goles_contra": 1.31
+        },
+        "interpretacion": "Producción similar: Greece 2.13 — Italy 1.88 goles/partido. Defensa: 0.53 vs 1.31."
+      }
+    ]
+  },
+  {
+    "id": "401866598",
+    "fecha": "2026-06-07T19:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Morocco",
+    "visitante": "Norway",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2869.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/464.png",
+    "estadio": "Red Bull Arena",
+    "ciudad_sede": "Harrison, New Jersey",
+    "pais_sede": "USA",
+    "altitud_sede": 0,
+    "es_neutro": true,
+    "prob_local": 0.49243497653558754,
+    "prob_empate": 0.24526386018745944,
+    "prob_visitante": 0.26230116327695296,
+    "fuerza_local": 0.7043210663619275,
+    "fuerza_visitante": 0.5593807253075872,
+    "diferencia": 0.14494034105434028,
+    "confianza": "favorable",
+    "prediccion": "Morocco",
+    "lambda_local": 1.3065829360304,
+    "lambda_visitante": 0.6886560408119998,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.73,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Morocco"
+        },
+        "visitante": {
+          "valor": 0.46,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Norway"
+        },
+        "interpretacion": "Morocco llega con mejor momentum: índice 0.73/1.0 frente a 0.46/1.0 de Norway. Últimos 5: 3V/0E/2D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#8 FIFA",
+          "valor": 0.967,
+          "puntos": 1755.9,
+          "nombre": "Morocco"
+        },
+        "visitante": {
+          "etiqueta": "#33 FIFA",
+          "valor": 0.847,
+          "puntos": 1538.9,
+          "nombre": "Norway"
+        },
+        "interpretacion": "Leve diferencia en ranking: #8 Morocco vs #33 Norway. El factor puede influir en momentos clave."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Harrison, New Jersey",
+        "local": {
+          "nombre": "Morocco",
+          "altitud_base": 191,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Norway",
+          "altitud_base": 23,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Morocco",
+          "goles_favor": 1.4,
+          "goles_contra": 0.2
+        },
+        "visitante": {
+          "nombre": "Norway",
+          "goles_favor": 1.77,
+          "goles_contra": 1.08
+        },
+        "interpretacion": "Producción similar: Morocco 1.40 — Norway 1.77 goles/partido. Defensa: 0.20 vs 1.08."
+      }
+    ]
+  },
+  {
+    "id": "401870000",
+    "fecha": "2026-06-07T20:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Ecuador",
+    "visitante": "Guatemala",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/209.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2652.png",
+    "estadio": "ScottsMiracle-Gro Field",
+    "ciudad_sede": "Columbus, Ohio",
+    "pais_sede": "USA",
+    "altitud_sede": 0,
+    "es_neutro": true,
+    "prob_local": 0.4303393640464082,
+    "prob_empate": 0.28257335112675336,
+    "prob_visitante": 0.28708728482683843,
+    "fuerza_local": 0.4874877635850991,
+    "fuerza_visitante": 0.3256785714285714,
+    "diferencia": 0.16180919215652773,
+    "confianza": "moderado",
+    "prediccion": "Ecuador",
+    "lambda_local": 0.9364172958157038,
+    "lambda_visitante": 0.6344850532676102,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.22,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Ecuador"
+        },
+        "visitante": {
+          "valor": 0.35,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Guatemala"
+        },
+        "interpretacion": "Guatemala llega con mejor momentum: índice 0.35/1.0 frente a 0.22/1.0 de Ecuador. Últimos 5: 2V/0E/3D vs 0V/0E/5D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#21 FIFA",
+          "valor": 0.904,
+          "puntos": 1608.5,
+          "nombre": "Ecuador"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Guatemala"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #21 Ecuador (1608 pts) vs #999 Guatemala (500 pts). Ecuador tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Columbus, Ohio",
+        "local": {
+          "nombre": "Ecuador",
+          "altitud_base": 2850,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Guatemala",
+          "altitud_base": 1500,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Ecuador",
+          "goles_favor": 1.0,
+          "goles_contra": 0.89
+        },
+        "visitante": {
+          "nombre": "Guatemala",
+          "goles_favor": 1.0,
+          "goles_contra": 1.45
+        },
+        "interpretacion": "Producción similar: Ecuador 1.00 — Guatemala 1.00 goles/partido. Defensa: 0.89 vs 1.45."
+      }
+    ]
+  },
+  {
+    "id": "401862320",
+    "fecha": "2026-06-07T23:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Colombia",
+    "visitante": "Jordan",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/208.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2917.png",
+    "estadio": "Snapdragon Stadium",
+    "ciudad_sede": "San Diego, California",
+    "pais_sede": "USA",
+    "altitud_sede": 995,
+    "es_neutro": true,
+    "prob_local": 0.5599999999999999,
+    "prob_empate": 0.2088411849594687,
+    "prob_visitante": 0.23115881504053123,
+    "fuerza_local": 0.63605869854587,
+    "fuerza_visitante": 0.32376461480818464,
+    "diferencia": 0.3122940837376854,
+    "confianza": "favorable",
+    "prediccion": "Colombia",
+    "lambda_local": 2.915629777694612,
+    "lambda_visitante": 0.55142906379069,
+    "factor_altitud_local": 0.9619,
+    "factor_altitud_visitante": 0.951,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.62,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Colombia"
+        },
+        "visitante": {
+          "valor": 0.09,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Jordan"
+        },
+        "interpretacion": "Colombia llega con mejor momentum: índice 0.62/1.0 frente a 0.09/1.0 de Jordan. Últimos 5: 2V/0E/3D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#13 FIFA",
+          "valor": 0.943,
+          "puntos": 1693.1,
+          "nombre": "Colombia"
+        },
+        "visitante": {
+          "etiqueta": "#85 FIFA",
+          "valor": 0.598,
+          "puntos": 1278.6,
+          "nombre": "Jordan"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #13 Colombia (1693 pts) vs #85 Jordan (1279 pts). Colombia tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 995,
+        "ciudad_sede": "San Diego, California",
+        "local": {
+          "nombre": "Colombia",
+          "altitud_base": 233,
+          "factor": 0.962
+        },
+        "visitante": {
+          "nombre": "Jordan",
+          "altitud_base": 15,
+          "factor": 0.951
+        },
+        "interpretacion": "Sede en condiciones normales (995m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Colombia",
+          "goles_favor": 1.88,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Jordan",
+          "goles_favor": 1.0,
+          "goles_contra": 2.09
+        },
+        "interpretacion": "Colombia más ofensivo: 1.88 goles/partido (vs 1.00). Defensiva: 1.00 vs 2.09."
+      }
+    ]
+  }
 ]
