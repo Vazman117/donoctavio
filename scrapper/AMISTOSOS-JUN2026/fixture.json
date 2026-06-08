@@ -11,8 +11,8 @@
     "ciudad_sede": "New York City, New York",
     "pais_sede": "USA",
     "altitud_sede": 10,
-    "altitud_base_local": 25,
-    "altitud_base_visitante": 455,
+    "altitud_base_local": 27,
+    "altitud_base_visitante": 306,
     "diferencia_altitud_local": 0,
     "diferencia_altitud_visitante": 0,
     "contexto_altitud": "Sede a nivel de mar/bajo (10m)"
@@ -47,10 +47,10 @@
     "ciudad_sede": "Puebla",
     "pais_sede": "Mexico",
     "altitud_sede": 2135,
-    "altitud_base_local": 142,
-    "altitud_base_visitante": 25,
-    "diferencia_altitud_local": 1993,
-    "diferencia_altitud_visitante": 2110,
+    "altitud_base_local": 121,
+    "altitud_base_visitante": 27,
+    "diferencia_altitud_local": 2014,
+    "diferencia_altitud_visitante": 2108,
     "contexto_altitud": "Sede en altura considerable (2135m)"
   }
 ]

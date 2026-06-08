@@ -13,16 +13,16 @@
     "pais_sede": "USA",
     "altitud_sede": 10,
     "es_neutro": true,
-    "prob_local": 0.4303263163615187,
-    "prob_empate": 0.24597268564977876,
-    "prob_visitante": 0.32370099798870255,
-    "fuerza_local": 0.6063186647898154,
-    "fuerza_visitante": 0.4162142857142857,
-    "diferencia": 0.19010437907552974,
+    "prob_local": 0.45037744816635433,
+    "prob_empate": 0.2575610389870791,
+    "prob_visitante": 0.2920615128465665,
+    "fuerza_local": 0.6248663790755298,
+    "fuerza_visitante": 0.38974314285714284,
+    "diferencia": 0.23512323621838693,
     "confianza": "moderado",
     "prediccion": "Netherlands",
-    "lambda_local": 1.3069688419902437,
-    "lambda_visitante": 1.0725925925925925,
+    "lambda_local": 1.2171686302948574,
+    "lambda_visitante": 0.8292563881434923,
     "factor_altitud_local": 1.0,
     "factor_altitud_visitante": 1.0,
     "analisis": [
@@ -31,10 +31,10 @@
         "impacto": "bajo",
         "tipo": "forma",
         "local": {
-          "valor": 0.47,
+          "valor": 0.52,
           "ultimos_5": [
-            "W",
             "L",
+            "W",
             "L",
             "L",
             "L"
@@ -42,17 +42,17 @@
           "nombre": "Netherlands"
         },
         "visitante": {
-          "valor": 0.5,
+          "valor": 0.47,
           "ultimos_5": [
+            "L",
             "W",
             "W",
             "L",
-            "W",
-            "L"
+            "W"
           ],
           "nombre": "Uzbekistan"
         },
-        "interpretacion": "Uzbekistan llega con mejor momentum: índice 0.50/1.0 frente a 0.47/1.0 de Netherlands. Últimos 5: 3V/0E/2D vs 1V/0E/4D."
+        "interpretacion": "Netherlands llega con mejor momentum: índice 0.52/1.0 frente a 0.47/1.0 de Uzbekistan. Últimos 5: 1V/0E/4D vs 3V/0E/2D."
       },
       {
         "factor": "Ranking FIFA",
@@ -80,12 +80,12 @@
         "ciudad_sede": "New York City, New York",
         "local": {
           "nombre": "Netherlands",
-          "altitud_base": 25,
+          "altitud_base": 27,
           "factor": 1.0
         },
         "visitante": {
           "nombre": "Uzbekistan",
-          "altitud_base": 455,
+          "altitud_base": 306,
           "factor": 1.0
         },
         "interpretacion": "Sede en condiciones normales (10m). La altitud no es un factor diferenciador en este partido."
@@ -96,15 +96,15 @@
         "tipo": "doble_barra",
         "local": {
           "nombre": "Netherlands",
-          "goles_favor": 2.0,
-          "goles_contra": 1.27
+          "goles_favor": 2.1,
+          "goles_contra": 1.09
         },
         "visitante": {
           "nombre": "Uzbekistan",
-          "goles_favor": 1.5,
-          "goles_contra": 1.2
+          "goles_favor": 1.35,
+          "goles_contra": 1.0
         },
-        "interpretacion": "Netherlands más ofensivo: 2.00 goles/partido (vs 1.50). Defensiva: 1.27 vs 1.20."
+        "interpretacion": "Netherlands más ofensivo: 2.10 goles/partido (vs 1.35). Defensiva: 1.09 vs 1.00."
       }
     ]
   },
@@ -122,46 +122,46 @@
     "pais_sede": "France",
     "altitud_sede": 0,
     "es_neutro": false,
-    "prob_local": 0.5053006366030866,
-    "prob_empate": 0.24321917020648964,
-    "prob_visitante": 0.2514801931904237,
-    "fuerza_local": 0.6596351214285716,
-    "fuerza_visitante": 0.27725,
-    "diferencia": 0.3823851214285716,
+    "prob_local": 0.47459968271959413,
+    "prob_empate": 0.26461164557005645,
+    "prob_visitante": 0.2607886717103495,
+    "fuerza_local": 0.626868692857143,
+    "fuerza_visitante": 0.32225,
+    "diferencia": 0.304618692857143,
     "confianza": "favorable",
     "prediccion": "France",
-    "lambda_local": 1.3338689331885714,
-    "lambda_visitante": 0.6389149301204816,
+    "lambda_local": 1.1350091483428575,
+    "lambda_visitante": 0.60210304,
     "factor_altitud_local": 1.0,
     "factor_altitud_visitante": 1.0,
     "analisis": [
       {
         "factor": "Forma reciente",
-        "impacto": "alto",
+        "impacto": "medio",
         "tipo": "forma",
         "local": {
-          "valor": 0.59,
+          "valor": 0.57,
           "ultimos_5": [
-            "W",
-            "W",
-            "W",
             "L",
-            "W"
+            "W",
+            "W",
+            "W",
+            "L"
           ],
           "nombre": "France"
         },
         "visitante": {
-          "valor": 0.25,
+          "valor": 0.38,
           "ultimos_5": [
-            "L",
-            "L",
-            "L",
             "W",
+            "W",
+            "L",
+            "L",
             "L"
           ],
           "nombre": "Northern Ireland"
         },
-        "interpretacion": "France llega con mejor momentum: índice 0.59/1.0 frente a 0.25/1.0 de Northern Ireland. Últimos 5: 4V/0E/1D vs 1V/0E/4D."
+        "interpretacion": "France llega con mejor momentum: índice 0.57/1.0 frente a 0.38/1.0 de Northern Ireland. Últimos 5: 3V/0E/2D vs 2V/0E/3D."
       },
       {
         "factor": "Ranking FIFA",
@@ -201,19 +201,19 @@
       },
       {
         "factor": "Potencial ofensivo y defensivo",
-        "impacto": "medio",
+        "impacto": "bajo",
         "tipo": "doble_barra",
         "local": {
           "nombre": "France",
-          "goles_favor": 1.71,
-          "goles_contra": 1.18
+          "goles_favor": 1.52,
+          "goles_contra": 1.04
         },
         "visitante": {
           "nombre": "Northern Ireland",
-          "goles_favor": 1.33,
-          "goles_contra": 1.33
+          "goles_favor": 1.31,
+          "goles_contra": 1.31
         },
-        "interpretacion": "Producción similar: France 1.71 — Northern Ireland 1.33 goles/partido. Defensa: 1.18 vs 1.33."
+        "interpretacion": "Producción similar: France 1.52 — Northern Ireland 1.31 goles/partido. Defensa: 1.04 vs 1.31."
       }
     ]
   },
@@ -231,46 +231,46 @@
     "pais_sede": "Mexico",
     "altitud_sede": 2135,
     "es_neutro": true,
-    "prob_local": 0.21274300368082877,
-    "prob_empate": 0.2272569963191713,
+    "prob_local": 0.1980089037237791,
+    "prob_empate": 0.24199109627622084,
     "prob_visitante": 0.56,
-    "fuerza_local": 0.41145811259523163,
-    "fuerza_visitante": 0.7161042572372038,
-    "diferencia": 0.3046461446419722,
+    "fuerza_local": 0.49704162007727715,
+    "fuerza_visitante": 0.712967593187312,
+    "diferencia": 0.2159259731100348,
     "confianza": "favorable",
     "prediccion": "Spain",
-    "lambda_local": 0.29668865103452535,
-    "lambda_visitante": 2.1398305618997844,
-    "factor_altitud_local": 0.90035,
-    "factor_altitud_visitante": 0.8945,
+    "lambda_local": 0.3547383339555419,
+    "lambda_visitante": 1.4425115430753905,
+    "factor_altitud_local": 0.8993,
+    "factor_altitud_visitante": 0.8946000000000001,
     "analisis": [
       {
         "factor": "Forma reciente",
         "impacto": "alto",
         "tipo": "forma",
         "local": {
-          "valor": 0.14,
+          "valor": 0.36,
           "ultimos_5": [
+            "W",
             "L",
-            "L",
-            "L",
+            "W",
             "L",
             "L"
           ],
           "nombre": "Peru"
         },
         "visitante": {
-          "valor": 0.78,
+          "valor": 0.79,
           "ultimos_5": [
+            "L",
             "W",
             "L",
             "W",
-            "W",
-            "L"
+            "W"
           ],
           "nombre": "Spain"
         },
-        "interpretacion": "Spain llega con mejor momentum: índice 0.78/1.0 frente a 0.14/1.0 de Peru. Últimos 5: 3V/0E/2D vs 0V/0E/5D."
+        "interpretacion": "Spain llega con mejor momentum: índice 0.79/1.0 frente a 0.36/1.0 de Peru. Últimos 5: 3V/0E/2D vs 2V/0E/3D."
       },
       {
         "factor": "Ranking FIFA",
@@ -298,15 +298,15 @@
         "ciudad_sede": "Puebla",
         "local": {
           "nombre": "Peru",
-          "altitud_base": 142,
-          "factor": 0.9
+          "altitud_base": 121,
+          "factor": 0.899
         },
         "visitante": {
           "nombre": "Spain",
-          "altitud_base": 25,
-          "factor": 0.894
+          "altitud_base": 27,
+          "factor": 0.895
         },
-        "interpretacion": "Sede en altura considerable (2135m). Ambas selecciones enfrentan condiciones similares de aclimatación (1993m vs 2110m de diferencia). Factor altitud: 0.90 vs 0.89."
+        "interpretacion": "Sede en altura considerable (2135m). Ambas selecciones enfrentan condiciones similares de aclimatación (2014m vs 2108m de diferencia). Factor altitud: 0.90 vs 0.89."
       },
       {
         "factor": "Potencial ofensivo y defensivo",
@@ -314,15 +314,15 @@
         "tipo": "doble_barra",
         "local": {
           "nombre": "Peru",
-          "goles_favor": 0.57,
-          "goles_contra": 1.14
+          "goles_favor": 0.82,
+          "goles_contra": 0.82
         },
         "visitante": {
           "nombre": "Spain",
-          "goles_favor": 2.67,
-          "goles_contra": 0.89
+          "goles_favor": 2.71,
+          "goles_contra": 0.88
         },
-        "interpretacion": "Spain más ofensivo: 2.67 vs 0.57 goles/partido. Defensiva: 1.14 vs 0.89."
+        "interpretacion": "Spain más ofensivo: 2.71 vs 0.82 goles/partido. Defensiva: 0.82 vs 0.88."
       }
     ]
   }
