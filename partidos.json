@@ -1,3 +1,329 @@
 [
-
+  {
+    "id": "401871814",
+    "fecha": "2026-06-08T18:45Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Netherlands",
+    "visitante": "Uzbekistan",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/449.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2570.png",
+    "estadio": "Icahn Stadium",
+    "ciudad_sede": "New York City, New York",
+    "pais_sede": "USA",
+    "altitud_sede": 10,
+    "es_neutro": true,
+    "prob_local": 0.4303263163615187,
+    "prob_empate": 0.24597268564977876,
+    "prob_visitante": 0.32370099798870255,
+    "fuerza_local": 0.6063186647898154,
+    "fuerza_visitante": 0.4162142857142857,
+    "diferencia": 0.19010437907552974,
+    "confianza": "moderado",
+    "prediccion": "Netherlands",
+    "lambda_local": 1.3069688419902437,
+    "lambda_visitante": 1.0725925925925925,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Netherlands"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Uzbekistan"
+        },
+        "interpretacion": "Uzbekistan llega con mejor momentum: índice 0.50/1.0 frente a 0.47/1.0 de Netherlands. Últimos 5: 3V/0E/2D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#7 FIFA",
+          "valor": 0.971,
+          "puntos": 1757.9,
+          "nombre": "Netherlands"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Uzbekistan"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #7 Netherlands (1758 pts) vs #999 Uzbekistan (500 pts). Netherlands tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 10,
+        "ciudad_sede": "New York City, New York",
+        "local": {
+          "nombre": "Netherlands",
+          "altitud_base": 25,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Uzbekistan",
+          "altitud_base": 455,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (10m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Netherlands",
+          "goles_favor": 2.0,
+          "goles_contra": 1.27
+        },
+        "visitante": {
+          "nombre": "Uzbekistan",
+          "goles_favor": 1.5,
+          "goles_contra": 1.2
+        },
+        "interpretacion": "Netherlands más ofensivo: 2.00 goles/partido (vs 1.50). Defensiva: 1.27 vs 1.20."
+      }
+    ]
+  },
+  {
+    "id": "401869804",
+    "fecha": "2026-06-08T19:10Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "France",
+    "visitante": "Northern Ireland",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/478.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/586.png",
+    "estadio": "Decathlon Arena - Stade Pierre-Mauroy",
+    "ciudad_sede": "Lille",
+    "pais_sede": "France",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.5053006366030866,
+    "prob_empate": 0.24321917020648964,
+    "prob_visitante": 0.2514801931904237,
+    "fuerza_local": 0.6596351214285716,
+    "fuerza_visitante": 0.27725,
+    "diferencia": 0.3823851214285716,
+    "confianza": "favorable",
+    "prediccion": "France",
+    "lambda_local": 1.3338689331885714,
+    "lambda_visitante": 0.6389149301204816,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.59,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "France"
+        },
+        "visitante": {
+          "valor": 0.25,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Northern Ireland"
+        },
+        "interpretacion": "France llega con mejor momentum: índice 0.59/1.0 frente a 0.25/1.0 de Northern Ireland. Últimos 5: 4V/0E/1D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#1 FIFA",
+          "valor": 1.0,
+          "puntos": 1877.3,
+          "nombre": "France"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Northern Ireland"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #1 France (1877 pts) vs #999 Northern Ireland (500 pts). France tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Lille",
+        "local": {
+          "nombre": "France",
+          "altitud_base": 102,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Northern Ireland",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "France",
+          "goles_favor": 1.71,
+          "goles_contra": 1.18
+        },
+        "visitante": {
+          "nombre": "Northern Ireland",
+          "goles_favor": 1.33,
+          "goles_contra": 1.33
+        },
+        "interpretacion": "Producción similar: France 1.71 — Northern Ireland 1.33 goles/partido. Defensa: 1.18 vs 1.33."
+      }
+    ]
+  },
+  {
+    "id": "401867679",
+    "fecha": "2026-06-09T02:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Peru",
+    "visitante": "Spain",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/211.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/164.png",
+    "estadio": "Estadio Cuauhtémoc",
+    "ciudad_sede": "Puebla",
+    "pais_sede": "Mexico",
+    "altitud_sede": 2135,
+    "es_neutro": true,
+    "prob_local": 0.21274300368082877,
+    "prob_empate": 0.2272569963191713,
+    "prob_visitante": 0.56,
+    "fuerza_local": 0.41145811259523163,
+    "fuerza_visitante": 0.7161042572372038,
+    "diferencia": 0.3046461446419722,
+    "confianza": "favorable",
+    "prediccion": "Spain",
+    "lambda_local": 0.29668865103452535,
+    "lambda_visitante": 2.1398305618997844,
+    "factor_altitud_local": 0.90035,
+    "factor_altitud_visitante": 0.8945,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.14,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Peru"
+        },
+        "visitante": {
+          "valor": 0.78,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Spain"
+        },
+        "interpretacion": "Spain llega con mejor momentum: índice 0.78/1.0 frente a 0.14/1.0 de Peru. Últimos 5: 3V/0E/2D vs 0V/0E/5D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#39 FIFA",
+          "valor": 0.818,
+          "puntos": 1501.9,
+          "nombre": "Peru"
+        },
+        "visitante": {
+          "etiqueta": "#2 FIFA",
+          "valor": 0.995,
+          "puntos": 1876.4,
+          "nombre": "Spain"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #39 Peru (1502 pts) vs #2 Spain (1876 pts). Spain tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 2135,
+        "ciudad_sede": "Puebla",
+        "local": {
+          "nombre": "Peru",
+          "altitud_base": 142,
+          "factor": 0.9
+        },
+        "visitante": {
+          "nombre": "Spain",
+          "altitud_base": 25,
+          "factor": 0.894
+        },
+        "interpretacion": "Sede en altura considerable (2135m). Ambas selecciones enfrentan condiciones similares de aclimatación (1993m vs 2110m de diferencia). Factor altitud: 0.90 vs 0.89."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Peru",
+          "goles_favor": 0.57,
+          "goles_contra": 1.14
+        },
+        "visitante": {
+          "nombre": "Spain",
+          "goles_favor": 2.67,
+          "goles_contra": 0.89
+        },
+        "interpretacion": "Spain más ofensivo: 2.67 vs 0.57 goles/partido. Defensiva: 1.14 vs 0.89."
+      }
+    ]
+  }
 ]

@@ -211,15 +211,6 @@ def adaptar_seleccion(seleccion_raw):
 # =============================
 
 PERFILES_SELECCIONES = {
-
-    # ------------------------------------------------------------------
-    # AMISTOSO
-    # Cambios v2:
-    #   K_LOGISTICO  3.8 → 2.8  (curva más plana, menos amplificación)
-    #   MAX_FAVORITO 0.62 → 0.56 (techo más realista para fútbol de selecciones)
-    #   ALPHA        0.72 → 0.60 (menos peso fuerza base, más peso Poisson)
-    #   BETA         0.28 → 0.40
-    # ------------------------------------------------------------------
     "amistoso": {
         "nombre":           "Amistoso Internacional",
         "K_LOGISTICO":      2.8,
@@ -234,8 +225,6 @@ PERFILES_SELECCIONES = {
         "PESO_RANKING":     0.15,
         "PESO_ALTITUD":     0.10,
     },
-
-    # Sin cambios — competencias clasificatorias mantienen su calibración original
     "eliminatoria_conmebol": {
         "nombre":           "Eliminatoria CONMEBOL",
         "K_LOGISTICO":      4.2,
@@ -250,7 +239,6 @@ PERFILES_SELECCIONES = {
         "PESO_RANKING":     0.12,
         "PESO_ALTITUD":     0.10,
     },
-
     "eliminatoria_concacaf": {
         "nombre":           "Eliminatoria CONCACAF",
         "K_LOGISTICO":      4.0,
@@ -265,7 +253,6 @@ PERFILES_SELECCIONES = {
         "PESO_RANKING":     0.12,
         "PESO_ALTITUD":     0.08,
     },
-
     "copa_america": {
         "nombre":           "Copa América / Torneo Continental",
         "K_LOGISTICO":      4.1,
@@ -280,16 +267,6 @@ PERFILES_SELECCIONES = {
         "PESO_RANKING":     0.14,
         "PESO_ALTITUD":     0.08,
     },
-
-    # ------------------------------------------------------------------
-    # MUNDIAL — FASE DE GRUPOS
-    # Fase donde cualquier selección puede sorprender.
-    # Cambios v2:
-    #   K_LOGISTICO  4.3 → 3.2  (menos amplificación, más incertidumbre)
-    #   MAX_FAVORITO 0.64 → 0.58
-    #   ALPHA        0.68 → 0.62
-    #   BETA         0.32 → 0.38
-    # ------------------------------------------------------------------
     "mundial_grupos": {
         "nombre":           "Copa del Mundo FIFA — Fase de Grupos",
         "K_LOGISTICO":      3.2,
@@ -304,17 +281,6 @@ PERFILES_SELECCIONES = {
         "PESO_RANKING":     0.18,
         "PESO_ALTITUD":     0.08,
     },
-
-    # ------------------------------------------------------------------
-    # MUNDIAL — FASE ELIMINATORIA (octavos, cuartos, semis, final)
-    # Partidos a todo o nada: el favorito es más fiable, pero la
-    # incertidumbre sigue siendo alta en este deporte.
-    # Cambios v2:
-    #   K_LOGISTICO  4.5 → 3.6
-    #   MAX_FAVORITO 0.65 → 0.60
-    #   ALPHA        0.66 → 0.63
-    #   BETA         0.34 → 0.37
-    # ------------------------------------------------------------------
     "mundial_eliminatoria": {
         "nombre":           "Copa del Mundo FIFA — Eliminatorias",
         "K_LOGISTICO":      3.6,
@@ -336,11 +302,19 @@ PERFILES_SELECCIONES = {
 # PROMEDIO DE GOL (global)
 # =============================
 
+# FIX v3: promedio_global ahora tiene un rango anclado [1.50, 2.20].
+# Antes, si la DB tenía pocos equipos o equipos con goles bajos, el promedio
+# caía a ~1.35, lo que disparaba los lambdas de Poisson de equipos con buena
+# producción ofensiva (como Greece) y distorsionaba todo el resultado.
+PROMEDIO_GLOBAL_MIN = 1.50
+PROMEDIO_GLOBAL_MAX = 2.20
+
 def calcular_promedio_global(db):
     selecciones = [v for v in db.values() if v.get("partidos", 0) > 0]
     if not selecciones:
-        return 1.35
-    return sum(v.get("goles_favor_promedio", 1.35) for v in selecciones) / len(selecciones)
+        return 1.75  # fallback central realista
+    raw = sum(v.get("goles_favor_promedio", 1.75) for v in selecciones) / len(selecciones)
+    return limitar(raw, PROMEDIO_GLOBAL_MIN, PROMEDIO_GLOBAL_MAX)
 
 
 # =============================
@@ -400,7 +374,13 @@ def calcular_isd_seleccion(equipo, contexto, promedio_global):
     else:
         isd_raw = promedio_global / gc
 
-    isd_raw = limitar(isd_raw, 0.5, 2.5)
+    # FIX v3: cap del ISD escalado por confianza de muestra.
+    # Con muestra pequeña (peso < 1.0) una defensiva "perfecta" no debe
+    # bloquear al rival casi por completo. El techo baja a 1.8 cuando la
+    # confianza es baja y sube gradualmente hasta 2.5 con muestra completa.
+    techo_isd = 1.8 + (peso * 0.7)   # rango: 1.8 (poca muestra) → 2.5 (muestra completa)
+    isd_raw = limitar(isd_raw, 0.5, techo_isd)
+
     isd = peso * isd_raw + (1 - peso) * 1.0
 
     mod_streak = 1.0 + (normalizar_streak(equipo["imbatido_streak"]) * 0.10)
@@ -553,11 +533,14 @@ def contar_resultados_h2h(partidos_h2h, nombre_local, nombre_visitante):
 # EMPATE
 # =============================
 
+# FIX v3: cuando empatados=0 en muchos partidos es casi siempre un bug del
+# scraper (los empates no se capturaron). Se usa un fallback realista de 0.22
+# en lugar de devolver 0.0, que colapsaba la prob. de empate al piso (0.18).
 def calcular_tasa_empate(seleccion, es_neutro=False):
     partidos  = seleccion.get("partidos", 0)
     empatados = seleccion.get("empatados", 0)
-    if partidos == 0:
-        return 0.22
+    if partidos == 0 or empatados == 0:
+        return 0.22   # fallback: ~22% es la tasa histórica real de empates en fútbol internacional
     return limitar(empatados / partidos, 0.0, 1.0)
 
 
@@ -573,7 +556,6 @@ def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neut
     diferencia = abs(f_local - f_visitante)
     base_empate = 0.30 if es_neutro else 0.26
 
-    # v2: piso subido de 0.13 → 0.18 para reflejar incertidumbre mínima real
     base = limitar(base_empate - (diferencia / 0.60) * 0.10, 0.18, base_empate)
 
     tasa_local     = calcular_tasa_empate(sel_local,     es_neutro)
@@ -584,7 +566,6 @@ def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neut
     d_visitante = contar_empates_recientes(sel_visitante.get("ultimos_5", []))
     momentum    = limitar((d_local + d_visitante) * 0.07, 0.0, 0.35)
 
-    # v2: rango final 0.18–0.44 (era 0.13–0.46)
     return limitar(
         base      * PESO_EMPATE_BASE      +
         historico * PESO_EMPATE_HISTORICO +
@@ -598,10 +579,6 @@ def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neut
 # =============================
 
 def _aplicar_cap_final(prob_local, prob_empate, prob_visitante, max_favorito):
-    """
-    Aplica MAX_FAVORITO sobre la probabilidad fusionada final.
-    El exceso se redistribuye 55% al empate y 45% al rival, luego renormaliza.
-    """
     prob_max = max(prob_local, prob_visitante)
     if prob_max <= max_favorito:
         return prob_local, prob_empate, prob_visitante
@@ -691,7 +668,6 @@ def predecir_probabilidades(
     ratio_l = 1 / (1 + math.exp(-cfg["K_LOGISTICO"] * score))
     ratio_v = 1 - ratio_l
 
-    # Cap sobre ratio (primera barrera, conservada)
     if ratio_l > cfg["MAX_FAVORITO"]:
         ratio_l = cfg["MAX_FAVORITO"]
         ratio_v = 1 - ratio_l
@@ -1107,3 +1083,8 @@ if __name__ == "__main__":
     print(f"✅ Completado. {len(fixture)-errores} proyecciones generadas → {cfg_db['salida']}")
     if errores:
         print(f"  ⚠  {errores} errores (revisa los nombres en selecciones.json y fixture.json)")
+
+
+# ── TEST INTERNO: Greece vs Italy ─────────────────────────────────────────────
+if False:
+    pass
