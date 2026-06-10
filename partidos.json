@@ -1,3 +1,438 @@
 [
-
+  {
+    "id": "401867372",
+    "fecha": "2026-06-10T19:45Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Portugal",
+    "visitante": "Nigeria",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/482.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/657.png",
+    "estadio": "Estádio Dr. Magalhaes Pessoa",
+    "ciudad_sede": "Leiria",
+    "pais_sede": "Portugal",
+    "altitud_sede": 0,
+    "es_neutro": false,
+    "prob_local": 0.5267923030505601,
+    "prob_empate": 0.21831352521374497,
+    "prob_visitante": 0.25489417173569495,
+    "fuerza_local": 0.7542897259313055,
+    "fuerza_visitante": 0.596926339456596,
+    "diferencia": 0.1573633864747095,
+    "confianza": "favorable",
+    "prediccion": "Portugal",
+    "lambda_local": 1.724995708349714,
+    "lambda_visitante": 0.870435005036473,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.78,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Portugal"
+        },
+        "visitante": {
+          "valor": 0.62,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Nigeria"
+        },
+        "interpretacion": "Portugal llega con mejor momentum: índice 0.78/1.0 frente a 0.62/1.0 de Nigeria. Últimos 5: 4V/0E/1D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#5 FIFA",
+          "valor": 0.981,
+          "puntos": 1763.8,
+          "nombre": "Portugal"
+        },
+        "visitante": {
+          "etiqueta": "#42 FIFA",
+          "valor": 0.804,
+          "puntos": 1485.7,
+          "nombre": "Nigeria"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #5 Portugal (1764 pts) vs #42 Nigeria (1486 pts). Portugal tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Leiria",
+        "local": {
+          "nombre": "Portugal",
+          "altitud_base": 80,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Nigeria",
+          "altitud_base": 123,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Portugal",
+          "goles_favor": 2.44,
+          "goles_contra": 0.91
+        },
+        "visitante": {
+          "nombre": "Nigeria",
+          "goles_favor": 1.58,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Portugal más ofensivo: 2.44 goles/partido (vs 1.58). Defensiva: 0.91 vs 1.00."
+      }
+    ]
+  },
+  {
+    "id": "401860829",
+    "fecha": "2026-06-10T20:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "England",
+    "visitante": "Costa Rica",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/448.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/214.png",
+    "estadio": "Inter&Co Stadium",
+    "ciudad_sede": "Orlando, Florida",
+    "pais_sede": "USA",
+    "altitud_sede": 30,
+    "es_neutro": true,
+    "prob_local": 0.5376248068818521,
+    "prob_empate": 0.2302063740833392,
+    "prob_visitante": 0.23216881903480863,
+    "fuerza_local": 0.6454180760922292,
+    "fuerza_visitante": 0.47927641803396,
+    "diferencia": 0.16614165805826925,
+    "confianza": "favorable",
+    "prediccion": "England",
+    "lambda_local": 1.5909666975536436,
+    "lambda_visitante": 0.6613218918572205,
+    "factor_altitud_local": 0.9992,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.57,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "England"
+        },
+        "visitante": {
+          "valor": 0.35,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Costa Rica"
+        },
+        "interpretacion": "England llega con mejor momentum: índice 0.57/1.0 frente a 0.35/1.0 de Costa Rica. Últimos 5: 3V/0E/2D vs 0V/0E/5D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#4 FIFA",
+          "valor": 0.986,
+          "puntos": 1826.0,
+          "nombre": "England"
+        },
+        "visitante": {
+          "etiqueta": "#46 FIFA",
+          "valor": 0.785,
+          "puntos": 1452.3,
+          "nombre": "Costa Rica"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #4 England (1826 pts) vs #46 Costa Rica (1452 pts). England tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 30,
+        "ciudad_sede": "Orlando, Florida",
+        "local": {
+          "nombre": "England",
+          "altitud_base": 14,
+          "factor": 0.999
+        },
+        "visitante": {
+          "nombre": "Costa Rica",
+          "altitud_base": 558,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (30m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "England",
+          "goles_favor": 1.52,
+          "goles_contra": 0.87
+        },
+        "visitante": {
+          "nombre": "Costa Rica",
+          "goles_favor": 1.5,
+          "goles_contra": 1.75
+        },
+        "interpretacion": "Producción similar: England 1.52 — Costa Rica 1.50 goles/partido. Defensa: 0.87 vs 1.75."
+      }
+    ]
+  },
+  {
+    "id": "401874117",
+    "fecha": "2026-06-11T00:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Bolivia",
+    "visitante": "Algeria",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/204.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/624.png",
+    "estadio": "",
+    "ciudad_sede": "",
+    "pais_sede": "",
+    "altitud_sede": 0,
+    "es_neutro": true,
+    "prob_local": 0.2294831472414215,
+    "prob_empate": 0.21051685275857848,
+    "prob_visitante": 0.56,
+    "fuerza_local": 0.39513361431989064,
+    "fuerza_visitante": 0.6883126621667806,
+    "diferencia": 0.2931790478468899,
+    "confianza": "favorable",
+    "prediccion": "Algeria",
+    "lambda_local": 0.234944340292683,
+    "lambda_visitante": 3.384100467982804,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.2,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Bolivia"
+        },
+        "visitante": {
+          "valor": 0.74,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Algeria"
+        },
+        "interpretacion": "Algeria llega con mejor momentum: índice 0.74/1.0 frente a 0.20/1.0 de Bolivia. Últimos 5: 4V/0E/1D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#51 FIFA",
+          "valor": 0.761,
+          "puntos": 1418.2,
+          "nombre": "Bolivia"
+        },
+        "visitante": {
+          "etiqueta": "#36 FIFA",
+          "valor": 0.833,
+          "puntos": 1518.2,
+          "nombre": "Algeria"
+        },
+        "interpretacion": "Leve diferencia en ranking: #51 Bolivia vs #36 Algeria. El factor puede influir en momentos clave."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "",
+        "local": {
+          "nombre": "Bolivia",
+          "altitud_base": 3625,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "altitud_base": 141,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Bolivia",
+          "goles_favor": 0.67,
+          "goles_contra": 2.13
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "goles_favor": 2.37,
+          "goles_contra": 0.79
+        },
+        "interpretacion": "Algeria más ofensivo: 2.37 vs 0.67 goles/partido. Defensiva: 2.13 vs 0.79."
+      }
+    ]
+  },
+  {
+    "id": "401869744",
+    "fecha": "2026-06-11T04:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Austria",
+    "visitante": "Guatemala",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/474.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2652.png",
+    "estadio": "Rose Bowl",
+    "ciudad_sede": "Pasadena, California",
+    "pais_sede": "USA",
+    "altitud_sede": 995,
+    "es_neutro": true,
+    "prob_local": 0.5600000000000002,
+    "prob_empate": 0.22296376890616884,
+    "prob_visitante": 0.2170362310938311,
+    "fuerza_local": 0.6318241030553889,
+    "fuerza_visitante": 0.29355880714139854,
+    "diferencia": 0.3382652959139904,
+    "confianza": "favorable",
+    "prediccion": "Austria",
+    "lambda_local": 2.0723133162049763,
+    "lambda_visitante": 0.46358592271838817,
+    "factor_altitud_local": 0.9588,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.57,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Austria"
+        },
+        "visitante": {
+          "valor": 0.28,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Guatemala"
+        },
+        "interpretacion": "Austria llega con mejor momentum: índice 0.57/1.0 frente a 0.28/1.0 de Guatemala. Últimos 5: 3V/0E/2D vs 0V/0E/5D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#22 FIFA",
+          "valor": 0.9,
+          "puntos": 1601.2,
+          "nombre": "Austria"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 500.0,
+          "nombre": "Guatemala"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #22 Austria (1601 pts) vs #999 Guatemala (500 pts). Austria tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 995,
+        "ciudad_sede": "Pasadena, California",
+        "local": {
+          "nombre": "Austria",
+          "altitud_base": 171,
+          "factor": 0.959
+        },
+        "visitante": {
+          "nombre": "Guatemala",
+          "altitud_base": 1500,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (995m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Austria",
+          "goles_favor": 2.14,
+          "goles_contra": 1.05
+        },
+        "visitante": {
+          "nombre": "Guatemala",
+          "goles_favor": 0.92,
+          "goles_contra": 1.68
+        },
+        "interpretacion": "Austria más ofensivo: 2.14 goles/partido (vs 0.92). Defensiva: 1.05 vs 1.68."
+      }
+    ]
+  }
 ]
