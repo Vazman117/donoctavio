@@ -1,3 +1,12 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash; // "#hoy", "#tabla", etc.
+  if (hash) {
+    const tabName = hash.replace('#', ''); // "hoy"
+    const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+    if (tabBtn) tabBtn.click(); // simula el clic en el tab correspondiente
+  }
+});
+
 const contenido = document.getElementById("contenidoMundial");
 const tabs = document.querySelectorAll(".tab-btn");
 

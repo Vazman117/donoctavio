@@ -5,15 +5,15 @@
     "equipo": "Mexico",
     "abreviacion": "MEX",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
+    "puntos": 3.0,
+    "diferencia_goles": 2.0,
+    "goles_favor": 2.0,
     "goles_contra": 0.0,
-    "partidos": 0.0
+    "partidos": 1.0
   },
   {
     "grupo": "Group A",
-    "posicion": 4.0,
+    "posicion": 2.0,
     "equipo": "Czechia",
     "abreviacion": "CZE",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
@@ -29,18 +29,6 @@
     "equipo": "South Korea",
     "abreviacion": "KOR",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group A",
-    "posicion": 2.0,
-    "equipo": "South Africa",
-    "abreviacion": "RSA",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
     "puntos": 0.0,
     "diferencia_goles": 0.0,
     "goles_favor": 0.0,
@@ -574,5 +562,17 @@
     "goles_favor": 0.0,
     "goles_contra": 0.0,
     "partidos": 0.0
+  },
+  {
+    "grupo": "Group A",
+    "posicion": 4.0,
+    "equipo": "South Africa",
+    "abreviacion": "RSA",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+    "puntos": 0.0,
+    "diferencia_goles": -2.0,
+    "goles_favor": 0.0,
+    "goles_contra": 2.0,
+    "partidos": 1.0
   }
 ]

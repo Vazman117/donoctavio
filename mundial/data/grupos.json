@@ -7,17 +7,17 @@
         "equipo": "Mexico",
         "abreviacion": "MEX",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-        "partidos": 0.0,
-        "ganados": 0.0,
+        "partidos": 1.0,
+        "ganados": 1.0,
         "empatados": 0.0,
         "perdidos": 0.0,
-        "goles_favor": 0.0,
+        "goles_favor": 2.0,
         "goles_contra": 0.0,
-        "diferencia_goles": 0.0,
-        "puntos": 0.0
+        "diferencia_goles": 2.0,
+        "puntos": 3.0
       },
       {
-        "posicion": 4.0,
+        "posicion": 2.0,
         "equipo": "Czechia",
         "abreviacion": "CZE",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
@@ -45,17 +45,17 @@
         "puntos": 0.0
       },
       {
-        "posicion": 2.0,
+        "posicion": 4.0,
         "equipo": "South Africa",
         "abreviacion": "RSA",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
-        "partidos": 0.0,
+        "partidos": 1.0,
         "ganados": 0.0,
         "empatados": 0.0,
-        "perdidos": 0.0,
+        "perdidos": 1.0,
         "goles_favor": 0.0,
-        "goles_contra": 0.0,
-        "diferencia_goles": 0.0,
+        "goles_contra": 2.0,
+        "diferencia_goles": -2.0,
         "puntos": 0.0
       }
     ]
