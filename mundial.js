@@ -13,7 +13,6 @@ cambiarVista("grupos");
 
 async function cambiarVista(vista) {
   const sec = document.getElementById("contenidoMundial");
-  // Grupos: sin scroll. Tabla y Hoy: con scroll.
   if (vista === "grupos") {
     sec.classList.remove("vista-scroll");
     cargarGrupos();
@@ -73,13 +72,12 @@ async function cargarGrupos() {
   Object.values(probsData.grupos).forEach(g => {
     g.equipos.forEach(eq => {
       probMap[eq.equipo] = {
-        prob:      eq.prob_lider,
-        favorito:  eq.es_favorito,
+        prob:     eq.prob_lider,
+        favorito: eq.es_favorito,
       };
     });
   });
 
-  /* Valor máximo de prob_lider dentro de cada grupo para escalar barras */
   function maxProb(equipos) {
     return Math.max(...equipos.map(eq => probMap[eq.equipo]?.prob ?? 0));
   }
@@ -90,62 +88,75 @@ async function cargarGrupos() {
     return "prob-baja";
   }
 
-  contenido.innerHTML = `
-    <div class="grupos-grid">
-      ${grupos.map(grupo => {
-
-        const equiposOrdenados = [...grupo.equipos].sort((a, b) => a.posicion - b.posicion);
-        const maxP = maxProb(equiposOrdenados);
-
-        return `
-          <div class="grupo-card">
-            <div class="grupo-header">${grupo.grupo}</div>
-            <table class="grupo-tabla">
-              <thead>
-                <tr>
-                  <th class="th-equipo">Equipo</th>
-                  <th>Pts</th>
-                  <th>DG</th>
-                  <th title="Probabilidad de liderar el grupo" style="text-align:right;padding-right:6px">1°</th>
+  function renderGrupo(grupo) {
+    const equiposOrdenados = [...grupo.equipos].sort((a, b) => a.posicion - b.posicion);
+    const maxP = maxProb(equiposOrdenados);
+    return `
+      <div class="grupo-card">
+        <div class="grupo-header">${grupo.grupo}</div>
+        <table class="grupo-tabla">
+          <thead>
+            <tr>
+              <th class="th-equipo">Equipo</th>
+              <th>Pts</th>
+              <th>DG</th>
+              <th title="Probabilidad de liderar el grupo" style="text-align:right;padding-right:6px">1°</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${equiposOrdenados.map(eq => {
+              const dato     = probMap[eq.equipo];
+              const prob     = dato?.prob ?? null;
+              const favorito = dato?.favorito ?? false;
+              const barW     = prob !== null && maxP > 0 ? Math.round((prob / maxP) * 100) : 0;
+              const cls      = prob !== null ? probClase(prob) : "prob-baja";
+              const label    = prob !== null ? `${prob}%` : "—";
+              return `
+                <tr class="${favorito ? "fila-favorito" : ""}">
+                  <td class="equipo-cell">
+                    <img src="${eq.escudo}" alt="${eq.equipo}" class="escudo-equipo">
+                    <span class="equipo-abr">${eq.abreviacion}</span>
+                  </td>
+                  <td>${eq.puntos}</td>
+                  <td>${eq.diferencia_goles}</td>
+                  <td class="prob-cell">
+                    <div class="prob-inner">
+                      <div class="prob-bar-bg">
+                        <div class="prob-bar-fill ${cls}" style="width:${barW}%"></div>
+                      </div>
+                      <span class="prob-val ${cls}">${label}</span>
+                    </div>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                ${equiposOrdenados.map(eq => {
-                  const dato     = probMap[eq.equipo];
-                  const prob     = dato?.prob ?? null;
-                  const favorito = dato?.favorito ?? false;
-                  const barW     = prob !== null && maxP > 0
-                    ? Math.round((prob / maxP) * 100)
-                    : 0;
-                  const cls      = prob !== null ? probClase(prob) : "prob-baja";
-                  const label    = prob !== null ? `${prob}%` : "—";
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
 
-                  return `
-                    <tr class="${favorito ? "fila-favorito" : ""}">
-                      <td class="equipo-cell">
-                        <img src="${eq.escudo}" alt="${eq.equipo}" class="escudo-equipo">
-                        <span class="equipo-abr">${eq.abreviacion}</span>
-                      </td>
-                      <td>${eq.puntos}</td>
-                      <td>${eq.diferencia_goles}</td>
-                      <td class="prob-cell">
-                        <div class="prob-inner">
-                          <div class="prob-bar-bg">
-                            <div class="prob-bar-fill ${cls}" style="width:${barW}%"></div>
-                          </div>
-                          <span class="prob-val ${cls}">${label}</span>
-                        </div>
-                      </td>
-                    </tr>
-                  `;
-                }).join("")}
-              </tbody>
-            </table>
-          </div>
-        `;
-      }).join("")}
-    </div>
-  `;
+  /* Dividir grupos: primeros 6 izquierda, últimos 6 derecha */
+  const izquierda = grupos.slice(0, 6);   // A B C D E F
+  const derecha   = grupos.slice(6, 12);  // G H I J K L
+
+  /* Construir filas: 2 izq + [logo en fila 1] + 2 der, repetido 3 veces */
+  let filas = "";
+  for (let i = 0; i < 3; i++) {
+    filas += renderGrupo(izquierda[i * 2]);
+    filas += renderGrupo(izquierda[i * 2 + 1]);
+    if (i === 0) {
+      filas += `
+        <div class="grupos-logo-center">
+          <img src="assets/mundial-2026.png" alt="Logo Mundial 2026">
+        </div>
+      `;
+    }
+    filas += renderGrupo(derecha[i * 2]);
+    filas += renderGrupo(derecha[i * 2 + 1]);
+  }
+
+  contenido.innerHTML = `<div class="grupos-grid">${filas}</div>`;
 }
 
 
@@ -156,8 +167,8 @@ async function cargarTabla() {
   const tabla = await res.json();
 
   function ordenar(a, b) {
-    if (b.puntos !== a.puntos)                    return b.puntos - a.puntos;
-    if (b.diferencia_goles !== a.diferencia_goles) return b.diferencia_goles - a.diferencia_goles;
+    if (b.puntos !== a.puntos)                     return b.puntos - a.puntos;
+    if (b.diferencia_goles !== a.diferencia_goles)  return b.diferencia_goles - a.diferencia_goles;
     return b.goles_favor - a.goles_favor;
   }
 
@@ -192,9 +203,9 @@ async function cargarTabla() {
             }
 
             let sep = "";
-            if (i === primeros.length)                                   sep = "separador-top";
-            if (i === primeros.length + segundos.length)                 sep = "separador-top";
-            if (i === primeros.length + segundos.length + terceros.length) sep = "separador-top";
+            if (i === primeros.length)                                        sep = "separador-top";
+            if (i === primeros.length + segundos.length)                      sep = "separador-top";
+            if (i === primeros.length + segundos.length + terceros.length)    sep = "separador-top";
 
             return `
               <tr class="${sep}">

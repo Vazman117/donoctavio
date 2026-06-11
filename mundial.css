@@ -23,28 +23,21 @@
   overflow: hidden;
 }
 
-/* ─── HEADER OVERRIDES (mundial sobreescribe estilos.css) ── */
-/* estilos.css usa header{} global; aquí usamos .mundial-header */
+/* ─── HEADER OVERRIDES ──────────────────────────────────── */
 .mundial-header {
   flex-shrink: 0;
   background: var(--bg-app) !important;
   border-bottom-color: var(--border) !important;
 }
 
-/* El header usa selector genérico "header" en estilos.css,
-   así que necesitamos especificidad para los textos */
 .mundial-body .btn-back {
   color: var(--muted) !important;
   font-family: var(--font) !important;
   font-size: 10px !important;
   letter-spacing: .08em !important;
 }
-.mundial-body .btn-back:hover {
-  color: var(--txt) !important;
-}
-.mundial-body .btn-back svg {
-  stroke: currentColor;
-}
+.mundial-body .btn-back:hover { color: var(--txt) !important; }
+.mundial-body .btn-back svg   { stroke: currentColor; }
 
 .mundial-body .header-label {
   color: var(--muted) !important;
@@ -62,8 +55,6 @@
 }
 
 /* ─── MAIN ──────────────────────────────────────────────── */
-/* estilos.css define header con height:77px y position:sticky.
-   Usamos calc para restar header + tabs del viewport */
 .mundial-main {
   display: flex;
   flex-direction: column;
@@ -109,11 +100,10 @@
 .mundial-content {
   flex: 1;
   overflow: hidden;
-  padding: 10px 14px;
+  padding: 6px 8px;
   min-height: 0;
 }
 
-/* Tabla y Hoy: sí permiten scroll vertical */
 .mundial-content.vista-scroll {
   overflow-y: auto;
   scrollbar-width: none;
@@ -122,17 +112,38 @@
 /* ─── GRUPOS GRID ───────────────────────────────────────── */
 .grupos-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 7px;
+  grid-template-columns: 1fr 1fr 300px 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
   height: 100%;
+  align-items: stretch;
+}
+
+/* ─── LOGO CENTRAL ──────────────────────────────────────── */
+.grupos-logo-center {
+  grid-column: 3;
+  grid-row: 1 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, rgba(255,220,120,.06) 0%, transparent 70%);
+  border-radius: 16px;
+  border: 0.5px solid rgba(255,200,80,.10);
+  padding: 8px;
+}
+
+.grupos-logo-center img {
+  width: 400px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 24px rgba(255,210,100,.35)) brightness(1.2);
 }
 
 /* ─── GRUPO CARD ────────────────────────────────────────── */
 .grupo-card {
   background: var(--bg-card);
   border: 0.5px solid var(--border);
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -140,9 +151,9 @@
 
 .grupo-header {
   margin: 0;
-  padding: 5px 8px;
+  padding: 3px 5px;
   border-bottom: 0.5px solid var(--border);
-  font-size: 9px;
+  font-size: 7px;
   font-weight: 500;
   color: var(--dim);
   letter-spacing: .12em;
@@ -156,26 +167,27 @@
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+  flex: 1;
 }
 
 .grupo-tabla th {
-  font-size: 8px;
+  font-size: 6px;
   color: var(--dim);
-  letter-spacing: .05em;
+  letter-spacing: .04em;
   text-transform: uppercase;
   font-weight: 400;
-  padding: 4px 3px 3px;
+  padding: 2px 2px 2px;
   text-align: center;
 }
 .grupo-tabla th:first-child {
   text-align: left;
-  padding-left: 8px;
+  padding-left: 5px;
 }
 
 .grupo-tabla td {
-  font-size: 9px;
+  font-size: 12px;
   color: var(--txt);
-  padding: 4px 3px;
+  padding: 2px 2px;
   text-align: center;
   border-top: 0.5px solid var(--border);
 }
@@ -188,20 +200,20 @@
 .equipo-cell {
   display: flex !important;
   align-items: center;
-  gap: 5px;
+  gap: 3px;
   text-align: left !important;
-  padding-left: 8px !important;
+  padding-left: 5px !important;
 }
 
 .escudo-equipo {
-  width: 13px;
-  height: 13px;
+  width: 25px;
+  height: 25px;
   object-fit: contain;
   flex-shrink: 0;
 }
 
 .equipo-cell span {
-  font-size: 9px;
+  font-size: 7px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -209,18 +221,18 @@
 
 /* ─── CELDA PROB ────────────────────────────────────────── */
 .prob-cell {
-  padding: 3px 5px 3px 3px !important;
+  padding: 2px 3px 2px 2px !important;
 }
 
 .prob-inner {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 2px;
 }
 
 .prob-bar-bg {
   flex: 1;
-  height: 3px;
+  height: 2px;
   background: rgba(255,255,255,.07);
   border-radius: 99px;
   overflow: hidden;
@@ -233,9 +245,9 @@
 }
 
 .prob-val {
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 500;
-  min-width: 28px;
+  min-width: 24px;
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
@@ -342,26 +354,26 @@
 
 /* ─── RESPONSIVE ────────────────────────────────────────── */
 
-/* Tablet landscape: 4 col, habilitar scroll */
 @media (max-width: 1199px) {
   .mundial-body    { height: auto; overflow: auto; }
   .mundial-main    { overflow: auto; height: auto; }
   .mundial-content { overflow: auto; }
-  .grupos-grid     { grid-template-columns: repeat(4, 1fr); grid-template-rows: none; height: auto; }
+  .grupos-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: none;
+    height: auto;
+  }
+  .grupos-logo-center { display: none; }
 }
 
-/* Tablet portrait: 3 col */
 @media (max-width: 900px) {
-  .grupos-grid   { grid-template-columns: repeat(3, 1fr); }
-  .mundial-header { padding: 0 14px; }
+  .grupos-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Mobile landscape: 2 col */
 @media (max-width: 767px) {
   .grupos-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
 }
 
-/* Mobile portrait */
 @media (max-width: 600px) {
   .mundial-content { padding: 8px 10px; }
   .header-label    { display: none; }
@@ -369,7 +381,6 @@
   .tab-btn         { padding: 5px 12px; font-size: 10px; }
 }
 
-/* Mobile pequeño */
 @media (max-width: 360px) {
   .grupos-grid { grid-template-columns: 1fr; }
 }
