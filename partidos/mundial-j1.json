@@ -1,0 +1,112 @@
+[
+      {
+    "id": "760415",
+    "fecha": "2026-06-11T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Mexico",
+    "visitante": "South Africa",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+    "estadio": "Estadio Banorte",
+    "ciudad_sede": "Ciudad de México",
+    "pais_sede": "MEX",
+    "altitud_sede": 2240,
+    "es_neutro": true,
+    "prob_local": 0.35804167725822833,
+    "prob_empate": 0.334609852724044,
+    "prob_visitante": 0.3073484700177277,
+    "fuerza_local": 0.6066560732067601,
+    "fuerza_visitante": 0.5617543418560286,
+    "diferencia": 0.0449017313507315,
+    "confianza": "ajustado",
+    "prediccion": "Mexico",
+    "resultado": "Mexico",
+    "lambda_local": 0.6562386817253377,
+    "lambda_visitante": 0.5814448235652346,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 0.973,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.52,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Mexico"
+        },
+        "visitante": {
+          "valor": 0.45,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "South Africa"
+        },
+        "interpretacion": "Mexico llega con mejor momentum: índice 0.52/1.0 frente a 0.45/1.0 de South Africa. Últimos 5: 4V/0E/1D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#17 FIFA",
+          "valor": 0.923,
+          "puntos": 1622.8,
+          "nombre": "Mexico"
+        },
+        "visitante": {
+          "etiqueta": "#33 FIFA",
+          "valor": 0.847,
+          "puntos": 1514.8,
+          "nombre": "South Africa"
+        },
+        "interpretacion": "Leve diferencia en ranking: #17 Mexico vs #33 South Africa. El factor puede influir en momentos clave."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 2240,
+        "ciudad_sede": "Ciudad de México",
+        "local": {
+          "nombre": "Mexico",
+          "altitud_base": 2240,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "South Africa",
+          "altitud_base": 1700,
+          "factor": 0.973
+        },
+        "interpretacion": "Sede en gran altitud (2240m). South Africa llega desde 1700m con 540m de diferencia; Mexico desde 2240m (0m diferencia). La altitud favorece a Mexico. Factor: 1.00 vs 0.97."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Mexico",
+          "goles_favor": 1.58,
+          "goles_contra": 1.12
+        },
+        "visitante": {
+          "nombre": "South Africa",
+          "goles_favor": 0.95,
+          "goles_contra": 0.55
+        },
+        "interpretacion": "Mexico más ofensivo: 1.58 goles/partido (vs 0.95). Defensiva: 1.12 vs 0.55."
+      }
+    ]
+  }
+]
