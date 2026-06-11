@@ -2,40 +2,25 @@
 =============================================================
   MODELO DE PROBABILIDADES POR GRUPO — MUNDIAL 2026
   Don Octavio Web
-  v2.1 — Fixes: sigma mínimo, compresión de fuerzas, techo altitud
+  v2.2 — Nuevo: Monte Carlo parte de tabla real
 =============================================================
 
-CAMBIOS v2.1 respecto a v2.0:
-    ✦ FIX 1 — Sigma mínimo en Monte Carlo:
-        Antes: sigma = media * 0.35  (cuando media es baja → sigma
-        demasiado pequeño → probabilidades absurdas de 0.1-0.3%)
-        Ahora: sigma = max(media * 0.35, 0.07)
-        Efecto: el equipo más débil del grupo siempre tendrá al
-        menos ~4-6% de probabilidad de liderar.
+CAMBIOS v2.2 respecto a v2.1:
+    ✦ NUEVO — Monte Carlo con tabla base real:
+        El modelo ahora toma los puntos/goles/dif ya acumulados
+        en grupos.json como punto de partida fijo.
+        Solo simula los partidos que aún están en PARTIDOS_GRUPO.
 
-    ✦ FIX 2 — Compresión de fuerzas (mean-regression):
-        Antes: fuerzas brutas pasaban directo al Monte Carlo.
-        Ahora: fuerza_final = 0.70 * fuerza + 0.30 * media_grupo
-        Reduce brechas extremas sin cambiar el orden de favoritos.
+    FLUJO DE USO:
+        1. Cuando se juega un partido, elimínalo de PARTIDOS_GRUPO.
+        2. Actualiza grupos.json con los resultados reales
+           (puntos, ganados, goles_favor, goles_contra, etc.)
+        3. Corre el script → las probabilidades se recalculan
+           partiendo de la tabla real.
 
-    ✦ FIX 3 — Techo en penalización de altitud:
-        Antes: penalización ilimitada (Bolivia en NY → -9% por partido)
-        Ahora: máximo 6% de penalización por partido.
-        pen_alt = min((diff_alt / 1000.0) * PENALIZACION_ALTITUD_POR_1000M, 0.06)
+=============================================================
 
-    ✦ FIX 4 — Fallback puntos_fifa elevado:
-        Antes: equipos sin datos usaban 800 puntos (fuerza muy baja).
-        Ahora: 1050 puntos (fuerza más cercana a la media real del torneo).
-
-MÉTRICA PRINCIPAL:
-    prob_lider  →  % de veces que cada equipo queda 1° del grupo
-                   Los 4 equipos de cada grupo suman exactamente 100%.
-
-USO:
-    python mundial/data/modelo_grupos_v2_1.py
-
-SALIDA:
-    mundial/data/probabilidades_grupos.json
+(Todos los fixes de v2.1 se mantienen)
 """
 
 import json
@@ -71,14 +56,9 @@ PESOS = {
 
 FIFA_MAX = 1900.0
 
-# FIX 2: factor de compresión hacia la media del grupo
-FACTOR_COMPRESION = 0.70   # 70% fuerza propia + 30% media del grupo
-
-# FIX 1: piso mínimo para sigma en Monte Carlo
-SIGMA_MINIMO = 0.07
-
-# FIX 4: puntos FIFA para equipos sin datos (antes era 800)
-FIFA_FALLBACK = 1050.0
+FACTOR_COMPRESION = 0.70
+SIGMA_MINIMO      = 0.07
+FIFA_FALLBACK     = 1050.0
 
 
 # =============================================================
@@ -86,22 +66,22 @@ FIFA_FALLBACK = 1050.0
 # =============================================================
 
 SEDES = {
-    "Mexico City":       {"altitud_m": 2240, "pais": "Mexico"},
-    "Guadalajara":       {"altitud_m": 1566, "pais": "Mexico"},
-    "Monterrey":         {"altitud_m":  538, "pais": "Mexico"},
-    "New York":          {"altitud_m":    5, "pais": "USA"},
-    "Los Angeles":       {"altitud_m":   71, "pais": "USA"},
-    "Dallas":            {"altitud_m":  183, "pais": "USA"},
-    "Atlanta":           {"altitud_m":  320, "pais": "USA"},
-    "Miami":             {"altitud_m":    2, "pais": "USA"},
-    "Houston":           {"altitud_m":   15, "pais": "USA"},
-    "Kansas City":       {"altitud_m":  270, "pais": "USA"},
-    "Philadelphia":      {"altitud_m":   12, "pais": "USA"},
-    "San Francisco":     {"altitud_m":   16, "pais": "USA"},
-    "Seattle":           {"altitud_m":   56, "pais": "USA"},
-    "Boston":            {"altitud_m":   43, "pais": "USA"},
-    "Toronto":           {"altitud_m":   76, "pais": "Canada"},
-    "Vancouver":         {"altitud_m":    2, "pais": "Canada"},
+    "Mexico City":  {"altitud_m": 2240, "pais": "Mexico"},
+    "Guadalajara":  {"altitud_m": 1566, "pais": "Mexico"},
+    "Monterrey":    {"altitud_m":  538, "pais": "Mexico"},
+    "New York":     {"altitud_m":    5, "pais": "USA"},
+    "Los Angeles":  {"altitud_m":   71, "pais": "USA"},
+    "Dallas":       {"altitud_m":  183, "pais": "USA"},
+    "Atlanta":      {"altitud_m":  320, "pais": "USA"},
+    "Miami":        {"altitud_m":    2, "pais": "USA"},
+    "Houston":      {"altitud_m":   15, "pais": "USA"},
+    "Kansas City":  {"altitud_m":  270, "pais": "USA"},
+    "Philadelphia": {"altitud_m":   12, "pais": "USA"},
+    "San Francisco":{"altitud_m":   16, "pais": "USA"},
+    "Seattle":      {"altitud_m":   56, "pais": "USA"},
+    "Boston":       {"altitud_m":   43, "pais": "USA"},
+    "Toronto":      {"altitud_m":   76, "pais": "Canada"},
+    "Vancouver":    {"altitud_m":    2, "pais": "Canada"},
 }
 
 
@@ -110,96 +90,39 @@ SEDES = {
 # =============================================================
 
 ALTITUD_PAIS = {
-    # CONCACAF (anfitriones)
-    "Mexico":          2240,
-    "USA":               15,
-    "Canada":            76,
-
-    # CONMEBOL
-    "Argentina":         25,
-    "Brazil":            10,
-    "Uruguay":           43,
-    "Colombia":        2625,
-    "Ecuador":         2850,
-    "Paraguay":         124,
-    "Chile":            567,
-    "Bolivia":         3640,
-    "Venezuela":        900,
-    "Peru":             154,
-
-    # UEFA
-    "France":            35,
-    "England":           11,
-    "Spain":            655,
-    "Germany":           34,
-    "Portugal":          92,
-    "Netherlands":        5,
-    "Belgium":           37,
-    "Italy":             21,
-    "Switzerland":      540,
-    "Croatia":          158,
-    "Austria":          171,
-    "Sweden":            28,
-    "Norway":            23,
-    "Denmark":            7,
-    "Serbia":           117,
-    "Poland":            90,
-    "Czechia":          399,
-    "Slovakia":         152,
-    "Hungary":          108,
-    "Scotland":          35,
-    "Wales":             62,
-    "Turkey":           938,
-    "Romania":           69,
-    "Kosovo":           652,
-    "Bosnia and Herzegovina": 511,
-    "Ukraine":          179,
-    "Greece":            24,
-    "North Macedonia":  245,
-
-    # CAF
-    "Morocco":          590,
-    "Senegal":           22,
-    "Tunisia":           34,
-    "Algeria":          730,
-    "Egypt":             23,
-    "South Africa":    1753,
-    "Nigeria":           41,
-    "Cameroon":         726,
-    "Ghana":             61,
-    "Ivory Coast":       23,
-    "DR Congo":         312,
-    "Cape Verde":        17,
-    "Curaçao":            3,
-
-    # AFC / OFC
-    "South Korea":       38,
-    "Japan":             17,
-    "Saudi Arabia":     648,
-    "Australia":         35,
-    "Iran":            1191,
-    "Iraq":              34,
-    "Jordan":           774,
-    "New Zealand":       37,
-    "Uzbekistan":       455,
-    "Qatar":             11,
-
-    # CONCACAF (otros)
-    "Haiti":             30,
-    "Panama":            43,
-
-    "_default":          50,
+    "Mexico": 2240, "USA": 15, "Canada": 76,
+    "Argentina": 25, "Brazil": 10, "Uruguay": 43,
+    "Colombia": 2625, "Ecuador": 2850, "Paraguay": 124,
+    "Chile": 567, "Bolivia": 3640, "Venezuela": 900, "Peru": 154,
+    "France": 35, "England": 11, "Spain": 655, "Germany": 34,
+    "Portugal": 92, "Netherlands": 5, "Belgium": 37, "Italy": 21,
+    "Switzerland": 540, "Croatia": 158, "Austria": 171,
+    "Sweden": 28, "Norway": 23, "Denmark": 7, "Serbia": 117,
+    "Poland": 90, "Czechia": 399, "Slovakia": 152, "Hungary": 108,
+    "Scotland": 35, "Wales": 62, "Turkey": 938, "Romania": 69,
+    "Kosovo": 652, "Bosnia and Herzegovina": 511, "Ukraine": 179,
+    "Greece": 24, "North Macedonia": 245,
+    "Morocco": 590, "Senegal": 22, "Tunisia": 34, "Algeria": 730,
+    "Egypt": 23, "South Africa": 1753, "Nigeria": 41,
+    "Cameroon": 726, "Ghana": 61, "Ivory Coast": 23,
+    "DR Congo": 312, "Cape Verde": 17, "Curaçao": 3,
+    "South Korea": 38, "Japan": 17, "Saudi Arabia": 648,
+    "Australia": 35, "Iran": 1191, "Iraq": 34, "Jordan": 774,
+    "New Zealand": 37, "Uzbekistan": 455, "Qatar": 11,
+    "Haiti": 30, "Panama": 43,
+    "_default": 50,
 }
 
 
 # =============================================================
-#  PARTIDOS DE GRUPO — Mundial 2026
-#  ⚠ Partidos marcados con (?) requieren confirmación de sede.
+#  PARTIDOS PENDIENTES — Mundial 2026
+#  ⚠ Elimina manualmente los partidos ya jugados.
+#    El modelo solo simulará los que queden aquí.
 # =============================================================
 
 PARTIDOS_GRUPO = [
     # ── GRUPO A ──────────────────────────────────────────────
-    ("Mexico",      "South Africa",  "Mexico City"),
+    # ("Mexico",      "South Africa",  "Mexico City"),   # JUGADO: 2-0
     ("South Korea", "Czechia",       "Guadalajara"),
     ("Czechia",     "South Africa",  "Atlanta"),
     ("Mexico",      "South Korea",   "Guadalajara"),
@@ -207,12 +130,12 @@ PARTIDOS_GRUPO = [
     ("Czechia",     "Mexico",        "Mexico City"),
 
     # ── GRUPO B ──────────────────────────────────────────────
-    ("Canada",      "Bosnia and Herzegovina", "Toronto"),
-    ("Qatar",       "Switzerland",            "San Francisco"),  # (?) confirmar
-    ("Switzerland", "Bosnia and Herzegovina", "Los Angeles"),
+    ("Canada",      "Bosnia-Herzegovina", "Toronto"),
+    ("Qatar",       "Switzerland",            "San Francisco"),
+    ("Switzerland", "Bosnia-Herzegovina", "Los Angeles"),
     ("Canada",      "Qatar",                  "Vancouver"),
     ("Switzerland", "Canada",                 "Vancouver"),
-    ("Bosnia and Herzegovina", "Qatar",        "Seattle"),
+    ("Bosnia-Herzegovina", "Qatar",        "Seattle"),
 
     # ── GRUPO C ──────────────────────────────────────────────
     ("Brazil",      "Morocco",   "New York"),
@@ -224,10 +147,10 @@ PARTIDOS_GRUPO = [
 
     # ── GRUPO D ──────────────────────────────────────────────
     ("USA",         "Paraguay",  "Los Angeles"),
-    ("Australia",   "Turkey",    "Vancouver"),
+    ("Australia",   "Türkiye",    "Vancouver"),
     ("USA",         "Australia", "Seattle"),
-    ("Turkey",      "Paraguay",  "San Francisco"),
-    ("Turkey",      "USA",       "Los Angeles"),
+    ("Türkiye",      "Paraguay",  "San Francisco"),
+    ("Türkiye",      "USA",       "Los Angeles"),
     ("Paraguay",    "Australia", "Miami"),
 
     # ── GRUPO E ──────────────────────────────────────────────
@@ -289,8 +212,8 @@ PARTIDOS_GRUPO = [
     # ── GRUPO L ──────────────────────────────────────────────
     ("England",     "Croatia",   "Dallas"),
     ("Ghana",       "Panama",    "Toronto"),
-    ("England",     "Ghana",     "Boston"),       # (?) confirmar
-    ("Panama",      "Croatia",   "New York"),     # (?) confirmar
+    ("England",     "Ghana",     "Boston"),
+    ("Panama",      "Croatia",   "New York"),
     ("Croatia",     "Ghana",     "Philadelphia"),
     ("Panama",      "England",   "Miami"),
 ]
@@ -300,15 +223,11 @@ PARTIDOS_GRUPO = [
 #  NACIONES ANFITRIONAS
 # =============================================================
 
-NACIONES_ANFITRIONAS = {
-    "Mexico": "Mexico",
-    "USA":    "USA",
-    "Canada": "Canada",
-}
+NACIONES_ANFITRIONAS = {"Mexico": "Mexico", "USA": "USA", "Canada": "Canada"}
 
 BONO_LOCAL                     = 0.04
 PENALIZACION_ALTITUD_POR_1000M = 0.025
-TECHO_PENALIZACION_ALTITUD     = 0.06   # FIX 3
+TECHO_PENALIZACION_ALTITUD     = 0.06
 
 
 # =============================================================
@@ -329,7 +248,6 @@ def normalizar_clave(nombre):
     }
     for a, b in reemplazos.items():
         texto = texto.replace(a, b)
-    import re
     texto = re.sub(r"[^a-z0-9]+", "_", texto)
     return texto.strip("_")
 
@@ -352,7 +270,7 @@ def get_altitud_pais(nombre_equipo):
 
 
 # =============================================================
-#  AJUSTE SEDE + ALTITUD  (FIX 3 aplicado aquí)
+#  AJUSTE SEDE + ALTITUD
 # =============================================================
 
 def calcular_ajuste_sede(nombre_equipo):
@@ -369,7 +287,6 @@ def calcular_ajuste_sede(nombre_equipo):
         alt_sede  = sede_info["altitud_m"]
         diff_alt  = abs(alt_sede - alt_origen)
 
-        # FIX 3: techo en penalización
         pen_alt = min(
             (diff_alt / 1000.0) * PENALIZACION_ALTITUD_POR_1000M,
             TECHO_PENALIZACION_ALTITUD
@@ -405,29 +322,87 @@ def calcular_fuerza(sel):
 
 
 # =============================================================
-#  MONTE CARLO — FIX 1 + FIX 2
+#  ▼ NUEVO v2.2 — MONTE CARLO CON TABLA BASE REAL
 # =============================================================
 
-def monte_carlo(fuerzas_raw, n_sim=100_000, seed=2026):
+def monte_carlo_con_tabla(equipos_info, partidos_pendientes_grupo, n_sim=100_000, seed=2026):
+    """
+    Monte Carlo que:
+      1. Parte de los puntos/goles REALES ya acumulados en grupos.json
+      2. Solo simula los partidos que quedan en partidos_pendientes_grupo
+      3. Ordena la tabla final por puntos → dif goles → goles a favor
+    """
     random.seed(seed)
-    n     = len(fuerzas_raw)
-    media = sum(fuerzas_raw) / n
+    n       = len(equipos_info)
+    nombres = [e["nombre"] for e in equipos_info]
 
-    # FIX 2: comprimir fuerzas hacia la media
-    fuerzas = [
-        FACTOR_COMPRESION * f + (1.0 - FACTOR_COMPRESION) * media
-        for f in fuerzas_raw
-    ]
-
-    # FIX 1: sigma con piso mínimo
+    # Fuerzas con compresión
+    fuerzas_raw = [e["fuerza"] for e in equipos_info]
+    media       = sum(fuerzas_raw) / n
+    fuerzas     = {
+        e["nombre"]: FACTOR_COMPRESION * e["fuerza"] + (1 - FACTOR_COMPRESION) * media
+        for e in equipos_info
+    }
     sigma   = max(media * 0.35, SIGMA_MINIMO)
     conteos = [[0] * n for _ in range(n)]
 
+    # Tabla base: puntos/goles ya reales
+    tabla_base = {
+        e["nombre"]: {
+            "puntos": float(e["raw"].get("puntos", 0)),
+            "dg":     float(e["raw"].get("diferencia_goles", 0)),
+            "gf":     float(e["raw"].get("goles_favor", 0)),
+        }
+        for e in equipos_info
+    }
+
+    # Índice de nombre → posición en lista (para conteos)
+    idx_map = {nom: i for i, nom in enumerate(nombres)}
+
     for _ in range(n_sim):
-        sim   = [max(0.001, f + normal_sample(0, sigma)) for f in fuerzas]
-        orden = sorted(range(n), key=lambda i: sim[i], reverse=True)
-        for pos, idx in enumerate(orden):
-            conteos[idx][pos] += 1
+        # Copiar tabla real como punto de partida
+        pts = {nom: tabla_base[nom]["puntos"] for nom in nombres}
+        dg  = {nom: tabla_base[nom]["dg"]     for nom in nombres}
+        gf  = {nom: tabla_base[nom]["gf"]     for nom in nombres}
+
+        # Simular solo partidos pendientes de este grupo
+        for eq1, eq2, _ in partidos_pendientes_grupo:
+            # Normalizar nombres para buscar en fuerzas
+            nom1 = next((n for n in nombres if normalizar_clave(n) == normalizar_clave(eq1)), None)
+            nom2 = next((n for n in nombres if normalizar_clave(n) == normalizar_clave(eq2)), None)
+            if nom1 is None or nom2 is None:
+                continue
+
+            f1 = max(0.001, fuerzas[nom1] + normal_sample(0, sigma))
+            f2 = max(0.001, fuerzas[nom2] + normal_sample(0, sigma))
+
+            # Goles simulados (escala simple)
+            g1 = max(0, round(f1 * 2.5 + normal_sample(0, 0.8)))
+            g2 = max(0, round(f2 * 2.5 + normal_sample(0, 0.8)))
+
+            # Puntos
+            if g1 > g2:
+                pts[nom1] += 3
+            elif g2 > g1:
+                pts[nom2] += 3
+            else:
+                pts[nom1] += 1
+                pts[nom2] += 1
+
+            # Goles
+            dg[nom1] += g1 - g2
+            dg[nom2] += g2 - g1
+            gf[nom1] += g1
+            gf[nom2] += g2
+
+        # Ordenar tabla: puntos → dif goles → goles a favor
+        orden = sorted(
+            nombres,
+            key=lambda nom: (pts[nom], dg[nom], gf[nom]),
+            reverse=True
+        )
+        for pos, nom in enumerate(orden):
+            conteos[idx_map[nom]][pos] += 1
 
     return [[c / n_sim for c in fila] for fila in conteos]
 
@@ -449,13 +424,24 @@ def buscar_seleccion(nombre_eq, selecciones):
 
 
 # =============================================================
-#  CÁLCULO POR GRUPO
+#  CÁLCULO POR GRUPO  (actualizado para v2.2)
 # =============================================================
 
 def calcular_grupo(grupo_raw, selecciones):
     nombre_grupo   = grupo_raw["grupo"]
     equipos_raw    = grupo_raw["equipos"]
     no_encontrados = []
+
+    # Nombres normalizados de este grupo
+    nombres_grupo = {normalizar_clave(eq["equipo"]) for eq in equipos_raw}
+
+    # ▼ NUEVO: filtrar solo partidos pendientes de este grupo
+    partidos_pendientes_grupo = [
+        (eq1, eq2, ciudad)
+        for eq1, eq2, ciudad in PARTIDOS_GRUPO
+        if normalizar_clave(eq1) in nombres_grupo
+        and normalizar_clave(eq2) in nombres_grupo
+    ]
 
     equipos = []
     for eq in equipos_raw:
@@ -464,7 +450,6 @@ def calcular_grupo(grupo_raw, selecciones):
 
         if sel is None:
             no_encontrados.append(nombre_eq)
-            # FIX 4: fallback más realista
             sel = {
                 "nombre":               nombre_eq,
                 "puntos_fifa":          FIFA_FALLBACK,
@@ -489,8 +474,8 @@ def calcular_grupo(grupo_raw, selecciones):
             "fuerza":      fuerza_ajustada,
         })
 
-    fuerzas = [e["fuerza"] for e in equipos]
-    probs   = monte_carlo(fuerzas)
+    # ▼ NUEVO: usar Monte Carlo con tabla real
+    probs = monte_carlo_con_tabla(equipos, partidos_pendientes_grupo)
 
     resultado_equipos = []
     for i, eq in enumerate(equipos):
@@ -527,12 +512,17 @@ def calcular_grupo(grupo_raw, selecciones):
     for eq in resultado_equipos[1:]:
         eq["es_favorito"] = False
 
+    partidos_jugados  = 6 - len(partidos_pendientes_grupo)  # 6 total por grupo de 4
+    partidos_restantes = len(partidos_pendientes_grupo)
+
     return {
-        "grupo":           nombre_grupo,
-        "equipos":         resultado_equipos,
-        "favorito":        resultado_equipos[0]["equipo"],
-        "suma_prob_lider": round(sum(eq["prob_lider"] for eq in resultado_equipos), 2),
-        "no_encontrados":  no_encontrados,
+        "grupo":              nombre_grupo,
+        "equipos":            resultado_equipos,
+        "favorito":           resultado_equipos[0]["equipo"],
+        "suma_prob_lider":    round(sum(eq["prob_lider"] for eq in resultado_equipos), 2),
+        "partidos_jugados":   partidos_jugados,
+        "partidos_restantes": partidos_restantes,
+        "no_encontrados":     no_encontrados,
     }
 
 
@@ -564,13 +554,19 @@ def main():
         letra     = resultado["grupo"].replace("Group ", "").strip()
         resultados[letra] = resultado
 
-        print(f"  Grupo {letra}  (favorito: {resultado['favorito']})  [suma lider: {resultado['suma_prob_lider']}%]")
+        print(
+            f"  Grupo {letra}  (favorito: {resultado['favorito']})  "
+            f"[jugados: {resultado['partidos_jugados']}/6  "
+            f"restantes: {resultado['partidos_restantes']}  "
+            f"suma lider: {resultado['suma_prob_lider']}%]"
+        )
         for eq in resultado["equipos"]:
             marca = "★" if eq["es_favorito"] else " "
             print(
                 f"    {marca} {eq['equipo']:<26}"
                 f"FIFA #{eq['ranking_fifa']:<4} "
-                f"Fuerza base:{eq['fuerza_modelo']:.4f} "
+                f"Pts:{eq['tabla']['puntos']:.0f}  "
+                f"Fuerza:{eq['fuerza_modelo']:.4f} "
                 f"AjusteSede:{eq['ajuste_sede']:+.4f}  "
                 f"Lider:{eq['prob_lider']:>5.1f}%  "
                 f"(2°:{eq['prob_segundo']:>4.1f}% / 3°:{eq['prob_tercero']:>4.1f}% / 4°:{eq['prob_cuarto']:>4.1f}%)"
@@ -583,27 +579,22 @@ def main():
         "meta": {
             "fuente":  "Don Octavio Web",
             "mundial": "FIFA World Cup 2026",
-            "version": "2.1",
-            "metodo":  "Fuerza compuesta + Ajuste Sede/Altitud + Monte Carlo 100k simulaciones",
+            "version": "2.2",
+            "metodo":  (
+                "Fuerza compuesta + Ajuste Sede/Altitud + "
+                "Monte Carlo 100k simulaciones con tabla real como base"
+            ),
             "metrica_clave": (
                 "prob_lider: % de veces que el equipo queda 1° del grupo. "
                 "Los 4 equipos de cada grupo suman 100%."
             ),
             "pesos_modelo": PESOS,
-            "factores_v2_1": {
-                "bono_local_pct":                  BONO_LOCAL * 100,
-                "penalizacion_por_1000m_pct":      PENALIZACION_ALTITUD_POR_1000M * 100,
-                "techo_penalizacion_altitud_pct":  TECHO_PENALIZACION_ALTITUD * 100,
-                "sigma_minimo":                    SIGMA_MINIMO,
-                "factor_compresion_fuerzas":       FACTOR_COMPRESION,
-                "fifa_fallback_pts":               FIFA_FALLBACK,
-                "fixes": [
-                    "FIX1: sigma = max(media*0.35, 0.07) — evita prob absurdamente bajas",
-                    "FIX2: fuerzas al 70%+30%media — reduce brechas extremas",
-                    "FIX3: penalizacion altitud techo 6% — Bolivia/Ecuador no quedan a 0",
-                    "FIX4: fallback FIFA 1050pts — equipos sin datos mas realistas",
-                ],
-            },
+            "novedades_v2_2": (
+                "Monte Carlo parte de puntos/goles reales del grupos.json. "
+                "Solo simula partidos que quedan en PARTIDOS_GRUPO. "
+                "Para registrar un resultado: 1) comenta/elimina el partido "
+                "de PARTIDOS_GRUPO, 2) actualiza grupos.json con stats reales."
+            ),
         },
         "grupos": resultados,
     }

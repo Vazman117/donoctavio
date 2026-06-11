@@ -18,7 +18,14 @@ tabs.forEach(btn => {
   });
 });
 
-cambiarVista("grupos");
+const hashInicial = window.location.hash.replace('#', '');
+const tabInicial  = document.querySelector(`.tab-btn[data-tab="${hashInicial}"]`);
+
+if (tabInicial) {
+  tabInicial.click();
+} else {
+  cambiarVista("grupos");
+}
 
 async function cambiarVista(vista) {
   const sec = document.getElementById("contenidoMundial");
@@ -564,9 +571,11 @@ async function cargarTabla() {
             <th></th>
             <th>Pos</th>
             <th>Equipo</th>
-            <th>Grupo</th>
             <th>Pts</th>
             <th>DG</th>
+            <th>GF</th>
+            <th>GC</th>
+            <th>Grupo</th>
           </tr>
         </thead>
         <tbody>
@@ -593,9 +602,11 @@ async function cargarTabla() {
                     <span>${eq.equipo}</span>
                   </div>
                 </td>
-                <td>${eq.grupo.replace("Group ", "")}</td>
                 <td>${eq.puntos}</td>
                 <td>${eq.diferencia_goles > 0 ? "+" : ""}${eq.diferencia_goles}</td>
+                <td>${eq.goles_favor}</td>
+                <td>${eq.goles_contra}</td>
+                <td>${eq.grupo.replace("Group ", "")}</td>
               </tr>
             `;
           }).join("")}

@@ -229,7 +229,7 @@
       },
       {
         "posicion": 1.0,
-        "equipo": "United States",
+        "equipo": "USA",
         "abreviacion": "USA",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
         "partidos": 0.0,
@@ -656,7 +656,7 @@
       },
       {
         "posicion": 2.0,
-        "equipo": "Congo DR",
+        "equipo": "DR Congo",
         "abreviacion": "COD",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
         "partidos": 0.0,
