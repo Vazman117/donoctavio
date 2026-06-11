@@ -126,8 +126,6 @@
   align-items: center;
   justify-content: center;
   background: radial-gradient(ellipse at center, rgba(255,220,120,.06) 0%, transparent 70%);
-  border-radius: 16px;
-  border: 0.5px solid rgba(255,200,80,.10);
   padding: 8px;
 }
 

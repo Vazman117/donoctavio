@@ -570,7 +570,7 @@ async function cargarTabla() {
           <tr>
             <th></th>
             <th>Pos</th>
-            <th>Equipo</th>
+            <th>Seleccion</th>
             <th>Pts</th>
             <th>DG</th>
             <th>GF</th>
