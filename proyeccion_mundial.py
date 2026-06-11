@@ -8,19 +8,19 @@ import os
 # =============================
 
 def cargar_selecciones(carpeta):
-    ruta = os.path.join("scrapper", carpeta, "selecciones.json")
+    ruta = os.path.join("mundial", carpeta, "selecciones.json")
     with open(ruta, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def cargar_fixture(carpeta):
-    ruta = os.path.join("scrapper", carpeta, "fixture.json")
+    ruta = os.path.join("mundial", carpeta, "fixture.json")
     with open(ruta, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def cargar_h2h(carpeta):
-    ruta = os.path.join("scrapper", carpeta, "h2h.json")
+    ruta = os.path.join("mundial", carpeta, "h2h.json")
     try:
         with open(ruta, "r", encoding="utf-8") as f:
             return json.load(f)
@@ -1012,10 +1012,10 @@ def generar_partido(
 # =============================
 
 DB_CONFIG = {
-    "amistosos_jun2026": {
-        "carpeta":  "amistosos-jun2026",
-        "perfil":   "amistoso",
-        "salida":   "proyecciones.json",
+    "mundial_jun2026": {
+        "carpeta":  "data",
+        "perfil":   "mundial_grupos",
+        "salida":   "partidos.json",
     },
 }
 
@@ -1026,7 +1026,7 @@ DB_CONFIG = {
 
 if __name__ == "__main__":
 
-    cfg_db  = DB_CONFIG["amistosos_jun2026"]
+    cfg_db  = DB_CONFIG["mundial_jun2026"]
     carpeta = cfg_db["carpeta"]
 
     print("📂 Cargando datos...\n")

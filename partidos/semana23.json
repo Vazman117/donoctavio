@@ -1,5 +1,115 @@
 [
   {
+    "id": "401874117",
+    "fecha": "2026-06-11T00:00Z",
+    "torneo": "Amistoso Internacional",
+    "perfil": "amistoso",
+    "local": "Bolivia",
+    "visitante": "Algeria",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/204.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/624.png",
+    "estadio": "",
+    "ciudad_sede": "",
+    "pais_sede": "",
+    "altitud_sede": 0,
+    "es_neutro": true,
+    "prob_local": 0.2294831472414215,
+    "prob_empate": 0.21051685275857848,
+    "prob_visitante": 0.56,
+    "fuerza_local": 0.39513361431989064,
+    "fuerza_visitante": 0.6883126621667806,
+    "diferencia": 0.2931790478468899,
+    "confianza": "favorable",
+    "prediccion": "Algeria",
+    "resultado": "Algeria",
+    "lambda_local": 0.234944340292683,
+    "lambda_visitante": 3.384100467982804,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.2,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Bolivia"
+        },
+        "visitante": {
+          "valor": 0.74,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Algeria"
+        },
+        "interpretacion": "Algeria llega con mejor momentum: índice 0.74/1.0 frente a 0.20/1.0 de Bolivia. Últimos 5: 4V/0E/1D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#51 FIFA",
+          "valor": 0.761,
+          "puntos": 1418.2,
+          "nombre": "Bolivia"
+        },
+        "visitante": {
+          "etiqueta": "#36 FIFA",
+          "valor": 0.833,
+          "puntos": 1518.2,
+          "nombre": "Algeria"
+        },
+        "interpretacion": "Leve diferencia en ranking: #51 Bolivia vs #36 Algeria. El factor puede influir en momentos clave."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "",
+        "local": {
+          "nombre": "Bolivia",
+          "altitud_base": 3625,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "altitud_base": 141,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Bolivia",
+          "goles_favor": 0.67,
+          "goles_contra": 2.13
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "goles_favor": 2.37,
+          "goles_contra": 0.79
+        },
+        "interpretacion": "Algeria más ofensivo: 2.37 vs 0.67 goles/partido. Defensiva: 2.13 vs 0.79."
+      }
+    ]
+  },
+  {
     "id": "401867372",
     "fecha": "2026-06-10T19:45Z",
     "torneo": "Amistoso Internacional",

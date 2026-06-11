@@ -14,38 +14,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 4.0,
@@ -59,38 +28,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 3.0,
@@ -104,38 +42,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 2.0,
@@ -149,38 +56,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       }
     ]
   },
@@ -199,38 +75,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 2.0,
@@ -244,38 +89,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 4.0,
@@ -289,38 +103,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 3.0,
@@ -334,38 +117,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       }
     ]
   },
@@ -384,38 +136,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 4.0,
@@ -429,38 +150,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 3.0,
@@ -474,38 +164,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 2.0,
@@ -519,38 +178,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       }
     ]
   },
@@ -569,38 +197,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 4.0,
@@ -614,38 +211,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 3.0,
@@ -659,38 +225,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 1.0,
@@ -704,38 +239,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       }
     ]
   },
@@ -754,38 +258,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 1.0,
@@ -799,38 +272,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 3.0,
@@ -844,38 +286,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 2.0,
@@ -889,38 +300,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       }
     ]
   },
@@ -939,38 +319,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 3.0,
@@ -984,38 +333,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 2.0,
@@ -1029,38 +347,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 4.0,
@@ -1074,38 +361,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       }
     ]
   },
@@ -1124,38 +380,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 3.0,
@@ -1169,38 +394,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 2.0,
@@ -1214,38 +408,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 4.0,
@@ -1259,38 +422,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       }
     ]
   },
@@ -1309,38 +441,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 4.0,
@@ -1354,38 +455,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 3.0,
@@ -1399,38 +469,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 2.0,
@@ -1444,38 +483,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       }
     ]
   },
@@ -1494,38 +502,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 1.0,
@@ -1539,38 +516,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 2.0,
@@ -1584,38 +530,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 3.0,
@@ -1629,38 +544,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       }
     ]
   },
@@ -1679,38 +563,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 3.0,
@@ -1724,38 +577,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 2.0,
@@ -1769,38 +591,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 4.0,
@@ -1814,38 +605,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       }
     ]
   },
@@ -1864,38 +624,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 1.0,
@@ -1909,38 +638,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 3.0,
@@ -1954,38 +652,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 2.0,
@@ -1999,38 +666,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       }
     ]
   },
@@ -2049,38 +685,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 2.0,
@@ -2094,38 +699,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 4.0,
@@ -2139,38 +713,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       },
       {
         "posicion": 3.0,
@@ -2184,38 +727,7 @@
         "goles_favor": 0.0,
         "goles_contra": 0.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0,
-        "forma_ponderada": 0,
-        "forma_liga": 0,
-        "ultimos_5_liga": [],
-        "imbatido_streak": 0,
-        "forma_liga_local": 0,
-        "ultimos_5_liga_local": [],
-        "liga_local_slug": "",
-        "competencias": {
-          "fifa.world": {
-            "partidos": 0.0,
-            "ganados": 0.0,
-            "empatados": 0.0,
-            "perdidos": 0.0,
-            "goles_favor": 0.0,
-            "goles_contra": 0.0,
-            "goles_favor_promedio": 0.0,
-            "goles_contra_promedio": 0.0,
-            "partidos_local": 0,
-            "ganados_local": 0,
-            "empatados_local": 0,
-            "perdidos_local": 0,
-            "win_rate_local": 0,
-            "partidos_visita": 0,
-            "ganados_visita": 0,
-            "empatados_visita": 0,
-            "perdidos_visita": 0,
-            "win_rate_visita": 0,
-            "ultimos_5": [],
-            "imbatido_streak": 0
-          }
-        }
+        "puntos": 0.0
       }
     ]
   }
