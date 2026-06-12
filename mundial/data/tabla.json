@@ -14,26 +14,14 @@
   {
     "grupo": "Group A",
     "posicion": 2.0,
-    "equipo": "Czechia",
-    "abreviacion": "CZE",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group A",
-    "posicion": 3.0,
     "equipo": "South Korea",
     "abreviacion": "KOR",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
+    "puntos": 3.0,
+    "diferencia_goles": 1.0,
+    "goles_favor": 2.0,
+    "goles_contra": 1.0,
+    "partidos": 1.0
   },
   {
     "grupo": "Group B",
@@ -506,7 +494,7 @@
   {
     "grupo": "Group K",
     "posicion": 2.0,
-    "equipo": "DR Congo",
+    "equipo": "Congo DR",
     "abreviacion": "COD",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
     "puntos": 0.0,
@@ -562,6 +550,18 @@
     "goles_favor": 0.0,
     "goles_contra": 0.0,
     "partidos": 0.0
+  },
+  {
+    "grupo": "Group A",
+    "posicion": 3.0,
+    "equipo": "Czechia",
+    "abreviacion": "CZE",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
+    "puntos": 0.0,
+    "diferencia_goles": -1.0,
+    "goles_favor": 1.0,
+    "goles_contra": 2.0,
+    "partidos": 1.0
   },
   {
     "grupo": "Group A",

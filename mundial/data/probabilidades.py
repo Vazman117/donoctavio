@@ -123,7 +123,7 @@ ALTITUD_PAIS = {
 PARTIDOS_GRUPO = [
     # ── GRUPO A ──────────────────────────────────────────────
     # ("Mexico",      "South Africa",  "Mexico City"),   # JUGADO: 2-0
-    ("South Korea", "Czechia",       "Guadalajara"),
+    # ("South Korea", "Czechia",       "Guadalajara"),   # JUGADO: 2-1
     ("Czechia",     "South Africa",  "Atlanta"),
     ("Mexico",      "South Korea",   "Guadalajara"),
     ("South Africa","South Korea",   "Monterrey"),
