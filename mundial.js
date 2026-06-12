@@ -550,7 +550,7 @@ async function cargarTabla() {
   const tabla = await res.json();
 
   function ordenar(a, b) {
-    if (b.puntos !== a.puntos)                    return b.puntos - a.puntos;
+    if (b.puntos !== a.puntos)                     return b.puntos - a.puntos;
     if (b.diferencia_goles !== a.diferencia_goles) return b.diferencia_goles - a.diferencia_goles;
     return b.goles_favor - a.goles_favor;
   }
@@ -559,59 +559,90 @@ async function cargarTabla() {
   const segundos = tabla.filter(eq => eq.posicion === 2).sort(ordenar);
   const terceros = tabla.filter(eq => eq.posicion === 3).sort(ordenar);
   const cuartos  = tabla.filter(eq => eq.posicion === 4).sort(ordenar);
-
   const mejoresTerceros = terceros.slice(0, 8).map(eq => eq.equipo);
-  const tablaFinal = [...primeros, ...segundos, ...terceros, ...cuartos];
+
+  function clasificacion(eq) {
+    if (eq.posicion === 1 || eq.posicion === 2)               return "estado-verde";
+    if (eq.posicion === 3 && mejoresTerceros.includes(eq.equipo)) return "estado-amarillo";
+    return "estado-rojo";
+  }
+
+  function renderTabla(filas, conSeparadores) {
+    return filas.map((eq, i) => {
+      let sep = "";
+      if (conSeparadores) {
+        if (i === primeros.length)                                         sep = "separador-top";
+        if (i === primeros.length + segundos.length)                       sep = "separador-top";
+        if (i === primeros.length + segundos.length + terceros.length)     sep = "separador-top";
+      }
+      return `
+        <tr class="${sep}">
+          <td><div class="estado-linea ${clasificacion(eq)}"></div></td>
+          <td class="pos-global">${i + 1}</td>
+          <td>
+            <div class="equipo-info">
+              <img src="${eq.escudo}" class="escudo-tabla">
+              <span>${eq.equipo}</span>
+            </div>
+          </td>
+          <td>${eq.puntos}</td>
+          <td>${eq.diferencia_goles > 0 ? "+" : ""}${eq.diferencia_goles}</td>
+          <td>${eq.goles_favor}</td>
+          <td>${eq.goles_contra}</td>
+          <td>${eq.grupo.replace("Group ", "")}</td>
+          <td>${eq.posicion}</td>
+        </tr>
+      `;
+    }).join("");
+  }
+
+  function renderVista(vista) {
+    let filas;
+    if (vista === "general") {
+      filas = [...tabla].sort(ordenar);
+    } else {
+      filas = [...primeros, ...segundos, ...terceros, ...cuartos];
+    }
+
+    const conSep = vista === "grupos";
+    document.getElementById("tabla-body").innerHTML = renderTabla(filas, conSep);
+
+    document.querySelectorAll(".toggle-tabla").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.vista === vista);
+    });
+  }
 
   contenido.innerHTML = `
+    <div class="tabla-toggle-wrap">
+      <button class="toggle-tabla active" data-vista="grupos" onclick="window._tablaVista('grupos')">
+        Por posición
+       </button>
+      <button class="toggle-tabla" data-vista="general" onclick="window._tablaVista('general')">
+        General
+      </button>
+     </div>
+  
     <div class="tabla-wrap">
+
       <table class="tabla-general">
         <thead>
           <tr>
             <th></th>
             <th>Pos</th>
-            <th>Seleccion</th>
+            <th>Selección</th>
             <th>Pts</th>
             <th>DG</th>
             <th>GF</th>
             <th>GC</th>
             <th>Grupo</th>
+            <th>Lugar</th>
           </tr>
         </thead>
-        <tbody>
-          ${tablaFinal.map((eq, i) => {
-            let estadoClase = "estado-rojo";
-            if (eq.posicion === 1 || eq.posicion === 2) {
-              estadoClase = "estado-verde";
-            } else if (eq.posicion === 3 && mejoresTerceros.includes(eq.equipo)) {
-              estadoClase = "estado-amarillo";
-            }
-
-            let sep = "";
-            if (i === primeros.length)                                     sep = "separador-top";
-            if (i === primeros.length + segundos.length)                   sep = "separador-top";
-            if (i === primeros.length + segundos.length + terceros.length) sep = "separador-top";
-
-            return `
-              <tr class="${sep}">
-                <td><div class="estado-linea ${estadoClase}"></div></td>
-                <td class="pos-global">${i + 1}</td>
-                <td>
-                  <div class="equipo-info">
-                    <img src="${eq.escudo}" class="escudo-tabla">
-                    <span>${eq.equipo}</span>
-                  </div>
-                </td>
-                <td>${eq.puntos}</td>
-                <td>${eq.diferencia_goles > 0 ? "+" : ""}${eq.diferencia_goles}</td>
-                <td>${eq.goles_favor}</td>
-                <td>${eq.goles_contra}</td>
-                <td>${eq.grupo.replace("Group ", "")}</td>
-              </tr>
-            `;
-          }).join("")}
-        </tbody>
+        <tbody id="tabla-body"></tbody>
       </table>
     </div>
   `;
+
+  window._tablaVista = renderVista;
+  renderVista("grupos");
 }

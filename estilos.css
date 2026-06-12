@@ -733,3 +733,34 @@ header h1 {
   .factor-detalle { padding-left: 90px; }
   .h2h-num { font-size: 1.3rem; }
 }
+
+.tabla-toggle-wrap {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.toggle-tabla {
+  padding: 7px 16px;
+  border-radius: var(--border-radius-md);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.toggle-tabla:hover {
+  color: var(--color-text-primary);
+}
+
+.toggle-tabla.active {
+  color: var(--color-text-primary);
+  font-weight: 500;
+  border-bottom: 2px solid currentColor;
+  border-radius: 0;
+}
