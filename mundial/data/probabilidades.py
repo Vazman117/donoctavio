@@ -130,7 +130,7 @@ PARTIDOS_GRUPO = [
     ("Czechia",     "Mexico",        "Mexico City"),
 
     # ── GRUPO B ──────────────────────────────────────────────
-    ("Canada",      "Bosnia-Herzegovina", "Toronto"),
+    # ("Canada",      "Bosnia-Herzegovina", "Toronto"),  # JUGADO: 1-1
     ("Qatar",       "Switzerland",            "San Francisco"),
     ("Switzerland", "Bosnia-Herzegovina", "Los Angeles"),
     ("Canada",      "Qatar",                  "Vancouver"),
@@ -146,11 +146,11 @@ PARTIDOS_GRUPO = [
     ("Scotland",    "Brazil",    "Philadelphia"),
 
     # ── GRUPO D ──────────────────────────────────────────────
-    ("USA",         "Paraguay",  "Los Angeles"),
+    # ("USA",         "Paraguay",  "Los Angeles"),   # JUGADO 4-1
     ("Australia",   "Türkiye",    "Vancouver"),
-    ("USA",         "Australia", "Seattle"),
+    ("United States", "Australia", "Seattle"),
     ("Türkiye",      "Paraguay",  "San Francisco"),
-    ("Türkiye",      "USA",       "Los Angeles"),
+    ("Türkiye",  "United States", "Los Angeles"),
     ("Paraguay",    "Australia", "Miami"),
 
     # ── GRUPO E ──────────────────────────────────────────────

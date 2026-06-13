@@ -1,5 +1,17 @@
 [
   {
+    "grupo": "Group D",
+    "posicion": 1.0,
+    "equipo": "United States",
+    "abreviacion": "USA",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "puntos": 3.0,
+    "diferencia_goles": 3.0,
+    "goles_favor": 4.0,
+    "goles_contra": 1.0,
+    "partidos": 1.0
+  },
+  {
     "grupo": "Group A",
     "posicion": 1.0,
     "equipo": "Mexico",
@@ -121,19 +133,7 @@
   },
   {
     "grupo": "Group D",
-    "posicion": 2.0,
-    "equipo": "Paraguay",
-    "abreviacion": "PAR",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group D",
-    "posicion": 4.0,
+    "posicion": 3.0,
     "equipo": "Türkiye",
     "abreviacion": "TUR",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
@@ -145,22 +145,10 @@
   },
   {
     "grupo": "Group D",
-    "posicion": 3.0,
+    "posicion": 2.0,
     "equipo": "Australia",
     "abreviacion": "AUS",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group D",
-    "posicion": 1.0,
-    "equipo": "United States",
-    "abreviacion": "USA",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
     "puntos": 0.0,
     "diferencia_goles": 0.0,
     "goles_favor": 0.0,
@@ -573,6 +561,18 @@
     "diferencia_goles": -2.0,
     "goles_favor": 0.0,
     "goles_contra": 2.0,
+    "partidos": 1.0
+  },
+  {
+    "grupo": "Group D",
+    "posicion": 4.0,
+    "equipo": "Paraguay",
+    "abreviacion": "PAR",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+    "puntos": 0.0,
+    "diferencia_goles": -3.0,
+    "goles_favor": 1.0,
+    "goles_contra": 4.0,
     "partidos": 1.0
   }
 ]

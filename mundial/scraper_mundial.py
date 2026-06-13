@@ -128,7 +128,7 @@ SEDES_MUNDIAL = [
 ]
 
 # =====================================================
-# LEAGUES HISTÓRICAS — trasplantadas de scrapper_selecciones.py
+# LEAGUES HISTÓRICAS
 # Orden: eliminatorias primero → torneos continentales → amistosos
 # =====================================================
 
@@ -204,6 +204,9 @@ _TIPOS_COMPETENCIA = {
     "international friendly":  "amistoso",
     "amistoso":                "amistoso",
 }
+
+# Slugs de league que son amistosos
+_SLUGS_AMISTOSO = {"fifa.friendly"}
 
 # Mapa de confederaciones
 _CONF_MAP: dict[str, str] = {}
@@ -333,19 +336,29 @@ def get_confederacion(nombre: str) -> str:
     return "UEFA"
 
 
-def clasificar_tipo(nombre_comp: str) -> str:
+def clasificar_tipo(nombre_comp: str, league_slug: str = "") -> str:
+    """
+    Clasifica un partido como 'oficial' o 'amistoso'.
+    Primero usa el slug del league (más confiable, no depende de strings vacíos),
+    luego hace fallback al nombre de la competencia.
+    """
+    # El slug es la fuente más confiable
+    if league_slug in _SLUGS_AMISTOSO:
+        return "amistoso"
+    if league_slug and league_slug not in _SLUGS_AMISTOSO:
+        return "oficial"
+
+    # Fallback: nombre de la competencia
     nc = nombre_comp.lower()
     for clave, tipo in _TIPOS_COMPETENCIA.items():
         if clave in nc:
             return tipo
-    return "oficial"
+
+    return "oficial" if nombre_comp.strip() else "amistoso"
 
 
 # =====================================================
 # NÚCLEO: CAPTURA DE ESTADÍSTICAS POR SELECCIÓN
-# (lógica trasplantada de scrapper_selecciones.py)
-# Usa scoreboard por rangos de fechas en múltiples leagues
-# en lugar del endpoint /schedule que devuelve 0 partidos
 # =====================================================
 
 def _scoreboard_rango(league: str, rango: str) -> list:
@@ -368,7 +381,8 @@ def _recolectar_eventos_seleccion(team_id: str, confederacion: str) -> list:
     """
     Recorre leagues históricos + rangos de fechas y devuelve todos
     los partidos terminados en los que participó team_id.
-    Límite de 80 eventos para cubrir el ciclo eliminatorio completo.
+    Guarda el slug del league como metadato en cada evento (_league_slug)
+    para clasificar oficial/amistoso de forma confiable.
     """
     todos   = {}
     leagues = _LEAGUES_POR_CONF.get(confederacion, ["fifa.friendly"])
@@ -385,6 +399,8 @@ def _recolectar_eventos_seleccion(team_id: str, confederacion: str) -> list:
                         continue
                     eid = ev.get("id", "")
                     if eid and eid not in todos:
+                        # Guardar slug para clasificar oficial/amistoso sin depender del nombre
+                        ev["_league_slug"] = league
                         todos[eid] = ev
                 except Exception:
                     continue
@@ -398,16 +414,23 @@ def _recolectar_eventos_seleccion(team_id: str, confederacion: str) -> list:
 
 def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dict:
     """
-    Procesa el historial recolectado y calcula todas las métricas:
-    oficial vs amistoso, local/visita/neutro, goles, forma y racha.
+    Procesa el historial recolectado y calcula todas las métricas.
+
+    Campos principales (combinados):
+      - forma:         forma general sobre los últimos 10 partidos (oficiales + amistosos)
+      - ultimos_5:     últimos 5 partidos reales ordenados por fecha (oficiales + amistosos)
+
+    Campos secundarios conservados:
+      - forma_oficial / forma_amistosos
+      - ultimos_5_oficial / ultimos_5_amistoso
     """
     stats = {
-        # Oficiales
+        # Oficiales (secundarios)
         "partidos_oficial":      0, "ganados_oficial":      0,
         "empatados_oficial":     0, "perdidos_oficial":     0,
         "goles_favor_oficial":   0.0, "goles_contra_oficial":  0.0,
         "forma_oficial":         0.0, "ultimos_5_oficial":     [],
-        # Amistosos
+        # Amistosos (secundarios)
         "partidos_amistoso":     0, "ganados_amistoso":      0,
         "empatados_amistoso":    0, "perdidos_amistoso":     0,
         "goles_favor_amistoso":  0.0, "goles_contra_amistoso": 0.0,
@@ -421,20 +444,27 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
         "win_rate_visita":   0.0,
         "win_rate_neutro":   0.0,
         "imbatido_streak":   0,
+        # General combinado
+        "ultimos_5":         [],
+        "forma":             0.0,
+        # Internos temporales
         "_ciudades_local":   [],
         "_gf_of": [], "_gc_of": [],
         "_gf_am": [], "_gc_am": [],
+        "_todos_resultados": [],
     }
 
     eventos = _recolectar_eventos_seleccion(team_id, confederacion)
     if not eventos:
+        for k in ["_ciudades_local", "_gf_of", "_gc_of", "_gf_am", "_gc_am", "_todos_resultados"]:
+            stats.pop(k, None)
         return stats
 
-    # Ordenar cronológicamente ascendente (más reciente al final)
+    # Ordenar cronológicamente ascendente (más antiguo primero)
     eventos_ordenados = sorted(eventos, key=lambda e: e.get("date", ""))
     streak_vivo = True
 
-    # Recorremos de más reciente a más viejo para ultimos_5 y streak
+    # Recorremos de más reciente a más viejo para ultimos_5 secundarios y streak
     for evento in reversed(eventos_ordenados):
         try:
             comp   = evento.get("competitions", [{}])[0]
@@ -442,13 +472,14 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
             if estado != "post":
                 continue
 
+            # Clasificar tipo con slug (confiable) + nombre (fallback)
+            league_slug = evento.get("_league_slug", "")
             nombre_comp = (
-                comp.get("type", {}).get("text", "")
-                or comp.get("league", {}).get("name", "")
-                or comp.get("tournament", {}).get("displayName", "")
+                evento.get("league", {}).get("name", "")
+                or (comp.get("notes", [{}])[0].get("text", "") if comp.get("notes") else "")
                 or ""
             )
-            tipo = clasificar_tipo(nombre_comp)
+            tipo = clasificar_tipo(nombre_comp, league_slug)
 
             equipos   = comp.get("competitors", [])
             mi_equipo = next(
@@ -470,7 +501,7 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
             gc  = int(rival.get("score", 0) or 0)
             res = "W" if ganador is True else ("L" if ganador is False else "D")
 
-            # Acumular por tipo
+            # Acumular por tipo (datos secundarios)
             if tipo == "oficial":
                 stats["partidos_oficial"] += 1
                 if res == "W":   stats["ganados_oficial"]   += 1
@@ -479,7 +510,7 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
                 stats["_gf_of"].append(gf)
                 stats["_gc_of"].append(gc)
                 if len(stats["ultimos_5_oficial"]) < 5:
-                    stats["ultimos_5_oficial"].append(res)
+                    stats["ultimos_5_oficial"].insert(0, res)
             else:
                 stats["partidos_amistoso"] += 1
                 if res == "W":   stats["ganados_amistoso"]   += 1
@@ -488,7 +519,14 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
                 stats["_gf_am"].append(gf)
                 stats["_gc_am"].append(gc)
                 if len(stats["ultimos_5_amistoso"]) < 5:
-                    stats["ultimos_5_amistoso"].append(res)
+                    stats["ultimos_5_amistoso"].insert(0, res)
+
+            # Lista combinada con fecha para forma general y ultimos_5
+            stats["_todos_resultados"].append({
+                "res":   res,
+                "fecha": evento.get("date", ""),
+                "tipo":  tipo,
+            })
 
             # Local / Visita
             if es_local:
@@ -514,6 +552,26 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
 
         except Exception:
             continue
+
+    # ── Calcular forma general y ultimos_5 combinados ──
+    # Ordenar por fecha descendente (más reciente primero)
+    todos_res = sorted(
+        stats.pop("_todos_resultados"),
+        key=lambda x: x["fecha"],
+        reverse=True,
+    )
+
+    # ultimos_5: los 5 partidos más recientes sin importar el tipo
+    stats["ultimos_5"] = [r["res"] for r in todos_res[:5]]
+
+    # forma: basada en los últimos 10 partidos combinados
+    ultimos_10 = todos_res[:10]
+    if ultimos_10:
+        wins  = sum(1 for r in ultimos_10 if r["res"] == "W")
+        draws = sum(1 for r in ultimos_10 if r["res"] == "D")
+        stats["forma"] = round((wins + draws * 0.4) / len(ultimos_10), 4)
+    else:
+        stats["forma"] = 0.0
 
     # Promedios y tasas
     def avg(lst): return round(sum(lst) / len(lst), 3) if lst else 0.0
@@ -624,18 +682,24 @@ def generar_tabla(grupos):
 
 
 # =====================================================
-# SELECCIONES — captura real vía scoreboard + rangos
+# SELECCIONES
 # =====================================================
 
 def obtener_selecciones(grupos):
     """
     Construye selecciones.json con stats completas por equipo.
-    Usa scoreboard por rangos de fechas en múltiples leagues
-    (eliminatorias + torneos + amistosos) en lugar del endpoint
-    /schedule que solo ve fifa.world y devuelve 0 partidos.
+
+    Campos en selecciones.json por equipo:
+      Identidad:        nombre, abreviacion, escudo, id_espn, confederacion
+      Geografía:        altitud_base, ciudades_local
+      Ranking FIFA:     ranking_fifa, puntos_fifa
+      Forma general:    forma, ultimos_5              ← combinado oficial+amistoso
+      Stats oficiales:  partidos_oficial … ultimos_5_oficial   (secundarios)
+      Stats amistosos:  partidos_amistoso … ultimos_5_amistoso (secundarios)
+      Local/Visita:     partidos_local … win_rate_neutro
+      Racha:            imbatido_streak
     """
 
-    # Reunir equipos únicos de los grupos
     equipos_vistos = {}
     for grupo in grupos:
         for eq in grupo["equipos"]:
@@ -643,7 +707,6 @@ def obtener_selecciones(grupos):
             if abrev not in equipos_vistos:
                 equipos_vistos[abrev] = eq
 
-    # Necesitamos el id_espn de cada equipo para filtrar eventos
     teams_data = get_json(
         f"{BASE_SOCCER}/fifa.world/teams",
         {"season": "2026", "limit": 100},
@@ -664,6 +727,26 @@ def obtener_selecciones(grupos):
     selecciones = {}
     total       = len(equipos_vistos)
 
+    stats_vacias = {
+        "forma": 0.0, "ultimos_5": [],
+        "partidos_oficial": 0, "ganados_oficial": 0,
+        "empatados_oficial": 0, "perdidos_oficial": 0,
+        "goles_favor_oficial": 0.0, "goles_contra_oficial": 0.0,
+        "forma_oficial": 0.0, "ultimos_5_oficial": [],
+        "partidos_amistoso": 0, "ganados_amistoso": 0,
+        "empatados_amistoso": 0, "perdidos_amistoso": 0,
+        "goles_favor_amistoso": 0.0, "goles_contra_amistoso": 0.0,
+        "forma_amistosos": 0.0, "ultimos_5_amistoso": [],
+        "partidos_local": 0, "ganados_local": 0,
+        "empatados_local": 0, "perdidos_local": 0,
+        "win_rate_local": 0.0,
+        "partidos_visita": 0, "ganados_visita": 0,
+        "empatados_visita": 0, "perdidos_visita": 0,
+        "win_rate_visita": 0.0, "win_rate_neutro": 0.0,
+        "imbatido_streak": 0,
+        "_ciudades_local": [],
+    }
+
     for i, (abrev, eq_base) in enumerate(equipos_vistos.items(), 1):
         nombre = eq_base["equipo"]
         escudo = eq_base["escudo"]
@@ -675,25 +758,7 @@ def obtener_selecciones(grupos):
 
         if not id_espn:
             print(f"    ⚠ Sin id_espn — stats vacías")
-            stats_vacias = {
-                "partidos_oficial": 0, "ganados_oficial": 0,
-                "empatados_oficial": 0, "perdidos_oficial": 0,
-                "goles_favor_oficial": 0.0, "goles_contra_oficial": 0.0,
-                "forma_oficial": 0.0, "ultimos_5_oficial": [],
-                "partidos_amistoso": 0, "ganados_amistoso": 0,
-                "empatados_amistoso": 0, "perdidos_amistoso": 0,
-                "goles_favor_amistoso": 0.0, "goles_contra_amistoso": 0.0,
-                "forma_amistosos": 0.0, "ultimos_5_amistoso": [],
-                "partidos_local": 0, "ganados_local": 0,
-                "empatados_local": 0, "perdidos_local": 0,
-                "win_rate_local": 0.0,
-                "partidos_visita": 0, "ganados_visita": 0,
-                "empatados_visita": 0, "perdidos_visita": 0,
-                "win_rate_visita": 0.0, "win_rate_neutro": 0.0,
-                "imbatido_streak": 0,
-                "_ciudades_local": [],
-            }
-            stats = stats_vacias
+            stats = dict(stats_vacias)
         else:
             stats = scrape_stats_seleccion(id_espn, nombre, confederacion)
 
@@ -717,7 +782,11 @@ def obtener_selecciones(grupos):
             "ranking_fifa": ranking_info[0],
             "puntos_fifa":  ranking_info[1],
 
-            # Stats OFICIALES
+            # Forma general combinada (oficial + amistoso)
+            "forma":     stats["forma"],
+            "ultimos_5": stats["ultimos_5"],
+
+            # Stats OFICIALES (secundarias)
             "partidos_oficial":      stats["partidos_oficial"],
             "ganados_oficial":       stats["ganados_oficial"],
             "empatados_oficial":     stats["empatados_oficial"],
@@ -727,7 +796,7 @@ def obtener_selecciones(grupos):
             "forma_oficial":         stats["forma_oficial"],
             "ultimos_5_oficial":     stats["ultimos_5_oficial"],
 
-            # Stats AMISTOSOS
+            # Stats AMISTOSOS (secundarias)
             "partidos_amistoso":     stats["partidos_amistoso"],
             "ganados_amistoso":      stats["ganados_amistoso"],
             "empatados_amistoso":    stats["empatados_amistoso"],

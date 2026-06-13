@@ -1,5 +1,115 @@
 [
   {
+    "id": "760417",
+    "fecha": "2026-06-13T01:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "United States",
+    "visitante": "Paraguay",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+    "estadio": "SoFi Stadium",
+    "ciudad_sede": "Los Angeles, California",
+    "pais_sede": "USA",
+    "altitud_sede": 93,
+    "es_neutro": true,
+    "prob_local": 0.49135430171785954,
+    "prob_empate": 0.2588870496634091,
+    "prob_visitante": 0.24975864861873134,
+    "fuerza_local": 0.6001879748587189,
+    "fuerza_visitante": 0.5144552484035358,
+    "diferencia": 0.08573272645518304,
+    "confianza": "favorable",
+    "prediccion": "United States",
+    "resultado": "United States",
+    "lambda_local": 1.2947725409498343,
+    "lambda_visitante": 0.6698934451809416,
+    "factor_altitud_local": 0.99535,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "United States"
+        },
+        "visitante": {
+          "valor": 0.27,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Paraguay"
+        },
+        "interpretacion": "United States llega con mejor momentum: índice 0.53/1.0 frente a 0.27/1.0 de Paraguay. Últimos 5: 2V/0E/3D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#16 FIFA",
+          "valor": 0.928,
+          "puntos": 1633.9,
+          "nombre": "United States"
+        },
+        "visitante": {
+          "etiqueta": "#32 FIFA",
+          "valor": 0.852,
+          "puntos": 1521.4,
+          "nombre": "Paraguay"
+        },
+        "interpretacion": "Leve diferencia en ranking: #16 United States vs #32 Paraguay. El factor puede influir en momentos clave."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 93,
+        "ciudad_sede": "Los Angeles, California",
+        "local": {
+          "nombre": "United States",
+          "altitud_base": 0,
+          "factor": 0.995
+        },
+        "visitante": {
+          "nombre": "Paraguay",
+          "altitud_base": 124,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (93m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "United States",
+          "goles_favor": 1.68,
+          "goles_contra": 1.38
+        },
+        "visitante": {
+          "nombre": "Paraguay",
+          "goles_favor": 1.0,
+          "goles_contra": 1.36
+        },
+        "interpretacion": "United States más ofensivo: 1.68 goles/partido (vs 1.00). Defensiva: 1.38 vs 1.36."
+      }
+    ]
+  },
+  {
     "id": "760416",
     "fecha": "2026-06-12T19:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",
