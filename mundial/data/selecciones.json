@@ -760,7 +760,7 @@
     "win_rate_neutro": 0.6,
     "imbatido_streak": 0
   },
-  "usa": {
+  "unitedstates": {
     "nombre": "United States",
     "abreviacion": "USA",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
@@ -2177,7 +2177,7 @@
     "win_rate_neutro": 0.4444,
     "imbatido_streak": 0
   },
-  "drcongo": {
+  "congodr": {
     "nombre": "Congo DR",
     "abreviacion": "COD",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",

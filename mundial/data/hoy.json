@@ -107,5 +107,876 @@
         "interpretacion": "United States más ofensivo: 1.68 goles/partido (vs 1.00). Defensiva: 1.38 vs 1.36."
       }
     ]
+  },
+  {
+    "id": "760420",
+    "fecha": "2026-06-13T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Qatar",
+    "visitante": "Switzerland",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+    "estadio": "Levi's Stadium",
+    "ciudad_sede": "San Francisco Bay Area, California",
+    "pais_sede": "USA",
+    "altitud_sede": 16,
+    "es_neutro": true,
+    "prob_local": 0.395192076602186,
+    "prob_empate": 0.27052578544036804,
+    "prob_visitante": 0.334282137957446,
+    "fuerza_local": 0.40202906445331243,
+    "fuerza_visitante": 0.3507764844489733,
+    "diferencia": 0.05125258000433913,
+    "confianza": "ajustado",
+    "prediccion": "Qatar",
+    "lambda_local": 1.0518529317671377,
+    "lambda_visitante": 0.940188586647428,
+    "factor_altitud_local": 0.9997,
+    "factor_altitud_visitante": 0.9992,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Qatar"
+        },
+        "visitante": {
+          "valor": 0.33,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Switzerland"
+        },
+        "interpretacion": "Qatar llega con mejor momentum: índice 0.53/1.0 frente a 0.33/1.0 de Switzerland. Últimos 5: 0V/0E/5D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 0.0,
+          "nombre": "Qatar"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 0.0,
+          "nombre": "Switzerland"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #999 vs #999. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 16,
+        "ciudad_sede": "San Francisco Bay Area, California",
+        "local": {
+          "nombre": "Qatar",
+          "altitud_base": 10,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Switzerland",
+          "altitud_base": 0,
+          "factor": 0.999
+        },
+        "interpretacion": "Sede en condiciones normales (16m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Qatar",
+          "goles_favor": 1.35,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Switzerland",
+          "goles_favor": 1.86,
+          "goles_contra": 1.33
+        },
+        "interpretacion": "Switzerland más ofensivo: 1.86 vs 1.35 goles/partido. Defensiva: 1.00 vs 1.33."
+      }
+    ]
+  },
+  {
+    "id": "760419",
+    "fecha": "2026-06-13T22:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Brazil",
+    "visitante": "Morocco",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+    "estadio": "MetLife Stadium",
+    "ciudad_sede": "East Rutherford, New Jersey",
+    "pais_sede": "USA",
+    "altitud_sede": 5,
+    "es_neutro": true,
+    "prob_local": 0.3057246814877977,
+    "prob_empate": 0.2941177392403961,
+    "prob_visitante": 0.40015757927180634,
+    "fuerza_local": 0.6137093051469583,
+    "fuerza_visitante": 0.6485353401572111,
+    "diferencia": 0.03482603501025283,
+    "confianza": "moderado",
+    "prediccion": "Morocco",
+    "lambda_local": 0.704219338296,
+    "lambda_visitante": 0.9253331279138767,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.45,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Brazil"
+        },
+        "visitante": {
+          "valor": 0.65,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Morocco"
+        },
+        "interpretacion": "Morocco llega con mejor momentum: índice 0.65/1.0 frente a 0.45/1.0 de Brazil. Últimos 5: 2V/0E/3D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#5 FIFA",
+          "valor": 0.981,
+          "puntos": 1782.1,
+          "nombre": "Brazil"
+        },
+        "visitante": {
+          "etiqueta": "#15 FIFA",
+          "valor": 0.933,
+          "puntos": 1645.1,
+          "nombre": "Morocco"
+        },
+        "interpretacion": "Leve diferencia en ranking: #5 Brazil vs #15 Morocco. El factor puede influir en momentos clave."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 5,
+        "ciudad_sede": "East Rutherford, New Jersey",
+        "local": {
+          "nombre": "Brazil",
+          "altitud_base": 10,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Morocco",
+          "altitud_base": 495,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (5m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Brazil",
+          "goles_favor": 1.82,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Morocco",
+          "goles_favor": 1.48,
+          "goles_contra": 0.35
+        },
+        "interpretacion": "Producción similar: Brazil 1.82 — Morocco 1.48 goles/partido. Defensa: 1.00 vs 0.35."
+      }
+    ]
+  },
+  {
+    "id": "760418",
+    "fecha": "2026-06-14T01:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Haiti",
+    "visitante": "Scotland",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+    "estadio": "Gillette Stadium",
+    "ciudad_sede": "Foxborough, Massachusetts",
+    "pais_sede": "USA",
+    "altitud_sede": 25,
+    "es_neutro": true,
+    "prob_local": 0.58,
+    "prob_empate": 0.2080122399694823,
+    "prob_visitante": 0.2119877600305178,
+    "fuerza_local": 0.4000538283849341,
+    "fuerza_visitante": 0.31977930667363724,
+    "diferencia": 0.08027452171129684,
+    "confianza": "favorable",
+    "prediccion": "Haiti",
+    "lambda_local": 2.424188289193424,
+    "lambda_visitante": 0.6941248557906637,
+    "factor_altitud_local": 0.99875,
+    "factor_altitud_visitante": 0.9995,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.44,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Haiti"
+        },
+        "visitante": {
+          "valor": 0.26,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Scotland"
+        },
+        "interpretacion": "Haiti llega con mejor momentum: índice 0.44/1.0 frente a 0.26/1.0 de Scotland. Últimos 5: 1V/0E/4D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 0.0,
+          "nombre": "Haiti"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 0.0,
+          "nombre": "Scotland"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #999 vs #999. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 25,
+        "ciudad_sede": "Foxborough, Massachusetts",
+        "local": {
+          "nombre": "Haiti",
+          "altitud_base": 0,
+          "factor": 0.999
+        },
+        "visitante": {
+          "nombre": "Scotland",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (25m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Haiti",
+          "goles_favor": 2.5,
+          "goles_contra": 1.06
+        },
+        "visitante": {
+          "nombre": "Scotland",
+          "goles_favor": 1.37,
+          "goles_contra": 1.79
+        },
+        "interpretacion": "Haiti más ofensivo: 2.50 goles/partido (vs 1.37). Defensiva: 1.06 vs 1.79."
+      }
+    ]
+  },
+  {
+    "id": "760421",
+    "fecha": "2026-06-14T04:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Australia",
+    "visitante": "Türkiye",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+    "estadio": "BC Place",
+    "ciudad_sede": "Vancouver, British Columbia",
+    "pais_sede": "CAN",
+    "altitud_sede": 4,
+    "es_neutro": true,
+    "prob_local": 0.45543836191063947,
+    "prob_empate": 0.25829354814335315,
+    "prob_visitante": 0.28626808994600744,
+    "fuerza_local": 0.6142780768390974,
+    "fuerza_visitante": 0.6189529517807645,
+    "diferencia": 0.004674874941667073,
+    "confianza": "moderado",
+    "prediccion": "Australia",
+    "lambda_local": 1.3047744134594454,
+    "lambda_visitante": 0.7620537027255566,
+    "factor_altitud_local": 0.9998,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Australia"
+        },
+        "visitante": {
+          "valor": 0.57,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Türkiye"
+        },
+        "interpretacion": "Australia llega con mejor momentum: índice 0.60/1.0 frente a 0.57/1.0 de Türkiye. Últimos 5: 3V/0E/2D vs 4V/0E/1D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#29 FIFA",
+          "valor": 0.866,
+          "puntos": 1539.4,
+          "nombre": "Australia"
+        },
+        "visitante": {
+          "etiqueta": "#24 FIFA",
+          "valor": 0.89,
+          "puntos": 1584.1,
+          "nombre": "Türkiye"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #29 vs #24. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 4,
+        "ciudad_sede": "Vancouver, British Columbia",
+        "local": {
+          "nombre": "Australia",
+          "altitud_base": 0,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Türkiye",
+          "altitud_base": 938,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (4m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Australia",
+          "goles_favor": 1.73,
+          "goles_contra": 0.73
+        },
+        "visitante": {
+          "nombre": "Türkiye",
+          "goles_favor": 1.74,
+          "goles_contra": 1.26
+        },
+        "interpretacion": "Producción similar: Australia 1.73 — Türkiye 1.74 goles/partido. Defensa: 0.73 vs 1.26."
+      }
+    ]
+  },
+  {
+    "id": "760422",
+    "fecha": "2026-06-14T17:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Germany",
+    "visitante": "Curaçao",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
+    "estadio": "NRG Stadium",
+    "ciudad_sede": "Houston, Texas",
+    "pais_sede": "USA",
+    "altitud_sede": 12,
+    "es_neutro": true,
+    "prob_local": 0.58,
+    "prob_empate": 0.20369311095823636,
+    "prob_visitante": 0.21630688904176373,
+    "fuerza_local": 0.6694589596092827,
+    "fuerza_visitante": 0.3138376138274911,
+    "diferencia": 0.3556213457817916,
+    "confianza": "favorable",
+    "prediccion": "Germany",
+    "lambda_local": 2.4744497440030377,
+    "lambda_visitante": 0.7895829692822299,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 0.9994,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.65,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Germany"
+        },
+        "visitante": {
+          "valor": 0.25,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Curaçao"
+        },
+        "interpretacion": "Germany llega con mejor momentum: índice 0.65/1.0 frente a 0.25/1.0 de Curaçao. Últimos 5: 3V/0E/2D vs 1V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#9 FIFA",
+          "valor": 0.962,
+          "puntos": 1720.0,
+          "nombre": "Germany"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 0.0,
+          "nombre": "Curaçao"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #9 Germany (1720 pts) vs #999 Curaçao (0 pts). Germany tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 12,
+        "ciudad_sede": "Houston, Texas",
+        "local": {
+          "nombre": "Germany",
+          "altitud_base": 117,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Curaçao",
+          "altitud_base": 0,
+          "factor": 0.999
+        },
+        "interpretacion": "Sede en condiciones normales (12m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Germany",
+          "goles_favor": 1.96,
+          "goles_contra": 1.17
+        },
+        "visitante": {
+          "nombre": "Curaçao",
+          "goles_favor": 1.25,
+          "goles_contra": 2.25
+        },
+        "interpretacion": "Germany más ofensivo: 1.96 goles/partido (vs 1.25). Defensiva: 1.17 vs 2.25."
+      }
+    ]
+  },
+  {
+    "id": "760425",
+    "fecha": "2026-06-14T20:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Netherlands",
+    "visitante": "Japan",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+    "estadio": "AT&T Stadium",
+    "ciudad_sede": "Arlington, Texas",
+    "pais_sede": "USA",
+    "altitud_sede": 188,
+    "es_neutro": true,
+    "prob_local": 0.3181325571274579,
+    "prob_empate": 0.21876386766484424,
+    "prob_visitante": 0.46310357520769785,
+    "fuerza_local": 0.6383423760297169,
+    "fuerza_visitante": 0.6864672290674607,
+    "diferencia": 0.04812485303774383,
+    "confianza": "moderado",
+    "prediccion": "Japan",
+    "lambda_local": 1.4019385112542884,
+    "lambda_visitante": 1.870668494565044,
+    "factor_altitud_local": 0.9906,
+    "factor_altitud_visitante": 0.9926,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.55,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Netherlands"
+        },
+        "visitante": {
+          "valor": 0.69,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Japan"
+        },
+        "interpretacion": "Japan llega con mejor momentum: índice 0.69/1.0 frente a 0.55/1.0 de Netherlands. Últimos 5: 3V/0E/2D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#7 FIFA",
+          "valor": 0.971,
+          "puntos": 1757.4,
+          "nombre": "Netherlands"
+        },
+        "visitante": {
+          "etiqueta": "#14 FIFA",
+          "valor": 0.938,
+          "puntos": 1650.5,
+          "nombre": "Japan"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #7 vs #14. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 188,
+        "ciudad_sede": "Arlington, Texas",
+        "local": {
+          "nombre": "Netherlands",
+          "altitud_base": 0,
+          "factor": 0.991
+        },
+        "visitante": {
+          "nombre": "Japan",
+          "altitud_base": 40,
+          "factor": 0.993
+        },
+        "interpretacion": "Sede en condiciones normales (188m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Netherlands",
+          "goles_favor": 2.09,
+          "goles_contra": 1.09
+        },
+        "visitante": {
+          "nombre": "Japan",
+          "goles_favor": 2.69,
+          "goles_contra": 1.19
+        },
+        "interpretacion": "Japan más ofensivo: 2.69 vs 2.09 goles/partido. Defensiva: 1.09 vs 1.19."
+      }
+    ]
+  },
+  {
+    "id": "760423",
+    "fecha": "2026-06-14T23:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Ivory Coast",
+    "visitante": "Ecuador",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+    "estadio": "Lincoln Financial Field",
+    "ciudad_sede": "Philadelphia, Pennsylvania",
+    "pais_sede": "USA",
+    "altitud_sede": 12,
+    "es_neutro": true,
+    "prob_local": 0.38758223248718454,
+    "prob_empate": 0.31831064292234224,
+    "prob_visitante": 0.2941071245904733,
+    "fuerza_local": 0.6084882341695147,
+    "fuerza_visitante": 0.5418563635338346,
+    "diferencia": 0.0666318706356801,
+    "confianza": "moderado",
+    "prediccion": "Ivory Coast",
+    "lambda_local": 0.7663710027400351,
+    "lambda_visitante": 0.6025660285615543,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.56,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Ivory Coast"
+        },
+        "visitante": {
+          "valor": 0.36,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Ecuador"
+        },
+        "interpretacion": "Ivory Coast llega con mejor momentum: índice 0.56/1.0 frente a 0.36/1.0 de Ecuador. Últimos 5: 3V/0E/2D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#27 FIFA",
+          "valor": 0.876,
+          "puntos": 1551.3,
+          "nombre": "Ivory Coast"
+        },
+        "visitante": {
+          "etiqueta": "#34 FIFA",
+          "valor": 0.842,
+          "puntos": 1508.3,
+          "nombre": "Ecuador"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #27 vs #34. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 12,
+        "ciudad_sede": "Philadelphia, Pennsylvania",
+        "local": {
+          "nombre": "Ivory Coast",
+          "altitud_base": 226,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Ecuador",
+          "altitud_base": 2850,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (12m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Ivory Coast",
+          "goles_favor": 1.52,
+          "goles_contra": 0.92
+        },
+        "visitante": {
+          "nombre": "Ecuador",
+          "goles_favor": 1.29,
+          "goles_contra": 0.86
+        },
+        "interpretacion": "Producción similar: Ivory Coast 1.52 — Ecuador 1.29 goles/partido. Defensa: 0.92 vs 0.86."
+      }
+    ]
+  },
+  {
+    "id": "760424",
+    "fecha": "2026-06-15T02:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Sweden",
+    "visitante": "Tunisia",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
+    "estadio": "Estadio BBVA",
+    "ciudad_sede": "Monterrey, Nuevo León",
+    "pais_sede": "MEX",
+    "altitud_sede": 538,
+    "es_neutro": true,
+    "prob_local": 0.4294287104765099,
+    "prob_empate": 0.2558935174597471,
+    "prob_visitante": 0.31467777206374303,
+    "fuerza_local": 0.39168811669736714,
+    "fuerza_visitante": 0.4934460483344073,
+    "diferencia": 0.10175793163704017,
+    "confianza": "moderado",
+    "prediccion": "Sweden",
+    "lambda_local": 1.3063715540614438,
+    "lambda_visitante": 0.7880302773536688,
+    "factor_altitud_local": 0.9745,
+    "factor_altitud_visitante": 0.9756,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Sweden"
+        },
+        "visitante": {
+          "valor": 0.32,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Tunisia"
+        },
+        "interpretacion": "Sweden llega con mejor momentum: índice 0.50/1.0 frente a 0.32/1.0 de Tunisia. Últimos 5: 3V/0E/2D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 0.0,
+          "nombre": "Sweden"
+        },
+        "visitante": {
+          "etiqueta": "#45 FIFA",
+          "valor": 0.789,
+          "puntos": 1436.1,
+          "nombre": "Tunisia"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #999 Sweden (0 pts) vs #45 Tunisia (1436 pts). Tunisia tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 538,
+        "ciudad_sede": "Monterrey, Nuevo León",
+        "local": {
+          "nombre": "Sweden",
+          "altitud_base": 28,
+          "factor": 0.975
+        },
+        "visitante": {
+          "nombre": "Tunisia",
+          "altitud_base": 50,
+          "factor": 0.976
+        },
+        "interpretacion": "Sede en condiciones normales (538m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Sweden",
+          "goles_favor": 2.05,
+          "goles_contra": 1.6
+        },
+        "visitante": {
+          "nombre": "Tunisia",
+          "goles_favor": 1.0,
+          "goles_contra": 1.14
+        },
+        "interpretacion": "Sweden más ofensivo: 2.05 goles/partido (vs 1.00). Defensiva: 1.60 vs 1.14."
+      }
+    ]
   }
 ]
