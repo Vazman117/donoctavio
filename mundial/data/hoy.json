@@ -13,12 +13,12 @@
     "pais_sede": "USA",
     "altitud_sede": 16,
     "es_neutro": true,
-    "prob_local": 0.5058922597421717,
-    "prob_empate": 0.245384444559313,
-    "prob_visitante": 0.2487232956985154,
-    "fuerza_local": 0.4485592953001695,
-    "fuerza_visitante": 0.3435973001289733,
-    "diferencia": 0.1049619951711962,
+    "prob_local": 0.49668375424735506,
+    "prob_empate": 0.2461652899777221,
+    "prob_visitante": 0.2571509557749229,
+    "fuerza_local": 0.5616002201685906,
+    "fuerza_visitante": 0.4977353522820834,
+    "diferencia": 0.06386486788650719,
     "confianza": "favorable",
     "prediccion": "Qatar",
     "lambda_local": 1.4393645565878674,
@@ -56,21 +56,21 @@
       },
       {
         "factor": "Ranking FIFA",
-        "impacto": "bajo",
+        "impacto": "medio",
         "tipo": "barras",
         "local": {
-          "etiqueta": "#999 FIFA",
-          "valor": 0.25,
+          "etiqueta": "#56 FIFA",
+          "valor": 0.737,
           "puntos": 0.0,
           "nombre": "Qatar"
         },
         "visitante": {
-          "etiqueta": "#999 FIFA",
-          "valor": 0.25,
+          "etiqueta": "#19 FIFA",
+          "valor": 0.914,
           "puntos": 0.0,
           "nombre": "Switzerland"
         },
-        "interpretacion": "Selecciones parejas en ranking FIFA: #999 vs #999. La calidad individual no diferencia decisivamente."
+        "interpretacion": "Diferencia significativa en ranking FIFA: #56 Qatar (0 pts) vs #19 Switzerland (0 pts). Switzerland tiene ventaja objetiva de calidad."
       },
       {
         "factor": "Factor altitud",
@@ -232,11 +232,11 @@
     "altitud_sede": 25,
     "es_neutro": true,
     "prob_local": 0.58,
-    "prob_empate": 0.2101666355305222,
-    "prob_visitante": 0.20983336446947784,
-    "fuerza_local": 0.3995483844849341,
-    "fuerza_visitante": 0.313713692027923,
-    "diferencia": 0.08583469245701114,
+    "prob_empate": 0.20453726790695997,
+    "prob_visitante": 0.2154627320930401,
+    "fuerza_local": 0.4825843236296709,
+    "fuerza_visitante": 0.4445271530925163,
+    "diferencia": 0.03805717053715463,
     "confianza": "favorable",
     "prediccion": "Haiti",
     "lambda_local": 2.4488185041343153,
@@ -274,21 +274,21 @@
       },
       {
         "factor": "Ranking FIFA",
-        "impacto": "bajo",
+        "impacto": "medio",
         "tipo": "barras",
         "local": {
-          "etiqueta": "#999 FIFA",
-          "valor": 0.25,
+          "etiqueta": "#83 FIFA",
+          "valor": 0.608,
           "puntos": 0.0,
           "nombre": "Haiti"
         },
         "visitante": {
-          "etiqueta": "#999 FIFA",
-          "valor": 0.25,
+          "etiqueta": "#40 FIFA",
+          "valor": 0.813,
           "puntos": 0.0,
           "nombre": "Scotland"
         },
-        "interpretacion": "Selecciones parejas en ranking FIFA: #999 vs #999. La calidad individual no diferencia decisivamente."
+        "interpretacion": "Diferencia significativa en ranking FIFA: #83 Haiti (0 pts) vs #40 Scotland (0 pts). Scotland tiene ventaja objetiva de calidad."
       },
       {
         "factor": "Factor altitud",
@@ -450,11 +450,11 @@
     "altitud_sede": 12,
     "es_neutro": true,
     "prob_local": 0.58,
-    "prob_empate": 0.20383644464386982,
-    "prob_visitante": 0.2161635553561302,
+    "prob_empate": 0.2049252994908839,
+    "prob_visitante": 0.2150747005091161,
     "fuerza_local": 0.6684626853235683,
-    "fuerza_visitante": 0.3138376138274911,
-    "diferencia": 0.35462507149607725,
+    "fuerza_visitante": 0.39799055045428533,
+    "diferencia": 0.270472134869283,
     "confianza": "favorable",
     "prediccion": "Germany",
     "lambda_local": 2.512986802550728,
@@ -500,12 +500,12 @@
           "nombre": "Germany"
         },
         "visitante": {
-          "etiqueta": "#999 FIFA",
-          "valor": 0.25,
+          "etiqueta": "#82 FIFA",
+          "valor": 0.612,
           "puntos": 0.0,
           "nombre": "Curaçao"
         },
-        "interpretacion": "Diferencia significativa en ranking FIFA: #9 Germany (1720 pts) vs #999 Curaçao (0 pts). Germany tiene ventaja objetiva de calidad."
+        "interpretacion": "Diferencia significativa en ranking FIFA: #9 Germany (1720 pts) vs #82 Curaçao (0 pts). Germany tiene ventaja objetiva de calidad."
       },
       {
         "factor": "Factor altitud",
@@ -775,13 +775,13 @@
     "pais_sede": "MEX",
     "altitud_sede": 538,
     "es_neutro": true,
-    "prob_local": 0.4544574275728891,
-    "prob_empate": 0.25125804368660976,
-    "prob_visitante": 0.2942845287405012,
-    "fuerza_local": 0.3970869638402243,
+    "prob_local": 0.4859792547251537,
+    "prob_empate": 0.2518572314823455,
+    "prob_visitante": 0.26216351379250086,
+    "fuerza_local": 0.5297484489478799,
     "fuerza_visitante": 0.4791858062818358,
-    "diferencia": 0.08209884244161153,
-    "confianza": "moderado",
+    "diferencia": 0.050562642666044044,
+    "confianza": "favorable",
     "prediccion": "Sweden",
     "lambda_local": 1.3749212809191853,
     "lambda_visitante": 0.7343681876494799,
@@ -818,11 +818,11 @@
       },
       {
         "factor": "Ranking FIFA",
-        "impacto": "alto",
+        "impacto": "bajo",
         "tipo": "barras",
         "local": {
-          "etiqueta": "#999 FIFA",
-          "valor": 0.25,
+          "etiqueta": "#38 FIFA",
+          "valor": 0.823,
           "puntos": 0.0,
           "nombre": "Sweden"
         },
@@ -832,7 +832,7 @@
           "puntos": 1436.1,
           "nombre": "Tunisia"
         },
-        "interpretacion": "Diferencia significativa en ranking FIFA: #999 Sweden (0 pts) vs #45 Tunisia (1436 pts). Tunisia tiene ventaja objetiva de calidad."
+        "interpretacion": "Selecciones parejas en ranking FIFA: #38 vs #45. La calidad individual no diferencia decisivamente."
       },
       {
         "factor": "Factor altitud",
