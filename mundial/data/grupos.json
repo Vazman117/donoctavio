@@ -64,7 +64,7 @@
     "grupo": "Group B",
     "equipos": [
       {
-        "posicion": 1.0,
+        "posicion": 2.0,
         "equipo": "Canada",
         "abreviacion": "CAN",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
@@ -78,7 +78,7 @@
         "puntos": 1.0
       },
       {
-        "posicion": 2.0,
+        "posicion": 4.0,
         "equipo": "Bosnia-Herzegovina",
         "abreviacion": "BIH",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
@@ -92,32 +92,32 @@
         "puntos": 1.0
       },
       {
-        "posicion": 4.0,
+        "posicion": 1.0,
         "equipo": "Switzerland",
         "abreviacion": "SUI",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-        "partidos": 0.0,
+        "partidos": 1.0,
         "ganados": 0.0,
-        "empatados": 0.0,
+        "empatados": 1.0,
         "perdidos": 0.0,
-        "goles_favor": 0.0,
-        "goles_contra": 0.0,
+        "goles_favor": 1.0,
+        "goles_contra": 1.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0
+        "puntos": 1.0
       },
       {
         "posicion": 3.0,
         "equipo": "Qatar",
         "abreviacion": "QAT",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
-        "partidos": 0.0,
+        "partidos": 1.0,
         "ganados": 0.0,
-        "empatados": 0.0,
+        "empatados": 1.0,
         "perdidos": 0.0,
-        "goles_favor": 0.0,
-        "goles_contra": 0.0,
+        "goles_favor": 1.0,
+        "goles_contra": 1.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0
+        "puntos": 1.0
       }
     ]
   },
@@ -200,7 +200,7 @@
         "puntos": 0.0
       },
       {
-        "posicion": 3.0,
+        "posicion": 2.0,
         "equipo": "Türkiye",
         "abreviacion": "TUR",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
@@ -214,7 +214,7 @@
         "puntos": 0.0
       },
       {
-        "posicion": 2.0,
+        "posicion": 3.0,
         "equipo": "Australia",
         "abreviacion": "AUS",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",

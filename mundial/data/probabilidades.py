@@ -131,7 +131,7 @@ PARTIDOS_GRUPO = [
 
     # ── GRUPO B ──────────────────────────────────────────────
     # ("Canada",      "Bosnia-Herzegovina", "Toronto"),  # JUGADO: 1-1
-    ("Qatar",       "Switzerland",            "San Francisco"),
+    # ("Qatar",       "Switzerland",  "San Francisco"),  # JUGADO: 1-1
     ("Switzerland", "Bosnia-Herzegovina", "Los Angeles"),
     ("Canada",      "Qatar",                  "Vancouver"),
     ("Switzerland", "Canada",                 "Vancouver"),
@@ -202,12 +202,12 @@ PARTIDOS_GRUPO = [
     ("Algeria",     "Austria",   "Kansas City"),
 
     # ── GRUPO K ──────────────────────────────────────────────
-    ("Portugal",    "DR Congo",  "Houston"),
+    ("Portugal",    "Congo DR",  "Houston"),
     ("Uzbekistan",  "Colombia",  "Mexico City"),
     ("Portugal",    "Uzbekistan","Houston"),
-    ("Colombia",    "DR Congo",  "Guadalajara"),
+    ("Colombia",    "Congo DR",  "Guadalajara"),
     ("Colombia",    "Portugal",  "Seattle"),
-    ("DR Congo",    "Uzbekistan","Atlanta"),
+    ("Congo DR",    "Uzbekistan","Atlanta"),
 
     # ── GRUPO L ──────────────────────────────────────────────
     ("England",     "Croatia",   "Dallas"),

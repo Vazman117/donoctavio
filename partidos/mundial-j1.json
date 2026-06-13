@@ -1,5 +1,115 @@
 [
   {
+    "id": "760420",
+    "fecha": "2026-06-13T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Qatar",
+    "visitante": "Switzerland",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+    "estadio": "Levi's Stadium",
+    "ciudad_sede": "San Francisco Bay Area, California",
+    "pais_sede": "USA",
+    "altitud_sede": 16,
+    "es_neutro": true,
+    "prob_local": 0.49668375424735506,
+    "prob_empate": 0.2461652899777221,
+    "prob_visitante": 0.2571509557749229,
+    "fuerza_local": 0.5616002201685906,
+    "fuerza_visitante": 0.4977353522820834,
+    "diferencia": 0.06386486788650719,
+    "confianza": "favorable",
+    "prediccion": "Qatar",
+    "resultado": "Empate",
+    "lambda_local": 1.4393645565878674,
+    "lambda_visitante": 0.7559573400090425,
+    "factor_altitud_local": 0.9997,
+    "factor_altitud_visitante": 0.9992,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.76,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Qatar"
+        },
+        "visitante": {
+          "valor": 0.31,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Switzerland"
+        },
+        "interpretacion": "Qatar llega con mejor momentum: índice 0.76/1.0 frente a 0.31/1.0 de Switzerland. Últimos 5: 5V/0E/0D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#56 FIFA",
+          "valor": 0.737,
+          "puntos": 0.0,
+          "nombre": "Qatar"
+        },
+        "visitante": {
+          "etiqueta": "#19 FIFA",
+          "valor": 0.914,
+          "puntos": 0.0,
+          "nombre": "Switzerland"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #56 Qatar (0 pts) vs #19 Switzerland (0 pts). Switzerland tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 16,
+        "ciudad_sede": "San Francisco Bay Area, California",
+        "local": {
+          "nombre": "Qatar",
+          "altitud_base": 10,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Switzerland",
+          "altitud_base": 0,
+          "factor": 0.999
+        },
+        "interpretacion": "Sede en condiciones normales (16m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Qatar",
+          "goles_favor": 1.67,
+          "goles_contra": 0.86
+        },
+        "visitante": {
+          "nombre": "Switzerland",
+          "goles_favor": 1.75,
+          "goles_contra": 1.38
+        },
+        "interpretacion": "Producción similar: Qatar 1.67 — Switzerland 1.75 goles/partido. Defensa: 0.86 vs 1.38."
+      }
+    ]
+  },
+  {
     "id": "760417",
     "fecha": "2026-06-13T01:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",
