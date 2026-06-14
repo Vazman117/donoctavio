@@ -125,45 +125,45 @@
     "grupo": "Group C",
     "equipos": [
       {
-        "posicion": 1.0,
+        "posicion": 3.0,
         "equipo": "Brazil",
         "abreviacion": "BRA",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-        "partidos": 0.0,
+        "partidos": 1.0,
         "ganados": 0.0,
-        "empatados": 0.0,
+        "empatados": 1.0,
         "perdidos": 0.0,
-        "goles_favor": 0.0,
-        "goles_contra": 0.0,
+        "goles_favor": 1.0,
+        "goles_contra": 1.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0
+        "puntos": 1.0
       },
       {
-        "posicion": 4.0,
+        "posicion": 1.0,
         "equipo": "Scotland",
         "abreviacion": "SCO",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
-        "partidos": 0.0,
-        "ganados": 0.0,
+        "partidos": 1.0,
+        "ganados": 1.0,
         "empatados": 0.0,
         "perdidos": 0.0,
-        "goles_favor": 0.0,
+        "goles_favor": 1.0,
         "goles_contra": 0.0,
-        "diferencia_goles": 0.0,
-        "puntos": 0.0
+        "diferencia_goles": 1.0,
+        "puntos": 3.0
       },
       {
-        "posicion": 3.0,
+        "posicion": 4.0,
         "equipo": "Haiti",
         "abreviacion": "HAI",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
-        "partidos": 0.0,
+        "partidos": 1.0,
         "ganados": 0.0,
         "empatados": 0.0,
-        "perdidos": 0.0,
+        "perdidos": 1.0,
         "goles_favor": 0.0,
-        "goles_contra": 0.0,
-        "diferencia_goles": 0.0,
+        "goles_contra": 1.0,
+        "diferencia_goles": -1.0,
         "puntos": 0.0
       },
       {
@@ -171,14 +171,14 @@
         "equipo": "Morocco",
         "abreviacion": "MAR",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-        "partidos": 0.0,
+        "partidos": 1.0,
         "ganados": 0.0,
-        "empatados": 0.0,
+        "empatados": 1.0,
         "perdidos": 0.0,
-        "goles_favor": 0.0,
-        "goles_contra": 0.0,
+        "goles_favor": 1.0,
+        "goles_contra": 1.0,
         "diferencia_goles": 0.0,
-        "puntos": 0.0
+        "puntos": 1.0
       }
     ]
   },

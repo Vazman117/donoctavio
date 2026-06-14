@@ -11,8 +11,18 @@
 # /mundial/data/tabla.json        → tabla general
 # /mundial/data/selecciones.json  → stats completas por selección
 # /mundial/data/fixture.json      → partidos de hoy y mañana
+#
+# CAMBIOS EN ESTA VERSIÓN:
+#   - El ranking FIFA ya NO es un diccionario fijo: se descarga en vivo
+#     desde fifa.com (con un respaldo estático solo por si la consulta falla).
+#   - Las estadísticas de cada selección (forma, últimos partidos, etc.)
+#     ya NO se reconstruyen recorriendo eliminatorias por confederación.
+#     Se toman directo del calendario de cada selección en ESPN, solo
+#     ligas "fifa.world" (Mundial) y "fifa.friendly" (amistosos),
+#     que es justo lo que ESPN ya tiene publicado y reflejado.
 
 import os
+import re
 import json
 import time
 import requests
@@ -25,6 +35,9 @@ from datetime import datetime, timedelta, timezone
 BASE_ESPN    = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world"
 BASE_ESPN_V2 = "https://site.api.espn.com/apis/v2/sports/soccer"
 BASE_SOCCER  = "https://site.api.espn.com/apis/site/v2/sports/soccer"
+
+FIFA_RANKING_PAGE = "https://www.fifa.com/en/fifa-world-ranking/men"
+FIFA_RANKING_API  = "https://www.fifa.com/api/ranking-overview"
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 os.makedirs(DATA_DIR, exist_ok=True)
@@ -65,9 +78,13 @@ ALTITUD_BASE = {
 }
 
 # ------------------------------------------------------------------
-# Ranking FIFA masculino — edición abril 2026
+# Ranking FIFA — RESPALDO ESTÁTICO
+# Solo se usa si la consulta en vivo a fifa.com falla por completo
+# o si una selección puntual no se encuentra en esa respuesta.
+# (snapshot abril 2026 — puede estar desactualizado a propósito,
+#  es solo un "mejor que nada")
 # ------------------------------------------------------------------
-RANKING_FIFA = {
+RANKING_FIFA_FALLBACK = {
     "ESP": (1,  1877.2), "ARG": (2,  1873.3), "FRA": (3,  1870.0),
     "ENG": (4,  1834.1), "BRA": (5,  1782.1), "POR": (6,  1764.9),
     "NED": (7,  1757.4), "BEL": (8,  1741.7), "GER": (9,  1720.0),
@@ -85,6 +102,25 @@ RANKING_FIFA = {
     "SAU": (43, 1449.2), "CAN": (44, 1442.7), "TUN": (45, 1436.1),
     "PAN": (46, 1429.6), "ALB": (47, 1423.0), "GUA": (48, 1416.5),
     "VEN": (49, 1410.0), "CHN": (79, 1302.5), "IDN": (130, 1180.0),
+}
+
+# ------------------------------------------------------------------
+# Alias manuales: abreviación ESPN -> nombre normalizado usado por FIFA
+# Se intenta primero por código FIFA, luego por nombre exacto, luego
+# por coincidencia parcial. Estos alias cubren los casos típicos donde
+# FIFA y ESPN usan nombres distintos para el mismo país.
+# Si ves en consola "Sin ranking FIFA para X (YYY)", agrega aquí el alias.
+# ------------------------------------------------------------------
+RANKING_FIFA_ALIASES = {
+    "USA": "usa",
+    "IRN": "iriran",
+    "KOR": "korearepublic",
+    "CIV": "cotedivoire",
+    "RSA": "southafrica",
+    "CPV": "caboverde",
+    "COD": "drcongo",
+    "KSA": "saudiarabia",
+    "SAU": "saudiarabia",
 }
 
 # ------------------------------------------------------------------
@@ -128,66 +164,19 @@ SEDES_MUNDIAL = [
 ]
 
 # =====================================================
-# LEAGUES HISTÓRICAS
-# Orden: eliminatorias primero → torneos continentales → amistosos
+# LIGAS USADAS PARA ARMAR EL HISTORIAL RECIENTE DE CADA SELECCIÓN
+#
+# Ya no se recorren eliminatorias por confederación. Se consulta
+# directo el calendario ("schedule") de cada selección en ESPN para
+# estas dos ligas, que son justo lo que ESPN ya tiene publicado:
+#   - fifa.world    → partidos del Mundial 2026          (oficial)
+#   - fifa.friendly → amistosos internacionales pre-mundial (amistoso)
 # =====================================================
 
-_LEAGUES_POR_CONF = {
-    "UEFA": [
-        "uefa.euroq",
-        "uefa.nations",
-        "uefa.euro",
-        "fifa.world",
-        "fifa.friendly",
-    ],
-    "CONMEBOL": [
-        "conmebol.world.qualifier",
-        "conmebol.america",
-        "fifa.world",
-        "fifa.friendly",
-    ],
-    "CONCACAF": [
-        "concacaf.world.qualifier",
-        "concacaf.nations.league",
-        "concacaf.gold",
-        "fifa.world",
-        "fifa.friendly",
-    ],
-    "CAF": [
-        "caf.qualifier",
-        "caf.nations",
-        "fifa.world",
-        "fifa.friendly",
-    ],
-    "AFC": [
-        "afc.qualifier",
-        "afc.asian.cup",
-        "fifa.world",
-        "fifa.friendly",
-    ],
-    "OFC": [
-        "ofc.nations",
-        "fifa.friendly",
-    ],
-}
+_LEAGUES_RECIENTES = ["fifa.world", "fifa.friendly"]
 
-# Rangos de fechas — cubre todo el ciclo clasificatorio al Mundial 2026
-_RANGOS_HISTORICOS = [
-    "20230901-20231130",
-    "20231201-20240229",
-    "20240301-20240531",
-    "20240601-20240831",
-    "20240901-20241130",
-    "20241201-20250228",
-    "20250301-20250531",
-    "20250601-20250831",
-    "20250901-20251130",
-    "20251201-20260229",
-    "20260301-20260531",
-    "20260601-20260610",
-]
-
-# Tipos de competencia → oficial / amistoso
+# Tipos de competencia → oficial / amistoso (fallback por nombre,
+# se usa solo si _league_slug viniera vacío)
 _TIPOS_COMPETENCIA = {
     "fifa world cup":          "oficial",
     "copa america":            "oficial",
@@ -208,7 +197,7 @@ _TIPOS_COMPETENCIA = {
 # Slugs de league que son amistosos
 _SLUGS_AMISTOSO = {"fifa.friendly"}
 
-# Mapa de confederaciones
+# Mapa de confederaciones (solo para el campo informativo "confederacion")
 _CONF_MAP: dict[str, str] = {}
 
 def _build_conf_map():
@@ -305,8 +294,18 @@ def contexto_altitud(alt):
 
 
 def normalizar_nombre(nombre: str) -> str:
-    reemplazos = {"á":"a","é":"e","í":"i","ó":"o","ú":"u","ü":"u","ñ":"n"}
-    n = str(nombre).lower().replace(" ", "")
+    reemplazos = {
+        "á":"a","é":"e","í":"i","ó":"o","ú":"u","ü":"u","ñ":"n",
+        "à":"a","â":"a","ã":"a","ä":"a",
+        "ê":"e","è":"e","ë":"e",
+        "î":"i","ï":"i",
+        "ô":"o","ö":"o","õ":"o",
+        "û":"u","ù":"u",
+        "ç":"c",
+    }
+    n = str(nombre).lower().strip()
+    n = n.replace("'", "").replace("’", "").replace("-", " ")
+    n = n.replace(" ", "")
     for a, b in reemplazos.items():
         n = n.replace(a, b)
     return n
@@ -358,63 +357,142 @@ def clasificar_tipo(nombre_comp: str, league_slug: str = "") -> str:
 
 
 # =====================================================
+# RANKING FIFA EN VIVO
+# =====================================================
+
+def obtener_ranking_fifa():
+    """
+    Descarga el ranking FIFA masculino más reciente directamente desde
+    fifa.com (la página de ranking trae el listado completo embebido).
+
+    Devuelve una lista de dicts:
+      [{"codigo": "ARG", "nombre": "Argentina",
+        "nombre_normalizado": "argentina", "rank": 1, "puntos": 1885.36}, ...]
+
+    Si algo falla, devuelve [] y selecciones.json usará RANKING_FIFA_FALLBACK.
+    """
+    try:
+        r = requests.get(FIFA_RANKING_PAGE, headers=HEADERS, timeout=20)
+        if r.status_code != 200:
+            print(f"  ⚠ fifa.com respondió HTTP {r.status_code}, se usará el respaldo")
+            return []
+
+        m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', r.text, re.S)
+        if not m:
+            print("  ⚠ No se encontró __NEXT_DATA__ en fifa.com, se usará el respaldo")
+            return []
+
+        next_data = json.loads(m.group(1))
+        page_data = (
+            next_data.get("props", {})
+                     .get("pageProps", {})
+                     .get("pageData", {})
+        )
+        ranking_block = page_data.get("ranking", {}) or {}
+
+        items = (
+            ranking_block.get("rankings")
+            or ranking_block.get("items")
+            or []
+        )
+
+        # Si la página solo trae las fechas disponibles, pedimos la más
+        # reciente al endpoint de la API.
+        if not items:
+            dates = ranking_block.get("dates", [])
+            if not dates:
+                print("  ⚠ No se encontró el listado del ranking en fifa.com")
+                return []
+            date_id = dates[0].get("id")
+            data = get_json(FIFA_RANKING_API, {"locale": "en", "dateId": date_id})
+            items = data.get("rankings") or data.get("items") or []
+
+        resultado = []
+        for it in items:
+            nombre = (
+                it.get("countryFull") or it.get("country")
+                or it.get("name") or it.get("teamName") or ""
+            )
+            codigo = (
+                it.get("countryCode") or it.get("code")
+                or it.get("tag") or it.get("countryAbbreviation") or ""
+            )
+            rank   = it.get("rankNumber") or it.get("rank") or it.get("position") or 999
+            puntos = (
+                it.get("totalPoints") or it.get("points")
+                or it.get("totalPointsRaw") or 0.0
+            )
+            if not nombre:
+                continue
+            resultado.append({
+                "codigo":             str(codigo).upper(),
+                "nombre":             nombre,
+                "nombre_normalizado": normalizar_nombre(nombre),
+                "rank":               int(rank),
+                "puntos":             float(puntos),
+            })
+
+        if not resultado:
+            print("  ⚠ Ranking FIFA vacío, se usará el respaldo")
+        else:
+            print(f"  ✓ Ranking FIFA en vivo: {len(resultado)} selecciones")
+        return resultado
+
+    except Exception as e:
+        print(f"  ⚠ Error obteniendo ranking FIFA en vivo ({e}), se usará el respaldo")
+        return []
+
+
+# =====================================================
 # NÚCLEO: CAPTURA DE ESTADÍSTICAS POR SELECCIÓN
 # =====================================================
 
-def _scoreboard_rango(league: str, rango: str) -> list:
-    """Descarga eventos terminados de un league en un rango de fechas."""
-    data = get_json(
-        f"{BASE_SOCCER}/{league}/scoreboard",
-        {"dates": rango, "limit": 100},
-        reintentos=1,
-    )
-    if not data:
-        return []
-    return [
-        e for e in data.get("events", [])
-        if e.get("competitions", [{}])[0]
-           .get("status", {}).get("type", {}).get("state", "") == "post"
-    ]
-
-
-def _recolectar_eventos_seleccion(team_id: str, confederacion: str) -> list:
+def _recolectar_eventos_seleccion(team_id: str) -> list:
     """
-    Recorre leagues históricos + rangos de fechas y devuelve todos
-    los partidos terminados en los que participó team_id.
-    Guarda el slug del league como metadato en cada evento (_league_slug)
-    para clasificar oficial/amistoso de forma confiable.
-    """
-    todos   = {}
-    leagues = _LEAGUES_POR_CONF.get(confederacion, ["fifa.friendly"])
+    Obtiene el calendario reciente de la selección DIRECTO de ESPN,
+    sin reconstruir nada por confederación ni por rangos de fechas.
 
-    for league in leagues:
-        for rango in _RANGOS_HISTORICOS:
-            eventos = _scoreboard_rango(league, rango)
-            for ev in eventos:
-                try:
-                    comp    = ev.get("competitions", [{}])[0]
-                    equipos = comp.get("competitors", [])
-                    ids     = [str(e.get("team", {}).get("id", "")) for e in equipos]
-                    if str(team_id) not in ids:
-                        continue
-                    eid = ev.get("id", "")
-                    if eid and eid not in todos:
-                        # Guardar slug para clasificar oficial/amistoso sin depender del nombre
-                        ev["_league_slug"] = league
-                        todos[eid] = ev
-                except Exception:
+    Consulta el "schedule" del equipo para:
+      - fifa.world    → partidos del Mundial 2026
+      - fifa.friendly → amistosos internacionales (pre-mundial, etc.)
+
+    Solo se conservan los partidos ya finalizados ("post").
+    Cada evento queda marcado con su "_league_slug" para que
+    clasificar_tipo() lo etiquete como oficial/amistoso.
+    """
+    todos = {}
+
+    for league in _LEAGUES_RECIENTES:
+        data = get_json(
+            f"{BASE_SOCCER}/{league}/teams/{team_id}/schedule",
+            reintentos=2,
+        )
+        if not data:
+            continue
+
+        for ev in data.get("events", []):
+            try:
+                comp   = ev.get("competitions", [{}])[0]
+                estado = comp.get("status", {}).get("type", {}).get("state", "")
+                if estado != "post":
                     continue
-            time.sleep(0.15)
 
-        if len(todos) >= 80:
-            return list(todos.values())
+                eid = ev.get("id", "")
+                if eid and eid not in todos:
+                    ev["_league_slug"] = league
+                    todos[eid] = ev
+            except Exception:
+                continue
+
+        time.sleep(0.2)
 
     return list(todos.values())
 
 
 def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dict:
     """
-    Procesa el historial recolectado y calcula todas las métricas.
+    Procesa el historial reciente (fifa.world + fifa.friendly, vía ESPN)
+    y calcula todas las métricas.
 
     Campos principales (combinados):
       - forma:         forma general sobre los últimos 10 partidos (oficiales + amistosos)
@@ -454,7 +532,7 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
         "_todos_resultados": [],
     }
 
-    eventos = _recolectar_eventos_seleccion(team_id, confederacion)
+    eventos = _recolectar_eventos_seleccion(team_id)
     if not eventos:
         for k in ["_ciudades_local", "_gf_of", "_gc_of", "_gf_am", "_gc_am", "_todos_resultados"]:
             stats.pop(k, None)
@@ -692,8 +770,8 @@ def obtener_selecciones(grupos):
     Campos en selecciones.json por equipo:
       Identidad:        nombre, abreviacion, escudo, id_espn, confederacion
       Geografía:        altitud_base, ciudades_local
-      Ranking FIFA:     ranking_fifa, puntos_fifa
-      Forma general:    forma, ultimos_5              ← combinado oficial+amistoso
+      Ranking FIFA:     ranking_fifa, puntos_fifa   ← en vivo desde fifa.com
+      Forma general:    forma, ultimos_5            ← combinado oficial+amistoso, vía ESPN
       Stats oficiales:  partidos_oficial … ultimos_5_oficial   (secundarios)
       Stats amistosos:  partidos_amistoso … ultimos_5_amistoso (secundarios)
       Local/Visita:     partidos_local … win_rate_neutro
@@ -723,6 +801,44 @@ def obtener_selecciones(grupos):
         if abrev:
             id_por_abrev[abrev]   = str(t.get("id", ""))
             conf_por_abrev[abrev] = t.get("displayConference", "")
+
+    # ── Ranking FIFA en vivo ──
+    print("  ▶ Descargando ranking FIFA en vivo...")
+    ranking_fifa      = obtener_ranking_fifa()
+    ranking_por_codigo = {r["codigo"]: r for r in ranking_fifa if r["codigo"]}
+    ranking_por_nombre = {r["nombre_normalizado"]: r for r in ranking_fifa}
+
+    def buscar_ranking(abrev, nombre):
+        abrev = abrev.upper()
+
+        # 1) Alias manual (casos donde FIFA y ESPN nombran distinto)
+        alias = RANKING_FIFA_ALIASES.get(abrev)
+        if alias and alias in ranking_por_nombre:
+            r = ranking_por_nombre[alias]
+            return r["rank"], r["puntos"]
+
+        # 2) Por código FIFA (suele coincidir con la abreviación de ESPN)
+        if abrev in ranking_por_codigo:
+            r = ranking_por_codigo[abrev]
+            return r["rank"], r["puntos"]
+
+        # 3) Por nombre normalizado exacto
+        key = normalizar_nombre(nombre)
+        if key in ranking_por_nombre:
+            r = ranking_por_nombre[key]
+            return r["rank"], r["puntos"]
+
+        # 4) Coincidencia parcial de nombre
+        for k, r in ranking_por_nombre.items():
+            if k and (k in key or key in k):
+                return r["rank"], r["puntos"]
+
+        # 5) Respaldo estático
+        if abrev in RANKING_FIFA_FALLBACK:
+            return RANKING_FIFA_FALLBACK[abrev]
+
+        print(f"    ⚠ Sin ranking FIFA para {nombre} ({abrev}) — usando 999")
+        return (999, 0.0)
 
     selecciones = {}
     total       = len(equipos_vistos)
@@ -763,7 +879,7 @@ def obtener_selecciones(grupos):
             stats = scrape_stats_seleccion(id_espn, nombre, confederacion)
 
         ciudades_local = stats.pop("_ciudades_local", [])
-        ranking_info   = RANKING_FIFA.get(abrev.upper(), (999, 0.0))
+        ranking_pos, ranking_pts = buscar_ranking(abrev, nombre)
         slug           = normalizar_nombre(nombre)
 
         selecciones[slug] = {
@@ -778,9 +894,9 @@ def obtener_selecciones(grupos):
             "altitud_base":   altitud_seleccion(abrev),
             "ciudades_local": ciudades_local[:5],
 
-            # Ranking FIFA
-            "ranking_fifa": ranking_info[0],
-            "puntos_fifa":  ranking_info[1],
+            # Ranking FIFA (en vivo)
+            "ranking_fifa": ranking_pos,
+            "puntos_fifa":  ranking_pts,
 
             # Forma general combinada (oficial + amistoso)
             "forma":     stats["forma"],
@@ -913,7 +1029,7 @@ def main():
     grupos = obtener_grupos()
     generar_tabla(grupos)
 
-    print("\n▶ Selecciones (puede tardar 5-10 min por los rangos históricos)...")
+    print("\n▶ Selecciones (ranking FIFA en vivo + calendario reciente de ESPN)...")
     selecciones = obtener_selecciones(grupos)
 
     print("\n▶ Fixture (hoy + mañana)...")

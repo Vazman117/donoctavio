@@ -1,5 +1,103 @@
 [
   {
+    "id": "760418",
+    "fecha": "2026-06-14T01:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Haiti",
+    "visitante": "Scotland",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+    "estadio": "Gillette Stadium",
+    "ciudad_sede": "Foxborough, Massachusetts",
+    "pais_sede": "USA",
+    "altitud_sede": 25,
+    "es_neutro": true,
+    "prob_local": 0.3605697205835559,
+    "prob_empate": 0.2785047438112366,
+    "prob_visitante": 0.3609255356052076,
+    "fuerza_local": 0.3626413743635055,
+    "fuerza_visitante": 0.3627455681364944,
+    "diferencia": 0.00010419377298886978,
+    "confianza": "ajustado",
+    "prediccion": "Scotland",
+    "resultado": "Scotland",
+    "lambda_local": 0.9415372701944897,
+    "lambda_visitante": 0.9424563914438212,
+    "factor_altitud_local": 0.99875,
+    "factor_altitud_visitante": 0.9995,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [],
+          "nombre": "Haiti"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [],
+          "nombre": "Scotland"
+        },
+        "interpretacion": "Momentum similar: Haiti 0.50/1.0 — Scotland 0.50/1.0."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 0.0,
+          "nombre": "Haiti"
+        },
+        "visitante": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 0.0,
+          "nombre": "Scotland"
+        },
+        "interpretacion": "Selecciones parejas en ranking FIFA: #999 vs #999. La calidad individual no diferencia decisivamente."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 25,
+        "ciudad_sede": "Foxborough, Massachusetts",
+        "local": {
+          "nombre": "Haiti",
+          "altitud_base": 0,
+          "factor": 0.999
+        },
+        "visitante": {
+          "nombre": "Scotland",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (25m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Haiti",
+          "goles_favor": 1.0,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Scotland",
+          "goles_favor": 1.0,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Producción similar: Haiti 1.00 — Scotland 1.00 goles/partido. Defensa: 1.00 vs 1.00."
+      }
+    ]
+  },
+  {
     "id": "760419",
     "fecha": "2026-06-13T22:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",
