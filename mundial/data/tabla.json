@@ -24,6 +24,18 @@
     "partidos": 1.0
   },
   {
+    "grupo": "Group D",
+    "posicion": 2.0,
+    "equipo": "Australia",
+    "abreviacion": "AUS",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+    "puntos": 3.0,
+    "diferencia_goles": 2.0,
+    "goles_favor": 2.0,
+    "goles_contra": 0.0,
+    "partidos": 1.0
+  },
+  {
     "grupo": "Group A",
     "posicion": 2.0,
     "equipo": "South Korea",
@@ -118,30 +130,6 @@
     "goles_favor": 1.0,
     "goles_contra": 1.0,
     "partidos": 1.0
-  },
-  {
-    "grupo": "Group D",
-    "posicion": 3.0,
-    "equipo": "Türkiye",
-    "abreviacion": "TUR",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group D",
-    "posicion": 2.0,
-    "equipo": "Australia",
-    "abreviacion": "AUS",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
   },
   {
     "grupo": "Group E",
@@ -557,6 +545,18 @@
     "equipo": "South Africa",
     "abreviacion": "RSA",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+    "puntos": 0.0,
+    "diferencia_goles": -2.0,
+    "goles_favor": 0.0,
+    "goles_contra": 2.0,
+    "partidos": 1.0
+  },
+  {
+    "grupo": "Group D",
+    "posicion": 3.0,
+    "equipo": "Türkiye",
+    "abreviacion": "TUR",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
     "puntos": 0.0,
     "diferencia_goles": -2.0,
     "goles_favor": 0.0,

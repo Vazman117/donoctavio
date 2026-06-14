@@ -147,7 +147,7 @@ PARTIDOS_GRUPO = [
 
     # ── GRUPO D ──────────────────────────────────────────────
     # ("USA",         "Paraguay",  "Los Angeles"),   # JUGADO 4-1
-    ("Australia",   "Türkiye",    "Vancouver"),
+    # ("Australia",   "Türkiye",    "Vancouver"),    # JUGADO 2-0
     ("United States", "Australia", "Seattle"),
     ("Türkiye",      "Paraguay",  "San Francisco"),
     ("Türkiye",  "United States", "Los Angeles"),
