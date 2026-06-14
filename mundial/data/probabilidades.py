@@ -138,8 +138,8 @@ PARTIDOS_GRUPO = [
     ("Bosnia-Herzegovina", "Qatar",        "Seattle"),
 
     # ── GRUPO C ──────────────────────────────────────────────
-    ("Brazil",      "Morocco",   "New York"),
-    ("Haiti",       "Scotland",  "Boston"),
+    # ("Brazil",      "Morocco",   "New York"),  # JUGADO 1-1
+    # ("Haiti",       "Scotland",  "Boston"),    # JUGADO 0-1
     ("Scotland",    "Morocco",   "Boston"),
     ("Brazil",      "Haiti",     "Philadelphia"),
     ("Morocco",     "Haiti",     "Atlanta"),

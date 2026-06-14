@@ -1,5 +1,5 @@
 [
-  {
+ {
     "id": "760420",
     "fecha": "2026-06-13T19:00Z",
     "estado": "Scheduled",
@@ -59,8 +59,8 @@
   {
     "id": "760421",
     "fecha": "2026-06-14T04:00Z",
-    "estado": "Scheduled",
-    "minuto": "0'",
+    "estado": "First Half",
+    "minuto": "25'",
     "local": "Australia",
     "visitante": "Türkiye",
     "id_espn_local": "628",

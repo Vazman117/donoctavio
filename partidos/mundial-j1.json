@@ -221,17 +221,17 @@
     "pais_sede": "USA",
     "altitud_sede": 16,
     "es_neutro": true,
-    "prob_local": 0.49668375424735506,
-    "prob_empate": 0.2461652899777221,
-    "prob_visitante": 0.2571509557749229,
-    "fuerza_local": 0.5616002201685906,
-    "fuerza_visitante": 0.4977353522820834,
-    "diferencia": 0.06386486788650719,
-    "confianza": "favorable",
+    "prob_local": 0.35195781493141065,
+    "prob_empate": 0.29677949753919153,
+    "prob_visitante": 0.3512626875293978,
+    "fuerza_local": 0.3627603385030267,
+    "fuerza_visitante": 0.3332055384969734,
+    "diferencia": 0.029554800006053317,
+    "confianza": "ajustado",
     "prediccion": "Qatar",
     "resultado": "Empate",
-    "lambda_local": 1.4393645565878674,
-    "lambda_visitante": 0.7559573400090425,
+    "lambda_local": 0.7920054455453416,
+    "lambda_visitante": 0.8302514288354917,
     "factor_altitud_local": 0.9997,
     "factor_altitud_visitante": 0.9992,
     "analisis": [
@@ -240,46 +240,44 @@
         "impacto": "alto",
         "tipo": "forma",
         "local": {
-          "valor": 0.76,
+          "valor": 0.5,
           "ultimos_5": [
-            "W",
-            "W",
-            "W",
-            "W",
-            "W"
-          ],
-          "nombre": "Qatar"
-        },
-        "visitante": {
-          "valor": 0.31,
-          "ultimos_5": [
-            "W",
-            "L",
             "L",
             "L",
             "L"
           ],
+          "nombre": "Qatar"
+        },
+        "visitante": {
+          "valor": 0.25,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
           "nombre": "Switzerland"
         },
-        "interpretacion": "Qatar llega con mejor momentum: índice 0.76/1.0 frente a 0.31/1.0 de Switzerland. Últimos 5: 5V/0E/0D vs 1V/0E/4D."
+        "interpretacion": "Qatar llega con mejor momentum: índice 0.50/1.0 frente a 0.25/1.0 de Switzerland. Últimos 5: 0V/0E/3D vs 1V/0E/4D."
       },
       {
         "factor": "Ranking FIFA",
-        "impacto": "medio",
+        "impacto": "bajo",
         "tipo": "barras",
         "local": {
-          "etiqueta": "#56 FIFA",
-          "valor": 0.737,
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
           "puntos": 0.0,
           "nombre": "Qatar"
         },
         "visitante": {
-          "etiqueta": "#19 FIFA",
-          "valor": 0.914,
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
           "puntos": 0.0,
           "nombre": "Switzerland"
         },
-        "interpretacion": "Diferencia significativa en ranking FIFA: #56 Qatar (0 pts) vs #19 Switzerland (0 pts). Switzerland tiene ventaja objetiva de calidad."
+        "interpretacion": "Selecciones parejas en ranking FIFA: #999 vs #999. La calidad individual no diferencia decisivamente."
       },
       {
         "factor": "Factor altitud",
@@ -301,19 +299,19 @@
       },
       {
         "factor": "Potencial ofensivo y defensivo",
-        "impacto": "bajo",
+        "impacto": "medio",
         "tipo": "doble_barra",
         "local": {
           "nombre": "Qatar",
-          "goles_favor": 1.67,
-          "goles_contra": 0.86
+          "goles_favor": 1.0,
+          "goles_contra": 1.0
         },
         "visitante": {
           "nombre": "Switzerland",
-          "goles_favor": 1.75,
-          "goles_contra": 1.38
+          "goles_favor": 1.3,
+          "goles_contra": 1.15
         },
-        "interpretacion": "Producción similar: Qatar 1.67 — Switzerland 1.75 goles/partido. Defensa: 0.86 vs 1.38."
+        "interpretacion": "Producción similar: Qatar 1.00 — Switzerland 1.30 goles/partido. Defensa: 1.00 vs 1.15."
       }
     ]
   },
