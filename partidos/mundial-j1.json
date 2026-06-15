@@ -1,5 +1,113 @@
 [
   {
+    "id": "760426",
+    "fecha": "2026-06-15T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Belgium",
+    "visitante": "Egypt",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+    "estadio": "Lumen Field",
+    "ciudad_sede": "Seattle, Washington",
+    "pais_sede": "USA",
+    "altitud_sede": 0,
+    "es_neutro": true,
+    "prob_local": 0.5396068282125632,
+    "prob_empate": 0.21940312957113808,
+    "prob_visitante": 0.2409900422162987,
+    "fuerza_local": 0.7098756222214628,
+    "fuerza_visitante": 0.5956043390225564,
+    "diferencia": 0.11427128319890645,
+    "confianza": "favorable",
+    "prediccion": "Belgium",
+    "resultado": "Empate",
+    "lambda_local": 1.809252309468822,
+    "lambda_visitante": 0.9012561257252294,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.75,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Belgium"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Egypt"
+        },
+        "interpretacion": "Belgium llega con mejor momentum: índice 0.75/1.0 frente a 0.50/1.0 de Egypt. Últimos 5: 3V/0E/1D vs 2V/0E/2D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#8 FIFA",
+          "valor": 0.967,
+          "puntos": 1741.7,
+          "nombre": "Belgium"
+        },
+        "visitante": {
+          "etiqueta": "#23 FIFA",
+          "valor": 0.895,
+          "puntos": 1589.3,
+          "nombre": "Egypt"
+        },
+        "interpretacion": "Leve diferencia en ranking: #8 Belgium vs #23 Egypt. El factor puede influir en momentos clave."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Seattle, Washington",
+        "local": {
+          "nombre": "Belgium",
+          "altitud_base": 56,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Egypt",
+          "altitud_base": 23,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Belgium",
+          "goles_favor": 3.25,
+          "goles_contra": 0.75
+        },
+        "visitante": {
+          "nombre": "Egypt",
+          "goles_favor": 1.5,
+          "goles_contra": 0.5
+        },
+        "interpretacion": "Belgium más ofensivo: 3.25 goles/partido (vs 1.50). Defensiva: 0.75 vs 0.50."
+      }
+    ]
+  },
+  {
     "id": "760422",
     "fecha": "2026-06-14T17:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",
