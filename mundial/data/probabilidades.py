@@ -154,16 +154,16 @@ PARTIDOS_GRUPO = [
     ("Paraguay",    "Australia", "Miami"),
 
     # ── GRUPO E ──────────────────────────────────────────────
-    ("Germany",     "Curaçao",    "Houston"),
-    ("Ivory Coast", "Ecuador",    "Philadelphia"),
+    # ("Germany",     "Curaçao",    "Houston"),  # JUGADO 7-1
+    # ("Ivory Coast", "Ecuador",    "Philadelphia"), # JUGADO 1-0
     ("Ecuador",     "Curaçao",    "Kansas City"),
     ("Germany",     "Ivory Coast","New York"),
     ("Ecuador",     "Germany",    "New York"),
     ("Curaçao",     "Ivory Coast","Miami"),
 
     # ── GRUPO F ──────────────────────────────────────────────
-    ("Netherlands", "Japan",      "Dallas"),
-    ("Sweden",      "Tunisia",    "Monterrey"),
+    # ("Netherlands", "Japan",      "Dallas"),    # JUGADO 2-2
+    # ("Sweden",      "Tunisia",    "Monterrey"), # JUGADO 5-1
     ("Netherlands", "Sweden",     "Houston"),
     ("Japan",       "Tunisia",    "Monterrey"),
     ("Japan",       "Sweden",     "Dallas"),
@@ -178,7 +178,7 @@ PARTIDOS_GRUPO = [
     ("Iran",        "Egypt",      "Dallas"),
 
     # ── GRUPO H ──────────────────────────────────────────────
-    ("Spain",       "Cape Verde", "Atlanta"),
+    # ("Spain",       "Cape Verde", "Atlanta"),  # JUGADO 0-0
     ("Saudi Arabia","Uruguay",    "Miami"),
     ("Spain",       "Saudi Arabia","Atlanta"),
     ("Uruguay",     "Cape Verde", "Houston"),
