@@ -171,7 +171,7 @@ PARTIDOS_GRUPO = [
 
     # ── GRUPO G ──────────────────────────────────────────────
     # ("Belgium",     "Egypt",      "Seattle"),   # JUGADO 1-1
-    ("Iran",        "New Zealand","Los Angeles"),
+    # ("Iran",        "New Zealand","Los Angeles"), # JUGADO 2-2
     ("Belgium",     "Iran",       "Los Angeles"),
     ("Egypt",       "New Zealand","Miami"),
     ("Belgium",     "New Zealand","San Francisco"),

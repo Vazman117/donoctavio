@@ -1,5 +1,113 @@
 [
   {
+    "id": "760427",
+    "fecha": "2026-06-16T01:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Iran",
+    "visitante": "New Zealand",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+    "estadio": "SoFi Stadium",
+    "ciudad_sede": "Los Angeles, California",
+    "pais_sede": "USA",
+    "altitud_sede": 93,
+    "es_neutro": true,
+    "prob_local": 0.58,
+    "prob_empate": 0.21210486173541088,
+    "prob_visitante": 0.2078951382645892,
+    "fuerza_local": 0.6748905972694274,
+    "fuerza_visitante": 0.4786387681634464,
+    "diferencia": 0.19625182910598093,
+    "confianza": "favorable",
+    "prediccion": "Iran",
+    "resultado": "Empate",
+    "lambda_local": 2.431216418434339,
+    "lambda_visitante": 0.6003733618075071,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 0.99685,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.75,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Iran"
+        },
+        "visitante": {
+          "valor": 0.25,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "New Zealand"
+        },
+        "interpretacion": "Iran llega con mejor momentum: índice 0.75/1.0 frente a 0.25/1.0 de New Zealand. Últimos 5: 3V/0E/1D vs 1V/0E/3D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#31 FIFA",
+          "valor": 0.856,
+          "puntos": 1528.7,
+          "nombre": "Iran"
+        },
+        "visitante": {
+          "etiqueta": "#42 FIFA",
+          "valor": 0.804,
+          "puntos": 1455.8,
+          "nombre": "New Zealand"
+        },
+        "interpretacion": "Leve diferencia en ranking: #31 Iran vs #42 New Zealand. El factor puede influir en momentos clave."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 93,
+        "ciudad_sede": "Los Angeles, California",
+        "local": {
+          "nombre": "Iran",
+          "altitud_base": 1191,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "New Zealand",
+          "altitud_base": 30,
+          "factor": 0.997
+        },
+        "interpretacion": "Sede en condiciones normales (93m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Iran",
+          "goles_favor": 2.0,
+          "goles_contra": 0.5
+        },
+        "visitante": {
+          "nombre": "New Zealand",
+          "goles_favor": 1.0,
+          "goles_contra": 2.0
+        },
+        "interpretacion": "Iran más ofensivo: 2.00 goles/partido (vs 1.00). Defensiva: 0.50 vs 2.00."
+      }
+    ]
+  },
+  {
     "id": "760429",
     "fecha": "2026-06-15T22:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

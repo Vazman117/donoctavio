@@ -120,6 +120,30 @@
     "partidos": 1.0
   },
   {
+    "grupo": "Group G",
+    "posicion": 2.0,
+    "equipo": "Iran",
+    "abreviacion": "IRN",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
+    "puntos": 1.0,
+    "diferencia_goles": 0.0,
+    "goles_favor": 2.0,
+    "goles_contra": 2.0,
+    "partidos": 1.0
+  },
+  {
+    "grupo": "Group G",
+    "posicion": 1.0,
+    "equipo": "New Zealand",
+    "abreviacion": "NZL",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+    "puntos": 1.0,
+    "diferencia_goles": 0.0,
+    "goles_favor": 2.0,
+    "goles_contra": 2.0,
+    "partidos": 1.0
+  },
+  {
     "grupo": "Group B",
     "posicion": 2.0,
     "equipo": "Canada",
@@ -193,7 +217,7 @@
   },
   {
     "grupo": "Group G",
-    "posicion": 1.0,
+    "posicion": 3.0,
     "equipo": "Belgium",
     "abreviacion": "BEL",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
@@ -205,7 +229,7 @@
   },
   {
     "grupo": "Group G",
-    "posicion": 2.0,
+    "posicion": 4.0,
     "equipo": "Egypt",
     "abreviacion": "EGY",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
@@ -262,30 +286,6 @@
     "goles_favor": 0.0,
     "goles_contra": 0.0,
     "partidos": 1.0
-  },
-  {
-    "grupo": "Group G",
-    "posicion": 3.0,
-    "equipo": "Iran",
-    "abreviacion": "IRN",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group G",
-    "posicion": 4.0,
-    "equipo": "New Zealand",
-    "abreviacion": "NZL",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
   },
   {
     "grupo": "Group I",
