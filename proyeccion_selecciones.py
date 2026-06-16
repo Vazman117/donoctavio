@@ -384,10 +384,6 @@ def probabilidades_poisson(lambda_local, lambda_visitante, max_goles=8):
 # =============================
 
 def marcadores_probables(lambda_local, lambda_visitante, top_n=5, max_goles=6):
-    """
-    Calcula los marcadores más probables usando distribución de Poisson.
-    Retorna una lista ordenada de mayor a menor probabilidad con al menos top_n resultados.
-    """
     from math import exp, factorial
 
     def pmf(k, lam):
@@ -574,7 +570,7 @@ def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neut
 
 
 # =============================
-# AJUSTE LAMBDA
+# AJUSTE LAMBDA  ← MODIFICADO
 # =============================
 
 def ajuste_empate_por_lambdas(prob_local, prob_empate, prob_visitante,
@@ -585,23 +581,25 @@ def ajuste_empate_por_lambdas(prob_local, prob_empate, prob_visitante,
     boost = 0.0
 
     # Escenario 1: partido trabado (pocos goles y equilibrado)
-    if suma_lambda < 1.6 and diff_lambda < 0.40:
-        intensidad = limitar((1.6 - suma_lambda) / 0.8, 0.0, 1.0)
+    # ANTES: suma < 1.6 — AHORA: suma < 2.2  →  captura casos tipo 1.1 + 0.98
+    if suma_lambda < 2.2 and diff_lambda < 0.40:
+        intensidad = limitar((2.2 - suma_lambda) / 1.2, 0.0, 1.0)
         boost += 0.10 * intensidad
 
     # Escenario 2: cerrado aunque con más goles
-    if diff_lambda < 0.30 and suma_lambda < 2.5:
-        intensidad = limitar((0.30 - diff_lambda) / 0.30, 0.0, 1.0)
-        boost += 0.07 * intensidad
+    # ANTES: diff < 0.30 y suma < 2.5 — AHORA: diff < 0.40 y suma < 2.8
+    if diff_lambda < 0.40 and suma_lambda < 2.8:
+        intensidad = limitar((0.40 - diff_lambda) / 0.40, 0.0, 1.0)
+        boost += 0.09 * intensidad
 
-    # Escenario 3: muy cerrado (lambdas casi iguales)
+    # Escenario 3: muy cerrado (lambdas casi iguales) — sin cambios
     if diff_lambda < 0.15:
         boost += 0.05
 
     if boost <= 0.0:
         return prob_local, prob_empate, prob_visitante
 
-    boost = limitar(boost, 0.0, 0.18)
+    boost = limitar(boost, 0.0, 0.20)
 
     total_lv = prob_local + prob_visitante
     if total_lv <= 0:
@@ -619,7 +617,7 @@ def ajuste_empate_por_lambdas(prob_local, prob_empate, prob_visitante,
 
 
 # =============================
-# PREDICCIÓN INTELIGENTE
+# PREDICCIÓN INTELIGENTE  ← MODIFICADO
 # =============================
 
 def prediccion_inteligente(prob_local, prob_empate, prob_visitante,
@@ -633,11 +631,13 @@ def prediccion_inteligente(prob_local, prob_empate, prob_visitante,
         return "Empate"
 
     # Regla 2: partido muy trabado (pocos goles, lambdas similares)
-    if suma_lambda < 1.6 and diff_lambda < 0.35:
+    # ANTES: suma < 1.6 — AHORA: suma < 2.3
+    if suma_lambda < 2.3 and diff_lambda < 0.35:
         return "Empate"
 
     # Regla 3: lambdas similares + empate competitivo
-    if diff_lambda < 0.28 and prob_empate > 0.24:
+    # ANTES: diff < 0.28 — AHORA: diff < 0.40  (también captura 1.1 vs 0.98)
+    if diff_lambda < 0.40 and prob_empate > 0.24:
         favorito_prob = max(prob_local, prob_visitante)
         if favorito_prob - prob_empate < 0.10:
             return "Empate"
@@ -686,17 +686,14 @@ def predecir_probabilidades(
     ctx_l = {**contexto, "es_local": True}
     ctx_v = {**contexto, "es_local": False}
 
-    # ── Capa 1: Poisson ──────────────────────────────────────────────
     lambda_local, lambda_visitante = calcular_lambdas(
         sel_local, sel_visitante, contexto, promedio_global
     )
     p_local, p_empate, p_visitante = probabilidades_poisson(lambda_local, lambda_visitante)
 
-    # ── Capa 2: Fuerza base ───────────────────────────────────────────
     fb_local     = calcular_fuerza_base(sel_local,     ctx_l, cfg)
     fb_visitante = calcular_fuerza_base(sel_visitante, ctx_v, cfg)
 
-    # ── H2H ──────────────────────────────────────────────────────────
     if cfg["usa_h2h"] and h2h_data:
         h2h_local, n_h2h, partidos_h2h = calcular_h2h_score(
             nombre_local, nombre_visitante, h2h_data
@@ -705,7 +702,6 @@ def predecir_probabilidades(
         h2h_local, n_h2h, partidos_h2h = 0.5, 0, []
     h2h_visitante = 1.0 - h2h_local
 
-    # ── Altitud ───────────────────────────────────────────────────────
     if cfg["usa_altitud"]:
         alt_sede     = contexto.get("altitud_sede", 0)
         factor_alt_l = calcular_factor_altitud(alt_sede, sel_local.get("altitud_base", 0))
@@ -716,7 +712,6 @@ def predecir_probabilidades(
     else:
         alt_norm_l = alt_norm_v = 0.5
 
-    # ── Fuerza compuesta ──────────────────────────────────────────────
     PESO_BASE    = cfg["PESO_BASE"]
     PESO_H2H     = cfg["PESO_H2H"]
     PESO_ALTITUD = cfg["PESO_ALTITUD"]
@@ -732,7 +727,6 @@ def predecir_probabilidades(
         alt_norm_v    * PESO_ALTITUD
     )
 
-    # ── Score logístico ───────────────────────────────────────────────
     score   = f_local - f_visitante
     ratio_l = 1 / (1 + math.exp(-cfg["K_LOGISTICO"] * score))
     ratio_v = 1 - ratio_l
@@ -744,13 +738,11 @@ def predecir_probabilidades(
         ratio_v = cfg["MAX_FAVORITO"]
         ratio_l = 1 - ratio_v
 
-    # ── Empate ────────────────────────────────────────────────────────
     prob_empate_f    = calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neutro)
     restante         = 1.0 - prob_empate_f
     prob_local_f     = restante * ratio_l
     prob_visitante_f = restante * ratio_v
 
-    # ── Fusión Poisson + fuerza ───────────────────────────────────────
     ALPHA = cfg["ALPHA"]
     BETA  = cfg["BETA"]
 
@@ -763,12 +755,10 @@ def predecir_probabilidades(
     prob_empate   /= total
     prob_visitante /= total
 
-    # ── Cap final ─────────────────────────────────────────────────────
     prob_local, prob_empate, prob_visitante = _aplicar_cap_final(
         prob_local, prob_empate, prob_visitante, cfg["MAX_FAVORITO"]
     )
 
-    # ── Ajuste por lambdas ────────────────────────────────────────────
     prob_local, prob_empate, prob_visitante = ajuste_empate_por_lambdas(
         prob_local, prob_empate, prob_visitante,
         lambda_local, lambda_visitante,
@@ -807,7 +797,6 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
     ciudad_sede  = contexto.get("ciudad_sede", "")
     es_neutro    = contexto.get("es_neutro", False)
 
-    # ── 1. FORMA RECIENTE ────────────────────────────────────────────
     fl    = local["forma_ponderada"]
     fv    = visitante["forma_ponderada"]
     ul5_l = local.get("ultimos_5", [])
@@ -838,7 +827,6 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion": interp,
     })
 
-    # ── 2. ALTITUD ───────────────────────────────────────────────────
     alt_l = local.get("altitud_base", 0)
     alt_v = visitante.get("altitud_base", 0)
     fa_l  = resultado["factor_altitud_local"]
@@ -877,7 +865,6 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion": interp,
     })
 
-    # ── 3. POTENCIAL OFENSIVO Y DEFENSIVO ────────────────────────────
     gf_l = local["goles_favor_promedio"];     gc_l = local["goles_contra_promedio"]
     gf_v = visitante["goles_favor_promedio"]; gc_v = visitante["goles_contra_promedio"]
     ventaja_of = gf_l - gf_v
@@ -902,7 +889,6 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion": interp,
     })
 
-    # ── 4. SEÑAL LAMBDA ───────────────────────────────────────────────
     ll = resultado["lambda_local"]
     lv = resultado["lambda_visitante"]
     suma_l = ll + lv
@@ -935,7 +921,6 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion": interp_l,
     })
 
-    # ── 5. MARCADORES MÁS PROBABLES ──────────────────────────────────
     top_marcadores = marcadores_probables(ll, lv, top_n=5)
     marcador_top   = top_marcadores[0]
 
@@ -959,7 +944,6 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion":   interp_m,
     })
 
-    # ── 6. H2H (si aplica) ───────────────────────────────────────────
     n_h2h = resultado["n_h2h"]
     if cfg["usa_h2h"] and n_h2h > 0:
         h2h_score = resultado["h2h_local"]
@@ -1065,7 +1049,6 @@ def generar_partido(
         contexto, promedio_global, cfg,
     )
 
-    # ── Predicción con lambdas integrados ────────────────────────────
     pred = prediccion_inteligente(
         resultado["local"],
         resultado["empate"],
@@ -1076,7 +1059,6 @@ def generar_partido(
         visitante["nombre"],
     )
 
-    # ── Marcadores más probables (top nivel) ─────────────────────────
     top_marcadores = marcadores_probables(
         resultado["lambda_local"],
         resultado["lambda_visitante"],
@@ -1183,7 +1165,6 @@ if __name__ == "__main__":
             sede   = f"{p['ciudad_sede']}{tag_alt}"
             neutro = " [NEUTRO]" if p["es_neutro"] else ""
 
-            # Marcador más probable
             top1 = p["marcadores_probables"][0]
 
             print(f"  ⚽ {p['local']:<20} vs {p['visitante']:<20}  {sede}{neutro}")
