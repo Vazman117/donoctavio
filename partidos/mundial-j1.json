@@ -1,5 +1,112 @@
 [
   {
+    "id": "760429",
+    "fecha": "2026-06-15T22:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Saudi Arabia",
+    "visitante": "Uruguay",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
+    "estadio": "Hard Rock Stadium",
+    "ciudad_sede": "Miami Gardens, Florida",
+    "pais_sede": "USA",
+    "altitud_sede": 3,
+    "es_neutro": true,
+    "prob_local": 0.2959574718021026,
+    "prob_empate": 0.2801556962376097,
+    "prob_visitante": 0.4238868319602877,
+    "fuerza_local": 0.3102346775606974,
+    "fuerza_visitante": 0.5699423923781269,
+    "diferencia": 0.25970771481742955,
+    "confianza": "moderado",
+    "prediccion": "Uruguay",
+    "resultado": "Empate",
+    "lambda_local": 0.7621335119897494,
+    "lambda_visitante": 0.9941275759776058,
+    "factor_altitud_local": 0.99985,
+    "factor_altitud_visitante": 1.0,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.2,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Saudi Arabia"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L"
+          ],
+          "nombre": "Uruguay"
+        },
+        "interpretacion": "Uruguay llega con mejor momentum: índice 0.50/1.0 frente a 0.20/1.0 de Saudi Arabia. Últimos 5: 0V/0E/2D vs 1V/0E/4D."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "#999 FIFA",
+          "valor": 0.25,
+          "puntos": 0.0,
+          "nombre": "Saudi Arabia"
+        },
+        "visitante": {
+          "etiqueta": "#11 FIFA",
+          "valor": 0.952,
+          "puntos": 1690.4,
+          "nombre": "Uruguay"
+        },
+        "interpretacion": "Diferencia significativa en ranking FIFA: #999 Saudi Arabia (0 pts) vs #11 Uruguay (1690 pts). Uruguay tiene ventaja objetiva de calidad."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 3,
+        "ciudad_sede": "Miami Gardens, Florida",
+        "local": {
+          "nombre": "Saudi Arabia",
+          "altitud_base": 0,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Uruguay",
+          "altitud_base": 43,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (3m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Saudi Arabia",
+          "goles_favor": 1.0,
+          "goles_contra": 1.6
+        },
+        "visitante": {
+          "nombre": "Uruguay",
+          "goles_favor": 0.5,
+          "goles_contra": 0.5
+        },
+        "interpretacion": "Saudi Arabia más ofensivo: 1.00 goles/partido (vs 0.50). Defensiva: 1.60 vs 0.50."
+      }
+    ]
+  },
+  {
     "id": "760426",
     "fecha": "2026-06-15T19:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

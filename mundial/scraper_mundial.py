@@ -13,13 +13,12 @@
 # /mundial/data/fixture.json      → partidos de hoy y mañana
 #
 # CAMBIOS EN ESTA VERSIÓN:
-#   - El ranking FIFA ya NO es un diccionario fijo: se descarga en vivo
-#     desde fifa.com (con un respaldo estático solo por si la consulta falla).
-#   - Las estadísticas de cada selección (forma, últimos partidos, etc.)
-#     ya NO se reconstruyen recorriendo eliminatorias por confederación.
-#     Se toman directo del calendario de cada selección en ESPN, solo
-#     ligas "fifa.world" (Mundial) y "fifa.friendly" (amistosos),
-#     que es justo lo que ESPN ya tiene publicado y reflejado.
+#   - Solo se capturan partidos desde FECHA_CORTE (2025-01-01 por defecto).
+#     Esto elimina el ruido histórico y refleja el estado real del equipo
+#     en el contexto del torneo actual.
+#   - Se mantienen solo fifa.world y fifa.friendly como fuentes,
+#     que son suficientes para el período reciente.
+#   - El ranking FIFA ya NO interviene en ningún cálculo del motor.
 
 import os
 import re
@@ -51,6 +50,12 @@ HEADERS = {
     "Accept": "application/json",
 }
 
+# Solo se procesan partidos a partir de esta fecha.
+# Ajusta según cuánto contexto quieras (recomendado: 18 meses atrás).
+FECHA_CORTE = "2025-01-01"
+
+_LEAGUES_RECIENTES = ["fifa.world", "fifa.friendly"]
+
 # ------------------------------------------------------------------
 # Altitud base conocida por selección (metros sobre el nivel del mar)
 # ------------------------------------------------------------------
@@ -74,11 +79,12 @@ ALTITUD_BASE = {
     "QAT": 10,   "UAE": 5,    "CHN": 43,  "IDN": 8,    "IND": 216,
     "PHI": 15,   "THA": 2,    "MYS": 22,  "VIE": 12,   "BHR": 0,
     "OMA": 20,   "JOR": 820,  "IRQ": 34,  "SYR": 690,  "KUW": 55,
-    "NZL": 30,   "FIJ": 18,
+    "NZL": 30,   "FIJ": 18,   "CPV": 0,   "HAI": 0,    "CUW": 0,
 }
 
 # ------------------------------------------------------------------
-# Ranking FIFA — RESPALDO ESTÁTICO
+# Ranking FIFA — RESPALDO ESTÁTICO (solo para guardar en JSON,
+# ya no interviene en cálculos del motor)
 # ------------------------------------------------------------------
 RANKING_FIFA_FALLBACK = {
     "ESP": (1,  1877.2), "ARG": (2,  1873.3), "FRA": (3,  1870.0),
@@ -98,14 +104,12 @@ RANKING_FIFA_FALLBACK = {
     "SAU": (43, 1449.2), "CAN": (44, 1442.7), "TUN": (45, 1436.1),
     "PAN": (46, 1429.6), "ALB": (47, 1423.0), "GUA": (48, 1416.5),
     "VEN": (49, 1410.0), "CHN": (79, 1302.5), "IDN": (130, 1180.0),
+    "CPV": (77, 1308.0), "HAI": (99, 1250.0), "CUW": (88, 1275.0),
 }
 
-# ------------------------------------------------------------------
-# Alias manuales: abreviación ESPN -> nombre normalizado usado por FIFA
-# ------------------------------------------------------------------
 RANKING_FIFA_ALIASES = {
     "USA": "usa",
-    "IRN": "iriran",
+    "IRN": "iran",
     "KOR": "korearepublic",
     "CIV": "cotedivoire",
     "RSA": "southafrica",
@@ -119,60 +123,41 @@ RANKING_FIFA_ALIASES = {
 # Sedes oficiales del Mundial 2026
 # ------------------------------------------------------------------
 SEDES_MUNDIAL = [
-    {"ciudad": "Ciudad de México",       "pais": "MEX", "alt": 2240,
+    {"ciudad": "Ciudad de México",              "pais": "MEX", "alt": 2240,
      "keywords": ["azteca","banorte","mexico city stadium","estadio ciudad de mexico"]},
-    {"ciudad": "Guadalajara, Jalisco",   "pais": "MEX", "alt": 1566,
+    {"ciudad": "Guadalajara, Jalisco",          "pais": "MEX", "alt": 1566,
      "keywords": ["akron","guadalajara stadium","estadio akron"]},
-    {"ciudad": "Monterrey, Nuevo León",  "pais": "MEX", "alt": 538,
+    {"ciudad": "Monterrey, Nuevo León",         "pais": "MEX", "alt": 538,
      "keywords": ["bbva","bancomer","monterrey stadium","estadio bbva"]},
-    {"ciudad": "Los Angeles, California","pais": "USA", "alt": 93,
+    {"ciudad": "Los Angeles, California",       "pais": "USA", "alt": 93,
      "keywords": ["sofi","sofi stadium","inglewood"]},
-    {"ciudad": "Pasadena, California",   "pais": "USA", "alt": 236,
+    {"ciudad": "Pasadena, California",          "pais": "USA", "alt": 236,
      "keywords": ["rose bowl"]},
-    {"ciudad": "San Francisco Bay Area, California","pais": "USA","alt": 16,
+    {"ciudad": "San Francisco Bay Area, California", "pais": "USA", "alt": 16,
      "keywords": ["levi","levis","santa clara"]},
-    {"ciudad": "Seattle, Washington",    "pais": "USA", "alt": 0,
+    {"ciudad": "Seattle, Washington",           "pais": "USA", "alt": 0,
      "keywords": ["lumen field","lumen"]},
-    {"ciudad": "East Rutherford, New Jersey","pais": "USA","alt": 5,
+    {"ciudad": "East Rutherford, New Jersey",   "pais": "USA", "alt": 5,
      "keywords": ["metlife","met life","new york stadium","new jersey"]},
-    {"ciudad": "Philadelphia, Pennsylvania","pais": "USA","alt": 12,
+    {"ciudad": "Philadelphia, Pennsylvania",    "pais": "USA", "alt": 12,
      "keywords": ["lincoln financial","lincoln field","philadelphia stadium"]},
-    {"ciudad": "Foxborough, Massachusetts","pais": "USA","alt": 25,
+    {"ciudad": "Foxborough, Massachusetts",     "pais": "USA", "alt": 25,
      "keywords": ["gillette","foxborough","boston stadium"]},
-    {"ciudad": "Miami Gardens, Florida", "pais": "USA", "alt": 3,
+    {"ciudad": "Miami Gardens, Florida",        "pais": "USA", "alt": 3,
      "keywords": ["hard rock","miami stadium","miami gardens"]},
-    {"ciudad": "Arlington, Texas",       "pais": "USA", "alt": 188,
+    {"ciudad": "Arlington, Texas",              "pais": "USA", "alt": 188,
      "keywords": ["at&t stadium","att stadium","dallas stadium","arlington"]},
-    {"ciudad": "Kansas City, Missouri",  "pais": "USA", "alt": 325,
+    {"ciudad": "Kansas City, Missouri",         "pais": "USA", "alt": 325,
      "keywords": ["arrowhead","kansas city"]},
-    {"ciudad": "Houston, Texas",         "pais": "USA", "alt": 12,
+    {"ciudad": "Houston, Texas",                "pais": "USA", "alt": 12,
      "keywords": ["nrg stadium","nrg","houston stadium"]},
-    {"ciudad": "Atlanta, Georgia",       "pais": "USA", "alt": 320,
+    {"ciudad": "Atlanta, Georgia",              "pais": "USA", "alt": 320,
      "keywords": ["mercedes-benz","mercedes benz","atlanta stadium","georgia dome"]},
-    {"ciudad": "Vancouver, British Columbia","pais": "CAN","alt": 4,
+    {"ciudad": "Vancouver, British Columbia",   "pais": "CAN", "alt": 4,
      "keywords": ["bc place","bc place stadium","vancouver"]},
-    {"ciudad": "Toronto, Ontario",       "pais": "CAN", "alt": 76,
+    {"ciudad": "Toronto, Ontario",              "pais": "CAN", "alt": 76,
      "keywords": ["bmo field","bmo","toronto"]},
 ]
-
-_LEAGUES_RECIENTES = ["fifa.world", "fifa.friendly"]
-
-_TIPOS_COMPETENCIA = {
-    "fifa world cup":          "oficial",
-    "copa america":            "oficial",
-    "gold cup":                "oficial",
-    "concacaf nations league": "oficial",
-    "world cup qualifier":     "oficial",
-    "world cup qualifying":    "oficial",
-    "euro":                    "oficial",
-    "nations league":          "oficial",
-    "africa cup":              "oficial",
-    "asian cup":               "oficial",
-    "olympics":                "oficial",
-    "friendly":                "amistoso",
-    "international friendly":  "amistoso",
-    "amistoso":                "amistoso",
-}
 
 _SLUGS_AMISTOSO = {"fifa.friendly"}
 
@@ -227,10 +212,6 @@ def stat(stats, name, default=0):
 
 
 def parse_score(raw):
-    """
-    ESPN a veces devuelve score como dict {'value': 2.0, 'displayValue': '2', ...}
-    en vez de un escalar. Esta función maneja ambos casos.
-    """
     if isinstance(raw, dict):
         val = raw.get("value", raw.get("displayValue", 0))
         return int(float(val or 0))
@@ -311,6 +292,7 @@ def get_confederacion(nombre: str) -> str:
         "africa","egypt","nigeria","ghana","senegal","cameroon",
         "morocco","algeria","tunisia","ivory","cote","mali","congo",
         "guinea","zambia","angola","kenya","ethiopia","tanzania",
+        "capeverde","caboverde",
     ]):
         return "CAF"
     if any(x in key for x in [
@@ -324,16 +306,15 @@ def get_confederacion(nombre: str) -> str:
     return "UEFA"
 
 
-def clasificar_tipo(nombre_comp: str, league_slug: str = "") -> str:
+def clasificar_tipo(league_slug: str) -> str:
+    """
+    Clasificación simplificada: solo por slug de league.
+    fifa.friendly → amistoso
+    fifa.world    → oficial (partidos del Mundial en curso)
+    """
     if league_slug in _SLUGS_AMISTOSO:
         return "amistoso"
-    if league_slug and league_slug not in _SLUGS_AMISTOSO:
-        return "oficial"
-    nc = nombre_comp.lower()
-    for clave, tipo in _TIPOS_COMPETENCIA.items():
-        if clave in nc:
-            return tipo
-    return "oficial" if nombre_comp.strip() else "amistoso"
+    return "oficial"
 
 
 # =====================================================
@@ -352,14 +333,13 @@ def obtener_ranking_fifa():
             print("  ⚠ No se encontró __NEXT_DATA__ en fifa.com, se usará el respaldo")
             return []
 
-        next_data = json.loads(m.group(1))
-        page_data = (
+        next_data  = json.loads(m.group(1))
+        page_data  = (
             next_data.get("props", {})
                      .get("pageProps", {})
                      .get("pageData", {})
         )
         ranking_block = page_data.get("ranking", {}) or {}
-
         items = (
             ranking_block.get("rankings")
             or ranking_block.get("items")
@@ -367,13 +347,13 @@ def obtener_ranking_fifa():
         )
 
         if not items:
-            dates = ranking_block.get("dates", [])
+            dates   = ranking_block.get("dates", [])
             if not dates:
                 print("  ⚠ No se encontró el listado del ranking en fifa.com")
                 return []
             date_id = dates[0].get("id")
-            data = get_json(FIFA_RANKING_API, {"locale": "en", "dateId": date_id})
-            items = data.get("rankings") or data.get("items") or []
+            data    = get_json(FIFA_RANKING_API, {"locale": "en", "dateId": date_id})
+            items   = data.get("rankings") or data.get("items") or []
 
         resultado = []
         for it in items:
@@ -416,6 +396,11 @@ def obtener_ranking_fifa():
 # =====================================================
 
 def _recolectar_eventos_seleccion(team_id: str) -> list:
+    """
+    Jala el schedule de cada league y filtra:
+      1. Solo partidos ya jugados (state == "post")
+      2. Solo desde FECHA_CORTE en adelante
+    """
     todos = {}
 
     for league in _LEAGUES_RECIENTES:
@@ -428,15 +413,22 @@ def _recolectar_eventos_seleccion(team_id: str) -> list:
 
         for ev in data.get("events", []):
             try:
+                # ── Filtro 1: solo partidos terminados ──────────────────
                 comp   = ev.get("competitions", [{}])[0]
                 estado = comp.get("status", {}).get("type", {}).get("state", "")
                 if estado != "post":
+                    continue
+
+                # ── Filtro 2: solo desde FECHA_CORTE ────────────────────
+                fecha_ev = ev.get("date", "")
+                if fecha_ev and fecha_ev[:10] < FECHA_CORTE:
                     continue
 
                 eid = ev.get("id", "")
                 if eid and eid not in todos:
                     ev["_league_slug"] = league
                     todos[eid] = ev
+
             except Exception:
                 continue
 
@@ -477,6 +469,7 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
             stats.pop(k, None)
         return stats
 
+    # Ordenar cronológicamente para calcular streak correctamente
     eventos_ordenados = sorted(eventos, key=lambda e: e.get("date", ""))
     streak_vivo = True
 
@@ -488,12 +481,7 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
                 continue
 
             league_slug = evento.get("_league_slug", "")
-            nombre_comp = (
-                evento.get("league", {}).get("name", "")
-                or (comp.get("notes", [{}])[0].get("text", "") if comp.get("notes") else "")
-                or ""
-            )
-            tipo = clasificar_tipo(nombre_comp, league_slug)
+            tipo        = clasificar_tipo(league_slug)
 
             equipos   = comp.get("competitors", [])
             mi_equipo = next(
@@ -507,18 +495,17 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
             es_local = mi_equipo.get("homeAway", "") == "home"
             ganador  = mi_equipo.get("winner", None)
 
-            # ── FIX: score puede ser dict {'value': 2.0, ...} o escalar ──
-            gf = parse_score(mi_equipo.get("score", 0))
+            gf    = parse_score(mi_equipo.get("score", 0))
             rival = next(
                 (e for e in equipos
                  if str(e.get("team", {}).get("id", "")) != str(team_id)),
                 {},
             )
             gc = parse_score(rival.get("score", 0))
-            # ─────────────────────────────────────────────────────────────
 
             res = "W" if ganador is True else ("L" if ganador is False else "D")
 
+            # ── Acumular por tipo ────────────────────────────────────────
             if tipo == "oficial":
                 stats["partidos_oficial"] += 1
                 if res == "W":   stats["ganados_oficial"]   += 1
@@ -544,6 +531,7 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
                 "tipo":  tipo,
             })
 
+            # ── Local / visita ───────────────────────────────────────────
             if es_local:
                 stats["partidos_local"] += 1
                 if res == "W":   stats["ganados_local"]   += 1
@@ -558,6 +546,7 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
                 elif res == "D": stats["empatados_visita"] += 1
                 else:            stats["perdidos_visita"]  += 1
 
+            # ── Streak imbatido ──────────────────────────────────────────
             if streak_vivo:
                 if res != "L":
                     stats["imbatido_streak"] += 1
@@ -567,6 +556,7 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
         except Exception:
             continue
 
+    # ── Forma y últimos 5 globales (mezcla cronológica) ─────────────────
     todos_res = sorted(
         stats.pop("_todos_resultados"),
         key=lambda x: x["fecha"],
@@ -583,6 +573,7 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
     else:
         stats["forma"] = 0.0
 
+    # ── Promedios de goles ───────────────────────────────────────────────
     def avg(lst): return round(sum(lst) / len(lst), 3) if lst else 0.0
     def wr(g, p): return round(g / p, 4) if p > 0 else 0.0
 
@@ -599,6 +590,7 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
         (stats["ganados_amistoso"] + stats["empatados_amistoso"] * 0.4)
         / max(stats["partidos_amistoso"], 1), 4
     )
+
     stats["win_rate_local"]  = wr(stats["ganados_local"],  stats["partidos_local"])
     stats["win_rate_visita"] = wr(stats["ganados_visita"], stats["partidos_visita"])
     stats["win_rate_neutro"] = wr(
@@ -634,22 +626,18 @@ def obtener_grupos():
             team  = entry.get("team", {})
             stats = entry.get("stats", [])
 
-            partidos     = stat(stats, "gamesPlayed")
-            goles_favor  = stat(stats, "pointsFor")
-            goles_contra = stat(stats, "pointsAgainst")
-
             equipo = {
                 "posicion":         stat(stats, "rank"),
                 "equipo":           team.get("displayName", ""),
                 "abreviacion":      team.get("abbreviation", ""),
                 "escudo":           (team.get("logos", [{}])[0].get("href", "")
                                      if team.get("logos") else ""),
-                "partidos":         partidos,
+                "partidos":         stat(stats, "gamesPlayed"),
                 "ganados":          stat(stats, "wins"),
                 "empatados":        stat(stats, "ties"),
                 "perdidos":         stat(stats, "losses"),
-                "goles_favor":      goles_favor,
-                "goles_contra":     goles_contra,
+                "goles_favor":      stat(stats, "pointsFor"),
+                "goles_contra":     stat(stats, "pointsAgainst"),
                 "diferencia_goles": stat(stats, "pointDifferential"),
                 "puntos":           stat(stats, "points"),
             }
@@ -705,7 +693,7 @@ def obtener_selecciones(grupos):
         f"{BASE_SOCCER}/fifa.world/teams",
         {"season": "2026", "limit": 100},
     )
-    id_por_abrev: dict[str, str] = {}
+    id_por_abrev:   dict[str, str] = {}
     conf_por_abrev: dict[str, str] = {}
     for entry in (
         teams_data.get("sports", [{}])[0]
@@ -719,7 +707,7 @@ def obtener_selecciones(grupos):
             conf_por_abrev[abrev] = t.get("displayConference", "")
 
     print("  ▶ Descargando ranking FIFA en vivo...")
-    ranking_fifa      = obtener_ranking_fifa()
+    ranking_fifa       = obtener_ranking_fifa()
     ranking_por_codigo = {r["codigo"]: r for r in ranking_fifa if r["codigo"]}
     ranking_por_nombre = {r["nombre_normalizado"]: r for r in ranking_fifa}
 
@@ -744,11 +732,8 @@ def obtener_selecciones(grupos):
         print(f"    ⚠ Sin ranking FIFA para {nombre} ({abrev}) — usando 999")
         return (999, 0.0)
 
-    selecciones = {}
-    total       = len(equipos_vistos)
-
     stats_vacias = {
-        "forma": 0.0, "ultimos_5": [],
+        "forma": 0.5, "ultimos_5": [],
         "partidos_oficial": 0, "ganados_oficial": 0,
         "empatados_oficial": 0, "perdidos_oficial": 0,
         "goles_favor_oficial": 0.0, "goles_contra_oficial": 0.0,
@@ -759,18 +744,20 @@ def obtener_selecciones(grupos):
         "forma_amistosos": 0.0, "ultimos_5_amistoso": [],
         "partidos_local": 0, "ganados_local": 0,
         "empatados_local": 0, "perdidos_local": 0,
-        "win_rate_local": 0.0,
+        "win_rate_local": 0.5,
         "partidos_visita": 0, "ganados_visita": 0,
         "empatados_visita": 0, "perdidos_visita": 0,
-        "win_rate_visita": 0.0, "win_rate_neutro": 0.0,
+        "win_rate_visita": 0.5, "win_rate_neutro": 0.5,
         "imbatido_streak": 0,
         "_ciudades_local": [],
     }
 
-    for i, (abrev, eq_base) in enumerate(equipos_vistos.items(), 1):
-        nombre = eq_base["equipo"]
-        escudo = eq_base["escudo"]
+    selecciones = {}
+    total       = len(equipos_vistos)
 
+    for i, (abrev, eq_base) in enumerate(equipos_vistos.items(), 1):
+        nombre        = eq_base["equipo"]
+        escudo        = eq_base["escudo"]
         id_espn       = id_por_abrev.get(abrev, "")
         confederacion = conf_por_abrev.get(abrev, "") or get_confederacion(nombre)
 
@@ -782,50 +769,56 @@ def obtener_selecciones(grupos):
         else:
             stats = scrape_stats_seleccion(id_espn, nombre, confederacion)
 
-        ciudades_local = stats.pop("_ciudades_local", [])
+        ciudades_local        = stats.pop("_ciudades_local", [])
         ranking_pos, ranking_pts = buscar_ranking(abrev, nombre)
-        slug           = normalizar_nombre(nombre)
+        slug                  = normalizar_nombre(nombre)
+
+        # Reporte rápido de cobertura
+        total_p = stats.get("partidos_oficial", 0) + stats.get("partidos_amistoso", 0)
+        print(f"    → {total_p} partidos desde {FECHA_CORTE} "
+              f"(of:{stats.get('partidos_oficial',0)} am:{stats.get('partidos_amistoso',0)}) "
+              f"forma:{stats.get('forma', 0.0):.2f}")
 
         selecciones[slug] = {
-            "nombre":        nombre,
-            "abreviacion":   abrev,
-            "escudo":        escudo,
-            "id_espn":       id_espn,
-            "confederacion": confederacion,
+            "nombre":         nombre,
+            "abreviacion":    abrev,
+            "escudo":         escudo,
+            "id_espn":        id_espn,
+            "confederacion":  confederacion,
             "altitud_base":   altitud_seleccion(abrev),
             "ciudades_local": ciudades_local[:5],
-            "ranking_fifa": ranking_pos,
-            "puntos_fifa":  ranking_pts,
-            "forma":     stats["forma"],
-            "ultimos_5": stats["ultimos_5"],
-            "partidos_oficial":      stats["partidos_oficial"],
-            "ganados_oficial":       stats["ganados_oficial"],
-            "empatados_oficial":     stats["empatados_oficial"],
-            "perdidos_oficial":      stats["perdidos_oficial"],
-            "goles_favor_oficial":   stats["goles_favor_oficial"],
-            "goles_contra_oficial":  stats["goles_contra_oficial"],
-            "forma_oficial":         stats["forma_oficial"],
-            "ultimos_5_oficial":     stats["ultimos_5_oficial"],
-            "partidos_amistoso":     stats["partidos_amistoso"],
-            "ganados_amistoso":      stats["ganados_amistoso"],
-            "empatados_amistoso":    stats["empatados_amistoso"],
-            "perdidos_amistoso":     stats["perdidos_amistoso"],
-            "goles_favor_amistoso":  stats["goles_favor_amistoso"],
-            "goles_contra_amistoso": stats["goles_contra_amistoso"],
-            "forma_amistosos":       stats["forma_amistosos"],
-            "ultimos_5_amistoso":    stats["ultimos_5_amistoso"],
-            "partidos_local":    stats["partidos_local"],
-            "ganados_local":     stats["ganados_local"],
-            "empatados_local":   stats["empatados_local"],
-            "perdidos_local":    stats["perdidos_local"],
-            "win_rate_local":    stats["win_rate_local"],
-            "partidos_visita":   stats["partidos_visita"],
-            "ganados_visita":    stats["ganados_visita"],
-            "empatados_visita":  stats["empatados_visita"],
-            "perdidos_visita":   stats["perdidos_visita"],
-            "win_rate_visita":   stats["win_rate_visita"],
-            "win_rate_neutro":   stats["win_rate_neutro"],
-            "imbatido_streak": stats["imbatido_streak"],
+            "ranking_fifa":   ranking_pos,
+            "puntos_fifa":    ranking_pts,
+            "forma":                  stats["forma"],
+            "ultimos_5":              stats["ultimos_5"],
+            "partidos_oficial":       stats["partidos_oficial"],
+            "ganados_oficial":        stats["ganados_oficial"],
+            "empatados_oficial":      stats["empatados_oficial"],
+            "perdidos_oficial":       stats["perdidos_oficial"],
+            "goles_favor_oficial":    stats["goles_favor_oficial"],
+            "goles_contra_oficial":   stats["goles_contra_oficial"],
+            "forma_oficial":          stats["forma_oficial"],
+            "ultimos_5_oficial":      stats["ultimos_5_oficial"],
+            "partidos_amistoso":      stats["partidos_amistoso"],
+            "ganados_amistoso":       stats["ganados_amistoso"],
+            "empatados_amistoso":     stats["empatados_amistoso"],
+            "perdidos_amistoso":      stats["perdidos_amistoso"],
+            "goles_favor_amistoso":   stats["goles_favor_amistoso"],
+            "goles_contra_amistoso":  stats["goles_contra_amistoso"],
+            "forma_amistosos":        stats["forma_amistosos"],
+            "ultimos_5_amistoso":     stats["ultimos_5_amistoso"],
+            "partidos_local":         stats["partidos_local"],
+            "ganados_local":          stats["ganados_local"],
+            "empatados_local":        stats["empatados_local"],
+            "perdidos_local":         stats["perdidos_local"],
+            "win_rate_local":         stats["win_rate_local"],
+            "partidos_visita":        stats["partidos_visita"],
+            "ganados_visita":         stats["ganados_visita"],
+            "empatados_visita":       stats["empatados_visita"],
+            "perdidos_visita":        stats["perdidos_visita"],
+            "win_rate_visita":        stats["win_rate_visita"],
+            "win_rate_neutro":        stats["win_rate_neutro"],
+            "imbatido_streak":        stats["imbatido_streak"],
         }
 
         time.sleep(0.3)
@@ -844,11 +837,6 @@ def obtener_fixture(selecciones_por_nombre=None):
         ahora.strftime("%Y%m%d"),
         (ahora + timedelta(days=1)).strftime("%Y%m%d"),
     ]
-
-    nombre_a_slug = {}
-    if selecciones_por_nombre:
-        for slug, data in selecciones_por_nombre.items():
-            nombre_a_slug[data["nombre"].lower()] = slug
 
     partidos = []
 
@@ -911,12 +899,13 @@ def main():
     print("\n╔══════════════════════════════╗")
     print("║   Actualizando Mundial 2026  ║")
     print("╚══════════════════════════════╝\n")
+    print(f"  Fecha de corte: {FECHA_CORTE} (solo partidos desde esta fecha)\n")
 
     print("▶ Grupos y tabla...")
     grupos = obtener_grupos()
     generar_tabla(grupos)
 
-    print("\n▶ Selecciones (ranking FIFA en vivo + calendario reciente de ESPN)...")
+    print("\n▶ Selecciones (ranking FIFA en vivo + calendario reciente ESPN)...")
     selecciones = obtener_selecciones(grupos)
 
     print("\n▶ Fixture (hoy + mañana)...")

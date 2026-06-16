@@ -170,7 +170,7 @@ PARTIDOS_GRUPO = [
     ("Tunisia",     "Netherlands","Kansas City"),
 
     # ── GRUPO G ──────────────────────────────────────────────
-    ("Belgium",     "Egypt",      "Seattle"),
+    # ("Belgium",     "Egypt",      "Seattle"),   # JUGADO 1-1
     ("Iran",        "New Zealand","Los Angeles"),
     ("Belgium",     "Iran",       "Los Angeles"),
     ("Egypt",       "New Zealand","Miami"),
@@ -179,7 +179,7 @@ PARTIDOS_GRUPO = [
 
     # ── GRUPO H ──────────────────────────────────────────────
     # ("Spain",       "Cape Verde", "Atlanta"),  # JUGADO 0-0
-    ("Saudi Arabia","Uruguay",    "Miami"),
+    # ("Saudi Arabia","Uruguay",    "Miami"),    # JUGADO 1-1
     ("Spain",       "Saudi Arabia","Atlanta"),
     ("Uruguay",     "Cape Verde", "Houston"),
     ("Uruguay",     "Spain",      "Guadalajara"),

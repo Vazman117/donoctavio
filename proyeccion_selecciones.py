@@ -29,7 +29,6 @@ def cargar_h2h(carpeta):
 
 
 def obtener_seleccion(nombre, db):
-    """Busca una selección por nombre, con normalización básica."""
     reemplazos = {"á":"a","é":"e","í":"i","ó":"o","ú":"u","ü":"u","ñ":"n"}
     key = nombre.lower().replace(" ", "")
     for a, b in reemplazos.items():
@@ -69,7 +68,7 @@ def modificador_altitud_goles(altitud_sede, altitud_base_equipo):
 
 
 # =============================
-# NORMALIZACIÓN DE DATOS
+# NORMALIZACIÓN
 # =============================
 
 def normalizar_nombre(nombre):
@@ -82,16 +81,6 @@ def normalizar_nombre(nombre):
 
 def limitar(v, a, b):
     return max(a, min(v, b))
-
-
-def normalizar_ranking_fifa(ranking, total=210):
-    if ranking >= total:
-        return 0.25
-    return limitar((total - ranking) / (total - 1), 0.0, 1.0)
-
-
-def normalizar_puntos_fifa(puntos, maximo=2000.0):
-    return limitar(puntos / maximo, 0.0, 1.0)
 
 
 def normalizar_goles_favor(promedio, maximo=3.5):
@@ -120,89 +109,79 @@ def nivel_impacto(diferencia_normalizada):
 # =============================
 
 def adaptar_seleccion(seleccion_raw):
-    forma_oficial   = seleccion_raw.get("forma_oficial",   0.0) or 0.0
-    forma_amistoso  = seleccion_raw.get("forma_amistosos", 0.0) or 0.0
+    forma_final = seleccion_raw.get("forma", 0.0) or 0.0
+    if forma_final == 0.0:
+        fo = seleccion_raw.get("forma_oficial",   0.0) or 0.0
+        fa = seleccion_raw.get("forma_amistosos", 0.0) or 0.0
+        if fo > 0 and fa > 0:
+            forma_final = (fo + fa) / 2.0
+        elif fo > 0:
+            forma_final = fo
+        elif fa > 0:
+            forma_final = fa
+        else:
+            forma_final = 0.5
 
-    if forma_oficial > 0 and forma_amistoso > 0:
-        forma_final = round(forma_oficial * 0.70 + forma_amistoso * 0.30, 4)
-    elif forma_oficial > 0:
-        forma_final = forma_oficial
-    elif forma_amistoso > 0:
-        forma_final = forma_amistoso
-    else:
-        forma_final = 0.5
-
+    ul5_mixto    = seleccion_raw.get("ultimos_5",         []) or []
     ul5_oficial  = seleccion_raw.get("ultimos_5_oficial",  []) or []
     ul5_amistoso = seleccion_raw.get("ultimos_5_amistoso", []) or []
-    ul5_mixto = (ul5_oficial + ul5_amistoso)[:5]
 
-    total_partidos = (
-        seleccion_raw.get("partidos_oficial", 0) +
-        seleccion_raw.get("partidos_amistoso", 0)
-    )
-    total_ganados = (
-        seleccion_raw.get("ganados_oficial", 0) +
-        seleccion_raw.get("ganados_amistoso", 0)
-    )
-    total_empatados = (
-        seleccion_raw.get("empatados_oficial", 0) +
-        seleccion_raw.get("empatados_amistoso", 0)
-    )
-    total_perdidos = (
-        seleccion_raw.get("perdidos_oficial", 0) +
-        seleccion_raw.get("perdidos_amistoso", 0)
-    )
+    p_of  = seleccion_raw.get("partidos_oficial",  0) or 0
+    p_am  = seleccion_raw.get("partidos_amistoso", 0) or 0
+    gf_of = seleccion_raw.get("goles_favor_oficial",   0.0) or 0.0
+    gc_of = seleccion_raw.get("goles_contra_oficial",  0.0) or 0.0
+    gf_am = seleccion_raw.get("goles_favor_amistoso",  0.0) or 0.0
+    gc_am = seleccion_raw.get("goles_contra_amistoso", 0.0) or 0.0
 
-    gf_oficial  = seleccion_raw.get("goles_favor_oficial",  0.0) or 0.0
-    gc_oficial  = seleccion_raw.get("goles_contra_oficial", 0.0) or 0.0
-    gf_amistoso = seleccion_raw.get("goles_favor_amistoso", 0.0) or 0.0
-    gc_amistoso = seleccion_raw.get("goles_contra_amistoso",0.0) or 0.0
-
-    if gf_oficial > 0 and gf_amistoso > 0:
-        gf_ponderado = gf_oficial * 0.70 + gf_amistoso * 0.30
-        gc_ponderado = gc_oficial * 0.70 + gc_amistoso * 0.30
-    elif gf_oficial > 0:
-        gf_ponderado = gf_oficial
-        gc_ponderado = gc_oficial
-    elif gf_amistoso > 0:
-        gf_ponderado = gf_amistoso
-        gc_ponderado = gc_amistoso
+    total_p = p_of + p_am
+    if total_p > 0:
+        gf_ponderado = (gf_of * p_of + gf_am * p_am) / total_p
+        gc_ponderado = (gc_of * p_of + gc_am * p_am) / total_p
+    elif gf_of > 0:
+        gf_ponderado, gc_ponderado = gf_of, gc_of
+    elif gf_am > 0:
+        gf_ponderado, gc_ponderado = gf_am, gc_am
     else:
-        gf_ponderado = 1.0
-        gc_ponderado = 1.0
+        gf_ponderado, gc_ponderado = 1.0, 1.0
+
+    total_partidos  = p_of + p_am
+    total_ganados   = seleccion_raw.get("ganados_oficial",   0) + seleccion_raw.get("ganados_amistoso",   0)
+    total_empatados = seleccion_raw.get("empatados_oficial", 0) + seleccion_raw.get("empatados_amistoso", 0)
+    total_perdidos  = seleccion_raw.get("perdidos_oficial",  0) + seleccion_raw.get("perdidos_amistoso",  0)
 
     return {
-        "nombre":     seleccion_raw.get("nombre", ""),
-        "escudo":     seleccion_raw.get("escudo", ""),
-        "confederacion": seleccion_raw.get("confederacion", ""),
-        "ranking_fifa":  seleccion_raw.get("ranking_fifa",  50),
-        "puntos_fifa":   seleccion_raw.get("puntos_fifa",   1000.0),
-        "altitud_base":  seleccion_raw.get("altitud_base", 0),
-        "forma_ponderada": forma_final,
-        "imbatido_streak": seleccion_raw.get("imbatido_streak", 0),
-        "ultimos_5":       ul5_mixto,
-        "win_rate_local":  seleccion_raw.get("win_rate_local",  0.5),
-        "win_rate_visita": seleccion_raw.get("win_rate_visita", 0.5),
-        "win_rate_neutro": seleccion_raw.get("win_rate_neutro", 0.5),
+        "nombre":            seleccion_raw.get("nombre", ""),
+        "escudo":            seleccion_raw.get("escudo", ""),
+        "confederacion":     seleccion_raw.get("confederacion", ""),
+        "ranking_fifa":      seleccion_raw.get("ranking_fifa", 999),
+        "puntos_fifa":       seleccion_raw.get("puntos_fifa",  0.0),
+        "altitud_base":      seleccion_raw.get("altitud_base", 0),
+        "forma_ponderada":   forma_final,
+        "imbatido_streak":   seleccion_raw.get("imbatido_streak", 0),
+        "ultimos_5":         ul5_mixto,
+        "win_rate_local":    seleccion_raw.get("win_rate_local",  0.5),
+        "win_rate_visita":   seleccion_raw.get("win_rate_visita", 0.5),
+        "win_rate_neutro":   seleccion_raw.get("win_rate_neutro", 0.5),
         "goles_favor_promedio":  round(gf_ponderado, 3),
         "goles_contra_promedio": round(gc_ponderado, 3),
-        "partidos":  total_partidos,
-        "ganados":   total_ganados,
-        "empatados": total_empatados,
-        "perdidos":  total_perdidos,
-        "partidos_local":  seleccion_raw.get("partidos_local",  0),
-        "ganados_local":   seleccion_raw.get("ganados_local",   0),
-        "empatados_local": 0,
-        "perdidos_local":  seleccion_raw.get("perdidos_local",  0),
+        "partidos":   total_partidos,
+        "ganados":    total_ganados,
+        "empatados":  total_empatados,
+        "perdidos":   total_perdidos,
+        "partidos_local":   seleccion_raw.get("partidos_local",  0),
+        "ganados_local":    seleccion_raw.get("ganados_local",   0),
+        "empatados_local":  0,
+        "perdidos_local":   seleccion_raw.get("perdidos_local",  0),
         "partidos_visita":  seleccion_raw.get("partidos_visita",  0),
         "ganados_visita":   seleccion_raw.get("ganados_visita",   0),
         "empatados_visita": 0,
         "perdidos_visita":  seleccion_raw.get("perdidos_visita",  0),
-        "partidos_oficial":  seleccion_raw.get("partidos_oficial",  0),
-        "forma_oficial":     forma_oficial,
-        "ultimos_5_oficial": ul5_oficial,
-        "partidos_amistoso": seleccion_raw.get("partidos_amistoso", 0),
-        "forma_amistosos":   forma_amistoso,
+        "partidos_oficial":   p_of,
+        "forma_oficial":      seleccion_raw.get("forma_oficial",   0.0) or 0.0,
+        "ultimos_5_oficial":  ul5_oficial,
+        "partidos_amistoso":  p_am,
+        "forma_amistosos":    seleccion_raw.get("forma_amistosos", 0.0) or 0.0,
+        "ultimos_5_amistoso": ul5_amistoso,
     }
 
 
@@ -212,107 +191,91 @@ def adaptar_seleccion(seleccion_raw):
 
 PERFILES_SELECCIONES = {
     "amistoso": {
-        "nombre":           "Amistoso Internacional",
-        "K_LOGISTICO":      2.8,
-        "MAX_FAVORITO":     0.56,
-        "ALPHA":            0.60,
-        "BETA":             0.40,
-        "usa_h2h":          False,
-        "usa_ranking_fifa": True,
-        "usa_altitud":      True,
-        "PESO_BASE":        0.75,
-        "PESO_H2H":         0.00,
-        "PESO_RANKING":     0.15,
-        "PESO_ALTITUD":     0.10,
+        "nombre":       "Amistoso Internacional",
+        "K_LOGISTICO":  2.8,
+        "MAX_FAVORITO": 0.56,
+        "ALPHA":        0.60,
+        "BETA":         0.40,
+        "usa_h2h":      False,
+        "usa_altitud":  True,
+        "PESO_BASE":    0.90,
+        "PESO_H2H":     0.00,
+        "PESO_ALTITUD": 0.10,
     },
     "eliminatoria_conmebol": {
-        "nombre":           "Eliminatoria CONMEBOL",
-        "K_LOGISTICO":      4.2,
-        "MAX_FAVORITO":     0.62,
-        "ALPHA":            0.70,
-        "BETA":             0.30,
-        "usa_h2h":          True,
-        "usa_ranking_fifa": True,
-        "usa_altitud":      True,
-        "PESO_BASE":        0.60,
-        "PESO_H2H":         0.18,
-        "PESO_RANKING":     0.12,
-        "PESO_ALTITUD":     0.10,
+        "nombre":       "Eliminatoria CONMEBOL",
+        "K_LOGISTICO":  4.2,
+        "MAX_FAVORITO": 0.62,
+        "ALPHA":        0.70,
+        "BETA":         0.30,
+        "usa_h2h":      True,
+        "usa_altitud":  True,
+        "PESO_BASE":    0.66,
+        "PESO_H2H":     0.24,
+        "PESO_ALTITUD": 0.10,
     },
     "eliminatoria_concacaf": {
-        "nombre":           "Eliminatoria CONCACAF",
-        "K_LOGISTICO":      4.0,
-        "MAX_FAVORITO":     0.63,
-        "ALPHA":            0.72,
-        "BETA":             0.28,
-        "usa_h2h":          True,
-        "usa_ranking_fifa": True,
-        "usa_altitud":      True,
-        "PESO_BASE":        0.65,
-        "PESO_H2H":         0.15,
-        "PESO_RANKING":     0.12,
-        "PESO_ALTITUD":     0.08,
+        "nombre":       "Eliminatoria CONCACAF",
+        "K_LOGISTICO":  4.0,
+        "MAX_FAVORITO": 0.63,
+        "ALPHA":        0.72,
+        "BETA":         0.28,
+        "usa_h2h":      True,
+        "usa_altitud":  True,
+        "PESO_BASE":    0.71,
+        "PESO_H2H":     0.21,
+        "PESO_ALTITUD": 0.08,
     },
     "copa_america": {
-        "nombre":           "Copa América / Torneo Continental",
-        "K_LOGISTICO":      4.1,
-        "MAX_FAVORITO":     0.63,
-        "ALPHA":            0.71,
-        "BETA":             0.29,
-        "usa_h2h":          True,
-        "usa_ranking_fifa": True,
-        "usa_altitud":      True,
-        "PESO_BASE":        0.62,
-        "PESO_H2H":         0.16,
-        "PESO_RANKING":     0.14,
-        "PESO_ALTITUD":     0.08,
+        "nombre":       "Copa América / Torneo Continental",
+        "K_LOGISTICO":  4.1,
+        "MAX_FAVORITO": 0.63,
+        "ALPHA":        0.71,
+        "BETA":         0.29,
+        "usa_h2h":      True,
+        "usa_altitud":  True,
+        "PESO_BASE":    0.70,
+        "PESO_H2H":     0.22,
+        "PESO_ALTITUD": 0.08,
     },
     "mundial_grupos": {
-        "nombre":           "Copa del Mundo FIFA — Fase de Grupos",
-        "K_LOGISTICO":      3.2,
-        "MAX_FAVORITO":     0.58,
-        "ALPHA":            0.62,
-        "BETA":             0.38,
-        "usa_h2h":          True,
-        "usa_ranking_fifa": True,
-        "usa_altitud":      True,
-        "PESO_BASE":        0.58,
-        "PESO_H2H":         0.16,
-        "PESO_RANKING":     0.18,
-        "PESO_ALTITUD":     0.08,
+        "nombre":       "Copa del Mundo FIFA — Fase de Grupos",
+        "K_LOGISTICO":  2.2,
+        "MAX_FAVORITO": 0.44,
+        "ALPHA":        0.72,
+        "BETA":         0.28,
+        "usa_h2h":      True,
+        "usa_altitud":  True,
+        "PESO_BASE":    0.66,
+        "PESO_H2H":     0.22,
+        "PESO_ALTITUD": 0.12,
     },
     "mundial_eliminatoria": {
-        "nombre":           "Copa del Mundo FIFA — Eliminatorias",
-        "K_LOGISTICO":      3.6,
-        "MAX_FAVORITO":     0.60,
-        "ALPHA":            0.63,
-        "BETA":             0.37,
-        "usa_h2h":          True,
-        "usa_ranking_fifa": True,
-        "usa_altitud":      True,
-        "PESO_BASE":        0.55,
-        "PESO_H2H":         0.18,
-        "PESO_RANKING":     0.20,
-        "PESO_ALTITUD":     0.07,
+        "nombre":       "Copa del Mundo FIFA — Eliminatorias",
+        "K_LOGISTICO":  3.6,
+        "MAX_FAVORITO": 0.60,
+        "ALPHA":        0.63,
+        "BETA":         0.37,
+        "usa_h2h":      True,
+        "usa_altitud":  True,
+        "PESO_BASE":    0.63,
+        "PESO_H2H":     0.25,
+        "PESO_ALTITUD": 0.12,
     },
 }
 
 
 # =============================
-# PROMEDIO DE GOL (global)
+# PROMEDIO GLOBAL DE GOL
 # =============================
 
-# FIX v3: promedio_global ahora tiene un rango anclado [1.50, 2.20].
-# Antes, si la DB tenía pocos equipos o equipos con goles bajos, el promedio
-# caía a ~1.35, lo que disparaba los lambdas de Poisson de equipos con buena
-# producción ofensiva (como Greece) y distorsionaba todo el resultado.
 PROMEDIO_GLOBAL_MIN = 1.50
 PROMEDIO_GLOBAL_MAX = 2.20
 
 def calcular_promedio_global(db):
     selecciones = [v for v in db.values() if v.get("partidos", 0) > 0]
     if not selecciones:
-        return 1.75  # fallback central realista
+        return 1.75
     raw = sum(v.get("goles_favor_promedio", 1.75) for v in selecciones) / len(selecciones)
     return limitar(raw, PROMEDIO_GLOBAL_MIN, PROMEDIO_GLOBAL_MAX)
 
@@ -337,7 +300,7 @@ def peso_confianza(partidos_jugados):
 # =============================
 
 def calcular_ipo_seleccion(equipo, contexto, promedio_global):
-    peso   = peso_confianza(equipo.get("partidos", 0))
+    peso         = peso_confianza(equipo.get("partidos", 0))
     altitud_sede = contexto.get("altitud_sede", 0)
     altitud_base = equipo.get("altitud_base", 0)
     es_local     = contexto.get("es_local", False)
@@ -364,7 +327,7 @@ def calcular_ipo_seleccion(equipo, contexto, promedio_global):
 
 
 def calcular_isd_seleccion(equipo, contexto, promedio_global):
-    peso = peso_confianza(equipo.get("partidos", 0))
+    peso         = peso_confianza(equipo.get("partidos", 0))
     altitud_sede = contexto.get("altitud_sede", 0)
     altitud_base = equipo.get("altitud_base", 0)
 
@@ -374,14 +337,9 @@ def calcular_isd_seleccion(equipo, contexto, promedio_global):
     else:
         isd_raw = promedio_global / gc
 
-    # FIX v3: cap del ISD escalado por confianza de muestra.
-    # Con muestra pequeña (peso < 1.0) una defensiva "perfecta" no debe
-    # bloquear al rival casi por completo. El techo baja a 1.8 cuando la
-    # confianza es baja y sube gradualmente hasta 2.5 con muestra completa.
-    techo_isd = 1.8 + (peso * 0.7)   # rango: 1.8 (poca muestra) → 2.5 (muestra completa)
-    isd_raw = limitar(isd_raw, 0.5, techo_isd)
-
-    isd = peso * isd_raw + (1 - peso) * 1.0
+    techo_isd = 1.8 + (peso * 0.7)
+    isd_raw   = limitar(isd_raw, 0.5, techo_isd)
+    isd       = peso * isd_raw + (1 - peso) * 1.0
 
     mod_streak = 1.0 + (normalizar_streak(equipo["imbatido_streak"]) * 0.10)
     isd *= mod_streak
@@ -422,22 +380,56 @@ def probabilidades_poisson(lambda_local, lambda_visitante, max_goles=8):
 
 
 # =============================
+# MARCADORES MÁS PROBABLES
+# =============================
+
+def marcadores_probables(lambda_local, lambda_visitante, top_n=5, max_goles=6):
+    """
+    Calcula los marcadores más probables usando distribución de Poisson.
+    Retorna una lista ordenada de mayor a menor probabilidad con al menos top_n resultados.
+    """
+    from math import exp, factorial
+
+    def pmf(k, lam):
+        return (lam ** k) * exp(-lam) / factorial(k)
+
+    resultados = []
+    for i in range(max_goles + 1):
+        for j in range(max_goles + 1):
+            prob = pmf(i, lambda_local) * pmf(j, lambda_visitante)
+            if i > j:
+                tipo = "local"
+            elif i == j:
+                tipo = "empate"
+            else:
+                tipo = "visitante"
+            resultados.append({
+                "marcador":         f"{i}-{j}",
+                "goles_local":      i,
+                "goles_visitante":  j,
+                "probabilidad":     round(prob, 6),
+                "porcentaje":       round(prob * 100, 2),
+                "tipo":             tipo,
+            })
+
+    resultados.sort(key=lambda x: x["probabilidad"], reverse=True)
+    return resultados[:top_n]
+
+
+# =============================
 # FUERZA BASE
 # =============================
 
 def calcular_fuerza_base(seleccion, contexto, cfg):
-    PESO_FORMA        = 0.28
-    PESO_WINRATE      = 0.20
-    PESO_GOLES_FAVOR  = 0.12
-    PESO_GOLES_CONTRA = 0.12
-    PESO_RANKING_FIFA = 0.18
-    PESO_STREAK       = 0.10
+    PESO_FORMA        = 0.34
+    PESO_WINRATE      = 0.24
+    PESO_GOLES_FAVOR  = 0.15
+    PESO_GOLES_CONTRA = 0.15
+    PESO_STREAK       = 0.12
 
-    ranking_norm = normalizar_ranking_fifa(seleccion["ranking_fifa"])
-    puntos_norm  = normalizar_puntos_fifa(seleccion["puntos_fifa"])
-    factor_fifa  = ranking_norm * 0.50 + puntos_norm * 0.50
-
-    forma = seleccion["forma_ponderada"]
+    confianza_forma = peso_confianza(seleccion.get("partidos", 0))
+    forma_raw = seleccion["forma_ponderada"]
+    forma = confianza_forma * forma_raw + (1 - confianza_forma) * 0.5
 
     altitud_sede = contexto.get("altitud_sede", 0)
     altitud_base = seleccion.get("altitud_base", 0)
@@ -454,8 +446,11 @@ def calcular_fuerza_base(seleccion, contexto, cfg):
         wr_raw = seleccion.get("win_rate_visita", 0.5)
     win_rate = confianza_wr * wr_raw + (1 - confianza_wr) * 0.45
 
-    goles_favor  = normalizar_goles_favor(seleccion["goles_favor_promedio"])
-    goles_contra = normalizar_goles_contra(seleccion["goles_contra_promedio"])
+    confianza_goles = peso_confianza(seleccion.get("partidos", 0))
+    gf_raw       = normalizar_goles_favor(seleccion["goles_favor_promedio"])
+    gc_raw       = normalizar_goles_contra(seleccion["goles_contra_promedio"])
+    goles_favor  = confianza_goles * gf_raw + (1 - confianza_goles) * 0.5
+    goles_contra = confianza_goles * gc_raw + (1 - confianza_goles) * 0.5
     streak       = normalizar_streak(seleccion["imbatido_streak"])
 
     fuerza = (
@@ -463,7 +458,6 @@ def calcular_fuerza_base(seleccion, contexto, cfg):
         win_rate     * PESO_WINRATE      +
         goles_favor  * PESO_GOLES_FAVOR  +
         goles_contra * PESO_GOLES_CONTRA +
-        factor_fifa  * PESO_RANKING_FIFA +
         streak       * PESO_STREAK
     )
 
@@ -533,49 +527,130 @@ def contar_resultados_h2h(partidos_h2h, nombre_local, nombre_visitante):
 # EMPATE
 # =============================
 
-# FIX v3: cuando empatados=0 en muchos partidos es casi siempre un bug del
-# scraper (los empates no se capturaron). Se usa un fallback realista de 0.22
-# en lugar de devolver 0.0, que colapsaba la prob. de empate al piso (0.18).
-def calcular_tasa_empate(seleccion, es_neutro=False):
+def calcular_tasa_empate(seleccion):
     partidos  = seleccion.get("partidos", 0)
     empatados = seleccion.get("empatados", 0)
-    if partidos == 0 or empatados == 0:
-        return 0.22   # fallback: ~22% es la tasa histórica real de empates en fútbol internacional
-    return limitar(empatados / partidos, 0.0, 1.0)
+    if partidos == 0:
+        return 0.22, 0.0
+    tasa = limitar(empatados / partidos, 0.0, 1.0)
+    conf = peso_confianza(partidos)
+    return tasa, conf
 
 
 def contar_empates_recientes(ultimos_5):
     return ultimos_5.count("D")
 
 
-PESO_EMPATE_BASE      = 0.30
-PESO_EMPATE_HISTORICO = 0.55
-PESO_EMPATE_MOMENTUM  = 0.15
-
 def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neutro=False):
-    diferencia = abs(f_local - f_visitante)
-    base_empate = 0.30 if es_neutro else 0.26
+    diferencia  = abs(f_local - f_visitante)
+    base_empate = 0.28 if es_neutro else 0.24
+    base = limitar(base_empate - (diferencia / 0.50) * 0.10, 0.14, base_empate)
 
-    base = limitar(base_empate - (diferencia / 0.60) * 0.10, 0.18, base_empate)
+    tasa_l, conf_l = calcular_tasa_empate(sel_local)
+    tasa_v, conf_v = calcular_tasa_empate(sel_visitante)
 
-    tasa_local     = calcular_tasa_empate(sel_local,     es_neutro)
-    tasa_visitante = calcular_tasa_empate(sel_visitante, es_neutro)
-    historico = max(tasa_local, tasa_visitante)
+    conf_total = conf_l + conf_v
+    if conf_total > 0:
+        historico  = (tasa_l * conf_l + tasa_v * conf_v) / conf_total
+        peso_hist  = 0.35 + (min(conf_l, conf_v) * 0.20)
+    else:
+        historico  = 0.22
+        peso_hist  = 0.20
+
+    peso_base = 0.55 - peso_hist
+    peso_mom  = max(0.05, 1.0 - peso_base - peso_hist)
 
     d_local     = contar_empates_recientes(sel_local.get("ultimos_5", []))
     d_visitante = contar_empates_recientes(sel_visitante.get("ultimos_5", []))
-    momentum    = limitar((d_local + d_visitante) * 0.07, 0.0, 0.35)
+    momentum    = limitar((d_local + d_visitante) * 0.06, 0.0, 0.28)
 
-    return limitar(
-        base      * PESO_EMPATE_BASE      +
-        historico * PESO_EMPATE_HISTORICO +
-        momentum  * PESO_EMPATE_MOMENTUM,
-        0.18, 0.44
+    prob = (
+        base      * peso_base +
+        historico * peso_hist +
+        momentum  * peso_mom
     )
+    piso = 0.18 if conf_total == 0 else 0.14
+    return limitar(prob, piso, 0.38)
 
 
 # =============================
-# MOTOR CENTRAL DE PREDICCIÓN
+# AJUSTE LAMBDA
+# =============================
+
+def ajuste_empate_por_lambdas(prob_local, prob_empate, prob_visitante,
+                               lambda_local, lambda_visitante):
+    suma_lambda = lambda_local + lambda_visitante
+    diff_lambda = abs(lambda_local - lambda_visitante)
+
+    boost = 0.0
+
+    # Escenario 1: partido trabado (pocos goles y equilibrado)
+    if suma_lambda < 1.6 and diff_lambda < 0.40:
+        intensidad = limitar((1.6 - suma_lambda) / 0.8, 0.0, 1.0)
+        boost += 0.10 * intensidad
+
+    # Escenario 2: cerrado aunque con más goles
+    if diff_lambda < 0.30 and suma_lambda < 2.5:
+        intensidad = limitar((0.30 - diff_lambda) / 0.30, 0.0, 1.0)
+        boost += 0.07 * intensidad
+
+    # Escenario 3: muy cerrado (lambdas casi iguales)
+    if diff_lambda < 0.15:
+        boost += 0.05
+
+    if boost <= 0.0:
+        return prob_local, prob_empate, prob_visitante
+
+    boost = limitar(boost, 0.0, 0.18)
+
+    total_lv = prob_local + prob_visitante
+    if total_lv <= 0:
+        return prob_local, prob_empate, prob_visitante
+
+    quita_l = boost * (prob_local    / total_lv)
+    quita_v = boost * (prob_visitante / total_lv)
+
+    prob_local     -= quita_l
+    prob_visitante -= quita_v
+    prob_empate    += boost
+
+    total = prob_local + prob_empate + prob_visitante
+    return prob_local / total, prob_empate / total, prob_visitante / total
+
+
+# =============================
+# PREDICCIÓN INTELIGENTE
+# =============================
+
+def prediccion_inteligente(prob_local, prob_empate, prob_visitante,
+                            lambda_local, lambda_visitante,
+                            nombre_local, nombre_visitante):
+    suma_lambda = lambda_local + lambda_visitante
+    diff_lambda = abs(lambda_local - lambda_visitante)
+
+    # Regla 1: empate tiene la mayor probabilidad
+    if prob_empate >= prob_local and prob_empate >= prob_visitante:
+        return "Empate"
+
+    # Regla 2: partido muy trabado (pocos goles, lambdas similares)
+    if suma_lambda < 1.6 and diff_lambda < 0.35:
+        return "Empate"
+
+    # Regla 3: lambdas similares + empate competitivo
+    if diff_lambda < 0.28 and prob_empate > 0.24:
+        favorito_prob = max(prob_local, prob_visitante)
+        if favorito_prob - prob_empate < 0.10:
+            return "Empate"
+
+    # Regla 4: caso normal
+    if prob_local >= prob_visitante:
+        return nombre_local
+    else:
+        return nombre_visitante
+
+
+# =============================
+# CAP FINAL
 # =============================
 
 def _aplicar_cap_final(prob_local, prob_empate, prob_visitante, max_favorito):
@@ -584,19 +659,23 @@ def _aplicar_cap_final(prob_local, prob_empate, prob_visitante, max_favorito):
         return prob_local, prob_empate, prob_visitante
 
     if prob_local >= prob_visitante:
-        exceso = prob_local - max_favorito
-        prob_local    = max_favorito
-        prob_empate   += exceso * 0.55
-        prob_visitante += exceso * 0.45
+        exceso          = prob_local - max_favorito
+        prob_local      = max_favorito
+        prob_empate    += exceso * 0.30
+        prob_visitante += exceso * 0.70
     else:
-        exceso = prob_visitante - max_favorito
-        prob_visitante = max_favorito
-        prob_empate   += exceso * 0.55
-        prob_local    += exceso * 0.45
+        exceso          = prob_visitante - max_favorito
+        prob_visitante  = max_favorito
+        prob_empate    += exceso * 0.30
+        prob_local     += exceso * 0.70
 
     total = prob_local + prob_empate + prob_visitante
     return prob_local / total, prob_empate / total, prob_visitante / total
 
+
+# =============================
+# MOTOR CENTRAL
+# =============================
 
 def predecir_probabilidades(
     sel_local, sel_visitante,
@@ -607,17 +686,17 @@ def predecir_probabilidades(
     ctx_l = {**contexto, "es_local": True}
     ctx_v = {**contexto, "es_local": False}
 
-    # ── Capa 1: Poisson ──────────────────────────────────────────────────────
+    # ── Capa 1: Poisson ──────────────────────────────────────────────
     lambda_local, lambda_visitante = calcular_lambdas(
         sel_local, sel_visitante, contexto, promedio_global
     )
     p_local, p_empate, p_visitante = probabilidades_poisson(lambda_local, lambda_visitante)
 
-    # ── Capa 2: Fuerza base ──────────────────────────────────────────────────
+    # ── Capa 2: Fuerza base ───────────────────────────────────────────
     fb_local     = calcular_fuerza_base(sel_local,     ctx_l, cfg)
     fb_visitante = calcular_fuerza_base(sel_visitante, ctx_v, cfg)
 
-    # ── H2H ─────────────────────────────────────────────────────────────────
+    # ── H2H ──────────────────────────────────────────────────────────
     if cfg["usa_h2h"] and h2h_data:
         h2h_local, n_h2h, partidos_h2h = calcular_h2h_score(
             nombre_local, nombre_visitante, h2h_data
@@ -626,44 +705,34 @@ def predecir_probabilidades(
         h2h_local, n_h2h, partidos_h2h = 0.5, 0, []
     h2h_visitante = 1.0 - h2h_local
 
-    # ── Ranking FIFA ─────────────────────────────────────────────────────────
-    if cfg["usa_ranking_fifa"]:
-        rank_l = normalizar_ranking_fifa(sel_local["ranking_fifa"])
-        rank_v = normalizar_ranking_fifa(sel_visitante["ranking_fifa"])
-    else:
-        rank_l = rank_v = 0.5
-
-    # ── Altitud ──────────────────────────────────────────────────────────────
+    # ── Altitud ───────────────────────────────────────────────────────
     if cfg["usa_altitud"]:
-        alt_sede = contexto.get("altitud_sede", 0)
+        alt_sede     = contexto.get("altitud_sede", 0)
         factor_alt_l = calcular_factor_altitud(alt_sede, sel_local.get("altitud_base", 0))
         factor_alt_v = calcular_factor_altitud(alt_sede, sel_visitante.get("altitud_base", 0))
-        total_alt = factor_alt_l + factor_alt_v
-        alt_norm_l = factor_alt_l / total_alt if total_alt > 0 else 0.5
-        alt_norm_v = factor_alt_v / total_alt if total_alt > 0 else 0.5
+        total_alt    = factor_alt_l + factor_alt_v
+        alt_norm_l   = factor_alt_l / total_alt if total_alt > 0 else 0.5
+        alt_norm_v   = factor_alt_v / total_alt if total_alt > 0 else 0.5
     else:
         alt_norm_l = alt_norm_v = 0.5
 
-    # ── Fuerza compuesta ─────────────────────────────────────────────────────
+    # ── Fuerza compuesta ──────────────────────────────────────────────
     PESO_BASE    = cfg["PESO_BASE"]
     PESO_H2H     = cfg["PESO_H2H"]
-    PESO_RANKING = cfg["PESO_RANKING"]
     PESO_ALTITUD = cfg["PESO_ALTITUD"]
 
     f_local = (
-        fb_local      * PESO_BASE    +
-        h2h_local     * PESO_H2H     +
-        rank_l        * PESO_RANKING +
-        alt_norm_l    * PESO_ALTITUD
+        fb_local    * PESO_BASE    +
+        h2h_local   * PESO_H2H    +
+        alt_norm_l  * PESO_ALTITUD
     )
     f_visitante = (
         fb_visitante  * PESO_BASE    +
-        h2h_visitante * PESO_H2H     +
-        rank_v        * PESO_RANKING +
+        h2h_visitante * PESO_H2H    +
         alt_norm_v    * PESO_ALTITUD
     )
 
-    # ── Score logístico ──────────────────────────────────────────────────────
+    # ── Score logístico ───────────────────────────────────────────────
     score   = f_local - f_visitante
     ratio_l = 1 / (1 + math.exp(-cfg["K_LOGISTICO"] * score))
     ratio_v = 1 - ratio_l
@@ -675,13 +744,13 @@ def predecir_probabilidades(
         ratio_v = cfg["MAX_FAVORITO"]
         ratio_l = 1 - ratio_v
 
-    # ── Empate ───────────────────────────────────────────────────────────────
-    prob_empate_f = calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neutro)
-    restante      = 1.0 - prob_empate_f
+    # ── Empate ────────────────────────────────────────────────────────
+    prob_empate_f    = calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neutro)
+    restante         = 1.0 - prob_empate_f
     prob_local_f     = restante * ratio_l
     prob_visitante_f = restante * ratio_v
 
-    # ── Fusión Poisson + fuerza ──────────────────────────────────────────────
+    # ── Fusión Poisson + fuerza ───────────────────────────────────────
     ALPHA = cfg["ALPHA"]
     BETA  = cfg["BETA"]
 
@@ -689,17 +758,23 @@ def predecir_probabilidades(
     prob_empate    = ALPHA * p_empate    + BETA * prob_empate_f
     prob_visitante = ALPHA * p_visitante + BETA * prob_visitante_f
 
-    total          = prob_local + prob_empate + prob_visitante
+    total = prob_local + prob_empate + prob_visitante
     prob_local    /= total
     prob_empate   /= total
     prob_visitante /= total
 
-    # ── Cap final sobre probabilidad fusionada ───────────────────────────────
+    # ── Cap final ─────────────────────────────────────────────────────
     prob_local, prob_empate, prob_visitante = _aplicar_cap_final(
         prob_local, prob_empate, prob_visitante, cfg["MAX_FAVORITO"]
     )
 
-    gap = abs(prob_local - prob_visitante)
+    # ── Ajuste por lambdas ────────────────────────────────────────────
+    prob_local, prob_empate, prob_visitante = ajuste_empate_por_lambdas(
+        prob_local, prob_empate, prob_visitante,
+        lambda_local, lambda_visitante,
+    )
+
+    gap       = abs(prob_local - prob_visitante)
     confianza = "ajustado" if gap < 0.08 else "moderado" if gap < 0.18 else "favorable"
 
     return {
@@ -719,8 +794,6 @@ def predecir_probabilidades(
         "lambda_visitante": lambda_visitante,
         "factor_altitud_local":     calcular_factor_altitud(contexto.get("altitud_sede",0), sel_local.get("altitud_base",0)),
         "factor_altitud_visitante": calcular_factor_altitud(contexto.get("altitud_sede",0), sel_visitante.get("altitud_base",0)),
-        "rank_l":           rank_l,
-        "rank_v":           rank_v,
     }
 
 
@@ -729,12 +802,12 @@ def predecir_probabilidades(
 # =============================
 
 def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante, contexto, cfg):
-    factores = []
+    factores     = []
     altitud_sede = contexto.get("altitud_sede", 0)
     ciudad_sede  = contexto.get("ciudad_sede", "")
     es_neutro    = contexto.get("es_neutro", False)
 
-    # ── 1. FORMA RECIENTE ────────────────────────────────────────────────────
+    # ── 1. FORMA RECIENTE ────────────────────────────────────────────
     fl    = local["forma_ponderada"]
     fv    = visitante["forma_ponderada"]
     ul5_l = local.get("ultimos_5", [])
@@ -765,34 +838,7 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion": interp,
     })
 
-    # ── 2. RANKING FIFA ──────────────────────────────────────────────────────
-    rl = local["ranking_fifa"]
-    rv = visitante["ranking_fifa"]
-    pl = local["puntos_fifa"]
-    pv = visitante["puntos_fifa"]
-    dif_rank = abs(rl - rv)
-    favorito_rank = nombre_local if rl < rv else nombre_visitante
-    if dif_rank >= 30:
-        interp = (f"Diferencia significativa en ranking FIFA: #{rl} {nombre_local} "
-                  f"({pl:.0f} pts) vs #{rv} {nombre_visitante} ({pv:.0f} pts). "
-                  f"{favorito_rank} tiene ventaja objetiva de calidad.")
-    elif dif_rank >= 10:
-        interp = (f"Leve diferencia en ranking: #{rl} {nombre_local} vs "
-                  f"#{rv} {nombre_visitante}. El factor puede influir en momentos clave.")
-    else:
-        interp = (f"Selecciones parejas en ranking FIFA: #{rl} vs #{rv}. "
-                  f"La calidad individual no diferencia decisivamente.")
-
-    factores.append({
-        "factor":    "Ranking FIFA",
-        "impacto":   nivel_impacto(dif_rank / 200.0),
-        "tipo":      "barras",
-        "local":     {"etiqueta": f"#{rl} FIFA", "valor": round(resultado["rank_l"],3), "puntos": round(pl,1), "nombre": nombre_local},
-        "visitante": {"etiqueta": f"#{rv} FIFA", "valor": round(resultado["rank_v"],3), "puntos": round(pv,1), "nombre": nombre_visitante},
-        "interpretacion": interp,
-    })
-
-    # ── 3. ALTITUD ───────────────────────────────────────────────────────────
+    # ── 2. ALTITUD ───────────────────────────────────────────────────
     alt_l = local.get("altitud_base", 0)
     alt_v = visitante.get("altitud_base", 0)
     fa_l  = resultado["factor_altitud_local"]
@@ -802,7 +848,6 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         contexto_altitud = contexto.get("contexto_altitud", f"Sede a {altitud_sede}m")
         diff_l = altitud_sede - alt_l
         diff_v = altitud_sede - alt_v
-
         if diff_l > diff_v + 500:
             interp = (f"{contexto_altitud}. {nombre_local} viene de {alt_l}m "
                       f"(diferencia: {diff_l}m) frente a {nombre_visitante} de {alt_v}m "
@@ -832,8 +877,8 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion": interp,
     })
 
-    # ── 4. POTENCIAL OFENSIVO Y DEFENSIVO ────────────────────────────────────
-    gf_l = local["goles_favor_promedio"];    gc_l = local["goles_contra_promedio"]
+    # ── 3. POTENCIAL OFENSIVO Y DEFENSIVO ────────────────────────────
+    gf_l = local["goles_favor_promedio"];     gc_l = local["goles_contra_promedio"]
     gf_v = visitante["goles_favor_promedio"]; gc_v = visitante["goles_contra_promedio"]
     ventaja_of = gf_l - gf_v
 
@@ -857,7 +902,64 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion": interp,
     })
 
-    # ── 5. H2H (si aplica) ───────────────────────────────────────────────────
+    # ── 4. SEÑAL LAMBDA ───────────────────────────────────────────────
+    ll = resultado["lambda_local"]
+    lv = resultado["lambda_visitante"]
+    suma_l = ll + lv
+    diff_l = abs(ll - lv)
+
+    if suma_l < 1.6:
+        tipo_partido = "partido muy trabado"
+        interp_l = (f"Los lambdas proyectan un {tipo_partido}: "
+                    f"{nombre_local} {ll:.2f} goles esperados vs {nombre_visitante} {lv:.2f}. "
+                    f"Con solo {suma_l:.2f} goles totales esperados, el empate es el resultado más probable.")
+    elif diff_l < 0.30:
+        tipo_partido = "partido muy equilibrado"
+        interp_l = (f"Lambdas muy similares ({ll:.2f} vs {lv:.2f}): {tipo_partido}. "
+                    f"La diferencia de solo {diff_l:.2f} goles esperados entre ambos equipos "
+                    f"sugiere un resultado cerrado.")
+    elif ll > lv:
+        interp_l = (f"{nombre_local} genera más peligro ofensivo según el modelo: "
+                    f"{ll:.2f} goles esperados vs {lv:.2f} de {nombre_visitante}.")
+    else:
+        interp_l = (f"{nombre_visitante} genera más peligro ofensivo según el modelo: "
+                    f"{lv:.2f} goles esperados vs {ll:.2f} de {nombre_local}.")
+
+    factores.append({
+        "factor":    "Proyección de goles (λ)",
+        "impacto":   nivel_impacto(diff_l * 0.5),
+        "tipo":      "lambda",
+        "local":     {"nombre": nombre_local,     "lambda": round(ll, 3)},
+        "visitante": {"nombre": nombre_visitante, "lambda": round(lv, 3)},
+        "suma":      round(suma_l, 3),
+        "interpretacion": interp_l,
+    })
+
+    # ── 5. MARCADORES MÁS PROBABLES ──────────────────────────────────
+    top_marcadores = marcadores_probables(ll, lv, top_n=5)
+    marcador_top   = top_marcadores[0]
+
+    tipo_map = {"local": nombre_local, "empate": "empate", "visitante": nombre_visitante}
+    gana_str = tipo_map.get(marcador_top["tipo"], "empate")
+
+    interp_m = (
+        f"El marcador más probable es {marcador_top['marcador']} "
+        f"({marcador_top['porcentaje']:.1f}%), favoreciendo a {gana_str}. "
+        f"Los 5 resultados más frecuentes acumulan el "
+        f"{sum(m['porcentaje'] for m in top_marcadores):.1f}% de probabilidad total."
+    )
+
+    factores.append({
+        "factor":      "Marcadores más probables",
+        "impacto":     "informativo",
+        "tipo":        "marcadores",
+        "marcadores":  top_marcadores,
+        "lambda_local":     round(ll, 3),
+        "lambda_visitante": round(lv, 3),
+        "interpretacion":   interp_m,
+    })
+
+    # ── 6. H2H (si aplica) ───────────────────────────────────────────
     n_h2h = resultado["n_h2h"]
     if cfg["usa_h2h"] and n_h2h > 0:
         h2h_score = resultado["h2h_local"]
@@ -946,11 +1048,11 @@ def generar_partido(
     es_neutro = fixture_item.get("es_neutro", es_neutro)
 
     contexto = {
-        "altitud_sede":    altitud_sede,
-        "ciudad_sede":     fixture_item.get("ciudad_sede", ""),
-        "pais_sede":       pais_sede,
-        "estadio":         fixture_item.get("estadio", ""),
-        "es_neutro":       es_neutro,
+        "altitud_sede":     altitud_sede,
+        "ciudad_sede":      fixture_item.get("ciudad_sede", ""),
+        "pais_sede":        pais_sede,
+        "estadio":          fixture_item.get("estadio", ""),
+        "es_neutro":        es_neutro,
         "contexto_altitud": fixture_item.get("contexto_altitud", f"Sede a {altitud_sede}m"),
     }
 
@@ -963,10 +1065,23 @@ def generar_partido(
         contexto, promedio_global, cfg,
     )
 
-    maxima = max(resultado["local"], resultado["empate"], resultado["visitante"])
-    if   maxima == resultado["local"]:   pred = local["nombre"]
-    elif maxima == resultado["empate"]:  pred = "Empate"
-    else:                                pred = visitante["nombre"]
+    # ── Predicción con lambdas integrados ────────────────────────────
+    pred = prediccion_inteligente(
+        resultado["local"],
+        resultado["empate"],
+        resultado["visitante"],
+        resultado["lambda_local"],
+        resultado["lambda_visitante"],
+        local["nombre"],
+        visitante["nombre"],
+    )
+
+    # ── Marcadores más probables (top nivel) ─────────────────────────
+    top_marcadores = marcadores_probables(
+        resultado["lambda_local"],
+        resultado["lambda_visitante"],
+        top_n=5,
+    )
 
     analisis = generar_analisis(
         local, visitante, resultado,
@@ -1000,7 +1115,8 @@ def generar_partido(
         "lambda_visitante": resultado["lambda_visitante"],
         "factor_altitud_local":     resultado["factor_altitud_local"],
         "factor_altitud_visitante": resultado["factor_altitud_visitante"],
-        "analisis":         analisis,
+        "marcadores_probables":     top_marcadores,
+        "analisis":                 analisis,
     }
 
     guardar_resultado(output, archivo_salida)
@@ -1057,7 +1173,7 @@ if __name__ == "__main__":
                 archivo_salida = cfg_db["salida"],
             )
 
-            alt = p["altitud_sede"]
+            alt     = p["altitud_sede"]
             tag_alt = ""
             if alt >= 2500:
                 tag_alt = f" 🏔 {alt}m"
@@ -1067,11 +1183,18 @@ if __name__ == "__main__":
             sede   = f"{p['ciudad_sede']}{tag_alt}"
             neutro = " [NEUTRO]" if p["es_neutro"] else ""
 
+            # Marcador más probable
+            top1 = p["marcadores_probables"][0]
+
             print(f"  ⚽ {p['local']:<20} vs {p['visitante']:<20}  {sede}{neutro}")
             print(f"     {p['prob_local']:.1%} / {p['prob_empate']:.1%} / {p['prob_visitante']:.1%}"
                   f"  →  {p['prediccion']}  [{p['confianza']}]")
             print(f"     λ {p['lambda_local']:.2f} / {p['lambda_visitante']:.2f}"
                   f"  |  Alt: {p['factor_altitud_local']:.3f} vs {p['factor_altitud_visitante']:.3f}")
+            print(f"     Marcadores: " + "  ".join(
+                f"{m['marcador']}({m['porcentaje']:.1f}%)"
+                for m in p["marcadores_probables"]
+            ))
             print()
 
         except Exception as e:
@@ -1083,8 +1206,3 @@ if __name__ == "__main__":
     print(f"✅ Completado. {len(fixture)-errores} proyecciones generadas → {cfg_db['salida']}")
     if errores:
         print(f"  ⚠  {errores} errores (revisa los nombres en selecciones.json y fixture.json)")
-
-
-# ── TEST INTERNO: Greece vs Italy ─────────────────────────────────────────────
-if False:
-    pass
