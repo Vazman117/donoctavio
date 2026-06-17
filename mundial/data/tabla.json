@@ -60,11 +60,35 @@
     "partidos": 1.0
   },
   {
+    "grupo": "Group L",
+    "posicion": 1.0,
+    "equipo": "England",
+    "abreviacion": "ENG",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+    "puntos": 3.0,
+    "diferencia_goles": 2.0,
+    "goles_favor": 4.0,
+    "goles_contra": 2.0,
+    "partidos": 1.0
+  },
+  {
     "grupo": "Group I",
     "posicion": 2.0,
     "equipo": "France",
     "abreviacion": "FRA",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+    "puntos": 3.0,
+    "diferencia_goles": 2.0,
+    "goles_favor": 3.0,
+    "goles_contra": 1.0,
+    "partidos": 1.0
+  },
+  {
+    "grupo": "Group J",
+    "posicion": 2.0,
+    "equipo": "Austria",
+    "abreviacion": "AUT",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
     "puntos": 3.0,
     "diferencia_goles": 2.0,
     "goles_favor": 3.0,
@@ -300,6 +324,30 @@
     "partidos": 1.0
   },
   {
+    "grupo": "Group K",
+    "posicion": 2.0,
+    "equipo": "Portugal",
+    "abreviacion": "POR",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+    "puntos": 1.0,
+    "diferencia_goles": 0.0,
+    "goles_favor": 1.0,
+    "goles_contra": 1.0,
+    "partidos": 1.0
+  },
+  {
+    "grupo": "Group K",
+    "posicion": 1.0,
+    "equipo": "Congo DR",
+    "abreviacion": "COD",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+    "puntos": 1.0,
+    "diferencia_goles": 0.0,
+    "goles_favor": 1.0,
+    "goles_contra": 1.0,
+    "partidos": 1.0
+  },
+  {
     "grupo": "Group H",
     "posicion": 3.0,
     "equipo": "Spain",
@@ -324,32 +372,8 @@
     "partidos": 1.0
   },
   {
-    "grupo": "Group J",
-    "posicion": 2.0,
-    "equipo": "Austria",
-    "abreviacion": "AUT",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group J",
-    "posicion": 3.0,
-    "equipo": "Jordan",
-    "abreviacion": "JOR",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
     "grupo": "Group K",
-    "posicion": 4.0,
+    "posicion": 3.0,
     "equipo": "Colombia",
     "abreviacion": "COL",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
@@ -361,19 +385,7 @@
   },
   {
     "grupo": "Group K",
-    "posicion": 1.0,
-    "equipo": "Portugal",
-    "abreviacion": "POR",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group K",
-    "posicion": 3.0,
+    "posicion": 4.0,
     "equipo": "Uzbekistan",
     "abreviacion": "UZB",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
@@ -384,44 +396,8 @@
     "partidos": 0.0
   },
   {
-    "grupo": "Group K",
-    "posicion": 2.0,
-    "equipo": "Congo DR",
-    "abreviacion": "COD",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group L",
-    "posicion": 1.0,
-    "equipo": "England",
-    "abreviacion": "ENG",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
     "grupo": "Group L",
     "posicion": 2.0,
-    "equipo": "Croatia",
-    "abreviacion": "CRO",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group L",
-    "posicion": 4.0,
     "equipo": "Panama",
     "abreviacion": "PAN",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
@@ -480,11 +456,35 @@
     "partidos": 1.0
   },
   {
+    "grupo": "Group L",
+    "posicion": 4.0,
+    "equipo": "Croatia",
+    "abreviacion": "CRO",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
+    "puntos": 0.0,
+    "diferencia_goles": -2.0,
+    "goles_favor": 2.0,
+    "goles_contra": 4.0,
+    "partidos": 1.0
+  },
+  {
     "grupo": "Group I",
     "posicion": 3.0,
     "equipo": "Senegal",
     "abreviacion": "SEN",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+    "puntos": 0.0,
+    "diferencia_goles": -2.0,
+    "goles_favor": 1.0,
+    "goles_contra": 3.0,
+    "partidos": 1.0
+  },
+  {
+    "grupo": "Group J",
+    "posicion": 3.0,
+    "equipo": "Jordan",
+    "abreviacion": "JOR",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
     "puntos": 0.0,
     "diferencia_goles": -2.0,
     "goles_favor": 1.0,

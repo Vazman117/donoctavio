@@ -195,14 +195,14 @@ PARTIDOS_GRUPO = [
 
     # ── GRUPO J ──────────────────────────────────────────────
     # ("Argentina",   "Algeria",   "Kansas City"), # JUGADO 3-0
-    ("Austria",     "Jordan",    "San Francisco"),
+    # ("Austria",     "Jordan",    "San Francisco"), # JUGADO 3-1
     ("Argentina",   "Austria",   "Dallas"),
     ("Algeria",     "Jordan",    "Philadelphia"),
     ("Jordan",      "Argentina", "Dallas"),
     ("Algeria",     "Austria",   "Kansas City"),
 
     # ── GRUPO K ──────────────────────────────────────────────
-    ("Portugal",    "Congo DR",  "Houston"),
+    # ("Portugal",    "Congo DR",  "Houston"),    # JUGADO 1-1
     ("Uzbekistan",  "Colombia",  "Mexico City"),
     ("Portugal",    "Uzbekistan","Houston"),
     ("Colombia",    "Congo DR",  "Guadalajara"),
@@ -210,7 +210,7 @@ PARTIDOS_GRUPO = [
     ("Congo DR",    "Uzbekistan","Atlanta"),
 
     # ── GRUPO L ──────────────────────────────────────────────
-    ("England",     "Croatia",   "Dallas"),
+    # ("England",     "Croatia",   "Dallas"),    # JUGADO 4-2
     ("Ghana",       "Panama",    "Toronto"),
     ("England",     "Ghana",     "Boston"),
     ("Panama",      "Croatia",   "New York"),
