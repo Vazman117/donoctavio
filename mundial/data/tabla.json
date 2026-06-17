@@ -36,6 +36,42 @@
     "partidos": 1.0
   },
   {
+    "grupo": "Group I",
+    "posicion": 1.0,
+    "equipo": "Norway",
+    "abreviacion": "NOR",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+    "puntos": 3.0,
+    "diferencia_goles": 3.0,
+    "goles_favor": 4.0,
+    "goles_contra": 1.0,
+    "partidos": 1.0
+  },
+  {
+    "grupo": "Group J",
+    "posicion": 1.0,
+    "equipo": "Argentina",
+    "abreviacion": "ARG",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+    "puntos": 3.0,
+    "diferencia_goles": 3.0,
+    "goles_favor": 3.0,
+    "goles_contra": 0.0,
+    "partidos": 1.0
+  },
+  {
+    "grupo": "Group I",
+    "posicion": 2.0,
+    "equipo": "France",
+    "abreviacion": "FRA",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+    "puntos": 3.0,
+    "diferencia_goles": 2.0,
+    "goles_favor": 3.0,
+    "goles_contra": 1.0,
+    "partidos": 1.0
+  },
+  {
     "grupo": "Group A",
     "posicion": 1.0,
     "equipo": "Mexico",
@@ -288,68 +324,8 @@
     "partidos": 1.0
   },
   {
-    "grupo": "Group I",
-    "posicion": 4.0,
-    "equipo": "Norway",
-    "abreviacion": "NOR",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group I",
-    "posicion": 1.0,
-    "equipo": "France",
-    "abreviacion": "FRA",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group I",
+    "grupo": "Group J",
     "posicion": 2.0,
-    "equipo": "Senegal",
-    "abreviacion": "SEN",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group I",
-    "posicion": 3.0,
-    "equipo": "Iraq",
-    "abreviacion": "IRQ",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group J",
-    "posicion": 1.0,
-    "equipo": "Argentina",
-    "abreviacion": "ARG",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group J",
-    "posicion": 3.0,
     "equipo": "Austria",
     "abreviacion": "AUT",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
@@ -361,19 +337,7 @@
   },
   {
     "grupo": "Group J",
-    "posicion": 2.0,
-    "equipo": "Algeria",
-    "abreviacion": "ALG",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group J",
-    "posicion": 4.0,
+    "posicion": 3.0,
     "equipo": "Jordan",
     "abreviacion": "JOR",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
@@ -516,6 +480,18 @@
     "partidos": 1.0
   },
   {
+    "grupo": "Group I",
+    "posicion": 3.0,
+    "equipo": "Senegal",
+    "abreviacion": "SEN",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+    "puntos": 0.0,
+    "diferencia_goles": -2.0,
+    "goles_favor": 1.0,
+    "goles_contra": 3.0,
+    "partidos": 1.0
+  },
+  {
     "grupo": "Group A",
     "posicion": 4.0,
     "equipo": "South Africa",
@@ -549,6 +525,30 @@
     "diferencia_goles": -3.0,
     "goles_favor": 1.0,
     "goles_contra": 4.0,
+    "partidos": 1.0
+  },
+  {
+    "grupo": "Group I",
+    "posicion": 4.0,
+    "equipo": "Iraq",
+    "abreviacion": "IRQ",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
+    "puntos": 0.0,
+    "diferencia_goles": -3.0,
+    "goles_favor": 1.0,
+    "goles_contra": 4.0,
+    "partidos": 1.0
+  },
+  {
+    "grupo": "Group J",
+    "posicion": 4.0,
+    "equipo": "Algeria",
+    "abreviacion": "ALG",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+    "puntos": 0.0,
+    "diferencia_goles": -3.0,
+    "goles_favor": 0.0,
+    "goles_contra": 3.0,
     "partidos": 1.0
   },
   {

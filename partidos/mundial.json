@@ -1,5 +1,595 @@
 [
   {
+    "id": "760432",
+    "fecha": "2026-06-16T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "France",
+    "visitante": "Senegal",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+    "estadio": "MetLife Stadium",
+    "ciudad_sede": "East Rutherford, New Jersey",
+    "pais_sede": "USA",
+    "altitud_sede": 5,
+    "es_neutro": true,
+    "prob_local": 0.44,
+    "prob_empate": 0.21409058368212708,
+    "prob_visitante": 0.345909416317873,
+    "fuerza_local": 0.5296434285714285,
+    "fuerza_visitante": 0.4679805714285714,
+    "diferencia": 0.06166285714285713,
+    "confianza": "moderado",
+    "prediccion": "France",
+    "resultado": "France",
+    "lambda_local": 1.6718103448275863,
+    "lambda_visitante": 1.3938669852648349,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      {
+        "marcador": "1-1",
+        "goles_local": 1,
+        "goles_visitante": 1,
+        "probabilidad": 0.108643,
+        "porcentaje": 10.86,
+        "tipo": "empate"
+      },
+      {
+        "marcador": "2-1",
+        "goles_local": 2,
+        "goles_visitante": 1,
+        "probabilidad": 0.090815,
+        "porcentaje": 9.08,
+        "tipo": "local"
+      },
+      {
+        "marcador": "1-0",
+        "goles_local": 1,
+        "goles_visitante": 0,
+        "probabilidad": 0.077944,
+        "porcentaje": 7.79,
+        "tipo": "local"
+      },
+      {
+        "marcador": "1-2",
+        "goles_local": 1,
+        "goles_visitante": 2,
+        "probabilidad": 0.075717,
+        "porcentaje": 7.57,
+        "tipo": "visitante"
+      },
+      {
+        "marcador": "2-0",
+        "goles_local": 2,
+        "goles_visitante": 0,
+        "probabilidad": 0.065153,
+        "porcentaje": 6.52,
+        "tipo": "local"
+      }
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.75,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "France"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Senegal"
+        },
+        "interpretacion": "France llega con mejor momentum: índice 0.75/1.0 frente a 0.50/1.0 de Senegal. Últimos 5: 3V/0E/1D vs 2V/0E/2D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 5,
+        "ciudad_sede": "East Rutherford, New Jersey",
+        "local": {
+          "nombre": "France",
+          "altitud_base": 35,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Senegal",
+          "altitud_base": 22,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (5m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "France",
+          "goles_favor": 2.25,
+          "goles_contra": 1.25
+        },
+        "visitante": {
+          "nombre": "Senegal",
+          "goles_favor": 1.75,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "France más ofensivo: 2.25 goles/partido (vs 1.75). Defensiva: 1.25 vs 1.00."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "medio",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "France",
+          "lambda": 1.672
+        },
+        "visitante": {
+          "nombre": "Senegal",
+          "lambda": 1.394
+        },
+        "suma": 3.066,
+        "interpretacion": "Lambdas muy similares (1.67 vs 1.39): partido muy equilibrado. La diferencia de solo 0.28 goles esperados entre ambos equipos sugiere un resultado cerrado."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          {
+            "marcador": "1-1",
+            "goles_local": 1,
+            "goles_visitante": 1,
+            "probabilidad": 0.108643,
+            "porcentaje": 10.86,
+            "tipo": "empate"
+          },
+          {
+            "marcador": "2-1",
+            "goles_local": 2,
+            "goles_visitante": 1,
+            "probabilidad": 0.090815,
+            "porcentaje": 9.08,
+            "tipo": "local"
+          },
+          {
+            "marcador": "1-0",
+            "goles_local": 1,
+            "goles_visitante": 0,
+            "probabilidad": 0.077944,
+            "porcentaje": 7.79,
+            "tipo": "local"
+          },
+          {
+            "marcador": "1-2",
+            "goles_local": 1,
+            "goles_visitante": 2,
+            "probabilidad": 0.075717,
+            "porcentaje": 7.57,
+            "tipo": "visitante"
+          },
+          {
+            "marcador": "2-0",
+            "goles_local": 2,
+            "goles_visitante": 0,
+            "probabilidad": 0.065153,
+            "porcentaje": 6.52,
+            "tipo": "local"
+          }
+        ],
+        "lambda_local": 1.672,
+        "lambda_visitante": 1.394,
+        "interpretacion": "El marcador más probable es 1-1 (10.9%), favoreciendo a empate. Los 5 resultados más frecuentes acumulan el 41.8% de probabilidad total."
+      }
+    ]
+  },
+  {
+    "id": "760430",
+    "fecha": "2026-06-16T22:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Iraq",
+    "visitante": "Norway",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+    "estadio": "Gillette Stadium",
+    "ciudad_sede": "Foxborough, Massachusetts",
+    "pais_sede": "USA",
+    "altitud_sede": 25,
+    "es_neutro": true,
+    "prob_local": 0.2769839095587167,
+    "prob_empate": 0.4138467713209294,
+    "prob_visitante": 0.30916931912035395,
+    "fuerza_local": 0.41791717843572185,
+    "fuerza_visitante": 0.41195975824999254,
+    "diferencia": 0.005957420185729312,
+    "confianza": "ajustado",
+    "prediccion": "Empate",
+    "resultado": "Norway",
+    "lambda_local": 0.672769467507032,
+    "lambda_visitante": 0.8324167499999999,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 0.9999,
+    "marcadores_probables": [
+      {
+        "marcador": "0-0",
+        "goles_local": 0,
+        "goles_visitante": 0,
+        "probabilidad": 0.221976,
+        "porcentaje": 22.2,
+        "tipo": "empate"
+      },
+      {
+        "marcador": "0-1",
+        "goles_local": 0,
+        "goles_visitante": 1,
+        "probabilidad": 0.184777,
+        "porcentaje": 18.48,
+        "tipo": "visitante"
+      },
+      {
+        "marcador": "1-0",
+        "goles_local": 1,
+        "goles_visitante": 0,
+        "probabilidad": 0.149339,
+        "porcentaje": 14.93,
+        "tipo": "local"
+      },
+      {
+        "marcador": "1-1",
+        "goles_local": 1,
+        "goles_visitante": 1,
+        "probabilidad": 0.124312,
+        "porcentaje": 12.43,
+        "tipo": "empate"
+      },
+      {
+        "marcador": "0-2",
+        "goles_local": 0,
+        "goles_visitante": 2,
+        "probabilidad": 0.076906,
+        "porcentaje": 7.69,
+        "tipo": "visitante"
+      }
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.33,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Iraq"
+        },
+        "visitante": {
+          "valor": 0.25,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Norway"
+        },
+        "interpretacion": "Iraq llega con mejor momentum: índice 0.33/1.0 frente a 0.25/1.0 de Norway. Últimos 5: 1V/0E/2D vs 1V/0E/3D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 25,
+        "ciudad_sede": "Foxborough, Massachusetts",
+        "local": {
+          "nombre": "Iraq",
+          "altitud_base": 34,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Norway",
+          "altitud_base": 23,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (25m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Iraq",
+          "goles_favor": 0.67,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Norway",
+          "goles_favor": 1.25,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Norway más ofensivo: 1.25 vs 0.67 goles/partido. Defensiva: 1.00 vs 1.00."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "bajo",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Iraq",
+          "lambda": 0.673
+        },
+        "visitante": {
+          "nombre": "Norway",
+          "lambda": 0.832
+        },
+        "suma": 1.505,
+        "interpretacion": "Los lambdas proyectan un partido muy trabado: Iraq 0.67 goles esperados vs Norway 0.83. Con solo 1.51 goles totales esperados, el empate es el resultado más probable."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          {
+            "marcador": "0-0",
+            "goles_local": 0,
+            "goles_visitante": 0,
+            "probabilidad": 0.221976,
+            "porcentaje": 22.2,
+            "tipo": "empate"
+          },
+          {
+            "marcador": "0-1",
+            "goles_local": 0,
+            "goles_visitante": 1,
+            "probabilidad": 0.184777,
+            "porcentaje": 18.48,
+            "tipo": "visitante"
+          },
+          {
+            "marcador": "1-0",
+            "goles_local": 1,
+            "goles_visitante": 0,
+            "probabilidad": 0.149339,
+            "porcentaje": 14.93,
+            "tipo": "local"
+          },
+          {
+            "marcador": "1-1",
+            "goles_local": 1,
+            "goles_visitante": 1,
+            "probabilidad": 0.124312,
+            "porcentaje": 12.43,
+            "tipo": "empate"
+          },
+          {
+            "marcador": "0-2",
+            "goles_local": 0,
+            "goles_visitante": 2,
+            "probabilidad": 0.076906,
+            "porcentaje": 7.69,
+            "tipo": "visitante"
+          }
+        ],
+        "lambda_local": 0.673,
+        "lambda_visitante": 0.832,
+        "interpretacion": "El marcador más probable es 0-0 (22.2%), favoreciendo a empate. Los 5 resultados más frecuentes acumulan el 75.7% de probabilidad total."
+      }
+    ]
+  },
+  {
+    "id": "760433",
+    "fecha": "2026-06-17T01:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Argentina",
+    "visitante": "Algeria",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+    "estadio": "GEHA Field at Arrowhead Stadium",
+    "ciudad_sede": "Kansas City, Missouri",
+    "pais_sede": "USA",
+    "altitud_sede": 325,
+    "es_neutro": true,
+    "prob_local": 0.44,
+    "prob_empate": 0.20210284316547264,
+    "prob_visitante": 0.35789715683452744,
+    "fuerza_local": 0.6542274523533645,
+    "fuerza_visitante": 0.573939686218064,
+    "diferencia": 0.08028776613530053,
+    "confianza": "moderado",
+    "prediccion": "Argentina",
+    "resultado": "Argentina",
+    "lambda_local": 1.9141835182786007,
+    "lambda_visitante": 1.6329117231213615,
+    "factor_altitud_local": 0.985,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      {
+        "marcador": "1-1",
+        "goles_local": 1,
+        "goles_visitante": 1,
+        "probabilidad": 0.090046,
+        "porcentaje": 9.0,
+        "tipo": "empate"
+      },
+      {
+        "marcador": "2-1",
+        "goles_local": 2,
+        "goles_visitante": 1,
+        "probabilidad": 0.086182,
+        "porcentaje": 8.62,
+        "tipo": "local"
+      },
+      {
+        "marcador": "1-2",
+        "goles_local": 1,
+        "goles_visitante": 2,
+        "probabilidad": 0.073518,
+        "porcentaje": 7.35,
+        "tipo": "visitante"
+      },
+      {
+        "marcador": "2-2",
+        "goles_local": 2,
+        "goles_visitante": 2,
+        "probabilidad": 0.070364,
+        "porcentaje": 7.04,
+        "tipo": "empate"
+      },
+      {
+        "marcador": "1-0",
+        "goles_local": 1,
+        "goles_visitante": 0,
+        "probabilidad": 0.055144,
+        "porcentaje": 5.51,
+        "tipo": "local"
+      }
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 1.0,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Argentina"
+        },
+        "visitante": {
+          "valor": 0.75,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Algeria"
+        },
+        "interpretacion": "Argentina llega con mejor momentum: índice 1.00/1.0 frente a 0.75/1.0 de Algeria. Últimos 5: 4V/0E/0D vs 3V/0E/1D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 325,
+        "ciudad_sede": "Kansas City, Missouri",
+        "local": {
+          "nombre": "Argentina",
+          "altitud_base": 25,
+          "factor": 0.985
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "altitud_base": 424,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (325m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Argentina",
+          "goles_favor": 3.0,
+          "goles_contra": 0.25
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "goles_favor": 3.0,
+          "goles_contra": 0.0
+        },
+        "interpretacion": "Producción similar: Argentina 3.00 — Algeria 3.00 goles/partido. Defensa: 0.25 vs 0.00."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "medio",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Argentina",
+          "lambda": 1.914
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "lambda": 1.633
+        },
+        "suma": 3.547,
+        "interpretacion": "Lambdas muy similares (1.91 vs 1.63): partido muy equilibrado. La diferencia de solo 0.28 goles esperados entre ambos equipos sugiere un resultado cerrado."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          {
+            "marcador": "1-1",
+            "goles_local": 1,
+            "goles_visitante": 1,
+            "probabilidad": 0.090046,
+            "porcentaje": 9.0,
+            "tipo": "empate"
+          },
+          {
+            "marcador": "2-1",
+            "goles_local": 2,
+            "goles_visitante": 1,
+            "probabilidad": 0.086182,
+            "porcentaje": 8.62,
+            "tipo": "local"
+          },
+          {
+            "marcador": "1-2",
+            "goles_local": 1,
+            "goles_visitante": 2,
+            "probabilidad": 0.073518,
+            "porcentaje": 7.35,
+            "tipo": "visitante"
+          },
+          {
+            "marcador": "2-2",
+            "goles_local": 2,
+            "goles_visitante": 2,
+            "probabilidad": 0.070364,
+            "porcentaje": 7.04,
+            "tipo": "empate"
+          },
+          {
+            "marcador": "1-0",
+            "goles_local": 1,
+            "goles_visitante": 0,
+            "probabilidad": 0.055144,
+            "porcentaje": 5.51,
+            "tipo": "local"
+          }
+        ],
+        "lambda_local": 1.914,
+        "lambda_visitante": 1.633,
+        "interpretacion": "El marcador más probable es 1-1 (9.0%), favoreciendo a empate. Los 5 resultados más frecuentes acumulan el 37.5% de probabilidad total."
+      }
+    ]
+  },
+  {
     "id": "760427",
     "fecha": "2026-06-16T01:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

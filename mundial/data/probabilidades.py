@@ -186,15 +186,15 @@ PARTIDOS_GRUPO = [
     ("Cape Verde",  "Saudi Arabia","Houston"),
 
     # ── GRUPO I ──────────────────────────────────────────────
-    ("France",      "Senegal",   "New York"),
-    ("Iraq",        "Norway",    "Boston"),
+    # ("France",      "Senegal",   "New York"),  # JUGADO 3-1
+    # ("Iraq",        "Norway",    "Boston"),    # JUGADO 1-4
     ("Norway",      "France",    "Boston"),
     ("Senegal",     "Iraq",      "Toronto"),
     ("France",      "Iraq",      "Kansas City"),
     ("Senegal",     "Norway",    "Philadelphia"),
 
     # ── GRUPO J ──────────────────────────────────────────────
-    ("Argentina",   "Algeria",   "Kansas City"),
+    # ("Argentina",   "Algeria",   "Kansas City"), # JUGADO 3-0
     ("Austria",     "Jordan",    "San Francisco"),
     ("Argentina",   "Austria",   "Dallas"),
     ("Algeria",     "Jordan",    "Philadelphia"),
