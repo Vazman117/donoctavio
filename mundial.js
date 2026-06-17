@@ -41,6 +41,10 @@ async function cambiarVista(vista) {
     sec.classList.add("vista-scroll");
     cargarHoy();
   }
+  if (vista === "historial") {
+    sec.classList.add("vista-scroll");
+    cargarHistorial();
+  }
 }
 
 
@@ -645,4 +649,350 @@ async function cargarTabla() {
 
   window._tablaVista = renderVista;
   renderVista("grupos");
+}
+
+/* ─── HISTORIAL ─────────────────────────────────────────── */
+/* Agrega esto al final de mundial.js                        */
+/* Fuente de datos: partidos/mundial.json                    */
+
+// 1. Conectar el tab "historial" en cambiarVista()
+// Busca la función cambiarVista y añade este bloque:
+//
+//   if (vista === "historial") {
+//     sec.classList.add("vista-scroll");
+//     cargarHistorial();
+//   }
+
+// ── Helpers ──────────────────────────────────────────────
+
+let _partidosHistorial = [];
+
+function fmtH(n) {
+  return (n * 100).toFixed(1) + '%';
+}
+
+function obtenerFavoritoH(p) {
+  if (p.prediccion) return p.prediccion;
+  const max = Math.max(p.prob_local, p.prob_empate, p.prob_visitante);
+  if (max === p.prob_local)     return p.local;
+  if (max === p.prob_visitante) return p.visitante;
+  return 'Empate';
+}
+
+function obtenerPctFavoritoH(p, fav) {
+  if (fav === p.local)     return fmtH(p.prob_local);
+  if (fav === p.visitante) return fmtH(p.prob_visitante);
+  return fmtH(p.prob_empate);
+}
+
+function clasificarResultadoH(p) {
+  if (!p.resultado) return 'pending';
+  const fav = obtenerFavoritoH(p);
+  if (fav === p.resultado) return 'acierto';
+  const probs = [p.prob_local, p.prob_empate, p.prob_visitante].sort((a, b) => b - a);
+  return probs[0] - probs[1] < 0.15 ? 'parcial' : 'fallo';
+}
+
+function calcularParidadH(partidos) {
+  return partidos.filter(p => {
+    const probs = [p.prob_local, p.prob_empate, p.prob_visitante].sort((a, b) => b - a);
+    return probs[0] - probs[1] < 0.15;
+  }).length;
+}
+
+// ── Carga ─────────────────────────────────────────────────
+
+async function cargarHistorial() {
+  const sec = document.getElementById('contenidoMundial');
+
+  // Skeleton / loading
+  sec.innerHTML = `
+    <div class="hist-loading">
+      <div class="spinner"></div>
+      <span>Cargando historial…</span>
+    </div>
+  `;
+
+  let partidos = [];
+  try {
+    const res = await fetch('partidos/mundial.json');
+    if (!res.ok) throw new Error('Sin datos');
+    const data = await res.json();
+    partidos = Array.isArray(data) ? data
+             : Array.isArray(data.partidos) ? data.partidos
+             : [];
+  } catch (e) {
+    sec.innerHTML = `
+      <div class="hist-vacio">
+        <p>No se pudo cargar el historial.</p>
+      </div>`;
+    return;
+  }
+
+  _partidosHistorial = partidos;
+
+  if (!partidos.length) {
+    sec.innerHTML = `
+      <div class="hist-vacio">
+        <p>No hay proyecciones en el historial aún.</p>
+      </div>`;
+    return;
+  }
+
+  // ── Métricas ──
+  const conResultado = partidos.filter(p => p.resultado);
+  let aciertos = 0, parciales = 0, fallos = 0;
+  for (const p of conResultado) {
+    const t = clasificarResultadoH(p);
+    if (t === 'acierto')      aciertos++;
+    else if (t === 'parcial') parciales++;
+    else                      fallos++;
+  }
+  const total    = conResultado.length;
+  const efPct    = total ? ((aciertos / total) * 100).toFixed(1) + '%' : '—';
+  const paridad  = calcularParidadH(partidos);
+
+  // ── Filas ──
+  const filas = partidos.map((p, i) => {
+    const fav  = obtenerFavoritoH(p);
+    const tipo = clasificarResultadoH(p);
+    const tuvo = !!p.resultado;
+
+    const rowClass = tipo === 'acierto' ? 'hist-fila--acierto'
+                   : tipo === 'parcial' ? 'hist-fila--parcial'
+                   : tipo === 'fallo'   ? 'hist-fila--fallo'
+                   : '';
+
+    const resClass = tipo === 'acierto' ? 'res--ok'
+                   : tipo === 'parcial' ? 'res--parcial'
+                   : tipo === 'fallo'   ? 'res--fail'
+                   : 'res--pending';
+
+    return `
+      <div class="fila hist-fila ${rowClass}" onclick="abrirModalHistorial(${i})" style="cursor:pointer;">
+        <div class="fila-equipo">
+          <div class="logos-pair">
+            <img src="${p.logo_local}"     alt="${p.local}"     onerror="this.style.display='none'">
+            <img src="${p.logo_visitante}" alt="${p.visitante}" onerror="this.style.display='none'">
+          </div>
+          <span class="fila-nombre">${p.local} <em>vs</em> ${p.visitante}</span>
+        </div>
+        <span class="fila-pct win">${fmtH(p.prob_local)}</span>
+        <span class="fila-pct draw">${fmtH(p.prob_empate)}</span>
+        <span class="fila-pct loss">${fmtH(p.prob_visitante)}</span>
+        <span class="fila-resultado ${resClass}">
+          ${tuvo ? p.resultado : '—'}
+        </span>
+      </div>
+    `;
+  }).join('');
+
+  sec.innerHTML = `
+
+    <!-- Resumen métricas -->
+    <div class="hist-resumen">
+      <div class="hist-dona-wrap" id="histDonaMundial">
+        <div class="hist-dona-inner">
+          <canvas id="donaChartMundial" aria-label="Distribución de proyecciones"></canvas>
+          <div class="hist-dona-centro">
+            <span class="hist-dona-num">${total}</span>
+            <span class="hist-dona-sub">Proyecciones</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hist-resumen-derecha">
+        <div class="hist-metricas">
+          <div class="hist-metrica-card">
+            <span class="hist-metrica-val hist-val-win">${aciertos}</span>
+            <span class="hist-metrica-lbl">Aciertos</span>
+          </div>
+          <div class="hist-metrica-card">
+            <span class="hist-metrica-val hist-val-parcial">${parciales}</span>
+            <span class="hist-metrica-lbl">Ajustados</span>
+          </div>
+          <div class="hist-metrica-card">
+            <span class="hist-metrica-val hist-val-loss">${fallos}</span>
+            <span class="hist-metrica-lbl">Fallos</span>
+          </div>
+        </div>
+        <p class="hist-nota-paridad">
+          ${paridad} de ${partidos.length} partidos fueron de alta paridad
+        </p>
+        <div class="hist-dona-leyenda" id="donaLeyendaMundial"></div>
+      </div>
+    </div>
+
+    <!-- Tabla de partidos -->
+    <div class="tabla-header hist-tabla-header">
+      <span>Partido</span>
+      <span>Local</span>
+      <span>Empate</span>
+      <span>Visitante</span>
+      <span>Resultado</span>
+    </div>
+    ${filas}
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalHistorialOverlay" onclick="cerrarModalHistorial(event)">
+      <div class="modal-card" id="modalHistorialCard">
+        <button class="modal-close" onclick="cerrarModalHistorial()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <div id="modalHistorialContenido"></div>
+      </div>
+    </div>
+  `;
+
+  // Cargar Chart.js y pintar dona
+  if (window.Chart) {
+    renderDonaHistorial(aciertos, parciales, fallos, total);
+  } else {
+    const s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js';
+    s.onload = () => renderDonaHistorial(aciertos, parciales, fallos, total);
+    document.head.appendChild(s);
+  }
+
+  // ESC cierra modal
+  document.addEventListener('keydown', _histEsc);
+}
+
+function _histEsc(e) {
+  if (e.key === 'Escape') cerrarModalHistorial();
+}
+
+// ── Dona ─────────────────────────────────────────────────
+
+function renderDonaHistorial(aciertos, parciales, fallos, total) {
+  const wrap = document.getElementById('histDonaMundial');
+  if (!wrap) return;
+  wrap.style.opacity = '1';
+
+  document.getElementById('donaLeyendaMundial').innerHTML = `
+    <span class="dona-item">
+      <span class="dona-dot" style="background:#27ae60;"></span>
+      <span class="dona-lbl">Aciertos</span>
+      <span class="dona-val">${Math.round(aciertos / total * 100)}%</span>
+    </span>
+    <span class="dona-item">
+      <span class="dona-dot" style="background:#f39c12;"></span>
+      <span class="dona-lbl">Ajustados</span>
+      <span class="dona-val">${Math.round(parciales / total * 100)}%</span>
+    </span>
+    <span class="dona-item">
+      <span class="dona-dot" style="background:#e74c3c;"></span>
+      <span class="dona-lbl">Fallos</span>
+      <span class="dona-val">${Math.round(fallos / total * 100)}%</span>
+    </span>
+  `;
+
+  if (window._donaChartMundial) window._donaChartMundial.destroy();
+  window._donaChartMundial = new Chart(
+    document.getElementById('donaChartMundial'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Aciertos', 'Ajustados', 'Fallos'],
+        datasets: [{
+          data: [aciertos, parciales, fallos],
+          backgroundColor: ['#27ae60', '#f39c12', '#e74c3c'],
+          borderWidth: 0,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '72%',
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx =>
+                ` ${ctx.label}: ${ctx.raw} (${Math.round(ctx.raw / total * 100)}%)`,
+            },
+          },
+        },
+      },
+    }
+  );
+}
+
+// ── Modal ─────────────────────────────────────────────────
+
+function abrirModalHistorial(i) {
+  const p    = _partidosHistorial[i];
+  const fav  = obtenerFavoritoH(p);
+  const tipo = clasificarResultadoH(p);
+  const tuvo = !!p.resultado;
+  const ok   = tuvo && fav === p.resultado;
+
+  const veredictoClass =
+    tipo === 'acierto' ? 'veredicto--ok'
+  : tipo === 'parcial' ? 'veredicto--parcial'
+  : tipo === 'fallo'   ? 'veredicto--fail'
+  : 'veredicto--pending';
+
+  const veredictoTexto =
+    tipo === 'acierto' ? 'Acierto'
+  : tipo === 'parcial' ? 'Acierto parcial'
+  : tipo === 'fallo'   ? 'Fallo'
+  : 'Sin resultado';
+
+  const veredictoIcon = !tuvo ? '' : ok
+    ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
+    : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
+
+  document.getElementById('modalHistorialContenido').innerHTML = `
+    <div class="modal-equipos">
+      <div class="modal-equipo">
+        <img src="${p.logo_local}" alt="${p.local}" onerror="this.style.display='none'">
+        <span>${p.local}</span>
+      </div>
+      <span class="modal-vs">vs</span>
+      <div class="modal-equipo">
+        <img src="${p.logo_visitante}" alt="${p.visitante}" onerror="this.style.display='none'">
+        <span>${p.visitante}</span>
+      </div>
+    </div>
+
+    <div class="modal-detalle">
+      <div class="modal-fila">
+        <span class="modal-lbl">Proyección</span>
+        <span class="modal-val">${fav}</span>
+      </div>
+      <div class="modal-fila">
+        <span class="modal-lbl">Confianza</span>
+        <span class="modal-val">${p.confianza || '—'}</span>
+      </div>
+      <div class="modal-fila1">
+        <span class="modal-lbl">Probabilidades</span>
+        <span class="modal-val modal-probs">
+          <span class="prob-chip win">${p.local} ${fmtH(p.prob_local)}</span>
+          <span class="prob-chip draw">Empate ${fmtH(p.prob_empate)}</span>
+          <span class="prob-chip loss">${p.visitante} ${fmtH(p.prob_visitante)}</span>
+        </span>
+      </div>
+      <div class="modal-fila">
+        <span class="modal-lbl">Resultado</span>
+        <span class="modal-val">${tuvo ? p.resultado : '—'}</span>
+      </div>
+    </div>
+
+    <div class="veredicto ${veredictoClass}">
+      ${veredictoIcon}
+      <span>${veredictoTexto}</span>
+    </div>
+  `;
+
+  document.getElementById('modalHistorialOverlay').classList.add('modal--visible');
+}
+
+function cerrarModalHistorial(e) {
+  if (e && e.target !== document.getElementById('modalHistorialOverlay')
+       && !e.target.closest('.modal-close')) return;
+  document.getElementById('modalHistorialOverlay')?.classList.remove('modal--visible');
 }
