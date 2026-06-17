@@ -1,5 +1,397 @@
 [
   {
+    "id": "760431",
+    "fecha": "2026-06-17T04:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Austria",
+    "visitante": "Jordan",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
+    "estadio": "Levi's Stadium",
+    "ciudad_sede": "San Francisco Bay Area, California",
+    "pais_sede": "USA",
+    "altitud_sede": 16,
+    "es_neutro": true,
+    "prob_local": 0.44,
+    "prob_empate": 0.19490043597881185,
+    "prob_visitante": 0.36509956402118815,
+    "fuerza_local": 0.6357148571428572,
+    "fuerza_visitante": 0.4063177142857143,
+    "diferencia": 0.22939714285714297,
+    "confianza": "ajustado",
+    "prediccion": "Austria",
+    "resultado": "Austria",
+    "lambda_local": 3.5338097560975608,
+    "lambda_visitante": 0.6455382731851191,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      {
+        "marcador": "3-0",
+        "goles_local": 3,
+        "goles_visitante": 0,
+        "probabilidad": 0.112593,
+        "porcentaje": 11.26,
+        "tipo": "local"
+      },
+      {
+        "marcador": "4-0",
+        "goles_local": 4,
+        "goles_visitante": 0,
+        "probabilidad": 0.09947,
+        "porcentaje": 9.95,
+        "tipo": "local"
+      },
+      {
+        "marcador": "2-0",
+        "goles_local": 2,
+        "goles_visitante": 0,
+        "probabilidad": 0.095585,
+        "porcentaje": 9.56,
+        "tipo": "local"
+      },
+      {
+        "marcador": "3-1",
+        "goles_local": 3,
+        "goles_visitante": 1,
+        "probabilidad": 0.072683,
+        "porcentaje": 7.27,
+        "tipo": "local"
+      },
+      {
+        "marcador": "5-0",
+        "goles_local": 5,
+        "goles_visitante": 0,
+        "probabilidad": 0.070302,
+        "porcentaje": 7.03,
+        "tipo": "local"
+      }
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 1.0,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Austria"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Jordan"
+        },
+        "interpretacion": "Austria llega con mejor momentum: índice 1.00/1.0 frente a 0.50/1.0 de Jordan. Últimos 5: 3V/0E/0D vs 0V/0E/4D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 16,
+        "ciudad_sede": "San Francisco Bay Area, California",
+        "local": {
+          "nombre": "Austria",
+          "altitud_base": 171,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Jordan",
+          "altitud_base": 820,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (16m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Austria",
+          "goles_favor": 2.33,
+          "goles_contra": 0.33
+        },
+        "visitante": {
+          "nombre": "Jordan",
+          "goles_favor": 1.25,
+          "goles_contra": 2.5
+        },
+        "interpretacion": "Austria más ofensivo: 2.33 goles/partido (vs 1.25). Defensiva: 0.33 vs 2.50."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Austria",
+          "lambda": 3.534
+        },
+        "visitante": {
+          "nombre": "Jordan",
+          "lambda": 0.646
+        },
+        "suma": 4.179,
+        "interpretacion": "Austria genera más peligro ofensivo según el modelo: 3.53 goles esperados vs 0.65 de Jordan."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          {
+            "marcador": "3-0",
+            "goles_local": 3,
+            "goles_visitante": 0,
+            "probabilidad": 0.112593,
+            "porcentaje": 11.26,
+            "tipo": "local"
+          },
+          {
+            "marcador": "4-0",
+            "goles_local": 4,
+            "goles_visitante": 0,
+            "probabilidad": 0.09947,
+            "porcentaje": 9.95,
+            "tipo": "local"
+          },
+          {
+            "marcador": "2-0",
+            "goles_local": 2,
+            "goles_visitante": 0,
+            "probabilidad": 0.095585,
+            "porcentaje": 9.56,
+            "tipo": "local"
+          },
+          {
+            "marcador": "3-1",
+            "goles_local": 3,
+            "goles_visitante": 1,
+            "probabilidad": 0.072683,
+            "porcentaje": 7.27,
+            "tipo": "local"
+          },
+          {
+            "marcador": "5-0",
+            "goles_local": 5,
+            "goles_visitante": 0,
+            "probabilidad": 0.070302,
+            "porcentaje": 7.03,
+            "tipo": "local"
+          }
+        ],
+        "lambda_local": 3.534,
+        "lambda_visitante": 0.646,
+        "interpretacion": "El marcador más probable es 3-0 (11.3%), favoreciendo a Austria. Los 5 resultados más frecuentes acumulan el 45.1% de probabilidad total."
+      }
+    ]
+  },
+  {
+    "id": "760435",
+    "fecha": "2026-06-17T17:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Portugal",
+    "visitante": "Congo DR",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+    "estadio": "NRG Stadium",
+    "ciudad_sede": "Houston, Texas",
+    "pais_sede": "USA",
+    "altitud_sede": 12,
+    "es_neutro": true,
+    "prob_local": 0.44,
+    "prob_empate": 0.28057856145432086,
+    "prob_visitante": 0.27942143854567913,
+    "fuerza_local": 0.549461433973049,
+    "fuerza_visitante": 0.42912137916775095,
+    "diferencia": 0.12034005480529808,
+    "confianza": "moderado",
+    "prediccion": "Portugal",
+    "resultado": "Empate",
+    "lambda_local": 1.0925754164617991,
+    "lambda_visitante": 0.6410565035197952,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 0.9994,
+    "marcadores_probables": [
+      {
+        "marcador": "1-0",
+        "goles_local": 1,
+        "goles_visitante": 0,
+        "probabilidad": 0.192994,
+        "porcentaje": 19.3,
+        "tipo": "local"
+      },
+      {
+        "marcador": "0-0",
+        "goles_local": 0,
+        "goles_visitante": 0,
+        "probabilidad": 0.176642,
+        "porcentaje": 17.66,
+        "tipo": "empate"
+      },
+      {
+        "marcador": "1-1",
+        "goles_local": 1,
+        "goles_visitante": 1,
+        "probabilidad": 0.12372,
+        "porcentaje": 12.37,
+        "tipo": "empate"
+      },
+      {
+        "marcador": "0-1",
+        "goles_local": 0,
+        "goles_visitante": 1,
+        "probabilidad": 0.113237,
+        "porcentaje": 11.32,
+        "tipo": "visitante"
+      },
+      {
+        "marcador": "2-0",
+        "goles_local": 2,
+        "goles_visitante": 0,
+        "probabilidad": 0.10543,
+        "porcentaje": 10.54,
+        "tipo": "local"
+      }
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.75,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Portugal"
+        },
+        "visitante": {
+          "valor": 0.33,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Congo DR"
+        },
+        "interpretacion": "Portugal llega con mejor momentum: índice 0.75/1.0 frente a 0.33/1.0 de Congo DR. Últimos 5: 3V/0E/1D vs 1V/0E/2D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 12,
+        "ciudad_sede": "Houston, Texas",
+        "local": {
+          "nombre": "Portugal",
+          "altitud_base": 92,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Congo DR",
+          "altitud_base": 0,
+          "factor": 0.999
+        },
+        "interpretacion": "Sede en condiciones normales (12m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Portugal",
+          "goles_favor": 1.5,
+          "goles_contra": 0.5
+        },
+        "visitante": {
+          "nombre": "Congo DR",
+          "goles_favor": 1.0,
+          "goles_contra": 0.67
+        },
+        "interpretacion": "Portugal más ofensivo: 1.50 goles/partido (vs 1.00). Defensiva: 0.50 vs 0.67."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "medio",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Portugal",
+          "lambda": 1.093
+        },
+        "visitante": {
+          "nombre": "Congo DR",
+          "lambda": 0.641
+        },
+        "suma": 1.734,
+        "interpretacion": "Portugal genera más peligro ofensivo según el modelo: 1.09 goles esperados vs 0.64 de Congo DR."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          {
+            "marcador": "1-0",
+            "goles_local": 1,
+            "goles_visitante": 0,
+            "probabilidad": 0.192994,
+            "porcentaje": 19.3,
+            "tipo": "local"
+          },
+          {
+            "marcador": "0-0",
+            "goles_local": 0,
+            "goles_visitante": 0,
+            "probabilidad": 0.176642,
+            "porcentaje": 17.66,
+            "tipo": "empate"
+          },
+          {
+            "marcador": "1-1",
+            "goles_local": 1,
+            "goles_visitante": 1,
+            "probabilidad": 0.12372,
+            "porcentaje": 12.37,
+            "tipo": "empate"
+          },
+          {
+            "marcador": "0-1",
+            "goles_local": 0,
+            "goles_visitante": 1,
+            "probabilidad": 0.113237,
+            "porcentaje": 11.32,
+            "tipo": "visitante"
+          },
+          {
+            "marcador": "2-0",
+            "goles_local": 2,
+            "goles_visitante": 0,
+            "probabilidad": 0.10543,
+            "porcentaje": 10.54,
+            "tipo": "local"
+          }
+        ],
+        "lambda_local": 1.093,
+        "lambda_visitante": 0.641,
+        "interpretacion": "El marcador más probable es 1-0 (19.3%), favoreciendo a Portugal. Los 5 resultados más frecuentes acumulan el 71.2% de probabilidad total."
+      }
+    ]
+  },
+  {
     "id": "760432",
     "fecha": "2026-06-16T19:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

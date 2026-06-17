@@ -383,8 +383,47 @@ def probabilidades_poisson(lambda_local, lambda_visitante, max_goles=8):
 # MARCADORES MÁS PROBABLES
 # =============================
 
-def marcadores_probables(lambda_local, lambda_visitante, top_n=5, max_goles=6):
+def ajustar_lambdas_por_probabilidades(lambda_local, lambda_visitante,
+                                        prob_local, prob_visitante):
+    """
+    Re-escala lambda_local y lambda_visitante para que la dirección de
+    ventaja (quién anota más) sea coherente con las probabilidades finales
+    del modelo (que ya incorporan H2H, fuerza base y altitud), conservando
+    la suma total de goles esperados del partido.
+    """
+    suma_lv = prob_local + prob_visitante
+    if suma_lv <= 0:
+        return lambda_local, lambda_visitante
+
+    ratio_modelo  = prob_local / suma_lv
+    suma_lambda   = lambda_local + lambda_visitante
+    if suma_lambda <= 0:
+        return lambda_local, lambda_visitante
+
+    ratio_poisson = lambda_local / suma_lambda
+    if ratio_poisson <= 0:
+        return lambda_local, lambda_visitante
+
+    factor = ratio_modelo / ratio_poisson
+    factor = limitar(factor, 0.70, 1.43)  # evita distorsiones extremas
+
+    lam_l_nuevo = limitar(lambda_local * factor, 0.2, 5.0)
+    lam_v_nuevo = limitar(suma_lambda - lam_l_nuevo, 0.2, 5.0)
+
+    return lam_l_nuevo, lam_v_nuevo
+
+
+def marcadores_probables(lambda_local, lambda_visitante, top_n=5, max_goles=6,
+                          prob_local=None, prob_visitante=None):
     from math import exp, factorial
+
+    # Si se pasan las probabilidades finales del modelo, ajustamos los
+    # lambdas para que el marcador más probable sea coherente con el
+    # favorito real del partido (no solo con el Poisson "crudo").
+    if prob_local is not None and prob_visitante is not None:
+        lambda_local, lambda_visitante = ajustar_lambdas_por_probabilidades(
+            lambda_local, lambda_visitante, prob_local, prob_visitante
+        )
 
     def pmf(k, lam):
         return (lam ** k) * exp(-lam) / factorial(k)
@@ -404,7 +443,6 @@ def marcadores_probables(lambda_local, lambda_visitante, top_n=5, max_goles=6):
                 "goles_local":      i,
                 "goles_visitante":  j,
                 "probabilidad":     round(prob, 6),
-                "porcentaje":       round(prob * 100, 2),
                 "tipo":             tipo,
             })
 
@@ -570,7 +608,7 @@ def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neut
 
 
 # =============================
-# AJUSTE LAMBDA  ← MODIFICADO
+# AJUSTE LAMBDA
 # =============================
 
 def ajuste_empate_por_lambdas(prob_local, prob_empate, prob_visitante,
@@ -580,19 +618,14 @@ def ajuste_empate_por_lambdas(prob_local, prob_empate, prob_visitante,
 
     boost = 0.0
 
-    # Escenario 1: partido trabado (pocos goles y equilibrado)
-    # ANTES: suma < 1.6 — AHORA: suma < 2.2  →  captura casos tipo 1.1 + 0.98
     if suma_lambda < 2.2 and diff_lambda < 0.40:
         intensidad = limitar((2.2 - suma_lambda) / 1.2, 0.0, 1.0)
         boost += 0.10 * intensidad
 
-    # Escenario 2: cerrado aunque con más goles
-    # ANTES: diff < 0.30 y suma < 2.5 — AHORA: diff < 0.40 y suma < 2.8
     if diff_lambda < 0.40 and suma_lambda < 2.8:
         intensidad = limitar((0.40 - diff_lambda) / 0.40, 0.0, 1.0)
         boost += 0.09 * intensidad
 
-    # Escenario 3: muy cerrado (lambdas casi iguales) — sin cambios
     if diff_lambda < 0.15:
         boost += 0.05
 
@@ -617,7 +650,7 @@ def ajuste_empate_por_lambdas(prob_local, prob_empate, prob_visitante,
 
 
 # =============================
-# PREDICCIÓN INTELIGENTE  ← MODIFICADO
+# PREDICCIÓN INTELIGENTE
 # =============================
 
 def prediccion_inteligente(prob_local, prob_empate, prob_visitante,
@@ -626,23 +659,17 @@ def prediccion_inteligente(prob_local, prob_empate, prob_visitante,
     suma_lambda = lambda_local + lambda_visitante
     diff_lambda = abs(lambda_local - lambda_visitante)
 
-    # Regla 1: empate tiene la mayor probabilidad
     if prob_empate >= prob_local and prob_empate >= prob_visitante:
         return "Empate"
 
-    # Regla 2: partido muy trabado (pocos goles, lambdas similares)
-    # ANTES: suma < 1.6 — AHORA: suma < 2.3
     if suma_lambda < 2.3 and diff_lambda < 0.35:
         return "Empate"
 
-    # Regla 3: lambdas similares + empate competitivo
-    # ANTES: diff < 0.28 — AHORA: diff < 0.40  (también captura 1.1 vs 0.98)
     if diff_lambda < 0.40 and prob_empate > 0.24:
         favorito_prob = max(prob_local, prob_visitante)
         if favorito_prob - prob_empate < 0.10:
             return "Empate"
 
-    # Regla 4: caso normal
     if prob_local >= prob_visitante:
         return nombre_local
     else:
@@ -921,24 +948,26 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion": interp_l,
     })
 
-    top_marcadores = marcadores_probables(ll, lv, top_n=5)
+    top_marcadores = marcadores_probables(
+        ll, lv, top_n=5,
+        prob_local=resultado["local"],
+        prob_visitante=resultado["visitante"],
+    )
     marcador_top   = top_marcadores[0]
 
     tipo_map = {"local": nombre_local, "empate": "empate", "visitante": nombre_visitante}
     gana_str = tipo_map.get(marcador_top["tipo"], "empate")
 
     interp_m = (
-        f"El marcador más probable es {marcador_top['marcador']} "
-        f"({marcador_top['porcentaje']:.1f}%), favoreciendo a {gana_str}. "
-        f"Los 5 resultados más frecuentes acumulan el "
-        f"{sum(m['porcentaje'] for m in top_marcadores):.1f}% de probabilidad total."
+        f"El marcador más probable es {marcador_top['marcador']}, "
+        f"favoreciendo a {gana_str}."
     )
 
     factores.append({
         "factor":      "Marcadores más probables",
         "impacto":     "informativo",
         "tipo":        "marcadores",
-        "marcadores":  top_marcadores,
+        "marcadores":  [m["marcador"] for m in top_marcadores],
         "lambda_local":     round(ll, 3),
         "lambda_visitante": round(lv, 3),
         "interpretacion":   interp_m,
@@ -1063,7 +1092,10 @@ def generar_partido(
         resultado["lambda_local"],
         resultado["lambda_visitante"],
         top_n=5,
+        prob_local=resultado["local"],
+        prob_visitante=resultado["visitante"],
     )
+    marcadores_solo_resultado = [m["marcador"] for m in top_marcadores]
 
     analisis = generar_analisis(
         local, visitante, resultado,
@@ -1097,7 +1129,7 @@ def generar_partido(
         "lambda_visitante": resultado["lambda_visitante"],
         "factor_altitud_local":     resultado["factor_altitud_local"],
         "factor_altitud_visitante": resultado["factor_altitud_visitante"],
-        "marcadores_probables":     top_marcadores,
+        "marcadores_probables":     marcadores_solo_resultado,
         "analisis":                 analisis,
     }
 
@@ -1165,17 +1197,12 @@ if __name__ == "__main__":
             sede   = f"{p['ciudad_sede']}{tag_alt}"
             neutro = " [NEUTRO]" if p["es_neutro"] else ""
 
-            top1 = p["marcadores_probables"][0]
-
             print(f"  ⚽ {p['local']:<20} vs {p['visitante']:<20}  {sede}{neutro}")
             print(f"     {p['prob_local']:.1%} / {p['prob_empate']:.1%} / {p['prob_visitante']:.1%}"
                   f"  →  {p['prediccion']}  [{p['confianza']}]")
             print(f"     λ {p['lambda_local']:.2f} / {p['lambda_visitante']:.2f}"
                   f"  |  Alt: {p['factor_altitud_local']:.3f} vs {p['factor_altitud_visitante']:.3f}")
-            print(f"     Marcadores: " + "  ".join(
-                f"{m['marcador']}({m['porcentaje']:.1f}%)"
-                for m in p["marcadores_probables"]
-            ))
+            print(f"     Marcadores: " + "  ".join(p["marcadores_probables"]))
             print()
 
         except Exception as e:
