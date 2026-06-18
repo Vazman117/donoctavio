@@ -19,6 +19,19 @@
 #   - Se mantienen solo fifa.world y fifa.friendly como fuentes,
 #     que son suficientes para el período reciente.
 #   - El ranking FIFA ya NO interviene en ningún cálculo del motor.
+#   - FIX 1: los partidos de fifa.world (el Mundial en sí) ya NO se obtienen
+#     vía teams/{id}/schedule. Ese endpoint resuelve internamente una
+#     "temporada actual" por equipo y, para un torneo que apenas arrancó
+#     tras 4 años de inactividad, no siempre detecta bien la edición 2026.
+#     En su lugar, se precarga UNA SOLA VEZ el scoreboard completo del
+#     Mundial (rango de fechas) y se indexa por team_id. fifa.friendly
+#     sigue usando teams/{id}/schedule porque es una liga continua y ahí
+#     ese endpoint sí funciona de forma confiable.
+#   - FIX 2: la detección de resultado (W/L/D) comparaba solo el campo
+#     "winner" de mi equipo. En un empate, ESPN pone "winner": false
+#     para AMBOS competidores (no lo omite), así que todo empate se
+#     guardaba como derrota para los dos equipos. Ahora se compara mi
+#     "winner" contra el del rival para detectar empates de verdad.
 
 import os
 import re
@@ -53,6 +66,10 @@ HEADERS = {
 # Solo se procesan partidos a partir de esta fecha.
 # Ajusta según cuánto contexto quieras (recomendado: 18 meses atrás).
 FECHA_CORTE = "2025-01-01"
+
+# Fecha de arranque del Mundial 2026, usada para acotar el rango del
+# scoreboard al precargar los partidos del torneo.
+FECHA_INICIO_MUNDIAL = "20260611"
 
 _LEAGUES_RECIENTES = ["fifa.world", "fifa.friendly"]
 
@@ -392,52 +409,105 @@ def obtener_ranking_fifa():
 
 
 # =====================================================
+# PRECARGA DE PARTIDOS DEL MUNDIAL (FIX)
+# =====================================================
+
+def precargar_eventos_mundial() -> dict:
+    """
+    Jala TODO el scoreboard de fifa.world en un solo rango de fechas
+    (desde FECHA_INICIO_MUNDIAL hasta hoy) y lo indexa por team_id.
+
+    Esto sustituye a teams/{id}/schedule para fifa.world: ese endpoint
+    resuelve internamente una "temporada actual" por equipo, y para un
+    torneo que arrancó después de 4 años de inactividad no siempre la
+    detecta bien. El scoreboard, en cambio, no depende de esa resolución
+    y refleja los partidos jugados de forma directa.
+
+    Devuelve: { "203": [evento1, evento2, ...], "660": [...], ... }
+    """
+    hoy = datetime.now(timezone.utc).strftime("%Y%m%d")
+    data = get_json(
+        f"{BASE_SOCCER}/fifa.world/scoreboard",
+        {"dates": f"{FECHA_INICIO_MUNDIAL}-{hoy}", "limit": 300},
+    )
+
+    eventos_totales = data.get("events", [])
+    por_equipo: dict[str, list] = {}
+
+    for ev in eventos_totales:
+        try:
+            comp   = ev.get("competitions", [{}])[0]
+            estado = comp.get("status", {}).get("type", {}).get("state", "")
+            if estado != "post":
+                continue
+
+            fecha_ev = ev.get("date", "")
+            if fecha_ev and fecha_ev[:10] < FECHA_CORTE:
+                continue
+
+            ev["_league_slug"] = "fifa.world"
+            for comp_eq in comp.get("competitors", []):
+                tid = str(comp_eq.get("team", {}).get("id", ""))
+                if tid:
+                    por_equipo.setdefault(tid, []).append(ev)
+
+        except Exception:
+            continue
+
+    print(f"  ✓ Mundial precargado: {len(eventos_totales)} partidos en scoreboard, "
+          f"{len(por_equipo)} selecciones con partidos jugados")
+    return por_equipo
+
+
+# =====================================================
 # NÚCLEO: CAPTURA DE ESTADÍSTICAS POR SELECCIÓN
 # =====================================================
 
-def _recolectar_eventos_seleccion(team_id: str) -> list:
+def _recolectar_eventos_seleccion(team_id: str, eventos_mundial: dict) -> list:
     """
-    Jala el schedule de cada league y filtra:
-      1. Solo partidos ya jugados (state == "post")
-      2. Solo desde FECHA_CORTE en adelante
+    Combina:
+      1. Partidos de fifa.world ya precargados (vía precargar_eventos_mundial)
+      2. Partidos de fifa.friendly, todavía vía teams/{id}/schedule
+         (liga continua, ese endpoint sí funciona bien ahí)
     """
     todos = {}
 
-    for league in _LEAGUES_RECIENTES:
-        data = get_json(
-            f"{BASE_SOCCER}/{league}/teams/{team_id}/schedule",
-            reintentos=2,
-        )
-        if not data:
-            continue
+    # ── fifa.world: viene precargado, no se vuelve a pedir por equipo ──────
+    for ev in eventos_mundial.get(str(team_id), []):
+        eid = ev.get("id", "")
+        if eid:
+            todos[eid] = ev
 
+    # ── fifa.friendly: sigue usando teams/{id}/schedule ─────────────────────
+    data = get_json(
+        f"{BASE_SOCCER}/fifa.friendly/teams/{team_id}/schedule",
+        reintentos=2,
+    )
+    if data:
         for ev in data.get("events", []):
             try:
-                # ── Filtro 1: solo partidos terminados ──────────────────
                 comp   = ev.get("competitions", [{}])[0]
                 estado = comp.get("status", {}).get("type", {}).get("state", "")
                 if estado != "post":
                     continue
 
-                # ── Filtro 2: solo desde FECHA_CORTE ────────────────────
                 fecha_ev = ev.get("date", "")
                 if fecha_ev and fecha_ev[:10] < FECHA_CORTE:
                     continue
 
                 eid = ev.get("id", "")
                 if eid and eid not in todos:
-                    ev["_league_slug"] = league
+                    ev["_league_slug"] = "fifa.friendly"
                     todos[eid] = ev
 
             except Exception:
                 continue
 
-        time.sleep(0.2)
-
     return list(todos.values())
 
 
-def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dict:
+def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str,
+                            eventos_mundial: dict) -> dict:
     stats = {
         "partidos_oficial":      0, "ganados_oficial":      0,
         "empatados_oficial":     0, "perdidos_oficial":     0,
@@ -463,7 +533,7 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
         "_todos_resultados": [],
     }
 
-    eventos = _recolectar_eventos_seleccion(team_id)
+    eventos = _recolectar_eventos_seleccion(team_id, eventos_mundial)
     if not eventos:
         for k in ["_ciudades_local", "_gf_of", "_gc_of", "_gf_am", "_gc_am", "_todos_resultados"]:
             stats.pop(k, None)
@@ -493,7 +563,6 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
                 continue
 
             es_local = mi_equipo.get("homeAway", "") == "home"
-            ganador  = mi_equipo.get("winner", None)
 
             gf    = parse_score(mi_equipo.get("score", 0))
             rival = next(
@@ -503,7 +572,20 @@ def scrape_stats_seleccion(team_id: str, nombre: str, confederacion: str) -> dic
             )
             gc = parse_score(rival.get("score", 0))
 
-            res = "W" if ganador is True else ("L" if ganador is False else "D")
+            # FIX: en un empate, ESPN pone "winner": false para AMBOS
+            # equipos (no lo omite ni lo deja en null). Comparar solo
+            # mi_equipo.winner contra True/False hacía que todo empate
+            # se interpretara como derrota. Hay que comparar mi "winner"
+            # contra el del rival: si ninguno ganó, es empate de verdad.
+            ganador_mio   = mi_equipo.get("winner", None)
+            ganador_rival = rival.get("winner", None)
+
+            if ganador_mio is True:
+                res = "W"
+            elif ganador_rival is True:
+                res = "L"
+            else:
+                res = "D"
 
             # ── Acumular por tipo ────────────────────────────────────────
             if tipo == "oficial":
@@ -752,6 +834,9 @@ def obtener_selecciones(grupos):
         "_ciudades_local": [],
     }
 
+    print("  ▶ Precargando partidos del Mundial desde scoreboard...")
+    eventos_mundial = precargar_eventos_mundial()
+
     selecciones = {}
     total       = len(equipos_vistos)
 
@@ -767,7 +852,7 @@ def obtener_selecciones(grupos):
             print(f"    ⚠ Sin id_espn — stats vacías")
             stats = dict(stats_vacias)
         else:
-            stats = scrape_stats_seleccion(id_espn, nombre, confederacion)
+            stats = scrape_stats_seleccion(id_espn, nombre, confederacion, eventos_mundial)
 
         ciudades_local        = stats.pop("_ciudades_local", [])
         ranking_pos, ranking_pts = buscar_ranking(abrev, nombre)
