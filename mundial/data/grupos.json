@@ -21,14 +21,14 @@
         "equipo": "Czechia",
         "abreviacion": "CZE",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
-        "partidos": 1.0,
+        "partidos": 2.0,
         "ganados": 0.0,
-        "empatados": 0.0,
+        "empatados": 1.0,
         "perdidos": 1.0,
-        "goles_favor": 1.0,
-        "goles_contra": 2.0,
+        "goles_favor": 2.0,
+        "goles_contra": 3.0,
         "diferencia_goles": -1.0,
-        "puntos": 0.0
+        "puntos": 1.0
       },
       {
         "posicion": 2.0,
@@ -49,14 +49,14 @@
         "equipo": "South Africa",
         "abreviacion": "RSA",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
-        "partidos": 1.0,
+        "partidos": 2.0,
         "ganados": 0.0,
-        "empatados": 0.0,
+        "empatados": 1.0,
         "perdidos": 1.0,
-        "goles_favor": 0.0,
-        "goles_contra": 2.0,
+        "goles_favor": 1.0,
+        "goles_contra": 3.0,
         "diferencia_goles": -2.0,
-        "puntos": 0.0
+        "puntos": 1.0
       }
     ]
   },

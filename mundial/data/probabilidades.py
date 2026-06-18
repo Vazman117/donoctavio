@@ -124,7 +124,7 @@ PARTIDOS_GRUPO = [
     # ── GRUPO A ──────────────────────────────────────────────
     # ("Mexico",      "South Africa",  "Mexico City"),   # JUGADO: 2-0
     # ("South Korea", "Czechia",       "Guadalajara"),   # JUGADO: 2-1
-    ("Czechia",     "South Africa",  "Atlanta"),
+    # ("Czechia",     "South Africa",  "Atlanta"),       # JUGADO: 1-1
     ("Mexico",      "South Korea",   "Guadalajara"),
     ("South Africa","South Korea",   "Monterrey"),
     ("Czechia",     "Mexico",        "Mexico City"),

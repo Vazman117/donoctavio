@@ -401,11 +401,23 @@
     "equipo": "Czechia",
     "abreviacion": "CZE",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
-    "puntos": 0.0,
+    "puntos": 1.0,
     "diferencia_goles": -1.0,
+    "goles_favor": 2.0,
+    "goles_contra": 3.0,
+    "partidos": 2.0
+  },
+  {
+    "grupo": "Group A",
+    "posicion": 4.0,
+    "equipo": "South Africa",
+    "abreviacion": "RSA",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+    "puntos": 1.0,
+    "diferencia_goles": -2.0,
     "goles_favor": 1.0,
-    "goles_contra": 2.0,
-    "partidos": 1.0
+    "goles_contra": 3.0,
+    "partidos": 2.0
   },
   {
     "grupo": "Group C",
@@ -489,18 +501,6 @@
     "diferencia_goles": -2.0,
     "goles_favor": 1.0,
     "goles_contra": 3.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group A",
-    "posicion": 4.0,
-    "equipo": "South Africa",
-    "abreviacion": "RSA",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
-    "puntos": 0.0,
-    "diferencia_goles": -2.0,
-    "goles_favor": 0.0,
-    "goles_contra": 2.0,
     "partidos": 1.0
   },
   {
