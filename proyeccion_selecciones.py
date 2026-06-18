@@ -450,6 +450,53 @@ def marcadores_probables(lambda_local, lambda_visitante, top_n=5, max_goles=6,
     return resultados[:top_n]
 
 
+def marcadores_para_carrusel(lambda_local, lambda_visitante, prediccion,
+                              nombre_local, nombre_visitante,
+                              prob_local, prob_visitante,
+                              top_n=5, max_goles=6):
+    """
+    Genera la lista de marcadores pensada para un carrusel deslizable en UI.
+
+    El problema que resuelve: con Poisson, el marcador individual más
+    probable (ej. 1-1) puede no coincidir con el resultado favorito del
+    modelo (ej. "gana Colombia"), porque la probabilidad del favorito suele
+    repartirse entre varios marcadores (0-1, 1-2, 2-1...) mientras el empate
+    concentra la suya en uno solo. Aquí forzamos que el PRIMER marcador del
+    carrusel sea el más probable DENTRO del tipo que coincide con la
+    predicción (`prediccion_inteligente`), y el resto mantiene el orden
+    original por probabilidad. El usuario sigue viendo el panorama completo
+    al deslizar, pero lo primero que ve es coherente con el favorito.
+    """
+    # Mismos lambdas ajustados que usa marcadores_probables internamente,
+    # para que el orden y las probabilidades sean consistentes.
+    lambda_local_adj, lambda_visitante_adj = ajustar_lambdas_por_probabilidades(
+        lambda_local, lambda_visitante, prob_local, prob_visitante
+    )
+
+    todos = marcadores_probables(
+        lambda_local_adj, lambda_visitante_adj,
+        top_n=(max_goles + 1) ** 2,  # todas las combinaciones posibles
+        max_goles=max_goles,
+    )
+
+    if prediccion == nombre_local:
+        tipo_pred = "local"
+    elif prediccion == nombre_visitante:
+        tipo_pred = "visitante"
+    else:
+        tipo_pred = "empate"
+
+    destacado = next((m for m in todos if m["tipo"] == tipo_pred), None)
+    top_general = todos[:top_n]
+
+    if destacado is None:
+        return top_general
+
+    resto = [m for m in top_general if m["marcador"] != destacado["marcador"]]
+    carrusel = [destacado] + resto
+    return carrusel[:top_n]
+
+
 # =============================
 # FUERZA BASE
 # =============================
@@ -818,7 +865,8 @@ def predecir_probabilidades(
 # ANÁLISIS ESTRUCTURADO
 # =============================
 
-def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante, contexto, cfg):
+def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante,
+                      contexto, cfg, top_marcadores):
     factores     = []
     altitud_sede = contexto.get("altitud_sede", 0)
     ciudad_sede  = contexto.get("ciudad_sede", "")
@@ -948,20 +996,34 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion": interp_l,
     })
 
-    top_marcadores = marcadores_probables(
-        ll, lv, top_n=5,
-        prob_local=resultado["local"],
-        prob_visitante=resultado["visitante"],
-    )
-    marcador_top   = top_marcadores[0]
+    # --- Marcadores más probables (ya vienen ordenados para el carrusel,
+    #     con el primer elemento coherente con la predicción del modelo) ---
+    marcador_top = top_marcadores[0]
 
-    tipo_map = {"local": nombre_local, "empate": "empate", "visitante": nombre_visitante}
-    gana_str = tipo_map.get(marcador_top["tipo"], "empate")
+    probs_tipo = {
+        "local":     resultado["local"],
+        "empate":    resultado["empate"],
+        "visitante": resultado["visitante"],
+    }
+    tipo_favorito_1x2 = max(probs_tipo, key=probs_tipo.get)
 
-    interp_m = (
-        f"El marcador más probable es {marcador_top['marcador']}, "
-        f"favoreciendo a {gana_str}."
-    )
+    tipo_map = {"local": nombre_local, "empate": "el empate", "visitante": nombre_visitante}
+    gana_str = tipo_map.get(marcador_top["tipo"], "el empate")
+
+    if marcador_top["tipo"] == tipo_favorito_1x2:
+        interp_m = (
+            f"El marcador más probable es {marcador_top['marcador']} "
+            f"({marcador_top['probabilidad']*100:.1f}%), coherente con "
+            f"{gana_str} como resultado favorito del modelo."
+        )
+    else:
+        favorito_str = tipo_map.get(tipo_favorito_1x2, "el empate")
+        interp_m = (
+            f"El marcador individual más probable es {marcador_top['marcador']} "
+            f"({marcador_top['probabilidad']*100:.1f}%), favoreciendo a {gana_str}. "
+            f"Aunque el modelo da como favorito a {favorito_str} por probabilidad "
+            f"acumulada, esa probabilidad se reparte entre varios marcadores distintos."
+        )
 
     factores.append({
         "factor":      "Marcadores más probables",
@@ -1088,19 +1150,25 @@ def generar_partido(
         visitante["nombre"],
     )
 
-    top_marcadores = marcadores_probables(
+    # Marcadores ordenados para carrusel: el primero es siempre coherente
+    # con `pred` (el favorito según el modelo), el resto sigue el orden
+    # original por probabilidad cruda de Poisson.
+    top_marcadores = marcadores_para_carrusel(
         resultado["lambda_local"],
         resultado["lambda_visitante"],
+        pred,
+        local["nombre"],
+        visitante["nombre"],
+        resultado["local"],
+        resultado["visitante"],
         top_n=5,
-        prob_local=resultado["local"],
-        prob_visitante=resultado["visitante"],
     )
     marcadores_solo_resultado = [m["marcador"] for m in top_marcadores]
 
     analisis = generar_analisis(
         local, visitante, resultado,
         nombre_local, nombre_visitante,
-        contexto, cfg,
+        contexto, cfg, top_marcadores,
     )
 
     output = {

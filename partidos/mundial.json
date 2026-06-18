@@ -1,5 +1,203 @@
 [
   {
+    "id": "760436",
+    "fecha": "2026-06-18T02:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Uzbekistan",
+    "visitante": "Colombia",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+    "estadio": "Estadio Banorte",
+    "ciudad_sede": "Ciudad de México",
+    "pais_sede": "MEX",
+    "altitud_sede": 2240,
+    "es_neutro": true,
+    "prob_local": 0.33464269280942127,
+    "prob_empate": 0.22535730719057875,
+    "prob_visitante": 0.44,
+    "fuerza_local": 0.41270168825181597,
+    "fuerza_visitante": 0.48285417917675544,
+    "diferencia": 0.07015249092493947,
+    "confianza": "moderado",
+    "prediccion": "Colombia",
+    "resultado": "Colombia",
+    "lambda_local": 1.0726670781019958,
+    "lambda_visitante": 1.621886697379787,
+    "factor_altitud_local": 0.888,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      {
+        "marcador": "1-1",
+        "goles_local": 1,
+        "goles_visitante": 1,
+        "probabilidad": 0.117559,
+        "porcentaje": 11.76,
+        "tipo": "empate"
+      },
+      {
+        "marcador": "0-1",
+        "goles_local": 0,
+        "goles_visitante": 1,
+        "probabilidad": 0.109595,
+        "porcentaje": 10.96,
+        "tipo": "visitante"
+      },
+      {
+        "marcador": "1-2",
+        "goles_local": 1,
+        "goles_visitante": 2,
+        "probabilidad": 0.095334,
+        "porcentaje": 9.53,
+        "tipo": "visitante"
+      },
+      {
+        "marcador": "0-2",
+        "goles_local": 0,
+        "goles_visitante": 2,
+        "probabilidad": 0.088875,
+        "porcentaje": 8.89,
+        "tipo": "visitante"
+      },
+      {
+        "marcador": "1-0",
+        "goles_local": 1,
+        "goles_visitante": 0,
+        "probabilidad": 0.072483,
+        "porcentaje": 7.25,
+        "tipo": "local"
+      }
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.4,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Uzbekistan"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Colombia"
+        },
+        "interpretacion": "Colombia llega con mejor momentum: índice 0.50/1.0 frente a 0.40/1.0 de Uzbekistan. Últimos 5: 2V/0E/2D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 2240,
+        "ciudad_sede": "Ciudad de México",
+        "local": {
+          "nombre": "Uzbekistan",
+          "altitud_base": 0,
+          "factor": 0.888
+        },
+        "visitante": {
+          "nombre": "Colombia",
+          "altitud_base": 2600,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en gran altitud (2240m). Uzbekistan viene de 0m (diferencia: 2240m) frente a Colombia de 2600m (diferencia: -360m). La altitud afecta más a Uzbekistan. Factor de rendimiento: 0.89 vs 1.00."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Uzbekistan",
+          "goles_favor": 1.2,
+          "goles_contra": 1.4
+        },
+        "visitante": {
+          "nombre": "Colombia",
+          "goles_favor": 1.75,
+          "goles_contra": 1.5
+        },
+        "interpretacion": "Colombia más ofensivo: 1.75 vs 1.20 goles/partido. Defensiva: 1.40 vs 1.50."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Uzbekistan",
+          "lambda": 1.073
+        },
+        "visitante": {
+          "nombre": "Colombia",
+          "lambda": 1.622
+        },
+        "suma": 2.695,
+        "interpretacion": "Colombia genera más peligro ofensivo según el modelo: 1.62 goles esperados vs 1.07 de Uzbekistan."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          {
+            "marcador": "1-1",
+            "goles_local": 1,
+            "goles_visitante": 1,
+            "probabilidad": 0.117559,
+            "porcentaje": 11.76,
+            "tipo": "empate"
+          },
+          {
+            "marcador": "0-1",
+            "goles_local": 0,
+            "goles_visitante": 1,
+            "probabilidad": 0.109595,
+            "porcentaje": 10.96,
+            "tipo": "visitante"
+          },
+          {
+            "marcador": "1-2",
+            "goles_local": 1,
+            "goles_visitante": 2,
+            "probabilidad": 0.095334,
+            "porcentaje": 9.53,
+            "tipo": "visitante"
+          },
+          {
+            "marcador": "0-2",
+            "goles_local": 0,
+            "goles_visitante": 2,
+            "probabilidad": 0.088875,
+            "porcentaje": 8.89,
+            "tipo": "visitante"
+          },
+          {
+            "marcador": "1-0",
+            "goles_local": 1,
+            "goles_visitante": 0,
+            "probabilidad": 0.072483,
+            "porcentaje": 7.25,
+            "tipo": "local"
+          }
+        ],
+        "lambda_local": 1.073,
+        "lambda_visitante": 1.622,
+        "interpretacion": "El marcador más probable es 1-1 (11.8%), favoreciendo a empate. Los 5 resultados más frecuentes acumulan el 48.4% de probabilidad total."
+      }
+    ]
+  },
+  {
     "id": "760434",
     "fecha": "2026-06-17T23:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

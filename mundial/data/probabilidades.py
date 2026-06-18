@@ -203,7 +203,7 @@ PARTIDOS_GRUPO = [
 
     # ── GRUPO K ──────────────────────────────────────────────
     # ("Portugal",    "Congo DR",  "Houston"),    # JUGADO 1-1
-    ("Uzbekistan",  "Colombia",  "Mexico City"),
+    # ("Uzbekistan",  "Colombia",  "Mexico City"), # JUGADO 1-3
     ("Portugal",    "Uzbekistan","Houston"),
     ("Colombia",    "Congo DR",  "Guadalajara"),
     ("Colombia",    "Portugal",  "Seattle"),

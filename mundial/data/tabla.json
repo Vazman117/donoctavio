@@ -96,6 +96,18 @@
     "partidos": 1.0
   },
   {
+    "grupo": "Group K",
+    "posicion": 1.0,
+    "equipo": "Colombia",
+    "abreviacion": "COL",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+    "puntos": 3.0,
+    "diferencia_goles": 2.0,
+    "goles_favor": 3.0,
+    "goles_contra": 1.0,
+    "partidos": 1.0
+  },
+  {
     "grupo": "Group A",
     "posicion": 1.0,
     "equipo": "Mexico",
@@ -337,7 +349,7 @@
   },
   {
     "grupo": "Group K",
-    "posicion": 2.0,
+    "posicion": 3.0,
     "equipo": "Portugal",
     "abreviacion": "POR",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
@@ -349,7 +361,7 @@
   },
   {
     "grupo": "Group K",
-    "posicion": 1.0,
+    "posicion": 2.0,
     "equipo": "Congo DR",
     "abreviacion": "COD",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
@@ -382,30 +394,6 @@
     "goles_favor": 0.0,
     "goles_contra": 0.0,
     "partidos": 1.0
-  },
-  {
-    "grupo": "Group K",
-    "posicion": 3.0,
-    "equipo": "Colombia",
-    "abreviacion": "COL",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group K",
-    "posicion": 4.0,
-    "equipo": "Uzbekistan",
-    "abreviacion": "UZB",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
   },
   {
     "grupo": "Group A",
@@ -485,6 +473,18 @@
     "equipo": "Jordan",
     "abreviacion": "JOR",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
+    "puntos": 0.0,
+    "diferencia_goles": -2.0,
+    "goles_favor": 1.0,
+    "goles_contra": 3.0,
+    "partidos": 1.0
+  },
+  {
+    "grupo": "Group K",
+    "posicion": 4.0,
+    "equipo": "Uzbekistan",
+    "abreviacion": "UZB",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
     "puntos": 0.0,
     "diferencia_goles": -2.0,
     "goles_favor": 1.0,
