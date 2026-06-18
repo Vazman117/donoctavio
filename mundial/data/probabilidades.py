@@ -132,7 +132,7 @@ PARTIDOS_GRUPO = [
     # ── GRUPO B ──────────────────────────────────────────────
     # ("Canada",      "Bosnia-Herzegovina", "Toronto"),  # JUGADO: 1-1
     # ("Qatar",       "Switzerland",  "San Francisco"),  # JUGADO: 1-1
-    ("Switzerland", "Bosnia-Herzegovina", "Los Angeles"),
+    # ("Switzerland", "Bosnia-Herzegovina", "Los Angeles"), # JUGADO 4-1
     ("Canada",      "Qatar",                  "Vancouver"),
     ("Switzerland", "Canada",                 "Vancouver"),
     ("Bosnia-Herzegovina", "Qatar",        "Seattle"),

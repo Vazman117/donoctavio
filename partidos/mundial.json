@@ -1,5 +1,133 @@
 [
   {
+    "id": "760439",
+    "fecha": "2026-06-18T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Switzerland",
+    "visitante": "Bosnia-Herzegovina",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+    "estadio": "SoFi Stadium",
+    "ciudad_sede": "Los Angeles, California",
+    "pais_sede": "USA",
+    "altitud_sede": 93,
+    "es_neutro": true,
+    "prob_local": 0.27431722301957306,
+    "prob_empate": 0.5246078568923992,
+    "prob_visitante": 0.20107492008802774,
+    "fuerza_local": 0.46619975118665796,
+    "fuerza_visitante": 0.44390782509334203,
+    "diferencia": 0.022291926093315928,
+    "confianza": "ajustado",
+    "prediccion": "Empate",
+    "resultado": "Switzerland",
+    "marcador": "4-1",
+    "lambda_local": 0.8520282410083754,
+    "lambda_visitante": 0.7080313476222727,
+    "factor_altitud_local": 0.99535,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "0-0",
+      "1-0",
+      "0-1",
+      "1-1",
+      "2-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.44,
+          "ultimos_5": [
+            "D",
+            "D",
+            "W",
+            "D",
+            "L"
+          ],
+          "nombre": "Switzerland"
+        },
+        "visitante": {
+          "valor": 0.4,
+          "ultimos_5": [
+            "D",
+            "D",
+            "D"
+          ],
+          "nombre": "Bosnia-Herzegovina"
+        },
+        "interpretacion": "Switzerland llega con mejor momentum: índice 0.44/1.0 frente a 0.40/1.0 de Bosnia-Herzegovina. Últimos 5: 1V/3E/1D vs 0V/3E/0D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 93,
+        "ciudad_sede": "Los Angeles, California",
+        "local": {
+          "nombre": "Switzerland",
+          "altitud_base": 0,
+          "factor": 0.995
+        },
+        "visitante": {
+          "nombre": "Bosnia-Herzegovina",
+          "altitud_base": 511,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (93m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Switzerland",
+          "goles_favor": 1.8,
+          "goles_contra": 1.4
+        },
+        "visitante": {
+          "nombre": "Bosnia-Herzegovina",
+          "goles_favor": 0.67,
+          "goles_contra": 0.67
+        },
+        "interpretacion": "Switzerland más ofensivo: 1.80 goles/partido (vs 0.67). Defensiva: 1.40 vs 0.67."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "bajo",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Switzerland",
+          "lambda": 0.852
+        },
+        "visitante": {
+          "nombre": "Bosnia-Herzegovina",
+          "lambda": 0.708
+        },
+        "suma": 1.56,
+        "interpretacion": "Los lambdas proyectan un partido muy trabado: Switzerland 0.85 goles esperados vs Bosnia-Herzegovina 0.71. Con solo 1.56 goles totales esperados, el empate es el resultado más probable."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-0",
+          "1-0",
+          "0-1",
+          "1-1",
+          "2-0"
+        ],
+        "lambda_local": 0.852,
+        "lambda_visitante": 0.708,
+        "interpretacion": "El marcador más probable es 0-0 (21.0%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
     "id": "760438",
     "fecha": "2026-06-18T16:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

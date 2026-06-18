@@ -1,5 +1,17 @@
 [
   {
+    "grupo": "Group B",
+    "posicion": 1.0,
+    "equipo": "Switzerland",
+    "abreviacion": "SUI",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+    "puntos": 4.0,
+    "diferencia_goles": 3.0,
+    "goles_favor": 5.0,
+    "goles_contra": 2.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group E",
     "posicion": 1.0,
     "equipo": "Germany",
@@ -242,30 +254,6 @@
   {
     "grupo": "Group B",
     "posicion": 4.0,
-    "equipo": "Bosnia-Herzegovina",
-    "abreviacion": "BIH",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
-    "puntos": 1.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 1.0,
-    "goles_contra": 1.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group B",
-    "posicion": 1.0,
-    "equipo": "Switzerland",
-    "abreviacion": "SUI",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-    "puntos": 1.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 1.0,
-    "goles_contra": 1.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group B",
-    "posicion": 3.0,
     "equipo": "Qatar",
     "abreviacion": "QAT",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
@@ -417,6 +405,18 @@
     "diferencia_goles": -2.0,
     "goles_favor": 1.0,
     "goles_contra": 3.0,
+    "partidos": 2.0
+  },
+  {
+    "grupo": "Group B",
+    "posicion": 3.0,
+    "equipo": "Bosnia-Herzegovina",
+    "abreviacion": "BIH",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+    "puntos": 1.0,
+    "diferencia_goles": -3.0,
+    "goles_favor": 2.0,
+    "goles_contra": 5.0,
     "partidos": 2.0
   },
   {
