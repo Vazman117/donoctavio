@@ -14,15 +14,15 @@
     "altitud_sede": 320,
     "es_neutro": true,
     "prob_local": 0.44,
-    "prob_empate": 0.2584213602964872,
-    "prob_visitante": 0.30157863970351284,
+    "prob_empate": 0.2630393591552197,
+    "prob_visitante": 0.29696064084478024,
     "fuerza_local": 0.49825827885714286,
-    "fuerza_visitante": 0.3914394285714286,
-    "diferencia": 0.10681885028571425,
+    "fuerza_visitante": 0.4129818285714286,
+    "diferencia": 0.08527645028571423,
     "confianza": "moderado",
     "prediccion": "Czechia",
     "lambda_local": 1.4676185289103445,
-    "lambda_visitante": 0.7147008489135929,
+    "lambda_visitante": 0.7523993552299141,
     "factor_altitud_local": 1.0,
     "factor_altitud_visitante": 1.0,
     "marcadores_probables": [
@@ -47,17 +47,17 @@
           "nombre": "Czechia"
         },
         "visitante": {
-          "valor": 0.2,
+          "valor": 0.36,
           "ultimos_5": [
             "L",
             "W",
+            "D",
             "L",
-            "L",
-            "L"
+            "D"
           ],
           "nombre": "South Africa"
         },
-        "interpretacion": "Czechia llega con mejor momentum: índice 0.67/1.0 frente a 0.20/1.0 de South Africa. Últimos 5: 2V/0E/1D vs 1V/0E/4D."
+        "interpretacion": "Czechia llega con mejor momentum: índice 0.67/1.0 frente a 0.36/1.0 de South Africa. Últimos 5: 2V/0E/1D vs 1V/2E/2D."
       },
       {
         "factor": "Factor altitud",
@@ -103,10 +103,10 @@
         },
         "visitante": {
           "nombre": "South Africa",
-          "lambda": 0.715
+          "lambda": 0.752
         },
-        "suma": 2.182,
-        "interpretacion": "Czechia genera más peligro ofensivo según el modelo: 1.47 goles esperados vs 0.71 de South Africa."
+        "suma": 2.22,
+        "interpretacion": "Czechia genera más peligro ofensivo según el modelo: 1.47 goles esperados vs 0.75 de South Africa."
       },
       {
         "factor": "Marcadores más probables",
@@ -120,8 +120,8 @@
           "2-0"
         ],
         "lambda_local": 1.468,
-        "lambda_visitante": 0.715,
-        "interpretacion": "El marcador más probable es 1-0 (14.6%), coherente con Czechia como resultado favorito del modelo."
+        "lambda_visitante": 0.752,
+        "interpretacion": "El marcador más probable es 1-0 (14.4%), coherente con Czechia como resultado favorito del modelo."
       }
     ]
   },
@@ -139,16 +139,16 @@
     "pais_sede": "USA",
     "altitud_sede": 93,
     "es_neutro": true,
-    "prob_local": 0.2818105538732493,
-    "prob_empate": 0.47418571506077045,
-    "prob_visitante": 0.24400373106598028,
-    "fuerza_local": 0.39445335030665796,
-    "fuerza_visitante": 0.427671825093342,
-    "diferencia": 0.03321847478668405,
+    "prob_local": 0.26783244184426763,
+    "prob_empate": 0.5246078568923992,
+    "prob_visitante": 0.20755970126333317,
+    "fuerza_local": 0.46619975118665796,
+    "fuerza_visitante": 0.44390782509334203,
+    "diferencia": 0.022291926093315928,
     "confianza": "ajustado",
     "prediccion": "Empate",
-    "lambda_local": 0.8191661538106235,
-    "lambda_visitante": 0.7664256855705013,
+    "lambda_local": 0.8520282410083754,
+    "lambda_visitante": 0.7080313476222727,
     "factor_altitud_local": 0.99535,
     "factor_altitud_visitante": 1.0,
     "marcadores_probables": [
@@ -161,29 +161,29 @@
     "analisis": [
       {
         "factor": "Forma reciente",
-        "impacto": "alto",
+        "impacto": "bajo",
         "tipo": "forma",
         "local": {
-          "valor": 0.2,
+          "valor": 0.44,
           "ultimos_5": [
-            "L",
-            "L",
+            "D",
+            "D",
             "W",
-            "L",
+            "D",
             "L"
           ],
           "nombre": "Switzerland"
         },
         "visitante": {
-          "valor": 0.5,
+          "valor": 0.4,
           "ultimos_5": [
-            "L",
-            "L",
-            "L"
+            "D",
+            "D",
+            "D"
           ],
           "nombre": "Bosnia-Herzegovina"
         },
-        "interpretacion": "Bosnia-Herzegovina llega con mejor momentum: índice 0.50/1.0 frente a 0.20/1.0 de Switzerland. Últimos 5: 0V/0E/3D vs 1V/0E/4D."
+        "interpretacion": "Switzerland llega con mejor momentum: índice 0.44/1.0 frente a 0.40/1.0 de Bosnia-Herzegovina. Últimos 5: 1V/3E/1D vs 0V/3E/0D."
       },
       {
         "factor": "Factor altitud",
@@ -225,14 +225,14 @@
         "tipo": "lambda",
         "local": {
           "nombre": "Switzerland",
-          "lambda": 0.819
+          "lambda": 0.852
         },
         "visitante": {
           "nombre": "Bosnia-Herzegovina",
-          "lambda": 0.766
+          "lambda": 0.708
         },
-        "suma": 1.586,
-        "interpretacion": "Los lambdas proyectan un partido muy trabado: Switzerland 0.82 goles esperados vs Bosnia-Herzegovina 0.77. Con solo 1.59 goles totales esperados, el empate es el resultado más probable."
+        "suma": 1.56,
+        "interpretacion": "Los lambdas proyectan un partido muy trabado: Switzerland 0.85 goles esperados vs Bosnia-Herzegovina 0.71. Con solo 1.56 goles totales esperados, el empate es el resultado más probable."
       },
       {
         "factor": "Marcadores más probables",
@@ -245,9 +245,9 @@
           "1-1",
           "2-0"
         ],
-        "lambda_local": 0.819,
-        "lambda_visitante": 0.766,
-        "interpretacion": "El marcador más probable es 0-0 (20.5%), coherente con el empate como resultado favorito del modelo."
+        "lambda_local": 0.852,
+        "lambda_visitante": 0.708,
+        "interpretacion": "El marcador más probable es 0-0 (21.0%), coherente con el empate como resultado favorito del modelo."
       }
     ]
   },
@@ -265,51 +265,51 @@
     "pais_sede": "CAN",
     "altitud_sede": 4,
     "es_neutro": true,
-    "prob_local": 0.32948619724785566,
-    "prob_empate": 0.48652149677238365,
-    "prob_visitante": 0.1839923059797608,
-    "fuerza_local": 0.41908007771428574,
-    "fuerza_visitante": 0.42186354285714284,
-    "diferencia": 0.0027834651428571,
+    "prob_local": 0.3211464504974908,
+    "prob_empate": 0.531975488514078,
+    "prob_visitante": 0.14687806098843115,
+    "fuerza_local": 0.5263580617142857,
+    "fuerza_visitante": 0.4102520308571429,
+    "diferencia": 0.11610603085714277,
     "confianza": "moderado",
     "prediccion": "Empate",
-    "lambda_local": 0.657099938974873,
-    "lambda_visitante": 0.3447509578544061,
+    "lambda_local": 0.6950655317749113,
+    "lambda_visitante": 0.2982528728503965,
     "factor_altitud_local": 1.0,
     "factor_altitud_visitante": 1.0,
     "marcadores_probables": [
       "0-0",
       "1-0",
       "0-1",
-      "1-1",
-      "2-0"
+      "2-0",
+      "1-1"
     ],
     "analisis": [
       {
         "factor": "Forma reciente",
-        "impacto": "medio",
+        "impacto": "alto",
         "tipo": "forma",
         "local": {
-          "valor": 0.33,
+          "valor": 0.6,
           "ultimos_5": [
-            "L",
-            "L",
+            "D",
+            "D",
             "W",
-            "L",
-            "L"
+            "D",
+            "D"
           ],
           "nombre": "Canada"
         },
         "visitante": {
-          "valor": 0.5,
+          "valor": 0.27,
           "ultimos_5": [
-            "L",
-            "L",
+            "D",
+            "D",
             "L"
           ],
           "nombre": "Qatar"
         },
-        "interpretacion": "Qatar llega con mejor momentum: índice 0.50/1.0 frente a 0.33/1.0 de Canada. Últimos 5: 0V/0E/3D vs 1V/0E/4D."
+        "interpretacion": "Canada llega con mejor momentum: índice 0.60/1.0 frente a 0.27/1.0 de Qatar. Últimos 5: 1V/4E/0D vs 0V/2E/1D."
       },
       {
         "factor": "Factor altitud",
@@ -351,14 +351,14 @@
         "tipo": "lambda",
         "local": {
           "nombre": "Canada",
-          "lambda": 0.657
+          "lambda": 0.695
         },
         "visitante": {
           "nombre": "Qatar",
-          "lambda": 0.345
+          "lambda": 0.298
         },
-        "suma": 1.002,
-        "interpretacion": "Los lambdas proyectan un partido muy trabado: Canada 0.66 goles esperados vs Qatar 0.34. Con solo 1.00 goles totales esperados, el empate es el resultado más probable."
+        "suma": 0.993,
+        "interpretacion": "Los lambdas proyectan un partido muy trabado: Canada 0.70 goles esperados vs Qatar 0.30. Con solo 0.99 goles totales esperados, el empate es el resultado más probable."
       },
       {
         "factor": "Marcadores más probables",
@@ -368,12 +368,12 @@
           "0-0",
           "1-0",
           "0-1",
-          "1-1",
-          "2-0"
+          "2-0",
+          "1-1"
         ],
-        "lambda_local": 0.657,
-        "lambda_visitante": 0.345,
-        "interpretacion": "El marcador más probable es 0-0 (36.7%), coherente con el empate como resultado favorito del modelo."
+        "lambda_local": 0.695,
+        "lambda_visitante": 0.298,
+        "interpretacion": "El marcador más probable es 0-0 (37.0%), coherente con el empate como resultado favorito del modelo."
       }
     ]
   },
@@ -392,15 +392,15 @@
     "altitud_sede": 1566,
     "es_neutro": true,
     "prob_local": 0.44,
-    "prob_empate": 0.24422150840499043,
-    "prob_visitante": 0.31577849159500954,
-    "fuerza_local": 0.6235959539466983,
+    "prob_empate": 0.2437602974607172,
+    "prob_visitante": 0.3162397025392828,
+    "fuerza_local": 0.6791552819466983,
     "fuerza_visitante": 0.49533880391044466,
-    "diferencia": 0.12825715003625365,
+    "diferencia": 0.18381647803625362,
     "confianza": "moderado",
     "prediccion": "Mexico",
-    "lambda_local": 1.78539480059813,
-    "lambda_visitante": 0.7715365345046524,
+    "lambda_local": 1.8293482033451458,
+    "lambda_visitante": 0.7364666920271682,
     "factor_altitud_local": 1.0,
     "factor_altitud_visitante": 0.92355,
     "marcadores_probables": [
@@ -413,16 +413,16 @@
     "analisis": [
       {
         "factor": "Forma reciente",
-        "impacto": "medio",
+        "impacto": "alto",
         "tipo": "forma",
         "local": {
-          "valor": 0.78,
+          "valor": 0.87,
           "ultimos_5": [
             "W",
             "W",
             "W",
             "W",
-            "L"
+            "D"
           ],
           "nombre": "Mexico"
         },
@@ -437,7 +437,7 @@
           ],
           "nombre": "South Korea"
         },
-        "interpretacion": "Mexico llega con mejor momentum: índice 0.78/1.0 frente a 0.60/1.0 de South Korea. Últimos 5: 4V/0E/1D vs 3V/0E/2D."
+        "interpretacion": "Mexico llega con mejor momentum: índice 0.87/1.0 frente a 0.60/1.0 de South Korea. Últimos 5: 4V/1E/0D vs 3V/0E/2D."
       },
       {
         "factor": "Factor altitud",
@@ -479,14 +479,14 @@
         "tipo": "lambda",
         "local": {
           "nombre": "Mexico",
-          "lambda": 1.785
+          "lambda": 1.829
         },
         "visitante": {
           "nombre": "South Korea",
-          "lambda": 0.772
+          "lambda": 0.736
         },
-        "suma": 2.557,
-        "interpretacion": "Mexico genera más peligro ofensivo según el modelo: 1.79 goles esperados vs 0.77 de South Korea."
+        "suma": 2.566,
+        "interpretacion": "Mexico genera más peligro ofensivo según el modelo: 1.83 goles esperados vs 0.74 de South Korea."
       },
       {
         "factor": "Marcadores más probables",
@@ -499,8 +499,8 @@
           "2-0",
           "0-1"
         ],
-        "lambda_local": 1.785,
-        "lambda_visitante": 0.772,
+        "lambda_local": 1.829,
+        "lambda_visitante": 0.736,
         "interpretacion": "El marcador más probable es 1-0 (11.5%), coherente con Mexico como resultado favorito del modelo."
       }
     ]
@@ -519,16 +519,16 @@
     "pais_sede": "USA",
     "altitud_sede": 0,
     "es_neutro": true,
-    "prob_local": 0.3432225891541827,
-    "prob_empate": 0.21677741084581736,
+    "prob_local": 0.344116058553349,
+    "prob_empate": 0.21588394144665102,
     "prob_visitante": 0.44,
     "fuerza_local": 0.4373754285714286,
-    "fuerza_visitante": 0.5045257142857142,
-    "diferencia": 0.06715028571428566,
+    "fuerza_visitante": 0.5251969142857142,
+    "diferencia": 0.08782148571428566,
     "confianza": "moderado",
     "prediccion": "Australia",
-    "lambda_local": 1.0089128389359334,
-    "lambda_visitante": 2.248592297770408,
+    "lambda_local": 0.9966090238269587,
+    "lambda_visitante": 2.3009866814077764,
     "factor_altitud_local": 1.0,
     "factor_altitud_visitante": 1.0,
     "marcadores_probables": [
@@ -541,7 +541,7 @@
     "analisis": [
       {
         "factor": "Forma reciente",
-        "impacto": "medio",
+        "impacto": "alto",
         "tipo": "forma",
         "local": {
           "valor": 0.4,
@@ -555,17 +555,17 @@
           "nombre": "United States"
         },
         "visitante": {
-          "valor": 0.6,
+          "valor": 0.68,
           "ultimos_5": [
             "W",
-            "L",
+            "D",
             "L",
             "W",
             "W"
           ],
           "nombre": "Australia"
         },
-        "interpretacion": "Australia llega con mejor momentum: índice 0.60/1.0 frente a 0.40/1.0 de United States. Últimos 5: 3V/0E/2D vs 2V/0E/3D."
+        "interpretacion": "Australia llega con mejor momentum: índice 0.68/1.0 frente a 0.40/1.0 de United States. Últimos 5: 3V/1E/1D vs 2V/0E/3D."
       },
       {
         "factor": "Factor altitud",
@@ -607,14 +607,14 @@
         "tipo": "lambda",
         "local": {
           "nombre": "United States",
-          "lambda": 1.009
+          "lambda": 0.997
         },
         "visitante": {
           "nombre": "Australia",
-          "lambda": 2.249
+          "lambda": 2.301
         },
-        "suma": 3.258,
-        "interpretacion": "Australia genera más peligro ofensivo según el modelo: 2.25 goles esperados vs 1.01 de United States."
+        "suma": 3.298,
+        "interpretacion": "Australia genera más peligro ofensivo según el modelo: 2.30 goles esperados vs 1.00 de United States."
       },
       {
         "factor": "Marcadores más probables",
@@ -627,8 +627,8 @@
           "0-1",
           "2-2"
         ],
-        "lambda_local": 1.009,
-        "lambda_visitante": 2.249,
+        "lambda_local": 0.997,
+        "lambda_visitante": 2.301,
         "interpretacion": "El marcador más probable es 1-2 (9.2%), coherente con Australia como resultado favorito del modelo."
       }
     ]
@@ -647,21 +647,21 @@
     "pais_sede": "USA",
     "altitud_sede": 25,
     "es_neutro": true,
-    "prob_local": 0.32193600112511633,
-    "prob_empate": 0.27069274274525235,
-    "prob_visitante": 0.40737125612963143,
+    "prob_local": 0.2985137602356548,
+    "prob_empate": 0.26358202897163424,
+    "prob_visitante": 0.4379042107927111,
     "fuerza_local": 0.5242221291062051,
-    "fuerza_visitante": 0.4929662037509377,
-    "diferencia": 0.031255925355267444,
+    "fuerza_visitante": 0.5882702037509377,
+    "diferencia": 0.06404807464473261,
     "confianza": "moderado",
-    "prediccion": "Empate",
-    "lambda_local": 0.91273114559387,
-    "lambda_visitante": 1.2336083418439474,
+    "prediccion": "Morocco",
+    "lambda_local": 0.849052228459414,
+    "lambda_visitante": 1.3076248423545844,
     "factor_altitud_local": 0.9995,
     "factor_altitud_visitante": 1.0,
     "marcadores_probables": [
-      "1-1",
       "0-1",
+      "1-1",
       "0-0",
       "1-0",
       "0-2"
@@ -683,17 +683,17 @@
           "nombre": "Scotland"
         },
         "visitante": {
-          "valor": 0.5,
+          "valor": 0.7,
           "ultimos_5": [
-            "L",
-            "L",
+            "D",
+            "D",
             "W",
             "W",
             "W"
           ],
           "nombre": "Morocco"
         },
-        "interpretacion": "Scotland llega con mejor momentum: índice 0.60/1.0 frente a 0.50/1.0 de Morocco. Últimos 5: 3V/0E/2D vs 3V/0E/2D."
+        "interpretacion": "Morocco llega con mejor momentum: índice 0.70/1.0 frente a 0.60/1.0 de Scotland. Últimos 5: 3V/2E/0D vs 3V/0E/2D."
       },
       {
         "factor": "Factor altitud",
@@ -735,29 +735,29 @@
         "tipo": "lambda",
         "local": {
           "nombre": "Scotland",
-          "lambda": 0.913
+          "lambda": 0.849
         },
         "visitante": {
           "nombre": "Morocco",
-          "lambda": 1.234
+          "lambda": 1.308
         },
-        "suma": 2.146,
-        "interpretacion": "Morocco genera más peligro ofensivo según el modelo: 1.23 goles esperados vs 0.91 de Scotland."
+        "suma": 2.157,
+        "interpretacion": "Morocco genera más peligro ofensivo según el modelo: 1.31 goles esperados vs 0.85 de Scotland."
       },
       {
         "factor": "Marcadores más probables",
         "impacto": "informativo",
         "tipo": "marcadores",
         "marcadores": [
-          "1-1",
           "0-1",
+          "1-1",
           "0-0",
           "1-0",
           "0-2"
         ],
-        "lambda_local": 0.913,
-        "lambda_visitante": 1.234,
-        "interpretacion": "El marcador individual más probable es 1-1 (13.3%), favoreciendo a el empate. Aunque el modelo da como favorito a Morocco por probabilidad acumulada, esa probabilidad se reparte entre varios marcadores distintos."
+        "lambda_local": 0.849,
+        "lambda_visitante": 1.308,
+        "interpretacion": "El marcador más probable es 0-1 (14.8%), coherente con Morocco como resultado favorito del modelo."
       }
     ]
   },
@@ -776,15 +776,15 @@
     "altitud_sede": 12,
     "es_neutro": true,
     "prob_local": 0.44,
-    "prob_empate": 0.23797565031841325,
-    "prob_visitante": 0.3220243496815868,
-    "fuerza_local": 0.5005641912518382,
-    "fuerza_visitante": 0.40153779377673327,
-    "diferencia": 0.09902639747510489,
+    "prob_empate": 0.2448980397389455,
+    "prob_visitante": 0.3151019602610545,
+    "fuerza_local": 0.5509328726918381,
+    "fuerza_visitante": 0.41230576241673333,
+    "diferencia": 0.13862711027510477,
     "confianza": "moderado",
     "prediccion": "Brazil",
-    "lambda_local": 1.6697280743637304,
-    "lambda_visitante": 0.9882502722038183,
+    "lambda_local": 1.7086343595916231,
+    "lambda_visitante": 0.9660133482348154,
     "factor_altitud_local": 0.9999,
     "factor_altitud_visitante": 0.9994,
     "marcadores_probables": [
@@ -800,9 +800,9 @@
         "impacto": "alto",
         "tipo": "forma",
         "local": {
-          "valor": 0.6,
+          "valor": 0.68,
           "ultimos_5": [
-            "L",
+            "D",
             "W",
             "W",
             "W",
@@ -811,17 +811,17 @@
           "nombre": "Brazil"
         },
         "visitante": {
-          "valor": 0.2,
+          "valor": 0.28,
           "ultimos_5": [
             "L",
             "L",
             "W",
-            "L",
+            "D",
             "L"
           ],
           "nombre": "Haiti"
         },
-        "interpretacion": "Brazil llega con mejor momentum: índice 0.60/1.0 frente a 0.20/1.0 de Haiti. Últimos 5: 3V/0E/2D vs 1V/0E/4D."
+        "interpretacion": "Brazil llega con mejor momentum: índice 0.68/1.0 frente a 0.28/1.0 de Haiti. Últimos 5: 3V/1E/1D vs 1V/1E/3D."
       },
       {
         "factor": "Factor altitud",
@@ -863,14 +863,14 @@
         "tipo": "lambda",
         "local": {
           "nombre": "Brazil",
-          "lambda": 1.67
+          "lambda": 1.709
         },
         "visitante": {
           "nombre": "Haiti",
-          "lambda": 0.988
+          "lambda": 0.966
         },
-        "suma": 2.658,
-        "interpretacion": "Brazil genera más peligro ofensivo según el modelo: 1.67 goles esperados vs 0.99 de Haiti."
+        "suma": 2.675,
+        "interpretacion": "Brazil genera más peligro ofensivo según el modelo: 1.71 goles esperados vs 0.97 de Haiti."
       },
       {
         "factor": "Marcadores más probables",
@@ -883,9 +883,9 @@
           "2-0",
           "0-1"
         ],
-        "lambda_local": 1.67,
-        "lambda_visitante": 0.988,
-        "interpretacion": "El marcador más probable es 1-0 (10.8%), coherente con Brazil como resultado favorito del modelo."
+        "lambda_local": 1.709,
+        "lambda_visitante": 0.966,
+        "interpretacion": "El marcador más probable es 1-0 (10.7%), coherente con Brazil como resultado favorito del modelo."
       }
     ]
   },
