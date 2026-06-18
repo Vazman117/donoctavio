@@ -624,6 +624,79 @@
   margin-bottom: 6px;
 }
 
+/* marcadores (carrusel) */
+.marcador-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 6px 0 4px;
+}
+
+.marcador-arrow {
+  background: none;
+  border: 0.5px solid var(--border-mid);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dim);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color .15s, background .15s;
+}
+.marcador-arrow:hover {
+  color: var(--txt);
+  background: rgba(255,255,255,.04);
+}
+
+.marcador-slides {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 90px;
+}
+
+.marcador-slide {
+  align-items: center;
+  justify-content: center;
+}
+
+.marcador-num {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--txt);
+  letter-spacing: .02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.marcador-dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.marcador-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border-mid);
+  transition: background .15s, transform .15s;
+}
+
+.marcador-dot.activo {
+  background: var(--green);
+  transform: scale(1.3);
+}
+
+@media (max-width: 600px) {
+  .marcador-num { font-size: 22px; }
+  .marcador-arrow { width: 24px; height: 24px; }
+}
+
 /* forma (bolitas) */
 .factor-bolitas {
   display: flex;
