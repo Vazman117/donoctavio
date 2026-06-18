@@ -241,7 +241,7 @@ PERFILES_SELECCIONES = {
     "mundial_grupos": {
         "nombre":       "Copa del Mundo FIFA — Fase de Grupos",
         "K_LOGISTICO":  2.2,
-        "MAX_FAVORITO": 0.44,
+        "MAX_FAVORITO": 0.39,
         "ALPHA":        0.72,
         "BETA":         0.28,
         "usa_h2h":      True,

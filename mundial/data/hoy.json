@@ -13,13 +13,13 @@
     "pais_sede": "USA",
     "altitud_sede": 320,
     "es_neutro": true,
-    "prob_local": 0.44,
-    "prob_empate": 0.2630393591552197,
-    "prob_visitante": 0.29696064084478024,
+    "prob_local": 0.39,
+    "prob_empate": 0.281529409732679,
+    "prob_visitante": 0.32847059026732106,
     "fuerza_local": 0.49825827885714286,
     "fuerza_visitante": 0.4129818285714286,
     "diferencia": 0.08527645028571423,
-    "confianza": "moderado",
+    "confianza": "ajustado",
     "prediccion": "Czechia",
     "lambda_local": 1.4676185289103445,
     "lambda_visitante": 0.7523993552299141,
@@ -28,9 +28,9 @@
     "marcadores_probables": [
       "1-0",
       "1-1",
-      "0-0",
       "0-1",
-      "2-0"
+      "0-0",
+      "2-1"
     ],
     "analisis": [
       {
@@ -115,13 +115,13 @@
         "marcadores": [
           "1-0",
           "1-1",
-          "0-0",
           "0-1",
-          "2-0"
+          "0-0",
+          "2-1"
         ],
         "lambda_local": 1.468,
         "lambda_visitante": 0.752,
-        "interpretacion": "El marcador más probable es 1-0 (14.4%), coherente con Czechia como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 1-0 (13.1%), coherente con Czechia como resultado favorito del modelo."
       }
     ]
   },
@@ -139,9 +139,9 @@
     "pais_sede": "USA",
     "altitud_sede": 93,
     "es_neutro": true,
-    "prob_local": 0.26783244184426763,
+    "prob_local": 0.27431722301957306,
     "prob_empate": 0.5246078568923992,
-    "prob_visitante": 0.20755970126333317,
+    "prob_visitante": 0.20107492008802774,
     "fuerza_local": 0.46619975118665796,
     "fuerza_visitante": 0.44390782509334203,
     "diferencia": 0.022291926093315928,
@@ -265,9 +265,9 @@
     "pais_sede": "CAN",
     "altitud_sede": 4,
     "es_neutro": true,
-    "prob_local": 0.3211464504974908,
-    "prob_empate": 0.531975488514078,
-    "prob_visitante": 0.14687806098843115,
+    "prob_local": 0.3206087182426415,
+    "prob_empate": 0.5346562837971658,
+    "prob_visitante": 0.1447349979601928,
     "fuerza_local": 0.5263580617142857,
     "fuerza_visitante": 0.4102520308571429,
     "diferencia": 0.11610603085714277,
@@ -391,13 +391,13 @@
     "pais_sede": "MEX",
     "altitud_sede": 1566,
     "es_neutro": true,
-    "prob_local": 0.44,
-    "prob_empate": 0.2437602974607172,
-    "prob_visitante": 0.3162397025392828,
+    "prob_local": 0.39,
+    "prob_empate": 0.2623722974607172,
+    "prob_visitante": 0.34762770253928277,
     "fuerza_local": 0.6791552819466983,
     "fuerza_visitante": 0.49533880391044466,
     "diferencia": 0.18381647803625362,
-    "confianza": "moderado",
+    "confianza": "ajustado",
     "prediccion": "Mexico",
     "lambda_local": 1.8293482033451458,
     "lambda_visitante": 0.7364666920271682,
@@ -406,9 +406,9 @@
     "marcadores_probables": [
       "1-0",
       "1-1",
+      "0-1",
       "2-1",
-      "2-0",
-      "0-1"
+      "0-0"
     ],
     "analisis": [
       {
@@ -495,13 +495,13 @@
         "marcadores": [
           "1-0",
           "1-1",
+          "0-1",
           "2-1",
-          "2-0",
-          "0-1"
+          "0-0"
         ],
         "lambda_local": 1.829,
         "lambda_visitante": 0.736,
-        "interpretacion": "El marcador más probable es 1-0 (11.5%), coherente con Mexico como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 1-0 (10.4%), coherente con Mexico como resultado favorito del modelo."
       }
     ]
   },
@@ -519,13 +519,13 @@
     "pais_sede": "USA",
     "altitud_sede": 0,
     "es_neutro": true,
-    "prob_local": 0.344116058553349,
-    "prob_empate": 0.21588394144665102,
-    "prob_visitante": 0.44,
+    "prob_local": 0.382728058553349,
+    "prob_empate": 0.22727194144665103,
+    "prob_visitante": 0.39,
     "fuerza_local": 0.4373754285714286,
     "fuerza_visitante": 0.5251969142857142,
     "diferencia": 0.08782148571428566,
-    "confianza": "moderado",
+    "confianza": "ajustado",
     "prediccion": "Australia",
     "lambda_local": 0.9966090238269587,
     "lambda_visitante": 2.3009866814077764,
@@ -647,13 +647,13 @@
     "pais_sede": "USA",
     "altitud_sede": 25,
     "es_neutro": true,
-    "prob_local": 0.2985137602356548,
-    "prob_empate": 0.26358202897163424,
-    "prob_visitante": 0.4379042107927111,
+    "prob_local": 0.3353661318211686,
+    "prob_empate": 0.2746338681788314,
+    "prob_visitante": 0.39,
     "fuerza_local": 0.5242221291062051,
     "fuerza_visitante": 0.5882702037509377,
     "diferencia": 0.06404807464473261,
-    "confianza": "moderado",
+    "confianza": "ajustado",
     "prediccion": "Morocco",
     "lambda_local": 0.849052228459414,
     "lambda_visitante": 1.3076248423545844,
@@ -757,7 +757,7 @@
         ],
         "lambda_local": 0.849,
         "lambda_visitante": 1.308,
-        "interpretacion": "El marcador más probable es 0-1 (14.8%), coherente con Morocco como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 0-1 (13.4%), coherente con Morocco como resultado favorito del modelo."
       }
     ]
   },
@@ -775,13 +775,13 @@
     "pais_sede": "USA",
     "altitud_sede": 12,
     "es_neutro": true,
-    "prob_local": 0.44,
-    "prob_empate": 0.2448980397389455,
-    "prob_visitante": 0.3151019602610545,
+    "prob_local": 0.39,
+    "prob_empate": 0.263391675480756,
+    "prob_visitante": 0.346608324519244,
     "fuerza_local": 0.5509328726918381,
     "fuerza_visitante": 0.41230576241673333,
     "diferencia": 0.13862711027510477,
-    "confianza": "moderado",
+    "confianza": "ajustado",
     "prediccion": "Brazil",
     "lambda_local": 1.7086343595916231,
     "lambda_visitante": 0.9660133482348154,
@@ -791,8 +791,8 @@
       "1-0",
       "1-1",
       "2-1",
-      "2-0",
-      "0-1"
+      "0-1",
+      "1-2"
     ],
     "analisis": [
       {
@@ -880,12 +880,12 @@
           "1-0",
           "1-1",
           "2-1",
-          "2-0",
-          "0-1"
+          "0-1",
+          "1-2"
         ],
         "lambda_local": 1.709,
         "lambda_visitante": 0.966,
-        "interpretacion": "El marcador más probable es 1-0 (10.7%), coherente con Brazil como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 1-0 (9.8%), coherente con Brazil como resultado favorito del modelo."
       }
     ]
   },
@@ -903,13 +903,13 @@
     "pais_sede": "USA",
     "altitud_sede": 16,
     "es_neutro": true,
-    "prob_local": 0.44,
-    "prob_empate": 0.2239625027171321,
-    "prob_visitante": 0.3360374972828679,
+    "prob_local": 0.39,
+    "prob_empate": 0.2425745027171321,
+    "prob_visitante": 0.3674254972828679,
     "fuerza_local": 0.5039097645714286,
     "fuerza_visitante": 0.46147485714285713,
     "diferencia": 0.04243490742857142,
-    "confianza": "moderado",
+    "confianza": "ajustado",
     "prediccion": "Türkiye",
     "lambda_local": 1.9345880608363633,
     "lambda_visitante": 1.2068965517241377,
@@ -918,9 +918,9 @@
     "marcadores_probables": [
       "2-1",
       "1-1",
-      "1-0",
       "1-2",
-      "2-0"
+      "1-0",
+      "0-1"
     ],
     "analisis": [
       {
@@ -1004,13 +1004,13 @@
         "marcadores": [
           "2-1",
           "1-1",
-          "1-0",
           "1-2",
-          "2-0"
+          "1-0",
+          "0-1"
         ],
         "lambda_local": 1.935,
         "lambda_visitante": 1.207,
-        "interpretacion": "El marcador más probable es 2-1 (9.3%), coherente con Türkiye como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 2-1 (8.6%), coherente con Türkiye como resultado favorito del modelo."
       }
     ]
   }
