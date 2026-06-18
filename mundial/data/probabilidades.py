@@ -211,7 +211,7 @@ PARTIDOS_GRUPO = [
 
     # ── GRUPO L ──────────────────────────────────────────────
     # ("England",     "Croatia",   "Dallas"),    # JUGADO 4-2
-    ("Ghana",       "Panama",    "Toronto"),
+    # ("Ghana",       "Panama",    "Toronto"),   # JUGADO 1-0
     ("England",     "Ghana",     "Boston"),
     ("Panama",      "Croatia",   "New York"),
     ("Croatia",     "Ghana",     "Philadelphia"),

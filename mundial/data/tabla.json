@@ -156,6 +156,18 @@
     "partidos": 1.0
   },
   {
+    "grupo": "Group L",
+    "posicion": 2.0,
+    "equipo": "Ghana",
+    "abreviacion": "GHA",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+    "puntos": 3.0,
+    "diferencia_goles": 1.0,
+    "goles_favor": 1.0,
+    "goles_contra": 0.0,
+    "partidos": 1.0
+  },
+  {
     "grupo": "Group F",
     "posicion": 3.0,
     "equipo": "Netherlands",
@@ -396,30 +408,6 @@
     "partidos": 0.0
   },
   {
-    "grupo": "Group L",
-    "posicion": 2.0,
-    "equipo": "Panama",
-    "abreviacion": "PAN",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
-    "grupo": "Group L",
-    "posicion": 3.0,
-    "equipo": "Ghana",
-    "abreviacion": "GHA",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
-    "puntos": 0.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
-    "partidos": 0.0
-  },
-  {
     "grupo": "Group A",
     "posicion": 3.0,
     "equipo": "Czechia",
@@ -449,6 +437,18 @@
     "equipo": "Ecuador",
     "abreviacion": "ECU",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+    "puntos": 0.0,
+    "diferencia_goles": -1.0,
+    "goles_favor": 0.0,
+    "goles_contra": 1.0,
+    "partidos": 1.0
+  },
+  {
+    "grupo": "Group L",
+    "posicion": 3.0,
+    "equipo": "Panama",
+    "abreviacion": "PAN",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
     "puntos": 0.0,
     "diferencia_goles": -1.0,
     "goles_favor": 0.0,

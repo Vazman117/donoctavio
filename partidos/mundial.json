@@ -1,5 +1,203 @@
 [
   {
+    "id": "760434",
+    "fecha": "2026-06-17T23:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Ghana",
+    "visitante": "Panama",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
+    "estadio": "BMO Field",
+    "ciudad_sede": "Toronto, Ontario",
+    "pais_sede": "CAN",
+    "altitud_sede": 76,
+    "es_neutro": true,
+    "prob_local": 0.32949869482599425,
+    "prob_empate": 0.2305013051740058,
+    "prob_visitante": 0.44,
+    "fuerza_local": 0.3978382716371495,
+    "fuerza_visitante": 0.3914086600951933,
+    "diferencia": 0.006429611541956204,
+    "confianza": "moderado",
+    "prediccion": "Panama",
+    "resultado": "Ghana",
+    "lambda_local": 0.9648340589586345,
+    "lambda_visitante": 1.6703701706197034,
+    "factor_altitud_local": 0.99925,
+    "factor_altitud_visitante": 0.9962,
+    "marcadores_probables": [
+      {
+        "marcador": "0-1",
+        "goles_local": 0,
+        "goles_visitante": 1,
+        "probabilidad": 0.119773,
+        "porcentaje": 11.98,
+        "tipo": "visitante"
+      },
+      {
+        "marcador": "1-1",
+        "goles_local": 1,
+        "goles_visitante": 1,
+        "probabilidad": 0.115561,
+        "porcentaje": 11.56,
+        "tipo": "empate"
+      },
+      {
+        "marcador": "0-2",
+        "goles_local": 0,
+        "goles_visitante": 2,
+        "probabilidad": 0.100032,
+        "porcentaje": 10.0,
+        "tipo": "visitante"
+      },
+      {
+        "marcador": "1-2",
+        "goles_local": 1,
+        "goles_visitante": 2,
+        "probabilidad": 0.096515,
+        "porcentaje": 9.65,
+        "tipo": "visitante"
+      },
+      {
+        "marcador": "0-0",
+        "goles_local": 0,
+        "goles_visitante": 0,
+        "probabilidad": 0.071704,
+        "porcentaje": 7.17,
+        "tipo": "empate"
+      }
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Ghana"
+        },
+        "visitante": {
+          "valor": 0.29,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Panama"
+        },
+        "interpretacion": "Ghana llega con mejor momentum: índice 0.50/1.0 frente a 0.29/1.0 de Panama. Últimos 5: 0V/0E/4D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 76,
+        "ciudad_sede": "Toronto, Ontario",
+        "local": {
+          "nombre": "Ghana",
+          "altitud_base": 61,
+          "factor": 0.999
+        },
+        "visitante": {
+          "nombre": "Panama",
+          "altitud_base": 0,
+          "factor": 0.996
+        },
+        "interpretacion": "Sede en condiciones normales (76m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Ghana",
+          "goles_favor": 0.75,
+          "goles_contra": 2.5
+        },
+        "visitante": {
+          "nombre": "Panama",
+          "goles_favor": 1.57,
+          "goles_contra": 1.86
+        },
+        "interpretacion": "Panama más ofensivo: 1.57 vs 0.75 goles/partido. Defensiva: 2.50 vs 1.86."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Ghana",
+          "lambda": 0.965
+        },
+        "visitante": {
+          "nombre": "Panama",
+          "lambda": 1.67
+        },
+        "suma": 2.635,
+        "interpretacion": "Panama genera más peligro ofensivo según el modelo: 1.67 goles esperados vs 0.96 de Ghana."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          {
+            "marcador": "0-1",
+            "goles_local": 0,
+            "goles_visitante": 1,
+            "probabilidad": 0.119773,
+            "porcentaje": 11.98,
+            "tipo": "visitante"
+          },
+          {
+            "marcador": "1-1",
+            "goles_local": 1,
+            "goles_visitante": 1,
+            "probabilidad": 0.115561,
+            "porcentaje": 11.56,
+            "tipo": "empate"
+          },
+          {
+            "marcador": "0-2",
+            "goles_local": 0,
+            "goles_visitante": 2,
+            "probabilidad": 0.100032,
+            "porcentaje": 10.0,
+            "tipo": "visitante"
+          },
+          {
+            "marcador": "1-2",
+            "goles_local": 1,
+            "goles_visitante": 2,
+            "probabilidad": 0.096515,
+            "porcentaje": 9.65,
+            "tipo": "visitante"
+          },
+          {
+            "marcador": "0-0",
+            "goles_local": 0,
+            "goles_visitante": 0,
+            "probabilidad": 0.071704,
+            "porcentaje": 7.17,
+            "tipo": "empate"
+          }
+        ],
+        "lambda_local": 0.965,
+        "lambda_visitante": 1.67,
+        "interpretacion": "El marcador más probable es 0-1 (12.0%), favoreciendo a Panama. Los 5 resultados más frecuentes acumulan el 50.4% de probabilidad total."
+      }
+    ]
+  },
+  {
     "id": "760437",
     "fecha": "2026-06-17T20:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

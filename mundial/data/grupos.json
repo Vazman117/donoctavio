@@ -702,32 +702,32 @@
         "puntos": 0.0
       },
       {
-        "posicion": 2.0,
+        "posicion": 3.0,
         "equipo": "Panama",
         "abreviacion": "PAN",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
-        "partidos": 0.0,
+        "partidos": 1.0,
         "ganados": 0.0,
         "empatados": 0.0,
-        "perdidos": 0.0,
+        "perdidos": 1.0,
         "goles_favor": 0.0,
-        "goles_contra": 0.0,
-        "diferencia_goles": 0.0,
+        "goles_contra": 1.0,
+        "diferencia_goles": -1.0,
         "puntos": 0.0
       },
       {
-        "posicion": 3.0,
+        "posicion": 2.0,
         "equipo": "Ghana",
         "abreviacion": "GHA",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
-        "partidos": 0.0,
-        "ganados": 0.0,
+        "partidos": 1.0,
+        "ganados": 1.0,
         "empatados": 0.0,
         "perdidos": 0.0,
-        "goles_favor": 0.0,
+        "goles_favor": 1.0,
         "goles_contra": 0.0,
-        "diferencia_goles": 0.0,
-        "puntos": 0.0
+        "diferencia_goles": 1.0,
+        "puntos": 3.0
       }
     ]
   }
