@@ -1,5 +1,153 @@
 [
   {
+    "id": "760442",
+    "fecha": "2026-06-19T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "United States",
+    "visitante": "Australia",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+    "estadio": "Lumen Field",
+    "ciudad_sede": "Seattle, Washington",
+    "pais_sede": "USA",
+    "altitud_sede": 0,
+    "es_neutro": true,
+    "prob_local": 0.382728058553349,
+    "prob_empate": 0.22727194144665103,
+    "prob_visitante": 0.39,
+    "fuerza_local": 0.47878508571428574,
+    "fuerza_visitante": 0.5430012,
+    "diferencia": 0.06421611428571422,
+    "confianza": "ajustado",
+    "prediccion": "Australia",
+    "resultado": "United States",
+    "marcador": "2-0",
+    "lambda_local": 0.9966090238269587,
+    "lambda_visitante": 2.3009866814077764,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "1-2",
+      "1-1",
+      "2-1",
+      "0-1",
+      "2-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.4,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "United States"
+        },
+        "visitante": {
+          "valor": 0.68,
+          "ultimos_5": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Australia"
+        },
+        "interpretacion": "Australia llega con mejor momentum: índice 0.68/1.0 frente a 0.40/1.0 de United States. Últimos 5: 3V/1E/1D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Seattle, Washington",
+        "local": {
+          "nombre": "United States",
+          "altitud_base": 0,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Australia",
+          "altitud_base": 0,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "United States",
+          "goles_favor": 2.0,
+          "goles_contra": 2.4
+        },
+        "visitante": {
+          "nombre": "Australia",
+          "goles_favor": 1.8,
+          "goles_contra": 0.6
+        },
+        "interpretacion": "Producción similar: United States 2.00 — Australia 1.80 goles/partido. Defensa: 2.40 vs 0.60."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "United States",
+          "lambda": 0.997
+        },
+        "visitante": {
+          "nombre": "Australia",
+          "lambda": 2.301
+        },
+        "suma": 3.298,
+        "interpretacion": "Australia genera más peligro ofensivo según el modelo: 2.30 goles esperados vs 1.00 de United States."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-2",
+          "1-1",
+          "2-1",
+          "0-1",
+          "2-2"
+        ],
+        "lambda_local": 0.997,
+        "lambda_visitante": 2.301,
+        "interpretacion": "El marcador más probable es 1-2 (9.2%), coherente con Australia como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "United States",
+          "ranking": 16,
+          "puntos": 1633.9,
+          "score": 0.794
+        },
+        "visitante": {
+          "nombre": "Australia",
+          "ranking": 29,
+          "puntos": 1539.4,
+          "score": 0.704
+        },
+        "interpretacion": "United States es objetivamente superior en el ranking FIFA (#16 / 1634 pts vs #29 / 1539 pts). Score normalizado: 0.79 vs 0.70."
+      }
+    ]
+  },
+  {
     "id": "760441",
     "fecha": "2026-06-19T01:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

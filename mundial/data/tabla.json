@@ -1,5 +1,17 @@
 [
   {
+    "grupo": "Group D",
+    "posicion": 1.0,
+    "equipo": "United States",
+    "abreviacion": "USA",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "puntos": 6.0,
+    "diferencia_goles": 5.0,
+    "goles_favor": 6.0,
+    "goles_contra": 1.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group A",
     "posicion": 1.0,
     "equipo": "Mexico",
@@ -56,18 +68,6 @@
     "puntos": 3.0,
     "diferencia_goles": 4.0,
     "goles_favor": 5.0,
-    "goles_contra": 1.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group D",
-    "posicion": 1.0,
-    "equipo": "United States",
-    "abreviacion": "USA",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-    "puntos": 3.0,
-    "diferencia_goles": 3.0,
-    "goles_favor": 4.0,
     "goles_contra": 1.0,
     "partidos": 1.0
   },
@@ -144,18 +144,6 @@
     "partidos": 1.0
   },
   {
-    "grupo": "Group D",
-    "posicion": 2.0,
-    "equipo": "Australia",
-    "abreviacion": "AUS",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
-    "puntos": 3.0,
-    "diferencia_goles": 2.0,
-    "goles_favor": 2.0,
-    "goles_contra": 0.0,
-    "partidos": 1.0
-  },
-  {
     "grupo": "Group C",
     "posicion": 1.0,
     "equipo": "Scotland",
@@ -197,6 +185,18 @@
     "equipo": "South Korea",
     "abreviacion": "KOR",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
+    "puntos": 3.0,
+    "diferencia_goles": 0.0,
+    "goles_favor": 2.0,
+    "goles_contra": 2.0,
+    "partidos": 2.0
+  },
+  {
+    "grupo": "Group D",
+    "posicion": 2.0,
+    "equipo": "Australia",
+    "abreviacion": "AUS",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
     "puntos": 3.0,
     "diferencia_goles": 0.0,
     "goles_favor": 2.0,
