@@ -125,7 +125,7 @@ PARTIDOS_GRUPO = [
     # ("Mexico",      "South Africa",  "Mexico City"),   # JUGADO: 2-0
     # ("South Korea", "Czechia",       "Guadalajara"),   # JUGADO: 2-1
     # ("Czechia",     "South Africa",  "Atlanta"),       # JUGADO: 1-1
-    ("Mexico",      "South Korea",   "Guadalajara"),
+    # ("Mexico",      "South Korea",   "Guadalajara"),   # JUGADO: 1-0
     ("South Africa","South Korea",   "Monterrey"),
     ("Czechia",     "Mexico",        "Mexico City"),
 
@@ -133,7 +133,7 @@ PARTIDOS_GRUPO = [
     # ("Canada",      "Bosnia-Herzegovina", "Toronto"),  # JUGADO: 1-1
     # ("Qatar",       "Switzerland",  "San Francisco"),  # JUGADO: 1-1
     # ("Switzerland", "Bosnia-Herzegovina", "Los Angeles"), # JUGADO 4-1
-    ("Canada",      "Qatar",                  "Vancouver"),
+    # ("Canada",      "Qatar",    "Vancouver"),            # JUGADO: 6-0
     ("Switzerland", "Canada",                 "Vancouver"),
     ("Bosnia-Herzegovina", "Qatar",        "Seattle"),
 

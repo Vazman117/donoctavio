@@ -1,5 +1,263 @@
 [
   {
+    "id": "760441",
+    "fecha": "2026-06-19T01:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Mexico",
+    "visitante": "South Korea",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
+    "estadio": "Estadio Akron",
+    "ciudad_sede": "Guadalajara, Jalisco",
+    "pais_sede": "MEX",
+    "altitud_sede": 1566,
+    "es_neutro": true,
+    "prob_local": 0.39,
+    "prob_empate": 0.2623722974607172,
+    "prob_visitante": 0.34762770253928277,
+    "fuerza_local": 0.6791552819466983,
+    "fuerza_visitante": 0.49533880391044466,
+    "diferencia": 0.18381647803625362,
+    "confianza": "ajustado",
+    "prediccion": "Mexico",
+    "resultado": "Mexico",
+    "marcador": "1-0",
+    "lambda_local": 1.8293482033451458,
+    "lambda_visitante": 0.7364666920271682,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 0.92355,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "0-1",
+      "2-1",
+      "0-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.87,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Mexico"
+        },
+        "visitante": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "South Korea"
+        },
+        "interpretacion": "Mexico llega con mejor momentum: índice 0.87/1.0 frente a 0.60/1.0 de South Korea. Últimos 5: 4V/1E/0D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 1566,
+        "ciudad_sede": "Guadalajara, Jalisco",
+        "local": {
+          "nombre": "Mexico",
+          "altitud_base": 2240,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "South Korea",
+          "altitud_base": 37,
+          "factor": 0.924
+        },
+        "interpretacion": "Sede en altura considerable (1566m). South Korea llega desde 37m con 1529m de diferencia; Mexico desde 2240m (-674m diferencia). La altitud favorece a Mexico. Factor: 1.00 vs 0.92."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Mexico",
+          "goles_favor": 1.89,
+          "goles_contra": 0.22
+        },
+        "visitante": {
+          "nombre": "South Korea",
+          "goles_favor": 1.6,
+          "goles_contra": 1.2
+        },
+        "interpretacion": "Producción similar: Mexico 1.89 — South Korea 1.60 goles/partido. Defensa: 0.22 vs 1.20."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Mexico",
+          "lambda": 1.829
+        },
+        "visitante": {
+          "nombre": "South Korea",
+          "lambda": 0.736
+        },
+        "suma": 2.566,
+        "interpretacion": "Mexico genera más peligro ofensivo según el modelo: 1.83 goles esperados vs 0.74 de South Korea."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "0-1",
+          "2-1",
+          "0-0"
+        ],
+        "lambda_local": 1.829,
+        "lambda_visitante": 0.736,
+        "interpretacion": "El marcador más probable es 1-0 (10.4%), coherente con Mexico como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "760440",
+    "fecha": "2026-06-18T22:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Canada",
+    "visitante": "Qatar",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+    "estadio": "BC Place",
+    "ciudad_sede": "Vancouver, British Columbia",
+    "pais_sede": "CAN",
+    "altitud_sede": 4,
+    "es_neutro": true,
+    "prob_local": 0.3206087182426415,
+    "prob_empate": 0.5346562837971658,
+    "prob_visitante": 0.1447349979601928,
+    "fuerza_local": 0.5263580617142857,
+    "fuerza_visitante": 0.4102520308571429,
+    "diferencia": 0.11610603085714277,
+    "confianza": "moderado",
+    "prediccion": "Empate",
+    "resultado": "Canada",
+    "marcador": "6-0",
+    "lambda_local": 0.6950655317749113,
+    "lambda_visitante": 0.2982528728503965,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "0-0",
+      "1-0",
+      "0-1",
+      "2-0",
+      "1-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "D",
+            "D",
+            "W",
+            "D",
+            "D"
+          ],
+          "nombre": "Canada"
+        },
+        "visitante": {
+          "valor": 0.27,
+          "ultimos_5": [
+            "D",
+            "D",
+            "L"
+          ],
+          "nombre": "Qatar"
+        },
+        "interpretacion": "Canada llega con mejor momentum: índice 0.60/1.0 frente a 0.27/1.0 de Qatar. Últimos 5: 1V/4E/0D vs 0V/2E/1D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 4,
+        "ciudad_sede": "Vancouver, British Columbia",
+        "local": {
+          "nombre": "Canada",
+          "altitud_base": 116,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Qatar",
+          "altitud_base": 10,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (4m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Canada",
+          "goles_favor": 1.17,
+          "goles_contra": 0.67
+        },
+        "visitante": {
+          "nombre": "Qatar",
+          "goles_favor": 0.33,
+          "goles_contra": 0.67
+        },
+        "interpretacion": "Canada más ofensivo: 1.17 goles/partido (vs 0.33). Defensiva: 0.67 vs 0.67."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "medio",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Canada",
+          "lambda": 0.695
+        },
+        "visitante": {
+          "nombre": "Qatar",
+          "lambda": 0.298
+        },
+        "suma": 0.993,
+        "interpretacion": "Los lambdas proyectan un partido muy trabado: Canada 0.70 goles esperados vs Qatar 0.30. Con solo 0.99 goles totales esperados, el empate es el resultado más probable."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-0",
+          "1-0",
+          "0-1",
+          "2-0",
+          "1-1"
+        ],
+        "lambda_local": 0.695,
+        "lambda_visitante": 0.298,
+        "interpretacion": "El marcador más probable es 0-0 (37.0%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
     "id": "760439",
     "fecha": "2026-06-18T19:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",
