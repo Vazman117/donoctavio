@@ -105,6 +105,29 @@ def nivel_impacto(diferencia_normalizada):
 
 
 # =============================
+# RANKING FIFA NORMALIZADO
+# =============================
+
+def normalizar_ranking_fifa(seleccion):
+    """
+    Convierte ranking/puntos FIFA a un score 0.0–1.0.
+    Prioriza puntos FIFA (más granular). Si no hay puntos válidos,
+    usa posición de ranking como fallback.
+    Qatar y selecciones sin datos válidos quedan cercanas a 0.
+    """
+    ranking = seleccion.get("ranking_fifa", 999)
+    puntos  = seleccion.get("puntos_fifa",  0.0) or 0.0
+
+    if puntos > 0:
+        # Puntos FIFA: ~800 (últimos puestos) a ~1850 (élite mundial)
+        return limitar((puntos - 800) / 1050, 0.0, 1.0)
+    else:
+        # Fallback: ranking posicional (1=mejor, 210=peor, 999=sin datos)
+        ranking_efectivo = min(ranking, 210)
+        return limitar(1.0 - (ranking_efectivo - 1) / 209, 0.0, 1.0)
+
+
+# =============================
 # ADAPTADOR DE SELECCIÓN
 # =============================
 
@@ -145,16 +168,20 @@ def adaptar_seleccion(seleccion_raw):
         gf_ponderado, gc_ponderado = 1.0, 1.0
 
     total_partidos  = p_of + p_am
-    total_ganados   = seleccion_raw.get("ganados_oficial",   0) + seleccion_raw.get("ganados_amistoso",   0)
-    total_empatados = seleccion_raw.get("empatados_oficial", 0) + seleccion_raw.get("empatados_amistoso", 0)
-    total_perdidos  = seleccion_raw.get("perdidos_oficial",  0) + seleccion_raw.get("perdidos_amistoso",  0)
+    total_ganados   = (seleccion_raw.get("ganados_oficial",   0) or 0) + (seleccion_raw.get("ganados_amistoso",   0) or 0)
+    total_empatados = (seleccion_raw.get("empatados_oficial", 0) or 0) + (seleccion_raw.get("empatados_amistoso", 0) or 0)
+    total_perdidos  = (seleccion_raw.get("perdidos_oficial",  0) or 0) + (seleccion_raw.get("perdidos_amistoso",  0) or 0)
+
+    # Empatados por situación: sumar oficial + amistoso correctamente
+    empatados_local  = (seleccion_raw.get("empatados_local",  0) or 0)
+    empatados_visita = (seleccion_raw.get("empatados_visita", 0) or 0)
 
     return {
         "nombre":            seleccion_raw.get("nombre", ""),
         "escudo":            seleccion_raw.get("escudo", ""),
         "confederacion":     seleccion_raw.get("confederacion", ""),
         "ranking_fifa":      seleccion_raw.get("ranking_fifa", 999),
-        "puntos_fifa":       seleccion_raw.get("puntos_fifa",  0.0),
+        "puntos_fifa":       seleccion_raw.get("puntos_fifa",  0.0) or 0.0,
         "altitud_base":      seleccion_raw.get("altitud_base", 0),
         "forma_ponderada":   forma_final,
         "imbatido_streak":   seleccion_raw.get("imbatido_streak", 0),
@@ -170,11 +197,11 @@ def adaptar_seleccion(seleccion_raw):
         "perdidos":   total_perdidos,
         "partidos_local":   seleccion_raw.get("partidos_local",  0),
         "ganados_local":    seleccion_raw.get("ganados_local",   0),
-        "empatados_local":  0,
+        "empatados_local":  empatados_local,
         "perdidos_local":   seleccion_raw.get("perdidos_local",  0),
         "partidos_visita":  seleccion_raw.get("partidos_visita",  0),
         "ganados_visita":   seleccion_raw.get("ganados_visita",   0),
-        "empatados_visita": 0,
+        "empatados_visita": empatados_visita,
         "perdidos_visita":  seleccion_raw.get("perdidos_visita",  0),
         "partidos_oficial":   p_of,
         "forma_oficial":      seleccion_raw.get("forma_oficial",   0.0) or 0.0,
@@ -241,7 +268,7 @@ PERFILES_SELECCIONES = {
     "mundial_grupos": {
         "nombre":       "Copa del Mundo FIFA — Fase de Grupos",
         "K_LOGISTICO":  2.2,
-        "MAX_FAVORITO": 0.39,
+        "MAX_FAVORITO": 0.39,  # subimos de 0.39 → permite más diferenciación
         "ALPHA":        0.72,
         "BETA":         0.28,
         "usa_h2h":      True,
@@ -385,12 +412,6 @@ def probabilidades_poisson(lambda_local, lambda_visitante, max_goles=8):
 
 def ajustar_lambdas_por_probabilidades(lambda_local, lambda_visitante,
                                         prob_local, prob_visitante):
-    """
-    Re-escala lambda_local y lambda_visitante para que la dirección de
-    ventaja (quién anota más) sea coherente con las probabilidades finales
-    del modelo (que ya incorporan H2H, fuerza base y altitud), conservando
-    la suma total de goles esperados del partido.
-    """
     suma_lv = prob_local + prob_visitante
     if suma_lv <= 0:
         return lambda_local, lambda_visitante
@@ -405,7 +426,7 @@ def ajustar_lambdas_por_probabilidades(lambda_local, lambda_visitante,
         return lambda_local, lambda_visitante
 
     factor = ratio_modelo / ratio_poisson
-    factor = limitar(factor, 0.70, 1.43)  # evita distorsiones extremas
+    factor = limitar(factor, 0.70, 1.43)
 
     lam_l_nuevo = limitar(lambda_local * factor, 0.2, 5.0)
     lam_v_nuevo = limitar(suma_lambda - lam_l_nuevo, 0.2, 5.0)
@@ -417,9 +438,6 @@ def marcadores_probables(lambda_local, lambda_visitante, top_n=5, max_goles=6,
                           prob_local=None, prob_visitante=None):
     from math import exp, factorial
 
-    # Si se pasan las probabilidades finales del modelo, ajustamos los
-    # lambdas para que el marcador más probable sea coherente con el
-    # favorito real del partido (no solo con el Poisson "crudo").
     if prob_local is not None and prob_visitante is not None:
         lambda_local, lambda_visitante = ajustar_lambdas_por_probabilidades(
             lambda_local, lambda_visitante, prob_local, prob_visitante
@@ -454,28 +472,13 @@ def marcadores_para_carrusel(lambda_local, lambda_visitante, prediccion,
                               nombre_local, nombre_visitante,
                               prob_local, prob_visitante,
                               top_n=5, max_goles=6):
-    """
-    Genera la lista de marcadores pensada para un carrusel deslizable en UI.
-
-    El problema que resuelve: con Poisson, el marcador individual más
-    probable (ej. 1-1) puede no coincidir con el resultado favorito del
-    modelo (ej. "gana Colombia"), porque la probabilidad del favorito suele
-    repartirse entre varios marcadores (0-1, 1-2, 2-1...) mientras el empate
-    concentra la suya en uno solo. Aquí forzamos que el PRIMER marcador del
-    carrusel sea el más probable DENTRO del tipo que coincide con la
-    predicción (`prediccion_inteligente`), y el resto mantiene el orden
-    original por probabilidad. El usuario sigue viendo el panorama completo
-    al deslizar, pero lo primero que ve es coherente con el favorito.
-    """
-    # Mismos lambdas ajustados que usa marcadores_probables internamente,
-    # para que el orden y las probabilidades sean consistentes.
     lambda_local_adj, lambda_visitante_adj = ajustar_lambdas_por_probabilidades(
         lambda_local, lambda_visitante, prob_local, prob_visitante
     )
 
     todos = marcadores_probables(
         lambda_local_adj, lambda_visitante_adj,
-        top_n=(max_goles + 1) ** 2,  # todas las combinaciones posibles
+        top_n=(max_goles + 1) ** 2,
         max_goles=max_goles,
     )
 
@@ -498,25 +501,30 @@ def marcadores_para_carrusel(lambda_local, lambda_visitante, prediccion,
 
 
 # =============================
-# FUERZA BASE
+# FUERZA BASE  (con ranking FIFA)
 # =============================
 
 def calcular_fuerza_base(seleccion, contexto, cfg):
-    PESO_FORMA        = 0.34
-    PESO_WINRATE      = 0.24
-    PESO_GOLES_FAVOR  = 0.15
-    PESO_GOLES_CONTRA = 0.15
-    PESO_STREAK       = 0.12
+    # Pesos reajustados para incluir FIFA (suma = 1.0)
+    PESO_FORMA        = 0.28
+    PESO_WINRATE      = 0.20
+    PESO_GOLES_FAVOR  = 0.13
+    PESO_GOLES_CONTRA = 0.13
+    PESO_STREAK       = 0.10
+    PESO_FIFA         = 0.16   # ← nuevo
 
+    # --- Forma ---
     confianza_forma = peso_confianza(seleccion.get("partidos", 0))
     forma_raw = seleccion["forma_ponderada"]
     forma = confianza_forma * forma_raw + (1 - confianza_forma) * 0.5
 
+    # --- Contexto de juego ---
     altitud_sede = contexto.get("altitud_sede", 0)
     altitud_base = seleccion.get("altitud_base", 0)
     es_neutro    = contexto.get("es_neutro", False)
     es_local     = contexto.get("es_local", False)
 
+    # --- Win rate ---
     partidos_sit = seleccion.get("partidos_local" if es_local else "partidos_visita", 0)
     confianza_wr = peso_confianza(partidos_sit)
     if es_neutro:
@@ -527,6 +535,7 @@ def calcular_fuerza_base(seleccion, contexto, cfg):
         wr_raw = seleccion.get("win_rate_visita", 0.5)
     win_rate = confianza_wr * wr_raw + (1 - confianza_wr) * 0.45
 
+    # --- Goles ---
     confianza_goles = peso_confianza(seleccion.get("partidos", 0))
     gf_raw       = normalizar_goles_favor(seleccion["goles_favor_promedio"])
     gc_raw       = normalizar_goles_contra(seleccion["goles_contra_promedio"])
@@ -534,12 +543,16 @@ def calcular_fuerza_base(seleccion, contexto, cfg):
     goles_contra = confianza_goles * gc_raw + (1 - confianza_goles) * 0.5
     streak       = normalizar_streak(seleccion["imbatido_streak"])
 
+    # --- Ranking FIFA ---
+    fifa_score = normalizar_ranking_fifa(seleccion)
+
     fuerza = (
         forma        * PESO_FORMA        +
         win_rate     * PESO_WINRATE      +
         goles_favor  * PESO_GOLES_FAVOR  +
         goles_contra * PESO_GOLES_CONTRA +
-        streak       * PESO_STREAK
+        streak       * PESO_STREAK       +
+        fifa_score   * PESO_FIFA
     )
 
     factor_alt = calcular_factor_altitud(altitud_sede, altitud_base)
@@ -605,7 +618,7 @@ def contar_resultados_h2h(partidos_h2h, nombre_local, nombre_visitante):
 
 
 # =============================
-# EMPATE
+# EMPATE  (con corrección por ranking)
 # =============================
 
 def calcular_tasa_empate(seleccion):
@@ -650,8 +663,22 @@ def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neut
         historico * peso_hist +
         momentum  * peso_mom
     )
+
+    # ── Corrección por disparidad de ranking FIFA ──────────────────────────
+    # Si hay una gran brecha de calidad objetiva, la prob. de empate baja.
+    rank_l = sel_local.get("ranking_fifa", 100)
+    rank_v = sel_visitante.get("ranking_fifa", 100)
+    # Tratar ranking 999 (sin datos) como 210 para el cálculo de diferencia
+    rank_l_ef = min(rank_l, 210)
+    rank_v_ef = min(rank_v, 210)
+    diff_ranking = abs(rank_l_ef - rank_v_ef)
+    if diff_ranking > 30:
+        # Reducción proporcional: máx ~30% menos empate con diferencia enorme
+        factor_ranking = limitar(1.0 - (diff_ranking - 30) / 300, 0.70, 1.0)
+        prob *= factor_ranking
+
     piso = 0.18 if conf_total == 0 else 0.14
-    return limitar(prob, piso, 0.38)
+    return limitar(prob, piso, 0.44)
 
 
 # =============================
@@ -691,6 +718,16 @@ def ajuste_empate_por_lambdas(prob_local, prob_empate, prob_visitante,
     prob_local     -= quita_l
     prob_visitante -= quita_v
     prob_empate    += boost
+
+    # Techo global de empate: nunca superar 44%
+    MAX_EMPATE = 0.44
+    if prob_empate > MAX_EMPATE:
+        exceso         = prob_empate - MAX_EMPATE
+        prob_empate    = MAX_EMPATE
+        total_lv       = prob_local + prob_visitante
+        if total_lv > 0:
+            prob_local     += exceso * (prob_local     / total_lv)
+            prob_visitante += exceso * (prob_visitante / total_lv)
 
     total = prob_local + prob_empate + prob_visitante
     return prob_local / total, prob_empate / total, prob_visitante / total
@@ -996,8 +1033,6 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion": interp_l,
     })
 
-    # --- Marcadores más probables (ya vienen ordenados para el carrusel,
-    #     con el primer elemento coherente con la predicción del modelo) ---
     marcador_top = top_marcadores[0]
 
     probs_tipo = {
@@ -1033,6 +1068,35 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "lambda_local":     round(ll, 3),
         "lambda_visitante": round(lv, 3),
         "interpretacion":   interp_m,
+    })
+
+    # --- Ranking FIFA como factor de análisis ---
+    rank_l  = local.get("ranking_fifa", 999)
+    rank_v  = visitante.get("ranking_fifa", 999)
+    pts_l   = local.get("puntos_fifa", 0.0) or 0.0
+    pts_v   = visitante.get("puntos_fifa", 0.0) or 0.0
+    fifa_l  = normalizar_ranking_fifa(local)
+    fifa_v  = normalizar_ranking_fifa(visitante)
+
+    if rank_l < rank_v:
+        interp_fifa = (f"{nombre_local} es objetivamente superior en el ranking FIFA "
+                       f"(#{rank_l} / {pts_l:.0f} pts vs #{rank_v} / {pts_v:.0f} pts). "
+                       f"Score normalizado: {fifa_l:.2f} vs {fifa_v:.2f}.")
+    elif rank_v < rank_l:
+        interp_fifa = (f"{nombre_visitante} es objetivamente superior en el ranking FIFA "
+                       f"(#{rank_v} / {pts_v:.0f} pts vs #{rank_l} / {pts_l:.0f} pts). "
+                       f"Score normalizado: {fifa_v:.2f} vs {fifa_l:.2f}.")
+    else:
+        interp_fifa = (f"Equipos similares en ranking FIFA (#{rank_l} vs #{rank_v}). "
+                       f"Score: {fifa_l:.2f} vs {fifa_v:.2f}.")
+
+    factores.append({
+        "factor":    "Ranking FIFA",
+        "impacto":   nivel_impacto(abs(fifa_l - fifa_v)),
+        "tipo":      "fifa",
+        "local":     {"nombre": nombre_local,     "ranking": rank_l, "puntos": round(pts_l,1), "score": round(fifa_l,3)},
+        "visitante": {"nombre": nombre_visitante, "ranking": rank_v, "puntos": round(pts_v,1), "score": round(fifa_v,3)},
+        "interpretacion": interp_fifa,
     })
 
     n_h2h = resultado["n_h2h"]
@@ -1150,9 +1214,6 @@ def generar_partido(
         visitante["nombre"],
     )
 
-    # Marcadores ordenados para carrusel: el primero es siempre coherente
-    # con `pred` (el favorito según el modelo), el resto sigue el orden
-    # original por probabilidad cruda de Poisson.
     top_marcadores = marcadores_para_carrusel(
         resultado["lambda_local"],
         resultado["lambda_visitante"],

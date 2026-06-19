@@ -143,13 +143,13 @@
     "pais_sede": "CAN",
     "altitud_sede": 4,
     "es_neutro": true,
-    "prob_local": 0.3206087182426415,
-    "prob_empate": 0.5346562837971658,
-    "prob_visitante": 0.1447349979601928,
-    "fuerza_local": 0.5263580617142857,
-    "fuerza_visitante": 0.4102520308571429,
-    "diferencia": 0.11610603085714277,
-    "confianza": "moderado",
+    "prob_local": 0.37689931540108884,
+    "prob_empate": 0.44000000000000006,
+    "prob_visitante": 0.18310068459891105,
+    "fuerza_local": 0.5340034514285714,
+    "fuerza_visitante": 0.3725290331428571,
+    "diferencia": 0.1614744182857143,
+    "confianza": "favorable",
     "prediccion": "Empate",
     "resultado": "Canada",
     "marcador": "6-0",
@@ -254,6 +254,24 @@
         "lambda_local": 0.695,
         "lambda_visitante": 0.298,
         "interpretacion": "El marcador más probable es 0-0 (37.0%), coherente con el empate como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Canada",
+          "ranking": 44,
+          "puntos": 1442.7,
+          "score": 0.612
+        },
+        "visitante": {
+          "nombre": "Qatar",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "interpretacion": "Canada es objetivamente superior en el ranking FIFA (#44 / 1443 pts vs #999 / 0 pts). Score normalizado: 0.61 vs 0.00."
       }
     ]
   },
@@ -271,13 +289,13 @@
     "pais_sede": "USA",
     "altitud_sede": 93,
     "es_neutro": true,
-    "prob_local": 0.27431722301957306,
-    "prob_empate": 0.5246078568923992,
-    "prob_visitante": 0.20107492008802774,
-    "fuerza_local": 0.46619975118665796,
-    "fuerza_visitante": 0.44390782509334203,
-    "diferencia": 0.022291926093315928,
-    "confianza": "ajustado",
+    "prob_local": 0.3226381706204835,
+    "prob_empate": 0.44,
+    "prob_visitante": 0.23736182937951653,
+    "fuerza_local": 0.419309482266658,
+    "fuerza_visitante": 0.40061182509334203,
+    "diferencia": 0.01869765717331595,
+    "confianza": "moderado",
     "prediccion": "Empate",
     "resultado": "Switzerland",
     "marcador": "4-1",
@@ -382,6 +400,24 @@
         "lambda_local": 0.852,
         "lambda_visitante": 0.708,
         "interpretacion": "El marcador más probable es 0-0 (21.0%), coherente con el empate como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Switzerland",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "visitante": {
+          "nombre": "Bosnia-Herzegovina",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "interpretacion": "Equipos similares en ranking FIFA (#999 vs #999). Score: 0.00 vs 0.00."
       }
     ]
   },

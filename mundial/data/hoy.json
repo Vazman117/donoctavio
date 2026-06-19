@@ -16,9 +16,9 @@
     "prob_local": 0.382728058553349,
     "prob_empate": 0.22727194144665103,
     "prob_visitante": 0.39,
-    "fuerza_local": 0.4373754285714286,
-    "fuerza_visitante": 0.5251969142857142,
-    "diferencia": 0.08782148571428566,
+    "fuerza_local": 0.47878508571428574,
+    "fuerza_visitante": 0.5430012,
+    "diferencia": 0.06421611428571422,
     "confianza": "ajustado",
     "prediccion": "Australia",
     "lambda_local": 0.9966090238269587,
@@ -124,6 +124,24 @@
         "lambda_local": 0.997,
         "lambda_visitante": 2.301,
         "interpretacion": "El marcador más probable es 1-2 (9.2%), coherente con Australia como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "United States",
+          "ranking": 16,
+          "puntos": 1633.9,
+          "score": 0.794
+        },
+        "visitante": {
+          "nombre": "Australia",
+          "ranking": 29,
+          "puntos": 1539.4,
+          "score": 0.704
+        },
+        "interpretacion": "United States es objetivamente superior en el ranking FIFA (#16 / 1634 pts vs #29 / 1539 pts). Score normalizado: 0.79 vs 0.70."
       }
     ]
   },
@@ -141,12 +159,12 @@
     "pais_sede": "USA",
     "altitud_sede": 25,
     "es_neutro": true,
-    "prob_local": 0.3353661318211686,
-    "prob_empate": 0.2746338681788314,
+    "prob_local": 0.35112390365639196,
+    "prob_empate": 0.2588760963436081,
     "prob_visitante": 0.39,
-    "fuerza_local": 0.5242221291062051,
-    "fuerza_visitante": 0.5882702037509377,
-    "diferencia": 0.06404807464473261,
+    "fuerza_local": 0.46792877739191946,
+    "fuerza_visitante": 0.606658558036652,
+    "diferencia": 0.13872978064473257,
     "confianza": "ajustado",
     "prediccion": "Morocco",
     "lambda_local": 0.849052228459414,
@@ -156,9 +174,9 @@
     "marcadores_probables": [
       "0-1",
       "1-1",
-      "0-0",
       "1-0",
-      "0-2"
+      "0-0",
+      "1-2"
     ],
     "analisis": [
       {
@@ -245,13 +263,31 @@
         "marcadores": [
           "0-1",
           "1-1",
-          "0-0",
           "1-0",
-          "0-2"
+          "0-0",
+          "1-2"
         ],
         "lambda_local": 0.849,
         "lambda_visitante": 1.308,
-        "interpretacion": "El marcador más probable es 0-1 (13.4%), coherente con Morocco como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 0-1 (13.1%), coherente con Morocco como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Scotland",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "visitante": {
+          "nombre": "Morocco",
+          "ranking": 15,
+          "puntos": 1645.1,
+          "score": 0.805
+        },
+        "interpretacion": "Morocco es objetivamente superior en el ranking FIFA (#15 / 1645 pts vs #999 / 0 pts). Score normalizado: 0.80 vs 0.00."
       }
     ]
   },
@@ -270,11 +306,11 @@
     "altitud_sede": 12,
     "es_neutro": true,
     "prob_local": 0.39,
-    "prob_empate": 0.263391675480756,
-    "prob_visitante": 0.346608324519244,
-    "fuerza_local": 0.5509328726918381,
-    "fuerza_visitante": 0.41230576241673333,
-    "diferencia": 0.13862711027510477,
+    "prob_empate": 0.2569447688847005,
+    "prob_visitante": 0.3530552311152995,
+    "fuerza_local": 0.5888539479718382,
+    "fuerza_visitante": 0.4197652953138762,
+    "diferencia": 0.16908865265796202,
     "confianza": "ajustado",
     "prediccion": "Brazil",
     "lambda_local": 1.7086343595916231,
@@ -284,8 +320,8 @@
     "marcadores_probables": [
       "1-0",
       "1-1",
-      "2-1",
       "0-1",
+      "2-1",
       "1-2"
     ],
     "analisis": [
@@ -373,13 +409,31 @@
         "marcadores": [
           "1-0",
           "1-1",
-          "2-1",
           "0-1",
+          "2-1",
           "1-2"
         ],
         "lambda_local": 1.709,
         "lambda_visitante": 0.966,
-        "interpretacion": "El marcador más probable es 1-0 (9.8%), coherente con Brazil como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 1-0 (9.7%), coherente con Brazil como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Brazil",
+          "ranking": 5,
+          "puntos": 1782.1,
+          "score": 0.935
+        },
+        "visitante": {
+          "nombre": "Haiti",
+          "ranking": 99,
+          "puntos": 1250.0,
+          "score": 0.429
+        },
+        "interpretacion": "Brazil es objetivamente superior en el ranking FIFA (#5 / 1782 pts vs #99 / 1250 pts). Score normalizado: 0.94 vs 0.43."
       }
     ]
   },
@@ -400,9 +454,9 @@
     "prob_local": 0.39,
     "prob_empate": 0.2425745027171321,
     "prob_visitante": 0.3674254972828679,
-    "fuerza_local": 0.5039097645714286,
-    "fuerza_visitante": 0.46147485714285713,
-    "diferencia": 0.04243490742857142,
+    "fuerza_local": 0.5296618645714286,
+    "fuerza_visitante": 0.4877893714285714,
+    "diferencia": 0.04187249314285718,
     "confianza": "ajustado",
     "prediccion": "Türkiye",
     "lambda_local": 1.9345880608363633,
@@ -505,6 +559,24 @@
         "lambda_local": 1.935,
         "lambda_visitante": 1.207,
         "interpretacion": "El marcador más probable es 2-1 (8.6%), coherente con Türkiye como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Türkiye",
+          "ranking": 24,
+          "puntos": 1584.1,
+          "score": 0.747
+        },
+        "visitante": {
+          "nombre": "Paraguay",
+          "ranking": 32,
+          "puntos": 1521.4,
+          "score": 0.687
+        },
+        "interpretacion": "Türkiye es objetivamente superior en el ranking FIFA (#24 / 1584 pts vs #32 / 1521 pts). Score normalizado: 0.75 vs 0.69."
       }
     ]
   }
