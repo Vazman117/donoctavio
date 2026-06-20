@@ -149,7 +149,7 @@ PARTIDOS_GRUPO = [
     # ("USA",         "Paraguay",  "Los Angeles"),   # JUGADO 4-1
     # ("Australia",   "Türkiye",    "Vancouver"),    # JUGADO 2-0
     # ("United States", "Australia", "Seattle"),     # JUGADO 2-0
-    ("Türkiye",      "Paraguay",  "San Francisco"),
+    # ("Türkiye",      "Paraguay",  "San Francisco"), # JUGADO 0-1
     ("Türkiye",  "United States", "Los Angeles"),
     ("Paraguay",    "Australia", "Miami"),
 

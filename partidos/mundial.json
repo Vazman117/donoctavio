@@ -1,5 +1,150 @@
 [
   {
+    "id": "760443",
+    "fecha": "2026-06-20T03:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Türkiye",
+    "visitante": "Paraguay",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+    "estadio": "Levi's Stadium",
+    "ciudad_sede": "San Francisco Bay Area, California",
+    "pais_sede": "USA",
+    "altitud_sede": 16,
+    "es_neutro": true,
+    "prob_local": 0.39,
+    "prob_empate": 0.2425745027171321,
+    "prob_visitante": 0.3674254972828679,
+    "fuerza_local": 0.5296618645714286,
+    "fuerza_visitante": 0.4877893714285714,
+    "diferencia": 0.04187249314285718,
+    "confianza": "ajustado",
+    "prediccion": "Türkiye",
+    "resultado": "Paraguay",
+    "marcador": "0-1",
+    "lambda_local": 1.9345880608363633,
+    "lambda_visitante": 1.2068965517241377,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "2-1",
+      "1-1",
+      "1-2",
+      "1-0",
+      "0-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.67,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Türkiye"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Paraguay"
+        },
+        "interpretacion": "Türkiye llega con mejor momentum: índice 0.67/1.0 frente a 0.50/1.0 de Paraguay. Últimos 5: 2V/0E/1D vs 2V/0E/2D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 16,
+        "ciudad_sede": "San Francisco Bay Area, California",
+        "local": {
+          "nombre": "Türkiye",
+          "altitud_base": 938,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Paraguay",
+          "altitud_base": 124,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (16m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Türkiye",
+          "goles_favor": 2.0,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Paraguay",
+          "goles_favor": 1.75,
+          "goles_contra": 1.5
+        },
+        "interpretacion": "Producción similar: Türkiye 2.00 — Paraguay 1.75 goles/partido. Defensa: 1.00 vs 1.50."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Türkiye",
+          "lambda": 1.935
+        },
+        "visitante": {
+          "nombre": "Paraguay",
+          "lambda": 1.207
+        },
+        "suma": 3.141,
+        "interpretacion": "Türkiye genera más peligro ofensivo según el modelo: 1.93 goles esperados vs 1.21 de Paraguay."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "2-1",
+          "1-1",
+          "1-2",
+          "1-0",
+          "0-1"
+        ],
+        "lambda_local": 1.935,
+        "lambda_visitante": 1.207,
+        "interpretacion": "El marcador más probable es 2-1 (8.6%), coherente con Türkiye como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Türkiye",
+          "ranking": 24,
+          "puntos": 1584.1,
+          "score": 0.747
+        },
+        "visitante": {
+          "nombre": "Paraguay",
+          "ranking": 32,
+          "puntos": 1521.4,
+          "score": 0.687
+        },
+        "interpretacion": "Türkiye es objetivamente superior en el ranking FIFA (#24 / 1584 pts vs #32 / 1521 pts). Score normalizado: 0.75 vs 0.69."
+      }
+    ]
+  },
+  {
     "id": "760444",
     "fecha": "2026-06-20T00:30Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

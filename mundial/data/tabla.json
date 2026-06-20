@@ -228,6 +228,18 @@
     "partidos": 2.0
   },
   {
+    "grupo": "Group D",
+    "posicion": 3.0,
+    "equipo": "Paraguay",
+    "abreviacion": "PAR",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+    "puntos": 3.0,
+    "diferencia_goles": -2.0,
+    "goles_favor": 2.0,
+    "goles_contra": 4.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group F",
     "posicion": 3.0,
     "equipo": "Netherlands",
@@ -492,30 +504,6 @@
     "partidos": 1.0
   },
   {
-    "grupo": "Group D",
-    "posicion": 3.0,
-    "equipo": "Türkiye",
-    "abreviacion": "TUR",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
-    "puntos": 0.0,
-    "diferencia_goles": -2.0,
-    "goles_favor": 0.0,
-    "goles_contra": 2.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group D",
-    "posicion": 4.0,
-    "equipo": "Paraguay",
-    "abreviacion": "PAR",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
-    "puntos": 0.0,
-    "diferencia_goles": -3.0,
-    "goles_favor": 1.0,
-    "goles_contra": 4.0,
-    "partidos": 1.0
-  },
-  {
     "grupo": "Group I",
     "posicion": 4.0,
     "equipo": "Iraq",
@@ -526,6 +514,18 @@
     "goles_favor": 1.0,
     "goles_contra": 4.0,
     "partidos": 1.0
+  },
+  {
+    "grupo": "Group D",
+    "posicion": 4.0,
+    "equipo": "Türkiye",
+    "abreviacion": "TUR",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+    "puntos": 0.0,
+    "diferencia_goles": -3.0,
+    "goles_favor": 0.0,
+    "goles_contra": 3.0,
+    "partidos": 2.0
   },
   {
     "grupo": "Group J",

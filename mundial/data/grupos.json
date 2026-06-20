@@ -186,31 +186,31 @@
     "grupo": "Group D",
     "equipos": [
       {
-        "posicion": 4.0,
+        "posicion": 3.0,
         "equipo": "Paraguay",
         "abreviacion": "PAR",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
-        "partidos": 1.0,
-        "ganados": 0.0,
+        "partidos": 2.0,
+        "ganados": 1.0,
         "empatados": 0.0,
         "perdidos": 1.0,
-        "goles_favor": 1.0,
+        "goles_favor": 2.0,
         "goles_contra": 4.0,
-        "diferencia_goles": -3.0,
-        "puntos": 0.0
+        "diferencia_goles": -2.0,
+        "puntos": 3.0
       },
       {
-        "posicion": 3.0,
+        "posicion": 4.0,
         "equipo": "Türkiye",
         "abreviacion": "TUR",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
-        "partidos": 1.0,
+        "partidos": 2.0,
         "ganados": 0.0,
         "empatados": 0.0,
-        "perdidos": 1.0,
+        "perdidos": 2.0,
         "goles_favor": 0.0,
-        "goles_contra": 2.0,
-        "diferencia_goles": -2.0,
+        "goles_contra": 3.0,
+        "diferencia_goles": -3.0,
         "puntos": 0.0
       },
       {
