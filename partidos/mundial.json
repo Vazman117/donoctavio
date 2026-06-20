@@ -1,5 +1,153 @@
 [
   {
+    "id": "760445",
+    "fecha": "2026-06-19T22:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Scotland",
+    "visitante": "Morocco",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+    "estadio": "Gillette Stadium",
+    "ciudad_sede": "Foxborough, Massachusetts",
+    "pais_sede": "USA",
+    "altitud_sede": 25,
+    "es_neutro": true,
+    "prob_local": 0.35112390365639196,
+    "prob_empate": 0.2588760963436081,
+    "prob_visitante": 0.39,
+    "fuerza_local": 0.46792877739191946,
+    "fuerza_visitante": 0.606658558036652,
+    "diferencia": 0.13872978064473257,
+    "confianza": "ajustado",
+    "prediccion": "Morocco",
+    "resultado": "Morocco",
+    "marcador": "1-0",
+    "lambda_local": 0.849052228459414,
+    "lambda_visitante": 1.3076248423545844,
+    "factor_altitud_local": 0.9995,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "0-1",
+      "1-1",
+      "1-0",
+      "0-0",
+      "1-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Scotland"
+        },
+        "visitante": {
+          "valor": 0.7,
+          "ultimos_5": [
+            "D",
+            "D",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Morocco"
+        },
+        "interpretacion": "Morocco llega con mejor momentum: índice 0.70/1.0 frente a 0.60/1.0 de Scotland. Últimos 5: 3V/2E/0D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 25,
+        "ciudad_sede": "Foxborough, Massachusetts",
+        "local": {
+          "nombre": "Scotland",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Morocco",
+          "altitud_base": 495,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (25m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Scotland",
+          "goles_favor": 1.8,
+          "goles_contra": 0.6
+        },
+        "visitante": {
+          "nombre": "Morocco",
+          "goles_favor": 2.33,
+          "goles_contra": 0.67
+        },
+        "interpretacion": "Morocco más ofensivo: 2.33 vs 1.80 goles/partido. Defensiva: 0.60 vs 0.67."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "medio",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Scotland",
+          "lambda": 0.849
+        },
+        "visitante": {
+          "nombre": "Morocco",
+          "lambda": 1.308
+        },
+        "suma": 2.157,
+        "interpretacion": "Morocco genera más peligro ofensivo según el modelo: 1.31 goles esperados vs 0.85 de Scotland."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "1-1",
+          "1-0",
+          "0-0",
+          "1-2"
+        ],
+        "lambda_local": 0.849,
+        "lambda_visitante": 1.308,
+        "interpretacion": "El marcador más probable es 0-1 (13.1%), coherente con Morocco como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Scotland",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "visitante": {
+          "nombre": "Morocco",
+          "ranking": 15,
+          "puntos": 1645.1,
+          "score": 0.805
+        },
+        "interpretacion": "Morocco es objetivamente superior en el ranking FIFA (#15 / 1645 pts vs #999 / 0 pts). Score normalizado: 0.80 vs 0.00."
+      }
+    ]
+  },
+  {
     "id": "760442",
     "fecha": "2026-06-19T19:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

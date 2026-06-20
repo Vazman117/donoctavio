@@ -140,7 +140,7 @@ PARTIDOS_GRUPO = [
     # ── GRUPO C ──────────────────────────────────────────────
     # ("Brazil",      "Morocco",   "New York"),  # JUGADO 1-1
     # ("Haiti",       "Scotland",  "Boston"),    # JUGADO 0-1
-    ("Scotland",    "Morocco",   "Boston"),
+    # ("Scotland",    "Morocco",   "Boston"),    # JUGADO 0-1
     ("Brazil",      "Haiti",     "Philadelphia"),
     ("Morocco",     "Haiti",     "Atlanta"),
     ("Scotland",    "Brazil",    "Philadelphia"),
