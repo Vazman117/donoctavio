@@ -1,5 +1,151 @@
 [
   {
+    "id": "760447",
+    "fecha": "2026-06-20T17:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Netherlands",
+    "visitante": "Sweden",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+    "estadio": "NRG Stadium",
+    "ciudad_sede": "Houston, Texas",
+    "pais_sede": "USA",
+    "altitud_sede": 12,
+    "es_neutro": true,
+    "prob_local": 0.364763376790205,
+    "prob_empate": 0.2773134231194792,
+    "prob_visitante": 0.35792320009031586,
+    "fuerza_local": 0.5258967881183796,
+    "fuerza_visitante": 0.42484477854447766,
+    "diferencia": 0.10105200957390192,
+    "confianza": "ajustado",
+    "prediccion": "Netherlands",
+    "resultado": "Netherlands",
+    "marcador": "5-1",
+    "lambda_local": 1.5864028406381012,
+    "lambda_visitante": 1.6265966845522508,
+    "factor_altitud_local": 0.9994,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "1-1",
+      "2-1",
+      "1-2",
+      "2-2",
+      "1-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.56,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "D",
+            "W"
+          ],
+          "nombre": "Netherlands"
+        },
+        "visitante": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "W",
+            "D",
+            "L"
+          ],
+          "nombre": "Sweden"
+        },
+        "interpretacion": "Netherlands llega con mejor momentum: índice 0.56/1.0 frente a 0.47/1.0 de Sweden. Últimos 5: 2V/2E/1D vs 1V/1E/1D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 12,
+        "ciudad_sede": "Houston, Texas",
+        "local": {
+          "nombre": "Netherlands",
+          "altitud_base": 0,
+          "factor": 0.999
+        },
+        "visitante": {
+          "nombre": "Sweden",
+          "altitud_base": 28,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (12m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Netherlands",
+          "goles_favor": 1.4,
+          "goles_contra": 1.2
+        },
+        "visitante": {
+          "nombre": "Sweden",
+          "goles_favor": 2.67,
+          "goles_contra": 2.0
+        },
+        "interpretacion": "Sweden más ofensivo: 2.67 vs 1.40 goles/partido. Defensiva: 1.20 vs 2.00."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "bajo",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Netherlands",
+          "lambda": 1.586
+        },
+        "visitante": {
+          "nombre": "Sweden",
+          "lambda": 1.627
+        },
+        "suma": 3.213,
+        "interpretacion": "Lambdas muy similares (1.59 vs 1.63): partido muy equilibrado. La diferencia de solo 0.04 goles esperados entre ambos equipos sugiere un resultado cerrado."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-1",
+          "2-1",
+          "1-2",
+          "2-2",
+          "1-0"
+        ],
+        "lambda_local": 1.586,
+        "lambda_visitante": 1.627,
+        "interpretacion": "El marcador individual más probable es 1-1 (10.4%), favoreciendo a el empate. Aunque el modelo da como favorito a Netherlands por probabilidad acumulada, esa probabilidad se reparte entre varios marcadores distintos."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Netherlands",
+          "ranking": 7,
+          "puntos": 1757.4,
+          "score": 0.912
+        },
+        "visitante": {
+          "nombre": "Sweden",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "interpretacion": "Netherlands es objetivamente superior en el ranking FIFA (#7 / 1757 pts vs #999 / 0 pts). Score normalizado: 0.91 vs 0.00."
+      }
+    ]
+  },
+  {
     "id": "760443",
     "fecha": "2026-06-20T03:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

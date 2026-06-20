@@ -36,6 +36,18 @@
     "partidos": 2.0
   },
   {
+    "grupo": "Group F",
+    "posicion": 1.0,
+    "equipo": "Netherlands",
+    "abreviacion": "NED",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+    "puntos": 4.0,
+    "diferencia_goles": 4.0,
+    "goles_favor": 7.0,
+    "goles_contra": 3.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group B",
     "posicion": 2.0,
     "equipo": "Switzerland",
@@ -80,18 +92,6 @@
     "puntos": 3.0,
     "diferencia_goles": 6.0,
     "goles_favor": 7.0,
-    "goles_contra": 1.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group F",
-    "posicion": 1.0,
-    "equipo": "Sweden",
-    "abreviacion": "SWE",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-    "puntos": 3.0,
-    "diferencia_goles": 4.0,
-    "goles_favor": 5.0,
     "goles_contra": 1.0,
     "partidos": 1.0
   },
@@ -192,6 +192,18 @@
     "partidos": 1.0
   },
   {
+    "grupo": "Group F",
+    "posicion": 2.0,
+    "equipo": "Sweden",
+    "abreviacion": "SWE",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+    "puntos": 3.0,
+    "diferencia_goles": 0.0,
+    "goles_favor": 6.0,
+    "goles_contra": 6.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group A",
     "posicion": 2.0,
     "equipo": "South Korea",
@@ -242,18 +254,6 @@
   {
     "grupo": "Group F",
     "posicion": 3.0,
-    "equipo": "Netherlands",
-    "abreviacion": "NED",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
-    "puntos": 1.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 2.0,
-    "goles_contra": 2.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group F",
-    "posicion": 2.0,
     "equipo": "Japan",
     "abreviacion": "JPN",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",

@@ -164,7 +164,7 @@ PARTIDOS_GRUPO = [
     # ── GRUPO F ──────────────────────────────────────────────
     # ("Netherlands", "Japan",      "Dallas"),    # JUGADO 2-2
     # ("Sweden",      "Tunisia",    "Monterrey"), # JUGADO 5-1
-    ("Netherlands", "Sweden",     "Houston"),
+    # ("Netherlands", "Sweden",     "Houston"),   # JUGADO 5-1
     ("Japan",       "Tunisia",    "Monterrey"),
     ("Japan",       "Sweden",     "Dallas"),
     ("Tunisia",     "Netherlands","Kansas City"),
