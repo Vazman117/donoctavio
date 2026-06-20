@@ -1,5 +1,153 @@
 [
   {
+    "id": "760444",
+    "fecha": "2026-06-20T00:30Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Brazil",
+    "visitante": "Haiti",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+    "estadio": "Lincoln Financial Field",
+    "ciudad_sede": "Philadelphia, Pennsylvania",
+    "pais_sede": "USA",
+    "altitud_sede": 12,
+    "es_neutro": true,
+    "prob_local": 0.39,
+    "prob_empate": 0.2569447688847005,
+    "prob_visitante": 0.3530552311152995,
+    "fuerza_local": 0.5888539479718382,
+    "fuerza_visitante": 0.4197652953138762,
+    "diferencia": 0.16908865265796202,
+    "confianza": "ajustado",
+    "prediccion": "Brazil",
+    "resultado": "Brazil",
+    "marcador": "3-0",
+    "lambda_local": 1.7086343595916231,
+    "lambda_visitante": 0.9660133482348154,
+    "factor_altitud_local": 0.9999,
+    "factor_altitud_visitante": 0.9994,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "0-1",
+      "2-1",
+      "1-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.68,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Brazil"
+        },
+        "visitante": {
+          "valor": 0.28,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "D",
+            "L"
+          ],
+          "nombre": "Haiti"
+        },
+        "interpretacion": "Brazil llega con mejor momentum: índice 0.68/1.0 frente a 0.28/1.0 de Haiti. Últimos 5: 3V/1E/1D vs 1V/1E/3D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 12,
+        "ciudad_sede": "Philadelphia, Pennsylvania",
+        "local": {
+          "nombre": "Brazil",
+          "altitud_base": 10,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Haiti",
+          "altitud_base": 0,
+          "factor": 0.999
+        },
+        "interpretacion": "Sede en condiciones normales (12m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Brazil",
+          "goles_favor": 2.6,
+          "goles_contra": 1.4
+        },
+        "visitante": {
+          "nombre": "Haiti",
+          "goles_favor": 1.2,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Brazil más ofensivo: 2.60 goles/partido (vs 1.20). Defensiva: 1.40 vs 1.00."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Brazil",
+          "lambda": 1.709
+        },
+        "visitante": {
+          "nombre": "Haiti",
+          "lambda": 0.966
+        },
+        "suma": 2.675,
+        "interpretacion": "Brazil genera más peligro ofensivo según el modelo: 1.71 goles esperados vs 0.97 de Haiti."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "0-1",
+          "2-1",
+          "1-2"
+        ],
+        "lambda_local": 1.709,
+        "lambda_visitante": 0.966,
+        "interpretacion": "El marcador más probable es 1-0 (9.7%), coherente con Brazil como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Brazil",
+          "ranking": 5,
+          "puntos": 1782.1,
+          "score": 0.935
+        },
+        "visitante": {
+          "nombre": "Haiti",
+          "ranking": 99,
+          "puntos": 1250.0,
+          "score": 0.429
+        },
+        "interpretacion": "Brazil es objetivamente superior en el ranking FIFA (#5 / 1782 pts vs #99 / 1250 pts). Score normalizado: 0.94 vs 0.43."
+      }
+    ]
+  },
+  {
     "id": "760445",
     "fecha": "2026-06-19T22:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

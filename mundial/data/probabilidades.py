@@ -141,7 +141,7 @@ PARTIDOS_GRUPO = [
     # ("Brazil",      "Morocco",   "New York"),  # JUGADO 1-1
     # ("Haiti",       "Scotland",  "Boston"),    # JUGADO 0-1
     # ("Scotland",    "Morocco",   "Boston"),    # JUGADO 0-1
-    ("Brazil",      "Haiti",     "Philadelphia"),
+    # ("Brazil",      "Haiti",     "Philadelphia"), # JUGADO 3-0
     ("Morocco",     "Haiti",     "Atlanta"),
     ("Scotland",    "Brazil",    "Philadelphia"),
 
