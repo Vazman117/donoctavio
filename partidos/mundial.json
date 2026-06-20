@@ -1,5 +1,152 @@
 [
   {
+    "id": "760448",
+    "fecha": "2026-06-20T20:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Germany",
+    "visitante": "Ivory Coast",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
+    "estadio": "BMO Field",
+    "ciudad_sede": "Toronto, Ontario",
+    "pais_sede": "CAN",
+    "altitud_sede": 76,
+    "es_neutro": true,
+    "prob_local": 0.39,
+    "prob_empate": 0.20962104398999135,
+    "prob_visitante": 0.4003789560100086,
+    "fuerza_local": 0.6742054285714285,
+    "fuerza_visitante": 0.6227493142857143,
+    "diferencia": 0.05145611428571417,
+    "confianza": "ajustado",
+    "prediccion": "Ivory Coast",
+    "resultado": "Germany",
+    "marcador": "2-1",
+    "lambda_local": 2.261299901022765,
+    "lambda_visitante": 1.9355017301038064,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "1-2",
+      "2-2",
+      "2-1",
+      "1-1",
+      "2-3"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 1.0,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Germany"
+        },
+        "visitante": {
+          "valor": 1.0,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Ivory Coast"
+        },
+        "interpretacion": "Momentum similar: Germany 1.00/1.0 — Ivory Coast 1.00/1.0."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 76,
+        "ciudad_sede": "Toronto, Ontario",
+        "local": {
+          "nombre": "Germany",
+          "altitud_base": 117,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Ivory Coast",
+          "altitud_base": 226,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (76m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Germany",
+          "goles_favor": 3.8,
+          "goles_contra": 1.2
+        },
+        "visitante": {
+          "nombre": "Ivory Coast",
+          "goles_favor": 2.0,
+          "goles_contra": 0.25
+        },
+        "interpretacion": "Germany más ofensivo: 3.80 goles/partido (vs 2.00). Defensiva: 1.20 vs 0.25."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "medio",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Germany",
+          "lambda": 2.261
+        },
+        "visitante": {
+          "nombre": "Ivory Coast",
+          "lambda": 1.936
+        },
+        "suma": 4.197,
+        "interpretacion": "Germany genera más peligro ofensivo según el modelo: 2.26 goles esperados vs 1.94 de Ivory Coast."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-2",
+          "2-2",
+          "2-1",
+          "1-1",
+          "2-3"
+        ],
+        "lambda_local": 2.261,
+        "lambda_visitante": 1.936,
+        "interpretacion": "El marcador más probable es 1-2 (7.0%), coherente con Ivory Coast como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Germany",
+          "ranking": 9,
+          "puntos": 1720.0,
+          "score": 0.876
+        },
+        "visitante": {
+          "nombre": "Ivory Coast",
+          "ranking": 27,
+          "puntos": 1551.3,
+          "score": 0.716
+        },
+        "interpretacion": "Germany es objetivamente superior en el ranking FIFA (#9 / 1720 pts vs #27 / 1551 pts). Score normalizado: 0.88 vs 0.72."
+      }
+    ]
+  },
+  {
     "id": "760447",
     "fecha": "2026-06-20T17:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

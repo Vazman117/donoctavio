@@ -1,5 +1,17 @@
 [
   {
+    "grupo": "Group E",
+    "posicion": 1.0,
+    "equipo": "Germany",
+    "abreviacion": "GER",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+    "puntos": 6.0,
+    "diferencia_goles": 7.0,
+    "goles_favor": 9.0,
+    "goles_contra": 2.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group D",
     "posicion": 1.0,
     "equipo": "United States",
@@ -84,18 +96,6 @@
     "partidos": 2.0
   },
   {
-    "grupo": "Group E",
-    "posicion": 1.0,
-    "equipo": "Germany",
-    "abreviacion": "GER",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
-    "puntos": 3.0,
-    "diferencia_goles": 6.0,
-    "goles_favor": 7.0,
-    "goles_contra": 1.0,
-    "partidos": 1.0
-  },
-  {
     "grupo": "Group I",
     "posicion": 1.0,
     "equipo": "Norway",
@@ -168,18 +168,6 @@
     "partidos": 1.0
   },
   {
-    "grupo": "Group E",
-    "posicion": 2.0,
-    "equipo": "Ivory Coast",
-    "abreviacion": "CIV",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-    "puntos": 3.0,
-    "diferencia_goles": 1.0,
-    "goles_favor": 1.0,
-    "goles_contra": 0.0,
-    "partidos": 1.0
-  },
-  {
     "grupo": "Group L",
     "posicion": 2.0,
     "equipo": "Ghana",
@@ -221,6 +209,18 @@
     "equipo": "Australia",
     "abreviacion": "AUS",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+    "puntos": 3.0,
+    "diferencia_goles": 0.0,
+    "goles_favor": 2.0,
+    "goles_contra": 2.0,
+    "partidos": 2.0
+  },
+  {
+    "grupo": "Group E",
+    "posicion": 2.0,
+    "equipo": "Ivory Coast",
+    "abreviacion": "CIV",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
     "puntos": 3.0,
     "diferencia_goles": 0.0,
     "goles_favor": 2.0,

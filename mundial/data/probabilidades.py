@@ -157,7 +157,7 @@ PARTIDOS_GRUPO = [
     # ("Germany",     "Curaçao",    "Houston"),  # JUGADO 7-1
     # ("Ivory Coast", "Ecuador",    "Philadelphia"), # JUGADO 1-0
     ("Ecuador",     "Curaçao",    "Kansas City"),
-    ("Germany",     "Ivory Coast","New York"),
+    # ("Germany",     "Ivory Coast","New York"), # JUGADO 2-1
     ("Ecuador",     "Germany",    "New York"),
     ("Curaçao",     "Ivory Coast","Miami"),
 
