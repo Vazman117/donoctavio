@@ -60,6 +60,18 @@
     "partidos": 2.0
   },
   {
+    "grupo": "Group F",
+    "posicion": 2.0,
+    "equipo": "Japan",
+    "abreviacion": "JPN",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+    "puntos": 4.0,
+    "diferencia_goles": 4.0,
+    "goles_favor": 6.0,
+    "goles_contra": 2.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group B",
     "posicion": 2.0,
     "equipo": "Switzerland",
@@ -181,7 +193,7 @@
   },
   {
     "grupo": "Group F",
-    "posicion": 2.0,
+    "posicion": 3.0,
     "equipo": "Sweden",
     "abreviacion": "SWE",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
@@ -250,18 +262,6 @@
     "goles_favor": 2.0,
     "goles_contra": 4.0,
     "partidos": 2.0
-  },
-  {
-    "grupo": "Group F",
-    "posicion": 3.0,
-    "equipo": "Japan",
-    "abreviacion": "JPN",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
-    "puntos": 1.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 2.0,
-    "goles_contra": 2.0,
-    "partidos": 1.0
   },
   {
     "grupo": "Group G",
@@ -396,6 +396,18 @@
     "partidos": 2.0
   },
   {
+    "grupo": "Group E",
+    "posicion": 3.0,
+    "equipo": "Ecuador",
+    "abreviacion": "ECU",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+    "puntos": 1.0,
+    "diferencia_goles": -1.0,
+    "goles_favor": 0.0,
+    "goles_contra": 1.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group A",
     "posicion": 4.0,
     "equipo": "South Africa",
@@ -433,15 +445,15 @@
   },
   {
     "grupo": "Group E",
-    "posicion": 3.0,
-    "equipo": "Ecuador",
-    "abreviacion": "ECU",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
-    "puntos": 0.0,
-    "diferencia_goles": -1.0,
-    "goles_favor": 0.0,
-    "goles_contra": 1.0,
-    "partidos": 1.0
+    "posicion": 4.0,
+    "equipo": "Curaçao",
+    "abreviacion": "CUW",
+    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
+    "puntos": 1.0,
+    "diferencia_goles": -6.0,
+    "goles_favor": 1.0,
+    "goles_contra": 7.0,
+    "partidos": 2.0
   },
   {
     "grupo": "Group L",
@@ -540,18 +552,6 @@
     "partidos": 1.0
   },
   {
-    "grupo": "Group F",
-    "posicion": 4.0,
-    "equipo": "Tunisia",
-    "abreviacion": "TUN",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
-    "puntos": 0.0,
-    "diferencia_goles": -4.0,
-    "goles_favor": 1.0,
-    "goles_contra": 5.0,
-    "partidos": 1.0
-  },
-  {
     "grupo": "Group C",
     "posicion": 4.0,
     "equipo": "Haiti",
@@ -564,15 +564,15 @@
     "partidos": 2.0
   },
   {
-    "grupo": "Group E",
+    "grupo": "Group F",
     "posicion": 4.0,
-    "equipo": "Curaçao",
-    "abreviacion": "CUW",
-    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
+    "equipo": "Tunisia",
+    "abreviacion": "TUN",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
     "puntos": 0.0,
-    "diferencia_goles": -6.0,
+    "diferencia_goles": -8.0,
     "goles_favor": 1.0,
-    "goles_contra": 7.0,
-    "partidos": 1.0
+    "goles_contra": 9.0,
+    "partidos": 2.0
   }
 ]

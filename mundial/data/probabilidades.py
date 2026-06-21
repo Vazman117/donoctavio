@@ -156,7 +156,7 @@ PARTIDOS_GRUPO = [
     # ── GRUPO E ──────────────────────────────────────────────
     # ("Germany",     "Curaçao",    "Houston"),  # JUGADO 7-1
     # ("Ivory Coast", "Ecuador",    "Philadelphia"), # JUGADO 1-0
-    ("Ecuador",     "Curaçao",    "Kansas City"),
+    # ("Ecuador",     "Curaçao",    "Kansas City"), # JUGADO 0-0
     # ("Germany",     "Ivory Coast","New York"), # JUGADO 2-1
     ("Ecuador",     "Germany",    "New York"),
     ("Curaçao",     "Ivory Coast","Miami"),
@@ -165,7 +165,7 @@ PARTIDOS_GRUPO = [
     # ("Netherlands", "Japan",      "Dallas"),    # JUGADO 2-2
     # ("Sweden",      "Tunisia",    "Monterrey"), # JUGADO 5-1
     # ("Netherlands", "Sweden",     "Houston"),   # JUGADO 5-1
-    ("Japan",       "Tunisia",    "Monterrey"),
+    # ("Japan",       "Tunisia",    "Monterrey"), # JUGADO 4-0
     ("Japan",       "Sweden",     "Dallas"),
     ("Tunisia",     "Netherlands","Kansas City"),
 
