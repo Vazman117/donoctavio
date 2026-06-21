@@ -72,6 +72,18 @@
     "partidos": 2.0
   },
   {
+    "grupo": "Group H",
+    "posicion": 1.0,
+    "equipo": "Spain",
+    "abreviacion": "ESP",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+    "puntos": 4.0,
+    "diferencia_goles": 4.0,
+    "goles_favor": 4.0,
+    "goles_contra": 0.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group B",
     "posicion": 2.0,
     "equipo": "Switzerland",
@@ -265,19 +277,31 @@
   },
   {
     "grupo": "Group G",
-    "posicion": 2.0,
+    "posicion": 1.0,
     "equipo": "Iran",
     "abreviacion": "IRN",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
-    "puntos": 1.0,
+    "puntos": 2.0,
     "diferencia_goles": 0.0,
     "goles_favor": 2.0,
     "goles_contra": 2.0,
-    "partidos": 1.0
+    "partidos": 2.0
   },
   {
     "grupo": "Group G",
-    "posicion": 1.0,
+    "posicion": 2.0,
+    "equipo": "Belgium",
+    "abreviacion": "BEL",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+    "puntos": 2.0,
+    "diferencia_goles": 0.0,
+    "goles_favor": 1.0,
+    "goles_contra": 1.0,
+    "partidos": 2.0
+  },
+  {
+    "grupo": "Group G",
+    "posicion": 3.0,
     "equipo": "New Zealand",
     "abreviacion": "NZL",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
@@ -285,18 +309,6 @@
     "diferencia_goles": 0.0,
     "goles_favor": 2.0,
     "goles_contra": 2.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group G",
-    "posicion": 3.0,
-    "equipo": "Belgium",
-    "abreviacion": "BEL",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-    "puntos": 1.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 1.0,
-    "goles_contra": 1.0,
     "partidos": 1.0
   },
   {
@@ -313,22 +325,10 @@
   },
   {
     "grupo": "Group H",
-    "posicion": 1.0,
+    "posicion": 2.0,
     "equipo": "Uruguay",
     "abreviacion": "URU",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
-    "puntos": 1.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 1.0,
-    "goles_contra": 1.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group H",
-    "posicion": 2.0,
-    "equipo": "Saudi Arabia",
-    "abreviacion": "KSA",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
     "puntos": 1.0,
     "diferencia_goles": 0.0,
     "goles_favor": 1.0,
@@ -357,18 +357,6 @@
     "diferencia_goles": 0.0,
     "goles_favor": 1.0,
     "goles_contra": 1.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group H",
-    "posicion": 3.0,
-    "equipo": "Spain",
-    "abreviacion": "ESP",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-    "puntos": 1.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
     "partidos": 1.0
   },
   {
@@ -428,6 +416,18 @@
     "puntos": 1.0,
     "diferencia_goles": -3.0,
     "goles_favor": 2.0,
+    "goles_contra": 5.0,
+    "partidos": 2.0
+  },
+  {
+    "grupo": "Group H",
+    "posicion": 3.0,
+    "equipo": "Saudi Arabia",
+    "abreviacion": "KSA",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
+    "puntos": 1.0,
+    "diferencia_goles": -4.0,
+    "goles_favor": 1.0,
     "goles_contra": 5.0,
     "partidos": 2.0
   },
