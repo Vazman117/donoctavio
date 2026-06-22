@@ -181,7 +181,7 @@ PARTIDOS_GRUPO = [
     # ("Spain",       "Cape Verde", "Atlanta"),  # JUGADO 0-0
     # ("Saudi Arabia","Uruguay",    "Miami"),    # JUGADO 1-1
     # ("Spain",       "Saudi Arabia","Atlanta"), # JUGADO 4-0
-    ("Uruguay",     "Cape Verde", "Houston"),
+    # ("Uruguay",     "Cape Verde", "Houston"),  # JUGADO 2-2
     ("Uruguay",     "Spain",      "Guadalajara"),
     ("Cape Verde",  "Saudi Arabia","Houston"),
 

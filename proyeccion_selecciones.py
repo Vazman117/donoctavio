@@ -109,20 +109,12 @@ def nivel_impacto(diferencia_normalizada):
 # =============================
 
 def normalizar_ranking_fifa(seleccion):
-    """
-    Convierte ranking/puntos FIFA a un score 0.0–1.0.
-    Prioriza puntos FIFA (más granular). Si no hay puntos válidos,
-    usa posición de ranking como fallback.
-    Qatar y selecciones sin datos válidos quedan cercanas a 0.
-    """
     ranking = seleccion.get("ranking_fifa", 999)
     puntos  = seleccion.get("puntos_fifa",  0.0) or 0.0
 
     if puntos > 0:
-        # Puntos FIFA: ~800 (últimos puestos) a ~1850 (élite mundial)
         return limitar((puntos - 800) / 1050, 0.0, 1.0)
     else:
-        # Fallback: ranking posicional (1=mejor, 210=peor, 999=sin datos)
         ranking_efectivo = min(ranking, 210)
         return limitar(1.0 - (ranking_efectivo - 1) / 209, 0.0, 1.0)
 
@@ -172,7 +164,6 @@ def adaptar_seleccion(seleccion_raw):
     total_empatados = (seleccion_raw.get("empatados_oficial", 0) or 0) + (seleccion_raw.get("empatados_amistoso", 0) or 0)
     total_perdidos  = (seleccion_raw.get("perdidos_oficial",  0) or 0) + (seleccion_raw.get("perdidos_amistoso",  0) or 0)
 
-    # Empatados por situación: sumar oficial + amistoso correctamente
     empatados_local  = (seleccion_raw.get("empatados_local",  0) or 0)
     empatados_visita = (seleccion_raw.get("empatados_visita", 0) or 0)
 
@@ -268,7 +259,7 @@ PERFILES_SELECCIONES = {
     "mundial_grupos": {
         "nombre":       "Copa del Mundo FIFA — Fase de Grupos",
         "K_LOGISTICO":  2.2,
-        "MAX_FAVORITO": 0.39,  # subimos de 0.39 → permite más diferenciación
+        "MAX_FAVORITO": 0.39,
         "ALPHA":        0.72,
         "BETA":         0.28,
         "usa_h2h":      True,
@@ -505,26 +496,22 @@ def marcadores_para_carrusel(lambda_local, lambda_visitante, prediccion,
 # =============================
 
 def calcular_fuerza_base(seleccion, contexto, cfg):
-    # Pesos reajustados para incluir FIFA (suma = 1.0)
     PESO_FORMA        = 0.28
     PESO_WINRATE      = 0.20
     PESO_GOLES_FAVOR  = 0.13
     PESO_GOLES_CONTRA = 0.13
     PESO_STREAK       = 0.10
-    PESO_FIFA         = 0.16   # ← nuevo
+    PESO_FIFA         = 0.16
 
-    # --- Forma ---
     confianza_forma = peso_confianza(seleccion.get("partidos", 0))
     forma_raw = seleccion["forma_ponderada"]
     forma = confianza_forma * forma_raw + (1 - confianza_forma) * 0.5
 
-    # --- Contexto de juego ---
     altitud_sede = contexto.get("altitud_sede", 0)
     altitud_base = seleccion.get("altitud_base", 0)
     es_neutro    = contexto.get("es_neutro", False)
     es_local     = contexto.get("es_local", False)
 
-    # --- Win rate ---
     partidos_sit = seleccion.get("partidos_local" if es_local else "partidos_visita", 0)
     confianza_wr = peso_confianza(partidos_sit)
     if es_neutro:
@@ -535,7 +522,6 @@ def calcular_fuerza_base(seleccion, contexto, cfg):
         wr_raw = seleccion.get("win_rate_visita", 0.5)
     win_rate = confianza_wr * wr_raw + (1 - confianza_wr) * 0.45
 
-    # --- Goles ---
     confianza_goles = peso_confianza(seleccion.get("partidos", 0))
     gf_raw       = normalizar_goles_favor(seleccion["goles_favor_promedio"])
     gc_raw       = normalizar_goles_contra(seleccion["goles_contra_promedio"])
@@ -543,7 +529,6 @@ def calcular_fuerza_base(seleccion, contexto, cfg):
     goles_contra = confianza_goles * gc_raw + (1 - confianza_goles) * 0.5
     streak       = normalizar_streak(seleccion["imbatido_streak"])
 
-    # --- Ranking FIFA ---
     fifa_score = normalizar_ranking_fifa(seleccion)
 
     fuerza = (
@@ -664,16 +649,12 @@ def calcular_prob_empate(f_local, f_visitante, sel_local, sel_visitante, es_neut
         momentum  * peso_mom
     )
 
-    # ── Corrección por disparidad de ranking FIFA ──────────────────────────
-    # Si hay una gran brecha de calidad objetiva, la prob. de empate baja.
     rank_l = sel_local.get("ranking_fifa", 100)
     rank_v = sel_visitante.get("ranking_fifa", 100)
-    # Tratar ranking 999 (sin datos) como 210 para el cálculo de diferencia
     rank_l_ef = min(rank_l, 210)
     rank_v_ef = min(rank_v, 210)
     diff_ranking = abs(rank_l_ef - rank_v_ef)
     if diff_ranking > 30:
-        # Reducción proporcional: máx ~30% menos empate con diferencia enorme
         factor_ranking = limitar(1.0 - (diff_ranking - 30) / 300, 0.70, 1.0)
         prob *= factor_ranking
 
@@ -719,7 +700,6 @@ def ajuste_empate_por_lambdas(prob_local, prob_empate, prob_visitante,
     prob_visitante -= quita_v
     prob_empate    += boost
 
-    # Techo global de empate: nunca superar 44%
     MAX_EMPATE = 0.44
     if prob_empate > MAX_EMPATE:
         exceso         = prob_empate - MAX_EMPATE
@@ -758,6 +738,60 @@ def prediccion_inteligente(prob_local, prob_empate, prob_visitante,
         return nombre_local
     else:
         return nombre_visitante
+
+
+# =============================
+# COHERENCIA PREDICCIÓN / PROBABILIDADES
+# =============================
+
+def garantizar_coherencia(pred, prob_local, prob_empate, prob_visitante,
+                           nombre_local, nombre_visitante):
+    """
+    Si la predicción es 'Empate' pero prob_empate no es la más alta,
+    redistribuye el exceso del favorito hacia el empate para que
+    la barra visual sea coherente con la predicción.
+
+    Si la predicción es un equipo pero su probabilidad no es la más alta,
+    redistribuye de forma análoga.
+    """
+    if pred == "Empate":
+        favorito = max(prob_local, prob_visitante)
+        if prob_empate < favorito:
+            # Subir empate justo por encima del actual favorito
+            if prob_local >= prob_visitante:
+                exceso = prob_local - prob_empate + 0.001
+                prob_local  -= exceso
+                prob_empate += exceso
+            else:
+                exceso = prob_visitante - prob_empate + 0.001
+                prob_visitante -= exceso
+                prob_empate    += exceso
+
+    elif pred == nombre_local:
+        if prob_local < max(prob_empate, prob_visitante):
+            if prob_empate >= prob_visitante:
+                exceso = prob_empate - prob_local + 0.001
+                prob_empate -= exceso
+                prob_local  += exceso
+            else:
+                exceso = prob_visitante - prob_local + 0.001
+                prob_visitante -= exceso
+                prob_local     += exceso
+
+    else:  # pred == nombre_visitante
+        if prob_visitante < max(prob_local, prob_empate):
+            if prob_local >= prob_empate:
+                exceso = prob_local - prob_visitante + 0.001
+                prob_local     -= exceso
+                prob_visitante += exceso
+            else:
+                exceso = prob_empate - prob_visitante + 0.001
+                prob_empate    -= exceso
+                prob_visitante += exceso
+
+    # Renormalizar para que sumen exactamente 1.0
+    total = prob_local + prob_empate + prob_visitante
+    return prob_local / total, prob_empate / total, prob_visitante / total
 
 
 # =============================
@@ -1070,7 +1104,6 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion":   interp_m,
     })
 
-    # --- Ranking FIFA como factor de análisis ---
     rank_l  = local.get("ranking_fifa", 999)
     rank_v  = visitante.get("ranking_fifa", 999)
     pts_l   = local.get("puntos_fifa", 0.0) or 0.0
@@ -1213,6 +1246,20 @@ def generar_partido(
         local["nombre"],
         visitante["nombre"],
     )
+
+    # ── Garantizar coherencia entre predicción y probabilidades ──────────
+    prob_local, prob_empate, prob_visitante = garantizar_coherencia(
+        pred,
+        resultado["local"],
+        resultado["empate"],
+        resultado["visitante"],
+        local["nombre"],
+        visitante["nombre"],
+    )
+    # Actualizar resultado con probabilidades coherentes
+    resultado["local"]     = prob_local
+    resultado["empate"]    = prob_empate
+    resultado["visitante"] = prob_visitante
 
     top_marcadores = marcadores_para_carrusel(
         resultado["lambda_local"],

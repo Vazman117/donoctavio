@@ -448,17 +448,17 @@
         "equipo": "Uruguay",
         "abreviacion": "URU",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
-        "partidos": 1.0,
+        "partidos": 2.0,
         "ganados": 0.0,
-        "empatados": 1.0,
+        "empatados": 2.0,
         "perdidos": 0.0,
-        "goles_favor": 1.0,
-        "goles_contra": 1.0,
+        "goles_favor": 3.0,
+        "goles_contra": 3.0,
         "diferencia_goles": 0.0,
-        "puntos": 1.0
+        "puntos": 2.0
       },
       {
-        "posicion": 3.0,
+        "posicion": 4.0,
         "equipo": "Saudi Arabia",
         "abreviacion": "KSA",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
@@ -472,18 +472,18 @@
         "puntos": 1.0
       },
       {
-        "posicion": 4.0,
+        "posicion": 3.0,
         "equipo": "Cape Verde",
         "abreviacion": "CPV",
         "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
-        "partidos": 1.0,
+        "partidos": 2.0,
         "ganados": 0.0,
-        "empatados": 1.0,
+        "empatados": 2.0,
         "perdidos": 0.0,
-        "goles_favor": 0.0,
-        "goles_contra": 0.0,
+        "goles_favor": 2.0,
+        "goles_contra": 2.0,
         "diferencia_goles": 0.0,
-        "puntos": 1.0
+        "puntos": 2.0
       }
     ]
   },

@@ -276,11 +276,35 @@
     "partidos": 2.0
   },
   {
+    "grupo": "Group H",
+    "posicion": 2.0,
+    "equipo": "Uruguay",
+    "abreviacion": "URU",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
+    "puntos": 2.0,
+    "diferencia_goles": 0.0,
+    "goles_favor": 3.0,
+    "goles_contra": 3.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group G",
     "posicion": 1.0,
     "equipo": "Iran",
     "abreviacion": "IRN",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
+    "puntos": 2.0,
+    "diferencia_goles": 0.0,
+    "goles_favor": 2.0,
+    "goles_contra": 2.0,
+    "partidos": 2.0
+  },
+  {
+    "grupo": "Group H",
+    "posicion": 3.0,
+    "equipo": "Cape Verde",
+    "abreviacion": "CPV",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
     "puntos": 2.0,
     "diferencia_goles": 0.0,
     "goles_favor": 2.0,
@@ -324,18 +348,6 @@
     "partidos": 1.0
   },
   {
-    "grupo": "Group H",
-    "posicion": 2.0,
-    "equipo": "Uruguay",
-    "abreviacion": "URU",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
-    "puntos": 1.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 1.0,
-    "goles_contra": 1.0,
-    "partidos": 1.0
-  },
-  {
     "grupo": "Group K",
     "posicion": 3.0,
     "equipo": "Portugal",
@@ -357,18 +369,6 @@
     "diferencia_goles": 0.0,
     "goles_favor": 1.0,
     "goles_contra": 1.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group H",
-    "posicion": 4.0,
-    "equipo": "Cape Verde",
-    "abreviacion": "CPV",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
-    "puntos": 1.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 0.0,
-    "goles_contra": 0.0,
     "partidos": 1.0
   },
   {
@@ -421,7 +421,7 @@
   },
   {
     "grupo": "Group H",
-    "posicion": 3.0,
+    "posicion": 4.0,
     "equipo": "Saudi Arabia",
     "abreviacion": "KSA",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
