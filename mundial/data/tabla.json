@@ -24,6 +24,18 @@
     "partidos": 2.0
   },
   {
+    "grupo": "Group J",
+    "posicion": 1.0,
+    "equipo": "Argentina",
+    "abreviacion": "ARG",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+    "puntos": 6.0,
+    "diferencia_goles": 5.0,
+    "goles_favor": 5.0,
+    "goles_contra": 0.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group A",
     "posicion": 1.0,
     "equipo": "Mexico",
@@ -144,18 +156,6 @@
     "partidos": 1.0
   },
   {
-    "grupo": "Group J",
-    "posicion": 1.0,
-    "equipo": "Argentina",
-    "abreviacion": "ARG",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-    "puntos": 3.0,
-    "diferencia_goles": 3.0,
-    "goles_favor": 3.0,
-    "goles_contra": 0.0,
-    "partidos": 1.0
-  },
-  {
     "grupo": "Group L",
     "posicion": 1.0,
     "equipo": "England",
@@ -173,18 +173,6 @@
     "equipo": "France",
     "abreviacion": "FRA",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-    "puntos": 3.0,
-    "diferencia_goles": 2.0,
-    "goles_favor": 3.0,
-    "goles_contra": 1.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group J",
-    "posicion": 2.0,
-    "equipo": "Austria",
-    "abreviacion": "AUT",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
     "puntos": 3.0,
     "diferencia_goles": 2.0,
     "goles_favor": 3.0,
@@ -225,6 +213,18 @@
     "diferencia_goles": 0.0,
     "goles_favor": 6.0,
     "goles_contra": 6.0,
+    "partidos": 2.0
+  },
+  {
+    "grupo": "Group J",
+    "posicion": 2.0,
+    "equipo": "Austria",
+    "abreviacion": "AUT",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+    "puntos": 3.0,
+    "diferencia_goles": 0.0,
+    "goles_favor": 3.0,
+    "goles_contra": 3.0,
     "partidos": 2.0
   },
   {

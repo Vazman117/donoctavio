@@ -1,5 +1,152 @@
 [
   {
+    "id": "760456",
+    "fecha": "2026-06-22T17:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Argentina",
+    "visitante": "Austria",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+    "estadio": "AT&T Stadium",
+    "ciudad_sede": "Arlington, Texas",
+    "pais_sede": "USA",
+    "altitud_sede": 188,
+    "es_neutro": true,
+    "prob_local": 0.39,
+    "prob_empate": 0.2191602000228682,
+    "prob_visitante": 0.39083979997713175,
+    "fuerza_local": 0.6922761264952034,
+    "fuerza_visitante": 0.6309159394990824,
+    "diferencia": 0.061360186996121,
+    "confianza": "ajustado",
+    "prediccion": "Austria",
+    "resultado": "Argentina",
+    "marcador": "2-0",
+    "lambda_local": 1.882082537447577,
+    "lambda_visitante": 1.6524136876706745,
+    "factor_altitud_local": 0.99185,
+    "factor_altitud_visitante": 0.99915,
+    "marcadores_probables": [
+      "1-2",
+      "1-1",
+      "2-1",
+      "2-2",
+      "0-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 1.0,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Argentina"
+        },
+        "visitante": {
+          "valor": 1.0,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Austria"
+        },
+        "interpretacion": "Momentum similar: Argentina 1.00/1.0 — Austria 1.00/1.0."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 188,
+        "ciudad_sede": "Arlington, Texas",
+        "local": {
+          "nombre": "Argentina",
+          "altitud_base": 25,
+          "factor": 0.992
+        },
+        "visitante": {
+          "nombre": "Austria",
+          "altitud_base": 171,
+          "factor": 0.999
+        },
+        "interpretacion": "Sede en condiciones normales (188m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Argentina",
+          "goles_favor": 3.0,
+          "goles_contra": 0.2
+        },
+        "visitante": {
+          "nombre": "Austria",
+          "goles_favor": 2.5,
+          "goles_contra": 0.5
+        },
+        "interpretacion": "Argentina más ofensivo: 3.00 goles/partido (vs 2.50). Defensiva: 0.20 vs 0.50."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "bajo",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Argentina",
+          "lambda": 1.882
+        },
+        "visitante": {
+          "nombre": "Austria",
+          "lambda": 1.652
+        },
+        "suma": 3.534,
+        "interpretacion": "Lambdas muy similares (1.88 vs 1.65): partido muy equilibrado. La diferencia de solo 0.23 goles esperados entre ambos equipos sugiere un resultado cerrado."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-2",
+          "1-1",
+          "2-1",
+          "2-2",
+          "0-1"
+        ],
+        "lambda_local": 1.882,
+        "lambda_visitante": 1.652,
+        "interpretacion": "El marcador más probable es 1-2 (8.1%), coherente con Austria como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Argentina",
+          "ranking": 2,
+          "puntos": 1873.3,
+          "score": 1.0
+        },
+        "visitante": {
+          "nombre": "Austria",
+          "ranking": 22,
+          "puntos": 1595.7,
+          "score": 0.758
+        },
+        "interpretacion": "Argentina es objetivamente superior en el ranking FIFA (#2 / 1873 pts vs #22 / 1596 pts). Score normalizado: 1.00 vs 0.76."
+      }
+    ]
+  },
+  {
     "id": "760452",
     "fecha": "2026-06-22T01:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",

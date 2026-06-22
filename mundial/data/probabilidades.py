@@ -196,7 +196,7 @@ PARTIDOS_GRUPO = [
     # ── GRUPO J ──────────────────────────────────────────────
     # ("Argentina",   "Algeria",   "Kansas City"), # JUGADO 3-0
     # ("Austria",     "Jordan",    "San Francisco"), # JUGADO 3-1
-    ("Argentina",   "Austria",   "Dallas"),
+    # ("Argentina",   "Austria",   "Dallas"),      # JUGADO 2-0
     ("Algeria",     "Jordan",    "Philadelphia"),
     ("Jordan",      "Argentina", "Dallas"),
     ("Algeria",     "Austria",   "Kansas City"),
