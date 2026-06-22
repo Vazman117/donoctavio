@@ -173,7 +173,7 @@ PARTIDOS_GRUPO = [
     # ("Belgium",     "Egypt",      "Seattle"),   # JUGADO 1-1
     # ("Iran",        "New Zealand","Los Angeles"), # JUGADO 2-2
     # ("Belgium",     "Iran",       "Los Angeles"), # JUGADO 0-0
-    ("Egypt",       "New Zealand","Miami"),
+    # ("Egypt",       "New Zealand","Miami"),     # JUGADO 1-3
     ("Belgium",     "New Zealand","San Francisco"),
     ("Iran",        "Egypt",      "Dallas"),
 

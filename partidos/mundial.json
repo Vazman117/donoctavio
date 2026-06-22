@@ -1,5 +1,153 @@
 [
   {
+    "id": "760452",
+    "fecha": "2026-06-22T01:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "New Zealand",
+    "visitante": "Egypt",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+    "estadio": "BC Place",
+    "ciudad_sede": "Vancouver, British Columbia",
+    "pais_sede": "CAN",
+    "altitud_sede": 4,
+    "es_neutro": true,
+    "prob_local": 0.3267781980574486,
+    "prob_empate": 0.28322180194255137,
+    "prob_visitante": 0.39,
+    "fuerza_local": 0.43409428571428577,
+    "fuerza_visitante": 0.5096906857142858,
+    "diferencia": 0.07559640000000001,
+    "confianza": "ajustado",
+    "prediccion": "Egypt",
+    "resultado": "Egypt",
+    "marcador": "1-3",
+    "lambda_local": 0.6655412425512502,
+    "lambda_visitante": 1.6069522322322323,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "0-1",
+      "1-1",
+      "0-0",
+      "1-0",
+      "0-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.28,
+          "ultimos_5": [
+            "D",
+            "L",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "New Zealand"
+        },
+        "visitante": {
+          "valor": 0.56,
+          "ultimos_5": [
+            "D",
+            "L",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Egypt"
+        },
+        "interpretacion": "Egypt llega con mejor momentum: índice 0.56/1.0 frente a 0.28/1.0 de New Zealand. Últimos 5: 2V/2E/1D vs 1V/1E/3D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 4,
+        "ciudad_sede": "Vancouver, British Columbia",
+        "local": {
+          "nombre": "New Zealand",
+          "altitud_base": 30,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Egypt",
+          "altitud_base": 23,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (4m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "New Zealand",
+          "goles_favor": 1.2,
+          "goles_contra": 2.0
+        },
+        "visitante": {
+          "nombre": "Egypt",
+          "goles_favor": 1.4,
+          "goles_contra": 0.6
+        },
+        "interpretacion": "Producción similar: New Zealand 1.20 — Egypt 1.40 goles/partido. Defensa: 2.00 vs 0.60."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "New Zealand",
+          "lambda": 0.666
+        },
+        "visitante": {
+          "nombre": "Egypt",
+          "lambda": 1.607
+        },
+        "suma": 2.272,
+        "interpretacion": "Egypt genera más peligro ofensivo según el modelo: 1.61 goles esperados vs 0.67 de New Zealand."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "1-1",
+          "0-0",
+          "1-0",
+          "0-2"
+        ],
+        "lambda_local": 0.666,
+        "lambda_visitante": 1.607,
+        "interpretacion": "El marcador más probable es 0-1 (13.6%), coherente con Egypt como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "New Zealand",
+          "ranking": 42,
+          "puntos": 1455.8,
+          "score": 0.625
+        },
+        "visitante": {
+          "nombre": "Egypt",
+          "ranking": 23,
+          "puntos": 1589.3,
+          "score": 0.752
+        },
+        "interpretacion": "Egypt es objetivamente superior en el ranking FIFA (#23 / 1589 pts vs #42 / 1456 pts). Score normalizado: 0.75 vs 0.62."
+      }
+    ]
+  },
+  {
     "id": "760450",
     "fecha": "2026-06-21T22:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",
