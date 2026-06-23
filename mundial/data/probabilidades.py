@@ -190,8 +190,8 @@ PARTIDOS_GRUPO = [
     # ("Iraq",        "Norway",    "Boston"),    # JUGADO 1-4
     ("Norway",      "France",    "Boston"),
     ("Senegal",     "Iraq",      "Toronto"),
-    ("France",      "Iraq",      "Kansas City"),
-    ("Senegal",     "Norway",    "Philadelphia"),
+    # ("France",      "Iraq",      "Kansas City"), # JUGADO 3-0
+    # ("Senegal",     "Norway",    "Philadelphia"), # JUGADO 3-2
 
     # ── GRUPO J ──────────────────────────────────────────────
     # ("Argentina",   "Algeria",   "Kansas City"), # JUGADO 3-0
