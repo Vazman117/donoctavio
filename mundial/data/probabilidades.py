@@ -197,7 +197,7 @@ PARTIDOS_GRUPO = [
     # ("Argentina",   "Algeria",   "Kansas City"), # JUGADO 3-0
     # ("Austria",     "Jordan",    "San Francisco"), # JUGADO 3-1
     # ("Argentina",   "Austria",   "Dallas"),      # JUGADO 2-0
-    ("Algeria",     "Jordan",    "Philadelphia"),
+    # ("Algeria",     "Jordan",    "Philadelphia"), # JUGADO 2-1
     ("Jordan",      "Argentina", "Dallas"),
     ("Algeria",     "Austria",   "Kansas City"),
 

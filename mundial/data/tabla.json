@@ -288,6 +288,18 @@
     "partidos": 2.0
   },
   {
+    "grupo": "Group J",
+    "posicion": 3.0,
+    "equipo": "Algeria",
+    "abreviacion": "ALG",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+    "puntos": 3.0,
+    "diferencia_goles": -2.0,
+    "goles_favor": 2.0,
+    "goles_contra": 4.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group H",
     "posicion": 2.0,
     "equipo": "Uruguay",
@@ -480,18 +492,6 @@
     "partidos": 1.0
   },
   {
-    "grupo": "Group J",
-    "posicion": 3.0,
-    "equipo": "Jordan",
-    "abreviacion": "JOR",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
-    "puntos": 0.0,
-    "diferencia_goles": -2.0,
-    "goles_favor": 1.0,
-    "goles_contra": 3.0,
-    "partidos": 1.0
-  },
-  {
     "grupo": "Group K",
     "posicion": 4.0,
     "equipo": "Uzbekistan",
@@ -516,6 +516,18 @@
     "partidos": 2.0
   },
   {
+    "grupo": "Group J",
+    "posicion": 4.0,
+    "equipo": "Jordan",
+    "abreviacion": "JOR",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
+    "puntos": 0.0,
+    "diferencia_goles": -3.0,
+    "goles_favor": 2.0,
+    "goles_contra": 5.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group D",
     "posicion": 4.0,
     "equipo": "Türkiye",
@@ -526,18 +538,6 @@
     "goles_favor": 0.0,
     "goles_contra": 3.0,
     "partidos": 2.0
-  },
-  {
-    "grupo": "Group J",
-    "posicion": 4.0,
-    "equipo": "Algeria",
-    "abreviacion": "ALG",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
-    "puntos": 0.0,
-    "diferencia_goles": -3.0,
-    "goles_favor": 0.0,
-    "goles_contra": 3.0,
-    "partidos": 1.0
   },
   {
     "grupo": "Group C",

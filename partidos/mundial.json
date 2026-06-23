@@ -1,5 +1,152 @@
 [
   {
+    "id": "760455",
+    "fecha": "2026-06-23T03:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Jordan",
+    "visitante": "Algeria",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+    "estadio": "Levi's Stadium",
+    "ciudad_sede": "San Francisco Bay Area, California",
+    "pais_sede": "USA",
+    "altitud_sede": 16,
+    "es_neutro": true,
+    "prob_local": 0.37408245534896223,
+    "prob_empate": 0.23591754465103776,
+    "prob_visitante": 0.39,
+    "fuerza_local": 0.32851880000000006,
+    "fuerza_visitante": 0.46591382857142855,
+    "diferencia": 0.1373950285714285,
+    "confianza": "ajustado",
+    "prediccion": "Algeria",
+    "resultado": "Algeria",
+    "lambda_local": 0.5889884526558892,
+    "lambda_visitante": 2.9181982009569376,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "0-2",
+      "0-3",
+      "1-2",
+      "0-1",
+      "1-3"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.16,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "D",
+            "D"
+          ],
+          "nombre": "Jordan"
+        },
+        "visitante": {
+          "valor": 0.68,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Algeria"
+        },
+        "interpretacion": "Algeria llega con mejor momentum: índice 0.68/1.0 frente a 0.16/1.0 de Jordan. Últimos 5: 3V/1E/1D vs 0V/2E/3D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 16,
+        "ciudad_sede": "San Francisco Bay Area, California",
+        "local": {
+          "nombre": "Jordan",
+          "altitud_base": 820,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "altitud_base": 424,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (16m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Jordan",
+          "goles_favor": 1.2,
+          "goles_contra": 2.6
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "goles_favor": 2.4,
+          "goles_contra": 0.6
+        },
+        "interpretacion": "Algeria más ofensivo: 2.40 vs 1.20 goles/partido. Defensiva: 2.60 vs 0.60."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Jordan",
+          "lambda": 0.589
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "lambda": 2.918
+        },
+        "suma": 3.507,
+        "interpretacion": "Algeria genera más peligro ofensivo según el modelo: 2.92 goles esperados vs 0.59 de Jordan."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-2",
+          "0-3",
+          "1-2",
+          "0-1",
+          "1-3"
+        ],
+        "lambda_local": 0.589,
+        "lambda_visitante": 2.918,
+        "interpretacion": "El marcador más probable es 0-2 (10.6%), coherente con Algeria como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Jordan",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "interpretacion": "Equipos similares en ranking FIFA (#999 vs #999). Score: 0.00 vs 0.00."
+      }
+    ]
+  },
+  {
     "id": "760454",
     "fecha": "2026-06-23T00:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",
