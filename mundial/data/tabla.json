@@ -84,6 +84,18 @@
     "partidos": 2.0
   },
   {
+    "grupo": "Group K",
+    "posicion": 1.0,
+    "equipo": "Portugal",
+    "abreviacion": "POR",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+    "puntos": 4.0,
+    "diferencia_goles": 5.0,
+    "goles_favor": 6.0,
+    "goles_contra": 1.0,
+    "partidos": 2.0
+  },
+  {
     "grupo": "Group F",
     "posicion": 1.0,
     "equipo": "Netherlands",
@@ -181,7 +193,7 @@
   },
   {
     "grupo": "Group K",
-    "posicion": 1.0,
+    "posicion": 2.0,
     "equipo": "Colombia",
     "abreviacion": "COL",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
@@ -350,18 +362,6 @@
   {
     "grupo": "Group K",
     "posicion": 3.0,
-    "equipo": "Portugal",
-    "abreviacion": "POR",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-    "puntos": 1.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 1.0,
-    "goles_contra": 1.0,
-    "partidos": 1.0
-  },
-  {
-    "grupo": "Group K",
-    "posicion": 2.0,
     "equipo": "Congo DR",
     "abreviacion": "COD",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
@@ -492,18 +492,6 @@
     "partidos": 1.0
   },
   {
-    "grupo": "Group K",
-    "posicion": 4.0,
-    "equipo": "Uzbekistan",
-    "abreviacion": "UZB",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
-    "puntos": 0.0,
-    "diferencia_goles": -2.0,
-    "goles_favor": 1.0,
-    "goles_contra": 3.0,
-    "partidos": 1.0
-  },
-  {
     "grupo": "Group I",
     "posicion": 3.0,
     "equipo": "Senegal",
@@ -561,6 +549,18 @@
     "diferencia_goles": -6.0,
     "goles_favor": 1.0,
     "goles_contra": 7.0,
+    "partidos": 2.0
+  },
+  {
+    "grupo": "Group K",
+    "posicion": 4.0,
+    "equipo": "Uzbekistan",
+    "abreviacion": "UZB",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+    "puntos": 0.0,
+    "diferencia_goles": -7.0,
+    "goles_favor": 1.0,
+    "goles_contra": 8.0,
     "partidos": 2.0
   },
   {
