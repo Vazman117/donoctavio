@@ -916,19 +916,20 @@ def obtener_selecciones(grupos):
 # FIXTURE (HOY + MAÑANA)
 # =====================================================
 
+# DESPUÉS
 def obtener_fixture(selecciones_por_nombre=None):
-    ahora  = datetime.now(timezone.utc)
-    fechas = [
-        ahora.strftime("%Y%m%d"),
-        (ahora + timedelta(days=1)).strftime("%Y%m%d"),
-    ]
+    ahora      = datetime.now(timezone.utc)
+    fecha_hoy  = ahora.strftime("%Y%m%d")
+    fecha_fin  = "20260719"          # final del Mundial 2026
+
+    data = get_json(
+        f"{BASE_ESPN}/scoreboard",
+        params={"dates": f"{fecha_hoy}-{fecha_fin}", "limit": 300},
+    )
 
     partidos = []
 
-    for fecha in fechas:
-        data = get_json(f"{BASE_ESPN}/scoreboard", params={"dates": fecha})
-
-        for event in data.get("events", []):
+    for event in data.get("events", []):
             comp        = event.get("competitions", [{}])[0]
             competitors = comp.get("competitors", [])
             status      = comp.get("status", {}).get("type", {})
