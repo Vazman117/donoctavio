@@ -205,15 +205,15 @@ PARTIDOS_GRUPO = [
     # ("Portugal",    "Congo DR",  "Houston"),    # JUGADO 1-1
     # ("Uzbekistan",  "Colombia",  "Mexico City"), # JUGADO 1-3
     # ("Portugal",    "Uzbekistan","Houston"),    # JUGADO 5-0
-    ("Colombia",    "Congo DR",  "Guadalajara"),
+    # ("Colombia",    "Congo DR",  "Guadalajara"),
     ("Colombia",    "Portugal",  "Seattle"),
     ("Congo DR",    "Uzbekistan","Atlanta"),
 
     # ── GRUPO L ──────────────────────────────────────────────
     # ("England",     "Croatia",   "Dallas"),    # JUGADO 4-2
     # ("Ghana",       "Panama",    "Toronto"),   # JUGADO 1-0
-    ("England",     "Ghana",     "Boston"),
-    ("Panama",      "Croatia",   "New York"),
+    # ("England",     "Ghana",     "Boston"),
+    # ("Panama",      "Croatia",   "New York"),
     ("Croatia",     "Ghana",     "Philadelphia"),
     ("Panama",      "England",   "Miami"),
 ]

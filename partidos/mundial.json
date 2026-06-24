@@ -1,5 +1,448 @@
 [
   {
+    "id": "760459",
+    "fecha": "2026-06-24T02:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Colombia",
+    "visitante": "Congo DR",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+    "estadio": "Estadio Akron",
+    "ciudad_sede": "Guadalajara, Jalisco",
+    "pais_sede": "MEX",
+    "altitud_sede": 1566,
+    "es_neutro": true,
+    "prob_local": 0.2942187095675215,
+    "prob_empate": 0.3772339427818438,
+    "prob_visitante": 0.32854734765063476,
+    "fuerza_local": 0.5558148246983697,
+    "fuerza_visitante": 0.3931082384016303,
+    "diferencia": 0.16270658629673945,
+    "confianza": "ajustado",
+    "prediccion": "Empate",
+    "resultado": "Colombia",
+    "marcador": "1-0",
+    "lambda_local": 1.2241701204553306,
+    "lambda_visitante": 0.91698653531692,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 0.9217,
+    "marcadores_probables": [
+      "1-1",
+      "0-1",
+      "1-0",
+      "0-0",
+      "1-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Colombia"
+        },
+        "visitante": {
+          "valor": 0.45,
+          "ultimos_5": [
+            "D",
+            "L",
+            "D",
+            "W"
+          ],
+          "nombre": "Congo DR"
+        },
+        "interpretacion": "Colombia llega con mejor momentum: índice 0.60/1.0 frente a 0.45/1.0 de Congo DR. Últimos 5: 3V/0E/2D vs 1V/2E/1D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 1566,
+        "ciudad_sede": "Guadalajara, Jalisco",
+        "local": {
+          "nombre": "Colombia",
+          "altitud_base": 2600,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Congo DR",
+          "altitud_base": 0,
+          "factor": 0.922
+        },
+        "interpretacion": "Sede en altura considerable (1566m). Congo DR llega desde 0m con 1566m de diferencia; Colombia desde 2600m (-1034m diferencia). La altitud favorece a Colombia. Factor: 1.00 vs 0.92."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Colombia",
+          "goles_favor": 2.0,
+          "goles_contra": 1.4
+        },
+        "visitante": {
+          "nombre": "Congo DR",
+          "goles_favor": 1.0,
+          "goles_contra": 0.75
+        },
+        "interpretacion": "Colombia más ofensivo: 2.00 goles/partido (vs 1.00). Defensiva: 1.40 vs 0.75."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "medio",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Colombia",
+          "lambda": 1.224
+        },
+        "visitante": {
+          "nombre": "Congo DR",
+          "lambda": 0.917
+        },
+        "suma": 2.141,
+        "interpretacion": "Colombia genera más peligro ofensivo según el modelo: 1.22 goles esperados vs 0.92 de Congo DR."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-1",
+          "0-1",
+          "1-0",
+          "0-0",
+          "1-2"
+        ],
+        "lambda_local": 1.224,
+        "lambda_visitante": 0.917,
+        "interpretacion": "El marcador más probable es 1-1 (13.4%), coherente con el empate como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Colombia",
+          "ranking": 12,
+          "puntos": 1687.2,
+          "score": 0.845
+        },
+        "visitante": {
+          "nombre": "Congo DR",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "interpretacion": "Colombia es objetivamente superior en el ranking FIFA (#12 / 1687 pts vs #999 / 0 pts). Score normalizado: 0.84 vs 0.00."
+      }
+    ]
+  },
+  {
+    "id": "760460",
+    "fecha": "2026-06-23T23:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Panama",
+    "visitante": "Croatia",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
+    "estadio": "BMO Field",
+    "ciudad_sede": "Toronto, Ontario",
+    "pais_sede": "CAN",
+    "altitud_sede": 76,
+    "es_neutro": true,
+    "prob_local": 0.27764005588767127,
+    "prob_empate": 0.3657199732772741,
+    "prob_visitante": 0.3566399708350546,
+    "fuerza_local": 0.43232767987910514,
+    "fuerza_visitante": 0.467260045583752,
+    "diferencia": 0.03493236570464686,
+    "confianza": "ajustado",
+    "prediccion": "Empate",
+    "resultado": "Croatia",
+    "marcador": "0-1",
+    "lambda_local": 1.4374546601036269,
+    "lambda_visitante": 1.435684680535811,
+    "factor_altitud_local": 0.9962,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "1-1",
+      "1-2",
+      "0-1",
+      "0-2",
+      "2-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.4,
+          "ultimos_5": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Panama"
+        },
+        "visitante": {
+          "valor": 0.4,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Croatia"
+        },
+        "interpretacion": "Momentum similar: Panama 0.40/1.0 — Croatia 0.40/1.0."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 76,
+        "ciudad_sede": "Toronto, Ontario",
+        "local": {
+          "nombre": "Panama",
+          "altitud_base": 0,
+          "factor": 0.996
+        },
+        "visitante": {
+          "nombre": "Croatia",
+          "altitud_base": 122,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (76m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Panama",
+          "goles_favor": 1.38,
+          "goles_contra": 1.75
+        },
+        "visitante": {
+          "nombre": "Croatia",
+          "goles_favor": 1.4,
+          "goles_contra": 2.2
+        },
+        "interpretacion": "Producción similar: Panama 1.38 — Croatia 1.40 goles/partido. Defensa: 1.75 vs 2.20."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "bajo",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Panama",
+          "lambda": 1.437
+        },
+        "visitante": {
+          "nombre": "Croatia",
+          "lambda": 1.436
+        },
+        "suma": 2.873,
+        "interpretacion": "Lambdas muy similares (1.44 vs 1.44): partido muy equilibrado. La diferencia de solo 0.00 goles esperados entre ambos equipos sugiere un resultado cerrado."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-1",
+          "1-2",
+          "0-1",
+          "0-2",
+          "2-1"
+        ],
+        "lambda_local": 1.437,
+        "lambda_visitante": 1.436,
+        "interpretacion": "El marcador más probable es 1-1 (11.5%), coherente con el empate como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Panama",
+          "ranking": 46,
+          "puntos": 1429.6,
+          "score": 0.6
+        },
+        "visitante": {
+          "nombre": "Croatia",
+          "ranking": 13,
+          "puntos": 1658.7,
+          "score": 0.818
+        },
+        "interpretacion": "Croatia es objetivamente superior en el ranking FIFA (#13 / 1659 pts vs #46 / 1430 pts). Score normalizado: 0.82 vs 0.60."
+      }
+    ]
+  },
+  {
+    "id": "760458",
+    "fecha": "2026-06-23T20:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "England",
+    "visitante": "Ghana",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+    "estadio": "Gillette Stadium",
+    "ciudad_sede": "Foxborough, Massachusetts",
+    "pais_sede": "USA",
+    "altitud_sede": 25,
+    "es_neutro": true,
+    "prob_local": 0.39,
+    "prob_empate": 0.26255299028582313,
+    "prob_visitante": 0.34744700971417686,
+    "fuerza_local": 0.5828860632296421,
+    "fuerza_visitante": 0.4387723571803581,
+    "diferencia": 0.14411370604928397,
+    "confianza": "ajustado",
+    "prediccion": "England",
+    "resultado": "Empate",
+    "marcador": "0-0",
+    "lambda_local": 2.057816471203692,
+    "lambda_visitante": 0.5458827674341947,
+    "factor_altitud_local": 0.99995,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "2-1",
+      "0-1",
+      "2-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.68,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "D"
+          ],
+          "nombre": "England"
+        },
+        "visitante": {
+          "valor": 0.28,
+          "ultimos_5": [
+            "W",
+            "D",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Ghana"
+        },
+        "interpretacion": "England llega con mejor momentum: índice 0.68/1.0 frente a 0.28/1.0 de Ghana. Últimos 5: 3V/1E/1D vs 1V/1E/3D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 25,
+        "ciudad_sede": "Foxborough, Massachusetts",
+        "local": {
+          "nombre": "England",
+          "altitud_base": 24,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Ghana",
+          "altitud_base": 61,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (25m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "England",
+          "goles_favor": 1.8,
+          "goles_contra": 0.8
+        },
+        "visitante": {
+          "nombre": "Ghana",
+          "goles_favor": 0.8,
+          "goles_contra": 2.0
+        },
+        "interpretacion": "England más ofensivo: 1.80 goles/partido (vs 0.80). Defensiva: 0.80 vs 2.00."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "England",
+          "lambda": 2.058
+        },
+        "visitante": {
+          "nombre": "Ghana",
+          "lambda": 0.546
+        },
+        "suma": 2.604,
+        "interpretacion": "England genera más peligro ofensivo según el modelo: 2.06 goles esperados vs 0.55 de Ghana."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "2-1",
+          "0-1",
+          "2-0"
+        ],
+        "lambda_local": 2.058,
+        "lambda_visitante": 0.546,
+        "interpretacion": "El marcador más probable es 1-0 (10.7%), coherente con England como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "England",
+          "ranking": 4,
+          "puntos": 1834.1,
+          "score": 0.985
+        },
+        "visitante": {
+          "nombre": "Ghana",
+          "ranking": 26,
+          "puntos": 1560.8,
+          "score": 0.725
+        },
+        "interpretacion": "England es objetivamente superior en el ranking FIFA (#4 / 1834 pts vs #26 / 1561 pts). Score normalizado: 0.98 vs 0.72."
+      }
+    ]
+  },
+  {
     "id": "760461",
     "fecha": "2026-06-23T17:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",
