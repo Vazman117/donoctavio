@@ -1,5 +1,878 @@
 [
   {
+    "id": "760462",
+    "fecha": "2026-06-24T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Bosnia-Herzegovina",
+    "visitante": "Qatar",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+    "estadio": "Lumen Field",
+    "ciudad_sede": "Seattle, Washington",
+    "pais_sede": "USA",
+    "altitud_sede": 0,
+    "es_neutro": true,
+    "prob_local": 0.35526993394585465,
+    "prob_empate": 0.44,
+    "prob_visitante": 0.20473006605414545,
+    "fuerza_local": 0.33875257142857146,
+    "fuerza_visitante": 0.312956,
+    "diferencia": 0.025796571428571446,
+    "confianza": "moderado",
+    "prediccion": "Empate",
+    "lambda_local": 0.9349189189189188,
+    "lambda_visitante": 0.5625454545454545,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "0-0",
+      "1-0",
+      "0-1",
+      "1-1",
+      "2-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.3,
+          "ultimos_5": [
+            "L",
+            "D",
+            "D",
+            "D"
+          ],
+          "nombre": "Bosnia-Herzegovina"
+        },
+        "visitante": {
+          "valor": 0.2,
+          "ultimos_5": [
+            "L",
+            "D",
+            "D",
+            "L"
+          ],
+          "nombre": "Qatar"
+        },
+        "interpretacion": "Bosnia-Herzegovina llega con mejor momentum: índice 0.30/1.0 frente a 0.20/1.0 de Qatar. Últimos 5: 0V/3E/1D vs 0V/2E/2D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 0,
+        "ciudad_sede": "Seattle, Washington",
+        "local": {
+          "nombre": "Bosnia-Herzegovina",
+          "altitud_base": 511,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Qatar",
+          "altitud_base": 10,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (0m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Bosnia-Herzegovina",
+          "goles_favor": 0.75,
+          "goles_contra": 1.5
+        },
+        "visitante": {
+          "nombre": "Qatar",
+          "goles_favor": 0.25,
+          "goles_contra": 2.0
+        },
+        "interpretacion": "Bosnia-Herzegovina más ofensivo: 0.75 goles/partido (vs 0.25). Defensiva: 1.50 vs 2.00."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "medio",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Bosnia-Herzegovina",
+          "lambda": 0.935
+        },
+        "visitante": {
+          "nombre": "Qatar",
+          "lambda": 0.563
+        },
+        "suma": 1.497,
+        "interpretacion": "Los lambdas proyectan un partido muy trabado: Bosnia-Herzegovina 0.93 goles esperados vs Qatar 0.56. Con solo 1.50 goles totales esperados, el empate es el resultado más probable."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-0",
+          "1-0",
+          "0-1",
+          "1-1",
+          "2-0"
+        ],
+        "lambda_local": 0.935,
+        "lambda_visitante": 0.563,
+        "interpretacion": "El marcador más probable es 0-0 (22.4%), coherente con el empate como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Bosnia-Herzegovina",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "visitante": {
+          "nombre": "Qatar",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "interpretacion": "Equipos similares en ranking FIFA (#999 vs #999). Score: 0.00 vs 0.00."
+      }
+    ]
+  },
+  {
+    "id": "760463",
+    "fecha": "2026-06-24T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Switzerland",
+    "visitante": "Canada",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+    "estadio": "BC Place",
+    "ciudad_sede": "Vancouver, British Columbia",
+    "pais_sede": "CAN",
+    "altitud_sede": 4,
+    "es_neutro": true,
+    "prob_local": 0.3018784675329682,
+    "prob_empate": 0.3081215324670318,
+    "prob_visitante": 0.39,
+    "fuerza_local": 0.4577707022801686,
+    "fuerza_visitante": 0.5761793788857743,
+    "diferencia": 0.11840867660560572,
+    "confianza": "moderado",
+    "prediccion": "Canada",
+    "lambda_local": 0.8647993756605044,
+    "lambda_visitante": 1.4056931382611202,
+    "factor_altitud_local": 0.9998,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "0-1",
+      "1-1",
+      "0-0",
+      "1-0",
+      "0-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "W",
+            "D",
+            "D",
+            "W",
+            "D"
+          ],
+          "nombre": "Switzerland"
+        },
+        "visitante": {
+          "valor": 0.66,
+          "ultimos_5": [
+            "W",
+            "D",
+            "D",
+            "W",
+            "D"
+          ],
+          "nombre": "Canada"
+        },
+        "interpretacion": "Canada llega con mejor momentum: índice 0.66/1.0 frente a 0.53/1.0 de Switzerland. Últimos 5: 2V/3E/0D vs 2V/3E/0D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 4,
+        "ciudad_sede": "Vancouver, British Columbia",
+        "local": {
+          "nombre": "Switzerland",
+          "altitud_base": 0,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Canada",
+          "altitud_base": 116,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (4m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Switzerland",
+          "goles_favor": 2.17,
+          "goles_contra": 1.33
+        },
+        "visitante": {
+          "nombre": "Canada",
+          "goles_favor": 1.86,
+          "goles_contra": 0.57
+        },
+        "interpretacion": "Producción similar: Switzerland 2.17 — Canada 1.86 goles/partido. Defensa: 1.33 vs 0.57."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Switzerland",
+          "lambda": 0.865
+        },
+        "visitante": {
+          "nombre": "Canada",
+          "lambda": 1.406
+        },
+        "suma": 2.27,
+        "interpretacion": "Canada genera más peligro ofensivo según el modelo: 1.41 goles esperados vs 0.86 de Switzerland."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "1-1",
+          "0-0",
+          "1-0",
+          "0-2"
+        ],
+        "lambda_local": 0.865,
+        "lambda_visitante": 1.406,
+        "interpretacion": "El marcador más probable es 0-1 (13.2%), coherente con Canada como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Switzerland",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "visitante": {
+          "nombre": "Canada",
+          "ranking": 44,
+          "puntos": 1442.7,
+          "score": 0.612
+        },
+        "interpretacion": "Canada es objetivamente superior en el ranking FIFA (#44 / 1443 pts vs #999 / 0 pts). Score normalizado: 0.61 vs 0.00."
+      }
+    ]
+  },
+  {
+    "id": "760464",
+    "fecha": "2026-06-24T22:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Morocco",
+    "visitante": "Haiti",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+    "estadio": "Mercedes-Benz Stadium",
+    "ciudad_sede": "Atlanta, Georgia",
+    "pais_sede": "USA",
+    "altitud_sede": 320,
+    "es_neutro": true,
+    "prob_local": 0.39,
+    "prob_empate": 0.28152534228111603,
+    "prob_visitante": 0.32847465771888396,
+    "fuerza_local": 0.630386126967742,
+    "fuerza_visitante": 0.37484140914197234,
+    "diferencia": 0.25554471782576965,
+    "confianza": "ajustado",
+    "prediccion": "Morocco",
+    "lambda_local": 1.8308762346107097,
+    "lambda_visitante": 0.3973516860920068,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 0.984,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "0-0",
+      "0-1",
+      "2-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.74,
+          "ultimos_5": [
+            "W",
+            "D",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Morocco"
+        },
+        "visitante": {
+          "valor": 0.23,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "D"
+          ],
+          "nombre": "Haiti"
+        },
+        "interpretacion": "Morocco llega con mejor momentum: índice 0.74/1.0 frente a 0.23/1.0 de Haiti. Últimos 5: 3V/2E/0D vs 1V/1E/3D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 320,
+        "ciudad_sede": "Atlanta, Georgia",
+        "local": {
+          "nombre": "Morocco",
+          "altitud_base": 495,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Haiti",
+          "altitud_base": 0,
+          "factor": 0.984
+        },
+        "interpretacion": "Sede en condiciones normales (320m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Morocco",
+          "goles_favor": 2.14,
+          "goles_contra": 0.57
+        },
+        "visitante": {
+          "nombre": "Haiti",
+          "goles_favor": 1.0,
+          "goles_contra": 1.33
+        },
+        "interpretacion": "Morocco más ofensivo: 2.14 goles/partido (vs 1.00). Defensiva: 0.57 vs 1.33."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Morocco",
+          "lambda": 1.831
+        },
+        "visitante": {
+          "nombre": "Haiti",
+          "lambda": 0.397
+        },
+        "suma": 2.228,
+        "interpretacion": "Morocco genera más peligro ofensivo según el modelo: 1.83 goles esperados vs 0.40 de Haiti."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "0-0",
+          "0-1",
+          "2-0"
+        ],
+        "lambda_local": 1.831,
+        "lambda_visitante": 0.397,
+        "interpretacion": "El marcador más probable es 1-0 (13.8%), coherente con Morocco como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Morocco",
+          "ranking": 15,
+          "puntos": 1645.1,
+          "score": 0.805
+        },
+        "visitante": {
+          "nombre": "Haiti",
+          "ranking": 99,
+          "puntos": 1250.0,
+          "score": 0.429
+        },
+        "interpretacion": "Morocco es objetivamente superior en el ranking FIFA (#15 / 1645 pts vs #99 / 1250 pts). Score normalizado: 0.80 vs 0.43."
+      }
+    ]
+  },
+  {
+    "id": "760465",
+    "fecha": "2026-06-24T22:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Scotland",
+    "visitante": "Brazil",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+    "estadio": "Hard Rock Stadium",
+    "ciudad_sede": "Miami Gardens, Florida",
+    "pais_sede": "USA",
+    "altitud_sede": 3,
+    "es_neutro": true,
+    "prob_local": 0.3510831133444294,
+    "prob_empate": 0.2688229180232169,
+    "prob_visitante": 0.38009396863235384,
+    "fuerza_local": 0.42921632000000004,
+    "fuerza_visitante": 0.6344129348571428,
+    "diferencia": 0.20519661485714275,
+    "confianza": "ajustado",
+    "prediccion": "Brazil",
+    "lambda_local": 1.0422719840966874,
+    "lambda_visitante": 1.3575787391262066,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "0-1",
+      "1-1",
+      "1-0",
+      "0-0",
+      "1-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Scotland"
+        },
+        "visitante": {
+          "valor": 0.73,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Brazil"
+        },
+        "interpretacion": "Brazil llega con mejor momentum: índice 0.73/1.0 frente a 0.50/1.0 de Scotland. Últimos 5: 4V/1E/0D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 3,
+        "ciudad_sede": "Miami Gardens, Florida",
+        "local": {
+          "nombre": "Scotland",
+          "altitud_base": 15,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Brazil",
+          "altitud_base": 10,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (3m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Scotland",
+          "goles_favor": 1.5,
+          "goles_contra": 0.67
+        },
+        "visitante": {
+          "nombre": "Brazil",
+          "goles_favor": 2.67,
+          "goles_contra": 1.17
+        },
+        "interpretacion": "Brazil más ofensivo: 2.67 vs 1.50 goles/partido. Defensiva: 0.67 vs 1.17."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "medio",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Scotland",
+          "lambda": 1.042
+        },
+        "visitante": {
+          "nombre": "Brazil",
+          "lambda": 1.358
+        },
+        "suma": 2.4,
+        "interpretacion": "Brazil genera más peligro ofensivo según el modelo: 1.36 goles esperados vs 1.04 de Scotland."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "1-1",
+          "1-0",
+          "0-0",
+          "1-2"
+        ],
+        "lambda_local": 1.042,
+        "lambda_visitante": 1.358,
+        "interpretacion": "El marcador más probable es 0-1 (11.3%), coherente con Brazil como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Scotland",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "visitante": {
+          "nombre": "Brazil",
+          "ranking": 5,
+          "puntos": 1782.1,
+          "score": 0.935
+        },
+        "interpretacion": "Brazil es objetivamente superior en el ranking FIFA (#5 / 1782 pts vs #999 / 0 pts). Score normalizado: 0.94 vs 0.00."
+      }
+    ]
+  },
+  {
+    "id": "760467",
+    "fecha": "2026-06-25T01:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "Czechia",
+    "visitante": "Mexico",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+    "estadio": "Estadio Banorte",
+    "ciudad_sede": "Ciudad de México",
+    "pais_sede": "MEX",
+    "altitud_sede": 2240,
+    "es_neutro": true,
+    "prob_local": 0.28978357149650985,
+    "prob_empate": 0.3202164285034902,
+    "prob_visitante": 0.39,
+    "fuerza_local": 0.4897105597013896,
+    "fuerza_visitante": 0.7148917585171819,
+    "diferencia": 0.2251811988157923,
+    "confianza": "moderado",
+    "prediccion": "Mexico",
+    "lambda_local": 0.6742709085000002,
+    "lambda_visitante": 1.8947764377072134,
+    "factor_altitud_local": 0.90795,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "0-1",
+      "1-1",
+      "0-2",
+      "1-2",
+      "0-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "D",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Czechia"
+        },
+        "visitante": {
+          "valor": 0.88,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Mexico"
+        },
+        "interpretacion": "Mexico llega con mejor momentum: índice 0.88/1.0 frente a 0.60/1.0 de Czechia. Últimos 5: 5V/0E/0D vs 2V/1E/1D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 2240,
+        "ciudad_sede": "Ciudad de México",
+        "local": {
+          "nombre": "Czechia",
+          "altitud_base": 399,
+          "factor": 0.908
+        },
+        "visitante": {
+          "nombre": "Mexico",
+          "altitud_base": 2240,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en gran altitud (2240m). Czechia viene de 399m (diferencia: 1841m) frente a Mexico de 2240m (diferencia: 0m). La altitud afecta más a Czechia. Factor de rendimiento: 0.91 vs 1.00."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Czechia",
+          "goles_favor": 1.75,
+          "goles_contra": 1.25
+        },
+        "visitante": {
+          "nombre": "Mexico",
+          "goles_favor": 1.8,
+          "goles_contra": 0.2
+        },
+        "interpretacion": "Producción similar: Czechia 1.75 — Mexico 1.80 goles/partido. Defensa: 1.25 vs 0.20."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Czechia",
+          "lambda": 0.674
+        },
+        "visitante": {
+          "nombre": "Mexico",
+          "lambda": 1.895
+        },
+        "suma": 2.569,
+        "interpretacion": "Mexico genera más peligro ofensivo según el modelo: 1.89 goles esperados vs 0.67 de Czechia."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "1-1",
+          "0-2",
+          "1-2",
+          "0-0"
+        ],
+        "lambda_local": 0.674,
+        "lambda_visitante": 1.895,
+        "interpretacion": "El marcador más probable es 0-1 (12.3%), coherente con Mexico como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Czechia",
+          "ranking": 36,
+          "puntos": 1495.2,
+          "score": 0.662
+        },
+        "visitante": {
+          "nombre": "Mexico",
+          "ranking": 17,
+          "puntos": 1622.8,
+          "score": 0.784
+        },
+        "interpretacion": "Mexico es objetivamente superior en el ranking FIFA (#17 / 1623 pts vs #36 / 1495 pts). Score normalizado: 0.78 vs 0.66."
+      }
+    ]
+  },
+  {
+    "id": "760466",
+    "fecha": "2026-06-25T01:00Z",
+    "torneo": "Copa del Mundo FIFA — Fase de Grupos",
+    "perfil": "mundial_grupos",
+    "local": "South Africa",
+    "visitante": "South Korea",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
+    "estadio": "Estadio BBVA",
+    "ciudad_sede": "Monterrey, Nuevo León",
+    "pais_sede": "MEX",
+    "altitud_sede": 538,
+    "es_neutro": true,
+    "prob_local": 0.25497892032568487,
+    "prob_empate": 0.411407413011551,
+    "prob_visitante": 0.33361366666276415,
+    "fuerza_local": 0.43234533135343023,
+    "fuerza_visitante": 0.4863682684248555,
+    "diferencia": 0.05402293707142525,
+    "confianza": "ajustado",
+    "prediccion": "Empate",
+    "lambda_local": 0.5292301671126399,
+    "lambda_visitante": 0.8524192469135801,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 0.97495,
+    "marcadores_probables": [
+      "0-0",
+      "0-1",
+      "1-0",
+      "1-1",
+      "0-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.37,
+          "ultimos_5": [
+            "D",
+            "L",
+            "W",
+            "D",
+            "L"
+          ],
+          "nombre": "South Africa"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "South Korea"
+        },
+        "interpretacion": "South Korea llega con mejor momentum: índice 0.50/1.0 frente a 0.37/1.0 de South Africa. Últimos 5: 3V/0E/2D vs 1V/2E/2D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 538,
+        "ciudad_sede": "Monterrey, Nuevo León",
+        "local": {
+          "nombre": "South Africa",
+          "altitud_base": 1700,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "South Korea",
+          "altitud_base": 37,
+          "factor": 0.975
+        },
+        "interpretacion": "Sede en condiciones normales (538m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "South Africa",
+          "goles_favor": 0.67,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "South Korea",
+          "goles_favor": 1.33,
+          "goles_contra": 1.17
+        },
+        "interpretacion": "South Korea más ofensivo: 1.33 vs 0.67 goles/partido. Defensiva: 1.00 vs 1.17."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "medio",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "South Africa",
+          "lambda": 0.529
+        },
+        "visitante": {
+          "nombre": "South Korea",
+          "lambda": 0.852
+        },
+        "suma": 1.382,
+        "interpretacion": "Los lambdas proyectan un partido muy trabado: South Africa 0.53 goles esperados vs South Korea 0.85. Con solo 1.38 goles totales esperados, el empate es el resultado más probable."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-0",
+          "0-1",
+          "1-0",
+          "1-1",
+          "0-2"
+        ],
+        "lambda_local": 0.529,
+        "lambda_visitante": 0.852,
+        "interpretacion": "El marcador más probable es 0-0 (25.1%), coherente con el empate como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "South Africa",
+          "ranking": 33,
+          "puntos": 1514.8,
+          "score": 0.681
+        },
+        "visitante": {
+          "nombre": "South Korea",
+          "ranking": 28,
+          "puntos": 1545.9,
+          "score": 0.71
+        },
+        "interpretacion": "South Korea es objetivamente superior en el ranking FIFA (#28 / 1546 pts vs #33 / 1515 pts). Score normalizado: 0.71 vs 0.68."
+      }
+    ]
+  },
+  {
     "id": "760473",
     "fecha": "2026-06-25T20:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",
@@ -13,24 +886,24 @@
     "pais_sede": "USA",
     "altitud_sede": 12,
     "es_neutro": true,
-    "prob_local": 0.4068543155021393,
-    "prob_empate": 0.20314568449786075,
+    "prob_local": 0.27422865215101033,
+    "prob_empate": 0.3357713478489897,
     "prob_visitante": 0.39,
-    "fuerza_local": 0.37507673971077954,
+    "fuerza_local": 0.3582537681167795,
     "fuerza_visitante": 0.5618116054016206,
-    "diferencia": 0.18673486569084102,
-    "confianza": "ajustado",
-    "prediccion": "Curaçao",
+    "diferencia": 0.20355783728484106,
+    "confianza": "moderado",
+    "prediccion": "Ivory Coast",
     "lambda_local": 0.5905586665375556,
     "lambda_visitante": 3.219874392205412,
     "factor_altitud_local": 0.9994,
     "factor_altitud_visitante": 1.0,
     "marcadores_probables": [
-      "2-1",
       "0-2",
       "0-3",
       "1-2",
-      "1-3"
+      "1-3",
+      "0-4"
     ],
     "analisis": [
       {
@@ -115,15 +988,15 @@
         "impacto": "informativo",
         "tipo": "marcadores",
         "marcadores": [
-          "2-1",
           "0-2",
           "0-3",
           "1-2",
-          "1-3"
+          "1-3",
+          "0-4"
         ],
         "lambda_local": 0.591,
         "lambda_visitante": 3.22,
-        "interpretacion": "El marcador más probable es 2-1 (2.3%), coherente con Curaçao como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 0-2 (9.7%), coherente con Ivory Coast como resultado favorito del modelo."
       },
       {
         "factor": "Ranking FIFA",
@@ -159,13 +1032,13 @@
     "pais_sede": "USA",
     "altitud_sede": 5,
     "es_neutro": true,
-    "prob_local": 0.36009448975290503,
-    "prob_empate": 0.249905510247095,
+    "prob_local": 0.28940155915756666,
+    "prob_empate": 0.3205984408424334,
     "prob_visitante": 0.39,
-    "fuerza_local": 0.4925708891428572,
-    "fuerza_visitante": 0.6947091771428573,
-    "diferencia": 0.2021382880000001,
-    "confianza": "ajustado",
+    "fuerza_local": 0.4894900091428572,
+    "fuerza_visitante": 0.7273791771428573,
+    "diferencia": 0.2378891680000001,
+    "confianza": "moderado",
     "prediccion": "Germany",
     "lambda_local": 0.8041687550775061,
     "lambda_visitante": 2.0561941251596423,
@@ -308,9 +1181,9 @@
     "prob_local": 0.39,
     "prob_empate": 0.2318496271611214,
     "prob_visitante": 0.3781503728388787,
-    "fuerza_local": 0.6116603947955015,
-    "fuerza_visitante": 0.3735380797530701,
-    "diferencia": 0.23812231504243142,
+    "fuerza_local": 0.6231676597955015,
+    "fuerza_visitante": 0.3669644797530701,
+    "diferencia": 0.25620318004243137,
     "confianza": "ajustado",
     "prediccion": "Japan",
     "lambda_local": 2.8264107753305625,
@@ -450,13 +1323,13 @@
     "pais_sede": "USA",
     "altitud_sede": 325,
     "es_neutro": true,
-    "prob_local": 0.37796563176120507,
-    "prob_empate": 0.23203436823879497,
-    "prob_visitante": 0.39,
-    "fuerza_local": 0.37521418697447967,
-    "fuerza_visitante": 0.5636887879508775,
-    "diferencia": 0.18847460097639784,
-    "confianza": "ajustado",
+    "prob_local": 0.2513568664308741,
+    "prob_empate": 0.3586431335691258,
+    "prob_visitante": 0.38999999999999996,
+    "fuerza_local": 0.35850185961197967,
+    "fuerza_visitante": 0.5666346567008775,
+    "diferencia": 0.20813279708889787,
+    "confianza": "moderado",
     "prediccion": "Netherlands",
     "lambda_local": 0.33543168986792815,
     "lambda_visitante": 2.6359070863033702,
@@ -596,12 +1469,12 @@
     "pais_sede": "USA",
     "altitud_sede": 16,
     "es_neutro": true,
-    "prob_local": 0.3446229873656938,
-    "prob_empate": 0.37538035280180304,
-    "prob_visitante": 0.2799966598325031,
-    "fuerza_local": 0.5123276667466987,
-    "fuerza_visitante": 0.5087047098329585,
-    "diferencia": 0.0036229569137402606,
+    "prob_local": 0.34070557330982365,
+    "prob_empate": 0.37529646153575374,
+    "prob_visitante": 0.28399796515442266,
+    "fuerza_local": 0.5172776667466987,
+    "fuerza_visitante": 0.5100241818329585,
+    "diferencia": 0.007253484913740227,
     "confianza": "ajustado",
     "prediccion": "Empate",
     "lambda_local": 0.9457356807635618,
@@ -745,9 +1618,9 @@
     "prob_local": 0.39,
     "prob_empate": 0.23643956128600913,
     "prob_visitante": 0.3735604387139908,
-    "fuerza_local": 0.4962621679504849,
-    "fuerza_visitante": 0.5093455462966581,
-    "diferencia": 0.01308337834617318,
+    "fuerza_local": 0.4979121679504849,
+    "fuerza_visitante": 0.512308641046658,
+    "diferencia": 0.01439647309617309,
     "confianza": "ajustado",
     "prediccion": "Türkiye",
     "lambda_local": 1.7368402363030846,
@@ -887,12 +1760,12 @@
     "pais_sede": "USA",
     "altitud_sede": 25,
     "es_neutro": true,
-    "prob_local": 0.3818802129988257,
-    "prob_empate": 0.22811978700117433,
-    "prob_visitante": 0.39000000000000007,
-    "fuerza_local": 0.5693277957403926,
-    "fuerza_visitante": 0.6343536750071505,
-    "diferencia": 0.06502587926675785,
+    "prob_local": 0.3430562772422167,
+    "prob_empate": 0.2669437227577832,
+    "prob_visitante": 0.38999999999999996,
+    "fuerza_local": 0.5706477297403927,
+    "fuerza_visitante": 0.6571216950071505,
+    "diferencia": 0.08647396526675777,
     "confianza": "ajustado",
     "prediccion": "France",
     "lambda_local": 1.2215528324999998,
@@ -903,8 +1776,8 @@
       "1-2",
       "1-1",
       "2-1",
-      "2-2",
-      "0-1"
+      "0-1",
+      "2-2"
     ],
     "analisis": [
       {
@@ -992,12 +1865,12 @@
           "1-2",
           "1-1",
           "2-1",
-          "2-2",
-          "0-1"
+          "0-1",
+          "2-2"
         ],
         "lambda_local": 1.222,
         "lambda_visitante": 1.97,
-        "interpretacion": "El marcador más probable es 1-2 (8.4%), coherente con France como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 1-2 (8.9%), coherente con France como resultado favorito del modelo."
       },
       {
         "factor": "Ranking FIFA",
@@ -1036,9 +1909,9 @@
     "prob_local": 0.39,
     "prob_empate": 0.26471347414505364,
     "prob_visitante": 0.34528652585494635,
-    "fuerza_local": 0.4692290869550706,
-    "fuerza_visitante": 0.3508923256839294,
-    "diferencia": 0.11833676127114118,
+    "fuerza_local": 0.4623064651280706,
+    "fuerza_visitante": 0.3426509881839294,
+    "diferencia": 0.11965547694414119,
     "confianza": "ajustado",
     "prediccion": "Senegal",
     "lambda_local": 1.644367943578846,
@@ -1180,11 +2053,11 @@
     "altitud_sede": 12,
     "es_neutro": true,
     "prob_local": 0.39,
-    "prob_empate": 0.2826961157865132,
-    "prob_visitante": 0.3273038842134868,
-    "fuerza_local": 0.49887610756,
-    "fuerza_visitante": 0.32770858865394287,
-    "diferencia": 0.17116751890605714,
+    "prob_empate": 0.2826795760654053,
+    "prob_visitante": 0.3273204239345947,
+    "fuerza_local": 0.49722660256000006,
+    "fuerza_visitante": 0.3196035808859429,
+    "diferencia": 0.1776230216740572,
     "confianza": "ajustado",
     "prediccion": "Cape Verde",
     "lambda_local": 1.6999646387043132,
@@ -1325,24 +2198,24 @@
     "pais_sede": "MEX",
     "altitud_sede": 1566,
     "es_neutro": true,
-    "prob_local": 0.247245243284268,
-    "prob_empate": 0.362754756715732,
+    "prob_local": 0.21253635777406313,
+    "prob_empate": 0.39746364222593683,
     "prob_visitante": 0.39,
-    "fuerza_local": 0.48480226654300185,
-    "fuerza_visitante": 0.6145682768327126,
-    "diferencia": 0.1297660102897108,
+    "fuerza_local": 0.4705176802930018,
+    "fuerza_visitante": 0.6174702638327126,
+    "diferencia": 0.14695258353971086,
     "confianza": "moderado",
-    "prediccion": "Spain",
+    "prediccion": "Empate",
     "lambda_local": 0.43362407173033835,
     "lambda_visitante": 1.2719593599753527,
     "factor_altitud_local": 0.9238500000000001,
     "factor_altitud_visitante": 0.9542,
     "marcadores_probables": [
-      "0-1",
       "0-0",
+      "0-1",
       "1-1",
-      "1-0",
-      "0-2"
+      "0-2",
+      "1-0"
     ],
     "analisis": [
       {
@@ -1426,15 +2299,15 @@
         "impacto": "informativo",
         "tipo": "marcadores",
         "marcadores": [
-          "0-1",
           "0-0",
+          "0-1",
           "1-1",
-          "1-0",
-          "0-2"
+          "0-2",
+          "1-0"
         ],
         "lambda_local": 0.434,
         "lambda_visitante": 1.272,
-        "interpretacion": "El marcador más probable es 0-1 (19.7%), coherente con Spain como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 0-0 (18.2%), coherente con el empate como resultado favorito del modelo."
       },
       {
         "factor": "Ranking FIFA",
@@ -1473,9 +2346,9 @@
     "prob_local": 0.29343019470642934,
     "prob_empate": 0.44,
     "prob_visitante": 0.2665698052935706,
-    "fuerza_local": 0.5451095291428572,
-    "fuerza_visitante": 0.5637649005714287,
-    "diferencia": 0.018655371428571543,
+    "fuerza_local": 0.5480795291428572,
+    "fuerza_visitante": 0.5667349005714286,
+    "diferencia": 0.018655371428571432,
     "confianza": "ajustado",
     "prediccion": "Empate",
     "lambda_local": 0.789239199459094,
@@ -1616,13 +2489,13 @@
     "pais_sede": "CAN",
     "altitud_sede": 4,
     "es_neutro": true,
-    "prob_local": 0.3622424300996298,
-    "prob_empate": 0.2477575699003702,
+    "prob_local": 0.2413183076545665,
+    "prob_empate": 0.36868169234543346,
     "prob_visitante": 0.39,
-    "fuerza_local": 0.3920770262857143,
-    "fuerza_visitante": 0.6180087542857144,
-    "diferencia": 0.22593172800000016,
-    "confianza": "ajustado",
+    "fuerza_local": 0.3845979062857143,
+    "fuerza_visitante": 0.6193287542857144,
+    "diferencia": 0.23473084800000016,
+    "confianza": "moderado",
     "prediccion": "Belgium",
     "lambda_local": 0.4559661799231577,
     "lambda_visitante": 2.776870910875968,
@@ -1763,23 +2636,23 @@
     "altitud_sede": 12,
     "es_neutro": true,
     "prob_local": 0.39,
-    "prob_empate": 0.2516001396666833,
-    "prob_visitante": 0.35839986033331667,
-    "fuerza_local": 0.4687958285714286,
-    "fuerza_visitante": 0.4387708571428572,
-    "diferencia": 0.030024971428571412,
+    "prob_empate": 0.2837460392683598,
+    "prob_visitante": 0.32625396073164015,
+    "fuerza_local": 0.4976849714285715,
+    "fuerza_visitante": 0.4297688342857143,
+    "diferencia": 0.06791613714285721,
     "confianza": "ajustado",
     "prediccion": "Croatia",
-    "lambda_local": 1.5125094264996704,
-    "lambda_visitante": 1.1055462797927464,
+    "lambda_local": 1.3129089845015227,
+    "lambda_visitante": 0.7376860017767043,
     "factor_altitud_local": 1.0,
     "factor_altitud_visitante": 1.0,
     "marcadores_probables": [
       "1-0",
       "1-1",
+      "0-0",
       "0-1",
-      "2-1",
-      "1-2"
+      "2-0"
     ],
     "analisis": [
       {
@@ -1787,28 +2660,28 @@
         "impacto": "medio",
         "tipo": "forma",
         "local": {
-          "valor": 0.4,
+          "valor": 0.5,
           "ultimos_5": [
+            "W",
             "L",
             "W",
             "L",
-            "L",
-            "W"
+            "L"
           ],
           "nombre": "Croatia"
         },
         "visitante": {
-          "valor": 0.28,
+          "valor": 0.3,
           "ultimos_5": [
+            "D",
             "W",
             "D",
-            "L",
             "L",
             "L"
           ],
           "nombre": "Ghana"
         },
-        "interpretacion": "Croatia llega con mejor momentum: índice 0.40/1.0 frente a 0.28/1.0 de Ghana. Últimos 5: 2V/0E/3D vs 1V/1E/3D."
+        "interpretacion": "Croatia llega con mejor momentum: índice 0.50/1.0 frente a 0.30/1.0 de Ghana. Últimos 5: 2V/0E/3D vs 1V/2E/2D."
       },
       {
         "factor": "Factor altitud",
@@ -1834,30 +2707,30 @@
         "tipo": "doble_barra",
         "local": {
           "nombre": "Croatia",
-          "goles_favor": 1.4,
-          "goles_contra": 2.2
+          "goles_favor": 1.33,
+          "goles_contra": 1.83
         },
         "visitante": {
           "nombre": "Ghana",
-          "goles_favor": 0.8,
-          "goles_contra": 2.0
+          "goles_favor": 0.67,
+          "goles_contra": 1.67
         },
-        "interpretacion": "Croatia más ofensivo: 1.40 goles/partido (vs 0.80). Defensiva: 2.20 vs 2.00."
+        "interpretacion": "Croatia más ofensivo: 1.33 goles/partido (vs 0.67). Defensiva: 1.83 vs 1.67."
       },
       {
         "factor": "Proyección de goles (λ)",
-        "impacto": "medio",
+        "impacto": "alto",
         "tipo": "lambda",
         "local": {
           "nombre": "Croatia",
-          "lambda": 1.513
+          "lambda": 1.313
         },
         "visitante": {
           "nombre": "Ghana",
-          "lambda": 1.106
+          "lambda": 0.738
         },
-        "suma": 2.618,
-        "interpretacion": "Croatia genera más peligro ofensivo según el modelo: 1.51 goles esperados vs 1.11 de Ghana."
+        "suma": 2.051,
+        "interpretacion": "Croatia genera más peligro ofensivo según el modelo: 1.31 goles esperados vs 0.74 de Ghana."
       },
       {
         "factor": "Marcadores más probables",
@@ -1866,13 +2739,13 @@
         "marcadores": [
           "1-0",
           "1-1",
+          "0-0",
           "0-1",
-          "2-1",
-          "1-2"
+          "2-0"
         ],
-        "lambda_local": 1.513,
-        "lambda_visitante": 1.106,
-        "interpretacion": "El marcador más probable es 1-0 (10.0%), coherente con Croatia como resultado favorito del modelo."
+        "lambda_local": 1.313,
+        "lambda_visitante": 0.738,
+        "interpretacion": "El marcador más probable es 1-0 (14.4%), coherente con Croatia como resultado favorito del modelo."
       },
       {
         "factor": "Ranking FIFA",
@@ -1908,22 +2781,22 @@
     "pais_sede": "USA",
     "altitud_sede": 5,
     "es_neutro": true,
-    "prob_local": 0.3509553262188205,
-    "prob_empate": 0.25904467378117946,
-    "prob_visitante": 0.38999999999999996,
-    "fuerza_local": 0.43290111709095425,
-    "fuerza_visitante": 0.5779553866519029,
-    "diferencia": 0.1450542695609487,
-    "confianza": "ajustado",
+    "prob_local": 0.2637113115155654,
+    "prob_empate": 0.3462886884844346,
+    "prob_visitante": 0.39,
+    "fuerza_local": 0.41675056016295425,
+    "fuerza_visitante": 0.5859318072233315,
+    "diferencia": 0.16918124706037724,
+    "confianza": "moderado",
     "prediccion": "England",
-    "lambda_local": 0.7122869263916981,
-    "lambda_visitante": 1.9513111483361258,
+    "lambda_local": 0.5148120368138585,
+    "lambda_visitante": 1.5503517451128552,
     "factor_altitud_local": 0.99975,
     "factor_altitud_visitante": 1.0,
     "marcadores_probables": [
       "0-1",
+      "0-0",
       "1-1",
-      "1-2",
       "0-2",
       "1-0"
     ],
@@ -1933,28 +2806,28 @@
         "impacto": "alto",
         "tipo": "forma",
         "local": {
-          "valor": 0.4,
+          "valor": 0.36,
           "ultimos_5": [
+            "L",
             "L",
             "D",
             "W",
-            "L",
-            "W"
+            "L"
           ],
           "nombre": "Panama"
         },
         "visitante": {
-          "valor": 0.68,
+          "valor": 0.63,
           "ultimos_5": [
+            "D",
             "W",
             "W",
             "W",
-            "L",
-            "D"
+            "L"
           ],
           "nombre": "England"
         },
-        "interpretacion": "England llega con mejor momentum: índice 0.68/1.0 frente a 0.40/1.0 de Panama. Últimos 5: 3V/1E/1D vs 2V/1E/2D."
+        "interpretacion": "England llega con mejor momentum: índice 0.63/1.0 frente a 0.36/1.0 de Panama. Últimos 5: 3V/1E/1D vs 1V/1E/3D."
       },
       {
         "factor": "Factor altitud",
@@ -1980,15 +2853,15 @@
         "tipo": "doble_barra",
         "local": {
           "nombre": "Panama",
-          "goles_favor": 1.38,
-          "goles_contra": 1.75
+          "goles_favor": 1.22,
+          "goles_contra": 1.67
         },
         "visitante": {
           "nombre": "England",
-          "goles_favor": 1.8,
-          "goles_contra": 0.8
+          "goles_favor": 1.5,
+          "goles_contra": 0.67
         },
-        "interpretacion": "England más ofensivo: 1.80 vs 1.38 goles/partido. Defensiva: 1.75 vs 0.80."
+        "interpretacion": "Producción similar: Panama 1.22 — England 1.50 goles/partido. Defensa: 1.67 vs 0.67."
       },
       {
         "factor": "Proyección de goles (λ)",
@@ -1996,14 +2869,14 @@
         "tipo": "lambda",
         "local": {
           "nombre": "Panama",
-          "lambda": 0.712
+          "lambda": 0.515
         },
         "visitante": {
           "nombre": "England",
-          "lambda": 1.951
+          "lambda": 1.55
         },
-        "suma": 2.664,
-        "interpretacion": "England genera más peligro ofensivo según el modelo: 1.95 goles esperados vs 0.71 de Panama."
+        "suma": 2.065,
+        "interpretacion": "England genera más peligro ofensivo según el modelo: 1.55 goles esperados vs 0.51 de Panama."
       },
       {
         "factor": "Marcadores más probables",
@@ -2011,14 +2884,14 @@
         "tipo": "marcadores",
         "marcadores": [
           "0-1",
+          "0-0",
           "1-1",
-          "1-2",
           "0-2",
           "1-0"
         ],
-        "lambda_local": 0.712,
-        "lambda_visitante": 1.951,
-        "interpretacion": "El marcador más probable es 0-1 (11.5%), coherente con England como resultado favorito del modelo."
+        "lambda_local": 0.515,
+        "lambda_visitante": 1.55,
+        "interpretacion": "El marcador más probable es 0-1 (16.9%), coherente con England como resultado favorito del modelo."
       },
       {
         "factor": "Ranking FIFA",
@@ -2054,24 +2927,24 @@
     "pais_sede": "USA",
     "altitud_sede": 3,
     "es_neutro": true,
-    "prob_local": 0.370982085133149,
-    "prob_empate": 0.23901791486685098,
+    "prob_local": 0.3302520200487671,
+    "prob_empate": 0.2797479799512329,
     "prob_visitante": 0.39,
-    "fuerza_local": 0.5533701142857144,
-    "fuerza_visitante": 0.6379220542857145,
-    "diferencia": 0.0845519400000001,
+    "fuerza_local": 0.590416630857143,
+    "fuerza_visitante": 0.6507940342857144,
+    "diferencia": 0.06037740342857134,
     "confianza": "ajustado",
     "prediccion": "Portugal",
-    "lambda_local": 0.9067450770738662,
-    "lambda_visitante": 1.9002437632268203,
+    "lambda_local": 0.906358729740497,
+    "lambda_visitante": 1.5427099026745263,
     "factor_altitud_local": 1.0,
     "factor_altitud_visitante": 1.0,
     "marcadores_probables": [
       "0-1",
       "1-1",
-      "1-2",
       "1-0",
-      "2-1"
+      "0-0",
+      "1-2"
     ],
     "analisis": [
       {
@@ -2079,12 +2952,12 @@
         "impacto": "medio",
         "tipo": "forma",
         "local": {
-          "valor": 0.6,
+          "valor": 0.67,
           "ultimos_5": [
             "W",
             "W",
             "W",
-            "L",
+            "W",
             "L"
           ],
           "nombre": "Colombia"
@@ -2100,7 +2973,7 @@
           ],
           "nombre": "Portugal"
         },
-        "interpretacion": "Portugal llega con mejor momentum: índice 0.80/1.0 frente a 0.60/1.0 de Colombia. Últimos 5: 4V/1E/0D vs 3V/0E/2D."
+        "interpretacion": "Portugal llega con mejor momentum: índice 0.80/1.0 frente a 0.67/1.0 de Colombia. Últimos 5: 4V/1E/0D vs 4V/0E/1D."
       },
       {
         "factor": "Factor altitud",
@@ -2126,15 +2999,15 @@
         "tipo": "doble_barra",
         "local": {
           "nombre": "Colombia",
-          "goles_favor": 2.0,
-          "goles_contra": 1.4
+          "goles_favor": 1.83,
+          "goles_contra": 1.17
         },
         "visitante": {
           "nombre": "Portugal",
           "goles_favor": 2.0,
           "goles_contra": 0.5
         },
-        "interpretacion": "Producción similar: Colombia 2.00 — Portugal 2.00 goles/partido. Defensa: 1.40 vs 0.50."
+        "interpretacion": "Producción similar: Colombia 1.83 — Portugal 2.00 goles/partido. Defensa: 1.17 vs 0.50."
       },
       {
         "factor": "Proyección de goles (λ)",
@@ -2142,14 +3015,14 @@
         "tipo": "lambda",
         "local": {
           "nombre": "Colombia",
-          "lambda": 0.907
+          "lambda": 0.906
         },
         "visitante": {
           "nombre": "Portugal",
-          "lambda": 1.9
+          "lambda": 1.543
         },
-        "suma": 2.807,
-        "interpretacion": "Portugal genera más peligro ofensivo según el modelo: 1.90 goles esperados vs 0.91 de Colombia."
+        "suma": 2.449,
+        "interpretacion": "Portugal genera más peligro ofensivo según el modelo: 1.54 goles esperados vs 0.91 de Colombia."
       },
       {
         "factor": "Marcadores más probables",
@@ -2158,13 +3031,13 @@
         "marcadores": [
           "0-1",
           "1-1",
-          "1-2",
           "1-0",
-          "2-1"
+          "0-0",
+          "1-2"
         ],
-        "lambda_local": 0.907,
-        "lambda_visitante": 1.9,
-        "interpretacion": "El marcador más probable es 0-1 (9.1%), coherente con Portugal como resultado favorito del modelo."
+        "lambda_local": 0.906,
+        "lambda_visitante": 1.543,
+        "interpretacion": "El marcador más probable es 0-1 (11.5%), coherente con Portugal como resultado favorito del modelo."
       },
       {
         "factor": "Ranking FIFA",
@@ -2201,22 +3074,22 @@
     "altitud_sede": 320,
     "es_neutro": true,
     "prob_local": 0.39,
-    "prob_empate": 0.30925902070667755,
-    "prob_visitante": 0.30074097929332244,
-    "fuerza_local": 0.3963179977142858,
-    "fuerza_visitante": 0.3475143458377143,
-    "diferencia": 0.048803651876571486,
+    "prob_empate": 0.3142726466761894,
+    "prob_visitante": 0.2957273533238106,
+    "fuerza_local": 0.37065858560000003,
+    "fuerza_visitante": 0.34321152599771426,
+    "diferencia": 0.027447059602285773,
     "confianza": "moderado",
     "prediccion": "Congo DR",
-    "lambda_local": 1.3353966392946235,
-    "lambda_visitante": 0.5648752224928567,
+    "lambda_local": 1.1527055262209278,
+    "lambda_visitante": 0.5784487205399114,
     "factor_altitud_local": 0.984,
     "factor_altitud_visitante": 0.984,
     "marcadores_probables": [
       "1-0",
       "0-0",
-      "1-1",
       "0-1",
+      "1-1",
       "2-0"
     ],
     "analisis": [
@@ -2225,8 +3098,9 @@
         "impacto": "bajo",
         "tipo": "forma",
         "local": {
-          "valor": 0.45,
+          "valor": 0.36,
           "ultimos_5": [
+            "L",
             "D",
             "L",
             "D",
@@ -2245,7 +3119,7 @@
           ],
           "nombre": "Uzbekistan"
         },
-        "interpretacion": "Congo DR llega con mejor momentum: índice 0.45/1.0 frente a 0.34/1.0 de Uzbekistan. Últimos 5: 1V/2E/1D vs 1V/0E/4D."
+        "interpretacion": "Congo DR llega con mejor momentum: índice 0.36/1.0 frente a 0.34/1.0 de Uzbekistan. Últimos 5: 1V/2E/2D vs 1V/0E/4D."
       },
       {
         "factor": "Factor altitud",
@@ -2271,15 +3145,15 @@
         "tipo": "doble_barra",
         "local": {
           "nombre": "Congo DR",
-          "goles_favor": 1.0,
-          "goles_contra": 0.75
+          "goles_favor": 0.8,
+          "goles_contra": 0.8
         },
         "visitante": {
           "nombre": "Uzbekistan",
           "goles_favor": 1.0,
           "goles_contra": 2.14
         },
-        "interpretacion": "Producción similar: Congo DR 1.00 — Uzbekistan 1.00 goles/partido. Defensa: 0.75 vs 2.14."
+        "interpretacion": "Producción similar: Congo DR 0.80 — Uzbekistan 1.00 goles/partido. Defensa: 0.80 vs 2.14."
       },
       {
         "factor": "Proyección de goles (λ)",
@@ -2287,14 +3161,14 @@
         "tipo": "lambda",
         "local": {
           "nombre": "Congo DR",
-          "lambda": 1.335
+          "lambda": 1.153
         },
         "visitante": {
           "nombre": "Uzbekistan",
-          "lambda": 0.565
+          "lambda": 0.578
         },
-        "suma": 1.9,
-        "interpretacion": "Congo DR genera más peligro ofensivo según el modelo: 1.34 goles esperados vs 0.56 de Uzbekistan."
+        "suma": 1.731,
+        "interpretacion": "Congo DR genera más peligro ofensivo según el modelo: 1.15 goles esperados vs 0.58 de Uzbekistan."
       },
       {
         "factor": "Marcadores más probables",
@@ -2303,13 +3177,13 @@
         "marcadores": [
           "1-0",
           "0-0",
-          "1-1",
           "0-1",
+          "1-1",
           "2-0"
         ],
-        "lambda_local": 1.335,
-        "lambda_visitante": 0.565,
-        "interpretacion": "El marcador más probable es 1-0 (16.0%), coherente con Congo DR como resultado favorito del modelo."
+        "lambda_local": 1.153,
+        "lambda_visitante": 0.578,
+        "interpretacion": "El marcador más probable es 1-0 (17.4%), coherente con Congo DR como resultado favorito del modelo."
       },
       {
         "factor": "Ranking FIFA",
@@ -2348,9 +3222,9 @@
     "prob_local": 0.38904556844796806,
     "prob_empate": 0.2548151238823779,
     "prob_visitante": 0.356139307669654,
-    "fuerza_local": 0.49325714478723093,
-    "fuerza_visitante": 0.5529959491013405,
-    "diferencia": 0.059738804314109606,
+    "fuerza_local": 0.5061291247872308,
+    "fuerza_visitante": 0.5645014816013406,
+    "diferencia": 0.058372356814109794,
     "confianza": "ajustado",
     "prediccion": "Algeria",
     "lambda_local": 1.4805934138484604,
@@ -2491,24 +3365,24 @@
     "pais_sede": "USA",
     "altitud_sede": 188,
     "es_neutro": true,
-    "prob_local": 0.4322321460565207,
-    "prob_empate": 0.1777678539434793,
+    "prob_local": 0.2720785127144368,
+    "prob_empate": 0.3379214872855632,
     "prob_visitante": 0.39,
-    "fuerza_local": 0.2918505381284735,
-    "fuerza_visitante": 0.7118504883278121,
-    "diferencia": 0.41999995019933856,
-    "confianza": "ajustado",
-    "prediccion": "Jordan",
+    "fuerza_local": 0.27997053812847356,
+    "fuerza_visitante": 0.7443873580778122,
+    "diferencia": 0.46441681994933864,
+    "confianza": "moderado",
+    "prediccion": "Argentina",
     "lambda_local": 0.4081586586037039,
     "lambda_visitante": 4.712112301578948,
     "factor_altitud_local": 1.0,
     "factor_altitud_visitante": 0.99185,
     "marcadores_probables": [
-      "2-1",
       "0-4",
       "0-5",
       "0-3",
-      "0-6"
+      "0-6",
+      "1-4"
     ],
     "analisis": [
       {
@@ -2593,15 +3467,15 @@
         "impacto": "informativo",
         "tipo": "marcadores",
         "marcadores": [
-          "2-1",
           "0-4",
           "0-5",
           "0-3",
-          "0-6"
+          "0-6",
+          "1-4"
         ],
         "lambda_local": 0.408,
         "lambda_visitante": 4.712,
-        "interpretacion": "El marcador más probable es 2-1 (0.5%), coherente con Jordan como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 0-4 (10.5%), coherente con Argentina como resultado favorito del modelo."
       },
       {
         "factor": "Ranking FIFA",

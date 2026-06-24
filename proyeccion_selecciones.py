@@ -314,6 +314,38 @@ def peso_confianza(partidos_jugados):
 
 
 # =============================
+# HELPER: WIN RATE CON FALLBACK
+# =============================
+# FIX: cuando un equipo no tiene partidos en una situación (visita/local/neutro),
+# en lugar de usar el valor 0.0 del JSON se regresa a 0.5 (neutral).
+# Esto evita que equipos como Argentina, con 0 partidos de visita,
+# colapsen su fuerza base por un win_rate_visita de 0.0 sin respaldo estadístico.
+
+def _wr_con_fallback(seleccion, es_neutro, es_local):
+    """
+    Devuelve (wr_raw, partidos_sit).
+    Si no hay muestra para la situación concreta, retorna wr_raw=0.5.
+    Para partidos neutros se suma local+visita como proxy de muestra total.
+    """
+    if es_neutro:
+        p_sit  = seleccion.get("partidos_local", 0) + seleccion.get("partidos_visita", 0)
+        wr_raw = seleccion.get("win_rate_neutro", 0.5)
+        if p_sit == 0:
+            wr_raw = 0.5
+    elif es_local:
+        p_sit  = seleccion.get("partidos_local", 0)
+        wr_raw = seleccion.get("win_rate_local", 0.5)
+        if p_sit == 0:
+            wr_raw = 0.5
+    else:
+        p_sit  = seleccion.get("partidos_visita", 0)
+        wr_raw = seleccion.get("win_rate_visita", 0.5)
+        if p_sit == 0:
+            wr_raw = 0.5
+    return wr_raw, p_sit
+
+
+# =============================
 # IPO e ISD
 # =============================
 
@@ -329,12 +361,8 @@ def calcular_ipo_seleccion(equipo, contexto, promedio_global):
 
     mod_forma = 0.85 + (equipo["forma_ponderada"] * 0.30)
 
-    if es_neutro:
-        wr_raw = equipo.get("win_rate_neutro", 0.5)
-    elif es_local:
-        wr_raw = equipo.get("win_rate_local", 0.5)
-    else:
-        wr_raw = equipo.get("win_rate_visita", 0.5)
+    # FIX: usar helper con fallback en lugar de acceso directo al JSON
+    wr_raw, _ = _wr_con_fallback(equipo, es_neutro, es_local)
     mod_localidad = 0.80 + (wr_raw * 0.40)
 
     factor_alt    = calcular_factor_altitud(altitud_sede, altitud_base)
@@ -512,14 +540,9 @@ def calcular_fuerza_base(seleccion, contexto, cfg):
     es_neutro    = contexto.get("es_neutro", False)
     es_local     = contexto.get("es_local", False)
 
-    partidos_sit = seleccion.get("partidos_local" if es_local else "partidos_visita", 0)
+    # FIX: usar helper con fallback para win_rate
+    wr_raw, partidos_sit = _wr_con_fallback(seleccion, es_neutro, es_local)
     confianza_wr = peso_confianza(partidos_sit)
-    if es_neutro:
-        wr_raw = seleccion.get("win_rate_neutro", 0.5)
-    elif es_local:
-        wr_raw = seleccion.get("win_rate_local", 0.5)
-    else:
-        wr_raw = seleccion.get("win_rate_visita", 0.5)
     win_rate = confianza_wr * wr_raw + (1 - confianza_wr) * 0.45
 
     confianza_goles = peso_confianza(seleccion.get("partidos", 0))
@@ -746,18 +769,9 @@ def prediccion_inteligente(prob_local, prob_empate, prob_visitante,
 
 def garantizar_coherencia(pred, prob_local, prob_empate, prob_visitante,
                            nombre_local, nombre_visitante):
-    """
-    Si la predicción es 'Empate' pero prob_empate no es la más alta,
-    redistribuye el exceso del favorito hacia el empate para que
-    la barra visual sea coherente con la predicción.
-
-    Si la predicción es un equipo pero su probabilidad no es la más alta,
-    redistribuye de forma análoga.
-    """
     if pred == "Empate":
         favorito = max(prob_local, prob_visitante)
         if prob_empate < favorito:
-            # Subir empate justo por encima del actual favorito
             if prob_local >= prob_visitante:
                 exceso = prob_local - prob_empate + 0.001
                 prob_local  -= exceso
@@ -789,7 +803,6 @@ def garantizar_coherencia(pred, prob_local, prob_empate, prob_visitante,
                 prob_empate    -= exceso
                 prob_visitante += exceso
 
-    # Renormalizar para que sumen exactamente 1.0
     total = prob_local + prob_empate + prob_visitante
     return prob_local / total, prob_empate / total, prob_visitante / total
 
@@ -804,15 +817,18 @@ def _aplicar_cap_final(prob_local, prob_empate, prob_visitante, max_favorito):
         return prob_local, prob_empate, prob_visitante
 
     if prob_local >= prob_visitante:
+        # Local es el favorito recortado: exceso va más al visitante que al empate
         exceso          = prob_local - max_favorito
         prob_local      = max_favorito
         prob_empate    += exceso * 0.30
         prob_visitante += exceso * 0.70
     else:
+        # Visitante es el favorito recortado: exceso va más al empate que al local
+        # para evitar que el local (débil) supere al favorito recortado
         exceso          = prob_visitante - max_favorito
         prob_visitante  = max_favorito
-        prob_empate    += exceso * 0.30
-        prob_local     += exceso * 0.70
+        prob_empate    += exceso * 0.70
+        prob_local     += exceso * 0.30
 
     total = prob_local + prob_empate + prob_visitante
     return prob_local / total, prob_empate / total, prob_visitante / total
@@ -1247,7 +1263,6 @@ def generar_partido(
         visitante["nombre"],
     )
 
-    # ── Garantizar coherencia entre predicción y probabilidades ──────────
     prob_local, prob_empate, prob_visitante = garantizar_coherencia(
         pred,
         resultado["local"],
@@ -1256,7 +1271,6 @@ def generar_partido(
         local["nombre"],
         visitante["nombre"],
     )
-    # Actualizar resultado con probabilidades coherentes
     resultado["local"]     = prob_local
     resultado["empate"]    = prob_empate
     resultado["visitante"] = prob_visitante

@@ -134,8 +134,8 @@ PARTIDOS_GRUPO = [
     # ("Qatar",       "Switzerland",  "San Francisco"),  # JUGADO: 1-1
     # ("Switzerland", "Bosnia-Herzegovina", "Los Angeles"), # JUGADO 4-1
     # ("Canada",      "Qatar",    "Vancouver"),            # JUGADO: 6-0
-    ("Switzerland", "Canada",                 "Vancouver"),
-    ("Bosnia-Herzegovina", "Qatar",        "Seattle"),
+    # ("Switzerland", "Canada",                 "Vancouver"),
+    # ("Bosnia-Herzegovina", "Qatar",        "Seattle"),
 
     # ── GRUPO C ──────────────────────────────────────────────
     # ("Brazil",      "Morocco",   "New York"),  # JUGADO 1-1
