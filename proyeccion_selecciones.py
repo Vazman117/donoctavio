@@ -122,14 +122,34 @@ def normalizar_ranking_fifa(seleccion):
 # =============================
 # ADAPTADOR DE SELECCIÓN
 # =============================
+# FIX 1: La forma ponderada ahora pondera por número de partidos
+#         Y da peso doble a los partidos oficiales vs amistosos.
+# FIX 2: Los promedios de goles también usan el mismo esquema de
+#         ponderación (oficiales valen 2x más que amistosos).
+#
+# Razonamiento: en un torneo como el Mundial, los resultados oficiales
+# del propio torneo son el indicador más fiable del estado actual del
+# equipo. Promediar 50/50 forma_oficial=0.0 con forma_amistosos=1.0
+# inflaba artificialmente a equipos que llegan perdiendo.
+
+PESO_OFICIAL   = 2.0   # multiplicador de partidos oficiales
+PESO_AMISTOSO  = 1.0   # multiplicador de partidos amistosos
 
 def adaptar_seleccion(seleccion_raw):
+    p_of  = seleccion_raw.get("partidos_oficial",  0) or 0
+    p_am  = seleccion_raw.get("partidos_amistoso", 0) or 0
+    fo    = seleccion_raw.get("forma_oficial",   0.0) or 0.0
+    fa    = seleccion_raw.get("forma_amistosos", 0.0) or 0.0
+
+    # FIX 1 — Forma ponderada: oficiales pesan PESO_OFICIAL x, amistosos PESO_AMISTOSO x
+    peso_of_f   = p_of * PESO_OFICIAL
+    peso_am_f   = p_am * PESO_AMISTOSO
+    total_peso_f = peso_of_f + peso_am_f
+
     forma_final = seleccion_raw.get("forma", 0.0) or 0.0
     if forma_final == 0.0:
-        fo = seleccion_raw.get("forma_oficial",   0.0) or 0.0
-        fa = seleccion_raw.get("forma_amistosos", 0.0) or 0.0
-        if fo > 0 and fa > 0:
-            forma_final = (fo + fa) / 2.0
+        if total_peso_f > 0:
+            forma_final = (fo * peso_of_f + fa * peso_am_f) / total_peso_f
         elif fo > 0:
             forma_final = fo
         elif fa > 0:
@@ -141,17 +161,19 @@ def adaptar_seleccion(seleccion_raw):
     ul5_oficial  = seleccion_raw.get("ultimos_5_oficial",  []) or []
     ul5_amistoso = seleccion_raw.get("ultimos_5_amistoso", []) or []
 
-    p_of  = seleccion_raw.get("partidos_oficial",  0) or 0
-    p_am  = seleccion_raw.get("partidos_amistoso", 0) or 0
     gf_of = seleccion_raw.get("goles_favor_oficial",   0.0) or 0.0
     gc_of = seleccion_raw.get("goles_contra_oficial",  0.0) or 0.0
     gf_am = seleccion_raw.get("goles_favor_amistoso",  0.0) or 0.0
     gc_am = seleccion_raw.get("goles_contra_amistoso", 0.0) or 0.0
 
-    total_p = p_of + p_am
-    if total_p > 0:
-        gf_ponderado = (gf_of * p_of + gf_am * p_am) / total_p
-        gc_ponderado = (gc_of * p_of + gc_am * p_am) / total_p
+    # FIX 2 — Goles ponderados: mismo esquema que la forma
+    peso_of_g    = p_of * PESO_OFICIAL
+    peso_am_g    = p_am * PESO_AMISTOSO
+    total_peso_g = peso_of_g + peso_am_g
+
+    if total_peso_g > 0:
+        gf_ponderado = (gf_of * peso_of_g + gf_am * peso_am_g) / total_peso_g
+        gc_ponderado = (gc_of * peso_of_g + gc_am * peso_am_g) / total_peso_g
     elif gf_of > 0:
         gf_ponderado, gc_ponderado = gf_of, gc_of
     elif gf_am > 0:
@@ -195,10 +217,10 @@ def adaptar_seleccion(seleccion_raw):
         "empatados_visita": empatados_visita,
         "perdidos_visita":  seleccion_raw.get("perdidos_visita",  0),
         "partidos_oficial":   p_of,
-        "forma_oficial":      seleccion_raw.get("forma_oficial",   0.0) or 0.0,
+        "forma_oficial":      fo,
         "ultimos_5_oficial":  ul5_oficial,
         "partidos_amistoso":  p_am,
-        "forma_amistosos":    seleccion_raw.get("forma_amistosos", 0.0) or 0.0,
+        "forma_amistosos":    fa,
         "ultimos_5_amistoso": ul5_amistoso,
     }
 

@@ -126,8 +126,8 @@ PARTIDOS_GRUPO = [
     # ("South Korea", "Czechia",       "Guadalajara"),   # JUGADO: 2-1
     # ("Czechia",     "South Africa",  "Atlanta"),       # JUGADO: 1-1
     # ("Mexico",      "South Korea",   "Guadalajara"),   # JUGADO: 1-0
-    ("South Africa","South Korea",   "Monterrey"),
-    ("Czechia",     "Mexico",        "Mexico City"),
+    # ("South Africa","South Korea",   "Monterrey"),
+    # ("Czechia",     "Mexico",        "Mexico City"),
 
     # ── GRUPO B ──────────────────────────────────────────────
     # ("Canada",      "Bosnia-Herzegovina", "Toronto"),  # JUGADO: 1-1
@@ -142,8 +142,8 @@ PARTIDOS_GRUPO = [
     # ("Haiti",       "Scotland",  "Boston"),    # JUGADO 0-1
     # ("Scotland",    "Morocco",   "Boston"),    # JUGADO 0-1
     # ("Brazil",      "Haiti",     "Philadelphia"), # JUGADO 3-0
-    ("Morocco",     "Haiti",     "Atlanta"),
-    ("Scotland",    "Brazil",    "Philadelphia"),
+    # ("Morocco",     "Haiti",     "Atlanta"),
+    # ("Scotland",    "Brazil",    "Philadelphia"),
 
     # ── GRUPO D ──────────────────────────────────────────────
     # ("USA",         "Paraguay",  "Los Angeles"),   # JUGADO 4-1
