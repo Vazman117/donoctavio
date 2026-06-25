@@ -158,8 +158,8 @@ PARTIDOS_GRUPO = [
     # ("Ivory Coast", "Ecuador",    "Philadelphia"), # JUGADO 1-0
     # ("Ecuador",     "Curaçao",    "Kansas City"), # JUGADO 0-0
     # ("Germany",     "Ivory Coast","New York"), # JUGADO 2-1
-    ("Ecuador",     "Germany",    "New York"),
-    ("Curaçao",     "Ivory Coast","Miami"),
+    # ("Ecuador",     "Germany",    "New York"),
+    # ("Curaçao",     "Ivory Coast","Miami"),
 
     # ── GRUPO F ──────────────────────────────────────────────
     # ("Netherlands", "Japan",      "Dallas"),    # JUGADO 2-2
