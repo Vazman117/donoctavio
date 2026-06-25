@@ -739,7 +739,7 @@ function clasificarResultadoH(p) {
   const fav = obtenerFavoritoH(p);
   if (fav === p.resultado) return 'acierto';
   const probs = [p.prob_local, p.prob_empate, p.prob_visitante].sort((a, b) => b - a);
-  return probs[0] - probs[1] < 0.15 ? 'parcial' : 'fallo';
+  return probs[0] - probs[1] < 0.14 ? 'parcial' : 'fallo';
 }
 
 function calcularParidadH(partidos) {

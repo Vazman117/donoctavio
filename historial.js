@@ -125,7 +125,7 @@ function renderMetricas(partidos) {
     } else {
       const probs = [p.prob_local, p.prob_empate, p.prob_visitante];
       probs.sort((a, b) => b - a);
-      if (probs[0] - probs[1] < 0.15) ajustados++;
+      if (probs[0] - probs[1] < 0.14) ajustados++;
     }
   }
 
