@@ -166,8 +166,8 @@ PARTIDOS_GRUPO = [
     # ("Sweden",      "Tunisia",    "Monterrey"), # JUGADO 5-1
     # ("Netherlands", "Sweden",     "Houston"),   # JUGADO 5-1
     # ("Japan",       "Tunisia",    "Monterrey"), # JUGADO 4-0
-    ("Japan",       "Sweden",     "Dallas"),
-    ("Tunisia",     "Netherlands","Kansas City"),
+    # ("Japan",       "Sweden",     "Dallas"),
+    # ("Tunisia",     "Netherlands","Kansas City"),
 
     # ── GRUPO G ──────────────────────────────────────────────
     # ("Belgium",     "Egypt",      "Seattle"),   # JUGADO 1-1

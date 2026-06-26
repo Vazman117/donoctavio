@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const hash = window.location.hash; // "#hoy", "#tabla", etc.
+  const hash = window.location.hash;
   if (hash) {
-    const tabName = hash.replace('#', ''); // "hoy"
+    const tabName = hash.replace('#', '');
     const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
-    if (tabBtn) tabBtn.click(); // simula el clic en el tab correspondiente
+    if (tabBtn) tabBtn.click();
   }
 });
 
@@ -45,15 +45,18 @@ async function cambiarVista(vista) {
     sec.classList.add("vista-scroll");
     cargarHistorial();
   }
+  if (vista === "eliminatorias") {
+    sec.classList.add("vista-scroll");
+    cargarEliminatorias();
+  }
 }
 
 
 /* ─── HOY ───────────────────────────────────────────────── */
 
 let partidosHoy = [];
-let vistaActualHoy = "lista"; // "lista" | "detalle"
+let vistaActualHoy = "lista";
 
-/* ── Helpers defensivos ──────────────────────────────── */
 function setStyle(id, prop, val) {
   const el = document.getElementById(id);
   if (el) el.style[prop] = val;
@@ -82,7 +85,6 @@ async function cargarHoy() {
   renderHoyLista();
 }
 
-/* ── Render lista de partidos ────────────────────────── */
 function renderHoyLista() {
   const header = `
     <div class="tabla-header">
@@ -130,8 +132,6 @@ function renderHoyLista() {
   `;
 }
 
-/* ── Helpers de factores ─────────────────────────────── */
-
 function badgeImpacto(impacto) {
   const cls = impacto === 'alto'  ? 'impacto-alto'
             : impacto === 'medio' ? 'impacto-medio'
@@ -158,8 +158,6 @@ function renderBarra(valor, clase) {
     <span class="factor-barra-pct">${pct}%</span>
   `;
 }
-
-/* ── Render por tipo de factor ───────────────────────── */
 
 function renderFactorForma(f) {
   return `
@@ -348,7 +346,6 @@ function renderFactor(f) {
   `;
 }
 
-/* ── Render análisis completo ────────────────────────── */
 function renderAnalisis(p) {
   if (p.analisis && Array.isArray(p.analisis)) {
     return p.analisis.map(renderFactor).join('');
@@ -394,7 +391,6 @@ function renderAnalisis(p) {
   }</div></div>`;
 }
 
-/* ── Mostrar detalle de partido ──────────────────────── */
 function mostrarDetalleHoy(i) {
   const p = partidosHoy[i];
 
@@ -485,7 +481,6 @@ function mostrarDetalleHoy(i) {
   });
 }
 
-/* ── Volver a lista ──────────────────────────────────── */
 function volverListaHoy() {
   renderHoyLista();
   window.scrollTo({ top: 0 });
@@ -503,7 +498,6 @@ async function cargarGrupos() {
   const grupos    = await resG.json();
   const probsData = await resP.json();
 
-  /* Lookup: nombre equipo -> { prob_lider, es_favorito } */
   const probMap = {};
   Object.values(probsData.grupos).forEach(g => {
     g.equipos.forEach(eq => {
@@ -572,11 +566,9 @@ async function cargarGrupos() {
     `;
   }
 
-  /* Dividir grupos: primeros 6 izquierda, últimos 6 derecha */
-  const izquierda = grupos.slice(0, 6);   // A B C D E F
-  const derecha   = grupos.slice(6, 12);  // G H I J K L
+  const izquierda = grupos.slice(0, 6);
+  const derecha   = grupos.slice(6, 12);
 
-  /* Construir filas: 2 izq + [logo en fila 1] + 2 der, repetido 3 veces */
   let filas = "";
   for (let i = 0; i < 3; i++) {
     filas += renderGrupo(izquierda[i * 2]);
@@ -615,7 +607,7 @@ async function cargarTabla() {
   const mejoresTerceros = terceros.slice(0, 8).map(eq => eq.equipo);
 
   function clasificacion(eq) {
-    if (eq.posicion === 1 || eq.posicion === 2)               return "estado-verde";
+    if (eq.posicion === 1 || eq.posicion === 2)                   return "estado-verde";
     if (eq.posicion === 3 && mejoresTerceros.includes(eq.equipo)) return "estado-amarillo";
     return "estado-rojo";
   }
@@ -624,9 +616,9 @@ async function cargarTabla() {
     return filas.map((eq, i) => {
       let sep = "";
       if (conSeparadores) {
-        if (i === primeros.length)                                         sep = "separador-top";
-        if (i === primeros.length + segundos.length)                       sep = "separador-top";
-        if (i === primeros.length + segundos.length + terceros.length)     sep = "separador-top";
+        if (i === primeros.length)                                     sep = "separador-top";
+        if (i === primeros.length + segundos.length)                   sep = "separador-top";
+        if (i === primeros.length + segundos.length + terceros.length) sep = "separador-top";
       }
       return `
         <tr class="${sep}">
@@ -669,14 +661,13 @@ async function cargarTabla() {
     <div class="tabla-toggle-wrap">
       <button class="toggle-tabla active" data-vista="grupos" onclick="window._tablaVista('grupos')">
         Por posición
-       </button>
+      </button>
       <button class="toggle-tabla" data-vista="general" onclick="window._tablaVista('general')">
         General
       </button>
-     </div>
-  
-    <div class="tabla-wrap">
+    </div>
 
+    <div class="tabla-wrap">
       <table class="tabla-general">
         <thead>
           <tr>
@@ -700,19 +691,8 @@ async function cargarTabla() {
   renderVista("grupos");
 }
 
+
 /* ─── HISTORIAL ─────────────────────────────────────────── */
-/* Agrega esto al final de mundial.js                        */
-/* Fuente de datos: partidos/mundial.json                    */
-
-// 1. Conectar el tab "historial" en cambiarVista()
-// Busca la función cambiarVista y añade este bloque:
-//
-//   if (vista === "historial") {
-//     sec.classList.add("vista-scroll");
-//     cargarHistorial();
-//   }
-
-// ── Helpers ──────────────────────────────────────────────
 
 let _partidosHistorial = [];
 
@@ -749,12 +729,9 @@ function calcularParidadH(partidos) {
   }).length;
 }
 
-// ── Carga ─────────────────────────────────────────────────
-
 async function cargarHistorial() {
   const sec = document.getElementById('contenidoMundial');
 
-  // Skeleton / loading
   sec.innerHTML = `
     <div class="hist-loading">
       <div class="spinner"></div>
@@ -788,7 +765,6 @@ async function cargarHistorial() {
     return;
   }
 
-  // ── Métricas ──
   const conResultado = partidos.filter(p => p.resultado);
   let aciertos = 0, parciales = 0, fallos = 0;
   for (const p of conResultado) {
@@ -797,11 +773,9 @@ async function cargarHistorial() {
     else if (t === 'parcial') parciales++;
     else                      fallos++;
   }
-  const total    = conResultado.length;
-  const efPct    = total ? ((aciertos / total) * 100).toFixed(1) + '%' : '—';
-  const paridad  = calcularParidadH(partidos);
+  const total   = conResultado.length;
+  const paridad = calcularParidadH(partidos);
 
-  // ── Filas ──
   const filas = partidos.map((p, i) => {
     const fav  = obtenerFavoritoH(p);
     const tipo = clasificarResultadoH(p);
@@ -837,8 +811,6 @@ async function cargarHistorial() {
   }).join('');
 
   sec.innerHTML = `
-
-    <!-- Resumen métricas -->
     <div class="hist-resumen">
       <div class="hist-dona-wrap" id="histDonaMundial">
         <div class="hist-dona-inner">
@@ -872,7 +844,6 @@ async function cargarHistorial() {
       </div>
     </div>
 
-    <!-- Tabla de partidos -->
     <div class="tabla-header hist-tabla-header">
       <span>Partido</span>
       <span>Local</span>
@@ -882,7 +853,6 @@ async function cargarHistorial() {
     </div>
     ${filas}
 
-    <!-- Modal -->
     <div class="modal-overlay" id="modalHistorialOverlay" onclick="cerrarModalHistorial(event)">
       <div class="modal-card" id="modalHistorialCard">
         <button class="modal-close" onclick="cerrarModalHistorial()">
@@ -897,7 +867,6 @@ async function cargarHistorial() {
     </div>
   `;
 
-  // Cargar Chart.js y pintar dona
   if (window.Chart) {
     renderDonaHistorial(aciertos, parciales, fallos, total);
   } else {
@@ -907,15 +876,12 @@ async function cargarHistorial() {
     document.head.appendChild(s);
   }
 
-  // ESC cierra modal
   document.addEventListener('keydown', _histEsc);
 }
 
 function _histEsc(e) {
   if (e.key === 'Escape') cerrarModalHistorial();
 }
-
-// ── Dona ─────────────────────────────────────────────────
 
 function renderDonaHistorial(aciertos, parciales, fallos, total) {
   const wrap = document.getElementById('histDonaMundial');
@@ -969,8 +935,6 @@ function renderDonaHistorial(aciertos, parciales, fallos, total) {
     }
   );
 }
-
-// ── Modal ─────────────────────────────────────────────────
 
 function abrirModalHistorial(i) {
   const p    = _partidosHistorial[i];
@@ -1044,4 +1008,426 @@ function cerrarModalHistorial(e) {
   if (e && e.target !== document.getElementById('modalHistorialOverlay')
        && !e.target.closest('.modal-close')) return;
   document.getElementById('modalHistorialOverlay')?.classList.remove('modal--visible');
+}
+
+
+/* ─── ELIMINATORIAS ─────────────────────────────────────── */
+/*
+ * Orden oficial FIFA (M73–M88):
+ *
+ * RAMA IZQUIERDA (8 partidos R32, apilados en columna):
+ *   M73, M74, M75, M76, M77, M78, M79, M80
+ *
+ * RAMA DERECHA (8 partidos R32, apilados en columna):
+ *   M81, M82, M83, M84, M85, M86, M87, M88
+ *
+ * Estructura visual:
+ * [R32 x8] [R16 x4] [QF x2] [SF x1]  FINAL  [SF x1] [QF x2] [R16 x4] [R32 x8]
+ *
+ * Cada columna tiene partidos apilados verticalmente.
+ * Dentro de cada partido, los 2 escudos van en ROW (lado a lado).
+ */
+
+async function cargarEliminatorias() {
+  const sec = document.getElementById('contenidoMundial');
+
+  sec.innerHTML = `
+    <div class="hist-loading">
+      <div class="spinner"></div>
+      <span>Cargando eliminatorias…</span>
+    </div>
+  `;
+
+  let fixture, grupos;
+  try {
+    const [rF, rG] = await Promise.all([
+      fetch('mundial/data/fixture.json'),
+      fetch('mundial/data/grupos.json'),
+    ]);
+    if (!rF.ok || !rG.ok) throw new Error('Sin datos');
+    fixture = await rF.json();
+    grupos  = await rG.json();
+  } catch (e) {
+    sec.innerHTML = `<div class="hist-vacio"><p>No se pudo cargar el bracket de eliminatorias.</p></div>`;
+    return;
+  }
+
+  /* ── Mapa de clasificados por grupo ── */
+  const grupoMap = {};
+  for (const g of grupos) {
+    grupoMap[g.grupo] = {};
+    for (const eq of g.equipos) {
+      grupoMap[g.grupo][eq.posicion] = { nombre: eq.equipo, escudo: eq.escudo };
+    }
+  }
+
+  const escudosPorNombre = {};
+  for (const g of grupos) {
+    for (const eq of g.equipos) {
+      escudosPorNombre[eq.equipo] = eq.escudo;
+    }
+  }
+
+  /* Mejores terceros (top 8) */
+  const terceros = grupos
+    .flatMap(g => g.equipos.filter(eq => eq.posicion === 3))
+    .sort((a, b) =>
+      b.puntos - a.puntos ||
+      b.diferencia_goles - a.diferencia_goles ||
+      b.goles_favor - a.goles_favor
+    );
+  const mejoresTerceros = terceros.slice(0, 8);
+
+  function resolverEquipo(nombre) {
+    if (!nombre) return null;
+    const mWinner = nombre.match(/^(Group \w+)\s+Winner$/i);
+    if (mWinner) { const g = grupoMap[mWinner[1]]; return g ? (g[1] || null) : null; }
+    const m2nd = nombre.match(/^(Group \w+)\s+2nd/i);
+    if (m2nd) { const g = grupoMap[m2nd[1]]; return g ? (g[2] || null) : null; }
+    const m3rd = nombre.match(/^(Group \w+)\s+3rd/i);
+    if (m3rd) { const g = grupoMap[m3rd[1]]; return g ? (g[3] || null) : null; }
+    const mThird = nombre.match(/Third\s+Place\s+Group\s+([A-Z/]+)/i);
+    if (mThird) {
+      const gruposValidos = mThird[1].split('/').map(l => `Group ${l.trim()}`);
+      const candidato = mejoresTerceros.find(eq => {
+        const grupoEq = grupos.find(g => g.equipos.some(e => e.equipo === eq.equipo));
+        return grupoEq && gruposValidos.includes(grupoEq.grupo);
+      });
+      return candidato ? { nombre: candidato.equipo, escudo: candidato.escudo } : null;
+    }
+    if (/Round of \d+/i.test(nombre))                  return null;
+    if (/Quarterfinal \d+ Winner/i.test(nombre))       return null;
+    if (/Semifinal \d+ (Winner|Loser)/i.test(nombre))  return null;
+    if (escudosPorNombre[nombre]) return { nombre, escudo: escudosPorNombre[nombre] };
+    return null;
+  }
+
+  function fixtureAPartido(p) {
+    if (!p) return null;
+    const e1 = resolverEquipo(p.local);
+    const e2 = resolverEquipo(p.visitante);
+    return {
+      equipo1: e1 ? { nombre: e1.nombre, escudo: e1.escudo, goles: null } : null,
+      equipo2: e2 ? { nombre: e2.nombre, escudo: e2.escudo, goles: null } : null,
+      ganador: null,
+    };
+  }
+
+  /* ── Filtrar y ordenar partidos por fecha ── */
+  const FASE_INICIO = new Date('2026-06-28T00:00Z');
+  const elim = fixture
+    .filter(p => new Date(p.fecha) >= FASE_INICIO)
+    .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+
+  function enRango(p, desde, hasta) {
+    const f = new Date(p.fecha);
+    return f >= new Date(desde) && f < new Date(hasta);
+  }
+
+  /*
+   * R32: 16 partidos en orden cronológico = M73–M88
+   * Los primeros 8 van a la rama IZQUIERDA (M73-M80)
+   * Los siguientes 8 van a la rama DERECHA  (M81-M88)
+   */
+  const r32all = elim.filter(p => enRango(p, '2026-06-28', '2026-07-04T12:00Z'));
+  const r32L   = r32all.slice(0, 8).map(fixtureAPartido);  /* M73-M80, rama izq */
+  const r32R   = r32all.slice(8, 16).map(fixtureAPartido); /* M81-M88, rama der */
+
+  /* R16: 8 partidos → 4 izq + 4 der */
+  const r16all = elim.filter(p => enRango(p, '2026-07-04T12:00Z', '2026-07-08'));
+  const r16L   = r16all.slice(0, 4).map(fixtureAPartido);
+  const r16R   = r16all.slice(4, 8).map(fixtureAPartido);
+
+  /* Cuartos: 4 partidos → 2 izq + 2 der */
+  const qfall  = elim.filter(p => enRango(p, '2026-07-09', '2026-07-13'));
+  const qfL    = qfall.slice(0, 2).map(fixtureAPartido);
+  const qfR    = qfall.slice(2, 4).map(fixtureAPartido);
+
+  /* Semis: 2 partidos → 1 izq + 1 der */
+  const sfall  = elim.filter(p => enRango(p, '2026-07-13', '2026-07-17'));
+  const sfL    = fixtureAPartido(sfall[0] || null);
+  const sfR    = fixtureAPartido(sfall[1] || null);
+
+  /* 3° y Final */
+  const extras  = elim.filter(p => enRango(p, '2026-07-17', '2026-07-20'));
+  const terceroP = extras.find(p => new Date(p.fecha) < new Date('2026-07-19'));
+  const finalP   = extras.find(p => new Date(p.fecha) >= new Date('2026-07-19'));
+
+  const data = {
+    r32L, r32R,
+    r16L, r16R,
+    qfL,  qfR,
+    sfL,  sfR,
+    tercero: fixtureAPartido(terceroP),
+    final:   fixtureAPartido(finalP),
+  };
+
+  sec.innerHTML = renderBracket(data);
+}
+
+
+/* ── Helpers de bracket ──────────────────────────────────── */
+
+function renderSlot(equipo, esGanador) {
+  if (!equipo || !equipo.nombre) {
+    return `<div class="bk-slot bk-slot--vacio"><div class="bk-escudo bk-escudo--vacio"></div></div>`;
+  }
+  const clsGanador = esGanador ? 'bk-slot--ganador' : '';
+  return `
+    <div class="bk-slot ${clsGanador}" title="${equipo.nombre}">
+      <img class="bk-escudo" src="${equipo.escudo || ''}" alt="${equipo.nombre}"
+           onerror="this.style.visibility='hidden'">
+    </div>
+  `;
+}
+
+function renderPartido(partido, cls = '') {
+  if (!partido) {
+    return `<div class="bk-partido bk-partido--vacio ${cls}"></div>`;
+  }
+  const e1 = partido.equipo1 || {};
+  const e2 = partido.equipo2 || {};
+  const g  = partido.ganador || null;
+  return `
+    <div class="bk-partido ${cls}">
+      ${renderSlot(e1.nombre ? e1 : null, g && g === e1.nombre)}
+      <div class="bk-sep"></div>
+      ${renderSlot(e2.nombre ? e2 : null, g && g === e2.nombre)}
+    </div>
+  `;
+}
+
+/*
+ * Columna = lista de partidos apilados verticalmente con space-around.
+ * Cada partido tiene sus 2 equipos en ROW dentro.
+ */
+function renderCol(partidos, cls = '') {
+  const items = Array.isArray(partidos) ? partidos : [partidos].filter(Boolean);
+  return `
+    <div class="bk-col ${cls}">
+      ${items.map(p => renderPartido(p)).join('')}
+    </div>
+  `;
+}
+
+function renderBracket(data) {
+  /*
+   * Layout:
+   * [R32x8] [R16x4] [QFx2] [SFx1]  FINAL  [SFx1] [QFx2] [R16x4] [R32x8]
+   *
+   * Cada columna tiene sus partidos apilados (column) con space-around.
+   * Dentro de cada partido, los 2 escudos van en ROW.
+   *
+   * El space-around hace que los partidos de R16 queden centrados
+   * respecto a sus 2 partidos del R32 de los que provienen.
+   */
+
+  const centro = `
+    <div class="bk-centro">
+      <div class="bk-fase-lbl">Final</div>
+      ${renderPartido(data.final, 'bk-partido--final')}
+      <div class="bk-copa">
+        <img src="assets/mundial-2026.png" alt="Copa" onerror="this.style.display='none'">
+      </div>
+      <div class="bk-fase-lbl">3.er lugar</div>
+      ${renderPartido(data.tercero, 'bk-partido--tercero')}
+    </div>
+  `;
+
+  return `
+    <div class="bk-wrapper">
+
+      <div class="bk-labels-row">
+        <span>16avos</span>
+        <span>8avos</span>
+        <span>Cuartos</span>
+        <span>Semis</span>
+        <span class="bk-lbl-centro"></span>
+        <span>Semis</span>
+        <span>Cuartos</span>
+        <span>8avos</span>
+        <span>16avos</span>
+      </div>
+
+      <div class="bk-bracket">
+
+        <!-- RAMA IZQUIERDA: columnas de izq a der → Final -->
+        ${renderCol(data.r32L, 'bk-col--r32')}
+        ${renderCol(data.r16L, 'bk-col--r16')}
+        ${renderCol(data.qfL,  'bk-col--qf')}
+        ${renderCol([data.sfL],'bk-col--sf')}
+
+        ${centro}
+
+        <!-- RAMA DERECHA: columnas de Final → der -->
+        ${renderCol([data.sfR],'bk-col--sf')}
+        ${renderCol(data.qfR,  'bk-col--qf')}
+        ${renderCol(data.r16R, 'bk-col--r16')}
+        ${renderCol(data.r32R, 'bk-col--r32')}
+
+      </div>
+    </div>
+
+    <style>
+      /* ─── Wrapper ─── */
+      .bk-wrapper {
+        width: 100%;
+        height: calc(100vh - 130px);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        padding: 4px 2px;
+        overflow: hidden;
+      }
+
+      /* ─── Labels superiores ─── */
+      .bk-labels-row {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        margin-bottom: 4px;
+      }
+      .bk-labels-row span {
+        flex: 1;
+        text-align: center;
+        font-size: .48rem;
+        font-weight: 700;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        opacity: .28;
+        color: var(--color-texto, #fff);
+        white-space: nowrap;
+      }
+      .bk-lbl-centro { flex: 0 0 60px !important; }
+
+      /* ─── Bracket: fila horizontal de columnas ─── */
+      .bk-bracket {
+        display: flex;
+        flex: 1;
+        min-height: 0;
+        align-items: stretch;
+        gap: 2px;
+      }
+
+      /* ─── Columnas ─── */
+      /* Cada columna apila sus partidos verticalmente con space-around,
+         lo que alinea automáticamente cada partido con el par del R32
+         del que proviene. */
+      .bk-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        min-width: 0;
+        min-height: 0;
+      }
+      .bk-col--r32 { flex: 2; }
+      .bk-col--r16 { flex: 1; }
+      .bk-col--qf  { flex: 1; }
+      .bk-col--sf  { flex: 1; }
+
+      /* ─── Centro ─── */
+      .bk-centro {
+        flex: 0 0 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        min-height: 0;
+      }
+      .bk-fase-lbl {
+        font-size: .42rem;
+        font-weight: 700;
+        letter-spacing: .07em;
+        text-transform: uppercase;
+        opacity: .25;
+        color: var(--color-texto, #fff);
+        text-align: center;
+        flex-shrink: 0;
+      }
+      .bk-copa {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3px 0;
+      }
+      .bk-copa img {
+        width: 280px;
+        height: auto;
+        opacity: .5;
+        filter: drop-shadow(0 0 4px rgba(255,215,0,.3));
+        transition: opacity .2s, filter .2s;
+      }
+      .bk-copa img:hover { opacity: 1; filter: drop-shadow(0 0 8px rgba(255,215,0,.6)); }
+
+      /* ─── Partido: 2 escudos en ROW ─── */
+      .bk-partido {
+        display: flex;
+        flex-direction: row;      /* ← escudos lado a lado */
+        align-items: stretch;
+        border: 1px solid rgba(255,255,255,.09);
+        border-radius: 4px;
+        overflow: hidden;
+        background: rgba(255,255,255,.03);
+        margin: 2px 0;
+        min-height: 0;
+        min-width: 0;
+        flex-shrink: 0;
+        height: clamp(16px, 3.8vh, 30px);
+        transition: border-color .15s;
+        cursor: default;
+      }
+      .bk-partido:hover { border-color: rgba(255,255,255,.2); }
+      .bk-partido--vacio {
+        border-color: transparent !important;
+        background: transparent !important;
+        pointer-events: none;
+      }
+      .bk-partido--final,
+      .bk-partido--tercero {
+        border-color: rgba(255,255,255,.2);
+        width: 100%;
+      }
+
+      /* ─── Slot (mitad del partido = 1 escudo) ─── */
+      .bk-slot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        min-width: 0;
+        padding: 2px 3px;
+        transition: background .12s;
+      }
+      .bk-slot--ganador { background: rgba(255,255,255,.08); }
+      .bk-slot--vacio   { opacity: .15; }
+
+      /* ─── Separador vertical entre los 2 escudos ─── */
+      .bk-sep {
+        width: 1px;
+        flex-shrink: 0;
+        background: rgba(255,255,255,.07);
+        align-self: stretch;
+      }
+
+      /* ─── Escudo ─── */
+      .bk-escudo {
+        width: 33px;
+        height: 33px;
+        object-fit: contain;
+        display: block;
+        flex-shrink: 0;
+      }
+      .bk-partido--final   .bk-escudo,
+      .bk-partido--tercero .bk-escudo { width: 16px; height: 16px; }
+      .bk-escudo--vacio {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: rgba(255,255,255,.08);
+        border: 1px dashed rgba(255,255,255,.2);
+        flex-shrink: 0;
+      }
+    </style>
+  `;
 }

@@ -12,6 +12,18 @@
     "partidos": 3.0
   },
   {
+    "grupo": "Group F",
+    "posicion": 1.0,
+    "equipo": "Netherlands",
+    "abreviacion": "NED",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+    "puntos": 7.0,
+    "diferencia_goles": 6.0,
+    "goles_favor": 10.0,
+    "goles_contra": 4.0,
+    "partidos": 3.0
+  },
+  {
     "grupo": "Group C",
     "posicion": 1.0,
     "equipo": "Brazil",
@@ -132,6 +144,18 @@
     "partidos": 3.0
   },
   {
+    "grupo": "Group F",
+    "posicion": 2.0,
+    "equipo": "Japan",
+    "abreviacion": "JPN",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+    "puntos": 5.0,
+    "diferencia_goles": 4.0,
+    "goles_favor": 7.0,
+    "goles_contra": 3.0,
+    "partidos": 3.0
+  },
+  {
     "grupo": "Group B",
     "posicion": 2.0,
     "equipo": "Canada",
@@ -153,30 +177,6 @@
     "diferencia_goles": 5.0,
     "goles_favor": 6.0,
     "goles_contra": 1.0,
-    "partidos": 2.0
-  },
-  {
-    "grupo": "Group F",
-    "posicion": 1.0,
-    "equipo": "Netherlands",
-    "abreviacion": "NED",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
-    "puntos": 4.0,
-    "diferencia_goles": 4.0,
-    "goles_favor": 7.0,
-    "goles_contra": 3.0,
-    "partidos": 2.0
-  },
-  {
-    "grupo": "Group F",
-    "posicion": 2.0,
-    "equipo": "Japan",
-    "abreviacion": "JPN",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
-    "puntos": 4.0,
-    "diferencia_goles": 4.0,
-    "goles_favor": 6.0,
-    "goles_contra": 2.0,
     "partidos": 2.0
   },
   {
@@ -228,6 +228,18 @@
     "partidos": 2.0
   },
   {
+    "grupo": "Group F",
+    "posicion": 3.0,
+    "equipo": "Sweden",
+    "abreviacion": "SWE",
+    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+    "puntos": 4.0,
+    "diferencia_goles": 0.0,
+    "goles_favor": 7.0,
+    "goles_contra": 7.0,
+    "partidos": 3.0
+  },
+  {
     "grupo": "Group E",
     "posicion": 3.0,
     "equipo": "Ecuador",
@@ -262,18 +274,6 @@
     "goles_favor": 2.0,
     "goles_contra": 3.0,
     "partidos": 3.0
-  },
-  {
-    "grupo": "Group F",
-    "posicion": 3.0,
-    "equipo": "Sweden",
-    "abreviacion": "SWE",
-    "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-    "puntos": 3.0,
-    "diferencia_goles": 0.0,
-    "goles_favor": 6.0,
-    "goles_contra": 6.0,
-    "partidos": 2.0
   },
   {
     "grupo": "Group J",
@@ -570,9 +570,9 @@
     "abreviacion": "TUN",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
     "puntos": 0.0,
-    "diferencia_goles": -8.0,
-    "goles_favor": 1.0,
-    "goles_contra": 9.0,
-    "partidos": 2.0
+    "diferencia_goles": -10.0,
+    "goles_favor": 2.0,
+    "goles_contra": 12.0,
+    "partidos": 3.0
   }
 ]
