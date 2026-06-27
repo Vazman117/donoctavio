@@ -1027,6 +1027,7 @@ function cerrarModalHistorial(e) {
  * Cada columna tiene partidos apilados verticalmente.
  * Dentro de cada partido, los 2 escudos van en ROW (lado a lado).
  */
+/* ─── ELIMINATORIAS ─────────────────────────────────────── */
 
 async function cargarEliminatorias() {
   const sec = document.getElementById('contenidoMundial');
@@ -1113,11 +1114,48 @@ async function cargarEliminatorias() {
     };
   }
 
-  /* ── Filtrar y ordenar partidos por fecha ── */
+  /* ── Mapeo ID ESPN → número de partido oficial FIFA ──
+   *
+   * R32  (M73–M88):
+   *   IZQUIERDA: M74+M77→M89, M73+M75→M90, M76+M78→M91, M79+M80→M92
+   *   DERECHA:   M83+M84→M93, M81+M82→M94, M86+M88→M95, M85+M87→M96
+   *
+   * R16  (M89–M96):
+   *   IZQUIERDA: M89+M90→M97, M91+M92→M99
+   *   DERECHA:   M93+M94→M98, M95+M96→M100
+   *
+   * QF   (M97–M100):
+   *   IZQUIERDA: M97+M99→SF izq (M101)
+   *   DERECHA:   M98+M100→SF der (M102)
+   *
+   * SF   (M101–M102) → Final (M104) / 3er lugar (M103)
+   */
+  const matchNumMap = {
+    // R32
+    '760486': 73, '760489': 74, '760488': 75, '760487': 76,
+    '760492': 77, '760490': 78, '760491': 79, '760495': 80,
+    '760494': 81, '760493': 82, '760496': 83, '760497': 84,
+    '760498': 85, '760499': 86, '760500': 87, '760501': 88,
+    // R16
+    '760502': 89, '760503': 90, '760504': 91, '760505': 92,
+    '760506': 93, '760507': 94, '760508': 95, '760509': 96,
+    // QF
+    '760510': 97, '760511': 98, '760512': 99, '760513': 100,
+    // SF
+    '760514': 101, '760515': 102,
+    // 3er y Final
+    '760516': 103, '760517': 104,
+  };
+
   const FASE_INICIO = new Date('2026-06-28T00:00Z');
-  const elim = fixture
+  const elimAll = fixture
     .filter(p => new Date(p.fecha) >= FASE_INICIO)
     .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+
+  /* Helper: obtener partido por número oficial FIFA */
+  function getM(num) {
+    return elimAll.find(p => matchNumMap[p.id] === num) || null;
+  }
 
   function enRango(p, desde, hasta) {
     const f = new Date(p.fecha);
@@ -1125,41 +1163,75 @@ async function cargarEliminatorias() {
   }
 
   /*
-   * R32: 16 partidos en orden cronológico = M73–M88
-   * Los primeros 8 van a la rama IZQUIERDA (M73-M80)
-   * Los siguientes 8 van a la rama DERECHA  (M81-M88)
+   * Cada columna se arma con getM() para respetar el árbol oficial.
+   * Los pares adyacentes (índices 0-1, 2-3, …) son los que se enfrentan
+   * en la siguiente ronda, garantizando alineación visual correcta.
    */
-  const r32all = elim.filter(p => enRango(p, '2026-06-28', '2026-07-04T12:00Z'));
-  const r32L   = r32all.slice(0, 8).map(fixtureAPartido);  /* M73-M80, rama izq */
-  const r32R   = r32all.slice(8, 16).map(fixtureAPartido); /* M81-M88, rama der */
 
-  /* R16: 8 partidos → 4 izq + 4 der */
-  const r16all = elim.filter(p => enRango(p, '2026-07-04T12:00Z', '2026-07-08'));
-  const r16L   = r16all.slice(0, 4).map(fixtureAPartido);
-  const r16R   = r16all.slice(4, 8).map(fixtureAPartido);
+  /* ── R32 ── */
+  const r32L = [
+    fixtureAPartido(getM(74)),  // ┐ → M89
+    fixtureAPartido(getM(77)),  // ┘
+    fixtureAPartido(getM(73)),  // ┐ → M90
+    fixtureAPartido(getM(75)),  // ┘
+    fixtureAPartido(getM(76)),  // ┐ → M91
+    fixtureAPartido(getM(78)),  // ┘
+    fixtureAPartido(getM(79)),  // ┐ → M92
+    fixtureAPartido(getM(80)),  // ┘
+  ];
 
-  /* Cuartos: 4 partidos → 2 izq + 2 der */
-  const qfall  = elim.filter(p => enRango(p, '2026-07-09', '2026-07-13'));
-  const qfL    = qfall.slice(0, 2).map(fixtureAPartido);
-  const qfR    = qfall.slice(2, 4).map(fixtureAPartido);
+  const r32R = [
+    fixtureAPartido(getM(83)),  // ┐ → M93
+    fixtureAPartido(getM(84)),  // ┘
+    fixtureAPartido(getM(81)),  // ┐ → M94
+    fixtureAPartido(getM(82)),  // ┘
+    fixtureAPartido(getM(86)),  // ┐ → M95
+    fixtureAPartido(getM(88)),  // ┘
+    fixtureAPartido(getM(85)),  // ┐ → M96
+    fixtureAPartido(getM(87)),  // ┘
+  ];
 
-  /* Semis: 2 partidos → 1 izq + 1 der */
-  const sfall  = elim.filter(p => enRango(p, '2026-07-13', '2026-07-17'));
-  const sfL    = fixtureAPartido(sfall[0] || null);
-  const sfR    = fixtureAPartido(sfall[1] || null);
+  /* ── R16 ── */
+  const r16L = [
+    fixtureAPartido(getM(89)),  // ┐ → M97
+    fixtureAPartido(getM(90)),  // ┘
+    fixtureAPartido(getM(91)),  // ┐ → M99
+    fixtureAPartido(getM(92)),  // ┘
+  ];
 
-  /* 3° y Final */
-  const extras  = elim.filter(p => enRango(p, '2026-07-17', '2026-07-20'));
-  const terceroP = extras.find(p => new Date(p.fecha) < new Date('2026-07-19'));
-  const finalP   = extras.find(p => new Date(p.fecha) >= new Date('2026-07-19'));
+  const r16R = [
+    fixtureAPartido(getM(93)),  // ┐ → M98
+    fixtureAPartido(getM(94)),  // ┘
+    fixtureAPartido(getM(95)),  // ┐ → M100
+    fixtureAPartido(getM(96)),  // ┘
+  ];
+
+  /* ── Cuartos ── */
+  const qfL = [
+    fixtureAPartido(getM(97)),   // ┐ → SF izq
+    fixtureAPartido(getM(99)),   // ┘
+  ];
+
+  const qfR = [
+    fixtureAPartido(getM(98)),   // ┐ → SF der
+    fixtureAPartido(getM(100)),  // ┘
+  ];
+
+  /* ── Semis ── */
+  const sfL = fixtureAPartido(getM(101));
+  const sfR = fixtureAPartido(getM(102));
+
+  /* ── 3er lugar y Final ── */
+  const sfL_raw = fixtureAPartido(getM(103));
+  const sfR_raw = fixtureAPartido(getM(104));
 
   const data = {
     r32L, r32R,
     r16L, r16R,
     qfL,  qfR,
     sfL,  sfR,
-    tercero: fixtureAPartido(terceroP),
-    final:   fixtureAPartido(finalP),
+    tercero: fixtureAPartido(getM(103)),
+    final:   fixtureAPartido(getM(104)),
   };
 
   sec.innerHTML = renderBracket(data);
