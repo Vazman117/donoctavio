@@ -150,8 +150,8 @@ PARTIDOS_GRUPO = [
     # ("Australia",   "Türkiye",    "Vancouver"),    # JUGADO 2-0
     # ("United States", "Australia", "Seattle"),     # JUGADO 2-0
     # ("Türkiye",      "Paraguay",  "San Francisco"), # JUGADO 0-1
-    ("Türkiye",  "United States", "Los Angeles"),
-    ("Paraguay",    "Australia", "Miami"),
+    #("Türkiye",  "United States", "Los Angeles"),
+    #("Paraguay",    "Australia", "Miami"),
 
     # ── GRUPO E ──────────────────────────────────────────────
     # ("Germany",     "Curaçao",    "Houston"),  # JUGADO 7-1
@@ -174,22 +174,22 @@ PARTIDOS_GRUPO = [
     # ("Iran",        "New Zealand","Los Angeles"), # JUGADO 2-2
     # ("Belgium",     "Iran",       "Los Angeles"), # JUGADO 0-0
     # ("Egypt",       "New Zealand","Miami"),     # JUGADO 1-3
-    ("Belgium",     "New Zealand","San Francisco"),
-    ("Iran",        "Egypt",      "Dallas"),
+    #("Belgium",     "New Zealand","San Francisco"),
+    #("Iran",        "Egypt",      "Dallas"),
 
     # ── GRUPO H ──────────────────────────────────────────────
     # ("Spain",       "Cape Verde", "Atlanta"),  # JUGADO 0-0
     # ("Saudi Arabia","Uruguay",    "Miami"),    # JUGADO 1-1
     # ("Spain",       "Saudi Arabia","Atlanta"), # JUGADO 4-0
     # ("Uruguay",     "Cape Verde", "Houston"),  # JUGADO 2-2
-    ("Uruguay",     "Spain",      "Guadalajara"),
-    ("Cape Verde",  "Saudi Arabia","Houston"),
+    #("Uruguay",     "Spain",      "Guadalajara"),
+    #("Cape Verde",  "Saudi Arabia","Houston"),
 
     # ── GRUPO I ──────────────────────────────────────────────
     # ("France",      "Senegal",   "New York"),  # JUGADO 3-1
     # ("Iraq",        "Norway",    "Boston"),    # JUGADO 1-4
-    ("Norway",      "France",    "Boston"),
-    ("Senegal",     "Iraq",      "Toronto"),
+    #("Norway",      "France",    "Boston"),
+    #("Senegal",     "Iraq",      "Toronto"),
     # ("France",      "Iraq",      "Kansas City"), # JUGADO 3-0
     # ("Senegal",     "Norway",    "Philadelphia"), # JUGADO 3-2
 
@@ -198,24 +198,24 @@ PARTIDOS_GRUPO = [
     # ("Austria",     "Jordan",    "San Francisco"), # JUGADO 3-1
     # ("Argentina",   "Austria",   "Dallas"),      # JUGADO 2-0
     # ("Algeria",     "Jordan",    "Philadelphia"), # JUGADO 2-1
-    ("Jordan",      "Argentina", "Dallas"),
-    ("Algeria",     "Austria",   "Kansas City"),
+    #("Jordan",      "Argentina", "Dallas"),
+    #("Algeria",     "Austria",   "Kansas City"),
 
     # ── GRUPO K ──────────────────────────────────────────────
     # ("Portugal",    "Congo DR",  "Houston"),    # JUGADO 1-1
     # ("Uzbekistan",  "Colombia",  "Mexico City"), # JUGADO 1-3
     # ("Portugal",    "Uzbekistan","Houston"),    # JUGADO 5-0
     # ("Colombia",    "Congo DR",  "Guadalajara"),
-    ("Colombia",    "Portugal",  "Seattle"),
-    ("Congo DR",    "Uzbekistan","Atlanta"),
+    #("Colombia",    "Portugal",  "Seattle"),
+    #("Congo DR",    "Uzbekistan","Atlanta"),
 
     # ── GRUPO L ──────────────────────────────────────────────
     # ("England",     "Croatia",   "Dallas"),    # JUGADO 4-2
     # ("Ghana",       "Panama",    "Toronto"),   # JUGADO 1-0
     # ("England",     "Ghana",     "Boston"),
     # ("Panama",      "Croatia",   "New York"),
-    ("Croatia",     "Ghana",     "Philadelphia"),
-    ("Panama",      "England",   "Miami"),
+    #("Croatia",     "Ghana",     "Philadelphia"),
+    #("Panama",      "England",   "Miami"),
 ]
 
 

@@ -122,18 +122,9 @@ def normalizar_ranking_fifa(seleccion):
 # =============================
 # ADAPTADOR DE SELECCIÓN
 # =============================
-# FIX 1: La forma ponderada ahora pondera por número de partidos
-#         Y da peso doble a los partidos oficiales vs amistosos.
-# FIX 2: Los promedios de goles también usan el mismo esquema de
-#         ponderación (oficiales valen 2x más que amistosos).
-#
-# Razonamiento: en un torneo como el Mundial, los resultados oficiales
-# del propio torneo son el indicador más fiable del estado actual del
-# equipo. Promediar 50/50 forma_oficial=0.0 con forma_amistosos=1.0
-# inflaba artificialmente a equipos que llegan perdiendo.
 
-PESO_OFICIAL   = 2.0   # multiplicador de partidos oficiales
-PESO_AMISTOSO  = 1.0   # multiplicador de partidos amistosos
+PESO_OFICIAL   = 2.0
+PESO_AMISTOSO  = 1.0
 
 def adaptar_seleccion(seleccion_raw):
     p_of  = seleccion_raw.get("partidos_oficial",  0) or 0
@@ -141,9 +132,8 @@ def adaptar_seleccion(seleccion_raw):
     fo    = seleccion_raw.get("forma_oficial",   0.0) or 0.0
     fa    = seleccion_raw.get("forma_amistosos", 0.0) or 0.0
 
-    # FIX 1 — Forma ponderada: oficiales pesan PESO_OFICIAL x, amistosos PESO_AMISTOSO x
-    peso_of_f   = p_of * PESO_OFICIAL
-    peso_am_f   = p_am * PESO_AMISTOSO
+    peso_of_f    = p_of * PESO_OFICIAL
+    peso_am_f    = p_am * PESO_AMISTOSO
     total_peso_f = peso_of_f + peso_am_f
 
     forma_final = seleccion_raw.get("forma", 0.0) or 0.0
@@ -166,7 +156,6 @@ def adaptar_seleccion(seleccion_raw):
     gf_am = seleccion_raw.get("goles_favor_amistoso",  0.0) or 0.0
     gc_am = seleccion_raw.get("goles_contra_amistoso", 0.0) or 0.0
 
-    # FIX 2 — Goles ponderados: mismo esquema que la forma
     peso_of_g    = p_of * PESO_OFICIAL
     peso_am_g    = p_am * PESO_AMISTOSO
     total_peso_g = peso_of_g + peso_am_g
@@ -231,76 +220,82 @@ def adaptar_seleccion(seleccion_raw):
 
 PERFILES_SELECCIONES = {
     "amistoso": {
-        "nombre":       "Amistoso Internacional",
-        "K_LOGISTICO":  2.8,
-        "MAX_FAVORITO": 0.56,
-        "ALPHA":        0.60,
-        "BETA":         0.40,
-        "usa_h2h":      False,
-        "usa_altitud":  True,
-        "PESO_BASE":    0.90,
-        "PESO_H2H":     0.00,
-        "PESO_ALTITUD": 0.10,
+        "nombre":          "Amistoso Internacional",
+        "K_LOGISTICO":     2.8,
+        "MAX_FAVORITO":    0.56,
+        "ALPHA":           0.60,
+        "BETA":            0.40,
+        "usa_h2h":         False,
+        "usa_altitud":     True,
+        "PESO_BASE":       0.90,
+        "PESO_H2H":        0.00,
+        "PESO_ALTITUD":    0.10,
+        "es_eliminatoria": False,
     },
     "eliminatoria_conmebol": {
-        "nombre":       "Eliminatoria CONMEBOL",
-        "K_LOGISTICO":  4.2,
-        "MAX_FAVORITO": 0.62,
-        "ALPHA":        0.70,
-        "BETA":         0.30,
-        "usa_h2h":      True,
-        "usa_altitud":  True,
-        "PESO_BASE":    0.66,
-        "PESO_H2H":     0.24,
-        "PESO_ALTITUD": 0.10,
+        "nombre":          "Eliminatoria CONMEBOL",
+        "K_LOGISTICO":     4.2,
+        "MAX_FAVORITO":    0.62,
+        "ALPHA":           0.70,
+        "BETA":            0.30,
+        "usa_h2h":         True,
+        "usa_altitud":     True,
+        "PESO_BASE":       0.66,
+        "PESO_H2H":        0.24,
+        "PESO_ALTITUD":    0.10,
+        "es_eliminatoria": False,
     },
     "eliminatoria_concacaf": {
-        "nombre":       "Eliminatoria CONCACAF",
-        "K_LOGISTICO":  4.0,
-        "MAX_FAVORITO": 0.63,
-        "ALPHA":        0.72,
-        "BETA":         0.28,
-        "usa_h2h":      True,
-        "usa_altitud":  True,
-        "PESO_BASE":    0.71,
-        "PESO_H2H":     0.21,
-        "PESO_ALTITUD": 0.08,
+        "nombre":          "Eliminatoria CONCACAF",
+        "K_LOGISTICO":     4.0,
+        "MAX_FAVORITO":    0.63,
+        "ALPHA":           0.72,
+        "BETA":            0.28,
+        "usa_h2h":         True,
+        "usa_altitud":     True,
+        "PESO_BASE":       0.71,
+        "PESO_H2H":        0.21,
+        "PESO_ALTITUD":    0.08,
+        "es_eliminatoria": False,
     },
     "copa_america": {
-        "nombre":       "Copa América / Torneo Continental",
-        "K_LOGISTICO":  4.1,
-        "MAX_FAVORITO": 0.63,
-        "ALPHA":        0.71,
-        "BETA":         0.29,
-        "usa_h2h":      True,
-        "usa_altitud":  True,
-        "PESO_BASE":    0.70,
-        "PESO_H2H":     0.22,
-        "PESO_ALTITUD": 0.08,
+        "nombre":          "Copa América / Torneo Continental",
+        "K_LOGISTICO":     4.1,
+        "MAX_FAVORITO":    0.63,
+        "ALPHA":           0.71,
+        "BETA":            0.29,
+        "usa_h2h":         True,
+        "usa_altitud":     True,
+        "PESO_BASE":       0.70,
+        "PESO_H2H":        0.22,
+        "PESO_ALTITUD":    0.08,
+        "es_eliminatoria": False,
     },
     "mundial_grupos": {
-        "nombre":       "Copa del Mundo FIFA — Fase de Grupos",
-        "K_LOGISTICO":  2.2,
-        "MAX_FAVORITO": 0.39,
-        "ALPHA":        0.72,
-        "BETA":         0.28,
-        "usa_h2h":      True,
-        "usa_altitud":  True,
-        "PESO_BASE":    0.66,
-        "PESO_H2H":     0.22,
-        "PESO_ALTITUD": 0.12,
+        "nombre":          "Copa del Mundo FIFA — Fase de Grupos",
+        "K_LOGISTICO":     2.2,
+        "MAX_FAVORITO":    0.39,
+        "ALPHA":           0.72,
+        "BETA":            0.28,
+        "usa_h2h":         True,
+        "usa_altitud":     True,
+        "PESO_BASE":       0.66,
+        "PESO_H2H":        0.22,
+        "PESO_ALTITUD":    0.12,
+        "es_eliminatoria": False,
     },
     "mundial_eliminatoria": {
-        "nombre":       "Copa del Mundo FIFA — Eliminatorias",
-        "K_LOGISTICO":  3.6,
-        "MAX_FAVORITO": 0.60,
-        "ALPHA":        0.63,
-        "BETA":         0.37,
-        "usa_h2h":      True,
-        "usa_altitud":  True,
-        "PESO_BASE":    0.63,
-        "PESO_H2H":     0.25,
-        "PESO_ALTITUD": 0.12,
+        "nombre":          "Copa del Mundo FIFA — Eliminatorias",
+        "K_LOGISTICO":     3.6,
+        "MAX_FAVORITO":    0.51,
+        "ALPHA":           0.63,
+        "BETA":            0.37,
+        "usa_h2h":         True,
+        "usa_altitud":     True,
+        "PESO_BASE":       0.63,
+        "PESO_H2H":        0.25,
+        "PESO_ALTITUD":    0.12,
+        "es_eliminatoria": True,   # ← el empate NO puede ser predicción final
     },
 }
 
@@ -338,17 +333,8 @@ def peso_confianza(partidos_jugados):
 # =============================
 # HELPER: WIN RATE CON FALLBACK
 # =============================
-# FIX: cuando un equipo no tiene partidos en una situación (visita/local/neutro),
-# en lugar de usar el valor 0.0 del JSON se regresa a 0.5 (neutral).
-# Esto evita que equipos como Argentina, con 0 partidos de visita,
-# colapsen su fuerza base por un win_rate_visita de 0.0 sin respaldo estadístico.
 
 def _wr_con_fallback(seleccion, es_neutro, es_local):
-    """
-    Devuelve (wr_raw, partidos_sit).
-    Si no hay muestra para la situación concreta, retorna wr_raw=0.5.
-    Para partidos neutros se suma local+visita como proxy de muestra total.
-    """
     if es_neutro:
         p_sit  = seleccion.get("partidos_local", 0) + seleccion.get("partidos_visita", 0)
         wr_raw = seleccion.get("win_rate_neutro", 0.5)
@@ -383,7 +369,6 @@ def calcular_ipo_seleccion(equipo, contexto, promedio_global):
 
     mod_forma = 0.85 + (equipo["forma_ponderada"] * 0.30)
 
-    # FIX: usar helper con fallback en lugar de acceso directo al JSON
     wr_raw, _ = _wr_con_fallback(equipo, es_neutro, es_local)
     mod_localidad = 0.80 + (wr_raw * 0.40)
 
@@ -562,7 +547,6 @@ def calcular_fuerza_base(seleccion, contexto, cfg):
     es_neutro    = contexto.get("es_neutro", False)
     es_local     = contexto.get("es_local", False)
 
-    # FIX: usar helper con fallback para win_rate
     wr_raw, partidos_sit = _wr_con_fallback(seleccion, es_neutro, es_local)
     confianza_wr = peso_confianza(partidos_sit)
     win_rate = confianza_wr * wr_raw + (1 - confianza_wr) * 0.45
@@ -764,7 +748,12 @@ def ajuste_empate_por_lambdas(prob_local, prob_empate, prob_visitante,
 
 def prediccion_inteligente(prob_local, prob_empate, prob_visitante,
                             lambda_local, lambda_visitante,
-                            nombre_local, nombre_visitante):
+                            nombre_local, nombre_visitante,
+                            es_eliminatoria=False):
+    # ── FIX: en fase eliminatoria nunca predecimos empate como resultado final
+    if es_eliminatoria:
+        return nombre_local if prob_local >= prob_visitante else nombre_visitante
+
     suma_lambda = lambda_local + lambda_visitante
     diff_lambda = abs(lambda_local - lambda_visitante)
 
@@ -790,7 +779,23 @@ def prediccion_inteligente(prob_local, prob_empate, prob_visitante,
 # =============================
 
 def garantizar_coherencia(pred, prob_local, prob_empate, prob_visitante,
-                           nombre_local, nombre_visitante):
+                           nombre_local, nombre_visitante,
+                           es_eliminatoria=False):
+    # ── FIX: en eliminatoria la predicción nunca es empate,
+    #         así que solo necesitamos asegurar que el ganador predicho
+    #         tenga la prob más alta entre local y visitante.
+    if es_eliminatoria:
+        if pred == nombre_local and prob_local < prob_visitante:
+            exceso         = prob_visitante - prob_local + 0.001
+            prob_visitante -= exceso
+            prob_local     += exceso
+        elif pred == nombre_visitante and prob_visitante < prob_local:
+            exceso       = prob_local - prob_visitante + 0.001
+            prob_local   -= exceso
+            prob_visitante += exceso
+        total = prob_local + prob_empate + prob_visitante
+        return prob_local / total, prob_empate / total, prob_visitante / total
+
     if pred == "Empate":
         favorito = max(prob_local, prob_visitante)
         if prob_empate < favorito:
@@ -839,14 +844,11 @@ def _aplicar_cap_final(prob_local, prob_empate, prob_visitante, max_favorito):
         return prob_local, prob_empate, prob_visitante
 
     if prob_local >= prob_visitante:
-        # Local es el favorito recortado: exceso va más al visitante que al empate
         exceso          = prob_local - max_favorito
         prob_local      = max_favorito
         prob_empate    += exceso * 0.30
         prob_visitante += exceso * 0.70
     else:
-        # Visitante es el favorito recortado: exceso va más al empate que al local
-        # para evitar que el local (débil) supere al favorito recortado
         exceso          = prob_visitante - max_favorito
         prob_visitante  = max_favorito
         prob_empate    += exceso * 0.70
@@ -1082,7 +1084,8 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         tipo_partido = "partido muy trabado"
         interp_l = (f"Los lambdas proyectan un {tipo_partido}: "
                     f"{nombre_local} {ll:.2f} goles esperados vs {nombre_visitante} {lv:.2f}. "
-                    f"Con solo {suma_l:.2f} goles totales esperados, el empate es el resultado más probable.")
+                    f"Con solo {suma_l:.2f} goles totales esperados, el marcador podría "
+                    f"definirse en prórroga o penales.")
     elif diff_l < 0.30:
         tipo_partido = "partido muy equilibrado"
         interp_l = (f"Lambdas muy similares ({ll:.2f} vs {lv:.2f}): {tipo_partido}. "
@@ -1233,6 +1236,7 @@ def generar_partido(
         raise ValueError(f"Perfil '{perfil_slug}' no encontrado. "
                          f"Opciones: {list(PERFILES_SELECCIONES.keys())}")
 
+    es_eliminatoria  = cfg.get("es_eliminatoria", False)
     nombre_local     = fixture_item["local"]
     nombre_visitante = fixture_item["visitante"]
 
@@ -1283,6 +1287,7 @@ def generar_partido(
         resultado["lambda_visitante"],
         local["nombre"],
         visitante["nombre"],
+        es_eliminatoria=es_eliminatoria,
     )
 
     prob_local, prob_empate, prob_visitante = garantizar_coherencia(
@@ -1292,6 +1297,7 @@ def generar_partido(
         resultado["visitante"],
         local["nombre"],
         visitante["nombre"],
+        es_eliminatoria=es_eliminatoria,
     )
     resultado["local"]     = prob_local
     resultado["empate"]    = prob_empate
@@ -1320,6 +1326,7 @@ def generar_partido(
         "fecha":            fixture_item.get("fecha", ""),
         "torneo":           cfg["nombre"],
         "perfil":           perfil_slug,
+        "es_eliminatoria":  es_eliminatoria,
         "local":            local["nombre"],
         "visitante":        visitante["nombre"],
         "logo_local":       local_raw.get("escudo"),
@@ -1356,7 +1363,7 @@ def generar_partido(
 DB_CONFIG = {
     "mundial_jun2026": {
         "carpeta":  "data",
-        "perfil":   "mundial_grupos",
+        "perfil":   "mundial_eliminatoria",
         "salida":   "partidos.json",
     },
 }

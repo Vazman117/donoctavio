@@ -304,7 +304,7 @@
     "win_rate_neutro": 0.375,
     "imbatido_streak": 0
   },
-  "bosniaherzegovina": {
+  "bosnia-herzegovina": {
     "nombre": "Bosnia-Herzegovina",
     "abreviacion": "BIH",
     "escudo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
@@ -2187,14 +2187,15 @@
       "W",
       "W"
     ],
-    "partidos_oficial": 2,
-    "ganados_oficial": 2,
+    "partidos_oficial": 3,
+    "ganados_oficial": 3,
     "empatados_oficial": 0,
     "perdidos_oficial": 0,
-    "goles_favor_oficial": 2.5,
-    "goles_contra_oficial": 0.0,
+    "goles_favor_oficial": 2.667,
+    "goles_contra_oficial": 0.333,
     "forma_oficial": 1.0,
     "ultimos_5_oficial": [
+      "W",
       "W",
       "W"
     ],
@@ -2216,13 +2217,13 @@
     "empatados_local": 0,
     "perdidos_local": 0,
     "win_rate_local": 1.0,
-    "partidos_visita": 0,
-    "ganados_visita": 0,
+    "partidos_visita": 1,
+    "ganados_visita": 1,
     "empatados_visita": 0,
     "perdidos_visita": 0,
-    "win_rate_visita": 0.0,
+    "win_rate_visita": 1.0,
     "win_rate_neutro": 1.0,
-    "imbatido_streak": 6
+    "imbatido_streak": 7
   },
   "austria": {
     "nombre": "Austria",
@@ -2239,24 +2240,25 @@
     ],
     "ranking_fifa": 22,
     "puntos_fifa": 1595.7,
-    "forma": 0.8,
+    "forma": 0.7333,
     "ultimos_5": [
+      "D",
       "L",
-      "W",
       "W",
       "W",
       "W"
     ],
-    "partidos_oficial": 2,
+    "partidos_oficial": 3,
     "ganados_oficial": 1,
-    "empatados_oficial": 0,
+    "empatados_oficial": 1,
     "perdidos_oficial": 1,
-    "goles_favor_oficial": 1.5,
-    "goles_contra_oficial": 1.5,
-    "forma_oficial": 0.5,
+    "goles_favor_oficial": 2.0,
+    "goles_contra_oficial": 2.0,
+    "forma_oficial": 0.4667,
     "ultimos_5_oficial": [
       "W",
-      "L"
+      "L",
+      "D"
     ],
     "partidos_amistoso": 3,
     "ganados_amistoso": 3,
@@ -2275,13 +2277,13 @@
     "empatados_local": 0,
     "perdidos_local": 0,
     "win_rate_local": 1.0,
-    "partidos_visita": 1,
+    "partidos_visita": 2,
     "ganados_visita": 0,
-    "empatados_visita": 0,
+    "empatados_visita": 1,
     "perdidos_visita": 1,
     "win_rate_visita": 0.0,
-    "win_rate_neutro": 0.8,
-    "imbatido_streak": 0
+    "win_rate_neutro": 0.6667,
+    "imbatido_streak": 1
   },
   "algeria": {
     "nombre": "Algeria",
@@ -2291,29 +2293,31 @@
     "confederacion": "CAF",
     "altitud_base": 424,
     "ciudades_local": [
+      "Kansas City, Missouri",
       "Torino",
       "Genova"
     ],
     "ranking_fifa": 999,
     "puntos_fifa": 0.0,
-    "forma": 0.7333,
+    "forma": 0.6857,
     "ultimos_5": [
+      "D",
       "W",
       "L",
       "W",
-      "W",
-      "D"
+      "W"
     ],
-    "partidos_oficial": 2,
+    "partidos_oficial": 3,
     "ganados_oficial": 1,
-    "empatados_oficial": 0,
+    "empatados_oficial": 1,
     "perdidos_oficial": 1,
-    "goles_favor_oficial": 1.0,
-    "goles_contra_oficial": 2.0,
-    "forma_oficial": 0.5,
+    "goles_favor_oficial": 1.667,
+    "goles_contra_oficial": 2.333,
+    "forma_oficial": 0.4667,
     "ultimos_5_oficial": [
       "L",
-      "W"
+      "W",
+      "D"
     ],
     "partidos_amistoso": 4,
     "ganados_amistoso": 3,
@@ -2328,18 +2332,18 @@
       "W",
       "W"
     ],
-    "partidos_local": 2,
+    "partidos_local": 3,
     "ganados_local": 1,
-    "empatados_local": 1,
+    "empatados_local": 2,
     "perdidos_local": 0,
-    "win_rate_local": 0.5,
+    "win_rate_local": 0.3333,
     "partidos_visita": 4,
     "ganados_visita": 3,
     "empatados_visita": 0,
     "perdidos_visita": 1,
     "win_rate_visita": 0.75,
-    "win_rate_neutro": 0.6667,
-    "imbatido_streak": 1
+    "win_rate_neutro": 0.5714,
+    "imbatido_streak": 2
   },
   "jordan": {
     "nombre": "Jordan",
@@ -2349,28 +2353,30 @@
     "confederacion": "AFC",
     "altitud_base": 820,
     "ciudades_local": [
+      "Arlington, Texas",
       "Santa Clara, California",
       "Antalya",
       "Antalya"
     ],
     "ranking_fifa": 999,
     "puntos_fifa": 0.0,
-    "forma": 0.1333,
+    "forma": 0.1143,
     "ultimos_5": [
       "L",
       "L",
       "L",
       "L",
-      "D"
+      "L"
     ],
-    "partidos_oficial": 2,
+    "partidos_oficial": 3,
     "ganados_oficial": 0,
     "empatados_oficial": 0,
-    "perdidos_oficial": 2,
+    "perdidos_oficial": 3,
     "goles_favor_oficial": 1.0,
-    "goles_contra_oficial": 2.5,
+    "goles_contra_oficial": 2.667,
     "forma_oficial": 0.0,
     "ultimos_5_oficial": [
+      "L",
       "L",
       "L"
     ],
@@ -2387,10 +2393,10 @@
       "L",
       "L"
     ],
-    "partidos_local": 3,
+    "partidos_local": 4,
     "ganados_local": 0,
     "empatados_local": 2,
-    "perdidos_local": 1,
+    "perdidos_local": 2,
     "win_rate_local": 0.0,
     "partidos_visita": 3,
     "ganados_visita": 0,
@@ -2408,32 +2414,33 @@
     "confederacion": "CONMEBOL",
     "altitud_base": 2600,
     "ciudades_local": [
+      "Miami Gardens, Florida",
       "Guadalajara",
       "San Diego, California",
       "Bogota",
-      "Landover, Maryland",
-      "Orlando, Florida"
+      "Landover, Maryland"
     ],
     "ranking_fifa": 12,
     "puntos_fifa": 1687.2,
-    "forma": 0.6667,
+    "forma": 0.6286,
     "ultimos_5": [
+      "D",
       "W",
       "W",
-      "W",
-      "W",
-      "L"
-    ],
-    "partidos_oficial": 2,
-    "ganados_oficial": 2,
-    "empatados_oficial": 0,
-    "perdidos_oficial": 0,
-    "goles_favor_oficial": 2.0,
-    "goles_contra_oficial": 0.5,
-    "forma_oficial": 1.0,
-    "ultimos_5_oficial": [
       "W",
       "W"
+    ],
+    "partidos_oficial": 3,
+    "ganados_oficial": 2,
+    "empatados_oficial": 1,
+    "perdidos_oficial": 0,
+    "goles_favor_oficial": 1.333,
+    "goles_contra_oficial": 0.333,
+    "forma_oficial": 0.8,
+    "ultimos_5_oficial": [
+      "W",
+      "W",
+      "D"
     ],
     "partidos_amistoso": 4,
     "ganados_amistoso": 2,
@@ -2448,18 +2455,18 @@
       "W",
       "W"
     ],
-    "partidos_local": 5,
+    "partidos_local": 6,
     "ganados_local": 3,
-    "empatados_local": 0,
+    "empatados_local": 1,
     "perdidos_local": 2,
-    "win_rate_local": 0.6,
+    "win_rate_local": 0.5,
     "partidos_visita": 1,
     "ganados_visita": 1,
     "empatados_visita": 0,
     "perdidos_visita": 0,
     "win_rate_visita": 1.0,
-    "win_rate_neutro": 0.6667,
-    "imbatido_streak": 4
+    "win_rate_neutro": 0.5714,
+    "imbatido_streak": 5
   },
   "portugal": {
     "nombre": "Portugal",
@@ -2476,24 +2483,25 @@
     ],
     "ranking_fifa": 6,
     "puntos_fifa": 1764.9,
-    "forma": 0.8,
+    "forma": 0.7429,
     "ultimos_5": [
-      "W",
       "D",
       "W",
+      "D",
       "W",
       "W"
     ],
-    "partidos_oficial": 2,
+    "partidos_oficial": 3,
     "ganados_oficial": 1,
-    "empatados_oficial": 1,
+    "empatados_oficial": 2,
     "perdidos_oficial": 0,
-    "goles_favor_oficial": 3.0,
-    "goles_contra_oficial": 0.5,
-    "forma_oficial": 0.7,
+    "goles_favor_oficial": 2.0,
+    "goles_contra_oficial": 0.333,
+    "forma_oficial": 0.6,
     "ultimos_5_oficial": [
       "D",
-      "W"
+      "W",
+      "D"
     ],
     "partidos_amistoso": 4,
     "ganados_amistoso": 3,
@@ -2513,13 +2521,13 @@
     "empatados_local": 1,
     "perdidos_local": 0,
     "win_rate_local": 0.75,
-    "partidos_visita": 2,
+    "partidos_visita": 3,
     "ganados_visita": 1,
-    "empatados_visita": 1,
+    "empatados_visita": 2,
     "perdidos_visita": 0,
-    "win_rate_visita": 0.5,
-    "win_rate_neutro": 0.6667,
-    "imbatido_streak": 6
+    "win_rate_visita": 0.3333,
+    "win_rate_neutro": 0.5714,
+    "imbatido_streak": 7
   },
   "uzbekistan": {
     "nombre": "Uzbekistan",
@@ -2535,22 +2543,23 @@
     ],
     "ranking_fifa": 999,
     "puntos_fifa": 0.0,
-    "forma": 0.3429,
+    "forma": 0.3,
     "ultimos_5": [
       "L",
       "L",
       "L",
       "L",
-      "W"
+      "L"
     ],
-    "partidos_oficial": 2,
+    "partidos_oficial": 3,
     "ganados_oficial": 0,
     "empatados_oficial": 0,
-    "perdidos_oficial": 2,
-    "goles_favor_oficial": 0.5,
-    "goles_contra_oficial": 4.0,
+    "perdidos_oficial": 3,
+    "goles_favor_oficial": 0.667,
+    "goles_contra_oficial": 3.667,
     "forma_oficial": 0.0,
     "ultimos_5_oficial": [
+      "L",
       "L",
       "L"
     ],
@@ -2573,12 +2582,12 @@
     "empatados_local": 1,
     "perdidos_local": 1,
     "win_rate_local": 0.5,
-    "partidos_visita": 3,
+    "partidos_visita": 4,
     "ganados_visita": 0,
     "empatados_visita": 0,
-    "perdidos_visita": 3,
+    "perdidos_visita": 4,
     "win_rate_visita": 0.0,
-    "win_rate_neutro": 0.2857,
+    "win_rate_neutro": 0.25,
     "imbatido_streak": 0
   },
   "congodr": {
@@ -2589,30 +2598,32 @@
     "confederacion": "CAF",
     "altitud_base": 0,
     "ciudades_local": [
+      "Atlanta, Georgia",
       "Orleans",
       "Liege",
       "Guadalajara"
     ],
     "ranking_fifa": 999,
     "puntos_fifa": 0.0,
-    "forma": 0.36,
+    "forma": 0.4667,
     "ultimos_5": [
+      "W",
       "L",
       "D",
       "L",
-      "D",
-      "W"
+      "D"
     ],
-    "partidos_oficial": 2,
-    "ganados_oficial": 0,
+    "partidos_oficial": 3,
+    "ganados_oficial": 1,
     "empatados_oficial": 1,
     "perdidos_oficial": 1,
-    "goles_favor_oficial": 0.5,
+    "goles_favor_oficial": 1.333,
     "goles_contra_oficial": 1.0,
-    "forma_oficial": 0.2,
+    "forma_oficial": 0.4667,
     "ultimos_5_oficial": [
       "D",
-      "L"
+      "L",
+      "W"
     ],
     "partidos_amistoso": 3,
     "ganados_amistoso": 1,
@@ -2626,18 +2637,18 @@
       "D",
       "L"
     ],
-    "partidos_local": 3,
-    "ganados_local": 1,
+    "partidos_local": 4,
+    "ganados_local": 2,
     "empatados_local": 1,
     "perdidos_local": 1,
-    "win_rate_local": 0.3333,
+    "win_rate_local": 0.5,
     "partidos_visita": 2,
     "ganados_visita": 0,
     "empatados_visita": 1,
     "perdidos_visita": 1,
     "win_rate_visita": 0.0,
-    "win_rate_neutro": 0.2,
-    "imbatido_streak": 0
+    "win_rate_neutro": 0.3333,
+    "imbatido_streak": 1
   },
   "england": {
     "nombre": "England",
@@ -2655,24 +2666,25 @@
     ],
     "ranking_fifa": 4,
     "puntos_fifa": 1834.1,
-    "forma": 0.6333,
+    "forma": 0.6857,
     "ultimos_5": [
+      "W",
       "D",
       "W",
       "W",
-      "W",
-      "L"
+      "W"
     ],
-    "partidos_oficial": 2,
-    "ganados_oficial": 1,
+    "partidos_oficial": 3,
+    "ganados_oficial": 2,
     "empatados_oficial": 1,
     "perdidos_oficial": 0,
     "goles_favor_oficial": 2.0,
-    "goles_contra_oficial": 1.0,
-    "forma_oficial": 0.7,
+    "goles_contra_oficial": 0.667,
+    "forma_oficial": 0.8,
     "ultimos_5_oficial": [
       "W",
-      "D"
+      "D",
+      "W"
     ],
     "partidos_amistoso": 4,
     "ganados_amistoso": 2,
@@ -2692,13 +2704,13 @@
     "empatados_local": 2,
     "perdidos_local": 1,
     "win_rate_local": 0.5,
-    "partidos_visita": 0,
-    "ganados_visita": 0,
+    "partidos_visita": 1,
+    "ganados_visita": 1,
     "empatados_visita": 0,
     "perdidos_visita": 0,
-    "win_rate_visita": 0.0,
-    "win_rate_neutro": 0.5,
-    "imbatido_streak": 4
+    "win_rate_visita": 1.0,
+    "win_rate_neutro": 0.5714,
+    "imbatido_streak": 5
   },
   "croatia": {
     "nombre": "Croatia",
@@ -2708,28 +2720,30 @@
     "confederacion": "UEFA",
     "altitud_base": 122,
     "ciudades_local": [
+      "Philadelphia, Pennsylvania",
       "Varazdin",
       "Rijeka"
     ],
     "ranking_fifa": 13,
     "puntos_fifa": 1658.7,
-    "forma": 0.5,
+    "forma": 0.5714,
     "ultimos_5": [
       "W",
-      "L",
       "W",
       "L",
+      "W",
       "L"
     ],
-    "partidos_oficial": 2,
-    "ganados_oficial": 1,
+    "partidos_oficial": 3,
+    "ganados_oficial": 2,
     "empatados_oficial": 0,
     "perdidos_oficial": 1,
-    "goles_favor_oficial": 1.5,
-    "goles_contra_oficial": 2.0,
-    "forma_oficial": 0.5,
+    "goles_favor_oficial": 1.667,
+    "goles_contra_oficial": 1.667,
+    "forma_oficial": 0.6667,
     "ultimos_5_oficial": [
       "L",
+      "W",
       "W"
     ],
     "partidos_amistoso": 4,
@@ -2745,18 +2759,18 @@
       "L",
       "W"
     ],
-    "partidos_local": 2,
-    "ganados_local": 1,
+    "partidos_local": 3,
+    "ganados_local": 2,
     "empatados_local": 0,
     "perdidos_local": 1,
-    "win_rate_local": 0.5,
+    "win_rate_local": 0.6667,
     "partidos_visita": 4,
     "ganados_visita": 2,
     "empatados_visita": 0,
     "perdidos_visita": 2,
     "win_rate_visita": 0.5,
-    "win_rate_neutro": 0.5,
-    "imbatido_streak": 1
+    "win_rate_neutro": 0.5714,
+    "imbatido_streak": 2
   },
   "panama": {
     "nombre": "Panama",
@@ -2766,6 +2780,7 @@
     "confederacion": "CONCACAF",
     "altitud_base": 0,
     "ciudades_local": [
+      "East Rutherford, New Jersey",
       "Toronto",
       "St. Louis, Missouri",
       "Panama City",
@@ -2773,22 +2788,23 @@
     ],
     "ranking_fifa": 46,
     "puntos_fifa": 1429.6,
-    "forma": 0.3556,
+    "forma": 0.32,
     "ultimos_5": [
       "L",
       "L",
+      "L",
       "D",
-      "W",
-      "L"
+      "W"
     ],
-    "partidos_oficial": 2,
+    "partidos_oficial": 3,
     "ganados_oficial": 0,
     "empatados_oficial": 0,
-    "perdidos_oficial": 2,
+    "perdidos_oficial": 3,
     "goles_favor_oficial": 0.0,
-    "goles_contra_oficial": 1.0,
+    "goles_contra_oficial": 1.333,
     "forma_oficial": 0.0,
     "ultimos_5_oficial": [
+      "L",
       "L",
       "L"
     ],
@@ -2806,17 +2822,17 @@
       "W",
       "D"
     ],
-    "partidos_local": 4,
+    "partidos_local": 5,
     "ganados_local": 1,
     "empatados_local": 1,
-    "perdidos_local": 2,
-    "win_rate_local": 0.25,
+    "perdidos_local": 3,
+    "win_rate_local": 0.2,
     "partidos_visita": 5,
     "ganados_visita": 1,
     "empatados_visita": 2,
     "perdidos_visita": 2,
     "win_rate_visita": 0.2,
-    "win_rate_neutro": 0.2222,
+    "win_rate_neutro": 0.2,
     "imbatido_streak": 0
   },
   "ghana": {
@@ -2831,24 +2847,25 @@
     ],
     "ranking_fifa": 26,
     "puntos_fifa": 1560.8,
-    "forma": 0.3,
+    "forma": 0.2571,
     "ultimos_5": [
+      "L",
       "D",
       "W",
       "D",
-      "L",
       "L"
     ],
-    "partidos_oficial": 2,
+    "partidos_oficial": 3,
     "ganados_oficial": 1,
     "empatados_oficial": 1,
-    "perdidos_oficial": 0,
-    "goles_favor_oficial": 0.5,
-    "goles_contra_oficial": 0.0,
-    "forma_oficial": 0.7,
+    "perdidos_oficial": 1,
+    "goles_favor_oficial": 0.667,
+    "goles_contra_oficial": 0.667,
+    "forma_oficial": 0.4667,
     "ultimos_5_oficial": [
       "W",
-      "D"
+      "D",
+      "L"
     ],
     "partidos_amistoso": 4,
     "ganados_amistoso": 0,
@@ -2868,12 +2885,12 @@
     "empatados_local": 0,
     "perdidos_local": 0,
     "win_rate_local": 1.0,
-    "partidos_visita": 5,
+    "partidos_visita": 6,
     "ganados_visita": 0,
     "empatados_visita": 2,
-    "perdidos_visita": 3,
+    "perdidos_visita": 4,
     "win_rate_visita": 0.0,
-    "win_rate_neutro": 0.1667,
-    "imbatido_streak": 3
+    "win_rate_neutro": 0.1429,
+    "imbatido_streak": 0
   }
 }
