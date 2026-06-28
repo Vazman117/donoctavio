@@ -1131,11 +1131,26 @@ async function cargarEliminatorias() {
    * SF   (M101–M102) → Final (M104) / 3er lugar (M103)
    */
   const matchNumMap = {
-    // R32
-    '760486': 73, '760489': 74, '760488': 75, '760487': 76,
-    '760492': 77, '760490': 78, '760491': 79, '760495': 80,
-    '760494': 81, '760493': 82, '760496': 83, '760497': 84,
-    '760498': 85, '760499': 86, '760500': 87, '760501': 88,
+    // R32 IZQUIERDA
+    '760489': 73,  // Germany vs Paraguay
+    '760492': 74,  // France vs Sweden
+    '760486': 75,  // South Africa vs Canada
+    '760488': 76,  // Netherlands vs Morocco
+    '760496': 77,  // Portugal vs Croatia
+    '760497': 78,  // Spain vs Austria
+    '760494': 79,  // USA vs Bosnia
+    '760493': 80,  // Belgium vs Senegal
+
+    // R32 DERECHA
+    '760487': 81,  // Brazil vs Japan
+    '760490': 82,  // Ivory Coast vs Norway
+    '760491': 83,  // Mexico vs Ecuador
+    '760495': 84,  // England vs Congo DR
+    '760500': 85,  // Argentina vs Cape Verde
+    '760499': 86,  // Australia vs Egypt
+    '760498': 87,  // Switzerland vs Algeria
+    '760501': 88,  // Colombia vs Ghana
+
     // R16
     '760502': 89, '760503': 90, '760504': 91, '760505': 92,
     '760506': 93, '760507': 94, '760508': 95, '760509': 96,
@@ -1170,25 +1185,25 @@ async function cargarEliminatorias() {
 
   /* ── R32 ── */
   const r32L = [
-    fixtureAPartido(getM(74)),  // ┐ → M89
-    fixtureAPartido(getM(77)),  // ┘
-    fixtureAPartido(getM(73)),  // ┐ → M90
-    fixtureAPartido(getM(75)),  // ┘
-    fixtureAPartido(getM(76)),  // ┐ → M91
-    fixtureAPartido(getM(78)),  // ┘
-    fixtureAPartido(getM(79)),  // ┐ → M92
-    fixtureAPartido(getM(80)),  // ┘
+    fixtureAPartido(getM(73)),  // Germany vs Paraguay     ┐ → M89
+    fixtureAPartido(getM(74)),  // France vs Sweden        ┘
+    fixtureAPartido(getM(75)),  // South Africa vs Canada  ┐ → M90
+    fixtureAPartido(getM(76)),  // Netherlands vs Morocco  ┘
+    fixtureAPartido(getM(77)),  // Portugal vs Croatia     ┐ → M91
+    fixtureAPartido(getM(78)),  // Spain vs Austria        ┘
+    fixtureAPartido(getM(79)),  // USA vs Bosnia           ┐ → M92
+    fixtureAPartido(getM(80)),  // Belgium vs Senegal      ┘
   ];
 
   const r32R = [
-    fixtureAPartido(getM(83)),  // ┐ → M93
-    fixtureAPartido(getM(84)),  // ┘
-    fixtureAPartido(getM(81)),  // ┐ → M94
-    fixtureAPartido(getM(82)),  // ┘
-    fixtureAPartido(getM(86)),  // ┐ → M95
-    fixtureAPartido(getM(88)),  // ┘
-    fixtureAPartido(getM(85)),  // ┐ → M96
-    fixtureAPartido(getM(87)),  // ┘
+    fixtureAPartido(getM(81)),  // Brazil vs Japan          ┐ → M93
+    fixtureAPartido(getM(82)),  // Ivory Coast vs Norway    ┘
+    fixtureAPartido(getM(83)),  // Mexico vs Ecuador        ┐ → M94
+    fixtureAPartido(getM(84)),  // England vs Congo DR      ┘
+    fixtureAPartido(getM(85)),  // Argentina vs Cape Verde  ┐ → M95
+    fixtureAPartido(getM(86)),  // Australia vs Egypt       ┘
+    fixtureAPartido(getM(87)),  // Switzerland vs Algeria   ┐ → M96
+    fixtureAPartido(getM(88)),  // Colombia vs Ghana        ┘
   ];
 
   /* ── R16 ── */
