@@ -1026,8 +1026,14 @@ function cerrarModalHistorial(e) {
  *
  * Cada columna tiene partidos apilados verticalmente.
  * Dentro de cada partido, los 2 escudos van en ROW (lado a lado).
+ *
+ * Marcado de eliminados:
+ *   Se cruza cada partido con partidos/mundial.json por "id" (mismo id
+ *   que el usado en matchNumMap) para obtener el equipo ganador real.
+ *   El equipo que NO ganó ese partido específico se pinta en blanco y
+ *   negro únicamente en esa columna/ronda; en rondas anteriores donde
+ *   sí ganó, se mantiene a color con normalidad.
  */
-/* ─── ELIMINATORIAS ─────────────────────────────────────── */
 
 async function cargarEliminatorias() {
   const sec = document.getElementById('contenidoMundial');
@@ -1039,18 +1045,29 @@ async function cargarEliminatorias() {
     </div>
   `;
 
-  let fixture, grupos;
+  let fixture, grupos, resultadosRaw;
   try {
-    const [rF, rG] = await Promise.all([
+    const [rF, rG, rR] = await Promise.all([
       fetch('mundial/data/fixture.json'),
       fetch('mundial/data/grupos.json'),
+      fetch('partidos/mundial.json'),
     ]);
     if (!rF.ok || !rG.ok) throw new Error('Sin datos');
     fixture = await rF.json();
     grupos  = await rG.json();
+    resultadosRaw = rR.ok ? await rR.json() : [];
   } catch (e) {
     sec.innerHTML = `<div class="hist-vacio"><p>No se pudo cargar el bracket de eliminatorias.</p></div>`;
     return;
+  }
+
+  /* ── Mapa id → resultado (nombre del equipo ganador) ── */
+  const partidosResultados = Array.isArray(resultadosRaw) ? resultadosRaw
+                            : Array.isArray(resultadosRaw.partidos) ? resultadosRaw.partidos
+                            : [];
+  const resultadoPorId = {};
+  for (const p of partidosResultados) {
+    if (p.id && p.resultado) resultadoPorId[String(p.id)] = p.resultado;
   }
 
   /* ── Mapa de clasificados por grupo ── */
@@ -1107,10 +1124,18 @@ async function cargarEliminatorias() {
     if (!p) return null;
     const e1 = resolverEquipo(p.local);
     const e2 = resolverEquipo(p.visitante);
+
+    let ganador = null;
+    const res = resultadoPorId[String(p.id)];
+    if (res) {
+      if (e1 && res === e1.nombre) ganador = e1.nombre;
+      else if (e2 && res === e2.nombre) ganador = e2.nombre;
+    }
+
     return {
       equipo1: e1 ? { nombre: e1.nombre, escudo: e1.escudo, goles: null } : null,
       equipo2: e2 ? { nombre: e2.nombre, escudo: e2.escudo, goles: null } : null,
-      ganador: null,
+      ganador,
     };
   }
 
@@ -1208,14 +1233,14 @@ async function cargarEliminatorias() {
 
   /* ── R16 ── */
   const r16L = [
-    fixtureAPartido(getM(89)),  // ┐ → M97
-    fixtureAPartido(getM(90)),  // ┘
-    fixtureAPartido(getM(91)),  // ┐ → M99
+    fixtureAPartido(getM(90)),  // ┐ → M97
+    fixtureAPartido(getM(89)),  // ┘
+    fixtureAPartido(getM(93)),  // ┐ → M99
     fixtureAPartido(getM(92)),  // ┘
   ];
 
   const r16R = [
-    fixtureAPartido(getM(93)),  // ┐ → M98
+    fixtureAPartido(getM(91)),  // ┐ → M98
     fixtureAPartido(getM(94)),  // ┘
     fixtureAPartido(getM(95)),  // ┐ → M100
     fixtureAPartido(getM(96)),  // ┘
@@ -1255,13 +1280,14 @@ async function cargarEliminatorias() {
 
 /* ── Helpers de bracket ──────────────────────────────────── */
 
-function renderSlot(equipo, esGanador) {
+function renderSlot(equipo, esGanador, esEliminado) {
   if (!equipo || !equipo.nombre) {
     return `<div class="bk-slot bk-slot--vacio"><div class="bk-escudo bk-escudo--vacio"></div></div>`;
   }
-  const clsGanador = esGanador ? 'bk-slot--ganador' : '';
+  const clsGanador   = esGanador   ? 'bk-slot--ganador'   : '';
+  const clsEliminado = esEliminado ? 'bk-slot--eliminado' : '';
   return `
-    <div class="bk-slot ${clsGanador}" title="${equipo.nombre}">
+    <div class="bk-slot ${clsGanador} ${clsEliminado}" title="${equipo.nombre}">
       <img class="bk-escudo" src="${equipo.escudo || ''}" alt="${equipo.nombre}"
            onerror="this.style.visibility='hidden'">
     </div>
@@ -1277,9 +1303,9 @@ function renderPartido(partido, cls = '') {
   const g  = partido.ganador || null;
   return `
     <div class="bk-partido ${cls}">
-      ${renderSlot(e1.nombre ? e1 : null, g && g === e1.nombre)}
+      ${renderSlot(e1.nombre ? e1 : null, g && g === e1.nombre, g && g !== e1.nombre && e1.nombre)}
       <div class="bk-sep"></div>
-      ${renderSlot(e2.nombre ? e2 : null, g && g === e2.nombre)}
+      ${renderSlot(e2.nombre ? e2 : null, g && g === e2.nombre, g && g !== e2.nombre && e2.nombre)}
     </div>
   `;
 }
@@ -1487,6 +1513,10 @@ function renderBracket(data) {
         transition: background .12s;
       }
       .bk-slot--ganador { background: rgba(255,255,255,.08); }
+      .bk-slot--eliminado .bk-escudo {
+        filter: grayscale(1) brightness(.6);
+        opacity: .55;
+      }
       .bk-slot--vacio   { opacity: .15; }
 
       /* ─── Separador vertical entre los 2 escudos ─── */
