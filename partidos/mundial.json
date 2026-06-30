@@ -1,5 +1,597 @@
 [
   {
+    "id": "760488",
+    "fecha": "2026-06-30T01:00Z",
+    "torneo": "Copa del Mundo FIFA — Eliminatorias",
+    "perfil": "mundial_eliminatoria",
+    "es_eliminatoria": true,
+    "local": "Netherlands",
+    "visitante": "Morocco",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+    "estadio": "Estadio BBVA",
+    "ciudad_sede": "Monterrey, Nuevo León",
+    "pais_sede": "MEX",
+    "altitud_sede": 538,
+    "es_neutro": true,
+    "prob_local": 0.29858859681191724,
+    "prob_empate": 0.24579603359990926,
+    "prob_visitante": 0.45561536958817356,
+    "fuerza_local": 0.5916813514004297,
+    "fuerza_visitante": 0.6398799324307703,
+    "diferencia": 0.04819858103034069,
+    "confianza": "moderado",
+    "prediccion": "Morocco",
+    "resultado": "Morocco",
+    "lambda_local": 1.181720496139301,
+    "lambda_visitante": 1.7277819712764944,
+    "factor_altitud_local": 0.9731,
+    "factor_altitud_visitante": 0.99785,
+    "marcadores_probables": [
+      "1-2",
+      "1-1",
+      "0-1",
+      "0-2",
+      "2-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.69,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Netherlands"
+        },
+        "visitante": {
+          "valor": 0.78,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "D",
+            "W"
+          ],
+          "nombre": "Morocco"
+        },
+        "interpretacion": "Morocco llega con mejor momentum: índice 0.78/1.0 frente a 0.69/1.0 de Netherlands. Últimos 5: 3V/2E/0D vs 3V/1E/1D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 538,
+        "ciudad_sede": "Monterrey, Nuevo León",
+        "local": {
+          "nombre": "Netherlands",
+          "altitud_base": 0,
+          "factor": 0.973
+        },
+        "visitante": {
+          "nombre": "Morocco",
+          "altitud_base": 495,
+          "factor": 0.998
+        },
+        "interpretacion": "Sede en condiciones normales (538m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Netherlands",
+          "goles_favor": 2.5,
+          "goles_contra": 1.2
+        },
+        "visitante": {
+          "nombre": "Morocco",
+          "goles_favor": 2.27,
+          "goles_contra": 0.82
+        },
+        "interpretacion": "Producción similar: Netherlands 2.50 — Morocco 2.27 goles/partido. Defensa: 1.20 vs 0.82."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Netherlands",
+          "lambda": 1.182
+        },
+        "visitante": {
+          "nombre": "Morocco",
+          "lambda": 1.728
+        },
+        "suma": 2.91,
+        "interpretacion": "Morocco genera más peligro ofensivo según el modelo: 1.73 goles esperados vs 1.18 de Netherlands."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-2",
+          "1-1",
+          "0-1",
+          "0-2",
+          "2-1"
+        ],
+        "lambda_local": 1.182,
+        "lambda_visitante": 1.728,
+        "interpretacion": "El marcador más probable es 1-2 (9.7%), coherente con Morocco como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Netherlands",
+          "ranking": 7,
+          "puntos": 1757.4,
+          "score": 0.912
+        },
+        "visitante": {
+          "nombre": "Morocco",
+          "ranking": 15,
+          "puntos": 1645.1,
+          "score": 0.805
+        },
+        "interpretacion": "Netherlands es objetivamente superior en el ranking FIFA (#7 / 1757 pts vs #15 / 1645 pts). Score normalizado: 0.91 vs 0.80."
+      }
+    ]
+  },
+  {
+    "id": "760489",
+    "fecha": "2026-06-29T20:30Z",
+    "torneo": "Copa del Mundo FIFA — Eliminatorias",
+    "perfil": "mundial_eliminatoria",
+    "es_eliminatoria": true,
+    "local": "Germany",
+    "visitante": "Paraguay",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+    "estadio": "Gillette Stadium",
+    "ciudad_sede": "Foxborough, Massachusetts",
+    "pais_sede": "USA",
+    "altitud_sede": 25,
+    "es_neutro": true,
+    "prob_local": 0.51,
+    "prob_empate": 0.18679179090675138,
+    "prob_visitante": 0.30320820909324864,
+    "fuerza_local": 0.627117632,
+    "fuerza_visitante": 0.511257104,
+    "diferencia": 0.11586052800000002,
+    "confianza": "favorable",
+    "prediccion": "Germany",
+    "resultado": "Paraguay",
+    "lambda_local": 2.460157077253169,
+    "lambda_visitante": 0.9895571713253015,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "2-1",
+      "1-1",
+      "2-0",
+      "3-1",
+      "1-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.86,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Germany"
+        },
+        "visitante": {
+          "valor": 0.57,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Paraguay"
+        },
+        "interpretacion": "Germany llega con mejor momentum: índice 0.86/1.0 frente a 0.57/1.0 de Paraguay. Últimos 5: 4V/0E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 25,
+        "ciudad_sede": "Foxborough, Massachusetts",
+        "local": {
+          "nombre": "Germany",
+          "altitud_base": 117,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Paraguay",
+          "altitud_base": 124,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (25m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Germany",
+          "goles_favor": 3.2,
+          "goles_contra": 1.3
+        },
+        "visitante": {
+          "nombre": "Paraguay",
+          "goles_favor": 1.11,
+          "goles_contra": 1.11
+        },
+        "interpretacion": "Germany más ofensivo: 3.20 goles/partido (vs 1.11). Defensiva: 1.30 vs 1.11."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Germany",
+          "lambda": 2.46
+        },
+        "visitante": {
+          "nombre": "Paraguay",
+          "lambda": 0.99
+        },
+        "suma": 3.45,
+        "interpretacion": "Germany genera más peligro ofensivo según el modelo: 2.46 goles esperados vs 0.99 de Paraguay."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "2-1",
+          "1-1",
+          "2-0",
+          "3-1",
+          "1-0"
+        ],
+        "lambda_local": 2.46,
+        "lambda_visitante": 0.99,
+        "interpretacion": "El marcador más probable es 2-1 (9.6%), coherente con Germany como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Germany",
+          "ranking": 9,
+          "puntos": 1720.0,
+          "score": 0.876
+        },
+        "visitante": {
+          "nombre": "Paraguay",
+          "ranking": 32,
+          "puntos": 1521.4,
+          "score": 0.687
+        },
+        "interpretacion": "Germany es objetivamente superior en el ranking FIFA (#9 / 1720 pts vs #32 / 1521 pts). Score normalizado: 0.88 vs 0.69."
+      }
+    ]
+  },
+  {
+    "id": "760487",
+    "fecha": "2026-06-29T17:00Z",
+    "torneo": "Copa del Mundo FIFA — Eliminatorias",
+    "perfil": "mundial_eliminatoria",
+    "es_eliminatoria": true,
+    "local": "Brazil",
+    "visitante": "Japan",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+    "estadio": "NRG Stadium",
+    "ciudad_sede": "Houston, Texas",
+    "pais_sede": "USA",
+    "altitud_sede": 12,
+    "es_neutro": true,
+    "prob_local": 0.3918651682061022,
+    "prob_empate": 0.29222172966263427,
+    "prob_visitante": 0.3159131021312635,
+    "fuerza_local": 0.6519426593995925,
+    "fuerza_visitante": 0.6277562001500075,
+    "diferencia": 0.024186459249584957,
+    "confianza": "ajustado",
+    "prediccion": "Brazil",
+    "resultado": "Brazil",
+    "lambda_local": 1.2709723970581204,
+    "lambda_visitante": 1.0323421208611212,
+    "factor_altitud_local": 0.9999,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "0-1",
+      "0-0",
+      "2-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.77,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Brazil"
+        },
+        "visitante": {
+          "valor": 0.8,
+          "ultimos_5": [
+            "D",
+            "W",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Japan"
+        },
+        "interpretacion": "Japan llega con mejor momentum: índice 0.80/1.0 frente a 0.77/1.0 de Brazil. Últimos 5: 3V/2E/0D vs 4V/1E/0D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 12,
+        "ciudad_sede": "Houston, Texas",
+        "local": {
+          "nombre": "Brazil",
+          "altitud_base": 10,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Japan",
+          "altitud_base": 40,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (12m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Brazil",
+          "goles_favor": 2.6,
+          "goles_contra": 0.8
+        },
+        "visitante": {
+          "nombre": "Japan",
+          "goles_favor": 1.89,
+          "goles_contra": 0.67
+        },
+        "interpretacion": "Brazil más ofensivo: 2.60 goles/partido (vs 1.89). Defensiva: 0.80 vs 0.67."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "bajo",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Brazil",
+          "lambda": 1.271
+        },
+        "visitante": {
+          "nombre": "Japan",
+          "lambda": 1.032
+        },
+        "suma": 2.303,
+        "interpretacion": "Lambdas muy similares (1.27 vs 1.03): partido muy equilibrado. La diferencia de solo 0.24 goles esperados entre ambos equipos sugiere un resultado cerrado."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "0-1",
+          "0-0",
+          "2-1"
+        ],
+        "lambda_local": 1.271,
+        "lambda_visitante": 1.032,
+        "interpretacion": "El marcador más probable es 1-0 (12.7%), coherente con Brazil como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Brazil",
+          "ranking": 5,
+          "puntos": 1782.1,
+          "score": 0.935
+        },
+        "visitante": {
+          "nombre": "Japan",
+          "ranking": 14,
+          "puntos": 1650.5,
+          "score": 0.81
+        },
+        "interpretacion": "Brazil es objetivamente superior en el ranking FIFA (#5 / 1782 pts vs #14 / 1650 pts). Score normalizado: 0.94 vs 0.81."
+      }
+    ]
+  },
+  {
+    "id": "760486",
+    "fecha": "2026-06-28T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Eliminatorias",
+    "perfil": "mundial_eliminatoria",
+    "es_eliminatoria": true,
+    "local": "South Africa",
+    "visitante": "Canada",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+    "estadio": "SoFi Stadium",
+    "ciudad_sede": "Los Angeles, California",
+    "pais_sede": "USA",
+    "altitud_sede": 93,
+    "es_neutro": true,
+    "prob_local": 0.21093999069145003,
+    "prob_empate": 0.3471191668500754,
+    "prob_visitante": 0.44194084245847454,
+    "fuerza_local": 0.46981131200000004,
+    "fuerza_visitante": 0.49865024,
+    "diferencia": 0.028838927999999986,
+    "confianza": "favorable",
+    "prediccion": "Canada",
+    "resultado": "Canada",
+    "lambda_local": 0.42965770531071373,
+    "lambda_visitante": 1.0526478079654216,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "0-1",
+      "0-0",
+      "0-2",
+      "1-1",
+      "1-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.46,
+          "ultimos_5": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "D"
+          ],
+          "nombre": "South Africa"
+        },
+        "visitante": {
+          "valor": 0.57,
+          "ultimos_5": [
+            "L",
+            "W",
+            "D",
+            "D",
+            "W"
+          ],
+          "nombre": "Canada"
+        },
+        "interpretacion": "Canada llega con mejor momentum: índice 0.57/1.0 frente a 0.46/1.0 de South Africa. Últimos 5: 2V/2E/1D vs 2V/2E/1D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 93,
+        "ciudad_sede": "Los Angeles, California",
+        "local": {
+          "nombre": "South Africa",
+          "altitud_base": 1700,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Canada",
+          "altitud_base": 116,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (93m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "South Africa",
+          "goles_favor": 0.7,
+          "goles_contra": 0.9
+        },
+        "visitante": {
+          "nombre": "Canada",
+          "goles_favor": 2.0,
+          "goles_contra": 0.82
+        },
+        "interpretacion": "Canada más ofensivo: 2.00 vs 0.70 goles/partido. Defensiva: 0.90 vs 0.82."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "South Africa",
+          "lambda": 0.43
+        },
+        "visitante": {
+          "nombre": "Canada",
+          "lambda": 1.053
+        },
+        "suma": 1.482,
+        "interpretacion": "Los lambdas proyectan un partido muy trabado: South Africa 0.43 goles esperados vs Canada 1.05. Con solo 1.48 goles totales esperados, el marcador podría definirse en prórroga o penales."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "0-0",
+          "0-2",
+          "1-1",
+          "1-0"
+        ],
+        "lambda_local": 0.43,
+        "lambda_visitante": 1.053,
+        "interpretacion": "El marcador más probable es 0-1 (22.8%), coherente con Canada como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "South Africa",
+          "ranking": 33,
+          "puntos": 1514.8,
+          "score": 0.681
+        },
+        "visitante": {
+          "nombre": "Canada",
+          "ranking": 44,
+          "puntos": 1442.7,
+          "score": 0.612
+        },
+        "interpretacion": "South Africa es objetivamente superior en el ranking FIFA (#33 / 1515 pts vs #44 / 1443 pts). Score normalizado: 0.68 vs 0.61."
+      }
+    ]
+  },
+  {
     "id": "760483",
     "fecha": "2026-06-28T02:00Z",
     "torneo": "Copa del Mundo FIFA — Fase de Grupos",
