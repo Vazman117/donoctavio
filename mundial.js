@@ -1236,12 +1236,12 @@ async function cargarEliminatorias() {
     fixtureAPartido(getM(90)),  // ┐ → M97
     fixtureAPartido(getM(89)),  // ┘
     fixtureAPartido(getM(93)),  // ┐ → M99
-    fixtureAPartido(getM(92)),  // ┘
+    fixtureAPartido(getM(94)),  // ┘
   ];
 
   const r16R = [
     fixtureAPartido(getM(91)),  // ┐ → M98
-    fixtureAPartido(getM(94)),  // ┘
+    fixtureAPartido(getM(92)),  // ┘
     fixtureAPartido(getM(95)),  // ┐ → M100
     fixtureAPartido(getM(96)),  // ┘
   ];
