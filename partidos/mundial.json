@@ -1,5 +1,449 @@
 [
   {
+    "id": "760498",
+    "fecha": "2026-07-03T03:00Z",
+    "torneo": "Copa del Mundo FIFA — Eliminatorias",
+    "perfil": "mundial_eliminatoria",
+    "es_eliminatoria": true,
+    "local": "Switzerland",
+    "visitante": "Algeria",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+    "estadio": "BC Place",
+    "ciudad_sede": "Vancouver, British Columbia",
+    "pais_sede": "CAN",
+    "altitud_sede": 4,
+    "es_neutro": true,
+    "prob_local": 0.3995653525552558,
+    "prob_empate": 0.24670651622179188,
+    "prob_visitante": 0.3537281312229524,
+    "fuerza_local": 0.48968840691194004,
+    "fuerza_visitante": 0.4809751046000601,
+    "diferencia": 0.008713302311879945,
+    "confianza": "ajustado",
+    "prediccion": "Switzerland",
+    "resultado": "Switzerland",
+    "lambda_local": 1.7161043137313827,
+    "lambda_visitante": 1.5595945674399008,
+    "factor_altitud_local": 0.9998,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "2-1",
+      "1-1",
+      "1-2",
+      "2-2",
+      "1-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "D",
+            "W"
+          ],
+          "nombre": "Switzerland"
+        },
+        "visitante": {
+          "valor": 0.69,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Algeria"
+        },
+        "interpretacion": "Algeria llega con mejor momentum: índice 0.69/1.0 frente a 0.60/1.0 de Switzerland. Últimos 5: 3V/1E/1D vs 3V/2E/0D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 4,
+        "ciudad_sede": "Vancouver, British Columbia",
+        "local": {
+          "nombre": "Switzerland",
+          "altitud_base": 0,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "altitud_base": 424,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (4m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Switzerland",
+          "goles_favor": 2.2,
+          "goles_contra": 1.2
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "goles_favor": 2.2,
+          "goles_contra": 1.4
+        },
+        "interpretacion": "Producción similar: Switzerland 2.20 — Algeria 2.20 goles/partido. Defensa: 1.20 vs 1.40."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "bajo",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Switzerland",
+          "lambda": 1.716
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "lambda": 1.56
+        },
+        "suma": 3.276,
+        "interpretacion": "Lambdas muy similares (1.72 vs 1.56): partido muy equilibrado. La diferencia de solo 0.16 goles esperados entre ambos equipos sugiere un resultado cerrado."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "2-1",
+          "1-1",
+          "1-2",
+          "2-2",
+          "1-0"
+        ],
+        "lambda_local": 1.716,
+        "lambda_visitante": 1.56,
+        "interpretacion": "El marcador más probable es 2-1 (8.8%), coherente con Switzerland como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Switzerland",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "visitante": {
+          "nombre": "Algeria",
+          "ranking": 999,
+          "puntos": 0.0,
+          "score": 0.0
+        },
+        "interpretacion": "Equipos similares en ranking FIFA (#999 vs #999). Score: 0.00 vs 0.00."
+      }
+    ]
+  },
+  {
+    "id": "760496",
+    "fecha": "2026-07-02T23:00Z",
+    "torneo": "Copa del Mundo FIFA — Eliminatorias",
+    "perfil": "mundial_eliminatoria",
+    "es_eliminatoria": true,
+    "local": "Portugal",
+    "visitante": "Croatia",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
+    "estadio": "BMO Field",
+    "ciudad_sede": "Toronto, Ontario",
+    "pais_sede": "CAN",
+    "altitud_sede": 76,
+    "es_neutro": true,
+    "prob_local": 0.51,
+    "prob_empate": 0.21585456992123872,
+    "prob_visitante": 0.27414543007876124,
+    "fuerza_local": 0.632278568,
+    "fuerza_visitante": 0.528554288,
+    "diferencia": 0.10372428,
+    "confianza": "favorable",
+    "prediccion": "Portugal",
+    "resultado": "Portugal",
+    "lambda_local": 1.88280598922882,
+    "lambda_visitante": 0.7171432688422075,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "2-0",
+      "2-1",
+      "0-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.74,
+          "ultimos_5": [
+            "D",
+            "W",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Portugal"
+        },
+        "visitante": {
+          "valor": 0.57,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Croatia"
+        },
+        "interpretacion": "Portugal llega con mejor momentum: índice 0.74/1.0 frente a 0.57/1.0 de Croatia. Últimos 5: 3V/2E/0D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 76,
+        "ciudad_sede": "Toronto, Ontario",
+        "local": {
+          "nombre": "Portugal",
+          "altitud_base": 92,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Croatia",
+          "altitud_base": 122,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (76m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Portugal",
+          "goles_favor": 1.8,
+          "goles_contra": 0.4
+        },
+        "visitante": {
+          "nombre": "Croatia",
+          "goles_favor": 1.5,
+          "goles_contra": 1.7
+        },
+        "interpretacion": "Producción similar: Portugal 1.80 — Croatia 1.50 goles/partido. Defensa: 0.40 vs 1.70."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Portugal",
+          "lambda": 1.883
+        },
+        "visitante": {
+          "nombre": "Croatia",
+          "lambda": 0.717
+        },
+        "suma": 2.6,
+        "interpretacion": "Portugal genera más peligro ofensivo según el modelo: 1.88 goles esperados vs 0.72 de Croatia."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "2-0",
+          "2-1",
+          "0-0"
+        ],
+        "lambda_local": 1.883,
+        "lambda_visitante": 0.717,
+        "interpretacion": "El marcador más probable es 1-0 (12.6%), coherente con Portugal como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Portugal",
+          "ranking": 6,
+          "puntos": 1764.9,
+          "score": 0.919
+        },
+        "visitante": {
+          "nombre": "Croatia",
+          "ranking": 13,
+          "puntos": 1658.7,
+          "score": 0.818
+        },
+        "interpretacion": "Portugal es objetivamente superior en el ranking FIFA (#6 / 1765 pts vs #13 / 1659 pts). Score normalizado: 0.92 vs 0.82."
+      }
+    ]
+  },
+  {
+    "id": "760497",
+    "fecha": "2026-07-02T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Eliminatorias",
+    "perfil": "mundial_eliminatoria",
+    "es_eliminatoria": true,
+    "local": "Spain",
+    "visitante": "Austria",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+    "estadio": "SoFi Stadium",
+    "ciudad_sede": "Los Angeles, California",
+    "pais_sede": "USA",
+    "altitud_sede": 93,
+    "es_neutro": true,
+    "prob_local": 0.46144072534932384,
+    "prob_empate": 0.247809880905133,
+    "prob_visitante": 0.29074939374554315,
+    "fuerza_local": 0.6423201680000001,
+    "fuerza_visitante": 0.563315096,
+    "diferencia": 0.07900507200000018,
+    "confianza": "moderado",
+    "prediccion": "Spain",
+    "resultado": "Spain",
+    "lambda_local": 1.5935539966997845,
+    "lambda_visitante": 1.024775505090131,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "2-1",
+      "2-0",
+      "0-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.74,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "W",
+            "D"
+          ],
+          "nombre": "Spain"
+        },
+        "visitante": {
+          "valor": 0.73,
+          "ultimos_5": [
+            "D",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Austria"
+        },
+        "interpretacion": "Spain llega con mejor momentum: índice 0.74/1.0 frente a 0.73/1.0 de Austria. Últimos 5: 3V/2E/0D vs 3V/1E/1D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 93,
+        "ciudad_sede": "Los Angeles, California",
+        "local": {
+          "nombre": "Spain",
+          "altitud_base": 650,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Austria",
+          "altitud_base": 171,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (93m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Spain",
+          "goles_favor": 1.7,
+          "goles_contra": 0.2
+        },
+        "visitante": {
+          "nombre": "Austria",
+          "goles_favor": 2.11,
+          "goles_contra": 1.44
+        },
+        "interpretacion": "Austria más ofensivo: 2.11 vs 1.70 goles/partido. Defensiva: 0.20 vs 1.44."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Spain",
+          "lambda": 1.594
+        },
+        "visitante": {
+          "nombre": "Austria",
+          "lambda": 1.025
+        },
+        "suma": 2.618,
+        "interpretacion": "Spain genera más peligro ofensivo según el modelo: 1.59 goles esperados vs 1.02 de Austria."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "2-1",
+          "2-0",
+          "0-1"
+        ],
+        "lambda_local": 1.594,
+        "lambda_visitante": 1.025,
+        "interpretacion": "El marcador más probable es 1-0 (11.7%), coherente con Spain como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Spain",
+          "ranking": 1,
+          "puntos": 1877.2,
+          "score": 1.0
+        },
+        "visitante": {
+          "nombre": "Austria",
+          "ranking": 22,
+          "puntos": 1595.7,
+          "score": 0.758
+        },
+        "interpretacion": "Spain es objetivamente superior en el ranking FIFA (#1 / 1877 pts vs #22 / 1596 pts). Score normalizado: 1.00 vs 0.76."
+      }
+    ]
+  },
+  {
     "id": "760494",
     "fecha": "2026-07-02T00:00Z",
     "torneo": "Copa del Mundo FIFA — Eliminatorias",

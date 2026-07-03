@@ -1242,8 +1242,8 @@ async function cargarEliminatorias() {
   const r16R = [
     fixtureAPartido(getM(91)),  // ┐ → M98
     fixtureAPartido(getM(92)),  // ┘
-    fixtureAPartido(getM(95)),  // ┐ → M100
-    fixtureAPartido(getM(96)),  // ┘
+    fixtureAPartido(getM(96)),  // ┐ → M100
+    fixtureAPartido(getM(95)),  // ┘
   ];
 
   /* ── Cuartos ── */
