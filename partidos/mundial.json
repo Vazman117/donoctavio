@@ -1,5 +1,449 @@
 [
   {
+    "id": "760501",
+    "fecha": "2026-07-04T01:30Z",
+    "torneo": "Copa del Mundo FIFA — Eliminatorias",
+    "perfil": "mundial_eliminatoria",
+    "es_eliminatoria": true,
+    "local": "Colombia",
+    "visitante": "Ghana",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+    "estadio": "GEHA Field at Arrowhead Stadium",
+    "ciudad_sede": "Kansas City, Missouri",
+    "pais_sede": "USA",
+    "altitud_sede": 325,
+    "es_neutro": true,
+    "prob_local": 0.51,
+    "prob_empate": 0.25839699228133495,
+    "prob_visitante": 0.23160300771866502,
+    "fuerza_local": 0.5802339829643649,
+    "fuerza_visitante": 0.4046385471604352,
+    "diferencia": 0.17559543580392972,
+    "confianza": "favorable",
+    "prediccion": "Colombia",
+    "resultado": "Colombia",
+    "lambda_local": 1.3852981635945012,
+    "lambda_visitante": 0.34443677433889136,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 0.9868,
+    "marcadores_probables": [
+      "1-0",
+      "0-0",
+      "2-0",
+      "1-1",
+      "0-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.63,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Colombia"
+        },
+        "visitante": {
+          "valor": 0.26,
+          "ultimos_5": [
+            "L",
+            "D",
+            "W",
+            "D",
+            "L"
+          ],
+          "nombre": "Ghana"
+        },
+        "interpretacion": "Colombia llega con mejor momentum: índice 0.63/1.0 frente a 0.26/1.0 de Ghana. Últimos 5: 4V/1E/0D vs 1V/2E/2D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 325,
+        "ciudad_sede": "Kansas City, Missouri",
+        "local": {
+          "nombre": "Colombia",
+          "altitud_base": 2600,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Ghana",
+          "altitud_base": 61,
+          "factor": 0.987
+        },
+        "interpretacion": "Sede en condiciones normales (325m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Colombia",
+          "goles_favor": 1.5,
+          "goles_contra": 0.8
+        },
+        "visitante": {
+          "nombre": "Ghana",
+          "goles_favor": 0.7,
+          "goles_contra": 1.4
+        },
+        "interpretacion": "Colombia más ofensivo: 1.50 goles/partido (vs 0.70). Defensiva: 0.80 vs 1.40."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Colombia",
+          "lambda": 1.385
+        },
+        "visitante": {
+          "nombre": "Ghana",
+          "lambda": 0.344
+        },
+        "suma": 1.73,
+        "interpretacion": "Colombia genera más peligro ofensivo según el modelo: 1.39 goles esperados vs 0.34 de Ghana."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "0-0",
+          "2-0",
+          "1-1",
+          "0-1"
+        ],
+        "lambda_local": 1.385,
+        "lambda_visitante": 0.344,
+        "interpretacion": "El marcador más probable es 1-0 (21.1%), coherente con Colombia como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "medio",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Colombia",
+          "ranking": 12,
+          "puntos": 1687.2,
+          "score": 0.845
+        },
+        "visitante": {
+          "nombre": "Ghana",
+          "ranking": 26,
+          "puntos": 1560.8,
+          "score": 0.725
+        },
+        "interpretacion": "Colombia es objetivamente superior en el ranking FIFA (#12 / 1687 pts vs #26 / 1561 pts). Score normalizado: 0.84 vs 0.72."
+      }
+    ]
+  },
+  {
+    "id": "760500",
+    "fecha": "2026-07-03T22:00Z",
+    "torneo": "Copa del Mundo FIFA — Eliminatorias",
+    "perfil": "mundial_eliminatoria",
+    "es_eliminatoria": true,
+    "local": "Argentina",
+    "visitante": "Cape Verde",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
+    "estadio": "Hard Rock Stadium",
+    "ciudad_sede": "Miami Gardens, Florida",
+    "pais_sede": "USA",
+    "altitud_sede": 3,
+    "es_neutro": true,
+    "prob_local": 0.51,
+    "prob_empate": 0.21355567542343293,
+    "prob_visitante": 0.276444324576567,
+    "fuerza_local": 0.7405295003375254,
+    "fuerza_visitante": 0.49492910889827474,
+    "diferencia": 0.24560039143925066,
+    "confianza": "favorable",
+    "prediccion": "Argentina",
+    "resultado": "Argentina",
+    "lambda_local": 2.1025652036694593,
+    "lambda_visitante": 0.5141903642526584,
+    "factor_altitud_local": 1.0,
+    "factor_altitud_visitante": 0.99985,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "2-0",
+      "2-1",
+      "0-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 1.0,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Argentina"
+        },
+        "visitante": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "D",
+            "D",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Cape Verde"
+        },
+        "interpretacion": "Argentina llega con mejor momentum: índice 1.00/1.0 frente a 0.53/1.0 de Cape Verde. Últimos 5: 5V/0E/0D vs 2V/3E/0D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 3,
+        "ciudad_sede": "Miami Gardens, Florida",
+        "local": {
+          "nombre": "Argentina",
+          "altitud_base": 25,
+          "factor": 1.0
+        },
+        "visitante": {
+          "nombre": "Cape Verde",
+          "altitud_base": 0,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (3m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Argentina",
+          "goles_favor": 2.8,
+          "goles_contra": 0.3
+        },
+        "visitante": {
+          "nombre": "Cape Verde",
+          "goles_favor": 1.11,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Argentina más ofensivo: 2.80 goles/partido (vs 1.11). Defensiva: 0.30 vs 1.00."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Argentina",
+          "lambda": 2.103
+        },
+        "visitante": {
+          "nombre": "Cape Verde",
+          "lambda": 0.514
+        },
+        "suma": 2.617,
+        "interpretacion": "Argentina genera más peligro ofensivo según el modelo: 2.10 goles esperados vs 0.51 de Cape Verde."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "2-0",
+          "2-1",
+          "0-0"
+        ],
+        "lambda_local": 2.103,
+        "lambda_visitante": 0.514,
+        "interpretacion": "El marcador más probable es 1-0 (12.4%), coherente con Argentina como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "alto",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Argentina",
+          "ranking": 2,
+          "puntos": 1873.3,
+          "score": 1.0
+        },
+        "visitante": {
+          "nombre": "Cape Verde",
+          "ranking": 77,
+          "puntos": 1308.0,
+          "score": 0.484
+        },
+        "interpretacion": "Argentina es objetivamente superior en el ranking FIFA (#2 / 1873 pts vs #77 / 1308 pts). Score normalizado: 1.00 vs 0.48."
+      }
+    ]
+  },
+  {
+    "id": "760499",
+    "fecha": "2026-07-03T18:00Z",
+    "torneo": "Copa del Mundo FIFA — Eliminatorias",
+    "perfil": "mundial_eliminatoria",
+    "es_eliminatoria": true,
+    "local": "Australia",
+    "visitante": "Egypt",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+    "estadio": "AT&T Stadium",
+    "ciudad_sede": "Arlington, Texas",
+    "pais_sede": "USA",
+    "altitud_sede": 188,
+    "es_neutro": true,
+    "prob_local": 0.24900390292025307,
+    "prob_empate": 0.44,
+    "prob_visitante": 0.310996097079747,
+    "fuerza_local": 0.5005174218850957,
+    "fuerza_visitante": 0.5367068313683044,
+    "diferencia": 0.0361894094832087,
+    "confianza": "ajustado",
+    "prediccion": "Egypt",
+    "resultado": "Egypt",
+    "lambda_local": 0.5940549507846397,
+    "lambda_visitante": 0.7672624329192592,
+    "factor_altitud_local": 0.9906,
+    "factor_altitud_visitante": 0.99175,
+    "marcadores_probables": [
+      "0-1",
+      "0-0",
+      "1-0",
+      "1-1",
+      "0-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.54,
+          "ultimos_5": [
+            "D",
+            "L",
+            "W",
+            "D",
+            "L"
+          ],
+          "nombre": "Australia"
+        },
+        "visitante": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "D",
+            "W",
+            "D",
+            "L",
+            "W"
+          ],
+          "nombre": "Egypt"
+        },
+        "interpretacion": "Egypt llega con mejor momentum: índice 0.60/1.0 frente a 0.54/1.0 de Australia. Últimos 5: 2V/2E/1D vs 1V/2E/2D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 188,
+        "ciudad_sede": "Arlington, Texas",
+        "local": {
+          "nombre": "Australia",
+          "altitud_base": 0,
+          "factor": 0.991
+        },
+        "visitante": {
+          "nombre": "Egypt",
+          "altitud_base": 23,
+          "factor": 0.992
+        },
+        "interpretacion": "Sede en condiciones normales (188m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Australia",
+          "goles_favor": 1.1,
+          "goles_contra": 0.7
+        },
+        "visitante": {
+          "nombre": "Egypt",
+          "goles_favor": 1.6,
+          "goles_contra": 0.8
+        },
+        "interpretacion": "Egypt más ofensivo: 1.60 vs 1.10 goles/partido. Defensiva: 0.70 vs 0.80."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "bajo",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "Australia",
+          "lambda": 0.594
+        },
+        "visitante": {
+          "nombre": "Egypt",
+          "lambda": 0.767
+        },
+        "suma": 1.361,
+        "interpretacion": "Los lambdas proyectan un partido muy trabado: Australia 0.59 goles esperados vs Egypt 0.77. Con solo 1.36 goles totales esperados, el marcador podría definirse en prórroga o penales."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "0-0",
+          "1-0",
+          "1-1",
+          "0-2"
+        ],
+        "lambda_local": 0.594,
+        "lambda_visitante": 0.767,
+        "interpretacion": "El marcador individual más probable es 0-1 (19.4%), favoreciendo a Egypt. Aunque el modelo da como favorito a el empate por probabilidad acumulada, esa probabilidad se reparte entre varios marcadores distintos."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "Australia",
+          "ranking": 29,
+          "puntos": 1539.4,
+          "score": 0.704
+        },
+        "visitante": {
+          "nombre": "Egypt",
+          "ranking": 23,
+          "puntos": 1589.3,
+          "score": 0.752
+        },
+        "interpretacion": "Egypt es objetivamente superior en el ranking FIFA (#23 / 1589 pts vs #29 / 1539 pts). Score normalizado: 0.75 vs 0.70."
+      }
+    ]
+  },
+  {
     "id": "760498",
     "fecha": "2026-07-03T03:00Z",
     "torneo": "Copa del Mundo FIFA — Eliminatorias",
