@@ -1249,11 +1249,11 @@ async function cargarEliminatorias() {
   /* ── Cuartos ── */
   const qfL = [
     fixtureAPartido(getM(97)),   // ┐ → SF izq
-    fixtureAPartido(getM(99)),   // ┘
+    fixtureAPartido(getM(98)),   // ┘
   ];
 
   const qfR = [
-    fixtureAPartido(getM(98)),   // ┐ → SF der
+    fixtureAPartido(getM(99)),   // ┐ → SF der
     fixtureAPartido(getM(100)),  // ┘
   ];
 
