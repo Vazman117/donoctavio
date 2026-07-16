@@ -1536,7 +1536,7 @@ function renderBracket(data) {
         flex-shrink: 0;
       }
       .bk-partido--final   .bk-escudo,
-      .bk-partido--tercero .bk-escudo { width: 16px; height: 16px; }
+      .bk-partido--tercero .bk-escudo { width: 33px; height: 33px; }
       .bk-escudo--vacio {
         width: 9px;
         height: 9px;
