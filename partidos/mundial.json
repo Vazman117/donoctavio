@@ -1,5 +1,301 @@
 [
   {
+    "id": "760515",
+    "fecha": "2026-07-15T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Eliminatorias",
+    "perfil": "mundial_eliminatoria",
+    "es_eliminatoria": true,
+    "local": "England",
+    "visitante": "Argentina",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+    "estadio": "Mercedes-Benz Stadium",
+    "ciudad_sede": "Atlanta, Georgia",
+    "pais_sede": "USA",
+    "altitud_sede": 320,
+    "es_neutro": true,
+    "prob_local": 0.28408570291967816,
+    "prob_empate": 0.20591429708032197,
+    "prob_visitante": 0.51,
+    "fuerza_local": 0.6761764629851384,
+    "fuerza_visitante": 0.7769774627698617,
+    "diferencia": 0.10080099978472323,
+    "confianza": "favorable",
+    "prediccion": "Argentina",
+    "resultado": "Argentina",
+    "lambda_local": 0.9470709740709988,
+    "lambda_visitante": 1.7847330214333461,
+    "factor_altitud_local": 0.9852,
+    "factor_altitud_visitante": 0.98525,
+    "marcadores_probables": [
+      "0-1",
+      "1-1",
+      "0-2",
+      "1-2",
+      "0-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.78,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "England"
+        },
+        "visitante": {
+          "valor": 1.0,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Argentina"
+        },
+        "interpretacion": "Argentina llega con mejor momentum: índice 1.00/1.0 frente a 0.78/1.0 de England. Últimos 5: 5V/0E/0D vs 4V/1E/0D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 320,
+        "ciudad_sede": "Atlanta, Georgia",
+        "local": {
+          "nombre": "England",
+          "altitud_base": 24,
+          "factor": 0.985
+        },
+        "visitante": {
+          "nombre": "Argentina",
+          "altitud_base": 25,
+          "factor": 0.985
+        },
+        "interpretacion": "Sede en condiciones normales (320m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "England",
+          "goles_favor": 1.94,
+          "goles_contra": 0.88
+        },
+        "visitante": {
+          "nombre": "Argentina",
+          "goles_favor": 2.88,
+          "goles_contra": 0.81
+        },
+        "interpretacion": "Argentina más ofensivo: 2.88 vs 1.94 goles/partido. Defensiva: 0.88 vs 0.81."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "alto",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "England",
+          "lambda": 0.947
+        },
+        "visitante": {
+          "nombre": "Argentina",
+          "lambda": 1.785
+        },
+        "suma": 2.732,
+        "interpretacion": "Argentina genera más peligro ofensivo según el modelo: 1.78 goles esperados vs 0.95 de England."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "1-1",
+          "0-2",
+          "1-2",
+          "0-0"
+        ],
+        "lambda_local": 0.947,
+        "lambda_visitante": 1.785,
+        "interpretacion": "El marcador más probable es 0-1 (11.4%), coherente con Argentina como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "England",
+          "ranking": 4,
+          "puntos": 1834.1,
+          "score": 0.985
+        },
+        "visitante": {
+          "nombre": "Argentina",
+          "ranking": 2,
+          "puntos": 1873.3,
+          "score": 1.0
+        },
+        "interpretacion": "Argentina es objetivamente superior en el ranking FIFA (#2 / 1873 pts vs #4 / 1834 pts). Score normalizado: 1.00 vs 0.98."
+      }
+    ]
+  },
+  {
+    "id": "760514",
+    "fecha": "2026-07-14T19:00Z",
+    "torneo": "Copa del Mundo FIFA — Eliminatorias",
+    "perfil": "mundial_eliminatoria",
+    "es_eliminatoria": true,
+    "local": "France",
+    "visitante": "Spain",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+    "estadio": "AT&T Stadium",
+    "ciudad_sede": "Arlington, Texas",
+    "pais_sede": "USA",
+    "altitud_sede": 188,
+    "es_neutro": true,
+    "prob_local": 0.4613626737433064,
+    "prob_empate": 0.22982442158928124,
+    "prob_visitante": 0.3088129046674124,
+    "fuerza_local": 0.739448226661879,
+    "fuerza_visitante": 0.700329181208121,
+    "diferencia": 0.039119045453757995,
+    "confianza": "moderado",
+    "prediccion": "France",
+    "resultado": "Spain",
+    "lambda_local": 1.3217505002240002,
+    "lambda_visitante": 0.8579312639999997,
+    "factor_altitud_local": 0.99235,
+    "factor_altitud_visitante": 1.0,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "0-0",
+      "0-1",
+      "2-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.9,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "France"
+        },
+        "visitante": {
+          "valor": 0.82,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Spain"
+        },
+        "interpretacion": "France llega con mejor momentum: índice 0.90/1.0 frente a 0.82/1.0 de Spain. Últimos 5: 5V/0E/0D vs 5V/0E/0D."
+      },
+      {
+        "factor": "Factor altitud",
+        "impacto": "bajo",
+        "tipo": "altitud",
+        "altitud_sede": 188,
+        "ciudad_sede": "Arlington, Texas",
+        "local": {
+          "nombre": "France",
+          "altitud_base": 35,
+          "factor": 0.992
+        },
+        "visitante": {
+          "nombre": "Spain",
+          "altitud_base": 650,
+          "factor": 1.0
+        },
+        "interpretacion": "Sede en condiciones normales (188m). La altitud no es un factor diferenciador en este partido."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "France",
+          "goles_favor": 2.56,
+          "goles_contra": 0.56
+        },
+        "visitante": {
+          "nombre": "Spain",
+          "goles_favor": 1.81,
+          "goles_contra": 0.25
+        },
+        "interpretacion": "France más ofensivo: 2.56 goles/partido (vs 1.81). Defensiva: 0.56 vs 0.25."
+      },
+      {
+        "factor": "Proyección de goles (λ)",
+        "impacto": "medio",
+        "tipo": "lambda",
+        "local": {
+          "nombre": "France",
+          "lambda": 1.322
+        },
+        "visitante": {
+          "nombre": "Spain",
+          "lambda": 0.858
+        },
+        "suma": 2.18,
+        "interpretacion": "France genera más peligro ofensivo según el modelo: 1.32 goles esperados vs 0.86 de Spain."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "0-0",
+          "0-1",
+          "2-0"
+        ],
+        "lambda_local": 1.322,
+        "lambda_visitante": 0.858,
+        "interpretacion": "El marcador más probable es 1-0 (14.8%), coherente con France como resultado favorito del modelo."
+      },
+      {
+        "factor": "Ranking FIFA",
+        "impacto": "bajo",
+        "tipo": "fifa",
+        "local": {
+          "nombre": "France",
+          "ranking": 3,
+          "puntos": 1870.0,
+          "score": 1.0
+        },
+        "visitante": {
+          "nombre": "Spain",
+          "ranking": 1,
+          "puntos": 1877.2,
+          "score": 1.0
+        },
+        "interpretacion": "Spain es objetivamente superior en el ranking FIFA (#1 / 1877 pts vs #3 / 1870 pts). Score normalizado: 1.00 vs 1.00."
+      }
+    ]
+  },
+  {
     "id": "760513",
     "fecha": "2026-07-12T01:00Z",
     "torneo": "Copa del Mundo FIFA — Eliminatorias",
