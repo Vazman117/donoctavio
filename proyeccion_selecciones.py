@@ -412,7 +412,7 @@ def calcular_lambdas(seleccion_local, seleccion_visitante, contexto, promedio_gl
     isd_l = calcular_isd_seleccion(seleccion_local,     contexto_l, promedio_global)
     isd_v = calcular_isd_seleccion(seleccion_visitante, contexto_v, promedio_global)
 
-    lambda_local     = limitar((ipo_l * promedio_global) / isd_v, 0.2, 5.0)
+    lambda_local     = limitar((ipo_l * promedio_global) / isd_v, 0.2, 5.0) 
     lambda_visitante = limitar((ipo_v * promedio_global) / isd_l, 0.2, 5.0)
     return lambda_local, lambda_visitante
 

@@ -767,6 +767,110 @@ def obtener_partidos_equipo(team_id, copas):
 
 
 # ─────────────────────────────────────────────
+# FIXTURE DE LA JORNADA ACTUAL  (NUEVO)
+# ─────────────────────────────────────────────
+
+def obtener_fixture_jornada(liga_slug):
+    """
+    Obtiene los partidos de la jornada actual (o la más próxima) desde el
+    endpoint de scoreboard de ESPN. Sin parámetro de fecha, ESPN regresa
+    por defecto la jornada/semana vigente para la liga/torneo.
+
+    Retorna un dict:
+      {
+        "liga": <slug>,
+        "jornada": <int o None>,
+        "temporada": <str o None>,
+        "partidos": [ {...}, ... ]
+      }
+    o None si no se pudo obtener nada.
+    """
+    url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{liga_slug}/scoreboard"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=10)
+        if r.status_code != 200 or len(r.text) < 100:
+            print(f"  ❌ Fixture: HTTP {r.status_code}")
+            return None
+        data = r.json()
+    except Exception as e:
+        print(f"  ❌ Fixture: ERROR - {e}")
+        return None
+
+    # ESPN no siempre expone el número de jornada de forma consistente;
+    # intentamos varias rutas conocidas antes de rendirnos con None.
+    jornada_num = None
+    week_info = data.get("week")
+    if isinstance(week_info, dict):
+        jornada_num = week_info.get("number")
+    if jornada_num is None:
+        for liga_info in data.get("leagues", []):
+            cal_week = liga_info.get("calendar", {})
+            if isinstance(cal_week, dict) and "value" in cal_week:
+                jornada_num = cal_week.get("value")
+                break
+
+    temporada = None
+    season_info = data.get("season")
+    if isinstance(season_info, dict):
+        temporada = season_info.get("year") or season_info.get("slug")
+
+    eventos = data.get("events", [])
+    partidos = []
+
+    for evento in eventos:
+        comp = evento.get("competitions", [{}])[0]
+        competitors = comp.get("competitors", [])
+        if len(competitors) < 2:
+            continue
+
+        local = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0])
+        visitante = next((c for c in competitors if c.get("homeAway") == "away"),
+                          competitors[1] if len(competitors) > 1 else {})
+
+        status_type = comp.get("status", {}).get("type", {})
+        estado      = status_type.get("description", "Programado")
+        completado  = bool(status_type.get("completed", False))
+        en_vivo     = status_type.get("state") == "in"
+
+        def _score(c):
+            try:
+                val = c.get("score", {}).get("displayValue", None)
+                if val is None or val == "":
+                    return None
+                return int(float(val))
+            except Exception:
+                return None
+
+        venue_info = comp.get("venue", {})
+
+        partidos.append({
+            "id_evento":        evento.get("id"),
+            "fecha":            evento.get("date"),
+            "jornada_nombre":   evento.get("shortName", ""),
+            "equipo_local":     local.get("team", {}).get("displayName", ""),
+            "escudo_local":     (local.get("team", {}).get("logos") or [{}])[0].get("href", ""),
+            "equipo_visitante": visitante.get("team", {}).get("displayName", ""),
+            "escudo_visitante": (visitante.get("team", {}).get("logos") or [{}])[0].get("href", ""),
+            "estadio":          venue_info.get("fullName", ""),
+            "ciudad":           venue_info.get("address", {}).get("city", ""),
+            "estado":           estado,
+            "en_vivo":          en_vivo,
+            "finalizado":       completado,
+            "goles_local":      _score(local) if (completado or en_vivo) else None,
+            "goles_visitante":  _score(visitante) if (completado or en_vivo) else None,
+        })
+
+    partidos.sort(key=lambda x: x["fecha"] or "")
+
+    return {
+        "liga":      liga_slug,
+        "jornada":   jornada_num,
+        "temporada": temporada,
+        "partidos":  partidos,
+    }
+
+
+# ─────────────────────────────────────────────
 # STATS POR COMPETENCIA
 # ─────────────────────────────────────────────
 
@@ -964,6 +1068,19 @@ def scrapear_liga(liga_slug):
             print(f"    ⚠️  Error procesando {nombre}: {e}")
 
     # ─────────────────────────────────────────
+    # FIXTURE DE LA JORNADA ACTUAL  (NUEVO)
+    # ─────────────────────────────────────────
+
+    print(f"\n📅 Obteniendo fixture de la jornada actual ({liga_principal})...")
+    fixture = obtener_fixture_jornada(liga_principal)
+    if fixture and fixture["partidos"]:
+        jornada_txt = fixture["jornada"] if fixture["jornada"] is not None else "?"
+        print(f"  ✅ Jornada {jornada_txt}: {len(fixture['partidos'])} partido(s)")
+        guardar_json(fixture, config["carpeta"], "fixture.json")
+    else:
+        print("  ⚠️  No se pudo obtener fixture de la jornada actual.")
+
+    # ─────────────────────────────────────────
     # GUARDADO
     # ─────────────────────────────────────────
 
@@ -1024,6 +1141,16 @@ def scrapear_liga(liga_slug):
         print(f"\n🏆 Top 5:")
         for t in tabla[:5]:
             print(f"   {t['posicion']}. {t['equipo']} — {t['puntos']} pts")
+
+    if fixture and fixture["partidos"]:
+        jornada_txt = fixture["jornada"] if fixture["jornada"] is not None else "?"
+        print(f"\n📅 Fixture jornada {jornada_txt}:")
+        for p in fixture["partidos"][:10]:
+            marcador = (
+                f"{p['goles_local']}-{p['goles_visitante']}"
+                if p["finalizado"] or p["en_vivo"] else "vs"
+            )
+            print(f"   {p['equipo_local']} {marcador} {p['equipo_visitante']}  ({p['estado']})")
     print()
 
 

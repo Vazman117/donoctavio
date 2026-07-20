@@ -1,0 +1,39 @@
+{
+  "liga": "mex.1",
+  "jornada": null,
+  "temporada": 2026,
+  "partidos": [
+    {
+      "id_evento": "401877045",
+      "fecha": "2026-07-17T01:00Z",
+      "jornada_nombre": "ATL @ NCX",
+      "equipo_local": "Necaxa",
+      "escudo_local": "",
+      "equipo_visitante": "Atlante",
+      "escudo_visitante": "",
+      "estadio": "Estadio Victoria",
+      "ciudad": "Aguascalientes",
+      "estado": "Scheduled",
+      "en_vivo": false,
+      "finalizado": false,
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401877044",
+      "fecha": "2026-07-17T03:10Z",
+      "jornada_nombre": "UANL @ TIJ",
+      "equipo_local": "Tijuana",
+      "escudo_local": "",
+      "equipo_visitante": "Tigres UANL",
+      "escudo_visitante": "",
+      "estadio": "Estadio Caliente",
+      "ciudad": "Tijuana",
+      "estado": "Scheduled",
+      "en_vivo": false,
+      "finalizado": false,
+      "goles_local": null,
+      "goles_visitante": null
+    }
+  ]
+}

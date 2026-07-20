@@ -419,8 +419,8 @@ def calcular_lambdas(equipo_local, equipo_visitante, promedio_liga):
     ipo_v = calcular_ipo(equipo_visitante, es_local=False, promedio_liga=promedio_liga)
     isd_l = calcular_isd(equipo_local,     promedio_liga=promedio_liga)
     isd_v = calcular_isd(equipo_visitante, promedio_liga=promedio_liga)
-    lambda_local     = limitar(ipo_l * isd_v * promedio_liga, 0.3, 5.0)
-    lambda_visitante = limitar(ipo_v * isd_l * promedio_liga, 0.3, 5.0)
+    lambda_local     = limitar((ipo_l * promedio_liga) / isd_v, 0.3, 5.0)
+    lambda_visitante = limitar((ipo_v * promedio_liga) / isd_l, 0.3, 5.0)
     return lambda_local, lambda_visitante
 
 
