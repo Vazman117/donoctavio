@@ -3,6 +3,7 @@ import json
 import time
 import os
 import argparse
+from datetime import datetime, timezone
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
@@ -62,7 +63,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "mex.1",
         "tiene_apertura_clausura": True,
-        "season_type_id":          "8",
     },
     "mex.2": {
         "nombre":                  "Liga de Expansión MX",
@@ -71,7 +71,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "mex.2",
         "tiene_apertura_clausura": True,
-        "season_type_id":          "8",
     },
     "eng.1": {
         "nombre":                  "Premier League",
@@ -80,7 +79,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "eng.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
     },
     "esp.1": {
         "nombre":                  "La Liga",
@@ -89,7 +87,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "esp.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
     },
     "ger.1": {
         "nombre":                  "Bundesliga",
@@ -98,7 +95,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "ger.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
     },
     "fra.1": {
         "nombre":                  "Ligue 1",
@@ -107,7 +103,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "fra.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
     },
     "ned.1": {
         "nombre":                  "Eredivisie",
@@ -116,7 +111,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "ned.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
     },
     "bel.1": {
         "nombre":                  "Belgian Pro League",
@@ -125,7 +119,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "bel.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
     },
     "bra.1": {
         "nombre":                  "Brasileirao Serie A",
@@ -134,7 +127,19 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "bra.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
+    },
+    "arg.1": {
+        "nombre":                  "Liga Profesional Argentina",
+        "carpeta":                 "LIGA-PROFESIONAL-ARGENTINA",
+        "copas":                   [
+            "arg.1",
+            "conmebol.libertadores",
+            "conmebol.sudamericana"
+        ],
+        "es_torneo_copa":          False,
+        "tiene_grupos":            True,
+        "liga_principal":          "arg.1",
+        "tiene_apertura_clausura": True,
     },
     "usa.1": {
         "nombre":                  "MLS",
@@ -143,7 +148,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "usa.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
     },
     "sco.1": {
         "nombre":                  "Scottish Premiership",
@@ -152,7 +156,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "sco.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
     },
     "gre.1": {
         "nombre":                  "Super League Grecia",
@@ -161,7 +164,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "gre.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
     },
     "rus.1": {
         "nombre":                  "Liga Premier Rusia",
@@ -170,7 +172,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "rus.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
     },
     "chi.1": {
         "nombre":                  "Liga Chilena Primera División",
@@ -179,7 +180,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "chi.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
     },
     "jpn.1": {
         "nombre":                  "J1 League",
@@ -188,7 +188,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "jpn.1",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
     },
     "ger.dfb_pokal": {
         "nombre":                  "DFB-Pokal (Copa Alemana)",
@@ -197,7 +196,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          True,
         "liga_principal":          "ger.dfb_pokal",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
         "ligas_locales":           ["ger.1", "ger.2"],
     },
     "uefa.europa": {
@@ -207,7 +205,6 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          True,
         "liga_principal":          "uefa.europa",
         "tiene_apertura_clausura": False,
-        "season_type_id":          "2",
         "ligas_locales":           ["eng.1", "esp.1", "ger.1", "fra.1", "ita.1",
                                     "ned.1", "por.1", "bel.1", "sco.1", "gre.1"],
     },
@@ -616,7 +613,7 @@ def obtener_equipos_desde_teams(liga_slug):
 
 
 def obtener_equipos_desde_scoreboard(liga_slug, semanas=8):
-    from datetime import datetime, timezone, timedelta
+    from datetime import timedelta
 
     equipos = {}
     hoy     = datetime.now(timezone.utc)
@@ -767,108 +764,310 @@ def obtener_partidos_equipo(team_id, copas):
 
 
 # ─────────────────────────────────────────────
-# FIXTURE DE LA JORNADA ACTUAL  (NUEVO)
+# FIXTURE DE LA JORNADA ACTUAL COMPLETA  (ACTUALIZADO)
 # ─────────────────────────────────────────────
 
 def obtener_fixture_jornada(liga_slug):
-    """
-    Obtiene los partidos de la jornada actual (o la más próxima) desde el
-    endpoint de scoreboard de ESPN. Sin parámetro de fecha, ESPN regresa
-    por defecto la jornada/semana vigente para la liga/torneo.
 
-    Retorna un dict:
-      {
-        "liga": <slug>,
-        "jornada": <int o None>,
-        "temporada": <str o None>,
-        "partidos": [ {...}, ... ]
-      }
-    o None si no se pudo obtener nada.
-    """
-    url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{liga_slug}/scoreboard"
+    def _fmt(iso_str):
+        return iso_str[:10].replace("-", "")
+
+    base_url = (
+        f"https://site.api.espn.com/apis/site/v2/sports/soccer/{liga_slug}/scoreboard"
+    )
+
     try:
-        r = requests.get(url, headers=HEADERS, timeout=10)
+        r = requests.get(base_url, headers=HEADERS, timeout=10)
+
         if r.status_code != 200 or len(r.text) < 100:
             print(f"  ❌ Fixture: HTTP {r.status_code}")
             return None
+
         data = r.json()
+
     except Exception as e:
         print(f"  ❌ Fixture: ERROR - {e}")
         return None
 
-    # ESPN no siempre expone el número de jornada de forma consistente;
-    # intentamos varias rutas conocidas antes de rendirnos con None.
-    jornada_num = None
-    week_info = data.get("week")
-    if isinstance(week_info, dict):
-        jornada_num = week_info.get("number")
-    if jornada_num is None:
-        for liga_info in data.get("leagues", []):
-            cal_week = liga_info.get("calendar", {})
-            if isinstance(cal_week, dict) and "value" in cal_week:
-                jornada_num = cal_week.get("value")
-                break
+    leagues = data.get("leagues", [])
+    league = leagues[0] if leagues else {}
+
+    calendar = league.get("calendar", [])
+    calendar_type = league.get("calendarType")
 
     temporada = None
-    season_info = data.get("season")
+
+    season_info = data.get("season", {})
+
     if isinstance(season_info, dict):
         temporada = season_info.get("year") or season_info.get("slug")
 
+    hoy = datetime.now(timezone.utc).date()
+
+    fecha_inicio = None
+    fecha_fin = None
+    jornada_num = None
+
+    # ==========================================================
+    # CASO 1: ESPN clásico (startDate/endDate)
+    # ==========================================================
+
+    entradas_calendar = []
+
+    for c in calendar:
+
+        if isinstance(c, dict) and "entries" in c:
+            entradas_calendar.extend(c["entries"])
+        else:
+            entradas_calendar.append(c)
+
+    candidato_futuro = None
+
+    for c in entradas_calendar:
+
+        if not isinstance(c, dict):
+            continue
+
+        if "startDate" not in c or "endDate" not in c:
+            continue
+
+        try:
+
+            ini = datetime.fromisoformat(
+                c["startDate"].replace("Z", "+00:00")
+            ).date()
+
+            fin = datetime.fromisoformat(
+                c["endDate"].replace("Z", "+00:00")
+            ).date()
+
+        except Exception:
+            continue
+
+        if ini <= hoy <= fin:
+
+            fecha_inicio = c["startDate"]
+            fecha_fin = c["endDate"]
+            jornada_num = c.get("value")
+
+            break
+
+        if ini > hoy and (
+            candidato_futuro is None
+            or ini < candidato_futuro[0]
+        ):
+            candidato_futuro = (ini, c)
+
+    if fecha_inicio is None and candidato_futuro:
+
+        _, c = candidato_futuro
+
+        fecha_inicio = c["startDate"]
+        fecha_fin = c["endDate"]
+        jornada_num = c.get("value")
+
+    # ==========================================================
+    # CASO 2: Brasileirão / MLS / ligas calendarType=day
+    # ==========================================================
+
+    if fecha_inicio is None and calendar_type == "day":
+
+        fechas = []
+
+        for item in calendar:
+
+            if not isinstance(item, str):
+                continue
+
+            try:
+
+                d = datetime.fromisoformat(
+                    item.replace("Z", "+00:00")
+                ).date()
+
+                if d >= hoy:
+                    fechas.append(d)
+
+            except Exception:
+                continue
+
+        fechas.sort()
+
+        if fechas:
+
+            inicio = fechas[0]
+            fin = inicio
+
+            for d in fechas[1:]:
+
+                if (d - fin).days <= 1:
+                    fin = d
+                else:
+                    break
+
+            fecha_inicio = inicio.isoformat() + "T00:00:00Z"
+            fecha_fin = fin.isoformat() + "T23:59:59Z"
+
+            jornada_num = "day-block"
+
+            print(
+                f"  → CalendarType=day detectado: "
+                f"{inicio} -> {fin}"
+            )
+
+    # ==========================================================
+    # CONSULTA FINAL DEL RANGO
+    # ==========================================================
+
     eventos = data.get("events", [])
+
+    if fecha_inicio and fecha_fin:
+
+        inicio_fmt = _fmt(fecha_inicio)
+        fin_fmt = _fmt(fecha_fin)
+
+        if inicio_fmt == fin_fmt:
+            rango = inicio_fmt
+        else:
+            rango = f"{inicio_fmt}-{fin_fmt}"
+
+        url_rango = f"{base_url}?dates={rango}"
+
+        print(f"  → Consultando rango: {rango}")
+
+        try:
+
+            r2 = requests.get(
+                url_rango,
+                headers=HEADERS,
+                timeout=10
+            )
+
+            if r2.status_code == 200 and len(r2.text) > 100:
+
+                data2 = r2.json()
+
+                eventos = data2.get("events", eventos)
+
+                print(
+                    f"  → {len(eventos)} partido(s) encontrados"
+                )
+
+            else:
+
+                print(
+                    f"  ⚠️ HTTP {r2.status_code} "
+                    f"usando eventos iniciales"
+                )
+
+        except Exception as e:
+
+            print(
+                f"  ⚠️ Error consultando rango: {e}"
+            )
+
+    else:
+
+        print(
+            "  ⚠️ No se pudo determinar la jornada "
+            "usando eventos iniciales"
+        )
+
     partidos = []
 
     for evento in eventos:
+
         comp = evento.get("competitions", [{}])[0]
+
         competitors = comp.get("competitors", [])
+
         if len(competitors) < 2:
             continue
 
-        local = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0])
-        visitante = next((c for c in competitors if c.get("homeAway") == "away"),
-                          competitors[1] if len(competitors) > 1 else {})
+        local = next(
+            (
+                c
+                for c in competitors
+                if c.get("homeAway") == "home"
+            ),
+            competitors[0]
+        )
+
+        visitante = next(
+            (
+                c
+                for c in competitors
+                if c.get("homeAway") == "away"
+            ),
+            competitors[1]
+        )
 
         status_type = comp.get("status", {}).get("type", {})
-        estado      = status_type.get("description", "Programado")
-        completado  = bool(status_type.get("completed", False))
-        en_vivo     = status_type.get("state") == "in"
+
+        estado = status_type.get(
+            "description",
+            "Programado"
+        )
+
+        completado = bool(
+            status_type.get("completed", False)
+        )
+
+        en_vivo = status_type.get("state") == "in"
 
         def _score(c):
+
             try:
-                val = c.get("score", {}).get("displayValue", None)
+
+                val = c.get(
+                    "score",
+                    {}
+                ).get(
+                    "displayValue",
+                    None
+                )
+
                 if val is None or val == "":
                     return None
+
                 return int(float(val))
+
             except Exception:
                 return None
 
         venue_info = comp.get("venue", {})
 
         partidos.append({
-            "id_evento":        evento.get("id"),
-            "fecha":            evento.get("date"),
-            "jornada_nombre":   evento.get("shortName", ""),
-            "equipo_local":     local.get("team", {}).get("displayName", ""),
-            "escudo_local":     (local.get("team", {}).get("logos") or [{}])[0].get("href", ""),
+            "id_evento": evento.get("id"),
+            "fecha": evento.get("date"),
+            "jornada_nombre": evento.get("shortName", ""),
+            "equipo_local": local.get("team", {}).get("displayName", ""),
+            "escudo_local": (
+                local.get("team", {}).get("logos") or [{}]
+            )[0].get("href", ""),
             "equipo_visitante": visitante.get("team", {}).get("displayName", ""),
-            "escudo_visitante": (visitante.get("team", {}).get("logos") or [{}])[0].get("href", ""),
-            "estadio":          venue_info.get("fullName", ""),
-            "ciudad":           venue_info.get("address", {}).get("city", ""),
-            "estado":           estado,
-            "en_vivo":          en_vivo,
-            "finalizado":       completado,
-            "goles_local":      _score(local) if (completado or en_vivo) else None,
-            "goles_visitante":  _score(visitante) if (completado or en_vivo) else None,
+            "escudo_visitante": (
+                visitante.get("team", {}).get("logos") or [{}]
+            )[0].get("href", ""),
+            "estadio": venue_info.get("fullName", ""),
+            "ciudad": venue_info.get("address", {}).get("city", ""),
+            "estado": estado,
+            "en_vivo": en_vivo,
+            "finalizado": completado,
+            "goles_local": _score(local) if (completado or en_vivo) else None,
+            "goles_visitante": _score(visitante) if (completado or en_vivo) else None,
         })
 
-    partidos.sort(key=lambda x: x["fecha"] or "")
+    partidos.sort(
+        key=lambda x: x["fecha"] or ""
+    )
 
     return {
-        "liga":      liga_slug,
-        "jornada":   jornada_num,
+        "liga": liga_slug,
+        "jornada": jornada_num,
         "temporada": temporada,
-        "partidos":  partidos,
+        "partidos": partidos,
     }
-
 
 # ─────────────────────────────────────────────
 # STATS POR COMPETENCIA
@@ -1068,7 +1267,7 @@ def scrapear_liga(liga_slug):
             print(f"    ⚠️  Error procesando {nombre}: {e}")
 
     # ─────────────────────────────────────────
-    # FIXTURE DE LA JORNADA ACTUAL  (NUEVO)
+    # FIXTURE DE LA JORNADA ACTUAL COMPLETA
     # ─────────────────────────────────────────
 
     print(f"\n📅 Obteniendo fixture de la jornada actual ({liga_principal})...")

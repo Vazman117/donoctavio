@@ -1,0 +1,55 @@
+{
+  "liga": "arg.1",
+  "jornada": null,
+  "temporada": 2026,
+  "partidos": [
+    {
+      "id_evento": "401841435",
+      "fecha": "2026-07-23T22:30Z",
+      "jornada_nombre": "ROS @ BEL",
+      "equipo_local": "Belgrano (Córdoba)",
+      "escudo_local": "",
+      "equipo_visitante": "Rosario Central",
+      "escudo_visitante": "",
+      "estadio": "El Gigante de Alberdi",
+      "ciudad": "Córdoba",
+      "estado": "Scheduled",
+      "en_vivo": false,
+      "finalizado": false,
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841437",
+      "fecha": "2026-07-23T22:30Z",
+      "jornada_nombre": "ARGJ @ SARM",
+      "equipo_local": "Sarmiento (Junín)",
+      "escudo_local": "",
+      "equipo_visitante": "Argentinos Juniors",
+      "escudo_visitante": "",
+      "estadio": "Eva Perón",
+      "ciudad": "Junin",
+      "estado": "Scheduled",
+      "en_vivo": false,
+      "finalizado": false,
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841448",
+      "fecha": "2026-07-24T00:45Z",
+      "jornada_nombre": "ALDO @ DYJ",
+      "equipo_local": "Defensa y Justicia",
+      "escudo_local": "",
+      "equipo_visitante": "Aldosivi",
+      "escudo_visitante": "",
+      "estadio": "Norberto Tomaghello",
+      "ciudad": "Buenos Aires",
+      "estado": "Scheduled",
+      "en_vivo": false,
+      "finalizado": false,
+      "goles_local": null,
+      "goles_visitante": null
+    }
+  ]
+}

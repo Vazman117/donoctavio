@@ -1,0 +1,742 @@
+[
+  {
+    "id": "401877036",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Cruz Azul",
+    "visitante": "Puebla",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/231.png",
+    "prob_local": 0.28576013557633045,
+    "prob_empate": 0.2332519938923837,
+    "prob_visitante": 0.48098787053128583,
+    "fuerza_local": 0.44018235294117647,
+    "fuerza_visitante": 0.4826529411764706,
+    "diferencia": 0.04247058823529415,
+    "confianza": "favorable",
+    "prediccion": "Puebla",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.1683425506954919,
+    "lambda_visitante": 1.7035224709352768,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.35,
+          "ultimos_5": [
+            "W"
+          ],
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "valor": 0.35,
+          "ultimos_5": [
+            "W"
+          ],
+          "nombre": "Puebla"
+        },
+        "interpretacion": "Momentum similar: Cruz Azul 0.35/1.0 — Puebla 0.35/1.0."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 100.0,
+          "detalle": "1G/0E/0P",
+          "nombre": "Puebla"
+        },
+        "interpretacion": "Equilibrio situacional: Cruz Azul 0% local — Puebla 100% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Cruz Azul",
+          "goles_favor": 3.0,
+          "goles_contra": 2.0
+        },
+        "visitante": {
+          "nombre": "Puebla",
+          "goles_favor": 1.0,
+          "goles_contra": 0.0
+        },
+        "interpretacion": "Cruz Azul más ofensivo: 3.00 vs 1.00 goles/partido. Defensa: 2.00 vs 0.00."
+      }
+    ]
+  },
+  {
+    "id": "401877035",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Toluca",
+    "visitante": "Pumas UNAM",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/223.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "prob_local": 0.5703045549767454,
+    "prob_empate": 0.24195473835250847,
+    "prob_visitante": 0.18774070667074602,
+    "fuerza_local": 0.4848882352941176,
+    "fuerza_visitante": 0.2493,
+    "diferencia": 0.23558823529411763,
+    "confianza": "favorable",
+    "prediccion": "Toluca",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.5329290322580649,
+    "lambda_visitante": 0.6804089157030334,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.35,
+          "ultimos_5": [
+            "W"
+          ],
+          "nombre": "Toluca"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L"
+          ],
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "Pumas UNAM llega con mejor momentum: índice 0.50/1.0 frente a 0.35/1.0 de Toluca. Últimos 5: 0V/0E/1D vs 1V/0E/0D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Toluca"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "Pumas UNAM sufre de visita: 0% (0G/0E/0P). Toluca en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Toluca",
+          "goles_favor": 2.0,
+          "goles_contra": 0.0
+        },
+        "visitante": {
+          "nombre": "Pumas UNAM",
+          "goles_favor": 0.0,
+          "goles_contra": 3.0
+        },
+        "interpretacion": "Superioridad integral de Toluca: 2.00 goles/partido (vs 0.00) y solo 0.00 recibidos (vs 3.00)."
+      }
+    ]
+  },
+  {
+    "id": "401841435",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Belgrano (Córdoba)",
+    "visitante": "Rosario Central",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/4.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/17.png",
+    "prob_local": 0.4585784111870368,
+    "prob_empate": 0.2928470927743926,
+    "prob_visitante": 0.24857449603857057,
+    "fuerza_local": 0.6866285882352943,
+    "fuerza_visitante": 0.4613114117647059,
+    "diferencia": 0.22531717647058835,
+    "confianza": "favorable",
+    "prediccion": "Belgrano (Córdoba)",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.04512,
+    "lambda_visitante": 0.7117886508821547,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 1.0,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Belgrano (Córdoba)"
+        },
+        "visitante": {
+          "valor": 0.59,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Rosario Central"
+        },
+        "interpretacion": "Belgrano (Córdoba) llega con mejor momentum: índice 1.00/1.0 frente a 0.59/1.0 de Rosario Central. Últimos 5: 5V/0E/0D vs 3V/1E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 55.6,
+          "detalle": "5G/2E/2P",
+          "nombre": "Belgrano (Córdoba)"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 44.4,
+          "detalle": "4G/2E/3P",
+          "nombre": "Rosario Central"
+        },
+        "interpretacion": "Belgrano (Córdoba) domina en casa: 56% (5G/2E/2P). Rosario Central: 44% de visita (4G/2E/3P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Belgrano (Córdoba)",
+          "goles_favor": 1.2,
+          "goles_contra": 0.8
+        },
+        "visitante": {
+          "nombre": "Rosario Central",
+          "goles_favor": 1.32,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Producción similar: Belgrano (Córdoba) 1.20 goles/partido — Rosario Central 1.32. Defensa: 0.80 vs 1.00."
+      }
+    ]
+  },
+  {
+    "id": "401841437",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Sarmiento (Junín)",
+    "visitante": "Argentinos Juniors",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/10158.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3.png",
+    "prob_local": 0.20173480111372044,
+    "prob_empate": 0.33255760524988026,
+    "prob_visitante": 0.46570759363639924,
+    "fuerza_local": 0.37432852941176464,
+    "fuerza_visitante": 0.4745621176470588,
+    "diferencia": 0.10023358823529416,
+    "confianza": "favorable",
+    "prediccion": "Argentinos Juniors",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.4417181657777778,
+    "lambda_visitante": 0.9439867666666667,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.33,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Sarmiento (Junín)"
+        },
+        "visitante": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Argentinos Juniors"
+        },
+        "interpretacion": "Argentinos Juniors llega con mejor momentum: índice 0.53/1.0 frente a 0.33/1.0 de Sarmiento (Junín). Últimos 5: 3V/0E/2D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 62.5,
+          "detalle": "5G/1E/2P",
+          "nombre": "Sarmiento (Junín)"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 28.6,
+          "detalle": "2G/2E/3P",
+          "nombre": "Argentinos Juniors"
+        },
+        "interpretacion": "Contraste marcado: Sarmiento (Junín) gana el 62% en casa (5G/1E/2P), Argentinos Juniors solo el 29% de visita (2G/2E/3P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Sarmiento (Junín)",
+          "goles_favor": 0.81,
+          "goles_contra": 1.25
+        },
+        "visitante": {
+          "nombre": "Argentinos Juniors",
+          "goles_favor": 1.1,
+          "goles_contra": 0.74
+        },
+        "interpretacion": "Producción similar: Sarmiento (Junín) 0.81 goles/partido — Argentinos Juniors 1.10. Defensa: 1.25 vs 0.74."
+      }
+    ]
+  },
+  {
+    "id": "761667",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Inter Miami CF",
+    "visitante": "Chicago Fire FC",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/20232.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/182.png",
+    "prob_local": 0.3205544210084922,
+    "prob_empate": 0.24698393269026597,
+    "prob_visitante": 0.43246164630124184,
+    "fuerza_local": 0.6528831176470589,
+    "fuerza_visitante": 0.6281782352941178,
+    "diferencia": 0.024704882352941104,
+    "confianza": "moderado",
+    "prediccion": "Chicago Fire FC",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.7999755103715942,
+    "lambda_visitante": 2.2208491004752196,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.92,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Inter Miami CF"
+        },
+        "visitante": {
+          "valor": 0.8,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Chicago Fire FC"
+        },
+        "interpretacion": "Inter Miami CF llega con mejor momentum: índice 0.92/1.0 frente a 0.80/1.0 de Chicago Fire FC. Últimos 5: 4V/0E/1D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 33.3,
+          "detalle": "2G/3E/1P",
+          "nombre": "Inter Miami CF"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 50.0,
+          "detalle": "3G/2E/1P",
+          "nombre": "Chicago Fire FC"
+        },
+        "interpretacion": "Equilibrio situacional: Inter Miami CF 33% local — Chicago Fire FC 50% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Inter Miami CF",
+          "goles_favor": 2.6,
+          "goles_contra": 1.87
+        },
+        "visitante": {
+          "nombre": "Chicago Fire FC",
+          "goles_favor": 1.93,
+          "goles_contra": 1.14
+        },
+        "interpretacion": "Inter Miami CF más ofensivo: 2.60 vs 1.93 goles/partido. Defensa: 1.87 vs 1.14."
+      }
+    ]
+  },
+  {
+    "id": "401874157",
+    "torneo": "CONMEBOL Sudamericana",
+    "perfil": "sudamericana",
+    "local": "Independiente Medellín",
+    "visitante": "Vasco da Gama",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2690.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3454.png",
+    "prob_local": 0.21593155195825559,
+    "prob_empate": 0.2523670400734993,
+    "prob_visitante": 0.5317014079682452,
+    "fuerza_local": 0.37554467096774197,
+    "fuerza_visitante": 0.412249295483871,
+    "diferencia": 0.03670462451612905,
+    "confianza": "favorable",
+    "prediccion": "Vasco da Gama",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.7717472511509684,
+    "lambda_visitante": 1.6201255342167518,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.43,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Independiente Medellín"
+        },
+        "visitante": {
+          "valor": 0.35,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Vasco da Gama"
+        },
+        "interpretacion": "Independiente Medellín llega con mejor momentum: índice 0.43/1.0 frente a 0.35/1.0 de Vasco da Gama. Últimos 5: 2V/0E/3D vs 3V/0E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Independiente Medellín"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 33.3,
+          "detalle": "1G/1E/1P",
+          "nombre": "Vasco da Gama"
+        },
+        "interpretacion": "Equilibrio situacional: Independiente Medellín 0% local — Vasco da Gama 33% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Independiente Medellín",
+          "goles_favor": 1.1,
+          "goles_contra": 1.4
+        },
+        "visitante": {
+          "nombre": "Vasco da Gama",
+          "goles_favor": 1.67,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Vasco da Gama más ofensivo: 1.67 vs 1.10 goles/partido. Defensa: 1.40 vs 1.00."
+      }
+    ]
+  },
+  {
+    "id": "401874144",
+    "torneo": "CONMEBOL Sudamericana",
+    "perfil": "sudamericana",
+    "local": "Bolívar",
+    "visitante": "Grêmio",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2681.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/6273.png",
+    "prob_local": 0.14474917176680333,
+    "prob_empate": 0.2947048274661365,
+    "prob_visitante": 0.5605460007670602,
+    "fuerza_local": 0.3327334709677419,
+    "fuerza_visitante": 0.471231695483871,
+    "diferencia": 0.1384982245161291,
+    "confianza": "favorable",
+    "prediccion": "Grêmio",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.382607447648833,
+    "lambda_visitante": 1.2909376592462858,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.23,
+          "ultimos_5": [
+            "L",
+            "L",
+            "D",
+            "W",
+            "D"
+          ],
+          "nombre": "Bolívar"
+        },
+        "visitante": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Grêmio"
+        },
+        "interpretacion": "Grêmio llega con mejor momentum: índice 0.47/1.0 frente a 0.23/1.0 de Bolívar. Últimos 5: 3V/2E/0D vs 1V/2E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Bolívar"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 33.3,
+          "detalle": "1G/1E/1P",
+          "nombre": "Grêmio"
+        },
+        "interpretacion": "Equilibrio situacional: Bolívar 0% local — Grêmio 33% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Bolívar",
+          "goles_favor": 1.0,
+          "goles_contra": 1.33
+        },
+        "visitante": {
+          "nombre": "Grêmio",
+          "goles_favor": 1.33,
+          "goles_contra": 0.5
+        },
+        "interpretacion": "Producción similar: Bolívar 1.00 goles/partido — Grêmio 1.33. Defensa: 1.33 vs 0.50."
+      }
+    ]
+  },
+  {
+    "id": "401841154",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "Internacional",
+    "visitante": "Cruzeiro",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/1936.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2022.png",
+    "prob_local": 0.3350890889206643,
+    "prob_empate": 0.2736690541194485,
+    "prob_visitante": 0.39124185695988717,
+    "fuerza_local": 0.35089252941176474,
+    "fuerza_visitante": 0.46850941176470595,
+    "diferencia": 0.11761688235294121,
+    "confianza": "ajustado",
+    "prediccion": "Cruzeiro",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.1268234497954803,
+    "lambda_visitante": 1.1540478673053707,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.34,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Internacional"
+        },
+        "visitante": {
+          "valor": 0.65,
+          "ultimos_5": [
+            "D",
+            "W",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Cruzeiro"
+        },
+        "interpretacion": "Cruzeiro llega con mejor momentum: índice 0.65/1.0 frente a 0.34/1.0 de Internacional. Últimos 5: 2V/2E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 33.3,
+          "detalle": "3G/2E/4P",
+          "nombre": "Internacional"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 25.0,
+          "detalle": "2G/2E/4P",
+          "nombre": "Cruzeiro"
+        },
+        "interpretacion": "Cruzeiro sufre de visita: 25% (2G/2E/4P). Internacional en casa: 33% (3G/2E/4P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Internacional",
+          "goles_favor": 1.17,
+          "goles_contra": 1.22
+        },
+        "visitante": {
+          "nombre": "Cruzeiro",
+          "goles_favor": 1.33,
+          "goles_contra": 1.56
+        },
+        "interpretacion": "Producción similar: Internacional 1.17 goles/partido — Cruzeiro 1.33. Defensa: 1.22 vs 1.56."
+      }
+    ]
+  },
+  {
+    "id": "401841156",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "local": "São Paulo",
+    "visitante": "Athletico Paranaense",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2026.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3458.png",
+    "prob_local": 0.2766832952818092,
+    "prob_empate": 0.2952289037110468,
+    "prob_visitante": 0.42808780100714405,
+    "fuerza_local": 0.3772638235294117,
+    "fuerza_visitante": 0.5468964705882353,
+    "diferencia": 0.16963264705882364,
+    "confianza": "moderado",
+    "prediccion": "Athletico Paranaense",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.8590193760603954,
+    "lambda_visitante": 1.0778765105612553,
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.17,
+          "ultimos_5": [
+            "L",
+            "D",
+            "L",
+            "L",
+            "D"
+          ],
+          "nombre": "São Paulo"
+        },
+        "visitante": {
+          "valor": 0.74,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "L",
+            "D"
+          ],
+          "nombre": "Athletico Paranaense"
+        },
+        "interpretacion": "Athletico Paranaense llega con mejor momentum: índice 0.74/1.0 frente a 0.17/1.0 de São Paulo. Últimos 5: 2V/2E/1D vs 0V/2E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 62.5,
+          "detalle": "5G/2E/1P",
+          "nombre": "São Paulo"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 25.0,
+          "detalle": "2G/1E/5P",
+          "nombre": "Athletico Paranaense"
+        },
+        "interpretacion": "Contraste marcado: São Paulo gana el 62% en casa (5G/2E/1P), Athletico Paranaense solo el 25% de visita (2G/1E/5P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "São Paulo",
+          "goles_favor": 1.28,
+          "goles_contra": 1.11
+        },
+        "visitante": {
+          "nombre": "Athletico Paranaense",
+          "goles_favor": 1.33,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Producción similar: São Paulo 1.28 goles/partido — Athletico Paranaense 1.33. Defensa: 1.11 vs 1.00."
+      }
+    ]
+  }
+]

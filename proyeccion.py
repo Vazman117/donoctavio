@@ -912,6 +912,36 @@ def guardar_resultado(partido, archivo="partidos.json"):
 
 
 # =============================
+# FIXTURE — CASOS A PARTIR DE fixture.json
+# =============================
+
+def cargar_fixture(archivo="fixture.json", solo_pendientes=True):
+    """
+    Lee fixture.json y arma la lista de casos a proyectar,
+    en el mismo formato que antes usaba CASOS: (id, local, visitante, db_key).
+
+    - archivo:          ruta al fixture.json
+    - solo_pendientes:  si True (default), omite partidos que ya
+                         tienen marcador (goles_local no es null).
+    """
+    with open(archivo, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    casos = []
+    for partido in data:
+        if solo_pendientes and partido.get("goles_local") is not None:
+            continue  # ya se jugó, se omite
+
+        casos.append((
+            partido["id_evento"],
+            partido["equipo_local"],
+            partido["equipo_visitante"],
+            partido["config"],
+        ))
+    return casos
+
+
+# =============================
 # GENERAR PARTIDO
 # =============================
 
@@ -1011,6 +1041,12 @@ DB_CONFIG = {
         "liga_key": "mex.1",
         "salida": "partidos.json"
     },
+    "liga_arg":{
+        "carpeta": "LIGA-PROFESIONAL-ARGENTINA",
+        "perfil": "fase_regular",
+        "liga_key": "arg.1",
+        "salida": "partidos.json"
+    },
     "liga_mx_exp":{
         "carpeta": "LIGA-MX-EXPANSION",      
         "perfil": "fase_regular",         
@@ -1108,31 +1144,11 @@ if __name__ == "__main__":
             pass   # carpeta no scrapeada aún, se ignora
 
     # ── Casos a proyectar ─────────────────────────────────────────────────────
-    # Formato mínimo: (id, local, visitante, db_key)
-    # Todo lo demás (perfil, liga_key, salida) se infiere desde DB_CONFIG.
+    # Se leen directamente de fixture.json (id_evento, equipo_local,
+    # equipo_visitante, config) en vez de una lista hardcodeada.
     # ─────────────────────────────────────────────────────────────────────────
 
-    CASOS = [
-        # id   local                   visitante
-        (1,  "Espanyol",              "Real Sociedad",       "la_liga"),
-        (2,  "Villarreal",            "Atletico Madrid",     "la_liga"),
-        (3,  "Celta Vigo",            "Sevilla",             "la_liga"),
-        (4,  "Girona",                "Elche",               "la_liga"),
-        (5,  "Brighton",              "Manchester United",   "premier"),
-        (6,  "Fulham",                "Newcastle United",    "premier"),
-        (7,  "Sunderland",            "Chelsea",             "premier"),
-        (8,  "Tottenham Hotspur",     "Everton",             "premier"),
-        (9,  "Minnesota United FC",   "Real Salt lake",      "mls"),
-        (10, "San Diego FC",          "Vancouver Whitecaps", "mls"),
-        (11, "Charlotte FC",          "New England Revolution",  "mls"),
-        (12, "Vitoria",               "Internacional",       "brasileirao"),
-        (13, "Flamengo",              "Palmeiras",           "brasileirao"),
-        (14, "Grêmio",                "Santos",              "brasileirao"),
-        (15, "Universidad Catolica",  "Colo Colo",           "chilena"),
-        (16, "Fagiano Okayama",       "Cerezo Osaka",        "j1-league"),
-        (17, "Shimizus-pulse",        "Gamba Osaka",         "j1-league"),
-        (18, "Bayern Munich",         "VFB Stuttgart",       "dfb"),
-    ]
+    CASOS = cargar_fixture("fixture.json")
 
     # ── Ejecución ─────────────────────────────────────────────────────────────
     print(f"\n🚀 Generando {len(CASOS)} proyecciones...\n" + "="*55)
