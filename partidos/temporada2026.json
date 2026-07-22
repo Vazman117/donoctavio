@@ -1,0 +1,328 @@
+[
+  {
+    "id": "401841148",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Atlético-MG",
+    "visitante": "Bahia",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/7632.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/9967.png",
+    "prob_local": 0.2975255321659045,
+    "prob_empate": 0.2965060716397637,
+    "prob_visitante": 0.40596839619433184,
+    "fuerza_local": 0.5038511764705882,
+    "fuerza_visitante": 0.5395005882352941,
+    "diferencia": 0.03564941176470593,
+    "confianza": "moderado",
+    "prediccion": "Bahia",
+    "resultado": "Empate",
+    "marcador": "1-1",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.1973778289076642,
+    "lambda_visitante": 1.4858354929177464,
+    "marcadores_probables": [
+      "0-1",
+      "1-1",
+      "1-2",
+      "0-2",
+      "1-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.69,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Atlético-MG"
+        },
+        "visitante": {
+          "valor": 0.66,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "D",
+            "L"
+          ],
+          "nombre": "Bahia"
+        },
+        "interpretacion": "Atlético-MG llega con mejor momentum: índice 0.69/1.0 frente a 0.66/1.0 de Bahia. Últimos 5: 3V/1E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "4G/3E/1P",
+          "nombre": "Atlético-MG"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 50.0,
+          "detalle": "4G/1E/3P",
+          "nombre": "Bahia"
+        },
+        "interpretacion": "Equilibrio situacional: Atlético-MG 50% local — Bahia 50% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Atlético-MG",
+          "goles_favor": 1.22,
+          "goles_contra": 1.28
+        },
+        "visitante": {
+          "nombre": "Bahia",
+          "goles_favor": 1.5,
+          "goles_contra": 1.28
+        },
+        "interpretacion": "Producción similar: Atlético-MG 1.22 goles/partido — Bahia 1.50. Defensa: 1.28 vs 1.28."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "1-1",
+          "1-2",
+          "0-2",
+          "1-0"
+        ],
+        "lambda_local": 1.197,
+        "lambda_visitante": 1.486,
+        "interpretacion": "El marcador más probable es 0-1 (10.6%), coherente con Bahia como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401874072",
+    "torneo": "CONMEBOL Sudamericana",
+    "perfil": "sudamericana",
+    "es_eliminatoria": true,
+    "local": "UCV FC",
+    "visitante": "Santos",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/10094.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2674.png",
+    "prob_local": 0.21868186449538723,
+    "prob_empate": 0.32991590843594254,
+    "prob_visitante": 0.45140222706867034,
+    "fuerza_local": 0.364687070967742,
+    "fuerza_visitante": 0.437724335483871,
+    "diferencia": 0.07303726451612902,
+    "confianza": "favorable",
+    "prediccion": "Santos",
+    "resultado": "Santos",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.7459589776049509,
+    "lambda_visitante": 1.2974697436540064,
+    "marcadores_probables": [
+      "0-1",
+      "0-0",
+      "0-2",
+      "1-1",
+      "1-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.39,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "UCV FC"
+        },
+        "visitante": {
+          "valor": 0.46,
+          "ultimos_5": [
+            "W",
+            "D",
+            "D",
+            "D",
+            "D"
+          ],
+          "nombre": "Santos"
+        },
+        "interpretacion": "Santos llega con mejor momentum: índice 0.46/1.0 frente a 0.39/1.0 de UCV FC. Últimos 5: 1V/4E/0D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "UCV FC"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/2E/1P",
+          "nombre": "Santos"
+        },
+        "interpretacion": "Santos sufre de visita: 0% (0G/2E/1P). UCV FC en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "UCV FC",
+          "goles_favor": 1.17,
+          "goles_contra": 1.83
+        },
+        "visitante": {
+          "nombre": "Santos",
+          "goles_favor": 1.33,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Producción similar: UCV FC 1.17 goles/partido — Santos 1.33. Defensa: 1.83 vs 1.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "0-0",
+          "0-2",
+          "1-1",
+          "1-0"
+        ],
+        "lambda_local": 0.746,
+        "lambda_visitante": 1.297,
+        "interpretacion": "El marcador más probable es 0-1 (17.8%), coherente con Santos como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401874150",
+    "torneo": "CONMEBOL Sudamericana",
+    "perfil": "sudamericana",
+    "es_eliminatoria": true,
+    "local": "Nacional",
+    "visitante": "Tigre",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2684.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/7767.png",
+    "prob_local": 0.22664581436756287,
+    "prob_empate": 0.34895259776193244,
+    "prob_visitante": 0.42440158787050475,
+    "fuerza_local": 0.3963166709677419,
+    "fuerza_visitante": 0.437839535483871,
+    "diferencia": 0.04152286451612908,
+    "confianza": "favorable",
+    "prediccion": "Tigre",
+    "resultado": "Tigre",
+    "marcador": "0-3",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.682861271440154,
+    "lambda_visitante": 1.141014133089554,
+    "marcadores_probables": [
+      "0-1",
+      "0-0",
+      "1-1",
+      "0-2",
+      "1-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.46,
+          "ultimos_5": [
+            "W",
+            "D",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Nacional"
+        },
+        "visitante": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "W",
+            "D",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Tigre"
+        },
+        "interpretacion": "Tigre llega con mejor momentum: índice 0.47/1.0 frente a 0.46/1.0 de Nacional. Últimos 5: 2V/2E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Nacional"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/3E/0P",
+          "nombre": "Tigre"
+        },
+        "interpretacion": "Tigre sufre de visita: 0% (0G/3E/0P). Nacional en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Nacional",
+          "goles_favor": 1.17,
+          "goles_contra": 1.5
+        },
+        "visitante": {
+          "nombre": "Tigre",
+          "goles_favor": 1.33,
+          "goles_contra": 0.83
+        },
+        "interpretacion": "Producción similar: Nacional 1.17 goles/partido — Tigre 1.33. Defensa: 1.50 vs 0.83."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "0-0",
+          "1-1",
+          "0-2",
+          "1-0"
+        ],
+        "lambda_local": 0.683,
+        "lambda_visitante": 1.141,
+        "interpretacion": "El marcador más probable es 0-1 (19.2%), coherente con Tigre como resultado favorito del modelo."
+      }
+    ]
+  }
+]
