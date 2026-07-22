@@ -229,6 +229,55 @@ function renderFactorVuelta(f) {
   `;
 }
 
+/* ── Carrusel de marcadores probables ────────────────── */
+function renderFactorMarcadores(f) {
+  const marcadores = f.marcadores || [];
+  if (!marcadores.length) return '';
+
+  const id = 'mcar-' + Math.random().toString(36).slice(2, 9);
+
+  const slides = marcadores.map((m, i) => `
+    <div class="marcador-slide" style="display:${i === 0 ? 'flex' : 'none'}" data-index="${i}">
+      <span class="marcador-num">${m}</span>
+    </div>
+  `).join('');
+
+  const dots = marcadores.map((_, i) => `
+    <span class="marcador-dot ${i === 0 ? 'activo' : ''}" data-dot-for="${id}" data-index="${i}"></span>
+  `).join('');
+
+  return `
+    <div class="marcador-carousel" id="${id}" data-total="${marcadores.length}" data-actual="0">
+      <button class="marcador-arrow" onclick="moverCarruselMarcador('${id}', -1)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="marcador-slides">${slides}</div>
+      <button class="marcador-arrow" onclick="moverCarruselMarcador('${id}', 1)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+    <div class="marcador-dots">${dots}</div>
+  `;
+}
+
+function moverCarruselMarcador(id, delta) {
+  const cont = document.getElementById(id);
+  if (!cont) return;
+
+  const total = parseInt(cont.dataset.total, 10);
+  let actual  = parseInt(cont.dataset.actual, 10);
+  actual = (actual + delta + total) % total;
+  cont.dataset.actual = actual;
+
+  cont.querySelectorAll('.marcador-slide').forEach(slide => {
+    slide.style.display = parseInt(slide.dataset.index, 10) === actual ? 'flex' : 'none';
+  });
+
+  document.querySelectorAll(`.marcador-dot[data-dot-for="${id}"]`).forEach(dot => {
+    dot.classList.toggle('activo', parseInt(dot.dataset.index, 10) === actual);
+  });
+}
+
 function renderFactor(f) {
   let visual = '';
   if      (f.tipo === 'forma')       visual = renderFactorForma(f);
@@ -236,6 +285,7 @@ function renderFactor(f) {
   else if (f.tipo === 'doble_barra') visual = renderFactorDobleBarra(f);
   else if (f.tipo === 'h2h')         visual = renderFactorH2H(f);
   else if (f.tipo === 'vuelta')      visual = renderFactorVuelta(f);
+  else if (f.tipo === 'marcadores')  visual = renderFactorMarcadores(f);
 
   return `
     <div class="det-card det-card-factor">

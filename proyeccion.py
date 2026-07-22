@@ -124,6 +124,12 @@ def adaptar_equipo(equipo_raw, liga_key=None):
 # usa_experiencia → si existe índice de experiencia eliminatoria
 # usa_vuelta_casa → si el formato tiene ida y vuelta con ventaja de posición
 # experiencia_db  → dict con índices de experiencia (vacío si no aplica)
+# es_eliminatoria → ← NUEVO (portado del motor del Mundial): si True, el
+#                    empate NUNCA es la predicción final (no hay marcador
+#                    de empate posible en el resultado global de la
+#                    eliminatoria: hay ganador por penales/global).
+#                    False para fase de liga regular (ahí sí puede haber
+#                    empate como resultado final del partido).
 # ─────────────────────────────────────────────────────────────────────────
 
 EXPERIENCIA_LIGUILLA_MX = {
@@ -156,6 +162,7 @@ PERFILES_TORNEO = {
         "PESO_H2H":         0.20,
         "PESO_EXPERIENCIA": 0.10,
         "PESO_VUELTA_CASA": 0.05,
+        "es_eliminatoria":  True,
     },
 
     # ── Concacaf W Champions Cup ────────────────────────────────────────────
@@ -177,6 +184,7 @@ PERFILES_TORNEO = {
         "PESO_H2H":         0.00,
         "PESO_EXPERIENCIA": 0.00,
         "PESO_VUELTA_CASA": 0.20,   # localía pesa más al no haber H2H ni experiencia
+        "es_eliminatoria":  True,
     },
 
     # ── Concacaf Champions Cup (varonil) ────────────────────────────────────
@@ -195,6 +203,7 @@ PERFILES_TORNEO = {
         "PESO_H2H":         0.15,
         "PESO_EXPERIENCIA": 0.00,
         "PESO_VUELTA_CASA": 0.10,
+        "es_eliminatoria":  True,
     },
 
     # ── CONMEBOL Libertadores ───────────────────────────────────────────────
@@ -215,6 +224,7 @@ PERFILES_TORNEO = {
         "PESO_H2H":         0.18,
         "PESO_EXPERIENCIA": 0.00,
         "PESO_VUELTA_CASA": 0.12,
+        "es_eliminatoria":  True,
     },
 
     # ── CONMEBOL Sudamericana ───────────────────────────────────────────────
@@ -234,6 +244,7 @@ PERFILES_TORNEO = {
         "PESO_H2H":         0.16,
         "PESO_EXPERIENCIA": 0.00,
         "PESO_VUELTA_CASA": 0.12,
+        "es_eliminatoria":  True,
     },
 
     # ── UEFA Europa League ──────────────────────────────────────────────────
@@ -254,6 +265,7 @@ PERFILES_TORNEO = {
         "PESO_H2H":         0.12,
         "PESO_EXPERIENCIA": 0.00,
         "PESO_VUELTA_CASA": 0.10,
+        "es_eliminatoria":  True,
     },
 
     # ── UEFA Champions League ───────────────────────────────────────────────
@@ -274,6 +286,7 @@ PERFILES_TORNEO = {
         "PESO_H2H":         0.12,
         "PESO_EXPERIENCIA": 0.00,
         "PESO_VUELTA_CASA": 0.08,
+        "es_eliminatoria":  True,
     },
 
     "dfb_pokal": {
@@ -291,6 +304,7 @@ PERFILES_TORNEO = {
         "PESO_H2H":         0.00,
         "PESO_EXPERIENCIA": 0.00,
         "PESO_VUELTA_CASA": 0.18,
+        "es_eliminatoria":  True,
     },
 
     # ── Fase regular genérica (para uso con el otro modelo) ─────────────────
@@ -309,6 +323,7 @@ PERFILES_TORNEO = {
         "PESO_H2H":         0.00,
         "PESO_EXPERIENCIA": 0.00,
         "PESO_VUELTA_CASA": 0.00,
+        "es_eliminatoria":  False,   # liga regular: el empate SÍ puede ser predicción final
     },
 }
 
@@ -592,6 +607,276 @@ def calcular_prob_empate(f_local, f_visitante, equipo_local, equipo_visitante):
 
 
 # =============================
+# AJUSTE LAMBDA  (portado del motor del Mundial)
+# =============================
+# Cuando los lambdas de ambos equipos están muy cerca y/o el total de
+# goles esperados es bajo, el modelo tendía a subestimar el empate.
+# Este ajuste sube la probabilidad de empate en esos casos, con un
+# techo (MAX_EMPATE) para no desbordarla, redistribuyendo el exceso
+# proporcionalmente entre local/visitante.
+
+MAX_EMPATE = 0.44
+
+def ajuste_empate_por_lambdas(prob_local, prob_empate, prob_visitante,
+                               lambda_local, lambda_visitante):
+    suma_lambda = lambda_local + lambda_visitante
+    diff_lambda = abs(lambda_local - lambda_visitante)
+
+    boost = 0.0
+
+    if suma_lambda < 2.2 and diff_lambda < 0.40:
+        intensidad = limitar((2.2 - suma_lambda) / 1.2, 0.0, 1.0)
+        boost += 0.10 * intensidad
+
+    if diff_lambda < 0.40 and suma_lambda < 2.8:
+        intensidad = limitar((0.40 - diff_lambda) / 0.40, 0.0, 1.0)
+        boost += 0.09 * intensidad
+
+    if diff_lambda < 0.15:
+        boost += 0.05
+
+    if boost <= 0.0:
+        return prob_local, prob_empate, prob_visitante
+
+    boost = limitar(boost, 0.0, 0.20)
+
+    total_lv = prob_local + prob_visitante
+    if total_lv <= 0:
+        return prob_local, prob_empate, prob_visitante
+
+    quita_l = boost * (prob_local    / total_lv)
+    quita_v = boost * (prob_visitante / total_lv)
+
+    prob_local     -= quita_l
+    prob_visitante -= quita_v
+    prob_empate    += boost
+
+    if prob_empate > MAX_EMPATE:
+        exceso         = prob_empate - MAX_EMPATE
+        prob_empate    = MAX_EMPATE
+        total_lv       = prob_local + prob_visitante
+        if total_lv > 0:
+            prob_local     += exceso * (prob_local     / total_lv)
+            prob_visitante += exceso * (prob_visitante / total_lv)
+
+    total = prob_local + prob_empate + prob_visitante
+    return prob_local / total, prob_empate / total, prob_visitante / total
+
+
+# =============================
+# PREDICCIÓN INTELIGENTE  (portado del motor del Mundial)
+# =============================
+# Reemplaza el max() ingenuo. En perfiles eliminatorios (es_eliminatoria=True)
+# nunca se predice "Empate" como resultado final, porque esos cruces
+# se resuelven por marcador global / penales, no por empate del partido.
+
+def prediccion_inteligente(prob_local, prob_empate, prob_visitante,
+                            lambda_local, lambda_visitante,
+                            nombre_local, nombre_visitante,
+                            es_eliminatoria=False):
+    if es_eliminatoria:
+        return nombre_local if prob_local >= prob_visitante else nombre_visitante
+
+    suma_lambda = lambda_local + lambda_visitante
+    diff_lambda = abs(lambda_local - lambda_visitante)
+
+    if prob_empate >= prob_local and prob_empate >= prob_visitante:
+        return "Empate"
+
+    if suma_lambda < 2.3 and diff_lambda < 0.35:
+        return "Empate"
+
+    if diff_lambda < 0.40 and prob_empate > 0.24:
+        favorito_prob = max(prob_local, prob_visitante)
+        if favorito_prob - prob_empate < 0.10:
+            return "Empate"
+
+    if prob_local >= prob_visitante:
+        return nombre_local
+    else:
+        return nombre_visitante
+
+
+# =============================
+# COHERENCIA PREDICCIÓN / PROBABILIDADES  (portado del motor del Mundial)
+# =============================
+
+def garantizar_coherencia(pred, prob_local, prob_empate, prob_visitante,
+                           nombre_local, nombre_visitante,
+                           es_eliminatoria=False):
+    if es_eliminatoria:
+        if pred == nombre_local and prob_local < prob_visitante:
+            exceso         = prob_visitante - prob_local + 0.001
+            prob_visitante -= exceso
+            prob_local     += exceso
+        elif pred == nombre_visitante and prob_visitante < prob_local:
+            exceso       = prob_local - prob_visitante + 0.001
+            prob_local   -= exceso
+            prob_visitante += exceso
+        total = prob_local + prob_empate + prob_visitante
+        return prob_local / total, prob_empate / total, prob_visitante / total
+
+    if pred == "Empate":
+        favorito = max(prob_local, prob_visitante)
+        if prob_empate < favorito:
+            if prob_local >= prob_visitante:
+                exceso = prob_local - prob_empate + 0.001
+                prob_local  -= exceso
+                prob_empate += exceso
+            else:
+                exceso = prob_visitante - prob_empate + 0.001
+                prob_visitante -= exceso
+                prob_empate    += exceso
+
+    elif pred == nombre_local:
+        if prob_local < max(prob_empate, prob_visitante):
+            if prob_empate >= prob_visitante:
+                exceso = prob_empate - prob_local + 0.001
+                prob_empate -= exceso
+                prob_local  += exceso
+            else:
+                exceso = prob_visitante - prob_local + 0.001
+                prob_visitante -= exceso
+                prob_local     += exceso
+
+    else:  # pred == nombre_visitante
+        if prob_visitante < max(prob_local, prob_empate):
+            if prob_local >= prob_empate:
+                exceso = prob_local - prob_visitante + 0.001
+                prob_local     -= exceso
+                prob_visitante += exceso
+            else:
+                exceso = prob_empate - prob_visitante + 0.001
+                prob_empate    -= exceso
+                prob_visitante += exceso
+
+    total = prob_local + prob_empate + prob_visitante
+    return prob_local / total, prob_empate / total, prob_visitante / total
+
+
+# =============================
+# CAP FINAL  (portado del motor del Mundial)
+# =============================
+# El cap de MAX_FAVORITO original solo se aplicaba sobre el ratio_l/ratio_v
+# ANTES de fusionar con Poisson (ALPHA/BETA). Poisson puede reintroducir
+# un favorito por encima del techo tras la fusión, así que este cap se
+# aplica al final, sobre las probabilidades ya fusionadas y normalizadas.
+
+def _aplicar_cap_final(prob_local, prob_empate, prob_visitante, max_favorito):
+    prob_max = max(prob_local, prob_visitante)
+    if prob_max <= max_favorito:
+        return prob_local, prob_empate, prob_visitante
+
+    if prob_local >= prob_visitante:
+        exceso          = prob_local - max_favorito
+        prob_local      = max_favorito
+        prob_empate    += exceso * 0.30
+        prob_visitante += exceso * 0.70
+    else:
+        exceso          = prob_visitante - max_favorito
+        prob_visitante  = max_favorito
+        prob_empate    += exceso * 0.70
+        prob_local     += exceso * 0.30
+
+    total = prob_local + prob_empate + prob_visitante
+    return prob_local / total, prob_empate / total, prob_visitante / total
+
+
+# =============================
+# MARCADORES MÁS PROBABLES  (portado del motor del Mundial)
+# =============================
+
+def ajustar_lambdas_por_probabilidades(lambda_local, lambda_visitante,
+                                        prob_local, prob_visitante):
+    suma_lv = prob_local + prob_visitante
+    if suma_lv <= 0:
+        return lambda_local, lambda_visitante
+
+    ratio_modelo  = prob_local / suma_lv
+    suma_lambda   = lambda_local + lambda_visitante
+    if suma_lambda <= 0:
+        return lambda_local, lambda_visitante
+
+    ratio_poisson = lambda_local / suma_lambda
+    if ratio_poisson <= 0:
+        return lambda_local, lambda_visitante
+
+    factor = ratio_modelo / ratio_poisson
+    factor = limitar(factor, 0.70, 1.43)
+
+    lam_l_nuevo = limitar(lambda_local * factor, 0.3, 5.0)
+    lam_v_nuevo = limitar(suma_lambda - lam_l_nuevo, 0.3, 5.0)
+
+    return lam_l_nuevo, lam_v_nuevo
+
+
+def marcadores_probables(lambda_local, lambda_visitante, top_n=5, max_goles=6,
+                          prob_local=None, prob_visitante=None):
+    from math import exp, factorial
+
+    if prob_local is not None and prob_visitante is not None:
+        lambda_local, lambda_visitante = ajustar_lambdas_por_probabilidades(
+            lambda_local, lambda_visitante, prob_local, prob_visitante
+        )
+
+    def pmf(k, lam):
+        return (lam ** k) * exp(-lam) / factorial(k)
+
+    resultados = []
+    for i in range(max_goles + 1):
+        for j in range(max_goles + 1):
+            prob = pmf(i, lambda_local) * pmf(j, lambda_visitante)
+            if i > j:
+                tipo = "local"
+            elif i == j:
+                tipo = "empate"
+            else:
+                tipo = "visitante"
+            resultados.append({
+                "marcador":         f"{i}-{j}",
+                "goles_local":      i,
+                "goles_visitante":  j,
+                "probabilidad":     round(prob, 6),
+                "tipo":             tipo,
+            })
+
+    resultados.sort(key=lambda x: x["probabilidad"], reverse=True)
+    return resultados[:top_n]
+
+
+def marcadores_para_carrusel(lambda_local, lambda_visitante, prediccion,
+                              nombre_local, nombre_visitante,
+                              prob_local, prob_visitante,
+                              top_n=5, max_goles=6):
+    lambda_local_adj, lambda_visitante_adj = ajustar_lambdas_por_probabilidades(
+        lambda_local, lambda_visitante, prob_local, prob_visitante
+    )
+
+    todos = marcadores_probables(
+        lambda_local_adj, lambda_visitante_adj,
+        top_n=(max_goles + 1) ** 2,
+        max_goles=max_goles,
+    )
+
+    if prediccion == nombre_local:
+        tipo_pred = "local"
+    elif prediccion == nombre_visitante:
+        tipo_pred = "visitante"
+    else:
+        tipo_pred = "empate"
+
+    destacado = next((m for m in todos if m["tipo"] == tipo_pred), None)
+    top_general = todos[:top_n]
+
+    if destacado is None:
+        return top_general
+
+    resto = [m for m in top_general if m["marcador"] != destacado["marcador"]]
+    carrusel = [destacado] + resto
+    return carrusel[:top_n]
+
+
+# =============================
 # VUELTA EN CASA
 # =============================
 
@@ -698,6 +983,18 @@ def predecir_probabilidades(
     prob_empate   /= total
     prob_visitante /= total
 
+    # ── NUEVO: cap final tras la fusión (Poisson puede reintroducir un
+    #    favorito por encima del techo del perfil) ───────────────────────────
+    prob_local, prob_empate, prob_visitante = _aplicar_cap_final(
+        prob_local, prob_empate, prob_visitante, cfg["MAX_FAVORITO"]
+    )
+
+    # ── NUEVO: ajuste de empate por cercanía de lambdas ─────────────────────
+    prob_local, prob_empate, prob_visitante = ajuste_empate_por_lambdas(
+        prob_local, prob_empate, prob_visitante,
+        lambda_local, lambda_visitante,
+    )
+
     gap = abs(prob_local - prob_visitante)
     confianza = "ajustado" if gap < 0.08 else "moderado" if gap < 0.18 else "favorable"
 
@@ -727,7 +1024,7 @@ def predecir_probabilidades(
 # ANÁLISIS ESTRUCTURADO
 # =============================
 
-def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante, cfg):
+def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante, cfg, top_marcadores):
     factores = []
 
     # ── 1. FORMA RECIENTE ────────────────────────────────────────────────────
@@ -817,7 +1114,47 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
         "interpretacion": interp,
     })
 
-    # ── 4. H2H (solo si el perfil lo activa y hay datos) ────────────────────
+    # ── 4. MARCADORES MÁS PROBABLES ──────────────────────────────────────────
+    ll = resultado["lambda_local"]
+    lv = resultado["lambda_visitante"]
+    marcador_top = top_marcadores[0]
+
+    probs_tipo = {
+        "local":     resultado["local"],
+        "empate":    resultado["empate"],
+        "visitante": resultado["visitante"],
+    }
+    tipo_favorito_1x2 = max(probs_tipo, key=probs_tipo.get)
+
+    tipo_map = {"local": nombre_local, "empate": "el empate", "visitante": nombre_visitante}
+    gana_str = tipo_map.get(marcador_top["tipo"], "el empate")
+
+    if marcador_top["tipo"] == tipo_favorito_1x2:
+        interp_m = (
+            f"El marcador más probable es {marcador_top['marcador']} "
+            f"({marcador_top['probabilidad']*100:.1f}%), coherente con "
+            f"{gana_str} como resultado favorito del modelo."
+        )
+    else:
+        favorito_str = tipo_map.get(tipo_favorito_1x2, "el empate")
+        interp_m = (
+            f"El marcador individual más probable es {marcador_top['marcador']} "
+            f"({marcador_top['probabilidad']*100:.1f}%), favoreciendo a {gana_str}. "
+            f"Aunque el modelo da como favorito a {favorito_str} por probabilidad "
+            f"acumulada, esa probabilidad se reparte entre varios marcadores distintos."
+        )
+
+    factores.append({
+        "factor":      "Marcadores más probables",
+        "impacto":     "informativo",
+        "tipo":        "marcadores",
+        "marcadores":  [m["marcador"] for m in top_marcadores],
+        "lambda_local":     round(ll, 3),
+        "lambda_visitante": round(lv, 3),
+        "interpretacion":   interp_m,
+    })
+
+    # ── 5. H2H (solo si el perfil lo activa y hay datos) ────────────────────
     n_total = resultado["n_h2h_a"] + resultado["n_h2h_b"]
     if cfg["usa_h2h"] and n_total > 0:
         h2h_score = resultado["h2h_local"]
@@ -846,7 +1183,7 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
             "interpretacion": interp,
         })
 
-    # ── 5. EXPERIENCIA ELIMINATORIA (solo Liga MX) ───────────────────────────
+    # ── 6. EXPERIENCIA ELIMINATORIA (solo Liga MX) ───────────────────────────
     if cfg["usa_experiencia"]:
         exp_l  = resultado["exp_local"]
         exp_v  = resultado["exp_visitante"]
@@ -870,7 +1207,7 @@ def generar_analisis(local, visitante, resultado, nombre_local, nombre_visitante
             "interpretacion": interp,
         })
 
-    # ── 6. VUELTA EN CASA (si aplica) ────────────────────────────────────────
+    # ── 7. VUELTA EN CASA (si aplica) ────────────────────────────────────────
     if cfg["usa_vuelta_casa"] and resultado["vuelta_en_casa"] != "ninguno":
         vuelta      = resultado["vuelta_en_casa"]
         eq_vuelta   = nombre_local   if vuelta == "local"     else nombre_visitante
@@ -970,6 +1307,8 @@ def generar_partido(
         raise ValueError(f"Perfil '{perfil_slug}' no encontrado. "
                          f"Opciones: {list(PERFILES_TORNEO.keys())}")
 
+    es_eliminatoria = cfg.get("es_eliminatoria", False)
+
     local_raw     = obtener_equipo(local_nombre,     db)
     visitante_raw = obtener_equipo(visitante_nombre, db)
 
@@ -990,20 +1329,56 @@ def generar_partido(
         promedio_liga, cfg,
     )
 
-    maxima = max(resultado["local"], resultado["empate"], resultado["visitante"])
-    if   maxima == resultado["local"]:   pred = local["nombre"]
-    elif maxima == resultado["empate"]:  pred = "Empate"
-    else:                                pred = visitante["nombre"]
+    # ── NUEVO: predicción inteligente en vez de max() ingenuo ────────────────
+    pred = prediccion_inteligente(
+        resultado["local"],
+        resultado["empate"],
+        resultado["visitante"],
+        resultado["lambda_local"],
+        resultado["lambda_visitante"],
+        local["nombre"],
+        visitante["nombre"],
+        es_eliminatoria=es_eliminatoria,
+    )
+
+    # ── NUEVO: garantizar coherencia entre predicción y probabilidades ───────
+    prob_local, prob_empate, prob_visitante = garantizar_coherencia(
+        pred,
+        resultado["local"],
+        resultado["empate"],
+        resultado["visitante"],
+        local["nombre"],
+        visitante["nombre"],
+        es_eliminatoria=es_eliminatoria,
+    )
+    resultado["local"]     = prob_local
+    resultado["empate"]    = prob_empate
+    resultado["visitante"] = prob_visitante
+
+    # ── NUEVO: marcadores más probables (portado del motor del Mundial) ──────
+    top_marcadores = marcadores_para_carrusel(
+        resultado["lambda_local"],
+        resultado["lambda_visitante"],
+        pred,
+        local["nombre"],
+        visitante["nombre"],
+        resultado["local"],
+        resultado["visitante"],
+        top_n=5,
+    )
+    marcadores_solo_resultado = [m["marcador"] for m in top_marcadores]
 
     analisis = generar_analisis(
         local, visitante, resultado,
         local_nombre, visitante_nombre, cfg,
+        top_marcadores,
     )
 
     output = {
         "id":               id,
         "torneo":           cfg["nombre"],
         "perfil":           perfil_slug,
+        "es_eliminatoria":  es_eliminatoria,
         "local":            local["nombre"],
         "visitante":        visitante["nombre"],
         "logo_local":       local_raw.get("escudo"),
@@ -1019,6 +1394,7 @@ def generar_partido(
         "vuelta_en_casa":   resultado["vuelta_en_casa"],
         "lambda_local":     resultado["lambda_local"],
         "lambda_visitante": resultado["lambda_visitante"],
+        "marcadores_probables": marcadores_solo_resultado,
         "analisis":         analisis,
     }
 
@@ -1176,6 +1552,7 @@ if __name__ == "__main__":
             print(f"     {p['prob_local']:.1%} / {p['prob_empate']:.1%} / {p['prob_visitante']:.1%}"
                   f"  →  {p['prediccion']}  [{p['confianza']}]")
             print(f"     {p['torneo']} → {cfg_db['salida']}")
+            print(f"     Marcadores: " + "  ".join(p["marcadores_probables"]))
             print()
         except Exception as e:
             print(f"  ❌ Error en partido {id} ({local} vs {visitante}): {e}")

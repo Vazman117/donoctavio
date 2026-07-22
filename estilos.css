@@ -170,6 +170,7 @@ header h1 {
   display: flex;
   align-items: center;
   gap: .85rem;
+  min-width: 0;
 }
 .logos-pair { display: flex; align-items: center; }
 .logos-pair img {
@@ -188,6 +189,7 @@ header h1 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
 }
 .fila-nombre em {
   font-style: normal;
@@ -210,6 +212,7 @@ header h1 {
   align-items: center;
   justify-content: space-between;
   gap: .5rem;
+  min-width: 0;
 }
 .fila-pred-text {
   font-size: .8rem;
@@ -218,6 +221,7 @@ header h1 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
 }
 .fila-arrow {
   color: var(--border);
@@ -389,18 +393,36 @@ header h1 {
     height: 60px;
   }
   .header-logo { height: clamp(28px, 8vw, 44px); }
+
+  .view {
+    padding: 1rem .75rem;
+  }
+
   .tabla-header,
   .fila {
-    grid-template-columns: 1fr 64px 80px;
-    gap: .4rem;
+    grid-template-columns: 1fr 52px 68px;
+    gap: .35rem;
+    padding: .7rem .5rem;
   }
   .tabla-header span:nth-child(3),
   .tabla-header span:nth-child(4),
   .fila .fila-pct.draw,
   .fila .fila-pct.loss { display: none; }
+
   .fila-nombre em { display: none; }
+  .fila-nombre { font-size: .82rem; }
+  .fila-pct { font-size: .78rem; }
+
   .logos-pair img { width: 20px; height: 20px; }
-  .fila-pred-text { font-size: .72rem; }
+  .fila-equipo { gap: .5rem; }
+
+  .fila-pred { gap: .2rem; }
+  .fila-pred-text {
+    font-size: .68rem;
+    text-align: right;
+  }
+  .fila-arrow { width: 10px; height: 10px; }
+
   .barra-row {
     grid-template-columns: 100px 1fr 38px;
     gap: .5rem;
@@ -763,4 +785,80 @@ header h1 {
   font-weight: 500;
   border-bottom: 2px solid currentColor;
   border-radius: 0;
+}
+
+/* ── Carrusel de marcadores probables ────────────────── */
+.marcador-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: .5rem 0;
+}
+
+.marcador-slides {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+}
+
+.marcador-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marcador-num {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  color: var(--text);
+  letter-spacing: .02em;
+}
+
+.marcador-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  flex-shrink: 0;
+  padding: 0;
+}
+.marcador-arrow:hover {
+  color: var(--text);
+  background: var(--bg);
+  border-color: var(--text);
+}
+
+.marcador-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: .5rem;
+}
+
+.marcador-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+.marcador-dot.activo {
+  background: var(--text);
+  transform: scale(1.25);
+}
+
+@media (max-width: 600px) {
+  .marcador-num { font-size: 1.4rem; }
+  .marcador-arrow { width: 24px; height: 24px; }
 }

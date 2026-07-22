@@ -260,69 +260,89 @@
       text-transform: uppercase;
       color: var(--muted);
     }
-    .home-stats-row {
+
+    /* Grid "Rendimiento del modelo" (antes inline, ahora en clases
+       para poder controlarlo con el media query de abajo) */
+    .rend-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.5rem;
+      grid-template-columns: 1fr 1px 1fr 1px 1fr;
+      overflow: hidden;
     }
-    .home-stat {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 0.6rem 0.5rem;
-      text-align: center;
+    .rend-col {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
     }
-    .home-stat-num {
+    .rend-sep { background: var(--border); }
+    .rend-lbl {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .rend-num {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.4rem;
+      font-size: 3rem;
       font-weight: 700;
       line-height: 1;
     }
-    .home-stat-num.ok  { color: var(--win); }
-    .home-stat-num.med { color: var(--draw); }
-    .home-stat-num.mal { color: var(--loss); }
-    .home-stat-lbl {
-      font-size: 0.6rem;
-      font-weight: 500;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
+    .rend-num.ok  { color: var(--win); }
+    .rend-num.med { color: var(--draw); }
+    .rend-num.mal { color: var(--loss); }
+    .rend-sub {
+      font-size: 12px;
       color: var(--muted);
-      margin-top: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .home-stat-sub {
-      font-size: 0.65rem;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    /* Barra */
-    .home-barra {
-      display: flex;
-      height: 3px;
+    .rend-bar-track {
+      height: 4px;
       border-radius: 99px;
       overflow: hidden;
+      background: var(--surface);
+      margin-top: 10px;
     }
-    .home-barra span { height: 100%; transition: width 1s cubic-bezier(.4,0,.2,1); }
-    .home-barra .s-ok  { background: var(--win); }
-    .home-barra .s-med { background: var(--draw); }
-    .home-barra .s-mal { background: var(--loss); }
+    .rend-bar-fill {
+      height: 100%;
+      width: 0%;
+      transition: width 1s cubic-bezier(.4,0,.2,1);
+    }
 
-    .home-leyenda {
+    /* Historial (números grandes, antes inline) */
+    .nota-grid {
       display: flex;
-      gap: 0.9rem;
+      gap: 2.5rem;
+      align-items: flex-end;
       justify-content: center;
     }
-    .home-leyenda-item {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.65rem;
-      color: var(--muted);
+    .nota-item { text-align: center; }
+    .nota-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--text);
     }
-    .home-leyenda-dot {
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      flex-shrink: 0;
+    .nota-lbl {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+    .nota-sep {
+      width: 1px;
+      height: 40px;
+      background: var(--border);
+      margin-bottom: 4px;
     }
 
     /* Separador vertical */
@@ -374,6 +394,18 @@
       .home-bottom { grid-template-columns: 1fr; }
       .home-sep { display: none; }
       .home-metricas, .home-historial { padding: 1rem 1.25rem; }
+
+      /* Encoge el grid de Aciertos/Ajustados/Fallos para que
+         quepan las 3 columnas sin desbordarse */
+      .rend-col { padding: .85rem .35rem; gap: 4px; }
+      .rend-lbl { font-size: 9px; letter-spacing: .05em; }
+      .rend-num { font-size: 1.6rem; }
+      .rend-sub { font-size: 10px; }
+      .rend-bar-track { margin-top: 6px; }
+
+      /* Encoge los números del historial (Proyecciones / Cobertura) */
+      .nota-grid { gap: 1.5rem; }
+      .nota-num { font-size: 1.9rem; }
     }
   </style>
 </head>
@@ -405,15 +437,14 @@
     <div class="home-bloque">
       <p class="home-bloque-label">Activo ahora</p>
 
-      <a href="mundial.html" class="torneo-row vivo">
+      <a href="partidos.html" class="torneo-row vivo">
         <div class="torneo-row-left">
-          <img src="assets/mundial-2026.png" alt="Copa del Mundo 2026" />
+          <img src="assets/2026.png" alt="Temporada 2026" />
           <div class="torneo-row-info">
-            <span class="torneo-row-nombre">Copa del Mundo 2026</span>
-            <span class="torneo-row-sub">11 de Junio</span>
+            <span class="torneo-row-nombre">Temporada 2026</span>
           </div>
         </div>
-        <span class="t-badge verde">EN VIVO</span>
+        <span class="t-badge verde">Activo</span>
       </a>
     </div>
 
@@ -422,9 +453,6 @@
       <p class="home-pretitle">Proyecciones estadísticas</p>
       <h1 class="home-title">Don Octavio<br>no adivina.<br><em>Calcula.</em></h1>
       <p class="home-tagline">Sin corazonadas. Solo datos reales y resultados verificables.</p>
-      <a href="mundial.html#hoy" class="home-cta">
-        Ver proyecciones del Mundial →
-      </a>
     </div>
 
   </div>
@@ -434,37 +462,37 @@
 
   <div class="home-metricas">
     <span class="home-metricas-label">Rendimiento del modelo</span>
-    
-    <div style="display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; overflow:hidden;">
-      
-      <div style="padding:1.5rem; display:flex; flex-direction:column; gap:6px;">
-        <span style="font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted);">Aciertos</span>
-        <span style="font-family:'Playfair Display',Georgia,serif; font-size:3rem; font-weight:700; line-height:1; color:var(--win);" id="m-aciertos">—</span>
-        <span style="font-size:12px; color:var(--muted);" id="m-aciertos-n"></span>
-        <div style="height:4px; border-radius:99px; overflow:hidden; background:var(--surface); margin-top:10px;">
-          <div style="height:100%; background:var(--win); width:0%; transition:width 1s cubic-bezier(.4,0,.2,1);" id="s-ok"></div>
+
+    <div class="rend-grid">
+
+      <div class="rend-col">
+        <span class="rend-lbl">Aciertos</span>
+        <span class="rend-num ok" id="m-aciertos">—</span>
+        <span class="rend-sub" id="m-aciertos-n"></span>
+        <div class="rend-bar-track">
+          <div class="rend-bar-fill" style="background:var(--win);" id="s-ok"></div>
         </div>
       </div>
 
-      <div style="background:var(--border);"></div>
+      <div class="rend-sep"></div>
 
-      <div style="padding:1.5rem; display:flex; flex-direction:column; gap:6px;">
-        <span style="font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted);">Ajustados</span>
-        <span style="font-family:'Playfair Display',Georgia,serif; font-size:3rem; font-weight:700; line-height:1; color:var(--draw);" id="m-ajustados">—</span>
-        <span style="font-size:12px; color:var(--muted);" id="m-ajustados-n"></span>
-        <div style="height:4px; border-radius:99px; overflow:hidden; background:var(--surface); margin-top:10px;">
-          <div style="height:100%; background:var(--draw); width:0%; transition:width 1s cubic-bezier(.4,0,.2,1);" id="s-med"></div>
+      <div class="rend-col">
+        <span class="rend-lbl">Ajustados</span>
+        <span class="rend-num med" id="m-ajustados">—</span>
+        <span class="rend-sub" id="m-ajustados-n"></span>
+        <div class="rend-bar-track">
+          <div class="rend-bar-fill" style="background:var(--draw);" id="s-med"></div>
         </div>
       </div>
 
-      <div style="background:var(--border);"></div>
+      <div class="rend-sep"></div>
 
-      <div style="padding:1.5rem; display:flex; flex-direction:column; gap:6px;">
-        <span style="font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted);">Fallos</span>
-        <span style="font-family:'Playfair Display',Georgia,serif; font-size:3rem; font-weight:700; line-height:1; color:var(--loss);" id="m-fallos">—</span>
-        <span style="font-size:12px; color:var(--muted);" id="m-fallos-n"></span>
-        <div style="height:4px; border-radius:99px; overflow:hidden; background:var(--surface); margin-top:10px;">
-          <div style="height:100%; background:var(--loss); width:0%; transition:width 1s cubic-bezier(.4,0,.2,1);" id="s-mal"></div>
+      <div class="rend-col">
+        <span class="rend-lbl">Fallos</span>
+        <span class="rend-num mal" id="m-fallos">—</span>
+        <span class="rend-sub" id="m-fallos-n"></span>
+        <div class="rend-bar-track">
+          <div class="rend-bar-fill" style="background:var(--loss);" id="s-mal"></div>
         </div>
       </div>
 
@@ -474,15 +502,15 @@
     <div class="home-sep"></div>
 
     <div class="home-historial">
-      <div style="display:flex; gap:2.5rem; align-items:flex-end; justify-content:center;">
-        <div style="text-align:center;">
-          <div style="font-family:'Playfair Display',Georgia,serif; font-size:2.4rem; font-weight:700; line-height:1; color:var(--text);" id="nota-total-num">—</div>
-          <div style="font-size:0.65rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-top:5px;">Proyecciones</div>
+      <div class="nota-grid">
+        <div class="nota-item">
+          <div class="nota-num" id="nota-total-num">—</div>
+          <div class="nota-lbl">Proyecciones</div>
         </div>
-        <div style="width:1px; height:40px; background:var(--border); margin-bottom:4px;"></div>
-        <div style="text-align:center;">
-          <div style="font-family:'Playfair Display',Georgia,serif; font-size:2.4rem; font-weight:700; line-height:1; color:var(--text);" id="nota-efect-num">—</div>
-          <div style="font-size:0.65rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-top:5px;">Cobertura</div>
+        <div class="nota-sep"></div>
+        <div class="nota-item">
+          <div class="nota-num" id="nota-efect-num">—</div>
+          <div class="nota-lbl">Cobertura</div>
         </div>
       </div>
       <a href="historial.html" class="home-btn-historial">
