@@ -1,5 +1,215 @@
 [
   {
+    "id": "401877035",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Toluca",
+    "visitante": "Pumas UNAM",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/223.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "prob_local": 0.5703045549767455,
+    "prob_empate": 0.2419547383525085,
+    "prob_visitante": 0.18774070667074605,
+    "fuerza_local": 0.4848882352941176,
+    "fuerza_visitante": 0.2493,
+    "diferencia": 0.23558823529411763,
+    "confianza": "favorable",
+    "prediccion": "Toluca",
+    "resultado": "Pumas UNAM",
+    "marcador": "1-2",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.5329290322580649,
+    "lambda_visitante": 0.6804089157030334,
+    "marcadores_probables": [
+      "1-0",
+      "2-0",
+      "0-0",
+      "1-1",
+      "3-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.35,
+          "ultimos_5": [
+            "W"
+          ],
+          "nombre": "Toluca"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L"
+          ],
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "Pumas UNAM llega con mejor momentum: índice 0.50/1.0 frente a 0.35/1.0 de Toluca. Últimos 5: 0V/0E/1D vs 1V/0E/0D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Toluca"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "Pumas UNAM sufre de visita: 0% (0G/0E/0P). Toluca en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Toluca",
+          "goles_favor": 2.0,
+          "goles_contra": 0.0
+        },
+        "visitante": {
+          "nombre": "Pumas UNAM",
+          "goles_favor": 0.0,
+          "goles_contra": 3.0
+        },
+        "interpretacion": "Superioridad integral de Toluca: 2.00 goles/partido (vs 0.00) y solo 0.00 recibidos (vs 3.00)."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "2-0",
+          "0-0",
+          "1-1",
+          "3-0"
+        ],
+        "lambda_local": 1.533,
+        "lambda_visitante": 0.68,
+        "interpretacion": "El marcador más probable es 1-0 (18.2%), coherente con Toluca como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401877036",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Cruz Azul",
+    "visitante": "Puebla",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/231.png",
+    "prob_local": 0.583,
+    "prob_empate": 0.234,
+    "prob_visitante": 0.183,
+    "fuerza_local": 0.612,
+    "fuerza_visitante": 0.388,
+    "diferencia": 0.224,
+    "confianza": "favorable",
+    "prediccion": "Cruz Azul",
+    "resultado": "Cruz Azul",
+    "marcador": "2-1",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.82,
+    "lambda_visitante": 0.91,
+    "marcadores_probables": [
+      "2-0",
+      "2-1",
+      "1-0",
+      "1-1",
+      "3-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.72,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "valor": 0.59,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Puebla"
+        },
+        "interpretacion": "Cruz Azul llega con mejor momentum: índice 0.72/1.0 frente a 0.39/1.0 de Puebla."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 67.0,
+          "detalle": "6G/2E/1P",
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 22.0,
+          "detalle": "2G/3E/4P",
+          "nombre": "Puebla"
+        },
+        "interpretacion": "Cruz Azul aprovecha su localía: 67% de victorias en casa, mientras que Puebla solo gana el 22% de sus partidos como visitante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Cruz Azul",
+          "goles_favor": 1.89,
+          "goles_contra": 0.94
+        },
+        "visitante": {
+          "nombre": "Puebla",
+          "goles_favor": 0.96,
+          "goles_contra": 1.67
+        },
+        "interpretacion": "Cruz Azul muestra una mejor combinación entre ataque y defensa: 1.89 goles anotados por partido y menos de un gol recibido en promedio."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "2-0",
+          "2-1",
+          "1-0",
+          "1-1",
+          "3-1"
+        ],
+        "lambda_local": 1.82,
+        "lambda_visitante": 0.91,
+        "interpretacion": "El marcador más probable es 2-0 (13.8%), coherente con Cruz Azul como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
     "id": "401841148",
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
