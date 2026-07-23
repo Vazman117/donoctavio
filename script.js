@@ -22,8 +22,24 @@ function removeClass(id, cls) {
   if (el) el.classList.remove(cls);
 }
 
+/* ── Determina qué JSON y qué etiqueta usar según ?tipo= en la URL ── */
+const CONFIG_TORNEOS = {
+  temporada: { json: 'partidos.json',      label: 'Análisis Semanal' },
+  progol:    { json: 'progol.json',        label: 'Progol' },
+  media:     { json: 'pro-media.json',     label: 'Progol Media Semana' },
+  revancha:  { json: 'pro-revancha.json',  label: 'Progol Revancha' }
+};
+
+const tipoActual = new URLSearchParams(window.location.search).get('tipo') || 'temporada';
+const config      = CONFIG_TORNEOS[tipoActual] || CONFIG_TORNEOS.temporada;
+
+const ARCHIVO_JSON = config.json;
+const LABEL_LISTA  = config.label;
+
 /* ── Carga de datos ──────────────────────────────────── */
-fetch('partidos.json?v=' + Date.now())
+setText('headerLabel', LABEL_LISTA);
+
+fetch(ARCHIVO_JSON + '?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     partidos = data;
@@ -440,7 +456,7 @@ function mostrarLista() {
   setStyle('btnInicio', 'display', 'flex');
   setStyle('badgeWrap', 'display', '');
 
-  setText('headerLabel', 'Análisis Semanal');
+  setText('headerLabel', LABEL_LISTA);
   setText('headerTitle', 'Proyecciones');
 
   window.scrollTo({ top: 0 });
