@@ -1390,5 +1390,100 @@
         "interpretacion": "El marcador más probable es 0-2 (17.0%), coherente con Vancouver Whitecaps como resultado favorito del modelo."
       }
     ]
+  },
+  {
+    "id": "401841441",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Newell's Old Boys",
+    "visitante": "Talleres (Córdoba)",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/14.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/19.png",
+    "prob_local": 0.18310295303299523,
+    "prob_empate": 0.284180136064602,
+    "prob_visitante": 0.5327169109024028,
+    "fuerza_local": 0.3361235294117647,
+    "fuerza_visitante": 0.47586235294117646,
+    "diferencia": 0.13973882352941175,
+    "confianza": "favorable",
+    "prediccion": "Talleres (Córdoba)",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.48415135135135146,
+    "lambda_visitante": 1.1994233513513515,
+    "marcadores_probables": [
+      "0-1",
+      "0-0",
+      "0-2",
+      "1-1",
+      "1-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [],
+          "nombre": "Newells"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [],
+          "nombre": "Talleres"
+        },
+        "interpretacion": "Momentum similar: Newells 0.50/1.0 — Talleres 0.50/1.0."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Newells"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Talleres"
+        },
+        "interpretacion": "Talleres sufre de visita: 0% (0G/0E/0P). Newells en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Newells",
+          "goles_favor": 0.93,
+          "goles_contra": 1.73
+        },
+        "visitante": {
+          "nombre": "Talleres",
+          "goles_favor": 1.07,
+          "goles_contra": 0.8
+        },
+        "interpretacion": "Producción similar: Newells 0.93 goles/partido — Talleres 1.07. Defensa: 1.73 vs 0.80."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "0-0",
+          "0-2",
+          "1-1",
+          "1-0"
+        ],
+        "lambda_local": 0.484,
+        "lambda_visitante": 1.199,
+        "interpretacion": "El marcador más probable es 0-1 (23.3%), coherente con Talleres como resultado favorito del modelo."
+      }
+    ]
   }
 ]

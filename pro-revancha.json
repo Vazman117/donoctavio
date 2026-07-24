@@ -98,7 +98,7 @@
       }
     ]
   },
-    {
+  {
     "id": "401877031",
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
@@ -197,7 +197,7 @@
       }
     ]
   },
-    {
+  {
     "id": "401877028",
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
@@ -296,7 +296,7 @@
       }
     ]
   },
-    {
+  {
     "id": "401886420",
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
@@ -391,7 +391,7 @@
       }
     ]
   },
-    {
+  {
     "id": "761693",
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
@@ -495,6 +495,196 @@
         "lambda_local": 1.987,
         "lambda_visitante": 0.848,
         "interpretacion": "El marcador más probable es 2-0 (13.8%), coherente con San Jose Earthquakes como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401841434",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Atlético Tucumán",
+    "visitante": "Independiente Rivadavia",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/9785.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/9744.png",
+    "prob_local": 0.16068241075051912,
+    "prob_empate": 0.23260430748728111,
+    "prob_visitante": 0.6067132817621997,
+    "fuerza_local": 0.34682941176470594,
+    "fuerza_visitante": 0.51666,
+    "diferencia": 0.16983058823529407,
+    "confianza": "favorable",
+    "prediccion": "Independiente Rivadavia",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.5646415135135137,
+    "lambda_visitante": 1.6142990270270272,
+    "marcadores_probables": [
+      "0-1",
+      "0-2",
+      "0-0",
+      "0-3",
+      "1-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [],
+          "nombre": "Atlético Tucumán"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [],
+          "nombre": "Independiente Rivadavia"
+        },
+        "interpretacion": "Momentum similar: Atlético Tucumán 0.50/1.0 — Independiente Rivadavia 0.50/1.0."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Atlético Tucumán"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Independiente Rivadavia"
+        },
+        "interpretacion": "Independiente Rivadavia sufre de visita: 0% (0G/0E/0P). Atlético Tucumán en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Atlético Tucumán",
+          "goles_favor": 0.93,
+          "goles_contra": 1.33
+        },
+        "visitante": {
+          "nombre": "Independiente Rivadavia",
+          "goles_favor": 1.87,
+          "goles_contra": 0.93
+        },
+        "interpretacion": "Independiente Rivadavia más ofensivo: 1.87 vs 0.93 goles/partido. Defensa: 1.33 vs 0.93."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "0-2",
+          "0-0",
+          "0-3",
+          "1-1"
+        ],
+        "lambda_local": 0.565,
+        "lambda_visitante": 1.614,
+        "interpretacion": "El marcador más probable es 0-1 (19.5%), coherente con Independiente Rivadavia como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401841445",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Estudiantes de La Plata",
+    "visitante": "Independiente",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/8.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/11.png",
+    "prob_local": 0.4579596124218086,
+    "prob_empate": 0.3295721710560443,
+    "prob_visitante": 0.2124682165221471,
+    "fuerza_local": 0.49594,
+    "fuerza_visitante": 0.4290647058823529,
+    "diferencia": 0.06687529411764709,
+    "confianza": "favorable",
+    "prediccion": "Estudiantes de La Plata",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.9311422702702702,
+    "lambda_visitante": 0.444382054054054,
+    "marcadores_probables": [
+      "1-0",
+      "0-0",
+      "2-0",
+      "0-1",
+      "1-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [],
+          "nombre": "Estudiantes de La Plata"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [],
+          "nombre": "Independiente"
+        },
+        "interpretacion": "Momentum similar: Estudiantes de La Plata 0.50/1.0 — Independiente 0.50/1.0."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Estudiantes de La Plata"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Independiente"
+        },
+        "interpretacion": "Independiente sufre de visita: 0% (0G/0E/0P). Estudiantes de La Plata en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Estudiantes de La Plata",
+          "goles_favor": 1.13,
+          "goles_contra": 0.47
+        },
+        "visitante": {
+          "nombre": "Independiente",
+          "goles_favor": 1.47,
+          "goles_contra": 1.27
+        },
+        "interpretacion": "Producción similar: Estudiantes de La Plata 1.13 goles/partido — Independiente 1.47. Defensa: 0.47 vs 1.27."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "0-0",
+          "2-0",
+          "0-1",
+          "1-1"
+        ],
+        "lambda_local": 0.931,
+        "lambda_visitante": 0.444,
+        "interpretacion": "El marcador más probable es 1-0 (23.7%), coherente con Estudiantes de La Plata como resultado favorito del modelo."
       }
     ]
   }
