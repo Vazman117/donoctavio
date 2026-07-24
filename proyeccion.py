@@ -1417,10 +1417,22 @@ DB_CONFIG = {
         "liga_key": "mex.1",
         "salida": "partidos.json"
     },
+    "campeones_mx":{
+            "carpeta": "CAMPEON-DE-CAMPEONES",
+            "perfil": "liguilla_mx",
+            "liga_key": "mex.1",
+            "salida": "partidos.json"
+    },
     "liga_arg":{
         "carpeta": "LIGA-PROFESIONAL-ARGENTINA",
         "perfil": "fase_regular",
         "liga_key": "arg.1",
+        "salida": "partidos.json"
+    },
+    "dimayor":{
+        "carpeta": "LIGA-DIMayor",
+        "perfil": "fase_regular",
+        "liga_key": "col.1",
         "salida": "partidos.json"
     },
     "liga_mx_exp":{

@@ -1,7 +1,7 @@
 [
   {
     "posicion": 1,
-    "equipo": "Alebrijes de Oaxaca",
+    "equipo": "Alianza FC",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -13,7 +13,7 @@
   },
   {
     "posicion": 2,
-    "equipo": "Club Atlético Morelia",
+    "equipo": "América de Cali",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -25,7 +25,7 @@
   },
   {
     "posicion": 3,
-    "equipo": "Club Atlético La Paz",
+    "equipo": "Atlético Bucaramanga",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -37,7 +37,7 @@
   },
   {
     "posicion": 4,
-    "equipo": "Cancún FC",
+    "equipo": "Atlético Nacional",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -49,7 +49,7 @@
   },
   {
     "posicion": 5,
-    "equipo": "Correcaminos UAT",
+    "equipo": "Boyacá Chicó FC",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -61,7 +61,7 @@
   },
   {
     "posicion": 6,
-    "equipo": "Cruz Azul Hidalgo",
+    "equipo": "Cúcuta Deportivo",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -73,7 +73,7 @@
   },
   {
     "posicion": 7,
-    "equipo": "Dorados de Sinaloa",
+    "equipo": "Deportes Tolima",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -85,7 +85,7 @@
   },
   {
     "posicion": 8,
-    "equipo": "Durango",
+    "equipo": "Deportivo Cali",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -97,7 +97,7 @@
   },
   {
     "posicion": 9,
-    "equipo": "Club Jaiba Brava",
+    "equipo": "Deportivo Pasto",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -109,7 +109,7 @@
   },
   {
     "posicion": 10,
-    "equipo": "Leones Negros",
+    "equipo": "Deportivo Pereira",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -121,7 +121,7 @@
   },
   {
     "posicion": 11,
-    "equipo": "Mineros de Zacatecas",
+    "equipo": "Fortaleza CEIF",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -133,7 +133,7 @@
   },
   {
     "posicion": 12,
-    "equipo": "Piratas",
+    "equipo": "Independiente Medellín",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -145,7 +145,7 @@
   },
   {
     "posicion": 13,
-    "equipo": "Tapatío",
+    "equipo": "Independiente Santa Fe",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -157,7 +157,7 @@
   },
   {
     "posicion": 14,
-    "equipo": "Tepatitlán FC",
+    "equipo": "Internacional de Bogotá",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -169,7 +169,7 @@
   },
   {
     "posicion": 15,
-    "equipo": "Tlaxcala FC",
+    "equipo": "Jaguares de Córdoba",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -181,7 +181,55 @@
   },
   {
     "posicion": 16,
-    "equipo": "Venados FC",
+    "equipo": "Atlético Junior",
+    "partidos": 0,
+    "ganados": 0,
+    "empatados": 0,
+    "perdidos": 0,
+    "goles_favor": 0,
+    "goles_contra": 0,
+    "diferencia_goles": 0,
+    "puntos": 0
+  },
+  {
+    "posicion": 17,
+    "equipo": "Llaneros FC",
+    "partidos": 0,
+    "ganados": 0,
+    "empatados": 0,
+    "perdidos": 0,
+    "goles_favor": 0,
+    "goles_contra": 0,
+    "diferencia_goles": 0,
+    "puntos": 0
+  },
+  {
+    "posicion": 18,
+    "equipo": "Millonarios",
+    "partidos": 0,
+    "ganados": 0,
+    "empatados": 0,
+    "perdidos": 0,
+    "goles_favor": 0,
+    "goles_contra": 0,
+    "diferencia_goles": 0,
+    "puntos": 0
+  },
+  {
+    "posicion": 19,
+    "equipo": "Once Caldas",
+    "partidos": 0,
+    "ganados": 0,
+    "empatados": 0,
+    "perdidos": 0,
+    "goles_favor": 0,
+    "goles_contra": 0,
+    "diferencia_goles": 0,
+    "puntos": 0
+  },
+  {
+    "posicion": 20,
+    "equipo": "Águilas Doradas",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,

@@ -2,29 +2,41 @@
   {
     "posicion": 1,
     "equipo": "Palmeiras",
-    "partidos": 18,
-    "ganados": 12,
+    "partidos": 19,
+    "ganados": 13,
     "empatados": 5,
     "perdidos": 1,
-    "goles_favor": 30,
-    "goles_contra": 13,
-    "diferencia_goles": 17,
-    "puntos": 41
+    "goles_favor": 33,
+    "goles_contra": 14,
+    "diferencia_goles": 19,
+    "puntos": 44
   },
   {
     "posicion": 2,
     "equipo": "Flamengo",
-    "partidos": 17,
-    "ganados": 10,
+    "partidos": 18,
+    "ganados": 11,
     "empatados": 4,
     "perdidos": 3,
-    "goles_favor": 31,
+    "goles_favor": 35,
     "goles_contra": 16,
-    "diferencia_goles": 15,
-    "puntos": 34
+    "diferencia_goles": 19,
+    "puntos": 37
   },
   {
     "posicion": 3,
+    "equipo": "Athletico Paranaense",
+    "partidos": 19,
+    "ganados": 10,
+    "empatados": 3,
+    "perdidos": 6,
+    "goles_favor": 26,
+    "goles_contra": 19,
+    "diferencia_goles": 7,
+    "puntos": 33
+  },
+  {
+    "posicion": 4,
     "equipo": "Fluminense",
     "partidos": 19,
     "ganados": 9,
@@ -36,7 +48,7 @@
     "puntos": 32
   },
   {
-    "posicion": 4,
+    "posicion": 5,
     "equipo": "Red Bull Bragantino",
     "partidos": 19,
     "ganados": 9,
@@ -48,55 +60,55 @@
     "puntos": 30
   },
   {
-    "posicion": 5,
-    "equipo": "Athletico Paranaense",
-    "partidos": 18,
-    "ganados": 9,
-    "empatados": 3,
-    "perdidos": 6,
-    "goles_favor": 24,
-    "goles_contra": 18,
-    "diferencia_goles": 6,
+    "posicion": 6,
+    "equipo": "Bahia",
+    "partidos": 19,
+    "ganados": 8,
+    "empatados": 6,
+    "perdidos": 5,
+    "goles_favor": 28,
+    "goles_contra": 24,
+    "diferencia_goles": 4,
     "puntos": 30
   },
   {
-    "posicion": 6,
-    "equipo": "Bahia",
-    "partidos": 18,
-    "ganados": 8,
-    "empatados": 5,
-    "perdidos": 5,
-    "goles_favor": 27,
-    "goles_contra": 23,
-    "diferencia_goles": 4,
-    "puntos": 29
-  },
-  {
     "posicion": 7,
-    "equipo": "Coritiba",
-    "partidos": 18,
+    "equipo": "Cruzeiro",
+    "partidos": 19,
     "ganados": 7,
-    "empatados": 5,
+    "empatados": 6,
     "perdidos": 6,
-    "goles_favor": 24,
-    "goles_contra": 24,
-    "diferencia_goles": 0,
-    "puntos": 26
+    "goles_favor": 26,
+    "goles_contra": 29,
+    "diferencia_goles": -3,
+    "puntos": 27
   },
   {
     "posicion": 8,
-    "equipo": "São Paulo",
-    "partidos": 18,
+    "equipo": "Coritiba",
+    "partidos": 19,
     "ganados": 7,
-    "empatados": 4,
+    "empatados": 5,
     "perdidos": 7,
-    "goles_favor": 23,
-    "goles_contra": 20,
-    "diferencia_goles": 3,
-    "puntos": 25
+    "goles_favor": 25,
+    "goles_contra": 27,
+    "diferencia_goles": -2,
+    "puntos": 26
   },
   {
     "posicion": 9,
+    "equipo": "São Paulo",
+    "partidos": 19,
+    "ganados": 7,
+    "empatados": 4,
+    "perdidos": 8,
+    "goles_favor": 24,
+    "goles_contra": 22,
+    "diferencia_goles": 2,
+    "puntos": 25
+  },
+  {
+    "posicion": 10,
     "equipo": "Botafogo",
     "partidos": 18,
     "ganados": 7,
@@ -108,7 +120,19 @@
     "puntos": 25
   },
   {
-    "posicion": 10,
+    "posicion": 11,
+    "equipo": "Atlético-MG",
+    "partidos": 19,
+    "ganados": 7,
+    "empatados": 4,
+    "perdidos": 8,
+    "goles_favor": 23,
+    "goles_contra": 24,
+    "diferencia_goles": -1,
+    "puntos": 25
+  },
+  {
+    "posicion": 12,
     "equipo": "Vitória",
     "partidos": 18,
     "ganados": 7,
@@ -120,19 +144,7 @@
     "puntos": 25
   },
   {
-    "posicion": 11,
-    "equipo": "Atlético-MG",
-    "partidos": 18,
-    "ganados": 7,
-    "empatados": 3,
-    "perdidos": 8,
-    "goles_favor": 22,
-    "goles_contra": 23,
-    "diferencia_goles": -1,
-    "puntos": 24
-  },
-  {
-    "posicion": 12,
+    "posicion": 13,
     "equipo": "Corinthians",
     "partidos": 18,
     "ganados": 6,
@@ -144,27 +156,15 @@
     "puntos": 24
   },
   {
-    "posicion": 13,
-    "equipo": "Cruzeiro",
-    "partidos": 18,
-    "ganados": 6,
-    "empatados": 6,
-    "perdidos": 6,
-    "goles_favor": 24,
-    "goles_contra": 28,
-    "diferencia_goles": -4,
-    "puntos": 24
-  },
-  {
     "posicion": 14,
     "equipo": "Internacional",
-    "partidos": 18,
+    "partidos": 19,
     "ganados": 5,
     "empatados": 6,
-    "perdidos": 7,
-    "goles_favor": 21,
-    "goles_contra": 22,
-    "diferencia_goles": -1,
+    "perdidos": 8,
+    "goles_favor": 22,
+    "goles_contra": 24,
+    "diferencia_goles": -2,
     "puntos": 21
   },
   {
@@ -230,13 +230,13 @@
   {
     "posicion": 20,
     "equipo": "Chapecoense",
-    "partidos": 18,
+    "partidos": 19,
     "ganados": 1,
     "empatados": 6,
-    "perdidos": 11,
+    "perdidos": 12,
     "goles_favor": 17,
-    "goles_contra": 35,
-    "diferencia_goles": -18,
+    "goles_contra": 39,
+    "diferencia_goles": -22,
     "puntos": 9
   }
 ]

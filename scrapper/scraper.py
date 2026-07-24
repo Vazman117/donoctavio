@@ -39,7 +39,7 @@ PESO_COMPETENCIA = {
     "ecu.1":                  1.0,
     "per.1":                  1.0,
     "usa.nwsl":               1.0,
-    "mex.women":              1.0,
+    "mex.w.1":                1.0,
     "conmebol.libertadores":  0.90,
     "conmebol.sudamericana":  0.80,
     "concacaf.champions":     0.70,
@@ -52,7 +52,7 @@ PESO_COMPETENCIA = {
     "esp.copa":               0.40,
     "ger.dfb_pokal":          0.40,
     "fra.cup":                0.40,
-    "mex.copa":               0.40,
+    "mex.campeon":            0.40,
 }
 
 LIGAS_CONFIG = {
@@ -71,6 +71,23 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "mex.2",
         "tiene_apertura_clausura": True,
+    },
+    "mex.w.1": {
+            "nombre":                  "Liga MX - Femenil",
+            "carpeta":                 "LIGA-F-MX",
+            "copas":                   ["mex.1", "concacaf.w.champions"],
+            "es_torneo_copa":          False,
+            "liga_principal":          "mex.women",
+            "tiene_apertura_clausura": True,
+    },
+    "mex.campeon": {
+        "nombre":                  "Campeón de Campeones MX",
+        "carpeta":                 "CAMPEON-DE-CAMPEONES",
+        "copas":                   ["mex.campeon"],
+        "es_torneo_copa":          True,
+        "liga_principal":          "mex.campeon",
+        "tiene_apertura_clausura": False,
+        "ligas_locales":           ["mex.1"],   
     },
     "eng.1": {
         "nombre":                  "Premier League",
@@ -127,6 +144,7 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          False,
         "liga_principal":          "bra.1",
         "tiene_apertura_clausura": False,
+        "gap_maximo_dias":         4,
     },
     "arg.1": {
         "nombre":                  "Liga Profesional Argentina",
@@ -140,6 +158,14 @@ LIGAS_CONFIG = {
         "tiene_grupos":            True,
         "liga_principal":          "arg.1",
         "tiene_apertura_clausura": True,
+    },
+    "col.1": {
+            "nombre":                  "Liga DiMayor",
+            "carpeta":                 "LIGA-DIMayor",
+            "copas":                   ["col.1"],
+            "es_torneo_copa":          False,
+            "liga_principal":          "col.1",
+            "tiene_apertura_clausura": True,
     },
     "usa.1": {
         "nombre":                  "MLS",
@@ -648,13 +674,13 @@ def obtener_equipos_desde_scoreboard(liga_slug, semanas=8):
 
 def obtener_equipos_copa_cascada(liga_slug, standings_data):
     equipos = obtener_equipos_desde_standings_grupos(standings_data or {})
-    if len(equipos) >= 4:
+    if len(equipos) >= 2:
         print(f"  ✅ Equipos obtenidos desde standings por grupos: {len(equipos)}")
         return equipos
 
     print("  ⚠️  Grupos insuficientes — intentando /teams...")
     equipos_teams = obtener_equipos_desde_teams(liga_slug)
-    if len(equipos_teams) >= 4:
+    if len(equipos_teams) >= 2:
         print(f"  ✅ Equipos obtenidos desde /teams: {len(equipos_teams)}")
         return {
             tid: construir_equipo_copa(tid, info)
@@ -898,9 +924,11 @@ def obtener_fixture_jornada(liga_slug):
             inicio = fechas[0]
             fin = inicio
 
+            gap_maximo = LIGAS_CONFIG.get(liga_slug, {}).get("gap_maximo_dias", 1)
+
             for d in fechas[1:]:
 
-                if (d - fin).days <= 1:
+                if (d - fin).days <= gap_maximo:   # antes decía: <= 1
                     fin = d
                 else:
                     break
