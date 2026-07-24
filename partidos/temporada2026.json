@@ -1,5 +1,329 @@
 [
   {
+    "id": "401874144",
+    "torneo": "CONMEBOL Sudamericana",
+    "perfil": "sudamericana",
+    "es_eliminatoria": true,
+    "local": "Bolívar",
+    "visitante": "Grêmio",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2681.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/6273.png",
+    "prob_local": 0.14474917176680333,
+    "prob_empate": 0.2947048274661365,
+    "prob_visitante": 0.5605460007670602,
+    "fuerza_local": 0.3327334709677419,
+    "fuerza_visitante": 0.471231695483871,
+    "diferencia": 0.1384982245161291,
+    "confianza": "favorable",
+    "prediccion": "Grêmio",
+    "resultado": "Bolívar",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.382607447648833,
+    "lambda_visitante": 1.2909376592462858,
+    "marcadores_probables": [
+      "0-1",
+      "0-0",
+      "0-2",
+      "1-1",
+      "0-3"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.23,
+          "ultimos_5": [
+            "L",
+            "L",
+            "D",
+            "W",
+            "D"
+          ],
+          "nombre": "Bolívar"
+        },
+        "visitante": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Grêmio"
+        },
+        "interpretacion": "Grêmio llega con mejor momentum: índice 0.47/1.0 frente a 0.23/1.0 de Bolívar. Últimos 5: 3V/2E/0D vs 1V/2E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Bolívar"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 33.3,
+          "detalle": "1G/1E/1P",
+          "nombre": "Grêmio"
+        },
+        "interpretacion": "Equilibrio situacional: Bolívar 0% local — Grêmio 33% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Bolívar",
+          "goles_favor": 1.0,
+          "goles_contra": 1.33
+        },
+        "visitante": {
+          "nombre": "Grêmio",
+          "goles_favor": 1.33,
+          "goles_contra": 0.5
+        },
+        "interpretacion": "Producción similar: Bolívar 1.00 goles/partido — Grêmio 1.33. Defensa: 1.33 vs 0.50."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "0-0",
+          "0-2",
+          "1-1",
+          "0-3"
+        ],
+        "lambda_local": 0.383,
+        "lambda_visitante": 1.291,
+        "interpretacion": "El marcador más probable es 0-1 (24.9%), coherente con Grêmio como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401841437",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Sarmiento (Junín)",
+    "visitante": "Argentinos Juniors",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/10158.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3.png",
+    "prob_local": 0.20173480111372044,
+    "prob_empate": 0.33255760524988026,
+    "prob_visitante": 0.46570759363639924,
+    "fuerza_local": 0.37432852941176464,
+    "fuerza_visitante": 0.4745621176470588,
+    "diferencia": 0.10023358823529416,
+    "confianza": "favorable",
+    "prediccion": "Argentinos Juniors",
+    "resultado": "Argentinos Juniors",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.4417181657777778,
+    "lambda_visitante": 0.9439867666666667,
+    "marcadores_probables": [
+      "0-1",
+      "0-0",
+      "0-2",
+      "1-0",
+      "1-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.33,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Sarmiento (Junín)"
+        },
+        "visitante": {
+          "valor": 0.53,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Argentinos Juniors"
+        },
+        "interpretacion": "Argentinos Juniors llega con mejor momentum: índice 0.53/1.0 frente a 0.33/1.0 de Sarmiento (Junín). Últimos 5: 3V/0E/2D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 62.5,
+          "detalle": "5G/1E/2P",
+          "nombre": "Sarmiento (Junín)"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 28.6,
+          "detalle": "2G/2E/3P",
+          "nombre": "Argentinos Juniors"
+        },
+        "interpretacion": "Contraste marcado: Sarmiento (Junín) gana el 62% en casa (5G/1E/2P), Argentinos Juniors solo el 29% de visita (2G/2E/3P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Sarmiento (Junín)",
+          "goles_favor": 0.81,
+          "goles_contra": 1.25
+        },
+        "visitante": {
+          "nombre": "Argentinos Juniors",
+          "goles_favor": 1.1,
+          "goles_contra": 0.74
+        },
+        "interpretacion": "Producción similar: Sarmiento (Junín) 0.81 goles/partido — Argentinos Juniors 1.10. Defensa: 1.25 vs 0.74."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "0-0",
+          "0-2",
+          "1-0",
+          "1-1"
+        ],
+        "lambda_local": 0.442,
+        "lambda_visitante": 0.944,
+        "interpretacion": "El marcador más probable es 0-1 (24.2%), coherente con Argentinos Juniors como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401841435",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Belgrano (Córdoba)",
+    "visitante": "Rosario Central",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/4.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/17.png",
+    "prob_local": 0.34377181831603115,
+    "prob_empate": 0.42590597924635776,
+    "prob_visitante": 0.230322202437611,
+    "fuerza_local": 0.6866285882352943,
+    "fuerza_visitante": 0.4613114117647059,
+    "diferencia": 0.22531717647058835,
+    "confianza": "favorable",
+    "prediccion": "Empate",
+    "resultado": "Belgrano (Córdoba)",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.04512,
+    "lambda_visitante": 0.7117886508821547,
+    "marcadores_probables": [
+      "0-0",
+      "1-0",
+      "1-1",
+      "0-1",
+      "2-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 1.0,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Belgrano (Córdoba)"
+        },
+        "visitante": {
+          "valor": 0.59,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Rosario Central"
+        },
+        "interpretacion": "Belgrano (Córdoba) llega con mejor momentum: índice 1.00/1.0 frente a 0.59/1.0 de Rosario Central. Últimos 5: 5V/0E/0D vs 3V/1E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 55.6,
+          "detalle": "5G/2E/2P",
+          "nombre": "Belgrano (Córdoba)"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 44.4,
+          "detalle": "4G/2E/3P",
+          "nombre": "Rosario Central"
+        },
+        "interpretacion": "Belgrano (Córdoba) domina en casa: 56% (5G/2E/2P). Rosario Central: 44% de visita (4G/2E/3P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Belgrano (Córdoba)",
+          "goles_favor": 1.2,
+          "goles_contra": 0.8
+        },
+        "visitante": {
+          "nombre": "Rosario Central",
+          "goles_favor": 1.32,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Producción similar: Belgrano (Córdoba) 1.20 goles/partido — Rosario Central 1.32. Defensa: 0.80 vs 1.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-0",
+          "1-0",
+          "1-1",
+          "0-1",
+          "2-0"
+        ],
+        "lambda_local": 1.045,
+        "lambda_visitante": 0.712,
+        "interpretacion": "El marcador más probable es 0-0 (17.3%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
     "id": "761677",
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
