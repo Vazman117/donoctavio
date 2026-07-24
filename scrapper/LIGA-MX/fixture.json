@@ -3,21 +3,6 @@
   "jornada": "day-block",
   "temporada": 2026,
   "partidos": [
-    {
-      "id_evento": "401877034",
-      "fecha": "2026-07-26T03:00Z",
-      "jornada_nombre": "ASL @ UANL",
-      "equipo_local": "Tigres UANL",
-      "escudo_local": "",
-      "equipo_visitante": "Atlético de San Luis",
-      "escudo_visitante": "",
-      "estadio": "Estadio Universitario",
-      "ciudad": "San Nicolás de los Garza",
-      "estado": "Scheduled",
-      "en_vivo": false,
-      "finalizado": false,
-      "goles_local": null,
-      "goles_visitante": null
-    }
+    
   ]
 }
