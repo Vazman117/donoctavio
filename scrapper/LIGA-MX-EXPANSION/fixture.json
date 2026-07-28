@@ -3,5 +3,68 @@
   "jornada": "day-block",
   "temporada": 2026,
   "partidos": [
+    {
+      "id_evento": "401886417",
+      "fecha": "2026-08-01T01:00Z",
+      "jornada_nombre": "TEP @ UAT",
+      "equipo_local": "Correcaminos UAT",
+      "equipo_visitante": "Tepatitlán FC",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401886418",
+      "fecha": "2026-08-01T01:00Z",
+      "jornada_nombre": "TLA @ MDZ",
+      "equipo_local": "Mineros de Zacatecas",
+      "equipo_visitante": "Tlaxcala FC",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401886416",
+      "fecha": "2026-08-01T03:00Z",
+      "jornada_nombre": "DUR @ PAZ",
+      "equipo_local": "Club Atlético La Paz",
+      "equipo_visitante": "Durango",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401886415",
+      "fecha": "2026-08-01T21:45Z",
+      "jornada_nombre": "VEN @ CAH",
+      "equipo_local": "Cruz Azul Hidalgo",
+      "equipo_visitante": "Venados FC",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401886414",
+      "fecha": "2026-08-01T23:00Z",
+      "jornada_nombre": "CJB @ TAP",
+      "equipo_local": "Tapatío",
+      "equipo_visitante": "Club Jaiba Brava",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401886413",
+      "fecha": "2026-08-02T01:00Z",
+      "jornada_nombre": "UDG @ CAN",
+      "equipo_local": "Cancún FC",
+      "equipo_visitante": "Leones Negros",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401887417",
+      "fecha": "2026-08-02T01:00Z",
+      "jornada_nombre": "MOR @ PIR",
+      "equipo_local": "Piratas",
+      "equipo_visitante": "Club Atlético Morelia",
+      "goles_local": null,
+      "goles_visitante": null
+    }
   ]
 }

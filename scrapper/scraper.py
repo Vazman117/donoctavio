@@ -1063,25 +1063,12 @@ def obtener_fixture_jornada(liga_slug):
             except Exception:
                 return None
 
-        venue_info = comp.get("venue", {})
-
         partidos.append({
             "id_evento": evento.get("id"),
             "fecha": evento.get("date"),
             "jornada_nombre": evento.get("shortName", ""),
             "equipo_local": local.get("team", {}).get("displayName", ""),
-            "escudo_local": (
-                local.get("team", {}).get("logos") or [{}]
-            )[0].get("href", ""),
             "equipo_visitante": visitante.get("team", {}).get("displayName", ""),
-            "escudo_visitante": (
-                visitante.get("team", {}).get("logos") or [{}]
-            )[0].get("href", ""),
-            "estadio": venue_info.get("fullName", ""),
-            "ciudad": venue_info.get("address", {}).get("city", ""),
-            "estado": estado,
-            "en_vivo": en_vivo,
-            "finalizado": completado,
             "goles_local": _score(local) if (completado or en_vivo) else None,
             "goles_visitante": _score(visitante) if (completado or en_vivo) else None,
         })
@@ -1375,9 +1362,9 @@ def scrapear_liga(liga_slug):
         for p in fixture["partidos"][:10]:
             marcador = (
                 f"{p['goles_local']}-{p['goles_visitante']}"
-                if p["finalizado"] or p["en_vivo"] else "vs"
+                if p["goles_local"] is not None else "vs"
             )
-            print(f"   {p['equipo_local']} {marcador} {p['equipo_visitante']}  ({p['estado']})")
+            print(f"   {p['equipo_local']} {marcador} {p['equipo_visitante']}")
     print()
 
 

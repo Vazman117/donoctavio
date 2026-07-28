@@ -1,3 +1,848 @@
 [
-  
+  {
+    "id": "401886419",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Alebrijes de Oaxaca",
+    "visitante": "Dorados de Sinaloa",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/17233.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3432.png",
+    "prob_local": 0.22997613256042998,
+    "prob_empate": 0.4176287777691396,
+    "prob_visitante": 0.3523950896704304,
+    "fuerza_local": 0.2587117647058823,
+    "fuerza_visitante": 0.3975352941176471,
+    "diferencia": 0.1388235294117648,
+    "confianza": "favorable",
+    "prediccion": "Empate",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.676923076923077,
+    "lambda_visitante": 1.0266666666666666,
+    "marcadores_probables": [
+      "0-0",
+      "0-1",
+      "1-1",
+      "1-0",
+      "0-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L"
+          ],
+          "nombre": "Alebrijes de Oaxaca"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [],
+          "nombre": "Dorados de Sinaloa"
+        },
+        "interpretacion": "Momentum similar: Alebrijes de Oaxaca 0.50/1.0 — Dorados de Sinaloa 0.50/1.0."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Alebrijes de Oaxaca"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Dorados de Sinaloa"
+        },
+        "interpretacion": "Dorados de Sinaloa sufre de visita: 0% (0G/0E/0P). Alebrijes de Oaxaca en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Alebrijes de Oaxaca",
+          "goles_favor": 0.0,
+          "goles_contra": 3.0
+        },
+        "visitante": {
+          "nombre": "Dorados de Sinaloa",
+          "goles_favor": 0,
+          "goles_contra": 0
+        },
+        "interpretacion": "Producción similar: Alebrijes de Oaxaca 0.00 goles/partido — Dorados de Sinaloa 0.00. Defensa: 3.00 vs 0.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-0",
+          "0-1",
+          "1-1",
+          "1-0",
+          "0-2"
+        ],
+        "lambda_local": 0.677,
+        "lambda_visitante": 1.027,
+        "interpretacion": "El marcador más probable es 0-0 (18.2%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401841174",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Corinthians",
+    "visitante": "Athletico Paranaense",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/874.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3458.png",
+    "prob_local": 0.25729227209266464,
+    "prob_empate": 0.39341029106427405,
+    "prob_visitante": 0.3492974368430613,
+    "fuerza_local": 0.5698529411764707,
+    "fuerza_visitante": 0.6588572352941177,
+    "diferencia": 0.08900429411764699,
+    "confianza": "moderado",
+    "prediccion": "Empate",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.7784923664122136,
+    "lambda_visitante": 1.0508723777212323,
+    "marcadores_probables": [
+      "0-0",
+      "0-1",
+      "1-1",
+      "1-0",
+      "0-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.74,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Corinthians"
+        },
+        "visitante": {
+          "valor": 0.96,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Athletico Paranaense"
+        },
+        "interpretacion": "Athletico Paranaense llega con mejor momentum: índice 0.96/1.0 frente a 0.74/1.0 de Corinthians. Últimos 5: 4V/1E/0D vs 3V/1E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "5G/2E/3P",
+          "nombre": "Corinthians"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 33.3,
+          "detalle": "3G/1E/5P",
+          "nombre": "Athletico Paranaense"
+        },
+        "interpretacion": "Equilibrio situacional: Corinthians 50% local — Athletico Paranaense 33% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Corinthians",
+          "goles_favor": 1.1,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Athletico Paranaense",
+          "goles_favor": 1.4,
+          "goles_contra": 0.95
+        },
+        "interpretacion": "Producción similar: Corinthians 1.10 goles/partido — Athletico Paranaense 1.40. Defensa: 1.00 vs 0.95."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-0",
+          "0-1",
+          "1-1",
+          "1-0",
+          "0-2"
+        ],
+        "lambda_local": 0.778,
+        "lambda_visitante": 1.051,
+        "interpretacion": "El marcador más probable es 0-0 (16.1%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401841173",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Coritiba",
+    "visitante": "Cruzeiro",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/3456.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2022.png",
+    "prob_local": 0.3026424343957822,
+    "prob_empate": 0.4046488316455167,
+    "prob_visitante": 0.2927087339587011,
+    "fuerza_local": 0.38841605882352936,
+    "fuerza_visitante": 0.4102101764705882,
+    "diferencia": 0.021794117647058853,
+    "confianza": "ajustado",
+    "prediccion": "Empate",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.2855987595419844,
+    "lambda_visitante": 1.2293663358778626,
+    "marcadores_probables": [
+      "1-1",
+      "1-0",
+      "0-1",
+      "2-1",
+      "0-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.38,
+          "ultimos_5": [
+            "D",
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Coritiba"
+        },
+        "visitante": {
+          "valor": 0.51,
+          "ultimos_5": [
+            "L",
+            "W",
+            "D",
+            "W",
+            "D"
+          ],
+          "nombre": "Cruzeiro"
+        },
+        "interpretacion": "Cruzeiro llega con mejor momentum: índice 0.51/1.0 frente a 0.38/1.0 de Coritiba. Últimos 5: 2V/2E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 33.3,
+          "detalle": "3G/3E/3P",
+          "nombre": "Coritiba"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 33.3,
+          "detalle": "3G/2E/4P",
+          "nombre": "Cruzeiro"
+        },
+        "interpretacion": "Equilibrio situacional: Coritiba 33% local — Cruzeiro 33% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Coritiba",
+          "goles_favor": 1.25,
+          "goles_contra": 1.35
+        },
+        "visitante": {
+          "nombre": "Cruzeiro",
+          "goles_favor": 1.3,
+          "goles_contra": 1.5
+        },
+        "interpretacion": "Producción similar: Coritiba 1.25 goles/partido — Cruzeiro 1.30. Defensa: 1.35 vs 1.50."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-1",
+          "1-0",
+          "0-1",
+          "2-1",
+          "0-0"
+        ],
+        "lambda_local": 1.286,
+        "lambda_visitante": 1.229,
+        "interpretacion": "El marcador más probable es 1-1 (12.8%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401874167",
+    "torneo": "CONMEBOL Sudamericana",
+    "perfil": "sudamericana",
+    "es_eliminatoria": true,
+    "local": "Vasco da Gama",
+    "visitante": "Independiente Medellín",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/3454.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/2690.png",
+    "prob_local": 0.5703164353145738,
+    "prob_empate": 0.22165041118788445,
+    "prob_visitante": 0.2080331534975418,
+    "fuerza_local": 0.43609857548387104,
+    "fuerza_visitante": 0.3910966709677419,
+    "diferencia": 0.04500190451612912,
+    "confianza": "favorable",
+    "prediccion": "Vasco da Gama",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.8632282922995742,
+    "lambda_visitante": 0.8309811109495419,
+    "marcadores_probables": [
+      "1-0",
+      "2-0",
+      "1-1",
+      "2-1",
+      "3-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.37,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Vasco da Gama"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "nombre": "Independiente Medellín"
+        },
+        "interpretacion": "Independiente Medellín llega con mejor momentum: índice 0.50/1.0 frente a 0.37/1.0 de Vasco da Gama. Últimos 5: 2V/0E/3D vs 3V/1E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 66.7,
+          "detalle": "2G/0E/1P",
+          "nombre": "Vasco da Gama"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Independiente Medellín"
+        },
+        "interpretacion": "Contraste marcado: Vasco da Gama gana el 67% en casa (2G/0E/1P), Independiente Medellín solo el 0% de visita (0G/0E/0P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Vasco da Gama",
+          "goles_favor": 1.71,
+          "goles_contra": 1.14
+        },
+        "visitante": {
+          "nombre": "Independiente Medellín",
+          "goles_favor": 1.1,
+          "goles_contra": 1.4
+        },
+        "interpretacion": "Vasco da Gama más ofensivo: 1.71 vs 1.10 goles/partido. Defensa: 1.14 vs 1.40."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "2-0",
+          "1-1",
+          "2-1",
+          "3-0"
+        ],
+        "lambda_local": 1.863,
+        "lambda_visitante": 0.831,
+        "interpretacion": "El marcador más probable es 1-0 (13.3%), coherente con Vasco da Gama como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401874164",
+    "torneo": "CONMEBOL Sudamericana",
+    "perfil": "sudamericana",
+    "es_eliminatoria": true,
+    "local": "O'Higgins",
+    "visitante": "Boca Juniors",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/6072.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/5.png",
+    "prob_local": 0.31937736576549547,
+    "prob_empate": 0.4352827971572987,
+    "prob_visitante": 0.24533983707720586,
+    "fuerza_local": 0.37852737548387105,
+    "fuerza_visitante": 0.3550606709677419,
+    "diferencia": 0.023466704516129144,
+    "confianza": "ajustado",
+    "prediccion": "O'Higgins",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.8923834532050383,
+    "lambda_visitante": 0.7098516632996633,
+    "marcadores_probables": [
+      "1-0",
+      "0-0",
+      "0-1",
+      "1-1",
+      "2-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.23,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "D",
+            "W"
+          ],
+          "nombre": "O'Higgins"
+        },
+        "visitante": {
+          "valor": 0.27,
+          "ultimos_5": [
+            "L",
+            "D",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Boca Juniors"
+        },
+        "interpretacion": "Boca Juniors llega con mejor momentum: índice 0.27/1.0 frente a 0.23/1.0 de O'Higgins. Últimos 5: 1V/1E/3D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 66.7,
+          "detalle": "2G/1E/0P",
+          "nombre": "O'Higgins"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Boca Juniors"
+        },
+        "interpretacion": "Contraste marcado: O'Higgins gana el 67% en casa (2G/1E/0P), Boca Juniors solo el 0% de visita (0G/0E/0P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "O'Higgins",
+          "goles_favor": 1.14,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Boca Juniors",
+          "goles_favor": 1.0,
+          "goles_contra": 0.83
+        },
+        "interpretacion": "Producción similar: O'Higgins 1.14 goles/partido — Boca Juniors 1.00. Defensa: 1.00 vs 0.83."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "0-0",
+          "0-1",
+          "1-1",
+          "2-0"
+        ],
+        "lambda_local": 0.892,
+        "lambda_visitante": 0.71,
+        "interpretacion": "El marcador individual más probable es 1-0 (18.3%), favoreciendo a O'Higgins. Aunque el modelo da como favorito a el empate por probabilidad acumulada, esa probabilidad se reparte entre varios marcadores distintos."
+      }
+    ]
+  },
+  {
+    "id": "401841453",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Rosario Central",
+    "visitante": "Racing Club",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/17.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/15.png",
+    "prob_local": 0.2974310796433318,
+    "prob_empate": 0.39723441753338773,
+    "prob_visitante": 0.3053345028232805,
+    "fuerza_local": 0.4329411764705883,
+    "fuerza_visitante": 0.5119882352941176,
+    "diferencia": 0.07904705882352936,
+    "confianza": "ajustado",
+    "prediccion": "Empate",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.2439853468559836,
+    "lambda_visitante": 1.186037956551724,
+    "marcadores_probables": [
+      "1-1",
+      "0-1",
+      "1-0",
+      "0-0",
+      "1-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.36,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "Rosario Central"
+        },
+        "visitante": {
+          "valor": 0.65,
+          "ultimos_5": [
+            "W",
+            "L",
+            "W",
+            "D",
+            "D"
+          ],
+          "nombre": "Racing Club"
+        },
+        "interpretacion": "Racing Club llega con mejor momentum: índice 0.65/1.0 frente a 0.36/1.0 de Rosario Central. Últimos 5: 2V/2E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 60.0,
+          "detalle": "6G/2E/2P",
+          "nombre": "Rosario Central"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 36.4,
+          "detalle": "4G/3E/4P",
+          "nombre": "Racing Club"
+        },
+        "interpretacion": "Rosario Central domina en casa: 60% (6G/2E/2P). Racing Club: 36% de visita (4G/3E/4P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Rosario Central",
+          "goles_favor": 1.3,
+          "goles_contra": 1.05
+        },
+        "visitante": {
+          "nombre": "Racing Club",
+          "goles_favor": 1.1,
+          "goles_contra": 0.95
+        },
+        "interpretacion": "Producción similar: Rosario Central 1.30 goles/partido — Racing Club 1.10. Defensa: 1.05 vs 0.95."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-1",
+          "0-1",
+          "1-0",
+          "0-0",
+          "1-2"
+        ],
+        "lambda_local": 1.244,
+        "lambda_visitante": 1.186,
+        "interpretacion": "El marcador más probable es 1-1 (13.0%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401841451",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Talleres (Córdoba)",
+    "visitante": "Vélez Sarsfield",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/19.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/21.png",
+    "prob_local": 0.21600711731038524,
+    "prob_empate": 0.44,
+    "prob_visitante": 0.3439928826896148,
+    "fuerza_local": 0.3608252941176471,
+    "fuerza_visitante": 0.48781147058823526,
+    "diferencia": 0.12698617647058819,
+    "confianza": "moderado",
+    "prediccion": "Empate",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.6373282920892495,
+    "lambda_visitante": 0.8774488800000001,
+    "marcadores_probables": [
+      "0-0",
+      "0-1",
+      "1-0",
+      "1-1",
+      "0-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.24,
+          "ultimos_5": [
+            "L",
+            "L",
+            "D",
+            "D",
+            "W"
+          ],
+          "nombre": "Talleres (Córdoba)"
+        },
+        "visitante": {
+          "valor": 0.55,
+          "ultimos_5": [
+            "W",
+            "L",
+            "D",
+            "D",
+            "D"
+          ],
+          "nombre": "Vélez Sarsfield"
+        },
+        "interpretacion": "Vélez Sarsfield llega con mejor momentum: índice 0.55/1.0 frente a 0.24/1.0 de Talleres (Córdoba). Últimos 5: 1V/3E/1D vs 1V/2E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "4G/1E/3P",
+          "nombre": "Talleres (Córdoba)"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 37.5,
+          "detalle": "3G/4E/1P",
+          "nombre": "Vélez Sarsfield"
+        },
+        "interpretacion": "Equilibrio situacional: Talleres (Córdoba) 50% local — Vélez Sarsfield 38% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Talleres (Córdoba)",
+          "goles_favor": 0.94,
+          "goles_contra": 0.83
+        },
+        "visitante": {
+          "nombre": "Vélez Sarsfield",
+          "goles_favor": 1.06,
+          "goles_contra": 0.72
+        },
+        "interpretacion": "Producción similar: Talleres (Córdoba) 0.94 goles/partido — Vélez Sarsfield 1.06. Defensa: 0.83 vs 0.72."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-0",
+          "0-1",
+          "1-0",
+          "1-1",
+          "0-2"
+        ],
+        "lambda_local": 0.637,
+        "lambda_visitante": 0.877,
+        "interpretacion": "El marcador más probable es 0-0 (22.0%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401841459",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Central Córdoba (Santiago del Estero)",
+    "visitante": "Atlético Tucumán",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/11989.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/9785.png",
+    "prob_local": 0.24049767206234682,
+    "prob_empate": 0.41432457255677746,
+    "prob_visitante": 0.3451777553808757,
+    "fuerza_local": 0.3339170588235294,
+    "fuerza_visitante": 0.4373238235294118,
+    "diferencia": 0.10340676470588239,
+    "confianza": "moderado",
+    "prediccion": "Empate",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.6801809551073519,
+    "lambda_visitante": 1.023133427689655,
+    "marcadores_probables": [
+      "0-0",
+      "0-1",
+      "1-1",
+      "1-0",
+      "0-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.22,
+          "ultimos_5": [
+            "L",
+            "L",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Central Córdoba (Santiago del Estero)"
+        },
+        "visitante": {
+          "valor": 0.56,
+          "ultimos_5": [
+            "D",
+            "W",
+            "D",
+            "L",
+            "D"
+          ],
+          "nombre": "Atlético Tucumán"
+        },
+        "interpretacion": "Atlético Tucumán llega con mejor momentum: índice 0.56/1.0 frente a 0.22/1.0 de Central Córdoba (Santiago del Estero). Últimos 5: 1V/3E/1D vs 1V/1E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "4G/1E/3P",
+          "nombre": "Central Córdoba (Santiago del Estero)"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 12.5,
+          "detalle": "1G/0E/7P",
+          "nombre": "Atlético Tucumán"
+        },
+        "interpretacion": "Atlético Tucumán sufre de visita: 12% (1G/0E/7P). Central Córdoba (Santiago del Estero) en casa: 50% (4G/1E/3P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Central Córdoba (Santiago del Estero)",
+          "goles_favor": 0.65,
+          "goles_contra": 1.29
+        },
+        "visitante": {
+          "nombre": "Atlético Tucumán",
+          "goles_favor": 0.88,
+          "goles_contra": 1.18
+        },
+        "interpretacion": "Producción similar: Central Córdoba (Santiago del Estero) 0.65 goles/partido — Atlético Tucumán 0.88. Defensa: 1.29 vs 1.18."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-0",
+          "0-1",
+          "1-1",
+          "1-0",
+          "0-2"
+        ],
+        "lambda_local": 0.68,
+        "lambda_visitante": 1.023,
+        "interpretacion": "El marcador más probable es 0-0 (18.2%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  }
 ]

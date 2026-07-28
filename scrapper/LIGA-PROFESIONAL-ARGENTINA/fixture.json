@@ -3,6 +3,86 @@
   "jornada": "day-block",
   "temporada": 2026,
   "partidos": [
-    
+    {
+      "id_evento": "401841462",
+      "fecha": "2026-07-28T22:00Z",
+      "jornada_nombre": "SARM @ BAN",
+      "equipo_local": "Banfield",
+      "equipo_visitante": "Sarmiento (Junín)",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841452",
+      "fecha": "2026-07-28T22:00Z",
+      "jornada_nombre": "GMZ @ SLO",
+      "equipo_local": "San Lorenzo",
+      "equipo_visitante": "Gimnasia (Mendoza)",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841449",
+      "fecha": "2026-07-29T00:15Z",
+      "jornada_nombre": "AAE @ ARGJ",
+      "equipo_local": "Argentinos Juniors",
+      "equipo_visitante": "Estudiantes de Río Cuarto",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841461",
+      "fecha": "2026-07-29T17:30Z",
+      "jornada_nombre": "ALDO @ BAR",
+      "equipo_local": "Barracas Central",
+      "equipo_visitante": "Aldosivi",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841458",
+      "fecha": "2026-07-29T20:00Z",
+      "jornada_nombre": "RIE @ DYJ",
+      "equipo_local": "Defensa y Justicia",
+      "equipo_visitante": "Deportivo Riestra",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841457",
+      "fecha": "2026-07-29T22:15Z",
+      "jornada_nombre": "RIV @ GLP",
+      "equipo_local": "Gimnasia La Plata",
+      "equipo_visitante": "River Plate",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841454",
+      "fecha": "2026-07-30T00:30Z",
+      "jornada_nombre": "PLA @ IACC",
+      "equipo_local": "Instituto (Córdoba)",
+      "equipo_visitante": "Platense",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841455",
+      "fecha": "2026-07-30T22:00Z",
+      "jornada_nombre": "HUR @ RIV",
+      "equipo_local": "Independiente Rivadavia",
+      "equipo_visitante": "Huracán",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841456",
+      "fecha": "2026-07-31T00:15Z",
+      "jornada_nombre": "NOB @ IND",
+      "equipo_local": "Independiente",
+      "equipo_visitante": "Newell's Old Boys",
+      "goles_local": null,
+      "goles_visitante": null
+    }
   ]
 }

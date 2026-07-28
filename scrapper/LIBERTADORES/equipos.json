@@ -56,12 +56,12 @@
       "W"
     ],
     "imbatido_streak": 1,
-    "forma_liga_local": 0.55,
+    "forma_liga_local": 0.34,
     "ultimos_5_liga_local": [
+      "L",
       "L",
       "W",
       "D",
-      "W",
       "W"
     ],
     "liga_local_slug": "arg.1"
@@ -123,12 +123,12 @@
       "W"
     ],
     "imbatido_streak": 6,
-    "forma_liga_local": 0.61,
+    "forma_liga_local": 0.665,
     "ultimos_5_liga_local": [
-      "W",
-      "L",
       "D",
       "W",
+      "W",
+      "L",
       "D"
     ],
     "liga_local_slug": "bra.1"
@@ -190,13 +190,13 @@
       "L"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.57,
+    "forma_liga_local": 0.75,
     "ultimos_5_liga_local": [
+      "W",
       "L",
       "W",
       "W",
-      "W",
-      "L"
+      "W"
     ],
     "liga_local_slug": "col.1"
   },
@@ -257,13 +257,13 @@
       "L"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.84,
+    "forma_liga_local": 0.57,
     "ultimos_5_liga_local": [
-      "W",
-      "W",
-      "W",
       "L",
-      "D"
+      "W",
+      "W",
+      "W",
+      "L"
     ],
     "liga_local_slug": "per.1"
   },
@@ -391,13 +391,13 @@
       "L"
     ],
     "imbatido_streak": 2,
-    "forma_liga_local": 0.74,
+    "forma_liga_local": 0.86,
     "ultimos_5_liga_local": [
       "W",
       "W",
+      "W",
       "D",
-      "L",
-      "D"
+      "L"
     ],
     "liga_local_slug": "per.1"
   },
@@ -458,13 +458,13 @@
       "L"
     ],
     "imbatido_streak": 1,
-    "forma_liga_local": 0.36,
+    "forma_liga_local": 0.55,
     "ultimos_5_liga_local": [
+      "W",
       "L",
       "L",
       "W",
-      "W",
-      "D"
+      "W"
     ],
     "liga_local_slug": "col.1"
   },
@@ -653,13 +653,13 @@
       "L"
     ],
     "imbatido_streak": 3,
-    "forma_liga_local": 0.46,
+    "forma_liga_local": 0.48,
     "ultimos_5_liga_local": [
       "D",
       "D",
+      "D",
       "L",
-      "W",
-      "D"
+      "W"
     ],
     "liga_local_slug": "bra.1"
   },
@@ -720,13 +720,13 @@
       "W"
     ],
     "imbatido_streak": 6,
-    "forma_liga_local": 0.465,
+    "forma_liga_local": 0.435,
     "ultimos_5_liga_local": [
+      "D",
       "L",
       "D",
       "W",
-      "D",
-      "W"
+      "D"
     ],
     "liga_local_slug": "arg.1"
   },
@@ -854,13 +854,13 @@
       "W"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.61,
+    "forma_liga_local": 0.4,
     "ultimos_5_liga_local": [
+      "L",
       "L",
       "W",
       "W",
-      "W",
-      "D"
+      "W"
     ],
     "liga_local_slug": "arg.1"
   },
@@ -921,13 +921,13 @@
       "W"
     ],
     "imbatido_streak": 5,
-    "forma_liga_local": 0.72,
+    "forma_liga_local": 0.705,
     "ultimos_5_liga_local": [
+      "D",
       "W",
       "W",
       "L",
-      "W",
-      "L"
+      "W"
     ],
     "liga_local_slug": "chi.1"
   },
@@ -988,13 +988,13 @@
       "L"
     ],
     "imbatido_streak": 4,
-    "forma_liga_local": 0.645,
+    "forma_liga_local": 0.51,
     "ultimos_5_liga_local": [
-      "D",
+      "L",
       "W",
       "D",
       "W",
-      "L"
+      "D"
     ],
     "liga_local_slug": "bra.1"
   },
@@ -1055,13 +1055,13 @@
       "L"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.695,
+    "forma_liga_local": 0.3,
     "ultimos_5_liga_local": [
+      "L",
+      "L",
       "W",
       "D",
-      "D",
-      "W",
-      "L"
+      "D"
     ],
     "liga_local_slug": "ecu.1"
   },
@@ -1122,11 +1122,11 @@
       "W"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.72,
+    "forma_liga_local": 0.745,
     "ultimos_5_liga_local": [
+      "D",
       "W",
       "W",
-      "L",
       "W",
       "L"
     ],
@@ -1256,13 +1256,13 @@
       "L"
     ],
     "imbatido_streak": 3,
-    "forma_liga_local": 0.465,
+    "forma_liga_local": 0.26,
     "ultimos_5_liga_local": [
+      "L",
       "L",
       "D",
       "W",
-      "D",
-      "W"
+      "D"
     ],
     "liga_local_slug": "col.1"
   },
@@ -1323,12 +1323,12 @@
       "W"
     ],
     "imbatido_streak": 1,
-    "forma_liga_local": 0.1,
+    "forma_liga_local": 0.215,
     "ultimos_5_liga_local": [
-      "L",
-      "L",
-      "L",
       "D",
+      "L",
+      "L",
+      "L",
       "D"
     ],
     "liga_local_slug": "arg.1"
@@ -1390,12 +1390,12 @@
       "W"
     ],
     "imbatido_streak": 1,
-    "forma_liga_local": 0.8,
+    "forma_liga_local": 0.61,
     "ultimos_5_liga_local": [
+      "L",
       "W",
       "W",
-      "D",
-      "D",
+      "W",
       "D"
     ],
     "liga_local_slug": "bra.1"
@@ -1518,13 +1518,13 @@
       "L"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.59,
+    "forma_liga_local": 0.37,
     "ultimos_5_liga_local": [
-      "W",
       "L",
       "W",
       "L",
-      "D"
+      "W",
+      "L"
     ],
     "liga_local_slug": "per.1"
   },
@@ -1585,12 +1585,12 @@
       "L"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.55,
+    "forma_liga_local": 0.36,
     "ultimos_5_liga_local": [
+      "L",
       "L",
       "W",
       "W",
-      "D",
       "D"
     ],
     "liga_local_slug": "col.1"
@@ -1652,13 +1652,13 @@
       "W"
     ],
     "imbatido_streak": 1,
-    "forma_liga_local": 0.305,
+    "forma_liga_local": 0.51,
     "ultimos_5_liga_local": [
+      "W",
       "L",
       "D",
       "D",
-      "L",
-      "W"
+      "L"
     ],
     "liga_local_slug": "arg.1"
   },
@@ -1719,13 +1719,13 @@
       "W"
     ],
     "imbatido_streak": 2,
-    "forma_liga_local": 0.18,
+    "forma_liga_local": 0.515,
     "ultimos_5_liga_local": [
-      "L",
-      "L",
+      "W",
       "D",
       "L",
-      "W"
+      "L",
+      "D"
     ],
     "liga_local_slug": "ecu.1"
   },
@@ -1786,13 +1786,13 @@
       "L"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.59,
+    "forma_liga_local": 0.545,
     "ultimos_5_liga_local": [
+      "D",
       "W",
       "L",
       "W",
-      "L",
-      "D"
+      "L"
     ],
     "liga_local_slug": "bra.1"
   },
@@ -1914,13 +1914,13 @@
       "W"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.59,
+    "forma_liga_local": 0.36,
     "ultimos_5_liga_local": [
+      "L",
       "L",
       "W",
       "W",
-      "D",
-      "W"
+      "D"
     ],
     "liga_local_slug": "arg.1"
   },

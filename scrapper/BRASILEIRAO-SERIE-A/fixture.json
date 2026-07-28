@@ -3,6 +3,77 @@
   "jornada": "day-block",
   "temporada": 2026,
   "partidos": [
-    
+    {
+      "id_evento": "401841168",
+      "fecha": "2026-07-29T18:00Z",
+      "jornada_nombre": "BRA @ CAM",
+      "equipo_local": "Atlético-MG",
+      "equipo_visitante": "Red Bull Bragantino",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841176",
+      "fecha": "2026-07-29T18:00Z",
+      "jornada_nombre": "GRE @ BOT",
+      "equipo_local": "Botafogo",
+      "equipo_visitante": "Grêmio",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841175",
+      "fecha": "2026-07-29T18:00Z",
+      "jornada_nombre": "VAS @ CHA",
+      "equipo_local": "Chapecoense",
+      "equipo_visitante": "Vasco da Gama",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841169",
+      "fecha": "2026-07-29T18:00Z",
+      "jornada_nombre": "SAN @ SAO",
+      "equipo_local": "São Paulo",
+      "equipo_visitante": "Santos",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841171",
+      "fecha": "2026-07-29T22:30Z",
+      "jornada_nombre": "FLA @ INT",
+      "equipo_local": "Internacional",
+      "equipo_visitante": "Flamengo",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841170",
+      "fecha": "2026-07-29T22:30Z",
+      "jornada_nombre": "REMO @ MIR",
+      "equipo_local": "Mirassol",
+      "equipo_visitante": "Remo",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841177",
+      "fecha": "2026-07-30T00:30Z",
+      "jornada_nombre": "BAH @ FLU",
+      "equipo_local": "Fluminense",
+      "equipo_visitante": "Bahia",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841172",
+      "fecha": "2026-07-30T00:30Z",
+      "jornada_nombre": "PAL @ VIT",
+      "equipo_local": "Vitória",
+      "equipo_visitante": "Palmeiras",
+      "goles_local": null,
+      "goles_visitante": null
+    }
   ]
 }

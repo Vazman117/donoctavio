@@ -1,534 +1,4 @@
 {
-  "independientesantafe": {
-    "nombre": "Independiente Santa Fe",
-    "abreviacion": "SFE",
-    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/5488.png",
-    "posicion": 3,
-    "posicion_anterior": 3,
-    "tendencia_posicion": 0,
-    "partidos": 6,
-    "ganados": 2,
-    "empatados": 2,
-    "perdidos": 2,
-    "puntos": 8,
-    "goles_favor": 6,
-    "goles_contra": 7,
-    "goles_diff": -1,
-    "goles_favor_promedio": 1.0,
-    "goles_contra_promedio": 1.167,
-    "competencias": {
-      "conmebol.libertadores": {
-        "partidos": 6,
-        "ganados": 2,
-        "empatados": 2,
-        "perdidos": 2,
-        "goles_favor": 6,
-        "goles_contra": 7,
-        "goles_favor_promedio": 1.0,
-        "goles_contra_promedio": 1.167,
-        "partidos_local": 3,
-        "ganados_local": 1,
-        "empatados_local": 2,
-        "perdidos_local": 0,
-        "win_rate_local": 0.333,
-        "partidos_visita": 3,
-        "ganados_visita": 1,
-        "empatados_visita": 0,
-        "perdidos_visita": 2,
-        "win_rate_visita": 0.333,
-        "ultimos_5": [
-          "W",
-          "W",
-          "D",
-          "L",
-          "L"
-        ],
-        "imbatido_streak": 3
-      }
-    },
-    "forma_ponderada": 0.63,
-    "forma_liga": 0.63,
-    "ultimos_5_liga": [
-      "W",
-      "W",
-      "D",
-      "L",
-      "L"
-    ],
-    "imbatido_streak": 3,
-    "forma_liga_local": 0.465,
-    "ultimos_5_liga_local": [
-      "L",
-      "D",
-      "W",
-      "D",
-      "W"
-    ],
-    "liga_local_slug": "col.1"
-  },
-  "bocajuniors": {
-    "nombre": "Boca Juniors",
-    "abreviacion": "CABJ",
-    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/5.png",
-    "posicion": 3,
-    "posicion_anterior": 3,
-    "tendencia_posicion": 0,
-    "partidos": 6,
-    "ganados": 2,
-    "empatados": 1,
-    "perdidos": 3,
-    "puntos": 7,
-    "goles_favor": 6,
-    "goles_contra": 5,
-    "goles_diff": 1,
-    "goles_favor_promedio": 1.0,
-    "goles_contra_promedio": 0.833,
-    "competencias": {
-      "conmebol.libertadores": {
-        "partidos": 6,
-        "ganados": 2,
-        "empatados": 1,
-        "perdidos": 3,
-        "goles_favor": 6,
-        "goles_contra": 5,
-        "goles_favor_promedio": 1.0,
-        "goles_contra_promedio": 0.833,
-        "partidos_local": 3,
-        "ganados_local": 1,
-        "empatados_local": 1,
-        "perdidos_local": 1,
-        "win_rate_local": 0.333,
-        "partidos_visita": 3,
-        "ganados_visita": 1,
-        "empatados_visita": 0,
-        "perdidos_visita": 2,
-        "win_rate_visita": 0.333,
-        "ultimos_5": [
-          "L",
-          "D",
-          "L",
-          "L",
-          "W"
-        ],
-        "imbatido_streak": 0
-      }
-    },
-    "forma_ponderada": 0.1845,
-    "forma_liga": 0.1845,
-    "ultimos_5_liga": [
-      "L",
-      "D",
-      "L",
-      "L",
-      "W"
-    ],
-    "imbatido_streak": 0,
-    "forma_liga_local": 0.61,
-    "ultimos_5_liga_local": [
-      "L",
-      "W",
-      "W",
-      "W",
-      "D"
-    ],
-    "liga_local_slug": "arg.1"
-  },
-  "bolivar": {
-    "nombre": "Bolívar",
-    "abreviacion": "BOL",
-    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2681.png",
-    "posicion": 3,
-    "posicion_anterior": 3,
-    "tendencia_posicion": 0,
-    "partidos": 6,
-    "ganados": 1,
-    "empatados": 2,
-    "perdidos": 3,
-    "puntos": 5,
-    "goles_favor": 6,
-    "goles_contra": 8,
-    "goles_diff": -2,
-    "goles_favor_promedio": 1.0,
-    "goles_contra_promedio": 1.333,
-    "competencias": {
-      "conmebol.libertadores": {
-        "partidos": 6,
-        "ganados": 1,
-        "empatados": 2,
-        "perdidos": 3,
-        "goles_favor": 6,
-        "goles_contra": 8,
-        "goles_favor_promedio": 1.0,
-        "goles_contra_promedio": 1.333,
-        "partidos_local": 3,
-        "ganados_local": 1,
-        "empatados_local": 1,
-        "perdidos_local": 1,
-        "win_rate_local": 0.333,
-        "partidos_visita": 3,
-        "ganados_visita": 0,
-        "empatados_visita": 1,
-        "perdidos_visita": 2,
-        "win_rate_visita": 0.0,
-        "ultimos_5": [
-          "L",
-          "L",
-          "D",
-          "W",
-          "D"
-        ],
-        "imbatido_streak": 0
-      }
-    },
-    "forma_ponderada": 0.234,
-    "forma_liga": 0.234,
-    "ultimos_5_liga": [
-      "L",
-      "L",
-      "D",
-      "W",
-      "D"
-    ],
-    "imbatido_streak": 0,
-    "forma_liga_local": 0.0,
-    "ultimos_5_liga_local": [],
-    "liga_local_slug": null
-  },
-  "sportingcristal": {
-    "nombre": "Sporting Cristal",
-    "abreviacion": "SCR",
-    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2673.png",
-    "posicion": 3,
-    "posicion_anterior": 3,
-    "tendencia_posicion": 0,
-    "partidos": 10,
-    "ganados": 4,
-    "empatados": 1,
-    "perdidos": 5,
-    "puntos": 6,
-    "goles_favor": 10,
-    "goles_contra": 13,
-    "goles_diff": -3,
-    "goles_favor_promedio": 1.0,
-    "goles_contra_promedio": 1.3,
-    "competencias": {
-      "conmebol.libertadores": {
-        "partidos": 10,
-        "ganados": 4,
-        "empatados": 1,
-        "perdidos": 5,
-        "goles_favor": 10,
-        "goles_contra": 13,
-        "goles_favor_promedio": 1.0,
-        "goles_contra_promedio": 1.3,
-        "partidos_local": 5,
-        "ganados_local": 3,
-        "empatados_local": 0,
-        "perdidos_local": 2,
-        "win_rate_local": 0.6,
-        "partidos_visita": 5,
-        "ganados_visita": 1,
-        "empatados_visita": 1,
-        "perdidos_visita": 3,
-        "win_rate_visita": 0.2,
-        "ultimos_5": [
-          "L",
-          "L",
-          "L",
-          "W",
-          "L"
-        ],
-        "imbatido_streak": 0
-      }
-    },
-    "forma_ponderada": 0.108,
-    "forma_liga": 0.108,
-    "ultimos_5_liga": [
-      "L",
-      "L",
-      "L",
-      "W",
-      "L"
-    ],
-    "imbatido_streak": 0,
-    "forma_liga_local": 0.59,
-    "ultimos_5_liga_local": [
-      "W",
-      "L",
-      "W",
-      "L",
-      "D"
-    ],
-    "liga_local_slug": "per.1"
-  },
-  "lanus": {
-    "nombre": "Lanús",
-    "abreviacion": "LAN",
-    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/12.png",
-    "posicion": 3,
-    "posicion_anterior": 3,
-    "tendencia_posicion": 0,
-    "partidos": 6,
-    "ganados": 3,
-    "empatados": 0,
-    "perdidos": 3,
-    "puntos": 9,
-    "goles_favor": 3,
-    "goles_contra": 7,
-    "goles_diff": -4,
-    "goles_favor_promedio": 0.5,
-    "goles_contra_promedio": 1.167,
-    "competencias": {
-      "conmebol.libertadores": {
-        "partidos": 6,
-        "ganados": 3,
-        "empatados": 0,
-        "perdidos": 3,
-        "goles_favor": 3,
-        "goles_contra": 7,
-        "goles_favor_promedio": 0.5,
-        "goles_contra_promedio": 1.167,
-        "partidos_local": 3,
-        "ganados_local": 3,
-        "empatados_local": 0,
-        "perdidos_local": 0,
-        "win_rate_local": 1.0,
-        "partidos_visita": 3,
-        "ganados_visita": 0,
-        "empatados_visita": 0,
-        "perdidos_visita": 3,
-        "win_rate_visita": 0.0,
-        "ultimos_5": [
-          "W",
-          "L",
-          "L",
-          "W",
-          "W"
-        ],
-        "imbatido_streak": 1
-      }
-    },
-    "forma_ponderada": 0.495,
-    "forma_liga": 0.495,
-    "ultimos_5_liga": [
-      "W",
-      "L",
-      "L",
-      "W",
-      "W"
-    ],
-    "imbatido_streak": 1,
-    "forma_liga_local": 0.305,
-    "ultimos_5_liga_local": [
-      "L",
-      "D",
-      "D",
-      "L",
-      "W"
-    ],
-    "liga_local_slug": "arg.1"
-  },
-  "independientemedellin": {
-    "nombre": "Independiente Medellín",
-    "abreviacion": "DIM",
-    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2690.png",
-    "posicion": 3,
-    "posicion_anterior": 3,
-    "tendencia_posicion": 0,
-    "partidos": 10,
-    "ganados": 4,
-    "empatados": 3,
-    "perdidos": 3,
-    "puntos": 7,
-    "goles_favor": 11,
-    "goles_contra": 14,
-    "goles_diff": -3,
-    "goles_favor_promedio": 1.1,
-    "goles_contra_promedio": 1.4,
-    "competencias": {
-      "conmebol.libertadores": {
-        "partidos": 10,
-        "ganados": 4,
-        "empatados": 3,
-        "perdidos": 3,
-        "goles_favor": 11,
-        "goles_contra": 14,
-        "goles_favor_promedio": 1.1,
-        "goles_contra_promedio": 1.4,
-        "partidos_local": 5,
-        "ganados_local": 2,
-        "empatados_local": 2,
-        "perdidos_local": 1,
-        "win_rate_local": 0.4,
-        "partidos_visita": 5,
-        "ganados_visita": 2,
-        "empatados_visita": 1,
-        "perdidos_visita": 2,
-        "win_rate_visita": 0.4,
-        "ultimos_5": [
-          "L",
-          "W",
-          "L",
-          "W",
-          "L"
-        ],
-        "imbatido_streak": 0
-      }
-    },
-    "forma_ponderada": 0.333,
-    "forma_liga": 0.333,
-    "ultimos_5_liga": [
-      "L",
-      "W",
-      "L",
-      "W",
-      "L"
-    ],
-    "imbatido_streak": 0,
-    "forma_liga_local": 0.57,
-    "ultimos_5_liga_local": [
-      "L",
-      "W",
-      "W",
-      "W",
-      "L"
-    ],
-    "liga_local_slug": "col.1"
-  },
-  "ucvfc": {
-    "nombre": "UCV FC",
-    "abreviacion": "UCV",
-    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/10094.png",
-    "posicion": 3,
-    "posicion_anterior": 3,
-    "tendencia_posicion": 0,
-    "partidos": 6,
-    "ganados": 3,
-    "empatados": 0,
-    "perdidos": 3,
-    "puntos": 9,
-    "goles_favor": 7,
-    "goles_contra": 11,
-    "goles_diff": -4,
-    "goles_favor_promedio": 1.167,
-    "goles_contra_promedio": 1.833,
-    "competencias": {
-      "conmebol.libertadores": {
-        "partidos": 6,
-        "ganados": 3,
-        "empatados": 0,
-        "perdidos": 3,
-        "goles_favor": 7,
-        "goles_contra": 11,
-        "goles_favor_promedio": 1.167,
-        "goles_contra_promedio": 1.833,
-        "partidos_local": 3,
-        "ganados_local": 2,
-        "empatados_local": 0,
-        "perdidos_local": 1,
-        "win_rate_local": 0.667,
-        "partidos_visita": 3,
-        "ganados_visita": 1,
-        "empatados_visita": 0,
-        "perdidos_visita": 2,
-        "win_rate_visita": 0.333,
-        "ultimos_5": [
-          "W",
-          "L",
-          "W",
-          "L",
-          "L"
-        ],
-        "imbatido_streak": 1
-      }
-    },
-    "forma_ponderada": 0.495,
-    "forma_liga": 0.495,
-    "ultimos_5_liga": [
-      "W",
-      "L",
-      "W",
-      "L",
-      "L"
-    ],
-    "imbatido_streak": 1,
-    "forma_liga_local": 0.24,
-    "ultimos_5_liga_local": [
-      "L",
-      "L",
-      "D",
-      "D",
-      "W"
-    ],
-    "liga_local_slug": "ven.1"
-  },
-  "nacional": {
-    "nombre": "Nacional",
-    "abreviacion": "NAC",
-    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2684.png",
-    "posicion": 3,
-    "posicion_anterior": 3,
-    "tendencia_posicion": 0,
-    "partidos": 6,
-    "ganados": 2,
-    "empatados": 2,
-    "perdidos": 2,
-    "puntos": 8,
-    "goles_favor": 7,
-    "goles_contra": 9,
-    "goles_diff": -2,
-    "goles_favor_promedio": 1.167,
-    "goles_contra_promedio": 1.5,
-    "competencias": {
-      "conmebol.libertadores": {
-        "partidos": 6,
-        "ganados": 2,
-        "empatados": 2,
-        "perdidos": 2,
-        "goles_favor": 7,
-        "goles_contra": 9,
-        "goles_favor_promedio": 1.167,
-        "goles_contra_promedio": 1.5,
-        "partidos_local": 3,
-        "ganados_local": 2,
-        "empatados_local": 1,
-        "perdidos_local": 0,
-        "win_rate_local": 0.667,
-        "partidos_visita": 3,
-        "ganados_visita": 0,
-        "empatados_visita": 1,
-        "perdidos_visita": 2,
-        "win_rate_visita": 0.0,
-        "ultimos_5": [
-          "W",
-          "D",
-          "L",
-          "L",
-          "W"
-        ],
-        "imbatido_streak": 2
-      }
-    },
-    "forma_ponderada": 0.4995,
-    "forma_liga": 0.4995,
-    "ultimos_5_liga": [
-      "W",
-      "D",
-      "L",
-      "L",
-      "W"
-    ],
-    "imbatido_streak": 2,
-    "forma_liga_local": 0.405,
-    "ultimos_5_liga_local": [
-      "L",
-      "D",
-      "W",
-      "L",
-      "W"
-    ],
-    "liga_local_slug": "uru.1"
-  },
   "alianzaatletico": {
     "nombre": "Alianza Atlético",
     "abreviacion": "AAT",
@@ -586,13 +56,13 @@
       "L"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.22,
+    "forma_liga_local": 0.49,
     "ultimos_5_liga_local": [
+      "W",
       "L",
       "L",
       "D",
-      "W",
-      "L"
+      "W"
     ],
     "liga_local_slug": "per.1"
   },
@@ -603,63 +73,63 @@
     "posicion": 2,
     "posicion_anterior": 2,
     "tendencia_posicion": 0,
-    "partidos": 6,
-    "ganados": 2,
+    "partidos": 7,
+    "ganados": 3,
     "empatados": 3,
     "perdidos": 1,
     "puntos": 9,
-    "goles_favor": 8,
+    "goles_favor": 11,
     "goles_contra": 5,
-    "goles_diff": 3,
-    "goles_favor_promedio": 1.333,
-    "goles_contra_promedio": 0.833,
+    "goles_diff": 6,
+    "goles_favor_promedio": 1.571,
+    "goles_contra_promedio": 0.714,
     "competencias": {
       "conmebol.sudamericana": {
-        "partidos": 6,
-        "ganados": 2,
+        "partidos": 7,
+        "ganados": 3,
         "empatados": 3,
         "perdidos": 1,
-        "goles_favor": 8,
+        "goles_favor": 11,
         "goles_contra": 5,
-        "goles_favor_promedio": 1.333,
-        "goles_contra_promedio": 0.833,
+        "goles_favor_promedio": 1.571,
+        "goles_contra_promedio": 0.714,
         "partidos_local": 3,
         "ganados_local": 2,
         "empatados_local": 0,
         "perdidos_local": 1,
         "win_rate_local": 0.667,
-        "partidos_visita": 3,
-        "ganados_visita": 0,
+        "partidos_visita": 4,
+        "ganados_visita": 1,
         "empatados_visita": 3,
         "perdidos_visita": 0,
-        "win_rate_visita": 0.0,
+        "win_rate_visita": 0.25,
         "ultimos_5": [
           "W",
-          "D",
-          "D",
           "W",
-          "L"
+          "D",
+          "D",
+          "W"
         ],
-        "imbatido_streak": 4
+        "imbatido_streak": 5
       }
     },
-    "forma_ponderada": 0.556,
-    "forma_liga": 0.556,
+    "forma_ponderada": 0.672,
+    "forma_liga": 0.672,
     "ultimos_5_liga": [
       "W",
-      "D",
-      "D",
       "W",
-      "L"
+      "D",
+      "D",
+      "W"
     ],
-    "imbatido_streak": 4,
-    "forma_liga_local": 0.335,
+    "imbatido_streak": 5,
+    "forma_liga_local": 0.225,
     "ultimos_5_liga_local": [
+      "L",
       "D",
       "L",
       "D",
-      "D",
-      "L"
+      "D"
     ],
     "liga_local_slug": "arg.1"
   },
@@ -720,13 +190,13 @@
       "W"
     ],
     "imbatido_streak": 3,
-    "forma_liga_local": 0.405,
+    "forma_liga_local": 0.57,
     "ultimos_5_liga_local": [
+      "W",
       "L",
       "D",
       "W",
-      "L",
-      "W"
+      "L"
     ],
     "liga_local_slug": "col.1"
   },
@@ -787,13 +257,13 @@
       "W"
     ],
     "imbatido_streak": 7,
-    "forma_liga_local": 0.61,
+    "forma_liga_local": 0.8,
     "ultimos_5_liga_local": [
+      "W",
+      "W",
       "L",
       "W",
-      "W",
-      "W",
-      "D"
+      "W"
     ],
     "liga_local_slug": "ecu.1"
   },
@@ -804,63 +274,63 @@
     "posicion": 2,
     "posicion_anterior": 2,
     "tendencia_posicion": 0,
-    "partidos": 7,
+    "partidos": 8,
     "ganados": 3,
     "empatados": 2,
-    "perdidos": 2,
+    "perdidos": 3,
     "puntos": 8,
     "goles_favor": 6,
-    "goles_contra": 8,
-    "goles_diff": -2,
-    "goles_favor_promedio": 0.857,
-    "goles_contra_promedio": 1.143,
+    "goles_contra": 10,
+    "goles_diff": -4,
+    "goles_favor_promedio": 0.75,
+    "goles_contra_promedio": 1.25,
     "competencias": {
       "conmebol.sudamericana": {
-        "partidos": 7,
+        "partidos": 8,
         "ganados": 3,
         "empatados": 2,
-        "perdidos": 2,
+        "perdidos": 3,
         "goles_favor": 6,
-        "goles_contra": 8,
-        "goles_favor_promedio": 0.857,
-        "goles_contra_promedio": 1.143,
+        "goles_contra": 10,
+        "goles_favor_promedio": 0.75,
+        "goles_contra_promedio": 1.25,
         "partidos_local": 4,
         "ganados_local": 3,
         "empatados_local": 1,
         "perdidos_local": 0,
         "win_rate_local": 0.75,
-        "partidos_visita": 3,
+        "partidos_visita": 4,
         "ganados_visita": 0,
         "empatados_visita": 1,
-        "perdidos_visita": 2,
+        "perdidos_visita": 3,
         "win_rate_visita": 0.0,
         "ultimos_5": [
+          "L",
           "D",
           "L",
           "L",
-          "W",
           "W"
         ],
-        "imbatido_streak": 1
+        "imbatido_streak": 0
       }
     },
-    "forma_ponderada": 0.3,
-    "forma_liga": 0.3,
+    "forma_ponderada": 0.164,
+    "forma_liga": 0.164,
     "ultimos_5_liga": [
+      "L",
       "D",
       "L",
       "L",
-      "W",
       "W"
     ],
-    "imbatido_streak": 1,
-    "forma_liga_local": 0.43,
+    "imbatido_streak": 0,
+    "forma_liga_local": 0.26,
     "ultimos_5_liga_local": [
+      "L",
       "L",
       "W",
       "D",
-      "L",
-      "W"
+      "L"
     ],
     "liga_local_slug": "per.1"
   },
@@ -921,12 +391,12 @@
       "W"
     ],
     "imbatido_streak": 3,
-    "forma_liga_local": 0.69,
+    "forma_liga_local": 0.755,
     "ultimos_5_liga_local": [
       "W",
-      "L",
-      "W",
       "D",
+      "W",
+      "L",
       "W"
     ],
     "liga_local_slug": "bra.1"
@@ -1122,13 +592,13 @@
       "W"
     ],
     "imbatido_streak": 6,
-    "forma_liga_local": 0.165,
+    "forma_liga_local": 0.235,
     "ultimos_5_liga_local": [
-      "L",
       "D",
       "L",
       "L",
-      "D"
+      "D",
+      "L"
     ],
     "liga_local_slug": "bra.1"
   },
@@ -1189,13 +659,13 @@
       "W"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.485,
+    "forma_liga_local": 0.365,
     "ultimos_5_liga_local": [
+      "L",
       "D",
       "W",
       "L",
-      "D",
-      "L"
+      "D"
     ],
     "liga_local_slug": "col.1"
   },
@@ -1206,63 +676,63 @@
     "posicion": 2,
     "posicion_anterior": 2,
     "tendencia_posicion": 0,
-    "partidos": 6,
+    "partidos": 7,
     "ganados": 3,
     "empatados": 1,
-    "perdidos": 2,
+    "perdidos": 3,
     "puntos": 10,
     "goles_favor": 8,
-    "goles_contra": 6,
-    "goles_diff": 2,
-    "goles_favor_promedio": 1.333,
+    "goles_contra": 7,
+    "goles_diff": 1,
+    "goles_favor_promedio": 1.143,
     "goles_contra_promedio": 1.0,
     "competencias": {
       "conmebol.sudamericana": {
-        "partidos": 6,
+        "partidos": 7,
         "ganados": 3,
         "empatados": 1,
-        "perdidos": 2,
+        "perdidos": 3,
         "goles_favor": 8,
-        "goles_contra": 6,
-        "goles_favor_promedio": 1.333,
+        "goles_contra": 7,
+        "goles_favor_promedio": 1.143,
         "goles_contra_promedio": 1.0,
         "partidos_local": 3,
         "ganados_local": 2,
         "empatados_local": 1,
         "perdidos_local": 0,
         "win_rate_local": 0.667,
-        "partidos_visita": 3,
+        "partidos_visita": 4,
         "ganados_visita": 1,
         "empatados_visita": 0,
-        "perdidos_visita": 2,
-        "win_rate_visita": 0.333,
+        "perdidos_visita": 3,
+        "win_rate_visita": 0.25,
         "ultimos_5": [
+          "L",
           "W",
           "L",
           "D",
-          "W",
-          "L"
+          "W"
         ],
-        "imbatido_streak": 1
+        "imbatido_streak": 0
       }
     },
-    "forma_ponderada": 0.456,
-    "forma_liga": 0.456,
+    "forma_ponderada": 0.312,
+    "forma_liga": 0.312,
     "ultimos_5_liga": [
+      "L",
       "W",
       "L",
       "D",
-      "W",
-      "L"
+      "W"
     ],
-    "imbatido_streak": 1,
-    "forma_liga_local": 0.205,
+    "imbatido_streak": 0,
+    "forma_liga_local": 0.1,
     "ultimos_5_liga_local": [
       "L",
+      "L",
       "D",
       "L",
-      "L",
-      "W"
+      "L"
     ],
     "liga_local_slug": "chi.1"
   },
@@ -1390,12 +860,12 @@
       "W"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.3,
+    "forma_liga_local": 0.16,
     "ultimos_5_liga_local": [
       "L",
       "L",
+      "L",
       "W",
-      "D",
       "D"
     ],
     "liga_local_slug": "arg.1"
@@ -1407,63 +877,63 @@
     "posicion": 2,
     "posicion_anterior": 2,
     "tendencia_posicion": 0,
-    "partidos": 6,
-    "ganados": 1,
+    "partidos": 7,
+    "ganados": 2,
     "empatados": 4,
     "perdidos": 1,
     "puntos": 7,
-    "goles_favor": 8,
-    "goles_contra": 6,
-    "goles_diff": 2,
-    "goles_favor_promedio": 1.333,
+    "goles_favor": 12,
+    "goles_contra": 7,
+    "goles_diff": 5,
+    "goles_favor_promedio": 1.714,
     "goles_contra_promedio": 1.0,
     "competencias": {
       "conmebol.sudamericana": {
-        "partidos": 6,
-        "ganados": 1,
+        "partidos": 7,
+        "ganados": 2,
         "empatados": 4,
         "perdidos": 1,
-        "goles_favor": 8,
-        "goles_contra": 6,
-        "goles_favor_promedio": 1.333,
+        "goles_favor": 12,
+        "goles_contra": 7,
+        "goles_favor_promedio": 1.714,
         "goles_contra_promedio": 1.0,
         "partidos_local": 3,
         "ganados_local": 1,
         "empatados_local": 2,
         "perdidos_local": 0,
         "win_rate_local": 0.333,
-        "partidos_visita": 3,
-        "ganados_visita": 0,
+        "partidos_visita": 4,
+        "ganados_visita": 1,
         "empatados_visita": 2,
         "perdidos_visita": 1,
-        "win_rate_visita": 0.0,
+        "win_rate_visita": 0.25,
         "ultimos_5": [
           "W",
-          "D",
+          "W",
           "D",
           "D",
           "D"
         ],
-        "imbatido_streak": 5
+        "imbatido_streak": 6
       }
     },
-    "forma_ponderada": 0.54,
-    "forma_liga": 0.54,
+    "forma_ponderada": 0.64,
+    "forma_liga": 0.64,
     "ultimos_5_liga": [
       "W",
-      "D",
+      "W",
       "D",
       "D",
       "D"
     ],
-    "imbatido_streak": 5,
-    "forma_liga_local": 0.33,
+    "imbatido_streak": 6,
+    "forma_liga_local": 0.375,
     "ultimos_5_liga_local": [
+      "D",
       "L",
       "W",
       "L",
-      "L",
-      "W"
+      "L"
     ],
     "liga_local_slug": "bra.1"
   },
@@ -1524,13 +994,13 @@
       "L"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.205,
+    "forma_liga_local": 0.41,
     "ultimos_5_liga_local": [
+      "W",
+      "L",
       "L",
       "D",
-      "L",
-      "L",
-      "W"
+      "L"
     ],
     "liga_local_slug": "ecu.1"
   },
@@ -1652,11 +1122,11 @@
       "L"
     ],
     "imbatido_streak": 2,
-    "forma_liga_local": 0.45,
+    "forma_liga_local": 0.65,
     "ultimos_5_liga_local": [
+      "W",
       "L",
       "W",
-      "D",
       "D",
       "D"
     ],
@@ -1669,54 +1139,54 @@
     "posicion": 2,
     "posicion_anterior": 2,
     "tendencia_posicion": 0,
-    "partidos": 7,
+    "partidos": 8,
     "ganados": 3,
     "empatados": 3,
-    "perdidos": 1,
+    "perdidos": 2,
     "puntos": 9,
     "goles_favor": 9,
-    "goles_contra": 9,
-    "goles_diff": 0,
-    "goles_favor_promedio": 1.286,
-    "goles_contra_promedio": 1.286,
+    "goles_contra": 11,
+    "goles_diff": -2,
+    "goles_favor_promedio": 1.125,
+    "goles_contra_promedio": 1.375,
     "competencias": {
       "conmebol.sudamericana": {
-        "partidos": 7,
+        "partidos": 8,
         "ganados": 3,
         "empatados": 3,
-        "perdidos": 1,
+        "perdidos": 2,
         "goles_favor": 9,
-        "goles_contra": 9,
-        "goles_favor_promedio": 1.286,
-        "goles_contra_promedio": 1.286,
+        "goles_contra": 11,
+        "goles_favor_promedio": 1.125,
+        "goles_contra_promedio": 1.375,
         "partidos_local": 4,
         "ganados_local": 2,
         "empatados_local": 1,
         "perdidos_local": 1,
         "win_rate_local": 0.5,
-        "partidos_visita": 3,
+        "partidos_visita": 4,
         "ganados_visita": 1,
         "empatados_visita": 2,
-        "perdidos_visita": 0,
-        "win_rate_visita": 0.333,
+        "perdidos_visita": 1,
+        "win_rate_visita": 0.25,
         "ultimos_5": [
+          "L",
           "L",
           "D",
           "W",
-          "D",
-          "W"
+          "D"
         ],
         "imbatido_streak": 0
       }
     },
-    "forma_ponderada": 0.372,
-    "forma_liga": 0.372,
+    "forma_ponderada": 0.208,
+    "forma_liga": 0.208,
     "ultimos_5_liga": [
+      "L",
       "L",
       "D",
       "W",
-      "D",
-      "W"
+      "D"
     ],
     "imbatido_streak": 0,
     "forma_liga_local": 0.635,
@@ -1786,12 +1256,12 @@
       "W"
     ],
     "imbatido_streak": 6,
-    "forma_liga_local": 0.61,
+    "forma_liga_local": 0.715,
     "ultimos_5_liga_local": [
       "W",
-      "L",
       "D",
       "W",
+      "L",
       "D"
     ],
     "liga_local_slug": "bra.1"
@@ -1914,13 +1384,13 @@
       "L"
     ],
     "imbatido_streak": 1,
-    "forma_liga_local": 0.795,
+    "forma_liga_local": 0.55,
     "ultimos_5_liga_local": [
+      "L",
       "W",
       "D",
       "W",
-      "W",
-      "L"
+      "W"
     ],
     "liga_local_slug": "chi.1"
   },
@@ -1931,63 +1401,63 @@
     "posicion": 2,
     "posicion_anterior": 2,
     "tendencia_posicion": 0,
-    "partidos": 6,
+    "partidos": 7,
     "ganados": 3,
     "empatados": 2,
-    "perdidos": 1,
+    "perdidos": 2,
     "puntos": 11,
-    "goles_favor": 8,
-    "goles_contra": 3,
-    "goles_diff": 5,
-    "goles_favor_promedio": 1.333,
-    "goles_contra_promedio": 0.5,
+    "goles_favor": 10,
+    "goles_contra": 6,
+    "goles_diff": 4,
+    "goles_favor_promedio": 1.429,
+    "goles_contra_promedio": 0.857,
     "competencias": {
       "conmebol.sudamericana": {
-        "partidos": 6,
+        "partidos": 7,
         "ganados": 3,
         "empatados": 2,
-        "perdidos": 1,
-        "goles_favor": 8,
-        "goles_contra": 3,
-        "goles_favor_promedio": 1.333,
-        "goles_contra_promedio": 0.5,
+        "perdidos": 2,
+        "goles_favor": 10,
+        "goles_contra": 6,
+        "goles_favor_promedio": 1.429,
+        "goles_contra_promedio": 0.857,
         "partidos_local": 3,
         "ganados_local": 2,
         "empatados_local": 1,
         "perdidos_local": 0,
         "win_rate_local": 0.667,
-        "partidos_visita": 3,
+        "partidos_visita": 4,
         "ganados_visita": 1,
         "empatados_visita": 1,
-        "perdidos_visita": 1,
-        "win_rate_visita": 0.333,
+        "perdidos_visita": 2,
+        "win_rate_visita": 0.25,
         "ultimos_5": [
+          "L",
           "D",
           "W",
           "W",
-          "D",
-          "W"
+          "D"
         ],
-        "imbatido_streak": 5
+        "imbatido_streak": 0
       }
     },
-    "forma_ponderada": 0.612,
-    "forma_liga": 0.612,
+    "forma_ponderada": 0.388,
+    "forma_liga": 0.388,
     "ultimos_5_liga": [
+      "L",
       "D",
       "W",
       "W",
-      "D",
-      "W"
+      "D"
     ],
-    "imbatido_streak": 5,
-    "forma_liga_local": 0.26,
+    "imbatido_streak": 0,
+    "forma_liga_local": 0.335,
     "ultimos_5_liga_local": [
+      "D",
       "L",
       "L",
       "W",
-      "D",
-      "L"
+      "D"
     ],
     "liga_local_slug": "bra.1"
   },
@@ -2048,11 +1518,11 @@
       "L"
     ],
     "imbatido_streak": 1,
-    "forma_liga_local": 0.425,
+    "forma_liga_local": 0.675,
     "ultimos_5_liga_local": [
+      "W",
       "D",
       "W",
-      "L",
       "L",
       "L"
     ],
@@ -2115,13 +1585,13 @@
       "W"
     ],
     "imbatido_streak": 3,
-    "forma_liga_local": 0.67,
+    "forma_liga_local": 0.8,
     "ultimos_5_liga_local": [
+      "W",
       "W",
       "L",
       "W",
-      "W",
-      "L"
+      "W"
     ],
     "liga_local_slug": "uru.1"
   },
@@ -2193,63 +1663,63 @@
     "posicion": 2,
     "posicion_anterior": 2,
     "tendencia_posicion": 0,
-    "partidos": 6,
+    "partidos": 7,
     "ganados": 3,
-    "empatados": 1,
+    "empatados": 2,
     "perdidos": 2,
     "puntos": 10,
-    "goles_favor": 10,
-    "goles_contra": 6,
+    "goles_favor": 12,
+    "goles_contra": 8,
     "goles_diff": 4,
-    "goles_favor_promedio": 1.667,
-    "goles_contra_promedio": 1.0,
+    "goles_favor_promedio": 1.714,
+    "goles_contra_promedio": 1.143,
     "competencias": {
       "conmebol.sudamericana": {
-        "partidos": 6,
+        "partidos": 7,
         "ganados": 3,
-        "empatados": 1,
+        "empatados": 2,
         "perdidos": 2,
-        "goles_favor": 10,
-        "goles_contra": 6,
-        "goles_favor_promedio": 1.667,
-        "goles_contra_promedio": 1.0,
+        "goles_favor": 12,
+        "goles_contra": 8,
+        "goles_favor_promedio": 1.714,
+        "goles_contra_promedio": 1.143,
         "partidos_local": 3,
         "ganados_local": 2,
         "empatados_local": 0,
         "perdidos_local": 1,
         "win_rate_local": 0.667,
-        "partidos_visita": 3,
+        "partidos_visita": 4,
         "ganados_visita": 1,
-        "empatados_visita": 1,
+        "empatados_visita": 2,
         "perdidos_visita": 1,
-        "win_rate_visita": 0.333,
+        "win_rate_visita": 0.25,
         "ultimos_5": [
+          "D",
           "W",
           "L",
           "W",
-          "W",
-          "L"
+          "W"
         ],
-        "imbatido_streak": 1
+        "imbatido_streak": 2
       }
     },
-    "forma_ponderada": 0.536,
-    "forma_liga": 0.536,
+    "forma_ponderada": 0.5,
+    "forma_liga": 0.5,
     "ultimos_5_liga": [
+      "D",
       "W",
       "L",
       "W",
-      "W",
-      "L"
-    ],
-    "imbatido_streak": 1,
-    "forma_liga_local": 0.08,
-    "ultimos_5_liga_local": [
-      "L",
-      "L",
-      "L",
-      "L",
       "W"
+    ],
+    "imbatido_streak": 2,
+    "forma_liga_local": 0.175,
+    "ultimos_5_liga_local": [
+      "D",
+      "L",
+      "L",
+      "L",
+      "L"
     ],
     "liga_local_slug": "bra.1"
   },
@@ -2310,13 +1780,13 @@
       "W"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.54,
+    "forma_liga_local": 0.345,
     "ultimos_5_liga_local": [
+      "L",
       "D",
       "D",
       "W",
-      "L",
-      "D"
+      "L"
     ],
     "liga_local_slug": "chi.1"
   },
@@ -2377,13 +1847,13 @@
       "D"
     ],
     "imbatido_streak": 0,
-    "forma_liga_local": 0.345,
+    "forma_liga_local": 0.59,
     "ultimos_5_liga_local": [
+      "W",
       "L",
       "D",
       "D",
-      "W",
-      "L"
+      "W"
     ],
     "liga_local_slug": "arg.1"
   },
@@ -2444,13 +1914,13 @@
       "W"
     ],
     "imbatido_streak": 6,
-    "forma_liga_local": 0.57,
+    "forma_liga_local": 0.4,
     "ultimos_5_liga_local": [
+      "L",
       "L",
       "W",
       "W",
-      "W",
-      "L"
+      "W"
     ],
     "liga_local_slug": "arg.1"
   },
@@ -2589,64 +2059,197 @@
     "posicion": 2,
     "posicion_anterior": 2,
     "tendencia_posicion": 0,
-    "partidos": 6,
+    "partidos": 7,
     "ganados": 3,
-    "empatados": 1,
+    "empatados": 2,
     "perdidos": 2,
     "puntos": 10,
     "goles_favor": 12,
     "goles_contra": 5,
     "goles_diff": 7,
-    "goles_favor_promedio": 2.0,
-    "goles_contra_promedio": 0.833,
+    "goles_favor_promedio": 1.714,
+    "goles_contra_promedio": 0.714,
     "competencias": {
       "conmebol.sudamericana": {
-        "partidos": 6,
+        "partidos": 7,
         "ganados": 3,
-        "empatados": 1,
+        "empatados": 2,
         "perdidos": 2,
         "goles_favor": 12,
         "goles_contra": 5,
-        "goles_favor_promedio": 2.0,
-        "goles_contra_promedio": 0.833,
+        "goles_favor_promedio": 1.714,
+        "goles_contra_promedio": 0.714,
         "partidos_local": 3,
         "ganados_local": 2,
         "empatados_local": 0,
         "perdidos_local": 1,
         "win_rate_local": 0.667,
-        "partidos_visita": 3,
+        "partidos_visita": 4,
         "ganados_visita": 1,
-        "empatados_visita": 1,
+        "empatados_visita": 2,
         "perdidos_visita": 1,
-        "win_rate_visita": 0.333,
+        "win_rate_visita": 0.25,
         "ultimos_5": [
+          "D",
           "W",
           "D",
           "W",
-          "L",
-          "W"
+          "L"
         ],
-        "imbatido_streak": 3
+        "imbatido_streak": 4
       }
     },
-    "forma_ponderada": 0.604,
-    "forma_liga": 0.604,
+    "forma_ponderada": 0.516,
+    "forma_liga": 0.516,
     "ultimos_5_liga": [
-      "W",
       "D",
       "W",
-      "L",
-      "W"
-    ],
-    "imbatido_streak": 3,
-    "forma_liga_local": 0.745,
-    "ultimos_5_liga_local": [
       "D",
-      "W",
-      "W",
       "W",
       "L"
     ],
+    "imbatido_streak": 4,
+    "forma_liga_local": 0.7,
+    "ultimos_5_liga_local": [
+      "D",
+      "D",
+      "W",
+      "W",
+      "W"
+    ],
     "liga_local_slug": "bra.1"
+  },
+    "independientemedellin": {
+    "nombre": "Independiente Medellín",
+    "abreviacion": "DIM",
+    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2690.png",
+    "posicion": 3,
+    "posicion_anterior": 3,
+    "tendencia_posicion": 0,
+    "partidos": 10,
+    "ganados": 4,
+    "empatados": 3,
+    "perdidos": 3,
+    "puntos": 7,
+    "goles_favor": 11,
+    "goles_contra": 14,
+    "goles_diff": -3,
+    "goles_favor_promedio": 1.1,
+    "goles_contra_promedio": 1.4,
+    "competencias": {
+      "conmebol.libertadores": {
+        "partidos": 10,
+        "ganados": 4,
+        "empatados": 3,
+        "perdidos": 3,
+        "goles_favor": 11,
+        "goles_contra": 14,
+        "goles_favor_promedio": 1.1,
+        "goles_contra_promedio": 1.4,
+        "partidos_local": 5,
+        "ganados_local": 2,
+        "empatados_local": 2,
+        "perdidos_local": 1,
+        "win_rate_local": 0.4,
+        "partidos_visita": 5,
+        "ganados_visita": 2,
+        "empatados_visita": 1,
+        "perdidos_visita": 2,
+        "win_rate_visita": 0.4,
+        "ultimos_5": [
+          "L",
+          "W",
+          "L",
+          "W",
+          "L"
+        ],
+        "imbatido_streak": 0
+      }
+    },
+    "forma_ponderada": 0.333,
+    "forma_liga": 0.333,
+    "ultimos_5_liga": [
+      "L",
+      "W",
+      "L",
+      "W",
+      "L"
+    ],
+    "imbatido_streak": 0,
+    "forma_liga_local": 0.75,
+    "ultimos_5_liga_local": [
+      "W",
+      "L",
+      "W",
+      "W",
+      "W"
+    ],
+    "liga_local_slug": "col.1"
+  },  "bocajuniors": {
+    "nombre": "Boca Juniors",
+    "abreviacion": "CABJ",
+    "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/5.png",
+    "posicion": 3,
+    "posicion_anterior": 3,
+    "tendencia_posicion": 0,
+    "partidos": 6,
+    "ganados": 2,
+    "empatados": 1,
+    "perdidos": 3,
+    "puntos": 7,
+    "goles_favor": 6,
+    "goles_contra": 5,
+    "goles_diff": 1,
+    "goles_favor_promedio": 1.0,
+    "goles_contra_promedio": 0.833,
+    "competencias": {
+      "conmebol.libertadores": {
+        "partidos": 6,
+        "ganados": 2,
+        "empatados": 1,
+        "perdidos": 3,
+        "goles_favor": 6,
+        "goles_contra": 5,
+        "goles_favor_promedio": 1.0,
+        "goles_contra_promedio": 0.833,
+        "partidos_local": 3,
+        "ganados_local": 1,
+        "empatados_local": 1,
+        "perdidos_local": 1,
+        "win_rate_local": 0.333,
+        "partidos_visita": 3,
+        "ganados_visita": 1,
+        "empatados_visita": 0,
+        "perdidos_visita": 2,
+        "win_rate_visita": 0.333,
+        "ultimos_5": [
+          "L",
+          "D",
+          "L",
+          "L",
+          "W"
+        ],
+        "imbatido_streak": 0
+      }
+    },
+    "forma_ponderada": 0.1845,
+    "forma_liga": 0.1845,
+    "ultimos_5_liga": [
+      "L",
+      "D",
+      "L",
+      "L",
+      "W"
+    ],
+    "imbatido_streak": 0,
+    "forma_liga_local": 0.4,
+    "ultimos_5_liga_local": [
+      "L",
+      "L",
+      "W",
+      "W",
+      "W"
+    ],
+    "liga_local_slug": "arg.1"
   }
 }
