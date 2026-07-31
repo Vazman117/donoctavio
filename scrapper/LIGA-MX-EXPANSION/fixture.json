@@ -56,15 +56,6 @@
       "equipo_visitante": "Leones Negros",
       "goles_local": null,
       "goles_visitante": null
-    },
-    {
-      "id_evento": "401887417",
-      "fecha": "2026-08-02T01:00Z",
-      "jornada_nombre": "MOR @ PIR",
-      "equipo_local": "Piratas",
-      "equipo_visitante": "Club Atlético Morelia",
-      "goles_local": null,
-      "goles_visitante": null
     }
   ]
 }

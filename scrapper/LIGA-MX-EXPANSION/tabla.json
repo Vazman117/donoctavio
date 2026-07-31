@@ -37,6 +37,18 @@
   },
   {
     "posicion": 4,
+    "equipo": "Dorados de Sinaloa",
+    "partidos": 1,
+    "ganados": 1,
+    "empatados": 0,
+    "perdidos": 0,
+    "goles_favor": 2,
+    "goles_contra": 0,
+    "diferencia_goles": 2,
+    "puntos": 3
+  },
+  {
+    "posicion": 5,
     "equipo": "Durango",
     "partidos": 1,
     "ganados": 1,
@@ -48,7 +60,7 @@
     "puntos": 3
   },
   {
-    "posicion": 5,
+    "posicion": 6,
     "equipo": "Correcaminos UAT",
     "partidos": 1,
     "ganados": 0,
@@ -60,7 +72,7 @@
     "puntos": 1
   },
   {
-    "posicion": 6,
+    "posicion": 7,
     "equipo": "Mineros de Zacatecas",
     "partidos": 1,
     "ganados": 0,
@@ -72,7 +84,7 @@
     "puntos": 1
   },
   {
-    "posicion": 7,
+    "posicion": 8,
     "equipo": "Club Jaiba Brava",
     "partidos": 1,
     "ganados": 0,
@@ -84,7 +96,7 @@
     "puntos": 1
   },
   {
-    "posicion": 8,
+    "posicion": 9,
     "equipo": "Piratas",
     "partidos": 1,
     "ganados": 0,
@@ -96,7 +108,7 @@
     "puntos": 1
   },
   {
-    "posicion": 9,
+    "posicion": 10,
     "equipo": "Cruz Azul Hidalgo",
     "partidos": 1,
     "ganados": 0,
@@ -108,7 +120,7 @@
     "puntos": 1
   },
   {
-    "posicion": 10,
+    "posicion": 11,
     "equipo": "Tapatío",
     "partidos": 1,
     "ganados": 0,
@@ -120,20 +132,8 @@
     "puntos": 1
   },
   {
-    "posicion": 11,
-    "equipo": "Cancún FC",
-    "partidos": 0,
-    "ganados": 0,
-    "empatados": 0,
-    "perdidos": 0,
-    "goles_favor": 0,
-    "goles_contra": 0,
-    "diferencia_goles": 0,
-    "puntos": 0
-  },
-  {
     "posicion": 12,
-    "equipo": "Dorados de Sinaloa",
+    "equipo": "Cancún FC",
     "partidos": 0,
     "ganados": 0,
     "empatados": 0,
@@ -182,13 +182,13 @@
   {
     "posicion": 16,
     "equipo": "Alebrijes de Oaxaca",
-    "partidos": 1,
+    "partidos": 2,
     "ganados": 0,
     "empatados": 0,
-    "perdidos": 1,
+    "perdidos": 2,
     "goles_favor": 0,
-    "goles_contra": 3,
-    "diferencia_goles": -3,
+    "goles_contra": 5,
+    "diferencia_goles": -5,
     "puntos": 0
   }
 ]

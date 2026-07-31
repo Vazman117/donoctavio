@@ -3,6 +3,68 @@
   "jornada": "day-block",
   "temporada": 2026,
   "partidos": [
-    
+    {
+      "id_evento": "761695",
+      "fecha": "2026-07-31T23:30Z",
+      "jornada_nombre": "TOR @ NYC",
+      "equipo_local": "New York City FC",
+      "equipo_visitante": "Toronto FC",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761697",
+      "fecha": "2026-08-01T23:30Z",
+      "jornada_nombre": "NE @ MTL",
+      "equipo_local": "CF Montréal",
+      "equipo_visitante": "New England Revolution",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761699",
+      "fecha": "2026-08-01T23:30Z",
+      "jornada_nombre": "NSH @ DC",
+      "equipo_local": "D.C. United",
+      "equipo_visitante": "Nashville SC",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761700",
+      "fecha": "2026-08-01T23:30Z",
+      "jornada_nombre": "SJ @ CIN",
+      "equipo_local": "FC Cincinnati",
+      "equipo_visitante": "San Jose Earthquakes",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761701",
+      "fecha": "2026-08-01T23:30Z",
+      "jornada_nombre": "CLB @ MIA",
+      "equipo_local": "Inter Miami CF",
+      "equipo_visitante": "Columbus Crew",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761702",
+      "fecha": "2026-08-01T23:30Z",
+      "jornada_nombre": "ATL @ PHI",
+      "equipo_local": "Philadelphia Union",
+      "equipo_visitante": "Atlanta United FC",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761696",
+      "fecha": "2026-08-01T23:30Z",
+      "jornada_nombre": "ORL @ RBNY",
+      "equipo_local": "Red Bull New York",
+      "equipo_visitante": "Orlando City SC",
+      "goles_local": null,
+      "goles_visitante": null
+    }
   ]
 }

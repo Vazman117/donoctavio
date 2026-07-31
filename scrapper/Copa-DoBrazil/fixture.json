@@ -1,0 +1,25 @@
+{
+  "liga": "bra.1",
+  "jornada": "day-block",
+  "temporada": 2026,
+  "partidos": [
+    {
+      "id_evento": "401841182",
+      "fecha": "2026-08-09T21:30Z",
+      "jornada_nombre": "CAP @ SAN",
+      "equipo_local": "Santos",
+      "equipo_visitante": "Athletico-PR",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401841187",
+      "fecha": "2026-08-09T22:30Z",
+      "jornada_nombre": "VIT @ FLA",
+      "equipo_local": "Flamengo",
+      "equipo_visitante": "Vitória",
+      "goles_local": null,
+      "goles_visitante": null
+    }
+  ]
+}

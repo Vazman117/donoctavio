@@ -307,6 +307,24 @@ PERFILES_TORNEO = {
         "es_eliminatoria":  True,
     },
 
+    "copa_brazil": {
+        "nombre":           "Copa Do Brazil",
+        "K_LOGISTICO":      3.7,
+        "MAX_FAVORITO":     0.54,
+        "ALPHA":            0.75,
+        "BETA":             0.25,
+        "TOTAL_EQUIPOS":    126,
+        "usa_h2h":          False,
+        "usa_experiencia":  False,
+        "usa_vuelta_casa":  True,
+        "experiencia_db":   {},
+        "PESO_BASE":        0.82,
+        "PESO_H2H":         0.00,
+        "PESO_EXPERIENCIA": 0.00,
+        "PESO_VUELTA_CASA": 0.18,
+        "es_eliminatoria":  True,
+    },
+
     # ── Fase regular genérica (para uso con el otro modelo) ─────────────────
     "fase_regular": {
         "nombre":           "Fase Regular",
@@ -1509,6 +1527,12 @@ DB_CONFIG = {
         "carpeta": "DFB-POKAL",
         "perfil": "dfb_pokal",
         "liga_key": "ger.dfb_pokal",
+        "salida": "partidos.json"
+    },
+    "copa_brazil":{
+        "carpeta": "Copa-DoBrazil",
+        "perfil": "copa_brazil",
+        "liga_key": "bra.copa_do_brazil",
         "salida": "partidos.json"
     }
 }

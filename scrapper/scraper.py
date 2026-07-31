@@ -51,6 +51,7 @@ PESO_COMPETENCIA = {
     "eng.fa":                 0.40,
     "esp.copa":               0.40,
     "ger.dfb_pokal":          0.40,
+    "bra.copa_do_brazil":     0.40,
     "fra.cup":                0.40,
     "mex.campeon":            0.40,
 }
@@ -223,6 +224,15 @@ LIGAS_CONFIG = {
         "liga_principal":          "ger.dfb_pokal",
         "tiene_apertura_clausura": False,
         "ligas_locales":           ["ger.1", "ger.2"],
+    },
+    "bra.copa_do_brazil": {
+        "nombre":                  "Copa de Brasil",
+        "carpeta":                 "Copa-DoBrazil",
+        "copas":                   ["bra.copa_do_brazil"],
+        "es_torneo_copa":          True,
+        "liga_principal":          "bra.1",
+        "tiene_apertura_clausura": False,
+        "ligas_locales":           ["bra.1"],
     },
     "uefa.europa": {
         "nombre":                  "UEFA Europa League",

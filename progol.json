@@ -1,166 +1,154 @@
 [
   {
-    "id": "401841159",
+    "id": "401877026",
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
     "es_eliminatoria": false,
-    "local": "Bahia",
-    "visitante": "Corinthians",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/9967.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/874.png",
-    "prob_local": 0.3630965200785267,
-    "prob_empate": 0.3803623091552801,
-    "prob_visitante": 0.2565411707661932,
-    "fuerza_local": 0.5324105882352942,
-    "fuerza_visitante": 0.4736854117647059,
-    "diferencia": 0.05872517647058828,
-    "confianza": "moderado",
-    "prediccion": "Empate",
+    "local": "Atlético de San Luis",
+    "visitante": "Tijuana",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/15720.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/10125.png",
+    "prob_local": 0.1996896010416359,
+    "prob_empate": 0.2507907851496489,
+    "prob_visitante": 0.5495196138087153,
+    "fuerza_local": 0.28532941176470583,
+    "fuerza_visitante": 0.5593,
+    "diferencia": 0.2739705882352942,
+    "confianza": "favorable",
+    "prediccion": "Tijuana",
     "vuelta_en_casa": "ninguno",
-    "lambda_local": 1.1318685933859725,
-    "lambda_visitante": 0.8473698491344972,
-    "marcadores_probables": [
-      "0-0",
-      "1-0",
-      "1-1",
-      "0-1",
-      "2-0"
-    ],
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "bajo",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.67,
-          "ultimos_5": [
-            "D",
-            "W",
-            "W",
-            "L",
-            "D"
-          ],
-          "nombre": "Bahia"
-        },
-        "visitante": {
-          "valor": 0.72,
-          "ultimos_5": [
-            "W",
-            "W",
-            "L",
-            "W",
-            "L"
-          ],
-          "nombre": "Corinthians"
-        },
-        "interpretacion": "Corinthians llega con mejor momentum: índice 0.72/1.0 frente a 0.67/1.0 de Bahia. Últimos 5: 3V/0E/2D vs 2V/2E/1D."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "medio",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 40.0,
-          "detalle": "4G/4E/2P",
-          "nombre": "Bahia"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 22.2,
-          "detalle": "2G/4E/3P",
-          "nombre": "Corinthians"
-        },
-        "interpretacion": "Corinthians sufre de visita: 22% (2G/4E/3P). Bahia en casa: 40% (4G/4E/2P)."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "alto",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Bahia",
-          "goles_favor": 1.47,
-          "goles_contra": 1.26
-        },
-        "visitante": {
-          "nombre": "Corinthians",
-          "goles_favor": 1.0,
-          "goles_contra": 1.06
-        },
-        "interpretacion": "Bahia más ofensivo: 1.47 vs 1.00 goles/partido. Defensa: 1.26 vs 1.06."
-      },
-      {
-        "factor": "Marcadores más probables",
-        "impacto": "informativo",
-        "tipo": "marcadores",
-        "marcadores": [
-          "0-0",
-          "1-0",
-          "1-1",
-          "0-1",
-          "2-0"
-        ],
-        "lambda_local": 1.132,
-        "lambda_visitante": 0.847,
-        "interpretacion": "El marcador más probable es 0-0 (13.8%), coherente con el empate como resultado favorito del modelo."
-      }
-    ]
-  },
-  {
-    "id": "401841165",
-    "torneo": "Fase Regular",
-    "perfil": "fase_regular",
-    "es_eliminatoria": false,
-    "local": "Grêmio",
-    "visitante": "Fluminense",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/6273.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3445.png",
-    "prob_local": 0.26721412660533217,
-    "prob_empate": 0.29271291262116117,
-    "prob_visitante": 0.4400729607735067,
-    "fuerza_local": 0.3431297647058823,
-    "fuerza_visitante": 0.45079835294117654,
-    "diferencia": 0.10766858823529424,
-    "confianza": "moderado",
-    "prediccion": "Fluminense",
-    "vuelta_en_casa": "ninguno",
-    "lambda_local": 0.9556863375492586,
-    "lambda_visitante": 1.323688160803453,
+    "lambda_local": 0.7118380713489408,
+    "lambda_visitante": 1.4655103066867774,
     "marcadores_probables": [
       "0-1",
-      "1-1",
       "0-2",
       "0-0",
+      "1-1",
       "1-2"
     ],
     "analisis": [
       {
         "factor": "Forma reciente",
-        "impacto": "medio",
+        "impacto": "alto",
         "tipo": "forma",
         "local": {
-          "valor": 0.26,
+          "valor": 0.17,
           "ultimos_5": [
-            "L",
-            "L",
-            "W",
             "D",
             "L"
           ],
-          "nombre": "Grêmio"
+          "nombre": "Atlético de San Luis"
         },
         "visitante": {
-          "valor": 0.46,
+          "valor": 0.6,
           "ultimos_5": [
-            "D",
-            "D",
-            "L",
             "W",
-            "D"
+            "W"
           ],
-          "nombre": "Fluminense"
+          "nombre": "Tijuana"
         },
-        "interpretacion": "Fluminense llega con mejor momentum: índice 0.46/1.0 frente a 0.26/1.0 de Grêmio. Últimos 5: 1V/3E/1D vs 1V/1E/3D."
+        "interpretacion": "Tijuana llega con mejor momentum: índice 0.60/1.0 frente a 0.17/1.0 de Atlético de San Luis. Últimos 5: 2V/0E/0D vs 0V/1E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/1P",
+          "nombre": "Atlético de San Luis"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Tijuana"
+        },
+        "interpretacion": "Tijuana sufre de visita: 0% (0G/0E/0P). Atlético de San Luis en casa: 0% (0G/0E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Atlético de San Luis",
+          "goles_favor": 2.0,
+          "goles_contra": 2.5
+        },
+        "visitante": {
+          "nombre": "Tijuana",
+          "goles_favor": 2.0,
+          "goles_contra": 0.5
+        },
+        "interpretacion": "Producción similar: Atlético de San Luis 2.00 goles/partido — Tijuana 2.00. Defensa: 2.50 vs 0.50."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "0-2",
+          "0-0",
+          "1-1",
+          "1-2"
+        ],
+        "lambda_local": 0.712,
+        "lambda_visitante": 1.466,
+        "interpretacion": "El marcador más probable es 0-1 (18.1%), coherente con Tijuana como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401877025",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "FC Juarez",
+    "visitante": "Pumas UNAM",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/17851.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "prob_local": 0.2808379301995898,
+    "prob_empate": 0.2338362663673664,
+    "prob_visitante": 0.48532580343304377,
+    "fuerza_local": 0.32930000000000004,
+    "fuerza_visitante": 0.3885352941176471,
+    "diferencia": 0.05923529411764705,
+    "confianza": "favorable",
+    "prediccion": "Pumas UNAM",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.8394795226959285,
+    "lambda_visitante": 1.305641791044776,
+    "marcadores_probables": [
+      "0-1",
+      "1-1",
+      "0-0",
+      "0-2",
+      "1-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L"
+          ],
+          "nombre": "FC Juarez"
+        },
+        "visitante": {
+          "valor": 0.35,
+          "ultimos_5": [
+            "W",
+            "L"
+          ],
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "FC Juarez llega con mejor momentum: índice 0.50/1.0 frente a 0.35/1.0 de Pumas UNAM. Últimos 5: 0V/0E/2D vs 1V/0E/1D."
       },
       {
         "factor": "Rendimiento situacional",
@@ -168,33 +156,33 @@
         "tipo": "barras",
         "local": {
           "etiqueta": "Win rate local",
-          "valor": 55.6,
-          "detalle": "5G/2E/2P",
-          "nombre": "Grêmio"
+          "valor": 0.0,
+          "detalle": "0G/0E/1P",
+          "nombre": "FC Juarez"
         },
         "visitante": {
           "etiqueta": "Win rate visita",
-          "valor": 22.2,
-          "detalle": "2G/3E/4P",
-          "nombre": "Fluminense"
+          "valor": 100.0,
+          "detalle": "1G/0E/0P",
+          "nombre": "Pumas UNAM"
         },
-        "interpretacion": "Contraste marcado: Grêmio gana el 56% en casa (5G/2E/2P), Fluminense solo el 22% de visita (2G/3E/4P). La localía es determinante."
+        "interpretacion": "Equilibrio situacional: FC Juarez 0% local — Pumas UNAM 100% visita."
       },
       {
         "factor": "Potencial ofensivo y defensivo",
-        "impacto": "medio",
+        "impacto": "alto",
         "tipo": "doble_barra",
         "local": {
-          "nombre": "Grêmio",
-          "goles_favor": 1.1,
-          "goles_contra": 1.32
+          "nombre": "FC Juarez",
+          "goles_favor": 0.0,
+          "goles_contra": 1.0
         },
         "visitante": {
-          "nombre": "Fluminense",
-          "goles_favor": 1.53,
-          "goles_contra": 1.26
+          "nombre": "Pumas UNAM",
+          "goles_favor": 1.0,
+          "goles_contra": 2.0
         },
-        "interpretacion": "Fluminense más ofensivo: 1.53 vs 1.10 goles/partido. Defensa: 1.32 vs 1.26."
+        "interpretacion": "Pumas UNAM más ofensivo: 1.00 vs 0.00 goles/partido. Defensa: 1.00 vs 2.00."
       },
       {
         "factor": "Marcadores más probables",
@@ -203,42 +191,42 @@
         "marcadores": [
           "0-1",
           "1-1",
-          "0-2",
           "0-0",
-          "1-2"
+          "0-2",
+          "1-0"
         ],
-        "lambda_local": 0.956,
-        "lambda_visitante": 1.324,
-        "interpretacion": "El marcador más probable es 0-1 (14.5%), coherente con Fluminense como resultado favorito del modelo."
+        "lambda_local": 0.839,
+        "lambda_visitante": 1.306,
+        "interpretacion": "El marcador más probable es 0-1 (15.9%), coherente con Pumas UNAM como resultado favorito del modelo."
       }
     ]
   },
   {
-    "id": "401874041",
-    "torneo": "Liga MX Liguilla",
-    "perfil": "liguilla_mx",
-    "es_eliminatoria": true,
-    "local": "Toluca",
-    "visitante": "Cruz Azul",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/223.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
-    "prob_local": 0.2763870553353174,
-    "prob_empate": 0.40985028141478214,
-    "prob_visitante": 0.31376266324990054,
-    "fuerza_local": 0.4498244117647059,
-    "fuerza_visitante": 0.46207441176470593,
-    "diferencia": 0.012250000000000039,
-    "confianza": "ajustado",
-    "prediccion": "Cruz Azul",
-    "vuelta_en_casa": "local",
-    "lambda_local": 0.9563076923076925,
-    "lambda_visitante": 1.0648615384615385,
+    "id": "401877022",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Atlas",
+    "visitante": "Monterrey",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/216.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/220.png",
+    "prob_local": 0.4867529435904773,
+    "prob_empate": 0.25072354962139826,
+    "prob_visitante": 0.26252350678812447,
+    "fuerza_local": 0.5298882352941177,
+    "fuerza_visitante": 0.3413588235294117,
+    "diferencia": 0.18852941176470595,
+    "confianza": "favorable",
+    "prediccion": "Atlas",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.426250764525994,
+    "lambda_visitante": 1.001817833907386,
     "marcadores_probables": [
-      "0-1",
-      "1-1",
-      "0-0",
       "1-0",
-      "0-2"
+      "1-1",
+      "2-0",
+      "2-1",
+      "0-0"
     ],
     "analisis": [
       {
@@ -246,16 +234,22 @@
         "impacto": "alto",
         "tipo": "forma",
         "local": {
-          "valor": 0.25,
-          "ultimos_5": [],
-          "nombre": "Toluca"
+          "valor": 0.6,
+          "ultimos_5": [
+            "W",
+            "W"
+          ],
+          "nombre": "Atlas"
         },
         "visitante": {
-          "valor": 0.6,
-          "ultimos_5": [],
-          "nombre": "Cruz Azul"
+          "valor": 0.25,
+          "ultimos_5": [
+            "L",
+            "W"
+          ],
+          "nombre": "Monterrey"
         },
-        "interpretacion": "Cruz Azul llega con mejor momentum: índice 0.60/1.0 frente a 0.25/1.0 de Toluca. Últimos 5: 0V/0E/0D vs 0V/0E/0D."
+        "interpretacion": "Atlas llega con mejor momentum: índice 0.60/1.0 frente a 0.25/1.0 de Monterrey. Últimos 5: 2V/0E/0D vs 1V/0E/1D."
       },
       {
         "factor": "Rendimiento situacional",
@@ -263,102 +257,172 @@
         "tipo": "barras",
         "local": {
           "etiqueta": "Win rate local",
-          "valor": 0.0,
+          "valor": 0,
           "detalle": "0G/0E/0P",
-          "nombre": "Toluca"
+          "nombre": "Atlas"
         },
         "visitante": {
           "etiqueta": "Win rate visita",
           "valor": 0.0,
-          "detalle": "0G/0E/0P",
-          "nombre": "Cruz Azul"
+          "detalle": "0G/0E/1P",
+          "nombre": "Monterrey"
         },
-        "interpretacion": "Cruz Azul sufre de visita: 0% (0G/0E/0P). Toluca en casa: 0% (0G/0E/0P)."
+        "interpretacion": "Monterrey sufre de visita: 0% (0G/0E/1P). Atlas en casa: 0% (0G/0E/0P)."
       },
       {
         "factor": "Potencial ofensivo y defensivo",
-        "impacto": "bajo",
+        "impacto": "alto",
         "tipo": "doble_barra",
         "local": {
-          "nombre": "Toluca",
-          "goles_favor": 0.0,
-          "goles_contra": 0.0
+          "nombre": "Atlas",
+          "goles_favor": 2.0,
+          "goles_contra": 1.0
         },
         "visitante": {
-          "nombre": "Cruz Azul",
-          "goles_favor": 0.0,
-          "goles_contra": 0.0
+          "nombre": "Monterrey",
+          "goles_favor": 2.0,
+          "goles_contra": 2.0
         },
-        "interpretacion": "Producción similar: Toluca 0.00 goles/partido — Cruz Azul 0.00. Defensa: 0.00 vs 0.00."
+        "interpretacion": "Producción similar: Atlas 2.00 goles/partido — Monterrey 2.00. Defensa: 1.00 vs 2.00."
       },
       {
         "factor": "Marcadores más probables",
         "impacto": "informativo",
         "tipo": "marcadores",
         "marcadores": [
-          "0-1",
-          "1-1",
-          "0-0",
           "1-0",
-          "0-2"
+          "1-1",
+          "2-0",
+          "2-1",
+          "0-0"
         ],
-        "lambda_local": 0.956,
-        "lambda_visitante": 1.065,
-        "interpretacion": "El marcador individual más probable es 0-1 (14.2%), favoreciendo a Cruz Azul. Aunque el modelo da como favorito a el empate por probabilidad acumulada, esa probabilidad se reparte entre varios marcadores distintos."
-      },
-      {
-        "factor": "Experiencia eliminatoria",
-        "impacto": "bajo",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Índice liguilla",
-          "valor": 0.81,
-          "nombre": "Toluca"
-        },
-        "visitante": {
-          "etiqueta": "Índice liguilla",
-          "valor": 0.75,
-          "nombre": "Cruz Azul"
-        },
-        "interpretacion": "Experiencia similar: Toluca 0.81 — Cruz Azul 0.75. Factor sin impacto decisivo."
-      },
-      {
-        "factor": "Ventaja de vuelta en casa",
-        "impacto": "medio",
-        "tipo": "vuelta",
-        "equipo_vuelta": "Toluca",
-        "local": {
-          "nombre": "Toluca",
-          "posicion": 9
-        },
-        "visitante": {
-          "nombre": "Cruz Azul",
-          "posicion": 9
-        },
-        "interpretacion": "Toluca jugará la vuelta en casa (posición 9 vs 9 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Cruz Azul deberá avanzar jugando el partido decisivo de visitante."
+        "lambda_local": 1.426,
+        "lambda_visitante": 1.002,
+        "interpretacion": "El marcador más probable es 1-0 (13.9%), coherente con Atlas como resultado favorito del modelo."
       }
     ]
   },
   {
-    "id": "401874041",
-    "torneo": "Liga MX Liguilla",
-    "perfil": "liguilla_mx",
-    "es_eliminatoria": true,
-    "local": "América Femenil",
-    "visitante": "Tigres Femenil",
-    "logo_local": "",
-    "logo_visitante": "",
-    "prob_local": 0.5472881589647215,
-    "prob_empate": 0.22836705746177613,
-    "prob_visitante": 0.22434478357350235,
-    "fuerza_local": 0.601045,
-    "fuerza_visitante": 0.399945,
-    "diferencia": 0.20110000000000006,
+    "id": "401877023",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "León",
+    "visitante": "Pachuca",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/228.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
+    "prob_local": 0.21577005225720672,
+    "prob_empate": 0.1827679331292354,
+    "prob_visitante": 0.601462014613558,
+    "fuerza_local": 0.33400588235294115,
+    "fuerza_visitante": 0.45677058823529415,
+    "diferencia": 0.122764705882353,
     "confianza": "favorable",
-    "prediccion": "América Femenil",
+    "prediccion": "Pachuca",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.9114427860696516,
+    "lambda_visitante": 1.9212844036697252,
+    "marcadores_probables": [
+      "0-2",
+      "0-1",
+      "1-2",
+      "1-1",
+      "0-3"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L"
+          ],
+          "nombre": "León"
+        },
+        "visitante": {
+          "valor": 0.25,
+          "ultimos_5": [
+            "L",
+            "W"
+          ],
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "León llega con mejor momentum: índice 0.50/1.0 frente a 0.25/1.0 de Pachuca. Últimos 5: 0V/0E/2D vs 1V/0E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/1P",
+          "nombre": "León"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 100.0,
+          "detalle": "1G/0E/0P",
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Equilibrio situacional: León 0% local — Pachuca 100% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "León",
+          "goles_favor": 1.0,
+          "goles_contra": 2.0
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "goles_favor": 2.0,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Pachuca más ofensivo: 2.00 vs 1.00 goles/partido. Defensa: 2.00 vs 1.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-2",
+          "0-1",
+          "1-2",
+          "1-1",
+          "0-3"
+        ],
+        "lambda_local": 0.911,
+        "lambda_visitante": 1.921,
+        "interpretacion": "El marcador más probable es 0-2 (12.8%), coherente con Pachuca como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401841181",
+    "torneo": "Copa Do Brazil",
+    "perfil": "copa_brazil",
+    "es_eliminatoria": true,
+    "local": "Grêmio",
+    "visitante": "Mirassol",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/6273.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/9169.png",
+    "prob_local": 0.4990384038246884,
+    "prob_empate": 0.29104405856948473,
+    "prob_visitante": 0.20991753760582693,
+    "fuerza_local": 0.6397576,
+    "fuerza_visitante": 0.4433576,
+    "diferencia": 0.19640000000000002,
+    "confianza": "favorable",
+    "prediccion": "Grêmio",
     "vuelta_en_casa": "local",
-    "lambda_local": 1.7451713207547175,
-    "lambda_visitante": 0.9861354146341463,
+    "lambda_local": 1.7496081447963807,
+    "lambda_visitante": 0.9241338461538462,
     "marcadores_probables": [
       "1-0",
       "2-0",
@@ -372,61 +436,50 @@
         "impacto": "alto",
         "tipo": "forma",
         "local": {
-          "valor": 0.62,
-          "ultimos_5": [
-            "L",
-            "W",
-            "L",
-            "W",
-            "W"
-          ],
-          "nombre": "America Femenil"
+          "valor": 0.34,
+          "ultimos_5": [],
+          "nombre": "Grêmio"
         },
         "visitante": {
-          "valor": 0.16,
-          "ultimos_5": [
-            "L",
-            "L",
-            "W",
-            "D"
-          ],
-          "nombre": "Tigres Femenil"
+          "valor": 0.76,
+          "ultimos_5": [],
+          "nombre": "Mirassol"
         },
-        "interpretacion": "America Femenil llega con mejor momentum: índice 0.62/1.0 frente a 0.16/1.0 de Tigres Femenil. Últimos 5: 3V/0E/2D vs 1V/1E/2D."
+        "interpretacion": "Mirassol llega con mejor momentum: índice 0.76/1.0 frente a 0.34/1.0 de Grêmio. Últimos 5: 0V/0E/0D vs 0V/0E/0D."
       },
       {
         "factor": "Rendimiento situacional",
-        "impacto": "bajo",
+        "impacto": "alto",
         "tipo": "barras",
         "local": {
           "etiqueta": "Win rate local",
-          "valor": 0.0,
-          "detalle": "0G/0E/0P",
-          "nombre": "America Femenil"
+          "valor": 100.0,
+          "detalle": "1G/0E/0P",
+          "nombre": "Grêmio"
         },
         "visitante": {
           "etiqueta": "Win rate visita",
           "valor": 0.0,
-          "detalle": "0G/0E/0P",
-          "nombre": "Tigres Femenil"
+          "detalle": "0G/1E/0P",
+          "nombre": "Mirassol"
         },
-        "interpretacion": "Tigres Femenil sufre de visita: 0% (0G/0E/0P). America Femenil en casa: 0% (0G/0E/0P)."
+        "interpretacion": "Contraste marcado: Grêmio gana el 100% en casa (1G/0E/0P), Mirassol solo el 0% de visita (0G/1E/0P). La localía es determinante."
       },
       {
         "factor": "Potencial ofensivo y defensivo",
         "impacto": "alto",
         "tipo": "doble_barra",
         "local": {
-          "nombre": "America Femenil",
-          "goles_favor": 3.0,
-          "goles_contra": 1.4
+          "nombre": "Grêmio",
+          "goles_favor": 2.5,
+          "goles_contra": 0.0
         },
         "visitante": {
-          "nombre": "Tigres Femenil",
-          "goles_favor": 1.8,
-          "goles_contra": 1.6
+          "nombre": "Mirassol",
+          "goles_favor": 1.5,
+          "goles_contra": 1.0
         },
-        "interpretacion": "America Femenil más ofensivo: 3.00 vs 1.80 goles/partido. Defensa: 1.40 vs 1.60."
+        "interpretacion": "Superioridad integral de Grêmio: 2.50 goles/partido (vs 1.50) y solo 0.00 recibidos (vs 1.00)."
       },
       {
         "factor": "Marcadores más probables",
@@ -439,672 +492,50 @@
           "2-1",
           "3-0"
         ],
-        "lambda_local": 1.745,
-        "lambda_visitante": 0.986,
-        "interpretacion": "El marcador más probable es 1-0 (12.6%), coherente con America Femenil como resultado favorito del modelo."
-      },
-      {
-        "factor": "Experiencia eliminatoria",
-        "impacto": "alto",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Índice liguilla",
-          "valor": 0.94,
-          "nombre": "America Femenil"
-        },
-        "visitante": {
-          "etiqueta": "Índice liguilla",
-          "valor": 0.69,
-          "nombre": "Tigres Femenil"
-        },
-        "interpretacion": "America Femenil tiene mayor experiencia eliminatoria (índice 0.94 vs 0.69 de Tigres Femenil). La presión de eliminación suele favorecer al más rodado."
+        "lambda_local": 1.75,
+        "lambda_visitante": 0.924,
+        "interpretacion": "El marcador más probable es 1-0 (13.0%), coherente con Grêmio como resultado favorito del modelo."
       },
       {
         "factor": "Ventaja de vuelta en casa",
         "impacto": "medio",
         "tipo": "vuelta",
-        "equipo_vuelta": "America Femenil",
+        "equipo_vuelta": "Grêmio",
         "local": {
-          "nombre": "America Femenil",
-          "posicion": 1
+          "nombre": "Grêmio",
+          "posicion": 9
         },
         "visitante": {
-          "nombre": "Tigres Femenil",
-          "posicion": 1
+          "nombre": "Mirassol",
+          "posicion": 9
         },
-        "interpretacion": "America Femenil jugará la vuelta en casa (posición 1 vs 1 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Tigres Femenil deberá avanzar jugando el partido decisivo de visitante."
+        "interpretacion": "Grêmio jugará la vuelta en casa (posición 9 vs 9 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Mirassol deberá avanzar jugando el partido decisivo de visitante."
       }
     ]
   },
   {
-    "id": "401850420",
-    "torneo": "Fase Regular",
-    "perfil": "fase_regular",
-    "es_eliminatoria": false,
-    "local": "Deportes Concepcion",
-    "visitante": "O'Higgins",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/8110.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/6072.png",
-    "prob_local": 0.312067735318272,
-    "prob_empate": 0.34945709863083474,
-    "prob_visitante": 0.33847516605089323,
-    "fuerza_local": 0.4193715294117647,
-    "fuerza_visitante": 0.31669505882352933,
-    "diferencia": 0.10267647058823537,
-    "confianza": "ajustado",
-    "prediccion": "Empate",
-    "vuelta_en_casa": "ninguno",
-    "lambda_local": 0.9344182251666939,
-    "lambda_visitante": 1.140484182239764,
-    "marcadores_probables": [
-      "1-1",
-      "0-1",
-      "0-0",
-      "1-0",
-      "0-2"
-    ],
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "alto",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.63,
-          "ultimos_5": [
-            "W",
-            "L",
-            "W",
-            "L",
-            "W"
-          ],
-          "nombre": "Deportes Concepcion"
-        },
-        "visitante": {
-          "valor": 0.2,
-          "ultimos_5": [
-            "L",
-            "D",
-            "L",
-            "L",
-            "W"
-          ],
-          "nombre": "O'Higgins"
-        },
-        "interpretacion": "Deportes Concepcion llega con mejor momentum: índice 0.63/1.0 frente a 0.20/1.0 de O'Higgins. Últimos 5: 3V/0E/2D vs 1V/1E/3D."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "bajo",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 28.6,
-          "detalle": "2G/2E/3P",
-          "nombre": "Deportes Concepcion"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 28.6,
-          "detalle": "2G/2E/3P",
-          "nombre": "O'Higgins"
-        },
-        "interpretacion": "O'Higgins sufre de visita: 29% (2G/2E/3P). Deportes Concepcion en casa: 29% (2G/2E/3P)."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "medio",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Deportes Concepcion",
-          "goles_favor": 0.93,
-          "goles_contra": 1.53
-        },
-        "visitante": {
-          "nombre": "O'Higgins",
-          "goles_favor": 1.27,
-          "goles_contra": 1.47
-        },
-        "interpretacion": "Producción similar: Deportes Concepcion 0.93 goles/partido — O'Higgins 1.27. Defensa: 1.53 vs 1.47."
-      },
-      {
-        "factor": "Marcadores más probables",
-        "impacto": "informativo",
-        "tipo": "marcadores",
-        "marcadores": [
-          "1-1",
-          "0-1",
-          "0-0",
-          "1-0",
-          "0-2"
-        ],
-        "lambda_local": 0.934,
-        "lambda_visitante": 1.14,
-        "interpretacion": "El marcador más probable es 1-1 (13.5%), coherente con el empate como resultado favorito del modelo."
-      }
-    ]
-  },
-  {
-    "id": "401877957",
-    "torneo": "Fase Regular",
-    "perfil": "fase_regular",
-    "es_eliminatoria": false,
-    "local": "Águilas Doradas",
-    "visitante": "Independiente Santa Fe",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/9762.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/5488.png",
-    "prob_local": 0.27330505188393034,
-    "prob_empate": 0.3090593803694618,
-    "prob_visitante": 0.4176355677466079,
-    "fuerza_local": 0.47221529411764707,
-    "fuerza_visitante": 0.44098470588235295,
-    "diferencia": 0.03123058823529412,
-    "confianza": "moderado",
-    "prediccion": "Independiente Santa Fe",
-    "vuelta_en_casa": "ninguno",
-    "lambda_local": 0.942021077591735,
-    "lambda_visitante": 1.3613834452330715,
-    "marcadores_probables": [
-      "0-1",
-      "1-1",
-      "0-0",
-      "0-2",
-      "1-0"
-    ],
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "bajo",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.56,
-          "ultimos_5": [
-            "W",
-            "D",
-            "L",
-            "L",
-            "W"
-          ],
-          "nombre": "Águilas Doradas"
-        },
-        "visitante": {
-          "valor": 0.47,
-          "ultimos_5": [
-            "L",
-            "D",
-            "W",
-            "D",
-            "W"
-          ],
-          "nombre": "Independiente Santa Fe"
-        },
-        "interpretacion": "Águilas Doradas llega con mejor momentum: índice 0.56/1.0 frente a 0.47/1.0 de Independiente Santa Fe. Últimos 5: 2V/1E/2D vs 2V/2E/1D."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "medio",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 40.0,
-          "detalle": "4G/2E/4P",
-          "nombre": "Águilas Doradas"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 25.0,
-          "detalle": "3G/6E/3P",
-          "nombre": "Independiente Santa Fe"
-        },
-        "interpretacion": "Independiente Santa Fe sufre de visita: 25% (3G/6E/3P). Águilas Doradas en casa: 40% (4G/2E/4P)."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "alto",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Águilas Doradas",
-          "goles_favor": 1.05,
-          "goles_contra": 1.32
-        },
-        "visitante": {
-          "nombre": "Independiente Santa Fe",
-          "goles_favor": 1.53,
-          "goles_contra": 1.16
-        },
-        "interpretacion": "Independiente Santa Fe más ofensivo: 1.53 vs 1.05 goles/partido. Defensa: 1.32 vs 1.16."
-      },
-      {
-        "factor": "Marcadores más probables",
-        "impacto": "informativo",
-        "tipo": "marcadores",
-        "marcadores": [
-          "0-1",
-          "1-1",
-          "0-0",
-          "0-2",
-          "1-0"
-        ],
-        "lambda_local": 0.942,
-        "lambda_visitante": 1.361,
-        "interpretacion": "El marcador más probable es 0-1 (13.9%), coherente con Independiente Santa Fe como resultado favorito del modelo."
-      }
-    ]
-  },
-  {
-    "id": "401877032",
-    "torneo": "Fase Regular",
-    "perfil": "fase_regular",
-    "es_eliminatoria": false,
-    "local": "Tijuana",
-    "visitante": "León",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/10125.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/228.png",
-    "prob_local": 0.6610518344400564,
-    "prob_empate": 0.17105229301945266,
-    "prob_visitante": 0.16789587254049082,
-    "fuerza_local": 0.5508882352941177,
-    "fuerza_visitante": 0.35282941176470595,
-    "diferencia": 0.19805882352941173,
-    "confianza": "favorable",
-    "prediccion": "Tijuana",
-    "vuelta_en_casa": "ninguno",
-    "lambda_local": 2.698645161290323,
-    "lambda_visitante": 1.145171683696953,
-    "marcadores_probables": [
-      "3-0",
-      "2-0",
-      "3-1",
-      "4-0",
-      "2-1"
-    ],
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "medio",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.35,
-          "ultimos_5": [
-            "W"
-          ],
-          "nombre": "Tijuana"
-        },
-        "visitante": {
-          "valor": 0.5,
-          "ultimos_5": [
-            "L"
-          ],
-          "nombre": "León"
-        },
-        "interpretacion": "León llega con mejor momentum: índice 0.50/1.0 frente a 0.35/1.0 de Tijuana. Últimos 5: 0V/0E/1D vs 1V/0E/0D."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "alto",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 100.0,
-          "detalle": "1G/0E/0P",
-          "nombre": "Tijuana"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 0,
-          "detalle": "0G/0E/0P",
-          "nombre": "León"
-        },
-        "interpretacion": "Contraste marcado: Tijuana gana el 100% en casa (1G/0E/0P), León solo el 0% de visita (0G/0E/0P). La localía es determinante."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "alto",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Tijuana",
-          "goles_favor": 3.0,
-          "goles_contra": 1.0
-        },
-        "visitante": {
-          "nombre": "León",
-          "goles_favor": 2.0,
-          "goles_contra": 3.0
-        },
-        "interpretacion": "Superioridad integral de Tijuana: 3.00 goles/partido (vs 2.00) y solo 1.00 recibidos (vs 3.00)."
-      },
-      {
-        "factor": "Marcadores más probables",
-        "impacto": "informativo",
-        "tipo": "marcadores",
-        "marcadores": [
-          "3-0",
-          "2-0",
-          "3-1",
-          "4-0",
-          "2-1"
-        ],
-        "lambda_local": 2.699,
-        "lambda_visitante": 1.145,
-        "interpretacion": "El marcador más probable es 3-0 (10.3%), coherente con Tijuana como resultado favorito del modelo."
-      }
-    ]
-  },
-  {
-    "id": "401877030",
-    "torneo": "Fase Regular",
-    "perfil": "fase_regular",
-    "es_eliminatoria": false,
-    "local": "Santos",
-    "visitante": "Atlas",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/225.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/216.png",
-    "prob_local": 0.21093357430149462,
-    "prob_empate": 0.180861822398473,
-    "prob_visitante": 0.6082046033000323,
-    "fuerza_local": 0.3622411764705883,
-    "fuerza_visitante": 0.5061823529411765,
-    "diferencia": 0.14394117647058824,
-    "confianza": "favorable",
-    "prediccion": "Atlas",
-    "vuelta_en_casa": "ninguno",
-    "lambda_local": 1.4390653016368788,
-    "lambda_visitante": 2.698645161290323,
-    "marcadores_probables": [
-      "1-3",
-      "1-2",
-      "0-3",
-      "0-2",
-      "1-4"
-    ],
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "medio",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.5,
-          "ultimos_5": [
-            "L"
-          ],
-          "nombre": "Santos"
-        },
-        "visitante": {
-          "valor": 0.35,
-          "ultimos_5": [
-            "W"
-          ],
-          "nombre": "Atlas"
-        },
-        "interpretacion": "Santos llega con mejor momentum: índice 0.50/1.0 frente a 0.35/1.0 de Atlas. Últimos 5: 0V/0E/1D vs 1V/0E/0D."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "alto",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 0,
-          "detalle": "0G/0E/0P",
-          "nombre": "Santos"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 100.0,
-          "detalle": "1G/0E/0P",
-          "nombre": "Atlas"
-        },
-        "interpretacion": "Equilibrio situacional: Santos 0% local — Atlas 100% visita."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "alto",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Santos",
-          "goles_favor": 2.0,
-          "goles_contra": 3.0
-        },
-        "visitante": {
-          "nombre": "Atlas",
-          "goles_favor": 3.0,
-          "goles_contra": 2.0
-        },
-        "interpretacion": "Atlas más ofensivo: 3.00 vs 2.00 goles/partido. Defensa: 3.00 vs 2.00."
-      },
-      {
-        "factor": "Marcadores más probables",
-        "impacto": "informativo",
-        "tipo": "marcadores",
-        "marcadores": [
-          "1-3",
-          "1-2",
-          "0-3",
-          "0-2",
-          "1-4"
-        ],
-        "lambda_local": 1.439,
-        "lambda_visitante": 2.699,
-        "interpretacion": "El marcador más probable es 1-3 (8.2%), coherente con Atlas como resultado favorito del modelo."
-      }
-    ]
-  },
-  {
-    "id": "401877029",
-    "torneo": "Fase Regular",
-    "perfil": "fase_regular",
-    "es_eliminatoria": false,
-    "local": "Necaxa",
-    "visitante": "Monterrey",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/229.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/220.png",
-    "prob_local": 0.5256585883971528,
-    "prob_empate": 0.21228564425038773,
-    "prob_visitante": 0.2620557673524594,
-    "fuerza_local": 0.49206470588235296,
-    "fuerza_visitante": 0.4307705882352941,
-    "diferencia": 0.06129411764705883,
-    "confianza": "favorable",
-    "prediccion": "Necaxa",
-    "vuelta_en_casa": "ninguno",
-    "lambda_local": 2.0614610445948296,
-    "lambda_visitante": 1.2835312528767373,
-    "marcadores_probables": [
-      "2-1",
-      "2-0",
-      "1-1",
-      "1-0",
-      "3-1"
-    ],
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "bajo",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.35,
-          "ultimos_5": [
-            "W"
-          ],
-          "nombre": "Necaxa"
-        },
-        "visitante": {
-          "valor": 0.35,
-          "ultimos_5": [
-            "W"
-          ],
-          "nombre": "Monterrey"
-        },
-        "interpretacion": "Momentum similar: Necaxa 0.35/1.0 — Monterrey 0.35/1.0."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "alto",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 100.0,
-          "detalle": "1G/0E/0P",
-          "nombre": "Necaxa"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 0,
-          "detalle": "0G/0E/0P",
-          "nombre": "Monterrey"
-        },
-        "interpretacion": "Contraste marcado: Necaxa gana el 100% en casa (1G/0E/0P), Monterrey solo el 0% de visita (0G/0E/0P). La localía es determinante."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "alto",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Necaxa",
-          "goles_favor": 2.0,
-          "goles_contra": 1.0
-        },
-        "visitante": {
-          "nombre": "Monterrey",
-          "goles_favor": 3.0,
-          "goles_contra": 2.0
-        },
-        "interpretacion": "Monterrey más ofensivo: 3.00 vs 2.00 goles/partido. Defensa: 1.00 vs 2.00."
-      },
-      {
-        "factor": "Marcadores más probables",
-        "impacto": "informativo",
-        "tipo": "marcadores",
-        "marcadores": [
-          "2-1",
-          "2-0",
-          "1-1",
-          "1-0",
-          "3-1"
-        ],
-        "lambda_local": 2.061,
-        "lambda_visitante": 1.284,
-        "interpretacion": "El marcador más probable es 2-1 (9.8%), coherente con Necaxa como resultado favorito del modelo."
-      }
-    ]
-  },
-  {
-    "id": "401886424",
-    "torneo": "Fase Regular",
-    "perfil": "fase_regular",
-    "es_eliminatoria": false,
-    "local": "Tlaxcala FC",
-    "visitante": "Leones Negros",
-    "logo_local": "https://a.espncdn.com/guid/ad1afdd8-e4fd-3c4b-9a80-4b80924bed85/logos/default.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/10129.png",
-    "prob_local": 0.2969869009629075,
+    "id": "401841185",
+    "torneo": "Copa Do Brazil",
+    "perfil": "copa_brazil",
+    "es_eliminatoria": true,
+    "local": "Vasco da Gama",
+    "visitante": "Fluminense",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/3454.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3445.png",
+    "prob_local": 0.25584931405341743,
     "prob_empate": 0.44,
-    "prob_visitante": 0.2630130990370925,
-    "fuerza_local": 0.4319470588235294,
-    "fuerza_visitante": 0.3584176470588235,
-    "diferencia": 0.0735294117647059,
+    "prob_visitante": 0.3041506859465826,
+    "fuerza_local": 0.4970776,
+    "fuerza_visitante": 0.3707876,
+    "diferencia": 0.12629,
     "confianza": "ajustado",
-    "prediccion": "Empate",
-    "vuelta_en_casa": "ninguno",
-    "lambda_local": 0.3,
-    "lambda_visitante": 0.3,
+    "prediccion": "Fluminense",
+    "vuelta_en_casa": "local",
+    "lambda_local": 0.7387350993377484,
+    "lambda_visitante": 0.8905411764705884,
     "marcadores_probables": [
-      "0-0",
-      "1-0",
       "0-1",
-      "1-1",
-      "2-0"
-    ],
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "bajo",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.5,
-          "ultimos_5": [],
-          "nombre": "Tlaxcala FC"
-        },
-        "visitante": {
-          "valor": 0.5,
-          "ultimos_5": [],
-          "nombre": "Leones Negros"
-        },
-        "interpretacion": "Momentum similar: Tlaxcala FC 0.50/1.0 — Leones Negros 0.50/1.0."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "bajo",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 0.0,
-          "detalle": "0G/0E/0P",
-          "nombre": "Tlaxcala FC"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 0.0,
-          "detalle": "0G/0E/0P",
-          "nombre": "Leones Negros"
-        },
-        "interpretacion": "Leones Negros sufre de visita: 0% (0G/0E/0P). Tlaxcala FC en casa: 0% (0G/0E/0P)."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "bajo",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Tlaxcala FC",
-          "goles_favor": 0,
-          "goles_contra": 0
-        },
-        "visitante": {
-          "nombre": "Leones Negros",
-          "goles_favor": 0,
-          "goles_contra": 0
-        },
-        "interpretacion": "Producción similar: Tlaxcala FC 0.00 goles/partido — Leones Negros 0.00. Defensa: 0.00 vs 0.00."
-      },
-      {
-        "factor": "Marcadores más probables",
-        "impacto": "informativo",
-        "tipo": "marcadores",
-        "marcadores": [
-          "0-0",
-          "1-0",
-          "0-1",
-          "1-1",
-          "2-0"
-        ],
-        "lambda_local": 0.3,
-        "lambda_visitante": 0.3,
-        "interpretacion": "El marcador más probable es 0-0 (53.9%), coherente con el empate como resultado favorito del modelo."
-      }
-    ]
-  },
-  {
-    "id": "401879912",
-    "torneo": "Fase Regular",
-    "perfil": "fase_regular",
-    "es_eliminatoria": false,
-    "local": "Fakel Voronezh",
-    "visitante": "Dynamo Makhachkala",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/21539.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/22300.png",
-    "prob_local": 0.2279635159311656,
-    "prob_empate": 0.44,
-    "prob_visitante": 0.3320364840688344,
-    "fuerza_local": 0.3415117647058823,
-    "fuerza_visitante": 0.36412352941176473,
-    "diferencia": 0.022611764705882442,
-    "confianza": "moderado",
-    "prediccion": "Empate",
-    "vuelta_en_casa": "ninguno",
-    "lambda_local": 0.36588607594936706,
-    "lambda_visitante": 0.5582278481012658,
-    "marcadores_probables": [
       "0-0",
-      "0-1",
       "1-0",
       "1-1",
       "0-2"
@@ -1112,311 +543,219 @@
     "analisis": [
       {
         "factor": "Forma reciente",
-        "impacto": "bajo",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.5,
-          "ultimos_5": [],
-          "nombre": "Fakel Voronezh"
-        },
-        "visitante": {
-          "valor": 0.5,
-          "ultimos_5": [],
-          "nombre": "Dynamo Makhachkala"
-        },
-        "interpretacion": "Momentum similar: Fakel Voronezh 0.50/1.0 — Dynamo Makhachkala 0.50/1.0."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "bajo",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 0.0,
-          "detalle": "0G/0E/0P",
-          "nombre": "Fakel Voronezh"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 0.0,
-          "detalle": "0G/0E/0P",
-          "nombre": "Dynamo Makhachkala"
-        },
-        "interpretacion": "Dynamo Makhachkala sufre de visita: 0% (0G/0E/0P). Fakel Voronezh en casa: 0% (0G/0E/0P)."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "medio",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Fakel Voronezh",
-          "goles_favor": 0.47,
-          "goles_contra": 1.4
-        },
-        "visitante": {
-          "nombre": "Dynamo Makhachkala",
-          "goles_favor": 0.63,
-          "goles_contra": 1.23
-        },
-        "interpretacion": "Producción similar: Fakel Voronezh 0.47 goles/partido — Dynamo Makhachkala 0.63. Defensa: 1.40 vs 1.23."
-      },
-      {
-        "factor": "Marcadores más probables",
-        "impacto": "informativo",
-        "tipo": "marcadores",
-        "marcadores": [
-          "0-0",
-          "0-1",
-          "1-0",
-          "1-1",
-          "0-2"
-        ],
-        "lambda_local": 0.366,
-        "lambda_visitante": 0.558,
-        "interpretacion": "El marcador más probable es 0-0 (39.7%), coherente con el empate como resultado favorito del modelo."
-      }
-    ]
-  },
-  {
-    "id": "761684",
-    "torneo": "Fase Regular",
-    "perfil": "fase_regular",
-    "es_eliminatoria": false,
-    "local": "Orlando City SC",
-    "visitante": "Nashville SC",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/12011.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/18986.png",
-    "prob_local": 0.12235506515319024,
-    "prob_empate": 0.19764493484680967,
-    "prob_visitante": 0.68,
-    "fuerza_local": 0.42216405882352936,
-    "fuerza_visitante": 0.801263,
-    "diferencia": 0.3790989411764706,
-    "confianza": "favorable",
-    "prediccion": "Nashville SC",
-    "vuelta_en_casa": "ninguno",
-    "lambda_local": 0.5817296651375481,
-    "lambda_visitante": 3.9839090914491426,
-    "marcadores_probables": [
-      "0-3",
-      "0-4",
-      "0-2",
-      "0-5",
-      "1-3"
-    ],
-    "analisis": [
-      {
-        "factor": "Forma reciente",
         "impacto": "alto",
-        "tipo": "forma",
-        "local": {
-          "valor": 0.57,
-          "ultimos_5": [
-            "W",
-            "L",
-            "D",
-            "W",
-            "L"
-          ],
-          "nombre": "Orlando City SC"
-        },
-        "visitante": {
-          "valor": 1.0,
-          "ultimos_5": [
-            "W",
-            "W",
-            "W",
-            "W",
-            "W"
-          ],
-          "nombre": "Nashville SC"
-        },
-        "interpretacion": "Nashville SC llega con mejor momentum: índice 1.00/1.0 frente a 0.57/1.0 de Orlando City SC. Últimos 5: 5V/0E/0D vs 2V/1E/2D."
-      },
-      {
-        "factor": "Rendimiento situacional",
-        "impacto": "medio",
-        "tipo": "barras",
-        "local": {
-          "etiqueta": "Win rate local",
-          "valor": 42.9,
-          "detalle": "3G/1E/3P",
-          "nombre": "Orlando City SC"
-        },
-        "visitante": {
-          "etiqueta": "Win rate visita",
-          "valor": 57.1,
-          "detalle": "4G/2E/1P",
-          "nombre": "Nashville SC"
-        },
-        "interpretacion": "Equilibrio situacional: Orlando City SC 43% local — Nashville SC 57% visita."
-      },
-      {
-        "factor": "Potencial ofensivo y defensivo",
-        "impacto": "alto",
-        "tipo": "doble_barra",
-        "local": {
-          "nombre": "Orlando City SC",
-          "goles_favor": 1.69,
-          "goles_contra": 2.75
-        },
-        "visitante": {
-          "nombre": "Nashville SC",
-          "goles_favor": 2.06,
-          "goles_contra": 0.69
-        },
-        "interpretacion": "Producción similar: Orlando City SC 1.69 goles/partido — Nashville SC 2.06. Defensa: 2.75 vs 0.69."
-      },
-      {
-        "factor": "Marcadores más probables",
-        "impacto": "informativo",
-        "tipo": "marcadores",
-        "marcadores": [
-          "0-3",
-          "0-4",
-          "0-2",
-          "0-5",
-          "1-3"
-        ],
-        "lambda_local": 0.582,
-        "lambda_visitante": 3.984,
-        "interpretacion": "El marcador más probable es 0-3 (10.0%), coherente con Nashville SC como resultado favorito del modelo."
-      }
-    ]
-  },
-  {
-    "id": "761690",
-    "torneo": "Fase Regular",
-    "perfil": "fase_regular",
-    "es_eliminatoria": false,
-    "local": "Minnesota United FC",
-    "visitante": "Vancouver Whitecaps",
-    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/17362.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/9727.png",
-    "prob_local": 0.12567472716822795,
-    "prob_empate": 0.22415437525710885,
-    "prob_visitante": 0.6501708975746633,
-    "fuerza_local": 0.3049209411764706,
-    "fuerza_visitante": 0.504997,
-    "diferencia": 0.2000760588235294,
-    "confianza": "favorable",
-    "prediccion": "Vancouver Whitecaps",
-    "vuelta_en_casa": "ninguno",
-    "lambda_local": 0.631751924420602,
-    "lambda_visitante": 2.1197716683902246,
-    "marcadores_probables": [
-      "0-2",
-      "0-1",
-      "0-3",
-      "1-2",
-      "0-4"
-    ],
-    "analisis": [
-      {
-        "factor": "Forma reciente",
-        "impacto": "medio",
         "tipo": "forma",
         "local": {
           "valor": 0.17,
-          "ultimos_5": [
-            "L",
-            "D",
-            "L",
-            "L",
-            "D"
-          ],
-          "nombre": "Minnesota United FC"
+          "ultimos_5": [],
+          "nombre": "Vasco Da Gama"
         },
         "visitante": {
-          "valor": 0.41,
-          "ultimos_5": [
-            "L",
-            "W",
-            "L",
-            "W",
-            "D"
-          ],
-          "nombre": "Vancouver Whitecaps"
+          "valor": 0.46,
+          "ultimos_5": [],
+          "nombre": "Fluminense"
         },
-        "interpretacion": "Vancouver Whitecaps llega con mejor momentum: índice 0.41/1.0 frente a 0.17/1.0 de Minnesota United FC. Últimos 5: 2V/1E/2D vs 0V/2E/3D."
+        "interpretacion": "Fluminense llega con mejor momentum: índice 0.46/1.0 frente a 0.17/1.0 de Vasco Da Gama. Últimos 5: 0V/0E/0D vs 0V/0E/0D."
       },
       {
         "factor": "Rendimiento situacional",
-        "impacto": "medio",
+        "impacto": "bajo",
         "tipo": "barras",
         "local": {
           "etiqueta": "Win rate local",
-          "valor": 28.6,
-          "detalle": "2G/3E/2P",
-          "nombre": "Minnesota United FC"
+          "valor": 0.0,
+          "detalle": "0G/1E/0P",
+          "nombre": "Vasco Da Gama"
         },
         "visitante": {
           "etiqueta": "Win rate visita",
-          "valor": 42.9,
-          "detalle": "3G/2E/2P",
-          "nombre": "Vancouver Whitecaps"
+          "valor": 0.0,
+          "detalle": "0G/1E/0P",
+          "nombre": "Fluminense"
         },
-        "interpretacion": "Equilibrio situacional: Minnesota United FC 29% local — Vancouver Whitecaps 43% visita."
+        "interpretacion": "Fluminense sufre de visita: 0% (0G/1E/0P). Vasco Da Gama en casa: 0% (0G/1E/0P)."
       },
       {
         "factor": "Potencial ofensivo y defensivo",
         "impacto": "alto",
         "tipo": "doble_barra",
         "local": {
-          "nombre": "Minnesota United FC",
-          "goles_favor": 1.19,
-          "goles_contra": 1.5
+          "nombre": "Vasco Da Gama",
+          "goles_favor": 2.0,
+          "goles_contra": 1.0
         },
         "visitante": {
-          "nombre": "Vancouver Whitecaps",
-          "goles_favor": 2.47,
-          "goles_contra": 1.07
+          "nombre": "Fluminense",
+          "goles_favor": 1.0,
+          "goles_contra": 0.5
         },
-        "interpretacion": "Vancouver Whitecaps más ofensivo: 2.47 vs 1.19 goles/partido. Defensa: 1.50 vs 1.07."
+        "interpretacion": "Vasco Da Gama más ofensivo: 2.00 vs 1.00 goles/partido. Defensa: 1.00 vs 0.50."
       },
       {
         "factor": "Marcadores más probables",
         "impacto": "informativo",
         "tipo": "marcadores",
         "marcadores": [
-          "0-2",
           "0-1",
-          "0-3",
-          "1-2",
-          "0-4"
+          "0-0",
+          "1-0",
+          "1-1",
+          "0-2"
         ],
-        "lambda_local": 0.632,
-        "lambda_visitante": 2.12,
-        "interpretacion": "El marcador más probable es 0-2 (17.0%), coherente con Vancouver Whitecaps como resultado favorito del modelo."
+        "lambda_local": 0.739,
+        "lambda_visitante": 0.891,
+        "interpretacion": "El marcador individual más probable es 0-1 (17.4%), favoreciendo a Fluminense. Aunque el modelo da como favorito a el empate por probabilidad acumulada, esa probabilidad se reparte entre varios marcadores distintos."
+      },
+      {
+        "factor": "Ventaja de vuelta en casa",
+        "impacto": "medio",
+        "tipo": "vuelta",
+        "equipo_vuelta": "Vasco Da Gama",
+        "local": {
+          "nombre": "Vasco Da Gama",
+          "posicion": 9
+        },
+        "visitante": {
+          "nombre": "Fluminense",
+          "posicion": 9
+        },
+        "interpretacion": "Vasco Da Gama jugará la vuelta en casa (posición 9 vs 9 en tabla). Puede especular en la ida y resolver la eliminatoria ante su afición. Fluminense deberá avanzar jugando el partido decisivo de visitante."
       }
     ]
   },
   {
-    "id": "401841441",
+    "id": "401841467",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Deportivo Riestra",
+    "visitante": "Barracas Central",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/17702.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/10060.png",
+    "prob_local": 0.1714549505474659,
+    "prob_empate": 0.44,
+    "prob_visitante": 0.38854504945253404,
+    "fuerza_local": 0.4121583529411764,
+    "fuerza_visitante": 0.5420031176470589,
+    "diferencia": 0.12984476470588246,
+    "confianza": "favorable",
+    "prediccion": "Empate",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.34696109697351835,
+    "lambda_visitante": 0.7145845169940984,
+    "marcadores_probables": [
+      "0-0",
+      "0-1",
+      "1-0",
+      "0-2",
+      "1-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "L",
+            "W",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Deportivo Riestra"
+        },
+        "visitante": {
+          "valor": 0.7,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "D",
+            "D"
+          ],
+          "nombre": "Barracas Central"
+        },
+        "interpretacion": "Barracas Central llega con mejor momentum: índice 0.70/1.0 frente a 0.47/1.0 de Deportivo Riestra. Últimos 5: 2V/2E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 22.2,
+          "detalle": "2G/5E/2P",
+          "nombre": "Deportivo Riestra"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 33.3,
+          "detalle": "3G/4E/2P",
+          "nombre": "Barracas Central"
+        },
+        "interpretacion": "Equilibrio situacional: Deportivo Riestra 22% local — Barracas Central 33% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Deportivo Riestra",
+          "goles_favor": 0.5,
+          "goles_contra": 0.78
+        },
+        "visitante": {
+          "nombre": "Barracas Central",
+          "goles_favor": 0.94,
+          "goles_contra": 0.83
+        },
+        "interpretacion": "Barracas Central más ofensivo: 0.94 vs 0.50 goles/partido. Defensa: 0.78 vs 0.83."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-0",
+          "0-1",
+          "1-0",
+          "0-2",
+          "1-1"
+        ],
+        "lambda_local": 0.347,
+        "lambda_visitante": 0.715,
+        "interpretacion": "El marcador más probable es 0-0 (34.6%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401841473",
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
     "es_eliminatoria": false,
     "local": "Newell's Old Boys",
-    "visitante": "Talleres (Córdoba)",
+    "visitante": "Boca Juniors",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/14.png",
-    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/19.png",
-    "prob_local": 0.18310295303299523,
-    "prob_empate": 0.284180136064602,
-    "prob_visitante": 0.5327169109024028,
-    "fuerza_local": 0.3361235294117647,
-    "fuerza_visitante": 0.47586235294117646,
-    "diferencia": 0.13973882352941175,
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/5.png",
+    "prob_local": 0.15420426226388995,
+    "prob_empate": 0.2363504449978852,
+    "prob_visitante": 0.6094452927382248,
+    "fuerza_local": 0.3837748235294117,
+    "fuerza_visitante": 0.4229815294117647,
+    "diferencia": 0.03920670588235298,
     "confianza": "favorable",
-    "prediccion": "Talleres (Córdoba)",
+    "prediccion": "Boca Juniors",
     "vuelta_en_casa": "ninguno",
-    "lambda_local": 0.48415135135135146,
-    "lambda_visitante": 1.1994233513513515,
+    "lambda_local": 0.645457099419541,
+    "lambda_visitante": 2.0232694895842624,
     "marcadores_probables": [
-      "0-1",
-      "0-0",
       "0-2",
-      "1-1",
-      "1-0"
+      "0-1",
+      "0-3",
+      "1-2",
+      "1-1"
     ],
     "analisis": [
       {
@@ -1424,65 +763,398 @@
         "impacto": "bajo",
         "tipo": "forma",
         "local": {
-          "valor": 0.5,
-          "ultimos_5": [],
-          "nombre": "Newells"
+          "valor": 0.49,
+          "ultimos_5": [
+            "L",
+            "W",
+            "D",
+            "D",
+            "W"
+          ],
+          "nombre": "Newell's Old Boys"
         },
         "visitante": {
-          "valor": 0.5,
-          "ultimos_5": [],
-          "nombre": "Talleres"
+          "valor": 0.4,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Boca Juniors"
         },
-        "interpretacion": "Momentum similar: Newells 0.50/1.0 — Talleres 0.50/1.0."
+        "interpretacion": "Newell's Old Boys llega con mejor momentum: índice 0.49/1.0 frente a 0.40/1.0 de Boca Juniors. Últimos 5: 2V/2E/1D vs 3V/0E/2D."
       },
       {
         "factor": "Rendimiento situacional",
-        "impacto": "bajo",
+        "impacto": "alto",
         "tipo": "barras",
         "local": {
           "etiqueta": "Win rate local",
-          "valor": 0,
-          "detalle": "0G/0E/0P",
-          "nombre": "Newells"
+          "valor": 22.2,
+          "detalle": "2G/4E/3P",
+          "nombre": "Newell's Old Boys"
         },
         "visitante": {
           "etiqueta": "Win rate visita",
-          "valor": 0,
-          "detalle": "0G/0E/0P",
-          "nombre": "Talleres"
+          "valor": 55.6,
+          "detalle": "5G/1E/3P",
+          "nombre": "Boca Juniors"
         },
-        "interpretacion": "Talleres sufre de visita: 0% (0G/0E/0P). Newells en casa: 0% (0G/0E/0P)."
+        "interpretacion": "Equilibrio situacional: Newell's Old Boys 22% local — Boca Juniors 56% visita."
       },
       {
         "factor": "Potencial ofensivo y defensivo",
         "impacto": "alto",
         "tipo": "doble_barra",
         "local": {
-          "nombre": "Newells",
-          "goles_favor": 0.93,
-          "goles_contra": 1.73
+          "nombre": "Newell's Old Boys",
+          "goles_favor": 0.89,
+          "goles_contra": 1.56
         },
         "visitante": {
-          "nombre": "Talleres",
-          "goles_favor": 1.07,
-          "goles_contra": 0.8
+          "nombre": "Boca Juniors",
+          "goles_favor": 1.33,
+          "goles_contra": 0.83
         },
-        "interpretacion": "Producción similar: Newells 0.93 goles/partido — Talleres 1.07. Defensa: 1.73 vs 0.80."
+        "interpretacion": "Boca Juniors más ofensivo: 1.33 vs 0.89 goles/partido. Defensa: 1.56 vs 0.83."
       },
       {
         "factor": "Marcadores más probables",
         "impacto": "informativo",
         "tipo": "marcadores",
         "marcadores": [
-          "0-1",
-          "0-0",
           "0-2",
-          "1-1",
-          "1-0"
+          "0-1",
+          "0-3",
+          "1-2",
+          "1-1"
         ],
-        "lambda_local": 0.484,
-        "lambda_visitante": 1.199,
-        "interpretacion": "El marcador más probable es 0-1 (23.3%), coherente con Talleres como resultado favorito del modelo."
+        "lambda_local": 0.645,
+        "lambda_visitante": 2.023,
+        "interpretacion": "El marcador más probable es 0-2 (15.7%), coherente con Boca Juniors como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "761698",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Vancouver Whitecaps",
+    "visitante": "LAFC",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/9727.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/18966.png",
+    "prob_local": 0.39377307717458493,
+    "prob_empate": 0.27396845667041025,
+    "prob_visitante": 0.3322584661550049,
+    "fuerza_local": 0.588755,
+    "fuerza_visitante": 0.665129117647059,
+    "diferencia": 0.07637411764705893,
+    "confianza": "ajustado",
+    "prediccion": "Vancouver Whitecaps",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.499547318327033,
+    "lambda_visitante": 1.2231929019987193,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "2-1",
+      "0-1",
+      "1-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.46,
+          "ultimos_5": [
+            "D",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "nombre": "Vancouver Whitecaps"
+        },
+        "visitante": {
+          "valor": 0.92,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "LAFC"
+        },
+        "interpretacion": "LAFC llega con mejor momentum: índice 0.92/1.0 frente a 0.46/1.0 de Vancouver Whitecaps. Últimos 5: 4V/0E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 87.5,
+          "detalle": "7G/0E/1P",
+          "nombre": "Vancouver Whitecaps"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 37.5,
+          "detalle": "3G/2E/3P",
+          "nombre": "LAFC"
+        },
+        "interpretacion": "Vancouver Whitecaps domina en casa: 88% (7G/0E/1P). LAFC: 38% de visita (3G/2E/3P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Vancouver Whitecaps",
+          "goles_favor": 2.31,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "LAFC",
+          "goles_favor": 1.89,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Vancouver Whitecaps más ofensivo: 2.31 vs 1.89 goles/partido. Defensa: 1.00 vs 1.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "2-1",
+          "0-1",
+          "1-2"
+        ],
+        "lambda_local": 1.5,
+        "lambda_visitante": 1.223,
+        "interpretacion": "El marcador más probable es 1-0 (9.7%), coherente con Vancouver Whitecaps como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "761705",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "St. Louis CITY SC",
+    "visitante": "Real Salt Lake",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/21812.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/4771.png",
+    "prob_local": 0.4950439506331082,
+    "prob_empate": 0.24753720625885584,
+    "prob_visitante": 0.25741884310803603,
+    "fuerza_local": 0.6837897058823529,
+    "fuerza_visitante": 0.36840735294117655,
+    "diferencia": 0.31538235294117634,
+    "confianza": "favorable",
+    "prediccion": "St. Louis CITY SC",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.4973446909667194,
+    "lambda_visitante": 1.0246580198515307,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "2-0",
+      "2-1",
+      "0-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.96,
+          "ultimos_5": [
+            "W",
+            "W",
+            "W",
+            "W",
+            "D"
+          ],
+          "nombre": "St. Louis CITY SC"
+        },
+        "visitante": {
+          "valor": 0.3,
+          "ultimos_5": [
+            "L",
+            "L",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Real Salt Lake"
+        },
+        "interpretacion": "St. Louis CITY SC llega con mejor momentum: índice 0.96/1.0 frente a 0.30/1.0 de Real Salt Lake. Últimos 5: 4V/1E/0D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 62.5,
+          "detalle": "5G/1E/2P",
+          "nombre": "St. Louis CITY SC"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 12.5,
+          "detalle": "1G/2E/5P",
+          "nombre": "Real Salt Lake"
+        },
+        "interpretacion": "Contraste marcado: St. Louis CITY SC gana el 62% en casa (5G/1E/2P), Real Salt Lake solo el 12% de visita (1G/2E/5P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "St. Louis CITY SC",
+          "goles_favor": 1.35,
+          "goles_contra": 1.35
+        },
+        "visitante": {
+          "nombre": "Real Salt Lake",
+          "goles_favor": 1.75,
+          "goles_contra": 1.5
+        },
+        "interpretacion": "Producción similar: St. Louis CITY SC 1.35 goles/partido — Real Salt Lake 1.75. Defensa: 1.35 vs 1.50."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "2-0",
+          "2-1",
+          "0-0"
+        ],
+        "lambda_local": 1.497,
+        "lambda_visitante": 1.025,
+        "interpretacion": "El marcador más probable es 1-0 (13.3%), coherente con St. Louis CITY SC como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "761708",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Portland Timbers",
+    "visitante": "Seattle Sounders FC",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/9723.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/9726.png",
+    "prob_local": 0.42440401654691484,
+    "prob_empate": 0.27694322857780496,
+    "prob_visitante": 0.2986527548752802,
+    "fuerza_local": 0.5239770588235294,
+    "fuerza_visitante": 0.42684782352941175,
+    "diferencia": 0.09712923529411766,
+    "confianza": "moderado",
+    "prediccion": "Portland Timbers",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.481692633832095,
+    "lambda_visitante": 1.2153632355265462,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "2-1",
+      "2-0",
+      "0-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.68,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "Portland Timbers"
+        },
+        "visitante": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Seattle Sounders FC"
+        },
+        "interpretacion": "Portland Timbers llega con mejor momentum: índice 0.68/1.0 frente a 0.50/1.0 de Seattle Sounders FC. Últimos 5: 2V/1E/2D vs 0V/0E/5D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 50.0,
+          "detalle": "4G/2E/2P",
+          "nombre": "Portland Timbers"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 33.3,
+          "detalle": "3G/2E/4P",
+          "nombre": "Seattle Sounders FC"
+        },
+        "interpretacion": "Equilibrio situacional: Portland Timbers 50% local — Seattle Sounders FC 33% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Portland Timbers",
+          "goles_favor": 1.82,
+          "goles_contra": 1.88
+        },
+        "visitante": {
+          "nombre": "Seattle Sounders FC",
+          "goles_favor": 1.19,
+          "goles_contra": 1.25
+        },
+        "interpretacion": "Portland Timbers más ofensivo: 1.82 vs 1.19 goles/partido. Defensa: 1.88 vs 1.25."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "2-1",
+          "2-0",
+          "0-1"
+        ],
+        "lambda_local": 1.482,
+        "lambda_visitante": 1.215,
+        "interpretacion": "El marcador más probable es 1-0 (10.7%), coherente con Portland Timbers como resultado favorito del modelo."
       }
     ]
   }
