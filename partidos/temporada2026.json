@@ -1,5 +1,107 @@
 [
   {
+    "id": "401877027",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Puebla",
+    "visitante": "Guadalajara",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/231.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
+    "prob_local": 0.28860269317612286,
+    "prob_empate": 0.44,
+    "prob_visitante": 0.27139730682387714,
+    "fuerza_local": 0.3366529411764706,
+    "fuerza_visitante": 0.3472411764705883,
+    "diferencia": 0.010588235294117676,
+    "confianza": "ajustado",
+    "prediccion": "Empate",
+    "resultado": "Empate",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.8265535069749291,
+    "lambda_visitante": 0.7678009950248755,
+    "marcadores_probables": [
+      "0-0",
+      "1-0",
+      "0-1",
+      "1-1",
+      "2-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.25,
+          "ultimos_5": [
+            "L",
+            "W"
+          ],
+          "nombre": "Puebla"
+        },
+        "visitante": {
+          "valor": 0.35,
+          "ultimos_5": [
+            "W",
+            "L"
+          ],
+          "nombre": "Guadalajara"
+        },
+        "interpretacion": "Guadalajara llega con mejor momentum: índice 0.35/1.0 frente a 0.25/1.0 de Puebla. Últimos 5: 1V/0E/1D vs 1V/0E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Puebla"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Guadalajara"
+        },
+        "interpretacion": "Guadalajara sufre de visita: 0% (0G/0E/0P). Puebla en casa: 0% (0G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Puebla",
+          "goles_favor": 1.0,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Guadalajara",
+          "goles_favor": 0.5,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Puebla más ofensivo: 1.00 vs 0.50 goles/partido. Defensa: 1.00 vs 1.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-0",
+          "1-0",
+          "0-1",
+          "1-1",
+          "2-0"
+        ],
+        "lambda_local": 0.827,
+        "lambda_visitante": 0.768,
+        "interpretacion": "El marcador más probable es 0-0 (20.3%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
     "id": "401841445",
     "torneo": "Fase Regular",
     "perfil": "fase_regular",
