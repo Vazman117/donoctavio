@@ -49,15 +49,6 @@
       "goles_visitante": null
     },
     {
-      "id_evento": "401874153",
-      "fecha": "2026-08-13T00:30Z",
-      "jornada_nombre": "FLA @ CRU",
-      "equipo_local": "Cruzeiro",
-      "equipo_visitante": "Flamengo",
-      "goles_local": null,
-      "goles_visitante": null
-    },
-    {
       "id_evento": "401874073",
       "fecha": "2026-08-13T22:00Z",
       "jornada_nombre": "LDU @ MIR",

@@ -15,53 +15,53 @@
         "puntos": 16,
         "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/819.png",
         "abreviacion": "FLA",
-        "forma_ponderada": 0.846,
-        "forma_liga": 0.846,
+        "forma_ponderada": 0.81,
+        "forma_liga": 0.81,
         "ultimos_5_liga": [
           "W",
           "W",
-          "W",
           "D",
+          "W",
           "W"
         ],
-        "imbatido_streak": 6,
-        "forma_liga_local": 0.665,
+        "imbatido_streak": 5,
+        "forma_liga_local": 0.775,
         "ultimos_5_liga_local": [
+          "W",
+          "D",
           "D",
           "W",
-          "W",
-          "L",
-          "D"
+          "W"
         ],
         "liga_local_slug": "bra.1",
         "competencias": {
           "conmebol.libertadores": {
-            "partidos": 6,
-            "ganados": 5,
+            "partidos": 5,
+            "ganados": 4,
             "empatados": 1,
             "perdidos": 0,
-            "goles_favor": 14,
+            "goles_favor": 11,
             "goles_contra": 2,
-            "goles_favor_promedio": 2.333,
-            "goles_contra_promedio": 0.333,
+            "goles_favor_promedio": 2.2,
+            "goles_contra_promedio": 0.4,
             "partidos_local": 3,
             "ganados_local": 3,
             "empatados_local": 0,
             "perdidos_local": 0,
             "win_rate_local": 1.0,
-            "partidos_visita": 3,
-            "ganados_visita": 2,
+            "partidos_visita": 2,
+            "ganados_visita": 1,
             "empatados_visita": 1,
             "perdidos_visita": 0,
-            "win_rate_visita": 0.667,
+            "win_rate_visita": 0.5,
             "ultimos_5": [
               "W",
               "W",
-              "W",
               "D",
+              "W",
               "W"
             ],
-            "imbatido_streak": 6
+            "imbatido_streak": 5
           }
         }
       },
@@ -88,13 +88,13 @@
           "W"
         ],
         "imbatido_streak": 1,
-        "forma_liga_local": 0.34,
+        "forma_liga_local": 0.2,
         "ultimos_5_liga_local": [
           "L",
           "L",
           "W",
-          "D",
-          "W"
+          "L",
+          "L"
         ],
         "liga_local_slug": "arg.1",
         "competencias": {
@@ -141,40 +141,40 @@
         "puntos": 7,
         "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/2690.png",
         "abreviacion": "DIM",
-        "forma_ponderada": 0.333,
-        "forma_liga": 0.333,
+        "forma_ponderada": 0.441,
+        "forma_liga": 0.441,
         "ultimos_5_liga": [
           "L",
           "W",
-          "L",
           "W",
-          "L"
+          "L",
+          "D"
         ],
         "imbatido_streak": 0,
-        "forma_liga_local": 0.75,
+        "forma_liga_local": 0.88,
         "ultimos_5_liga_local": [
           "W",
+          "W",
+          "W",
           "L",
-          "W",
-          "W",
           "W"
         ],
         "liga_local_slug": "col.1",
         "competencias": {
           "conmebol.libertadores": {
-            "partidos": 10,
+            "partidos": 9,
             "ganados": 4,
             "empatados": 3,
-            "perdidos": 3,
+            "perdidos": 2,
             "goles_favor": 11,
-            "goles_contra": 14,
-            "goles_favor_promedio": 1.1,
-            "goles_contra_promedio": 1.4,
-            "partidos_local": 5,
+            "goles_contra": 11,
+            "goles_favor_promedio": 1.222,
+            "goles_contra_promedio": 1.222,
+            "partidos_local": 4,
             "ganados_local": 2,
             "empatados_local": 2,
-            "perdidos_local": 1,
-            "win_rate_local": 0.4,
+            "perdidos_local": 0,
+            "win_rate_local": 0.5,
             "partidos_visita": 5,
             "ganados_visita": 2,
             "empatados_visita": 1,
@@ -183,9 +183,9 @@
             "ultimos_5": [
               "L",
               "W",
-              "L",
               "W",
-              "L"
+              "L",
+              "D"
             ],
             "imbatido_streak": 0
           }
@@ -214,13 +214,13 @@
           "L"
         ],
         "imbatido_streak": 0,
-        "forma_liga_local": 0.57,
+        "forma_liga_local": 0.45,
         "ultimos_5_liga_local": [
           "L",
           "W",
+          "L",
           "W",
-          "W",
-          "L"
+          "W"
         ],
         "liga_local_slug": "per.1",
         "competencias": {
@@ -282,13 +282,13 @@
           "W"
         ],
         "imbatido_streak": 0,
-        "forma_liga_local": 0.645,
+        "forma_liga_local": 0.435,
         "ultimos_5_liga_local": [
           "D",
-          "W",
+          "L",
           "D",
           "W",
-          "L"
+          "D"
         ],
         "liga_local_slug": "chi.1",
         "competencias": {
@@ -345,13 +345,13 @@
           "L"
         ],
         "imbatido_streak": 1,
-        "forma_liga_local": 0.55,
+        "forma_liga_local": 0.67,
         "ultimos_5_liga_local": [
           "W",
           "L",
-          "L",
           "W",
-          "W"
+          "W",
+          "L"
         ],
         "liga_local_slug": "col.1",
         "competencias": {
@@ -408,12 +408,12 @@
           "W"
         ],
         "imbatido_streak": 2,
-        "forma_liga_local": 0.405,
+        "forma_liga_local": 0.39,
         "ultimos_5_liga_local": [
           "L",
-          "D",
           "W",
           "L",
+          "D",
           "W"
         ],
         "liga_local_slug": "uru.1",
@@ -471,13 +471,13 @@
           "L"
         ],
         "imbatido_streak": 2,
-        "forma_liga_local": 0.86,
+        "forma_liga_local": 0.575,
         "ultimos_5_liga_local": [
-          "W",
-          "W",
-          "W",
           "D",
-          "L"
+          "L",
+          "W",
+          "W",
+          "W"
         ],
         "liga_local_slug": "per.1",
         "competencias": {
@@ -539,13 +539,13 @@
           "W"
         ],
         "imbatido_streak": 6,
-        "forma_liga_local": 0.435,
+        "forma_liga_local": 0.61,
         "ultimos_5_liga_local": [
-          "D",
-          "L",
-          "D",
           "W",
-          "D"
+          "L",
+          "W",
+          "D",
+          "L"
         ],
         "liga_local_slug": "arg.1",
         "competencias": {
@@ -602,13 +602,13 @@
           "L"
         ],
         "imbatido_streak": 3,
-        "forma_liga_local": 0.48,
+        "forma_liga_local": 0.5,
         "ultimos_5_liga_local": [
           "D",
           "D",
           "D",
-          "L",
-          "W"
+          "D",
+          "D"
         ],
         "liga_local_slug": "bra.1",
         "competencias": {
@@ -722,13 +722,13 @@
           "D"
         ],
         "imbatido_streak": 0,
-        "forma_liga_local": 0.45,
+        "forma_liga_local": 0.63,
         "ultimos_5_liga_local": [
+          "W",
           "L",
           "W",
-          "D",
-          "D",
-          "D"
+          "L",
+          "W"
         ],
         "liga_local_slug": "ven.1",
         "competencias": {
@@ -790,12 +790,12 @@
           "W"
         ],
         "imbatido_streak": 5,
-        "forma_liga_local": 0.705,
+        "forma_liga_local": 0.65,
         "ultimos_5_liga_local": [
-          "D",
-          "W",
           "W",
           "L",
+          "D",
+          "W",
           "W"
         ],
         "liga_local_slug": "chi.1",
@@ -853,11 +853,11 @@
           "L"
         ],
         "imbatido_streak": 4,
-        "forma_liga_local": 0.51,
+        "forma_liga_local": 0.76,
         "ultimos_5_liga_local": [
-          "L",
           "W",
-          "D",
+          "W",
+          "L",
           "W",
           "D"
         ],
@@ -916,13 +916,13 @@
           "W"
         ],
         "imbatido_streak": 0,
-        "forma_liga_local": 0.4,
+        "forma_liga_local": 0.525,
         "ultimos_5_liga_local": [
-          "L",
-          "L",
+          "D",
           "W",
-          "W",
-          "W"
+          "D",
+          "L",
+          "L"
         ],
         "liga_local_slug": "arg.1",
         "competencias": {
@@ -979,13 +979,13 @@
           "L"
         ],
         "imbatido_streak": 0,
-        "forma_liga_local": 0.3,
+        "forma_liga_local": 0.205,
         "ultimos_5_liga_local": [
           "L",
-          "L",
-          "W",
           "D",
-          "D"
+          "L",
+          "L",
+          "W"
         ],
         "liga_local_slug": "ecu.1",
         "competencias": {
@@ -1047,13 +1047,13 @@
           "W"
         ],
         "imbatido_streak": 0,
-        "forma_liga_local": 0.745,
+        "forma_liga_local": 0.775,
         "ultimos_5_liga_local": [
+          "W",
+          "D",
           "D",
           "W",
-          "W",
-          "W",
-          "L"
+          "W"
         ],
         "liga_local_slug": "bra.1",
         "competencias": {
@@ -1110,13 +1110,13 @@
           "W"
         ],
         "imbatido_streak": 1,
-        "forma_liga_local": 0.215,
+        "forma_liga_local": 0.41,
         "ultimos_5_liga_local": [
+          "W",
+          "L",
+          "L",
           "D",
-          "L",
-          "L",
-          "L",
-          "D"
+          "L"
         ],
         "liga_local_slug": "arg.1",
         "competencias": {
@@ -1173,12 +1173,12 @@
           "L"
         ],
         "imbatido_streak": 3,
-        "forma_liga_local": 0.26,
+        "forma_liga_local": 0.515,
         "ultimos_5_liga_local": [
-          "L",
-          "L",
-          "D",
           "W",
+          "D",
+          "L",
+          "L",
           "D"
         ],
         "liga_local_slug": "col.1",
@@ -1236,12 +1236,12 @@
           "L"
         ],
         "imbatido_streak": 0,
-        "forma_liga_local": 0.755,
+        "forma_liga_local": 0.94,
         "ultimos_5_liga_local": [
           "W",
-          "D",
           "W",
-          "L",
+          "W",
+          "D",
           "W"
         ],
         "liga_local_slug": "uru.1",
@@ -1361,13 +1361,13 @@
           "W"
         ],
         "imbatido_streak": 1,
-        "forma_liga_local": 0.61,
+        "forma_liga_local": 0.625,
         "ultimos_5_liga_local": [
+          "D",
+          "W",
           "L",
           "W",
-          "W",
-          "W",
-          "D"
+          "W"
         ],
         "liga_local_slug": "bra.1",
         "competencias": {
@@ -1424,9 +1424,9 @@
           "L"
         ],
         "imbatido_streak": 0,
-        "forma_liga_local": 0.37,
+        "forma_liga_local": 0.545,
         "ultimos_5_liga_local": [
-          "L",
+          "D",
           "W",
           "L",
           "W",
@@ -1487,13 +1487,13 @@
           "L"
         ],
         "imbatido_streak": 0,
-        "forma_liga_local": 0.36,
+        "forma_liga_local": 0.2,
         "ultimos_5_liga_local": [
           "L",
           "L",
+          "L",
           "W",
-          "W",
-          "D"
+          "W"
         ],
         "liga_local_slug": "col.1",
         "competencias": {
@@ -1555,13 +1555,13 @@
           "W"
         ],
         "imbatido_streak": 2,
-        "forma_liga_local": 0.515,
+        "forma_liga_local": 0.51,
         "ultimos_5_liga_local": [
+          "L",
+          "W",
           "W",
           "D",
-          "L",
-          "L",
-          "D"
+          "L"
         ],
         "liga_local_slug": "ecu.1",
         "competencias": {
@@ -1618,11 +1618,11 @@
           "L"
         ],
         "imbatido_streak": 0,
-        "forma_liga_local": 0.545,
+        "forma_liga_local": 0.47,
         "ultimos_5_liga_local": [
-          "D",
-          "W",
           "L",
+          "W",
+          "D",
           "W",
           "L"
         ],
@@ -1681,13 +1681,13 @@
           "W"
         ],
         "imbatido_streak": 1,
-        "forma_liga_local": 0.51,
+        "forma_liga_local": 0.24,
         "ultimos_5_liga_local": [
+          "L",
+          "L",
           "W",
           "L",
-          "D",
-          "D",
-          "L"
+          "D"
         ],
         "liga_local_slug": "arg.1",
         "competencias": {
@@ -1869,13 +1869,13 @@
           "W"
         ],
         "imbatido_streak": 0,
-        "forma_liga_local": 0.36,
+        "forma_liga_local": 0.7,
         "ultimos_5_liga_local": [
-          "L",
-          "L",
           "W",
           "W",
-          "D"
+          "D",
+          "L",
+          "L"
         ],
         "liga_local_slug": "arg.1",
         "competencias": {
@@ -1932,13 +1932,13 @@
           "L"
         ],
         "imbatido_streak": 1,
-        "forma_liga_local": 0.24,
+        "forma_liga_local": 0.25,
         "ultimos_5_liga_local": [
           "L",
+          "W",
           "L",
-          "D",
-          "D",
-          "W"
+          "L",
+          "L"
         ],
         "liga_local_slug": "ven.1",
         "competencias": {

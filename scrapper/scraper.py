@@ -1,19 +1,97 @@
-import requests
 import json
 import time
 import os
 import argparse
+import hashlib
 from datetime import datetime, timezone
+
+# ─────────────────────────────────────────────
+# curl_cffi en vez de requests
+# ─────────────────────────────────────────────
+# requests/urllib3 hacen un handshake TLS que Akamai (el WAF de ESPN)
+# puede identificar como "no-navegador" (JA3 fingerprint), incluso con
+# headers HTTP perfectos y sin importar la IP desde la que te conectes.
+# curl_cffi usa un motor que imita el handshake TLS real de Chrome/Firefox,
+# por eso pasa donde requests no pasa contra este tipo de bloqueo.
+#
+# Instalar con:  pip install curl_cffi --break-system-packages
+from curl_cffi import requests
+
+# Perfil de navegador a imitar. Si "chrome120" no funciona, prueba otros:
+# "chrome124", "chrome131", "safari17_0", "firefox133", etc.
+# Lista completa de perfiles soportados: https://github.com/lexiforest/curl_cffi
+IMPERSONATE_PROFILE = "chrome120"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
     "Accept": "application/json, text/plain, */*",
     "Accept-Language": "es-MX,es;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
     "Referer": "https://www.espn.com.mx/",
-    "Origin": "https://www.espn.com.mx"
+    "Origin": "https://www.espn.com.mx",
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-site",
 }
 
 PESOS_FORMA = [0.35, 0.25, 0.20, 0.12, 0.08]
+
+# ─────────────────────────────────────────────
+# CACHÉ LOCAL CON TTL (anti rate-limit / anti re-bloqueo)
+# ─────────────────────────────────────────────
+CACHE_DIR = "cache_espn"
+CACHE_TTL_SEGUNDOS = 60 * 15  # 15 minutos. Súbelo (ej. 60*60) si sigues en modo prueba intensiva.
+PAUSA_ENTRE_REQUESTS = 1.5    # segundos entre requests seguidos a la API
+
+
+class _RespuestaFake:
+    """Simula lo mínimo de requests.Response que usa el resto del scraper."""
+    def __init__(self, status_code, text):
+        self.status_code = status_code
+        self.text = text
+
+    def json(self):
+        return json.loads(self.text)
+
+
+def _cache_path(url):
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    h = hashlib.md5(url.encode()).hexdigest()
+    return os.path.join(CACHE_DIR, f"{h}.json")
+
+
+def get_cacheado(url, headers=HEADERS, timeout=10, ttl=CACHE_TTL_SEGUNDOS, pausa=True):
+    """
+    Reemplazo de requests.get() con caché local y backoff simple.
+    Ahora usa curl_cffi con impersonation de Chrome para evitar
+    el fingerprinting TLS de Akamai.
+    """
+    ruta = _cache_path(url)
+
+    if os.path.exists(ruta):
+        edad = time.time() - os.path.getmtime(ruta)
+        if edad < ttl:
+            with open(ruta, "r", encoding="utf-8") as f:
+                cached = json.load(f)
+            print(f"    💾 cache hit ({int(edad)}s) → {url[:70]}...")
+            return _RespuestaFake(cached["status_code"], cached["text"])
+
+    r = requests.get(url, headers=headers, timeout=timeout, impersonate=IMPERSONATE_PROFILE)
+
+    if r.status_code in (403, 429):
+        print(f"    ⚠️  HTTP {r.status_code} — posible rate-limit. Reintentando en 5s...")
+        time.sleep(5)
+        r = requests.get(url, headers=headers, timeout=timeout, impersonate=IMPERSONATE_PROFILE)
+
+    if r.status_code == 200:
+        with open(ruta, "w", encoding="utf-8") as f:
+            json.dump({"status_code": r.status_code, "text": r.text}, f)
+
+    if pausa:
+        time.sleep(PAUSA_ENTRE_REQUESTS)
+
+    return r
+
 
 PESO_COMPETENCIA = {
     "mex.1":                  1.0,
@@ -43,6 +121,7 @@ PESO_COMPETENCIA = {
     "conmebol.libertadores":  0.90,
     "conmebol.sudamericana":  0.80,
     "concacaf.champions":     0.70,
+    "concacaf.leagues.cup":   0.65,
     "concacaf.w.champions":   0.70,
     "uefa.champions":         0.60,
     "afc.champions":          0.60,
@@ -60,7 +139,7 @@ LIGAS_CONFIG = {
     "mex.1": {
         "nombre":                  "Liga MX",
         "carpeta":                 "LIGA-MX",
-        "copas":                   ["mex.1", "concacaf.champions"],
+        "copas":                   ["mex.1", "concacaf.champions", "concacaf.leagues.cup"],
         "es_torneo_copa":          False,
         "liga_principal":          "mex.1",
         "tiene_apertura_clausura": True,
@@ -88,7 +167,7 @@ LIGAS_CONFIG = {
         "es_torneo_copa":          True,
         "liga_principal":          "mex.campeon",
         "tiene_apertura_clausura": False,
-        "ligas_locales":           ["mex.1"],   
+        "ligas_locales":           ["mex.1"],
     },
     "eng.1": {
         "nombre":                  "Premier League",
@@ -171,7 +250,7 @@ LIGAS_CONFIG = {
     "usa.1": {
         "nombre":                  "MLS",
         "carpeta":                 "MLS",
-        "copas":                   ["usa.1"],
+        "copas":                   ["usa.1", "concacaf.leagues.cup"],
         "es_torneo_copa":          False,
         "liga_principal":          "usa.1",
         "tiene_apertura_clausura": False,
@@ -244,13 +323,12 @@ LIGAS_CONFIG = {
         "ligas_locales":           ["eng.1", "esp.1", "ger.1", "fra.1", "ita.1",
                                     "ned.1", "por.1", "bel.1", "sco.1", "gre.1"],
     },
-    # ── GRUPOS ───────────────────────────────────────────────────────────
     "conmebol.libertadores": {
         "nombre":                  "CONMEBOL Libertadores",
         "carpeta":                 "LIBERTADORES",
         "copas":                   ["conmebol.libertadores"],
         "es_torneo_copa":          True,
-        "tiene_grupos":            True,           # <-- NUEVO
+        "tiene_grupos":            True,
         "liga_principal":          "conmebol.libertadores",
         "tiene_apertura_clausura": False,
         "season_type_id":          "2",
@@ -262,12 +340,23 @@ LIGAS_CONFIG = {
         "carpeta":                 "SUDAMERICANA",
         "copas":                   ["conmebol.sudamericana"],
         "es_torneo_copa":          True,
-        "tiene_grupos":            True,           # <-- NUEVO
+        "tiene_grupos":            True,
         "liga_principal":          "conmebol.sudamericana",
         "tiene_apertura_clausura": False,
         "season_type_id":          "2",
         "ligas_locales":           ["bra.1", "arg.1", "col.1", "chi.1",
                                     "uru.1", "ven.1", "ecu.1", "per.1"],
+    },
+    "concacaf.leagues.cup": {
+        "nombre":                  "Leagues Cup",
+        "carpeta":                 "LEAGUES-CUP",
+        "copas":                   ["concacaf.leagues.cup"],
+        "es_torneo_copa":          True,
+        "tiene_grupos":            True,
+        "liga_principal":          "concacaf.leagues.cup",
+        "tiene_apertura_clausura": False,
+        "season_type_id":          "2",
+        "ligas_locales":           ["usa.1", "mex.1"],
     },
     "concacaf.w.champions": {
         "nombre":                  "Concacaf W Champions Cup",
@@ -300,7 +389,7 @@ def diagnosticar(liga_slug):
     resultados = {}
     for nombre, url in urls.items():
         try:
-            r = requests.get(url, headers=HEADERS, timeout=10)
+            r = get_cacheado(url, headers=HEADERS, timeout=10)
             size = len(r.text)
             ok = r.status_code == 200 and size > 100
             print(f"  {'✅' if ok else '❌'} {nombre}: HTTP {r.status_code} | {size} chars")
@@ -496,17 +585,10 @@ def parsear_standings(data):
 
 
 # ─────────────────────────────────────────────
-# PARSEAR STANDINGS CON GRUPOS  (NUEVO)
+# PARSEAR STANDINGS CON GRUPOS
 # ─────────────────────────────────────────────
 
 def parsear_standings_grupos(data):
-    """
-    Preserva la estructura de grupos del torneo.
-
-    Retorna:
-      grupos_list  — lista de dicts { "grupo": str, "equipos": [fila, ...] }
-      equipos_dict — dict { team_id: equipo } para el loop de partidos
-    """
     grupos_list  = []
     equipos_dict = {}
 
@@ -537,7 +619,7 @@ def parsear_standings_grupos(data):
             if resultado is None:
                 continue
             team_id, fila, equipo = resultado
-            equipos_grupo.append(fila)          # fila conserva "id" temporalmente
+            equipos_grupo.append(fila)
             if team_id not in equipos_dict:
                 equipos_dict[team_id] = equipo
 
@@ -631,7 +713,7 @@ def obtener_equipos_desde_teams(liga_slug):
     url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{liga_slug}/teams"
     equipos = {}
     try:
-        r = requests.get(url, headers=HEADERS, timeout=10)
+        r = get_cacheado(url, headers=HEADERS, timeout=10)
         if r.status_code != 200 or len(r.text) < 100:
             return equipos
         data = r.json()
@@ -663,7 +745,7 @@ def obtener_equipos_desde_scoreboard(liga_slug, semanas=8):
         url = (f"https://site.api.espn.com/apis/site/v2/sports/soccer"
                f"/{liga_slug}/scoreboard?dates={fecha_str}")
         try:
-            r = requests.get(url, headers=HEADERS, timeout=10)
+            r = get_cacheado(url, headers=HEADERS, timeout=10)
             if r.status_code != 200 or len(r.text) < 100:
                 continue
             data = r.json()
@@ -674,7 +756,6 @@ def obtener_equipos_desde_scoreboard(liga_slug, semanas=8):
                         team_id = team.get("id")
                         if team_id and team_id not in equipos:
                             equipos[team_id] = _extraer_equipo_info(team)
-            time.sleep(0.2)
         except Exception:
             continue
 
@@ -751,7 +832,7 @@ def obtener_partidos_equipo(team_id, copas):
         url = (f"https://site.api.espn.com/apis/site/v2/sports/soccer"
                f"/{liga}/teams/{team_id}/schedule")
         try:
-            r = requests.get(url, headers=HEADERS, timeout=10)
+            r = get_cacheado(url, headers=HEADERS, timeout=10)
             if r.status_code != 200 or len(r.text) < 100:
                 continue
             data = r.json()
@@ -800,7 +881,7 @@ def obtener_partidos_equipo(team_id, copas):
 
 
 # ─────────────────────────────────────────────
-# FIXTURE DE LA JORNADA ACTUAL COMPLETA  (ACTUALIZADO)
+# FIXTURE DE LA JORNADA ACTUAL COMPLETA
 # ─────────────────────────────────────────────
 
 def obtener_fixture_jornada(liga_slug):
@@ -813,7 +894,7 @@ def obtener_fixture_jornada(liga_slug):
     )
 
     try:
-        r = requests.get(base_url, headers=HEADERS, timeout=10)
+        r = get_cacheado(base_url, headers=HEADERS, timeout=10)
 
         if r.status_code != 200 or len(r.text) < 100:
             print(f"  ❌ Fixture: HTTP {r.status_code}")
@@ -843,10 +924,6 @@ def obtener_fixture_jornada(liga_slug):
     fecha_inicio = None
     fecha_fin = None
     jornada_num = None
-
-    # ==========================================================
-    # CASO 1: ESPN clásico (startDate/endDate)
-    # ==========================================================
 
     entradas_calendar = []
 
@@ -902,10 +979,6 @@ def obtener_fixture_jornada(liga_slug):
         fecha_fin = c["endDate"]
         jornada_num = c.get("value")
 
-    # ==========================================================
-    # CASO 2: Brasileirão / MLS / ligas calendarType=day
-    # ==========================================================
-
     if fecha_inicio is None and calendar_type == "day":
 
         fechas = []
@@ -938,7 +1011,7 @@ def obtener_fixture_jornada(liga_slug):
 
             for d in fechas[1:]:
 
-                if (d - fin).days <= gap_maximo:   # antes decía: <= 1
+                if (d - fin).days <= gap_maximo:
                     fin = d
                 else:
                     break
@@ -952,10 +1025,6 @@ def obtener_fixture_jornada(liga_slug):
                 f"  → CalendarType=day detectado: "
                 f"{inicio} -> {fin}"
             )
-
-    # ==========================================================
-    # CONSULTA FINAL DEL RANGO
-    # ==========================================================
 
     eventos = data.get("events", [])
 
@@ -975,7 +1044,7 @@ def obtener_fixture_jornada(liga_slug):
 
         try:
 
-            r2 = requests.get(
+            r2 = get_cacheado(
                 url_rango,
                 headers=HEADERS,
                 timeout=10
@@ -1198,7 +1267,7 @@ def scrapear_liga(liga_slug):
         return
 
     es_copa        = config.get("es_torneo_copa", False)
-    tiene_grupos   = config.get("tiene_grupos", False)        # NUEVO
+    tiene_grupos   = config.get("tiene_grupos", False)
     liga_principal = config["liga_principal"]
     copas          = config["copas"]
     ligas_locales  = config.get("ligas_locales", [])
@@ -1211,11 +1280,10 @@ def scrapear_liga(liga_slug):
 
     print("📊 Procesando equipos...")
     tabla        = []
-    grupos_list  = []                                          # NUEVO
+    grupos_list  = []
     equipos_dict = {}
 
     if not es_copa:
-        # ── Liga regular ──────────────────────────────────────────────────
         if datos.get("standings"):
             tabla, equipos_dict = parsear_standings(datos["standings"])
             print(f"  ✅ {len(equipos_dict)} equipos desde standings")
@@ -1224,7 +1292,6 @@ def scrapear_liga(liga_slug):
             return
 
     elif tiene_grupos:
-        # ── Torneo con fase de grupos (Libertadores, Sudamericana, etc.) ──
         if datos.get("standings"):
             print("  → Torneo con grupos: parseando estructura de grupos...")
             grupos_list, equipos_dict = parsear_standings_grupos(datos["standings"])
@@ -1233,7 +1300,6 @@ def scrapear_liga(liga_slug):
             return
 
     else:
-        # ── Torneo copa sin grupos ────────────────────────────────────────
         print("  → Torneo copa: usando estrategia en cascada...")
         equipos_dict = obtener_equipos_copa_cascada(liga_slug, datos.get("standings"))
 
@@ -1286,14 +1352,8 @@ def scrapear_liga(liga_slug):
                 else:
                     print(f"     → Liga local no encontrada")
 
-            time.sleep(0.3)
-
         except Exception as e:
             print(f"    ⚠️  Error procesando {nombre}: {e}")
-
-    # ─────────────────────────────────────────
-    # FIXTURE DE LA JORNADA ACTUAL COMPLETA
-    # ─────────────────────────────────────────
 
     print(f"\n📅 Obteniendo fixture de la jornada actual ({liga_principal})...")
     fixture = obtener_fixture_jornada(liga_principal)
@@ -1304,12 +1364,7 @@ def scrapear_liga(liga_slug):
     else:
         print("  ⚠️  No se pudo obtener fixture de la jornada actual.")
 
-    # ─────────────────────────────────────────
-    # GUARDADO
-    # ─────────────────────────────────────────
-
     if tiene_grupos and grupos_list:
-        # grupos.json: estructura por grupo con stats enriquecidas
         grupos_export = []
         for g in grupos_list:
             equipos_grupo_export = []
@@ -1317,7 +1372,6 @@ def scrapear_liga(liga_slug):
                 team_id = fila.get("id")
                 eq_data = equipos_dict.get(team_id, {})
                 equipo_out = {k: v for k, v in fila.items() if k != "id"}
-                # Inyectar campos enriquecidos de equipos_dict
                 equipo_out["escudo"]               = eq_data.get("escudo", "")
                 equipo_out["abreviacion"]          = eq_data.get("abreviacion", "")
                 equipo_out["forma_ponderada"]      = eq_data.get("forma_ponderada", 0.0)
@@ -1341,16 +1395,11 @@ def scrapear_liga(liga_slug):
         tabla_export = [{k: v for k, v in t.items() if k != "id"} for t in tabla]
         guardar_json(tabla_export, config["carpeta"], "tabla.json")
 
-    # equipos.json: siempre se guarda (indexado por nombre normalizado)
     equipos_final = {}
     for team_id, datos_equipo in equipos_dict.items():
         key = normalizar(datos_equipo["nombre"])
         equipos_final[key] = datos_equipo
     guardar_json(equipos_final, config["carpeta"], "equipos.json")
-
-    # ─────────────────────────────────────────
-    # RESUMEN
-    # ─────────────────────────────────────────
 
     print(f"\n📋 RESUMEN — {config['nombre']}")
     print(f"   Equipos scrapeados: {len(equipos_final)}")
@@ -1391,23 +1440,42 @@ if __name__ == "__main__":
         type=str,
         help=(
             "Slug de la liga o torneo. Ejemplos:\n"
-            "  python scrapper.py --liga mex.1\n"
-            "  python scrapper.py --liga conmebol.libertadores\n"
-            "  python scrapper.py --liga conmebol.sudamericana\n"
-            "  python scrapper.py --liga all\n"
-            "  python scrapper.py --liga ligas\n"
-            "  python scrapper.py --liga torneos"
+            "  python scraper.py --liga mex.1\n"
+            "  python scraper.py --liga conmebol.libertadores\n"
+            "  python scraper.py --liga conmebol.sudamericana\n"
+            "  python scraper.py --liga all\n"
+            "  python scraper.py --liga ligas\n"
+            "  python scraper.py --liga torneos"
         )
+    )
+    parser.add_argument(
+        "--no-cache",
+        action="store_true",
+        help="Ignora el caché local y fuerza requests frescos a la API."
+    )
+    parser.add_argument(
+        "--impersonate",
+        type=str,
+        default=None,
+        help="Perfil de navegador a imitar con curl_cffi (ej. chrome120, chrome124, safari17_0). Sobreescribe el default del script."
     )
     args = parser.parse_args()
 
+    if args.no_cache:
+        CACHE_TTL_SEGUNDOS = 0
+
+    if args.impersonate:
+        IMPERSONATE_PROFILE = args.impersonate
+        print(f"🔧 Usando perfil de impersonation: {IMPERSONATE_PROFILE}")
+
     if not args.liga:
         print("Uso:")
-        print("  python scrapper.py --liga mex.1")
-        print("  python scrapper.py --liga conmebol.libertadores")
-        print("  python scrapper.py --liga all")
-        print("  python scrapper.py --liga ligas")
-        print("  python scrapper.py --liga torneos")
+        print("  python scraper.py --liga mex.1")
+        print("  python scraper.py --liga conmebol.libertadores")
+        print("  python scraper.py --liga all")
+        print("  python scraper.py --liga ligas")
+        print("  python scraper.py --liga torneos")
+        print("  python scraper.py --liga mex.1 --impersonate chrome124   (probar otro perfil TLS)")
         print("\nLigas y torneos disponibles:")
         print("\n  LIGAS REGULARES:")
         for slug, cfg in LIGAS_CONFIG.items():

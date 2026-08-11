@@ -1,0 +1,2028 @@
+[
+  {
+    "grupo": "MLS",
+    "equipos": [
+      {
+        "posicion": 1,
+        "equipo": "Austin FC",
+        "partidos": 2,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 0,
+        "goles_favor": 5,
+        "goles_contra": 0,
+        "diferencia_goles": 5,
+        "puntos": 6,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/20906.png",
+        "abreviacion": "ATX",
+        "forma_ponderada": 0.39,
+        "forma_liga": 0.39,
+        "ultimos_5_liga": [
+          "W",
+          "W"
+        ],
+        "imbatido_streak": 2,
+        "forma_liga_local": 0.2,
+        "ultimos_5_liga_local": [
+          "L",
+          "L",
+          "W",
+          "L",
+          "L"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 2,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 5,
+            "goles_contra": 0,
+            "goles_favor_promedio": 2.5,
+            "goles_contra_promedio": 0.0,
+            "partidos_local": 2,
+            "ganados_local": 2,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 0,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 0,
+            "ultimos_5": [
+              "W",
+              "W"
+            ],
+            "imbatido_streak": 2
+          }
+        }
+      },
+      {
+        "posicion": 2,
+        "equipo": "Charlotte FC",
+        "partidos": 2,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 0,
+        "goles_favor": 5,
+        "goles_contra": 0,
+        "diferencia_goles": 5,
+        "puntos": 6,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/21300.png",
+        "abreviacion": "CLT",
+        "forma_ponderada": 0.39,
+        "forma_liga": 0.39,
+        "ultimos_5_liga": [
+          "W",
+          "W"
+        ],
+        "imbatido_streak": 2,
+        "forma_liga_local": 0.55,
+        "ultimos_5_liga_local": [
+          "L",
+          "W",
+          "D",
+          "W",
+          "W"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 2,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 5,
+            "goles_contra": 0,
+            "goles_favor_promedio": 2.5,
+            "goles_contra_promedio": 0.0,
+            "partidos_local": 2,
+            "ganados_local": 2,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 0,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 0,
+            "ultimos_5": [
+              "W",
+              "W"
+            ],
+            "imbatido_streak": 2
+          }
+        }
+      },
+      {
+        "posicion": 3,
+        "equipo": "Chicago Fire FC",
+        "partidos": 2,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 0,
+        "goles_favor": 5,
+        "goles_contra": 1,
+        "diferencia_goles": 4,
+        "puntos": 6,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/182.png",
+        "abreviacion": "CHI",
+        "forma_ponderada": 0.39,
+        "forma_liga": 0.39,
+        "ultimos_5_liga": [
+          "W",
+          "W"
+        ],
+        "imbatido_streak": 2,
+        "forma_liga_local": 0.55,
+        "ultimos_5_liga_local": [
+          "W",
+          "L",
+          "L",
+          "W",
+          "W"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 2,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 5,
+            "goles_contra": 1,
+            "goles_favor_promedio": 2.5,
+            "goles_contra_promedio": 0.5,
+            "partidos_local": 2,
+            "ganados_local": 2,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 0,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 0,
+            "ultimos_5": [
+              "W",
+              "W"
+            ],
+            "imbatido_streak": 2
+          }
+        }
+      },
+      {
+        "posicion": 4,
+        "equipo": "FC Cincinnati",
+        "partidos": 2,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 0,
+        "goles_favor": 5,
+        "goles_contra": 1,
+        "diferencia_goles": 4,
+        "puntos": 6,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/18267.png",
+        "abreviacion": "CIN",
+        "forma_ponderada": 0.39,
+        "forma_liga": 0.39,
+        "ultimos_5_liga": [
+          "W",
+          "W"
+        ],
+        "imbatido_streak": 2,
+        "forma_liga_local": 0.71,
+        "ultimos_5_liga_local": [
+          "W",
+          "L",
+          "W",
+          "W",
+          "D"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 2,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 5,
+            "goles_contra": 1,
+            "goles_favor_promedio": 2.5,
+            "goles_contra_promedio": 0.5,
+            "partidos_local": 2,
+            "ganados_local": 2,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 0,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 0,
+            "ultimos_5": [
+              "W",
+              "W"
+            ],
+            "imbatido_streak": 2
+          }
+        }
+      },
+      {
+        "posicion": 5,
+        "equipo": "Columbus Crew",
+        "partidos": 2,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 0,
+        "goles_favor": 5,
+        "goles_contra": 2,
+        "diferencia_goles": 3,
+        "puntos": 6,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/183.png",
+        "abreviacion": "CLB",
+        "forma_ponderada": 0.39,
+        "forma_liga": 0.39,
+        "ultimos_5_liga": [
+          "W",
+          "W"
+        ],
+        "imbatido_streak": 2,
+        "forma_liga_local": 0.585,
+        "ultimos_5_liga_local": [
+          "D",
+          "W",
+          "L",
+          "W",
+          "D"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 2,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 5,
+            "goles_contra": 2,
+            "goles_favor_promedio": 2.5,
+            "goles_contra_promedio": 1.0,
+            "partidos_local": 2,
+            "ganados_local": 2,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 0,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 0,
+            "ultimos_5": [
+              "W",
+              "W"
+            ],
+            "imbatido_streak": 2
+          }
+        }
+      },
+      {
+        "posicion": 6,
+        "equipo": "FC Dallas",
+        "partidos": 2,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 0,
+        "goles_favor": 3,
+        "goles_contra": 0,
+        "diferencia_goles": 3,
+        "puntos": 6,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/185.png",
+        "abreviacion": "DAL",
+        "forma_ponderada": 0.39,
+        "forma_liga": 0.39,
+        "ultimos_5_liga": [
+          "W",
+          "W"
+        ],
+        "imbatido_streak": 2,
+        "forma_liga_local": 0.475,
+        "ultimos_5_liga_local": [
+          "D",
+          "L",
+          "D",
+          "W",
+          "W"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 2,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 3,
+            "goles_contra": 0,
+            "goles_favor_promedio": 1.5,
+            "goles_contra_promedio": 0.0,
+            "partidos_local": 1,
+            "ganados_local": 1,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 1,
+            "ganados_visita": 1,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 1.0,
+            "ultimos_5": [
+              "W",
+              "W"
+            ],
+            "imbatido_streak": 2
+          }
+        }
+      },
+      {
+        "posicion": 7,
+        "equipo": "LAFC",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 1,
+        "perdidos": 0,
+        "goles_favor": 2,
+        "goles_contra": 1,
+        "diferencia_goles": 1,
+        "puntos": 5,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/18966.png",
+        "abreviacion": "LAFC",
+        "forma_ponderada": 0.39,
+        "forma_liga": 0.39,
+        "ultimos_5_liga": [
+          "W",
+          "W"
+        ],
+        "imbatido_streak": 2,
+        "forma_liga_local": 0.825,
+        "ultimos_5_liga_local": [
+          "D",
+          "W",
+          "W",
+          "W",
+          "W"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 2,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 2,
+            "goles_contra": 1,
+            "goles_favor_promedio": 1.0,
+            "goles_contra_promedio": 0.5,
+            "partidos_local": 1,
+            "ganados_local": 1,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 1,
+            "ganados_visita": 1,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 1.0,
+            "ultimos_5": [
+              "W",
+              "W"
+            ],
+            "imbatido_streak": 2
+          }
+        }
+      },
+      {
+        "posicion": 8,
+        "equipo": "Real Salt Lake",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 1,
+        "perdidos": 0,
+        "goles_favor": 5,
+        "goles_contra": 1,
+        "diferencia_goles": 4,
+        "puntos": 4,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/4771.png",
+        "abreviacion": "RSL",
+        "forma_ponderada": 0.2275,
+        "forma_liga": 0.2275,
+        "ultimos_5_liga": [
+          "W",
+          "L"
+        ],
+        "imbatido_streak": 1,
+        "forma_liga_local": 0.315,
+        "ultimos_5_liga_local": [
+          "D",
+          "L",
+          "L",
+          "D",
+          "W"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 1,
+            "empatados": 0,
+            "perdidos": 1,
+            "goles_favor": 5,
+            "goles_contra": 1,
+            "goles_favor_promedio": 2.5,
+            "goles_contra_promedio": 0.5,
+            "partidos_local": 1,
+            "ganados_local": 1,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 1,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 1,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "W",
+              "L"
+            ],
+            "imbatido_streak": 1
+          }
+        }
+      },
+      {
+        "posicion": 9,
+        "equipo": "Nashville SC",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 1,
+        "goles_favor": 4,
+        "goles_contra": 2,
+        "diferencia_goles": 2,
+        "puntos": 3,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/18986.png",
+        "abreviacion": "NSH",
+        "forma_ponderada": 0.2275,
+        "forma_liga": 0.2275,
+        "ultimos_5_liga": [
+          "W",
+          "L"
+        ],
+        "imbatido_streak": 1,
+        "forma_liga_local": 0.575,
+        "ultimos_5_liga_local": [
+          "D",
+          "L",
+          "W",
+          "W",
+          "W"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 1,
+            "empatados": 0,
+            "perdidos": 1,
+            "goles_favor": 4,
+            "goles_contra": 2,
+            "goles_favor_promedio": 2.0,
+            "goles_contra_promedio": 1.0,
+            "partidos_local": 2,
+            "ganados_local": 1,
+            "empatados_local": 0,
+            "perdidos_local": 1,
+            "win_rate_local": 0.5,
+            "partidos_visita": 0,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 0,
+            "ultimos_5": [
+              "W",
+              "L"
+            ],
+            "imbatido_streak": 1
+          }
+        }
+      },
+      {
+        "posicion": 10,
+        "equipo": "Portland Timbers",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 1,
+        "goles_favor": 6,
+        "goles_contra": 5,
+        "diferencia_goles": 1,
+        "puntos": 3,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/9723.png",
+        "abreviacion": "POR",
+        "forma_ponderada": 0.1625,
+        "forma_liga": 0.1625,
+        "ultimos_5_liga": [
+          "L",
+          "W"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.82,
+        "ultimos_5_liga_local": [
+          "W",
+          "W",
+          "D",
+          "W",
+          "L"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 1,
+            "empatados": 0,
+            "perdidos": 1,
+            "goles_favor": 6,
+            "goles_contra": 5,
+            "goles_favor_promedio": 3.0,
+            "goles_contra_promedio": 2.5,
+            "partidos_local": 1,
+            "ganados_local": 1,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 1,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 1,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "W"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 11,
+        "equipo": "Inter Miami CF",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 1,
+        "goles_favor": 5,
+        "goles_contra": 4,
+        "diferencia_goles": 1,
+        "puntos": 3,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/20232.png",
+        "abreviacion": "MIA",
+        "forma_ponderada": 0.1625,
+        "forma_liga": 0.1625,
+        "ultimos_5_liga": [
+          "L",
+          "W"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.825,
+        "ultimos_5_liga_local": [
+          "D",
+          "W",
+          "W",
+          "W",
+          "W"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 1,
+            "empatados": 0,
+            "perdidos": 1,
+            "goles_favor": 5,
+            "goles_contra": 4,
+            "goles_favor_promedio": 2.5,
+            "goles_contra_promedio": 2.0,
+            "partidos_local": 2,
+            "ganados_local": 1,
+            "empatados_local": 0,
+            "perdidos_local": 1,
+            "win_rate_local": 0.5,
+            "partidos_visita": 0,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 0,
+            "ultimos_5": [
+              "L",
+              "W"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 12,
+        "equipo": "Philadelphia Union",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 1,
+        "goles_favor": 3,
+        "goles_contra": 2,
+        "diferencia_goles": 1,
+        "puntos": 3,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/10739.png",
+        "abreviacion": "PHI",
+        "forma_ponderada": 0.2275,
+        "forma_liga": 0.2275,
+        "ultimos_5_liga": [
+          "W",
+          "L"
+        ],
+        "imbatido_streak": 1,
+        "forma_liga_local": 0.84,
+        "ultimos_5_liga_local": [
+          "W",
+          "W",
+          "W",
+          "L",
+          "D"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 1,
+            "empatados": 0,
+            "perdidos": 1,
+            "goles_favor": 3,
+            "goles_contra": 2,
+            "goles_favor_promedio": 1.5,
+            "goles_contra_promedio": 1.0,
+            "partidos_local": 1,
+            "ganados_local": 1,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 1,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 1,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "W",
+              "L"
+            ],
+            "imbatido_streak": 1
+          }
+        }
+      },
+      {
+        "posicion": 13,
+        "equipo": "New York City FC",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 1,
+        "goles_favor": 3,
+        "goles_contra": 2,
+        "diferencia_goles": 1,
+        "puntos": 3,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/17606.png",
+        "abreviacion": "NYC",
+        "forma_ponderada": 0.1625,
+        "forma_liga": 0.1625,
+        "ultimos_5_liga": [
+          "L",
+          "W"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.665,
+        "ultimos_5_liga_local": [
+          "D",
+          "W",
+          "W",
+          "L",
+          "D"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 1,
+            "empatados": 0,
+            "perdidos": 1,
+            "goles_favor": 3,
+            "goles_contra": 2,
+            "goles_favor_promedio": 1.5,
+            "goles_contra_promedio": 1.0,
+            "partidos_local": 1,
+            "ganados_local": 1,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 1,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 1,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "W"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 14,
+        "equipo": "Seattle Sounders FC",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 1,
+        "goles_favor": 3,
+        "goles_contra": 3,
+        "diferencia_goles": 0,
+        "puntos": 3,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/9726.png",
+        "abreviacion": "SEA",
+        "forma_ponderada": 0.2275,
+        "forma_liga": 0.2275,
+        "ultimos_5_liga": [
+          "W",
+          "L"
+        ],
+        "imbatido_streak": 1,
+        "forma_liga_local": 0.0,
+        "ultimos_5_liga_local": [
+          "L",
+          "L",
+          "L",
+          "L",
+          "L"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 1,
+            "empatados": 0,
+            "perdidos": 1,
+            "goles_favor": 3,
+            "goles_contra": 3,
+            "goles_favor_promedio": 1.5,
+            "goles_contra_promedio": 1.5,
+            "partidos_local": 1,
+            "ganados_local": 1,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 1,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 1,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "W",
+              "L"
+            ],
+            "imbatido_streak": 1
+          }
+        }
+      },
+      {
+        "posicion": 15,
+        "equipo": "Orlando City SC",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 1,
+        "goles_favor": 3,
+        "goles_contra": 3,
+        "diferencia_goles": 0,
+        "puntos": 3,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/12011.png",
+        "abreviacion": "ORL",
+        "forma_ponderada": 0.1625,
+        "forma_liga": 0.1625,
+        "ultimos_5_liga": [
+          "L",
+          "W"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.49,
+        "ultimos_5_liga_local": [
+          "L",
+          "W",
+          "W",
+          "L",
+          "D"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 1,
+            "empatados": 0,
+            "perdidos": 1,
+            "goles_favor": 3,
+            "goles_contra": 3,
+            "goles_favor_promedio": 1.5,
+            "goles_contra_promedio": 1.5,
+            "partidos_local": 1,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 1,
+            "win_rate_local": 0.0,
+            "partidos_visita": 1,
+            "ganados_visita": 1,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 1.0,
+            "ultimos_5": [
+              "L",
+              "W"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 16,
+        "equipo": "San Diego FC",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 1,
+        "goles_favor": 2,
+        "goles_contra": 3,
+        "diferencia_goles": -1,
+        "puntos": 3,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/22529.png",
+        "abreviacion": "SD",
+        "forma_ponderada": 0.2275,
+        "forma_liga": 0.2275,
+        "ultimos_5_liga": [
+          "W",
+          "L"
+        ],
+        "imbatido_streak": 1,
+        "forma_liga_local": 0.465,
+        "ultimos_5_liga_local": [
+          "D",
+          "W",
+          "L",
+          "L",
+          "D"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 1,
+            "empatados": 0,
+            "perdidos": 1,
+            "goles_favor": 2,
+            "goles_contra": 3,
+            "goles_favor_promedio": 1.0,
+            "goles_contra_promedio": 1.5,
+            "partidos_local": 1,
+            "ganados_local": 1,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 1,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 1,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "W",
+              "L"
+            ],
+            "imbatido_streak": 1
+          }
+        }
+      },
+      {
+        "posicion": 17,
+        "equipo": "Minnesota United FC",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 1,
+        "perdidos": 1,
+        "goles_favor": 1,
+        "goles_contra": 2,
+        "diferencia_goles": -1,
+        "puntos": 1,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/17362.png",
+        "abreviacion": "MIN",
+        "forma_ponderada": 0.0,
+        "forma_liga": 0.0,
+        "ultimos_5_liga": [
+          "L",
+          "L"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.36,
+        "ultimos_5_liga_local": [
+          "D",
+          "D",
+          "L",
+          "D",
+          "L"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 2,
+            "goles_favor": 1,
+            "goles_contra": 2,
+            "goles_favor_promedio": 0.5,
+            "goles_contra_promedio": 1.0,
+            "partidos_local": 1,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 1,
+            "win_rate_local": 0.0,
+            "partidos_visita": 1,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 1,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "L"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 18,
+        "equipo": "Vancouver Whitecaps",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 2,
+        "goles_favor": 1,
+        "goles_contra": 4,
+        "diferencia_goles": -3,
+        "puntos": 0,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/9727.png",
+        "abreviacion": "VAN",
+        "forma_ponderada": 0.0,
+        "forma_liga": 0.0,
+        "ultimos_5_liga": [
+          "L",
+          "L"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.42,
+        "ultimos_5_liga_local": [
+          "D",
+          "D",
+          "L",
+          "W",
+          "L"
+        ],
+        "liga_local_slug": "usa.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 2,
+            "goles_favor": 1,
+            "goles_contra": 4,
+            "goles_favor_promedio": 0.5,
+            "goles_contra_promedio": 2.0,
+            "partidos_local": 2,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 2,
+            "win_rate_local": 0.0,
+            "partidos_visita": 0,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 0,
+            "ultimos_5": [
+              "L",
+              "L"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "grupo": "Liga MX",
+    "equipos": [
+      {
+        "posicion": 1,
+        "equipo": "América",
+        "partidos": 2,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 0,
+        "goles_favor": 6,
+        "goles_contra": 2,
+        "diferencia_goles": 4,
+        "puntos": 6,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/227.png",
+        "abreviacion": "AME",
+        "forma_ponderada": 0.39,
+        "forma_liga": 0.39,
+        "ultimos_5_liga": [
+          "W",
+          "W"
+        ],
+        "imbatido_streak": 2,
+        "forma_liga_local": 0.675,
+        "ultimos_5_liga_local": [
+          "W",
+          "D",
+          "W"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 2,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 6,
+            "goles_contra": 2,
+            "goles_favor_promedio": 3.0,
+            "goles_contra_promedio": 1.0,
+            "partidos_local": 2,
+            "ganados_local": 2,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 0,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 0,
+            "ultimos_5": [
+              "W",
+              "W"
+            ],
+            "imbatido_streak": 2
+          }
+        }
+      },
+      {
+        "posicion": 2,
+        "equipo": "FC Juarez",
+        "partidos": 2,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 0,
+        "goles_favor": 5,
+        "goles_contra": 2,
+        "diferencia_goles": 3,
+        "puntos": 6,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/17851.png",
+        "abreviacion": "JUA",
+        "forma_ponderada": 0.39,
+        "forma_liga": 0.39,
+        "ultimos_5_liga": [
+          "W",
+          "W"
+        ],
+        "imbatido_streak": 2,
+        "forma_liga_local": 0.0,
+        "ultimos_5_liga_local": [
+          "L",
+          "L",
+          "L"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 2,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 5,
+            "goles_contra": 2,
+            "goles_favor_promedio": 2.5,
+            "goles_contra_promedio": 1.0,
+            "partidos_local": 0,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 0,
+            "partidos_visita": 2,
+            "ganados_visita": 2,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 1.0,
+            "ultimos_5": [
+              "W",
+              "W"
+            ],
+            "imbatido_streak": 2
+          }
+        }
+      },
+      {
+        "posicion": 3,
+        "equipo": "Cruz Azul",
+        "partidos": 2,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 0,
+        "goles_favor": 3,
+        "goles_contra": 1,
+        "diferencia_goles": 2,
+        "puntos": 6,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+        "abreviacion": "CAZ",
+        "forma_ponderada": 0.39,
+        "forma_liga": 0.39,
+        "ultimos_5_liga": [
+          "W",
+          "W"
+        ],
+        "imbatido_streak": 2,
+        "forma_liga_local": 0.45,
+        "ultimos_5_liga_local": [
+          "L",
+          "W",
+          "W"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 2,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 3,
+            "goles_contra": 1,
+            "goles_favor_promedio": 1.5,
+            "goles_contra_promedio": 0.5,
+            "partidos_local": 2,
+            "ganados_local": 2,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 0,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 0,
+            "ultimos_5": [
+              "W",
+              "W"
+            ],
+            "imbatido_streak": 2
+          }
+        }
+      },
+      {
+        "posicion": 4,
+        "equipo": "León",
+        "partidos": 2,
+        "ganados": 2,
+        "empatados": 0,
+        "perdidos": 0,
+        "goles_favor": 3,
+        "goles_contra": 1,
+        "diferencia_goles": 2,
+        "puntos": 6,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/228.png",
+        "abreviacion": "LEO",
+        "forma_ponderada": 0.39,
+        "forma_liga": 0.39,
+        "ultimos_5_liga": [
+          "W",
+          "W"
+        ],
+        "imbatido_streak": 2,
+        "forma_liga_local": 0.35,
+        "ultimos_5_liga_local": [
+          "W",
+          "L",
+          "L"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 2,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 3,
+            "goles_contra": 1,
+            "goles_favor_promedio": 1.5,
+            "goles_contra_promedio": 0.5,
+            "partidos_local": 0,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 0,
+            "partidos_visita": 2,
+            "ganados_visita": 2,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 1.0,
+            "ultimos_5": [
+              "W",
+              "W"
+            ],
+            "imbatido_streak": 2
+          }
+        }
+      },
+      {
+        "posicion": 5,
+        "equipo": "Tigres UANL",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 2,
+        "perdidos": 0,
+        "goles_favor": 1,
+        "goles_contra": 1,
+        "diferencia_goles": 0,
+        "puntos": 4,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/232.png",
+        "abreviacion": "UANL",
+        "forma_ponderada": 0.39,
+        "forma_liga": 0.39,
+        "ultimos_5_liga": [
+          "W",
+          "W"
+        ],
+        "imbatido_streak": 2,
+        "forma_liga_local": 0.125,
+        "ultimos_5_liga_local": [
+          "L",
+          "D",
+          "L"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 2,
+            "empatados": 0,
+            "perdidos": 0,
+            "goles_favor": 1,
+            "goles_contra": 1,
+            "goles_favor_promedio": 0.5,
+            "goles_contra_promedio": 0.5,
+            "partidos_local": 2,
+            "ganados_local": 2,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 1.0,
+            "partidos_visita": 0,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 0,
+            "ultimos_5": [
+              "W",
+              "W"
+            ],
+            "imbatido_streak": 2
+          }
+        }
+      },
+      {
+        "posicion": 6,
+        "equipo": "Toluca",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 1,
+        "goles_favor": 3,
+        "goles_contra": 1,
+        "diferencia_goles": 2,
+        "puntos": 3,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/223.png",
+        "abreviacion": "TOL",
+        "forma_ponderada": 0.1625,
+        "forma_liga": 0.1625,
+        "ultimos_5_liga": [
+          "L",
+          "W"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.55,
+        "ultimos_5_liga_local": [
+          "W",
+          "L",
+          "W"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 1,
+            "empatados": 0,
+            "perdidos": 1,
+            "goles_favor": 3,
+            "goles_contra": 1,
+            "goles_favor_promedio": 1.5,
+            "goles_contra_promedio": 0.5,
+            "partidos_local": 2,
+            "ganados_local": 1,
+            "empatados_local": 0,
+            "perdidos_local": 1,
+            "win_rate_local": 0.5,
+            "partidos_visita": 0,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 0,
+            "ultimos_5": [
+              "L",
+              "W"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 7,
+        "equipo": "Monterrey",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 1,
+        "goles_favor": 3,
+        "goles_contra": 3,
+        "diferencia_goles": 0,
+        "puntos": 3,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/220.png",
+        "abreviacion": "MTY",
+        "forma_ponderada": 0.2275,
+        "forma_liga": 0.2275,
+        "ultimos_5_liga": [
+          "W",
+          "L"
+        ],
+        "imbatido_streak": 1,
+        "forma_liga_local": 0.55,
+        "ultimos_5_liga_local": [
+          "W",
+          "L",
+          "W"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 1,
+            "empatados": 0,
+            "perdidos": 1,
+            "goles_favor": 3,
+            "goles_contra": 3,
+            "goles_favor_promedio": 1.5,
+            "goles_contra_promedio": 1.5,
+            "partidos_local": 1,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 1,
+            "win_rate_local": 0.0,
+            "partidos_visita": 1,
+            "ganados_visita": 1,
+            "empatados_visita": 0,
+            "perdidos_visita": 0,
+            "win_rate_visita": 1.0,
+            "ultimos_5": [
+              "W",
+              "L"
+            ],
+            "imbatido_streak": 1
+          }
+        }
+      },
+      {
+        "posicion": 8,
+        "equipo": "Atlante",
+        "partidos": 2,
+        "ganados": 1,
+        "empatados": 0,
+        "perdidos": 1,
+        "goles_favor": 1,
+        "goles_contra": 4,
+        "diferencia_goles": -3,
+        "puntos": 3,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/226.png",
+        "abreviacion": "ATL",
+        "forma_ponderada": 0.1625,
+        "forma_liga": 0.1625,
+        "ultimos_5_liga": [
+          "L",
+          "W"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.475,
+        "ultimos_5_liga_local": [
+          "W",
+          "D",
+          "L"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 1,
+            "empatados": 0,
+            "perdidos": 1,
+            "goles_favor": 1,
+            "goles_contra": 4,
+            "goles_favor_promedio": 0.5,
+            "goles_contra_promedio": 2.0,
+            "partidos_local": 0,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 0,
+            "partidos_visita": 2,
+            "ganados_visita": 1,
+            "empatados_visita": 0,
+            "perdidos_visita": 1,
+            "win_rate_visita": 0.5,
+            "ultimos_5": [
+              "L",
+              "W"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 9,
+        "equipo": "Guadalajara",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 1,
+        "perdidos": 1,
+        "goles_favor": 1,
+        "goles_contra": 2,
+        "diferencia_goles": -1,
+        "puntos": 1,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
+        "abreviacion": "GDL",
+        "forma_ponderada": 0.0,
+        "forma_liga": 0.0,
+        "ultimos_5_liga": [
+          "L",
+          "L"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.425,
+        "ultimos_5_liga_local": [
+          "D",
+          "W",
+          "L"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 2,
+            "goles_favor": 1,
+            "goles_contra": 2,
+            "goles_favor_promedio": 0.5,
+            "goles_contra_promedio": 1.0,
+            "partidos_local": 1,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 1,
+            "win_rate_local": 0.0,
+            "partidos_visita": 1,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 1,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "L"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 10,
+        "equipo": "Pachuca",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 2,
+        "goles_favor": 2,
+        "goles_contra": 5,
+        "diferencia_goles": -3,
+        "puntos": 0,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
+        "abreviacion": "PAC",
+        "forma_ponderada": 0.0,
+        "forma_liga": 0.0,
+        "ultimos_5_liga": [
+          "L",
+          "L"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.2,
+        "ultimos_5_liga_local": [
+          "L",
+          "L",
+          "W"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 2,
+            "goles_favor": 2,
+            "goles_contra": 5,
+            "goles_favor_promedio": 1.0,
+            "goles_contra_promedio": 2.5,
+            "partidos_local": 0,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 0,
+            "partidos_visita": 2,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 2,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "L"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 11,
+        "equipo": "Tijuana",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 2,
+        "goles_favor": 0,
+        "goles_contra": 3,
+        "diferencia_goles": -3,
+        "puntos": 0,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/10125.png",
+        "abreviacion": "TIJ",
+        "forma_ponderada": 0.0,
+        "forma_liga": 0.0,
+        "ultimos_5_liga": [
+          "L",
+          "L"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.625,
+        "ultimos_5_liga_local": [
+          "D",
+          "W",
+          "W"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 2,
+            "goles_favor": 0,
+            "goles_contra": 3,
+            "goles_favor_promedio": 0.0,
+            "goles_contra_promedio": 1.5,
+            "partidos_local": 0,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 0,
+            "partidos_visita": 2,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 2,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "L"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 12,
+        "equipo": "Atlas",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 2,
+        "goles_favor": 1,
+        "goles_contra": 5,
+        "diferencia_goles": -4,
+        "puntos": 0,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/216.png",
+        "abreviacion": "ATS",
+        "forma_ponderada": 0.0,
+        "forma_liga": 0.0,
+        "ultimos_5_liga": [
+          "L",
+          "L"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.45,
+        "ultimos_5_liga_local": [
+          "L",
+          "W",
+          "W"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 2,
+            "goles_favor": 1,
+            "goles_contra": 5,
+            "goles_favor_promedio": 0.5,
+            "goles_contra_promedio": 2.5,
+            "partidos_local": 0,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 0,
+            "partidos_visita": 2,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 2,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "L"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 13,
+        "equipo": "Necaxa",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 2,
+        "goles_favor": 1,
+        "goles_contra": 5,
+        "diferencia_goles": -4,
+        "puntos": 0,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/229.png",
+        "abreviacion": "NCX",
+        "forma_ponderada": 0.0,
+        "forma_liga": 0.0,
+        "ultimos_5_liga": [
+          "L",
+          "L"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.45,
+        "ultimos_5_liga_local": [
+          "L",
+          "W",
+          "W"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 2,
+            "goles_favor": 1,
+            "goles_contra": 5,
+            "goles_favor_promedio": 0.5,
+            "goles_contra_promedio": 2.5,
+            "partidos_local": 0,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 0,
+            "partidos_visita": 2,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 2,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "L"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 14,
+        "equipo": "Santos",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 2,
+        "goles_favor": 1,
+        "goles_contra": 5,
+        "diferencia_goles": -4,
+        "puntos": 0,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/225.png",
+        "abreviacion": "SAN",
+        "forma_ponderada": 0.0,
+        "forma_liga": 0.0,
+        "ultimos_5_liga": [
+          "L",
+          "L"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.0,
+        "ultimos_5_liga_local": [
+          "L",
+          "L",
+          "L"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 2,
+            "goles_favor": 1,
+            "goles_contra": 5,
+            "goles_favor_promedio": 0.5,
+            "goles_contra_promedio": 2.5,
+            "partidos_local": 0,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 0,
+            "partidos_visita": 2,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 2,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "L"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 15,
+        "equipo": "Atlético de San Luis",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 2,
+        "goles_favor": 3,
+        "goles_contra": 8,
+        "diferencia_goles": -5,
+        "puntos": 0,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/15720.png",
+        "abreviacion": "ASL",
+        "forma_ponderada": 0.0,
+        "forma_liga": 0.0,
+        "ultimos_5_liga": [
+          "L",
+          "L"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.3,
+        "ultimos_5_liga_local": [
+          "D",
+          "D",
+          "L"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 2,
+            "goles_favor": 3,
+            "goles_contra": 8,
+            "goles_favor_promedio": 1.5,
+            "goles_contra_promedio": 4.0,
+            "partidos_local": 0,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 0,
+            "partidos_visita": 2,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 2,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "L"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 16,
+        "equipo": "Pumas UNAM",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 2,
+        "goles_favor": 0,
+        "goles_contra": 5,
+        "diferencia_goles": -5,
+        "puntos": 0,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+        "abreviacion": "UNAM",
+        "forma_ponderada": 0.0,
+        "forma_liga": 0.0,
+        "ultimos_5_liga": [
+          "L",
+          "L"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.6,
+        "ultimos_5_liga_local": [
+          "W",
+          "W",
+          "L"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 2,
+            "goles_favor": 0,
+            "goles_contra": 5,
+            "goles_favor_promedio": 0.0,
+            "goles_contra_promedio": 2.5,
+            "partidos_local": 0,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 0,
+            "partidos_visita": 2,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 2,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "L"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 17,
+        "equipo": "Querétaro",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 2,
+        "goles_favor": 0,
+        "goles_contra": 5,
+        "diferencia_goles": -5,
+        "puntos": 0,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/222.png",
+        "abreviacion": "QRO",
+        "forma_ponderada": 0.0,
+        "forma_liga": 0.0,
+        "ultimos_5_liga": [
+          "L",
+          "L"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.6,
+        "ultimos_5_liga_local": [
+          "W",
+          "W",
+          "L"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 2,
+            "goles_favor": 0,
+            "goles_contra": 5,
+            "goles_favor_promedio": 0.0,
+            "goles_contra_promedio": 2.5,
+            "partidos_local": 0,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 0,
+            "partidos_visita": 2,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 2,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "L"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      },
+      {
+        "posicion": 18,
+        "equipo": "Puebla",
+        "partidos": 2,
+        "ganados": 0,
+        "empatados": 0,
+        "perdidos": 2,
+        "goles_favor": 2,
+        "goles_contra": 8,
+        "diferencia_goles": -6,
+        "puntos": 0,
+        "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/231.png",
+        "abreviacion": "PUE",
+        "forma_ponderada": 0.0,
+        "forma_liga": 0.0,
+        "ultimos_5_liga": [
+          "L",
+          "L"
+        ],
+        "imbatido_streak": 0,
+        "forma_liga_local": 0.375,
+        "ultimos_5_liga_local": [
+          "D",
+          "L",
+          "W"
+        ],
+        "liga_local_slug": "mex.1",
+        "competencias": {
+          "concacaf.leagues.cup": {
+            "partidos": 2,
+            "ganados": 0,
+            "empatados": 0,
+            "perdidos": 2,
+            "goles_favor": 2,
+            "goles_contra": 8,
+            "goles_favor_promedio": 1.0,
+            "goles_contra_promedio": 4.0,
+            "partidos_local": 0,
+            "ganados_local": 0,
+            "empatados_local": 0,
+            "perdidos_local": 0,
+            "win_rate_local": 0,
+            "partidos_visita": 2,
+            "ganados_visita": 0,
+            "empatados_visita": 0,
+            "perdidos_visita": 2,
+            "win_rate_visita": 0.0,
+            "ultimos_5": [
+              "L",
+              "L"
+            ],
+            "imbatido_streak": 0
+          }
+        }
+      }
+    ]
+  }
+]

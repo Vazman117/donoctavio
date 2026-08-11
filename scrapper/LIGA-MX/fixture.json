@@ -3,6 +3,86 @@
   "jornada": "day-block",
   "temporada": 2026,
   "partidos": [
-
+    {
+      "id_evento": "401877018",
+      "fecha": "2026-08-15T23:00Z",
+      "jornada_nombre": "TOL @ ATL",
+      "equipo_local": "Atlante",
+      "equipo_visitante": "Toluca",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401877017",
+      "fecha": "2026-08-16T01:00Z",
+      "jornada_nombre": "JUA @ MTY",
+      "equipo_local": "Monterrey",
+      "equipo_visitante": "FC Juarez",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401877016",
+      "fecha": "2026-08-16T03:00Z",
+      "jornada_nombre": "UANL @ ATS",
+      "equipo_local": "Atlas",
+      "equipo_visitante": "Tigres UANL",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401877015",
+      "fecha": "2026-08-16T18:00Z",
+      "jornada_nombre": "QRO @ UNAM",
+      "equipo_local": "Pumas UNAM",
+      "equipo_visitante": "Querétaro",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401877014",
+      "fecha": "2026-08-16T23:00Z",
+      "jornada_nombre": "ASL @ AME",
+      "equipo_local": "América",
+      "equipo_visitante": "Atlético de San Luis",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401877013",
+      "fecha": "2026-08-17T01:00Z",
+      "jornada_nombre": "GDL @ SAN",
+      "equipo_local": "Santos",
+      "equipo_visitante": "Guadalajara",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401877012",
+      "fecha": "2026-08-17T03:00Z",
+      "jornada_nombre": "CAZ @ TIJ",
+      "equipo_local": "Tijuana",
+      "equipo_visitante": "Cruz Azul",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401877011",
+      "fecha": "2026-08-18T01:00Z",
+      "jornada_nombre": "LEO @ NCX",
+      "equipo_local": "Necaxa",
+      "equipo_visitante": "León",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401877010",
+      "fecha": "2026-08-18T03:00Z",
+      "jornada_nombre": "PUE @ PAC",
+      "equipo_local": "Pachuca",
+      "equipo_visitante": "Puebla",
+      "goles_local": null,
+      "goles_visitante": null
+    }
   ]
 }

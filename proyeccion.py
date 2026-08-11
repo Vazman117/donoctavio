@@ -289,6 +289,24 @@ PERFILES_TORNEO = {
         "es_eliminatoria":  True,
     },
 
+    "leagues_cup": {
+        "nombre":           "Leagues Cup",
+        "K_LOGISTICO":      3.5,
+        "MAX_FAVORITO":     0.55,
+        "ALPHA":            0.85,
+        "BETA":             0.15,
+        "TOTAL_EQUIPOS":    32,
+        "usa_h2h":          True,
+        "usa_experiencia":  False,
+        "usa_vuelta_casa":  False,
+        "experiencia_db":   {},
+        "PESO_BASE":        0.80,
+        "PESO_H2H":         0.12,
+        "PESO_EXPERIENCIA": 0.00,
+        "PESO_VUELTA_CASA": 0.08,
+        "es_eliminatoria":  True,
+    },
+
     "dfb_pokal": {
         "nombre":           "DFB-Pokal (Copa Alemana)",
         "K_LOGISTICO":      3.7,
@@ -1527,6 +1545,12 @@ DB_CONFIG = {
         "carpeta": "DFB-POKAL",
         "perfil": "dfb_pokal",
         "liga_key": "ger.dfb_pokal",
+        "salida": "partidos.json"
+    },
+    "leagues_cup":{
+        "carpeta": "LEAGUES-CUP",
+        "perfil": "leagues_cup",
+        "liga_key": "concacaf.leagues.cup",
         "salida": "partidos.json"
     },
     "copa_brazil":{

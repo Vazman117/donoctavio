@@ -1,3 +1,917 @@
 [
-
+  {
+    "id": "401863612",
+    "torneo": "Leagues Cup",
+    "perfil": "leagues_cup",
+    "es_eliminatoria": true,
+    "local": "Charlotte FC",
+    "visitante": "Pachuca",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/21300.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
+    "prob_local": 0.55,
+    "prob_empate": 0.19795291684287866,
+    "prob_visitante": 0.25204708315712127,
+    "fuerza_local": 0.5551354838709677,
+    "fuerza_visitante": 0.2808593548387097,
+    "diferencia": 0.27427612903225795,
+    "confianza": "favorable",
+    "prediccion": "Charlotte FC",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 2.3691471264367827,
+    "lambda_visitante": 0.6955128205128205,
+    "marcadores_probables": [
+      "2-0",
+      "2-1",
+      "1-0",
+      "1-1",
+      "3-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.45,
+          "ultimos_5": [
+            "W",
+            "W"
+          ],
+          "nombre": "Charlotte FC"
+        },
+        "visitante": {
+          "valor": 0.2,
+          "ultimos_5": [
+            "L",
+            "L"
+          ],
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Charlotte FC llega con mejor momentum: índice 0.45/1.0 frente a 0.20/1.0 de Pachuca. Últimos 5: 2V/0E/0D vs 0V/0E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 100.0,
+          "detalle": "2G/0E/0P",
+          "nombre": "Charlotte FC"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/2P",
+          "nombre": "Pachuca"
+        },
+        "interpretacion": "Contraste marcado: Charlotte FC gana el 100% en casa (2G/0E/0P), Pachuca solo el 0% de visita (0G/0E/2P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Charlotte FC",
+          "goles_favor": 2.5,
+          "goles_contra": 0.0
+        },
+        "visitante": {
+          "nombre": "Pachuca",
+          "goles_favor": 1.0,
+          "goles_contra": 2.5
+        },
+        "interpretacion": "Superioridad integral de Charlotte FC: 2.50 goles/partido (vs 1.00) y solo 0.00 recibidos (vs 2.50)."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "2-0",
+          "2-1",
+          "1-0",
+          "1-1",
+          "3-0"
+        ],
+        "lambda_local": 2.369,
+        "lambda_visitante": 0.696,
+        "interpretacion": "El marcador más probable es 2-0 (10.3%), coherente con Charlotte FC como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401863610",
+    "torneo": "Leagues Cup",
+    "perfil": "leagues_cup",
+    "es_eliminatoria": true,
+    "local": "FC Cincinnati",
+    "visitante": "Atlas",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/18267.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/216.png",
+    "prob_local": 0.55,
+    "prob_empate": 0.19539280201470474,
+    "prob_visitante": 0.2546071979852952,
+    "fuerza_local": 0.5503664516129033,
+    "fuerza_visitante": 0.32073032258064516,
+    "diferencia": 0.22963612903225816,
+    "confianza": "favorable",
+    "prediccion": "FC Cincinnati",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 2.4152712643678176,
+    "lambda_visitante": 0.5580851943755171,
+    "marcadores_probables": [
+      "2-0",
+      "1-0",
+      "2-1",
+      "1-1",
+      "3-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.52,
+          "ultimos_5": [
+            "W",
+            "W"
+          ],
+          "nombre": "FC Cincinnati"
+        },
+        "visitante": {
+          "valor": 0.45,
+          "ultimos_5": [
+            "L",
+            "L"
+          ],
+          "nombre": "Atlas"
+        },
+        "interpretacion": "FC Cincinnati llega con mejor momentum: índice 0.52/1.0 frente a 0.45/1.0 de Atlas. Últimos 5: 2V/0E/0D vs 0V/0E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 100.0,
+          "detalle": "2G/0E/0P",
+          "nombre": "FC Cincinnati"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/2P",
+          "nombre": "Atlas"
+        },
+        "interpretacion": "Contraste marcado: FC Cincinnati gana el 100% en casa (2G/0E/0P), Atlas solo el 0% de visita (0G/0E/2P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "FC Cincinnati",
+          "goles_favor": 2.5,
+          "goles_contra": 0.5
+        },
+        "visitante": {
+          "nombre": "Atlas",
+          "goles_favor": 0.5,
+          "goles_contra": 2.5
+        },
+        "interpretacion": "Superioridad integral de FC Cincinnati: 2.50 goles/partido (vs 0.50) y solo 0.50 recibidos (vs 2.50)."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "2-0",
+          "1-0",
+          "2-1",
+          "1-1",
+          "3-0"
+        ],
+        "lambda_local": 2.415,
+        "lambda_visitante": 0.558,
+        "interpretacion": "El marcador más probable es 2-0 (10.6%), coherente con FC Cincinnati como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401863609",
+    "torneo": "Leagues Cup",
+    "perfil": "leagues_cup",
+    "es_eliminatoria": true,
+    "local": "Minnesota United FC",
+    "visitante": "Atlante",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/17362.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/226.png",
+    "prob_local": 0.2819644606234712,
+    "prob_empate": 0.44,
+    "prob_visitante": 0.2780355393765288,
+    "fuerza_local": 0.3368077419354839,
+    "fuerza_visitante": 0.3323883870967742,
+    "diferencia": 0.004419354838709699,
+    "confianza": "ajustado",
+    "prediccion": "Minnesota United FC",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.9588748858447488,
+    "lambda_visitante": 0.9501203703703703,
+    "marcadores_probables": [
+      "1-0",
+      "0-0",
+      "0-1",
+      "1-1",
+      "2-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.36,
+          "ultimos_5": [
+            "L",
+            "L"
+          ],
+          "nombre": "Minnesota United FC"
+        },
+        "visitante": {
+          "valor": 0.29,
+          "ultimos_5": [
+            "L",
+            "W"
+          ],
+          "nombre": "Atlante"
+        },
+        "interpretacion": "Minnesota United FC llega con mejor momentum: índice 0.36/1.0 frente a 0.29/1.0 de Atlante. Últimos 5: 0V/0E/2D vs 1V/0E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/1P",
+          "nombre": "Minnesota United FC"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 50.0,
+          "detalle": "1G/0E/1P",
+          "nombre": "Atlante"
+        },
+        "interpretacion": "Equilibrio situacional: Minnesota United FC 0% local — Atlante 50% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Minnesota United FC",
+          "goles_favor": 0.5,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Atlante",
+          "goles_favor": 0.5,
+          "goles_contra": 2.0
+        },
+        "interpretacion": "Producción similar: Minnesota United FC 0.50 goles/partido — Atlante 0.50. Defensa: 1.00 vs 2.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "0-0",
+          "0-1",
+          "1-1",
+          "2-0"
+        ],
+        "lambda_local": 0.959,
+        "lambda_visitante": 0.95,
+        "interpretacion": "El marcador individual más probable es 1-0 (14.2%), favoreciendo a Minnesota United FC. Aunque el modelo da como favorito a el empate por probabilidad acumulada, esa probabilidad se reparte entre varios marcadores distintos."
+      }
+    ]
+  },
+  {
+    "id": "401863611",
+    "torneo": "Leagues Cup",
+    "perfil": "leagues_cup",
+    "es_eliminatoria": true,
+    "local": "Columbus Crew",
+    "visitante": "Pumas UNAM",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/183.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "prob_local": 0.55,
+    "prob_empate": 0.19756757393230623,
+    "prob_visitante": 0.2524324260676938,
+    "fuerza_local": 0.520301935483871,
+    "fuerza_visitante": 0.33247225806451614,
+    "diferencia": 0.1878296774193549,
+    "confianza": "favorable",
+    "prediccion": "Columbus Crew",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 2.3792367816091966,
+    "lambda_visitante": 0.6984045584045585,
+    "marcadores_probables": [
+      "2-0",
+      "2-1",
+      "1-0",
+      "1-1",
+      "3-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "W",
+            "W"
+          ],
+          "nombre": "Columbus Crew"
+        },
+        "visitante": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "L",
+            "L"
+          ],
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "Pumas UNAM llega con mejor momentum: índice 0.60/1.0 frente a 0.47/1.0 de Columbus Crew. Últimos 5: 0V/0E/2D vs 2V/0E/0D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 100.0,
+          "detalle": "2G/0E/0P",
+          "nombre": "Columbus Crew"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/2P",
+          "nombre": "Pumas UNAM"
+        },
+        "interpretacion": "Contraste marcado: Columbus Crew gana el 100% en casa (2G/0E/0P), Pumas UNAM solo el 0% de visita (0G/0E/2P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Columbus Crew",
+          "goles_favor": 2.5,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Pumas UNAM",
+          "goles_favor": 0.0,
+          "goles_contra": 2.5
+        },
+        "interpretacion": "Superioridad integral de Columbus Crew: 2.50 goles/partido (vs 0.00) y solo 1.00 recibidos (vs 2.50)."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "2-0",
+          "2-1",
+          "1-0",
+          "1-1",
+          "3-0"
+        ],
+        "lambda_local": 2.379,
+        "lambda_visitante": 0.698,
+        "interpretacion": "El marcador más probable es 2-0 (10.2%), coherente con Columbus Crew como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401863613",
+    "torneo": "Leagues Cup",
+    "perfil": "leagues_cup",
+    "es_eliminatoria": true,
+    "local": "Tigres UANL",
+    "visitante": "Vancouver Whitecaps",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/232.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/9727.png",
+    "prob_local": 0.55,
+    "prob_empate": 0.2668042042218811,
+    "prob_visitante": 0.18319579577811893,
+    "fuerza_local": 0.428141935483871,
+    "fuerza_visitante": 0.3171432258064516,
+    "diferencia": 0.11099870967741937,
+    "confianza": "favorable",
+    "prediccion": "Tigres UANL",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.4040810958904109,
+    "lambda_visitante": 0.5529859387923904,
+    "marcadores_probables": [
+      "1-0",
+      "2-0",
+      "0-0",
+      "1-1",
+      "3-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.28,
+          "ultimos_5": [
+            "W",
+            "W"
+          ],
+          "nombre": "Tigres UANL"
+        },
+        "visitante": {
+          "valor": 0.42,
+          "ultimos_5": [
+            "L",
+            "L"
+          ],
+          "nombre": "Vancouver Whitecaps"
+        },
+        "interpretacion": "Vancouver Whitecaps llega con mejor momentum: índice 0.42/1.0 frente a 0.28/1.0 de Tigres UANL. Últimos 5: 0V/0E/2D vs 2V/0E/0D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 100.0,
+          "detalle": "2G/0E/0P",
+          "nombre": "Tigres UANL"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Vancouver Whitecaps"
+        },
+        "interpretacion": "Contraste marcado: Tigres UANL gana el 100% en casa (2G/0E/0P), Vancouver Whitecaps solo el 0% de visita (0G/0E/0P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Tigres UANL",
+          "goles_favor": 0.5,
+          "goles_contra": 0.5
+        },
+        "visitante": {
+          "nombre": "Vancouver Whitecaps",
+          "goles_favor": 0.5,
+          "goles_contra": 2.0
+        },
+        "interpretacion": "Producción similar: Tigres UANL 0.50 goles/partido — Vancouver Whitecaps 0.50. Defensa: 0.50 vs 2.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "2-0",
+          "0-0",
+          "1-1",
+          "3-0"
+        ],
+        "lambda_local": 1.404,
+        "lambda_visitante": 0.553,
+        "interpretacion": "El marcador más probable es 1-0 (20.7%), coherente con Tigres UANL como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401863616",
+    "torneo": "Leagues Cup",
+    "perfil": "leagues_cup",
+    "es_eliminatoria": true,
+    "local": "Monterrey",
+    "visitante": "Nashville SC",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/220.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/18986.png",
+    "prob_local": 0.2884164190009672,
+    "prob_empate": 0.31243021810242816,
+    "prob_visitante": 0.3991533628966046,
+    "fuerza_local": 0.3806129032258065,
+    "fuerza_visitante": 0.410883870967742,
+    "diferencia": 0.030270967741935495,
+    "confianza": "moderado",
+    "prediccion": "Nashville SC",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.9618146695715324,
+    "lambda_visitante": 1.2186802924559657,
+    "marcadores_probables": [
+      "0-1",
+      "1-1",
+      "0-0",
+      "1-0",
+      "0-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.36,
+          "ultimos_5": [
+            "W",
+            "L"
+          ],
+          "nombre": "Monterrey"
+        },
+        "visitante": {
+          "valor": 0.37,
+          "ultimos_5": [
+            "W",
+            "L"
+          ],
+          "nombre": "Nashville SC"
+        },
+        "interpretacion": "Nashville SC llega con mejor momentum: índice 0.37/1.0 frente a 0.36/1.0 de Monterrey. Últimos 5: 1V/0E/1D vs 1V/0E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/1P",
+          "nombre": "Monterrey"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Nashville SC"
+        },
+        "interpretacion": "Nashville SC sufre de visita: 0% (0G/0E/0P). Monterrey en casa: 0% (0G/0E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Monterrey",
+          "goles_favor": 1.5,
+          "goles_contra": 1.5
+        },
+        "visitante": {
+          "nombre": "Nashville SC",
+          "goles_favor": 2.0,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Nashville SC más ofensivo: 2.00 vs 1.50 goles/partido. Defensa: 1.50 vs 1.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "1-1",
+          "0-0",
+          "1-0",
+          "0-2"
+        ],
+        "lambda_local": 0.962,
+        "lambda_visitante": 1.219,
+        "interpretacion": "El marcador más probable es 0-1 (14.3%), coherente con Nashville SC como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401863619",
+    "torneo": "Leagues Cup",
+    "perfil": "leagues_cup",
+    "es_eliminatoria": true,
+    "local": "Seattle Sounders FC",
+    "visitante": "Guadalajara",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/9726.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
+    "prob_local": 0.48915990892926103,
+    "prob_empate": 0.2426035877897502,
+    "prob_visitante": 0.26823650328098875,
+    "fuerza_local": 0.3880012903225806,
+    "fuerza_visitante": 0.368923870967742,
+    "diferencia": 0.019077419354838643,
+    "confianza": "favorable",
+    "prediccion": "Seattle Sounders FC",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.4120644444444446,
+    "lambda_visitante": 0.8901129943502826,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "2-0",
+      "0-0",
+      "2-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.23,
+          "ultimos_5": [
+            "W",
+            "L"
+          ],
+          "nombre": "Seattle Sounders FC"
+        },
+        "visitante": {
+          "valor": 0.42,
+          "ultimos_5": [
+            "L",
+            "L"
+          ],
+          "nombre": "Guadalajara"
+        },
+        "interpretacion": "Guadalajara llega con mejor momentum: índice 0.42/1.0 frente a 0.23/1.0 de Seattle Sounders FC. Últimos 5: 0V/0E/2D vs 1V/0E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 100.0,
+          "detalle": "1G/0E/0P",
+          "nombre": "Seattle Sounders FC"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/1P",
+          "nombre": "Guadalajara"
+        },
+        "interpretacion": "Contraste marcado: Seattle Sounders FC gana el 100% en casa (1G/0E/0P), Guadalajara solo el 0% de visita (0G/0E/1P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Seattle Sounders FC",
+          "goles_favor": 1.5,
+          "goles_contra": 1.5
+        },
+        "visitante": {
+          "nombre": "Guadalajara",
+          "goles_favor": 0.5,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Seattle Sounders FC más ofensivo: 1.50 vs 0.50 goles/partido. Defensa: 1.50 vs 1.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "2-0",
+          "0-0",
+          "2-1"
+        ],
+        "lambda_local": 1.412,
+        "lambda_visitante": 0.89,
+        "interpretacion": "El marcador más probable es 1-0 (14.9%), coherente con Seattle Sounders FC como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401863624",
+    "torneo": "Leagues Cup",
+    "perfil": "leagues_cup",
+    "es_eliminatoria": true,
+    "local": "Cruz Azul",
+    "visitante": "Chicago Fire FC",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/182.png",
+    "prob_local": 0.35373896099678354,
+    "prob_empate": 0.373235595562057,
+    "prob_visitante": 0.2730254434411595,
+    "fuerza_local": 0.4954709677419355,
+    "fuerza_visitante": 0.4842709677419355,
+    "diferencia": 0.011199999999999988,
+    "confianza": "moderado",
+    "prediccion": "Cruz Azul",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.045512406947891,
+    "lambda_visitante": 0.8524226633581474,
+    "marcadores_probables": [
+      "1-0",
+      "0-0",
+      "1-1",
+      "0-1",
+      "2-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.41,
+          "ultimos_5": [
+            "W",
+            "W"
+          ],
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "valor": 0.45,
+          "ultimos_5": [
+            "W",
+            "W"
+          ],
+          "nombre": "Chicago Fire FC"
+        },
+        "interpretacion": "Chicago Fire FC llega con mejor momentum: índice 0.45/1.0 frente a 0.41/1.0 de Cruz Azul. Últimos 5: 2V/0E/0D vs 2V/0E/0D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 100.0,
+          "detalle": "2G/0E/0P",
+          "nombre": "Cruz Azul"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0,
+          "detalle": "0G/0E/0P",
+          "nombre": "Chicago Fire FC"
+        },
+        "interpretacion": "Contraste marcado: Cruz Azul gana el 100% en casa (2G/0E/0P), Chicago Fire FC solo el 0% de visita (0G/0E/0P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Cruz Azul",
+          "goles_favor": 1.5,
+          "goles_contra": 0.5
+        },
+        "visitante": {
+          "nombre": "Chicago Fire FC",
+          "goles_favor": 2.5,
+          "goles_contra": 0.5
+        },
+        "interpretacion": "Chicago Fire FC más ofensivo: 2.50 vs 1.50 goles/partido. Defensa: 0.50 vs 0.50."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "0-0",
+          "1-1",
+          "0-1",
+          "2-0"
+        ],
+        "lambda_local": 1.046,
+        "lambda_visitante": 0.852,
+        "interpretacion": "El marcador individual más probable es 1-0 (16.1%), favoreciendo a Cruz Azul. Aunque el modelo da como favorito a el empate por probabilidad acumulada, esa probabilidad se reparte entre varios marcadores distintos."
+      }
+    ]
+  },
+  {
+    "id": "401874153",
+    "torneo": "CONMEBOL Libertadores",
+    "perfil": "libertadores",
+    "es_eliminatoria": true,
+    "local": "Cruzeiro",
+    "visitante": "Flamengo",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2022.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/819.png",
+    "prob_local": 0.22343480469938348,
+    "prob_empate": 0.361113272401865,
+    "prob_visitante": 0.41545192289875144,
+    "fuerza_local": 0.5224959483870968,
+    "fuerza_visitante": 0.57517,
+    "diferencia": 0.05267405161290317,
+    "confianza": "favorable",
+    "prediccion": "Flamengo",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.5793802406653956,
+    "lambda_visitante": 0.9914564627954414,
+    "marcadores_probables": [
+      "0-1",
+      "0-0",
+      "1-1",
+      "1-0",
+      "0-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.68,
+          "ultimos_5": [
+            "W",
+            "D",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Cruzeiro"
+        },
+        "visitante": {
+          "valor": 0.8,
+          "ultimos_5": [
+            "W",
+            "W",
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Flamengo"
+        },
+        "interpretacion": "Flamengo llega con mejor momentum: índice 0.80/1.0 frente a 0.68/1.0 de Cruzeiro. Últimos 5: 4V/1E/0D vs 2V/2E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "medio",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 66.7,
+          "detalle": "2G/0E/1P",
+          "nombre": "Cruzeiro"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 50.0,
+          "detalle": "1G/1E/0P",
+          "nombre": "Flamengo"
+        },
+        "interpretacion": "Cruzeiro domina en casa: 67% (2G/0E/1P). Flamengo: 50% de visita (1G/1E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Cruzeiro",
+          "goles_favor": 1.33,
+          "goles_contra": 0.5
+        },
+        "visitante": {
+          "nombre": "Flamengo",
+          "goles_favor": 2.2,
+          "goles_contra": 0.4
+        },
+        "interpretacion": "Flamengo más ofensivo: 2.20 vs 1.33 goles/partido. Defensa: 0.50 vs 0.40."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "0-0",
+          "1-1",
+          "1-0",
+          "0-2"
+        ],
+        "lambda_local": 0.579,
+        "lambda_visitante": 0.991,
+        "interpretacion": "El marcador más probable es 0-1 (21.2%), coherente con Flamengo como resultado favorito del modelo."
+      }
+    ]
+  }
 ]
