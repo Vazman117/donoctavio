@@ -1,6 +1,18 @@
 [
   {
     "posicion": 1,
+    "equipo": "Monterrey",
+    "partidos": 4,
+    "ganados": 3,
+    "empatados": 0,
+    "perdidos": 1,
+    "goles_favor": 12,
+    "goles_contra": 5,
+    "diferencia_goles": 7,
+    "puntos": 9
+  },
+  {
+    "posicion": 2,
     "equipo": "América",
     "partidos": 3,
     "ganados": 2,
@@ -12,7 +24,19 @@
     "puntos": 7
   },
   {
-    "posicion": 2,
+    "posicion": 3,
+    "equipo": "Toluca",
+    "partidos": 4,
+    "ganados": 2,
+    "empatados": 1,
+    "perdidos": 1,
+    "goles_favor": 6,
+    "goles_contra": 3,
+    "diferencia_goles": 3,
+    "puntos": 7
+  },
+  {
+    "posicion": 4,
     "equipo": "Tijuana",
     "partidos": 3,
     "ganados": 2,
@@ -24,19 +48,7 @@
     "puntos": 7
   },
   {
-    "posicion": 3,
-    "equipo": "Toluca",
-    "partidos": 3,
-    "ganados": 2,
-    "empatados": 0,
-    "perdidos": 1,
-    "goles_favor": 6,
-    "goles_contra": 3,
-    "diferencia_goles": 3,
-    "puntos": 6
-  },
-  {
-    "posicion": 4,
+    "posicion": 5,
     "equipo": "Pumas UNAM",
     "partidos": 3,
     "ganados": 2,
@@ -44,18 +56,6 @@
     "perdidos": 1,
     "goles_favor": 7,
     "goles_contra": 5,
-    "diferencia_goles": 2,
-    "puntos": 6
-  },
-  {
-    "posicion": 5,
-    "equipo": "Monterrey",
-    "partidos": 3,
-    "ganados": 2,
-    "empatados": 0,
-    "perdidos": 1,
-    "goles_favor": 6,
-    "goles_contra": 4,
     "diferencia_goles": 2,
     "puntos": 6
   },
@@ -110,14 +110,14 @@
   {
     "posicion": 10,
     "equipo": "Atlante",
-    "partidos": 3,
+    "partidos": 4,
     "ganados": 1,
-    "empatados": 1,
+    "empatados": 2,
     "perdidos": 1,
     "goles_favor": 5,
     "goles_contra": 5,
     "diferencia_goles": 0,
-    "puntos": 4
+    "puntos": 5
   },
   {
     "posicion": 11,
@@ -206,13 +206,13 @@
   {
     "posicion": 18,
     "equipo": "FC Juarez",
-    "partidos": 3,
+    "partidos": 4,
     "ganados": 0,
     "empatados": 0,
-    "perdidos": 3,
-    "goles_favor": 1,
-    "goles_contra": 7,
-    "diferencia_goles": -6,
+    "perdidos": 4,
+    "goles_favor": 2,
+    "goles_contra": 13,
+    "diferencia_goles": -11,
     "puntos": 0
   }
 ]

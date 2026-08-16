@@ -405,30 +405,15 @@ def contar_empates_recientes(ultimos_5):
     return ultimos_5.count("D")
 
 def calcular_tasa_empate(equipo, es_local):
-    """
-    Tasa histórica de empate del equipo en su rol (local/visitante).
-
-    MEJORA: se aplica el mismo shrinkage (peso_confianza) que ya usan
-    ipo/isd/win_rate para evitar que muestras chicas (ej. 1 empate en
-    2 partidos = 50%) distorsionen prob_empate, que pesa 65% en
-    calcular_prob_empate. Con pocos partidos, el valor se acerca al
-    prior de liga (0.25) en vez de al dato crudo.
-    """
     if es_local:
         partidos  = equipo.get("partidos_local", 0)
         empatados = equipo.get("empatados_local", 0)
     else:
         partidos  = equipo.get("partidos_visita", 0)
         empatados = equipo.get("empatados_visita", 0)
-
     if partidos == 0:
         return 0.25
-
-    tasa_cruda = empatados / partidos
-    confianza  = peso_confianza(partidos)
-    tasa_suavizada = confianza * tasa_cruda + (1 - confianza) * 0.25
-
-    return limitar(tasa_suavizada, 0.0, 1.0)
+    return limitar(empatados / partidos, 0.0, 1.0)
 
 
 # =============================
@@ -490,42 +475,7 @@ def calcular_lambdas(equipo_local, equipo_visitante, promedio_liga):
     return lambda_local, lambda_visitante
 
 
-# =============================
-# DIXON-COLES: corrección de dependencia en marcadores bajos
-# =============================
-# En la práctica, los marcadores 0-0 y 1-1 ocurren MÁS de lo que predice
-# un Poisson bivariado independiente puro, y los marcadores 1-0 / 0-1
-# ocurren un poco MENOS. Esto es el efecto documentado por Dixon & Coles
-# (1997): goles de local y visitante no son perfectamente independientes,
-# sobre todo en marcadores bajos, por dinámicas de juego (un equipo que
-# va ganando 1-0 ajusta su intensidad, etc).
-#
-# RHO (ρ) controla la magnitud de esa corrección. Valores típicos en la
-# literatura van de -0.05 a -0.15 para fútbol de clubes. Usamos -0.06
-# como default conservador (afecta solo marcadores 0-0/1-0/0-1/1-1).
-#
-# Esto reemplaza de forma más rigurosa (y basada en evidencia empírica)
-# los boosts manuales de ajuste_empate_por_lambdas, que hacían algo
-# similar pero de forma ad-hoc. Se deja ajuste_empate_por_lambdas activo
-# como red de seguridad adicional, pero con menor intensidad (ver más abajo).
-
-RHO_DIXON_COLES = -0.06
-
-def _tau_dixon_coles(i, j, lambda_local, lambda_visitante, rho):
-    """Factor de corrección tau(i,j) para los 4 marcadores bajos."""
-    if i == 0 and j == 0:
-        return 1.0 - (lambda_local * lambda_visitante * rho)
-    elif i == 0 and j == 1:
-        return 1.0 + (lambda_local * rho)
-    elif i == 1 and j == 0:
-        return 1.0 + (lambda_visitante * rho)
-    elif i == 1 and j == 1:
-        return 1.0 - rho
-    else:
-        return 1.0
-
-
-def probabilidades_poisson(lambda_local, lambda_visitante, max_goles=7, rho=RHO_DIXON_COLES):
+def probabilidades_poisson(lambda_local, lambda_visitante, max_goles=7):
     from math import exp, factorial
     def pmf(k, lam):
         return (lam ** k) * exp(-lam) / factorial(k)
@@ -533,7 +483,6 @@ def probabilidades_poisson(lambda_local, lambda_visitante, max_goles=7, rho=RHO_
     for i in range(max_goles + 1):
         for j in range(max_goles + 1):
             p = pmf(i, lambda_local) * pmf(j, lambda_visitante)
-            p *= _tau_dixon_coles(i, j, lambda_local, lambda_visitante, rho)
             if   i > j: p_l += p
             elif i == j: p_e += p
             else:        p_v += p
@@ -584,41 +533,6 @@ def calcular_fuerza_base(equipo, es_local, cfg):
 # H2H
 # =============================
 
-def _claves_h2h_recientes(cruce, max_claves=2):
-    """
-    MEJORA: en vez de nombres de temporada hardcodeados
-    (ej. "clausura_2026", "apertura_2025"), se detectan automáticamente
-    las claves de 'cruce' que contienen listas de partidos, se ordenan
-    por año/temporada de forma heurística y se toman las más recientes.
-
-    Esto evita que el código se rompa cada vez que arranca un torneo
-    nuevo y cambia el nombre de temporada usado como key.
-
-    Reglas de orden (de más a menos prioritario):
-    1. Si la clave contiene un año de 4 dígitos, se ordena por ese año.
-    2. Si hay años empatados, "clausura" ordena después de "apertura"
-       (clausura es la segunda mitad del año calendario en México).
-    3. Claves sin año reconocible (ej. "partidos_recientes") van al final,
-       salvo que sea la única clave disponible.
-    """
-    import re
-
-    candidatas = []
-    for key, val in cruce.items():
-        if not isinstance(val, list):
-            continue
-        anio_match = re.search(r"(20\d{2})", key)
-        anio = int(anio_match.group(1)) if anio_match else -1
-        orden_temporada = 1 if "clausura" in key.lower() else 0
-        candidatas.append((anio, orden_temporada, key, val))
-
-    if not candidatas:
-        return []
-
-    candidatas.sort(key=lambda x: (x[0], x[1]), reverse=True)
-    return [(key, val) for _, _, key, val in candidatas[:max_claves]]
-
-
 def calcular_h2h_score(nombre_local, nombre_visitante, h2h_data):
     nl = normalizar_nombre(nombre_local)
     nv = normalizar_nombre(nombre_visitante)
@@ -649,17 +563,9 @@ def calcular_h2h_score(nombre_local, nombre_visitante, h2h_data):
                 victorias += 1
         return victorias / len(partidos), len(partidos)
 
-    # MEJORA: detección automática de las 2 claves de temporada más
-    # recientes en vez de nombres hardcodeados ("clausura_2026", etc).
-    # Fallback a "partidos_recientes" si no se detecta ningún patrón.
-    claves_recientes = _claves_h2h_recientes(cruce, max_claves=2)
-
-    if claves_recientes:
-        partidos_a = claves_recientes[0][1]
-        partidos_b = claves_recientes[1][1] if len(claves_recientes) > 1 else []
-    else:
-        partidos_a = cruce.get("partidos_recientes", [])
-        partidos_b = []
+    # Intenta clausura/apertura para Liga MX, o partidos genéricos para otros torneos
+    partidos_a = cruce.get("clausura_2026") or cruce.get("partidos_recientes") or []
+    partidos_b = cruce.get("apertura_2025", [])
 
     wr_a, n_a = win_rate_para(partidos_a, nombre_local)
     wr_b, n_b = win_rate_para(partidos_b, nombre_local)
@@ -744,12 +650,6 @@ def calcular_prob_empate(f_local, f_visitante, equipo_local, equipo_visitante):
 # Este ajuste sube la probabilidad de empate en esos casos, con un
 # techo (MAX_EMPATE) para no desbordarla, redistribuyendo el exceso
 # proporcionalmente entre local/visitante.
-#
-# NOTA: ahora que probabilidades_poisson() incluye la corrección
-# Dixon-Coles (que ya sube el empate en marcadores bajos de forma
-# empíricamente fundamentada), este boost manual se reduce en
-# intensidad para actuar solo como red de seguridad adicional y no
-# duplicar la corrección de empate dos veces.
 
 MAX_EMPATE = 0.44
 
@@ -762,14 +662,14 @@ def ajuste_empate_por_lambdas(prob_local, prob_empate, prob_visitante,
 
     if suma_lambda < 2.2 and diff_lambda < 0.40:
         intensidad = limitar((2.2 - suma_lambda) / 1.2, 0.0, 1.0)
-        boost += 0.05 * intensidad   # antes 0.10 — reducido por solape con Dixon-Coles
+        boost += 0.10 * intensidad
 
     if diff_lambda < 0.40 and suma_lambda < 2.8:
         intensidad = limitar((0.40 - diff_lambda) / 0.40, 0.0, 1.0)
-        boost += 0.045 * intensidad  # antes 0.09
+        boost += 0.09 * intensidad
 
     if diff_lambda < 0.15:
-        boost += 0.025               # antes 0.05
+        boost += 0.05
 
     if boost <= 0.0:
         return prob_local, prob_empate, prob_visitante
@@ -947,8 +847,7 @@ def ajustar_lambdas_por_probabilidades(lambda_local, lambda_visitante,
 
 
 def marcadores_probables(lambda_local, lambda_visitante, top_n=5, max_goles=6,
-                          prob_local=None, prob_visitante=None,
-                          rho=RHO_DIXON_COLES):
+                          prob_local=None, prob_visitante=None):
     from math import exp, factorial
 
     if prob_local is not None and prob_visitante is not None:
@@ -963,10 +862,6 @@ def marcadores_probables(lambda_local, lambda_visitante, top_n=5, max_goles=6,
     for i in range(max_goles + 1):
         for j in range(max_goles + 1):
             prob = pmf(i, lambda_local) * pmf(j, lambda_visitante)
-            # MEJORA: misma corrección Dixon-Coles aplicada aquí para que
-            # el carrusel de marcadores probables sea consistente con las
-            # probabilidades 1X2 que ya la incorporan.
-            prob *= _tau_dixon_coles(i, j, lambda_local, lambda_visitante, rho)
             if i > j:
                 tipo = "local"
             elif i == j:
@@ -1039,7 +934,7 @@ def predecir_probabilidades(
     cfg = perfil del torneo (PERFILES_TORNEO[slug]).
     """
 
-    # ── Capa 1: Poisson (con corrección Dixon-Coles) ────────────────────────
+    # ── Capa 1: Poisson ─────────────────────────────────────────────────────
     lambda_local, lambda_visitante = calcular_lambdas(
         equipo_local, equipo_visitante, promedio_liga
     )
@@ -1124,15 +1019,13 @@ def predecir_probabilidades(
     prob_empate   /= total
     prob_visitante /= total
 
-    # ── cap final tras la fusión (Poisson puede reintroducir un
+    # ── NUEVO: cap final tras la fusión (Poisson puede reintroducir un
     #    favorito por encima del techo del perfil) ───────────────────────────
     prob_local, prob_empate, prob_visitante = _aplicar_cap_final(
         prob_local, prob_empate, prob_visitante, cfg["MAX_FAVORITO"]
     )
 
-    # ── ajuste de empate por cercanía de lambdas (red de seguridad
-    #    adicional; intensidad reducida porque Dixon-Coles ya cubre
-    #    la mayor parte de este efecto en probabilidades_poisson) ───────────
+    # ── NUEVO: ajuste de empate por cercanía de lambdas ─────────────────────
     prob_local, prob_empate, prob_visitante = ajuste_empate_por_lambdas(
         prob_local, prob_empate, prob_visitante,
         lambda_local, lambda_visitante,
@@ -1472,7 +1365,7 @@ def generar_partido(
         promedio_liga, cfg,
     )
 
-    # ── predicción inteligente en vez de max() ingenuo ────────────────
+    # ── NUEVO: predicción inteligente en vez de max() ingenuo ────────────────
     pred = prediccion_inteligente(
         resultado["local"],
         resultado["empate"],
@@ -1484,7 +1377,7 @@ def generar_partido(
         es_eliminatoria=es_eliminatoria,
     )
 
-    # ── garantizar coherencia entre predicción y probabilidades ───────
+    # ── NUEVO: garantizar coherencia entre predicción y probabilidades ───────
     prob_local, prob_empate, prob_visitante = garantizar_coherencia(
         pred,
         resultado["local"],
@@ -1498,7 +1391,7 @@ def generar_partido(
     resultado["empate"]    = prob_empate
     resultado["visitante"] = prob_visitante
 
-    # ── marcadores más probables (con Dixon-Coles) ──────
+    # ── NUEVO: marcadores más probables (portado del motor del Mundial) ──────
     top_marcadores = marcadores_para_carrusel(
         resultado["lambda_local"],
         resultado["lambda_visitante"],
