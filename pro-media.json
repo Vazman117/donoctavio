@@ -1,3 +1,751 @@
 [
-
+  {
+    "id": "401874149",
+    "torneo": "CONMEBOL Libertadores",
+    "perfil": "libertadores",
+    "es_eliminatoria": true,
+    "local": "Corinthians",
+    "visitante": "Rosario Central",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/874.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/17.png",
+    "prob_local": 0.19469153663467706,
+    "prob_empate": 0.33045914562513357,
+    "prob_visitante": 0.4748493177401894,
+    "fuerza_local": 0.4415624,
+    "fuerza_visitante": 0.5049679483870968,
+    "diferencia": 0.06340554838709678,
+    "confianza": "favorable",
+    "prediccion": "Rosario Central",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.3,
+    "lambda_visitante": 0.8258928904338199,
+    "marcadores_probables": [
+      "0-1",
+      "0-0",
+      "1-0",
+      "0-2",
+      "1-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.42,
+          "ultimos_5": [
+            "D",
+            "L",
+            "D",
+            "D",
+            "W"
+          ],
+          "nombre": "Corinthians"
+        },
+        "visitante": {
+          "valor": 0.65,
+          "ultimos_5": [
+            "D",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "nombre": "Rosario Central"
+        },
+        "interpretacion": "Rosario Central llega con mejor momentum: índice 0.65/1.0 frente a 0.42/1.0 de Corinthians. Últimos 5: 3V/1E/1D vs 1V/3E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 66.7,
+          "detalle": "2G/0E/1P",
+          "nombre": "Corinthians"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 66.7,
+          "detalle": "2G/0E/1P",
+          "nombre": "Rosario Central"
+        },
+        "interpretacion": "Corinthians domina en casa: 67% (2G/0E/1P). Rosario Central: 67% de visita (2G/0E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Corinthians",
+          "goles_favor": 1.14,
+          "goles_contra": 0.57
+        },
+        "visitante": {
+          "nombre": "Rosario Central",
+          "goles_favor": 1.29,
+          "goles_contra": 0.14
+        },
+        "interpretacion": "Producción similar: Corinthians 1.14 goles/partido — Rosario Central 1.29. Defensa: 0.57 vs 0.14."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-1",
+          "0-0",
+          "1-0",
+          "0-2",
+          "1-1"
+        ],
+        "lambda_local": 0.3,
+        "lambda_visitante": 0.826,
+        "interpretacion": "El marcador más probable es 0-1 (25.9%), coherente con Rosario Central como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401874156",
+    "torneo": "CONMEBOL Libertadores",
+    "perfil": "libertadores",
+    "es_eliminatoria": true,
+    "local": "Independiente Rivadavia",
+    "visitante": "Fluminense",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/9744.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3445.png",
+    "prob_local": 0.5465135704995532,
+    "prob_empate": 0.2927682668756921,
+    "prob_visitante": 0.16071816262475475,
+    "fuerza_local": 0.5365243999999999,
+    "fuerza_visitante": 0.4600825483870967,
+    "diferencia": 0.07644185161290318,
+    "confianza": "favorable",
+    "prediccion": "Independiente Rivadavia",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.6712882132700397,
+    "lambda_visitante": 0.6346279689166697,
+    "marcadores_probables": [
+      "1-0",
+      "2-0",
+      "0-0",
+      "3-0",
+      "1-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.58,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Independiente Rivadavia"
+        },
+        "visitante": {
+          "valor": 0.64,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "D",
+            "L"
+          ],
+          "nombre": "Fluminense"
+        },
+        "interpretacion": "Fluminense llega con mejor momentum: índice 0.64/1.0 frente a 0.58/1.0 de Independiente Rivadavia. Últimos 5: 2V/2E/1D vs 3V/2E/0D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 66.7,
+          "detalle": "2G/1E/0P",
+          "nombre": "Independiente Rivadavia"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/2E/1P",
+          "nombre": "Fluminense"
+        },
+        "interpretacion": "Contraste marcado: Independiente Rivadavia gana el 67% en casa (2G/1E/0P), Fluminense solo el 0% de visita (0G/2E/1P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Independiente Rivadavia",
+          "goles_favor": 2.14,
+          "goles_contra": 0.86
+        },
+        "visitante": {
+          "nombre": "Fluminense",
+          "goles_favor": 1.0,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Independiente Rivadavia más ofensivo: 2.14 vs 1.00 goles/partido. Defensa: 0.86 vs 1.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "2-0",
+          "0-0",
+          "3-0",
+          "1-1"
+        ],
+        "lambda_local": 1.671,
+        "lambda_visitante": 0.635,
+        "interpretacion": "El marcador más probable es 1-0 (17.8%), coherente con Independiente Rivadavia como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401874163",
+    "torneo": "CONMEBOL Libertadores",
+    "perfil": "libertadores",
+    "es_eliminatoria": true,
+    "local": "Universidad Católica",
+    "visitante": "Estudiantes de La Plata",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/885.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/8.png",
+    "prob_local": 0.41597425211510886,
+    "prob_empate": 0.3803334054985376,
+    "prob_visitante": 0.20369234238635353,
+    "fuerza_local": 0.5142616,
+    "fuerza_visitante": 0.41472254838709677,
+    "diferencia": 0.09953905161290322,
+    "confianza": "favorable",
+    "prediccion": "Universidad Católica",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.9652373286835563,
+    "lambda_visitante": 0.538236539247827,
+    "marcadores_probables": [
+      "1-0",
+      "0-0",
+      "2-0",
+      "1-1",
+      "0-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.67,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "Universidad Católica"
+        },
+        "visitante": {
+          "valor": 0.47,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "D",
+            "D"
+          ],
+          "nombre": "Estudiantes de La Plata"
+        },
+        "interpretacion": "Universidad Católica llega con mejor momentum: índice 0.67/1.0 frente a 0.47/1.0 de Estudiantes de La Plata. Últimos 5: 3V/2E/0D vs 1V/3E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 33.3,
+          "detalle": "1G/1E/1P",
+          "nombre": "Universidad Católica"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/2E/1P",
+          "nombre": "Estudiantes de La Plata"
+        },
+        "interpretacion": "Estudiantes de La Plata sufre de visita: 0% (0G/2E/1P). Universidad Católica en casa: 33% (1G/1E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Universidad Católica",
+          "goles_favor": 1.29,
+          "goles_contra": 0.71
+        },
+        "visitante": {
+          "nombre": "Estudiantes de La Plata",
+          "goles_favor": 1.0,
+          "goles_contra": 0.86
+        },
+        "interpretacion": "Producción similar: Universidad Católica 1.29 goles/partido — Estudiantes de La Plata 1.00. Defensa: 0.71 vs 0.86."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "0-0",
+          "2-0",
+          "1-1",
+          "0-1"
+        ],
+        "lambda_local": 0.965,
+        "lambda_visitante": 0.538,
+        "interpretacion": "El marcador más probable es 1-0 (22.4%), coherente con Universidad Católica como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401874143",
+    "torneo": "CONMEBOL Libertadores",
+    "perfil": "libertadores",
+    "es_eliminatoria": true,
+    "local": "Coquimbo Unido",
+    "visitante": "Platense",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/8186.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/7764.png",
+    "prob_local": 0.30493560352532534,
+    "prob_empate": 0.40635634861573766,
+    "prob_visitante": 0.2887080478589371,
+    "fuerza_local": 0.4380064,
+    "fuerza_visitante": 0.4496539483870968,
+    "diferencia": 0.011647548387096807,
+    "confianza": "ajustado",
+    "prediccion": "Coquimbo Unido",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.2526327939474389,
+    "lambda_visitante": 1.1869689920881454,
+    "marcadores_probables": [
+      "1-0",
+      "1-1",
+      "0-1",
+      "0-0",
+      "2-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.44,
+          "ultimos_5": [
+            "D",
+            "L",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Coquimbo Unido"
+        },
+        "visitante": {
+          "valor": 0.49,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L",
+            "D",
+            "W"
+          ],
+          "nombre": "Platense"
+        },
+        "interpretacion": "Platense llega con mejor momentum: índice 0.49/1.0 frente a 0.44/1.0 de Coquimbo Unido. Últimos 5: 2V/2E/1D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 66.7,
+          "detalle": "2G/1E/0P",
+          "nombre": "Coquimbo Unido"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 66.7,
+          "detalle": "2G/0E/1P",
+          "nombre": "Platense"
+        },
+        "interpretacion": "Coquimbo Unido domina en casa: 67% (2G/1E/0P). Platense: 67% de visita (2G/0E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Coquimbo Unido",
+          "goles_favor": 1.29,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Platense",
+          "goles_favor": 1.29,
+          "goles_contra": 1.14
+        },
+        "interpretacion": "Producción similar: Coquimbo Unido 1.29 goles/partido — Platense 1.29. Defensa: 1.00 vs 1.14."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "1-1",
+          "0-1",
+          "0-0",
+          "2-1"
+        ],
+        "lambda_local": 1.253,
+        "lambda_visitante": 1.187,
+        "interpretacion": "El marcador individual más probable es 1-0 (10.9%), favoreciendo a Coquimbo Unido. Aunque el modelo da como favorito a el empate por probabilidad acumulada, esa probabilidad se reparte entre varios marcadores distintos."
+      }
+    ]
+  },
+  {
+    "id": "401902740",
+    "torneo": "CONMEBOL Sudamericana",
+    "perfil": "sudamericana",
+    "es_eliminatoria": true,
+    "local": "Club Olimpia",
+    "visitante": "Vasco da Gama",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/2675.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/3454.png",
+    "prob_local": 0.3732949446865733,
+    "prob_empate": 0.38310830287803466,
+    "prob_visitante": 0.24359675243539197,
+    "fuerza_local": 0.50272784,
+    "fuerza_visitante": 0.43661553548387105,
+    "diferencia": 0.06611230451612898,
+    "confianza": "moderado",
+    "prediccion": "Club Olimpia",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.099831263169808,
+    "lambda_visitante": 0.7997517197208532,
+    "marcadores_probables": [
+      "1-0",
+      "0-0",
+      "1-1",
+      "0-1",
+      "2-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Club Olimpia"
+        },
+        "visitante": {
+          "valor": 0.4,
+          "ultimos_5": [
+            "D",
+            "W",
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Vasco da Gama"
+        },
+        "interpretacion": "Club Olimpia llega con mejor momentum: índice 0.60/1.0 frente a 0.40/1.0 de Vasco da Gama. Últimos 5: 3V/1E/1D vs 2V/2E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 66.7,
+          "detalle": "2G/1E/0P",
+          "nombre": "Club Olimpia"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 25.0,
+          "detalle": "1G/2E/1P",
+          "nombre": "Vasco da Gama"
+        },
+        "interpretacion": "Contraste marcado: Club Olimpia gana el 67% en casa (2G/1E/0P), Vasco da Gama solo el 25% de visita (1G/2E/1P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "bajo",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Club Olimpia",
+          "goles_favor": 1.38,
+          "goles_contra": 0.75
+        },
+        "visitante": {
+          "nombre": "Vasco da Gama",
+          "goles_favor": 1.44,
+          "goles_contra": 0.89
+        },
+        "interpretacion": "Producción similar: Club Olimpia 1.38 goles/partido — Vasco da Gama 1.44. Defensa: 0.75 vs 0.89."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "0-0",
+          "1-1",
+          "0-1",
+          "2-0"
+        ],
+        "lambda_local": 1.1,
+        "lambda_visitante": 0.8,
+        "interpretacion": "El marcador individual más probable es 1-0 (17.2%), favoreciendo a Club Olimpia. Aunque el modelo da como favorito a el empate por probabilidad acumulada, esa probabilidad se reparte entre varios marcadores distintos."
+      }
+    ]
+  },
+  {
+    "id": "761729",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Orlando City SC",
+    "visitante": "Chicago Fire FC",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/12011.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/182.png",
+    "prob_local": 0.17348695745390827,
+    "prob_empate": 0.1679535359382234,
+    "prob_visitante": 0.6585595066078684,
+    "fuerza_local": 0.4085290588235294,
+    "fuerza_visitante": 0.5551032352941178,
+    "diferencia": 0.14657417647058835,
+    "confianza": "favorable",
+    "prediccion": "Chicago Fire FC",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.2762696352029335,
+    "lambda_visitante": 2.9278279919159926,
+    "marcadores_probables": [
+      "0-3",
+      "0-2",
+      "1-3",
+      "0-4",
+      "1-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.49,
+          "ultimos_5": [
+            "D",
+            "L",
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Orlando City SC"
+        },
+        "visitante": {
+          "valor": 0.68,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Chicago Fire FC"
+        },
+        "interpretacion": "Chicago Fire FC llega con mejor momentum: índice 0.68/1.0 frente a 0.49/1.0 de Orlando City SC. Últimos 5: 3V/0E/2D vs 2V/1E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 44.4,
+          "detalle": "4G/2E/3P",
+          "nombre": "Orlando City SC"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 37.5,
+          "detalle": "3G/2E/3P",
+          "nombre": "Chicago Fire FC"
+        },
+        "interpretacion": "Equilibrio situacional: Orlando City SC 44% local — Chicago Fire FC 38% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Orlando City SC",
+          "goles_favor": 1.63,
+          "goles_contra": 2.53
+        },
+        "visitante": {
+          "nombre": "Chicago Fire FC",
+          "goles_favor": 1.89,
+          "goles_contra": 1.33
+        },
+        "interpretacion": "Producción similar: Orlando City SC 1.63 goles/partido — Chicago Fire FC 1.89. Defensa: 2.53 vs 1.33."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-3",
+          "0-2",
+          "1-3",
+          "0-4",
+          "1-2"
+        ],
+        "lambda_local": 1.276,
+        "lambda_visitante": 2.928,
+        "interpretacion": "El marcador más probable es 0-3 (9.0%), coherente con Chicago Fire FC como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "761728",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Red Bull New York",
+    "visitante": "Nashville SC",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/190.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/18986.png",
+    "prob_local": 0.12374877712986082,
+    "prob_empate": 0.1962512228701391,
+    "prob_visitante": 0.68,
+    "fuerza_local": 0.3710408235294118,
+    "fuerza_visitante": 0.601202,
+    "diferencia": 0.2301611764705882,
+    "confianza": "favorable",
+    "prediccion": "Nashville SC",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.6946553891115927,
+    "lambda_visitante": 2.849311278591549,
+    "marcadores_probables": [
+      "0-2",
+      "0-3",
+      "0-4",
+      "0-1",
+      "1-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.33,
+          "ultimos_5": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Red Bull New York"
+        },
+        "visitante": {
+          "valor": 0.68,
+          "ultimos_5": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Nashville SC"
+        },
+        "interpretacion": "Nashville SC llega con mejor momentum: índice 0.68/1.0 frente a 0.33/1.0 de Red Bull New York. Últimos 5: 3V/1E/1D vs 2V/0E/3D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 44.4,
+          "detalle": "4G/2E/3P",
+          "nombre": "Red Bull New York"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 44.4,
+          "detalle": "4G/3E/2P",
+          "nombre": "Nashville SC"
+        },
+        "interpretacion": "Equilibrio situacional: Red Bull New York 44% local — Nashville SC 44% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Red Bull New York",
+          "goles_favor": 1.58,
+          "goles_contra": 2.16
+        },
+        "visitante": {
+          "nombre": "Nashville SC",
+          "goles_favor": 2.05,
+          "goles_contra": 0.79
+        },
+        "interpretacion": "Nashville SC más ofensivo: 2.05 vs 1.58 goles/partido. Defensa: 2.16 vs 0.79."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-2",
+          "0-3",
+          "0-4",
+          "0-1",
+          "1-2"
+        ],
+        "lambda_local": 0.695,
+        "lambda_visitante": 2.849,
+        "interpretacion": "El marcador más probable es 0-2 (13.0%), coherente con Nashville SC como resultado favorito del modelo."
+      }
+    ]
+  }
 ]
