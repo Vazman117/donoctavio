@@ -1,59 +1,68 @@
 {
   "liga": "conmebol.sudamericana",
-  "jornada": "3",
+  "jornada": "4",
   "temporada": 2026,
   "partidos": [
     {
-      "id_evento": "401874071",
-      "fecha": "2026-07-28T22:00Z",
-      "jornada_nombre": "NAC @ TIG",
-      "equipo_local": "Tigre",
-      "equipo_visitante": "Nacional",
+      "id_evento": "401903231",
+      "fecha": "2026-08-18T22:00Z",
+      "jornada_nombre": "CABJ @ DEP",
+      "equipo_local": "Deportivo Recoleta",
+      "equipo_visitante": "Boca Juniors",
       "goles_local": null,
       "goles_visitante": null
     },
     {
-      "id_evento": "401874146",
-      "fecha": "2026-07-29T00:30Z",
-      "jornada_nombre": "UCV @ SAN",
-      "equipo_local": "Santos",
-      "equipo_visitante": "UCV FC",
-      "goles_local": null,
-      "goles_visitante": null
-    },
-    {
-      "id_evento": "401874158",
-      "fecha": "2026-07-30T00:30Z",
-      "jornada_nombre": "LAN @ CIE",
-      "equipo_local": "Cienciano del Cusco",
-      "equipo_visitante": "Lanús",
-      "goles_local": null,
-      "goles_visitante": null
-    },
-    {
-      "id_evento": "401874151",
-      "fecha": "2026-07-30T00:30Z",
-      "jornada_nombre": "SCR @ BRA",
-      "equipo_local": "Red Bull Bragantino",
-      "equipo_visitante": "Sporting Cristal",
-      "goles_local": null,
-      "goles_visitante": null
-    },
-    {
-      "id_evento": "401874159",
-      "fecha": "2026-07-30T22:00Z",
-      "jornada_nombre": "BOL @ GRE",
-      "equipo_local": "Grêmio",
+      "id_evento": "401903294",
+      "fecha": "2026-08-19T00:30Z",
+      "jornada_nombre": "BOL @ SAO",
+      "equipo_local": "São Paulo",
       "equipo_visitante": "Bolívar",
       "goles_local": null,
       "goles_visitante": null
     },
     {
-      "id_evento": "401874162",
-      "fecha": "2026-07-31T00:30Z",
-      "jornada_nombre": "SFE @ CFC",
-      "equipo_local": "Caracas FC",
-      "equipo_visitante": "Independiente Santa Fe",
+      "id_evento": "401902714",
+      "fecha": "2026-08-19T22:00Z",
+      "jornada_nombre": "BRA @ CAM",
+      "equipo_local": "Atlético-MG",
+      "equipo_visitante": "Red Bull Bragantino",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401903232",
+      "fecha": "2026-08-20T00:30Z",
+      "jornada_nombre": "RIV @ SFE",
+      "equipo_local": "Independiente Santa Fe",
+      "equipo_visitante": "River Plate",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401902571",
+      "fecha": "2026-08-20T00:30Z",
+      "jornada_nombre": "TIG @ MCT",
+      "equipo_local": "Montevideo City Torque",
+      "equipo_visitante": "Tigre",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401902449",
+      "fecha": "2026-08-20T22:00Z",
+      "jornada_nombre": "SAN @ MAC",
+      "equipo_local": "Macará",
+      "equipo_visitante": "Santos",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "401902741",
+      "fecha": "2026-08-21T00:30Z",
+      "jornada_nombre": "CIE @ BOT",
+      "equipo_local": "Botafogo",
+      "equipo_visitante": "Cienciano del Cusco",
       "goles_local": null,
       "goles_visitante": null
     }

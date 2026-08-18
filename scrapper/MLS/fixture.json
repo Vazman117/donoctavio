@@ -4,65 +4,119 @@
   "temporada": 2026,
   "partidos": [
     {
-      "id_evento": "761695",
-      "fecha": "2026-07-31T23:30Z",
-      "jornada_nombre": "TOR @ NYC",
-      "equipo_local": "New York City FC",
-      "equipo_visitante": "Toronto FC",
+      "id_evento": "761726",
+      "fecha": "2026-08-19T23:30Z",
+      "jornada_nombre": "MTL @ CLB",
+      "equipo_local": "Columbus Crew",
+      "equipo_visitante": "CF Montréal",
       "goles_local": null,
       "goles_visitante": null
     },
     {
-      "id_evento": "761697",
-      "fecha": "2026-08-01T23:30Z",
-      "jornada_nombre": "NE @ MTL",
-      "equipo_local": "CF Montréal",
+      "id_evento": "761725",
+      "fecha": "2026-08-19T23:30Z",
+      "jornada_nombre": "NE @ DC",
+      "equipo_local": "D.C. United",
       "equipo_visitante": "New England Revolution",
       "goles_local": null,
       "goles_visitante": null
     },
     {
-      "id_evento": "761699",
-      "fecha": "2026-08-01T23:30Z",
-      "jornada_nombre": "NSH @ DC",
-      "equipo_local": "D.C. United",
-      "equipo_visitante": "Nashville SC",
-      "goles_local": null,
-      "goles_visitante": null
-    },
-    {
-      "id_evento": "761700",
-      "fecha": "2026-08-01T23:30Z",
-      "jornada_nombre": "SJ @ CIN",
+      "id_evento": "761730",
+      "fecha": "2026-08-19T23:30Z",
+      "jornada_nombre": "NYC @ CIN",
       "equipo_local": "FC Cincinnati",
-      "equipo_visitante": "San Jose Earthquakes",
+      "equipo_visitante": "New York City FC",
       "goles_local": null,
       "goles_visitante": null
     },
     {
-      "id_evento": "761701",
-      "fecha": "2026-08-01T23:30Z",
-      "jornada_nombre": "CLB @ MIA",
-      "equipo_local": "Inter Miami CF",
-      "equipo_visitante": "Columbus Crew",
-      "goles_local": null,
-      "goles_visitante": null
-    },
-    {
-      "id_evento": "761702",
-      "fecha": "2026-08-01T23:30Z",
-      "jornada_nombre": "ATL @ PHI",
+      "id_evento": "761727",
+      "fecha": "2026-08-19T23:30Z",
+      "jornada_nombre": "MIA @ PHI",
       "equipo_local": "Philadelphia Union",
+      "equipo_visitante": "Inter Miami CF",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761731",
+      "fecha": "2026-08-19T23:30Z",
+      "jornada_nombre": "CLT @ TOR",
+      "equipo_local": "Toronto FC",
+      "equipo_visitante": "Charlotte FC",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761732",
+      "fecha": "2026-08-20T00:00Z",
+      "jornada_nombre": "STL @ SKC",
+      "equipo_local": "Sporting Kansas City",
+      "equipo_visitante": "St. Louis CITY SC",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761733",
+      "fecha": "2026-08-20T00:30Z",
+      "jornada_nombre": "ATL @ MIN",
+      "equipo_local": "Minnesota United FC",
       "equipo_visitante": "Atlanta United FC",
       "goles_local": null,
       "goles_visitante": null
     },
     {
-      "id_evento": "761696",
-      "fecha": "2026-08-01T23:30Z",
-      "jornada_nombre": "ORL @ RBNY",
-      "equipo_local": "Red Bull New York",
-      "equipo_visitante": "Orlando City SC",
+      "id_evento": "761734",
+      "fecha": "2026-08-20T01:30Z",
+      "jornada_nombre": "LAFC @ COL",
+      "equipo_local": "Colorado Rapids",
+      "equipo_visitante": "LAFC",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761735",
+      "fecha": "2026-08-20T01:30Z",
+      "jornada_nombre": "DAL @ RSL",
+      "equipo_local": "Real Salt Lake",
+      "equipo_visitante": "FC Dallas",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761736",
+      "fecha": "2026-08-20T01:30Z",
+      "jornada_nombre": "ATX @ SEA",
+      "equipo_local": "Seattle Sounders FC",
+      "equipo_visitante": "Austin FC",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761738",
+      "fecha": "2026-08-20T02:30Z",
+      "jornada_nombre": "SJ @ LA",
+      "equipo_local": "LA Galaxy",
+      "equipo_visitante": "San Jose Earthquakes",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761737",
+      "fecha": "2026-08-20T02:30Z",
+      "jornada_nombre": "SD @ POR",
+      "equipo_local": "Portland Timbers",
+      "equipo_visitante": "San Diego FC",
+      "goles_local": null,
+      "goles_visitante": null
+    },
+    {
+      "id_evento": "761739",
+      "fecha": "2026-08-20T02:30Z",
+      "jornada_nombre": "HOU @ VAN",
+      "equipo_local": "Vancouver Whitecaps",
+      "equipo_visitante": "Houston Dynamo FC",
       "goles_local": null,
       "goles_visitante": null
     }
