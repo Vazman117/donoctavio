@@ -8,22 +8,24 @@
     "visitante": "Querétaro",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
     "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/222.png",
-    "prob_local": 0.30787029761868356,
-    "prob_empate": 0.18892609718390785,
-    "prob_visitante": 0.5032036051974086,
+    "prob_local": 0.293558959552198,
+    "prob_empate": 0.21949541677037965,
+    "prob_visitante": 0.48694562367742233,
     "fuerza_local": 0.5071164705882353,
     "fuerza_visitante": 0.550424705882353,
     "diferencia": 0.04330823529411776,
     "confianza": "favorable",
     "prediccion": "Querétaro",
+    "resultado": "Empate",
+    "marcador": "0-0",
     "vuelta_en_casa": "ninguno",
     "lambda_local": 1.3259491403727361,
     "lambda_visitante": 1.878098025621848,
     "marcadores_probables": [
       "1-2",
       "1-1",
-      "0-1",
       "0-2",
+      "0-1",
       "1-3"
     ],
     "analisis": [
@@ -92,8 +94,8 @@
         "marcadores": [
           "1-2",
           "1-1",
-          "0-1",
           "0-2",
+          "0-1",
           "1-3"
         ],
         "lambda_local": 1.326,
@@ -111,14 +113,16 @@
     "visitante": "Atlético de San Luis",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/227.png",
     "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/15720.png",
-    "prob_local": 0.6281063206333936,
-    "prob_empate": 0.2630568685369354,
-    "prob_visitante": 0.10883681082967102,
+    "prob_local": 0.6399364821210991,
+    "prob_empate": 0.24769685697328894,
+    "prob_visitante": 0.1123666609056119,
     "fuerza_local": 0.6464541176470588,
     "fuerza_visitante": 0.33005764705882346,
     "diferencia": 0.3163964705882354,
     "confianza": "favorable",
     "prediccion": "América",
+    "resultado": "América",
+    "marcador": "3-0",
     "vuelta_en_casa": "ninguno",
     "lambda_local": 1.9191244388029074,
     "lambda_visitante": 0.5005013229493159,
@@ -127,7 +131,7 @@
       "1-0",
       "3-0",
       "0-0",
-      "2-1"
+      "1-1"
     ],
     "analisis": [
       {
@@ -197,11 +201,11 @@
           "1-0",
           "3-0",
           "0-0",
-          "2-1"
+          "1-1"
         ],
         "lambda_local": 1.919,
         "lambda_visitante": 0.501,
-        "interpretacion": "El marcador más probable es 2-0 (18.9%), coherente con América como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 2-0 (18.8%), coherente con América como resultado favorito del modelo."
       }
     ]
   },
@@ -214,14 +218,16 @@
     "visitante": "Guadalajara",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/225.png",
     "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
-    "prob_local": 0.24025382038564003,
-    "prob_empate": 0.4095227103458581,
-    "prob_visitante": 0.35022346926850184,
+    "prob_local": 0.2559003226496314,
+    "prob_empate": 0.375801038609243,
+    "prob_visitante": 0.3682986387411255,
     "fuerza_local": 0.30736588235294116,
     "fuerza_visitante": 0.38171529411764715,
     "diferencia": 0.074349411764706,
     "confianza": "moderado",
     "prediccion": "Empate",
+    "resultado": "Guadalajara",
+    "marcador": "0-1",
     "vuelta_en_casa": "ninguno",
     "lambda_local": 0.825652296421527,
     "lambda_visitante": 1.075764560481664,
@@ -304,7 +310,7 @@
         ],
         "lambda_local": 0.826,
         "lambda_visitante": 1.076,
-        "interpretacion": "El marcador más probable es 0-0 (14.9%), coherente con el empate como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 0-0 (15.7%), coherente con el empate como resultado favorito del modelo."
       }
     ]
   },
@@ -317,22 +323,24 @@
     "visitante": "Cruz Azul",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/10125.png",
     "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
-    "prob_local": 0.5935721540869779,
-    "prob_empate": 0.18331847562122686,
-    "prob_visitante": 0.22310937029179523,
+    "prob_local": 0.5749958907681582,
+    "prob_empate": 0.21500640494161752,
+    "prob_visitante": 0.2099977042902243,
     "fuerza_local": 0.6086823529411765,
     "fuerza_visitante": 0.49009058823529406,
     "diferencia": 0.1185917647058824,
     "confianza": "favorable",
     "prediccion": "Tijuana",
+    "resultado": "Tijuana",
+    "marcador": "2-1",
     "vuelta_en_casa": "ninguno",
     "lambda_local": 1.9252386394557828,
     "lambda_visitante": 0.9528090366835672,
     "marcadores_probables": [
       "2-0",
       "1-0",
-      "2-1",
       "1-1",
+      "2-1",
       "3-0"
     ],
     "analisis": [
@@ -401,13 +409,13 @@
         "marcadores": [
           "2-0",
           "1-0",
-          "2-1",
           "1-1",
+          "2-1",
           "3-0"
         ],
         "lambda_local": 1.925,
         "lambda_visitante": 0.953,
-        "interpretacion": "El marcador más probable es 2-0 (12.3%), coherente con Tijuana como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 2-0 (12.5%), coherente con Tijuana como resultado favorito del modelo."
       }
     ]
   },
@@ -420,14 +428,16 @@
     "visitante": "León",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/229.png",
     "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/228.png",
-    "prob_local": 0.5421790828596114,
-    "prob_empate": 0.19929885330906139,
-    "prob_visitante": 0.2585220638313272,
+    "prob_local": 0.524727988065663,
+    "prob_empate": 0.22908143706910242,
+    "prob_visitante": 0.24619057486523455,
     "fuerza_local": 0.4673588235294117,
     "fuerza_visitante": 0.3398035294117647,
     "diferencia": 0.127555294117647,
     "confianza": "favorable",
     "prediccion": "Necaxa",
+    "resultado": "León",
+    "marcador": "1-2",
     "vuelta_en_casa": "ninguno",
     "lambda_local": 1.7141424291064742,
     "lambda_visitante": 1.0484900793650795,
@@ -510,7 +520,7 @@
         ],
         "lambda_local": 1.714,
         "lambda_visitante": 1.048,
-        "interpretacion": "El marcador más probable es 1-0 (11.8%), coherente con Necaxa como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 1-0 (11.2%), coherente con Necaxa como resultado favorito del modelo."
       }
     ]
   },
@@ -523,21 +533,23 @@
     "visitante": "Puebla",
     "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
     "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/231.png",
-    "prob_local": 0.2868977008276763,
-    "prob_empate": 0.4103766727560786,
-    "prob_visitante": 0.30272562641624506,
+    "prob_local": 0.2829386849818379,
+    "prob_empate": 0.406817488897602,
+    "prob_visitante": 0.3102438261205602,
     "fuerza_local": 0.3161494117647059,
     "fuerza_visitante": 0.4077411764705883,
     "diferencia": 0.09159176470588237,
     "confianza": "moderado",
     "prediccion": "Empate",
+    "resultado": "Puebla",
+    "marcador": "2-3",
     "vuelta_en_casa": "ninguno",
     "lambda_local": 0.8914405228758169,
     "lambda_visitante": 1.117628205128205,
     "marcadores_probables": [
       "1-1",
-      "0-1",
       "0-0",
+      "0-1",
       "1-0",
       "0-2"
     ],
@@ -606,14 +618,14 @@
         "tipo": "marcadores",
         "marcadores": [
           "1-1",
-          "0-1",
           "0-0",
+          "0-1",
           "1-0",
           "0-2"
         ],
         "lambda_local": 0.891,
         "lambda_visitante": 1.118,
-        "interpretacion": "El marcador más probable es 1-1 (13.5%), coherente con el empate como resultado favorito del modelo."
+        "interpretacion": "El marcador más probable es 1-1 (14.3%), coherente con el empate como resultado favorito del modelo."
       }
     ]
   }

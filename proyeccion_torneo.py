@@ -3,7 +3,7 @@ import math
 import os
 
 # Importa el motor central — no duplicamos nada
-from proyeccion import (
+from proyeccionV1 import (
     adaptar_equipo,
     predecir_probabilidades,
     calcular_promedio_liga,

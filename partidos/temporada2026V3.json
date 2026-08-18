@@ -1,0 +1,632 @@
+[
+  {
+    "id": "401877015",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Pumas UNAM",
+    "visitante": "Querétaro",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/222.png",
+    "prob_local": 0.30787029761868356,
+    "prob_empate": 0.18892609718390785,
+    "prob_visitante": 0.5032036051974086,
+    "fuerza_local": 0.5071164705882353,
+    "fuerza_visitante": 0.550424705882353,
+    "diferencia": 0.04330823529411776,
+    "confianza": "favorable",
+    "prediccion": "Querétaro",
+    "resultado": "Empate",
+    "marcador": "0-0",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.3259491403727361,
+    "lambda_visitante": 1.878098025621848,
+    "marcadores_probables": [
+      "1-2",
+      "1-1",
+      "0-1",
+      "0-2",
+      "1-3"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "valor": 0.6,
+          "ultimos_5": [
+            "W",
+            "W",
+            "L"
+          ],
+          "nombre": "Querétaro"
+        },
+        "interpretacion": "Momentum similar: Pumas UNAM 0.60/1.0 — Querétaro 0.60/1.0."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/1P",
+          "nombre": "Pumas UNAM"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 100.0,
+          "detalle": "1G/0E/0P",
+          "nombre": "Querétaro"
+        },
+        "interpretacion": "Equilibrio situacional: Pumas UNAM 0% local — Querétaro 100% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Pumas UNAM",
+          "goles_favor": 2.33,
+          "goles_contra": 1.67
+        },
+        "visitante": {
+          "nombre": "Querétaro",
+          "goles_favor": 1.67,
+          "goles_contra": 1.33
+        },
+        "interpretacion": "Pumas UNAM más ofensivo: 2.33 vs 1.67 goles/partido. Defensa: 1.67 vs 1.33."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-2",
+          "1-1",
+          "0-1",
+          "0-2",
+          "1-3"
+        ],
+        "lambda_local": 1.326,
+        "lambda_visitante": 1.878,
+        "interpretacion": "El marcador más probable es 1-2 (9.8%), coherente con Querétaro como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401877014",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "América",
+    "visitante": "Atlético de San Luis",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/227.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/15720.png",
+    "prob_local": 0.6281063206333936,
+    "prob_empate": 0.2630568685369354,
+    "prob_visitante": 0.10883681082967102,
+    "fuerza_local": 0.6464541176470588,
+    "fuerza_visitante": 0.33005764705882346,
+    "diferencia": 0.3163964705882354,
+    "confianza": "favorable",
+    "prediccion": "América",
+    "resultado": "América",
+    "marcador": "3-0",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.9191244388029074,
+    "lambda_visitante": 0.5005013229493159,
+    "marcadores_probables": [
+      "2-0",
+      "1-0",
+      "3-0",
+      "0-0",
+      "2-1"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "alto",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.68,
+          "ultimos_5": [
+            "W",
+            "D",
+            "W"
+          ],
+          "nombre": "América"
+        },
+        "visitante": {
+          "valor": 0.3,
+          "ultimos_5": [
+            "D",
+            "D",
+            "L"
+          ],
+          "nombre": "Atlético de San Luis"
+        },
+        "interpretacion": "América llega con mejor momentum: índice 0.68/1.0 frente a 0.30/1.0 de Atlético de San Luis. Últimos 5: 2V/1E/0D vs 0V/2E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 100.0,
+          "detalle": "1G/0E/0P",
+          "nombre": "América"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/1E/0P",
+          "nombre": "Atlético de San Luis"
+        },
+        "interpretacion": "Contraste marcado: América gana el 100% en casa (1G/0E/0P), Atlético de San Luis solo el 0% de visita (0G/1E/0P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "América",
+          "goles_favor": 1.67,
+          "goles_contra": 0.33
+        },
+        "visitante": {
+          "nombre": "Atlético de San Luis",
+          "goles_favor": 1.33,
+          "goles_contra": 1.67
+        },
+        "interpretacion": "Producción similar: América 1.67 goles/partido — Atlético de San Luis 1.33. Defensa: 0.33 vs 1.67."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "2-0",
+          "1-0",
+          "3-0",
+          "0-0",
+          "2-1"
+        ],
+        "lambda_local": 1.919,
+        "lambda_visitante": 0.501,
+        "interpretacion": "El marcador más probable es 2-0 (18.9%), coherente con América como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401877013",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Santos",
+    "visitante": "Guadalajara",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/225.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/219.png",
+    "prob_local": 0.24025382038564003,
+    "prob_empate": 0.4095227103458581,
+    "prob_visitante": 0.35022346926850184,
+    "fuerza_local": 0.30736588235294116,
+    "fuerza_visitante": 0.38171529411764715,
+    "diferencia": 0.074349411764706,
+    "confianza": "moderado",
+    "prediccion": "Empate",
+    "resultado": "Guadalajara",
+    "marcador": "0-1",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.825652296421527,
+    "lambda_visitante": 1.075764560481664,
+    "marcadores_probables": [
+      "0-0",
+      "0-1",
+      "1-1",
+      "1-0",
+      "0-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.5,
+          "ultimos_5": [
+            "L",
+            "L",
+            "L"
+          ],
+          "nombre": "Santos"
+        },
+        "visitante": {
+          "valor": 0.42,
+          "ultimos_5": [
+            "D",
+            "W",
+            "L"
+          ],
+          "nombre": "Guadalajara"
+        },
+        "interpretacion": "Santos llega con mejor momentum: índice 0.50/1.0 frente a 0.42/1.0 de Guadalajara. Últimos 5: 0V/0E/3D vs 1V/1E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/1P",
+          "nombre": "Santos"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/1E/0P",
+          "nombre": "Guadalajara"
+        },
+        "interpretacion": "Guadalajara sufre de visita: 0% (0G/1E/0P). Santos en casa: 0% (0G/0E/1P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Santos",
+          "goles_favor": 0.67,
+          "goles_contra": 2.33
+        },
+        "visitante": {
+          "nombre": "Guadalajara",
+          "goles_favor": 0.67,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Producción similar: Santos 0.67 goles/partido — Guadalajara 0.67. Defensa: 2.33 vs 1.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "0-0",
+          "0-1",
+          "1-1",
+          "1-0",
+          "0-2"
+        ],
+        "lambda_local": 0.826,
+        "lambda_visitante": 1.076,
+        "interpretacion": "El marcador más probable es 0-0 (14.9%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401877012",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Tijuana",
+    "visitante": "Cruz Azul",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/10125.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+    "prob_local": 0.5935721540869779,
+    "prob_empate": 0.18331847562122686,
+    "prob_visitante": 0.22310937029179523,
+    "fuerza_local": 0.6086823529411765,
+    "fuerza_visitante": 0.49009058823529406,
+    "diferencia": 0.1185917647058824,
+    "confianza": "favorable",
+    "prediccion": "Tijuana",
+    "resultado": "Tijuana",
+    "marcador": "2-1",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.9252386394557828,
+    "lambda_visitante": 0.9528090366835672,
+    "marcadores_probables": [
+      "2-0",
+      "1-0",
+      "2-1",
+      "1-1",
+      "3-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.62,
+          "ultimos_5": [
+            "D",
+            "W",
+            "W"
+          ],
+          "nombre": "Tijuana"
+        },
+        "visitante": {
+          "valor": 0.45,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Tijuana llega con mejor momentum: índice 0.62/1.0 frente a 0.45/1.0 de Cruz Azul. Últimos 5: 2V/1E/0D vs 2V/0E/1D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "bajo",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 100.0,
+          "detalle": "2G/0E/0P",
+          "nombre": "Tijuana"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 100.0,
+          "detalle": "1G/0E/0P",
+          "nombre": "Cruz Azul"
+        },
+        "interpretacion": "Tijuana domina en casa: 100% (2G/0E/0P). Cruz Azul: 100% de visita (1G/0E/0P)."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Tijuana",
+          "goles_favor": 1.33,
+          "goles_contra": 0.33
+        },
+        "visitante": {
+          "nombre": "Cruz Azul",
+          "goles_favor": 2.33,
+          "goles_contra": 2.0
+        },
+        "interpretacion": "Cruz Azul más ofensivo: 2.33 vs 1.33 goles/partido. Defensa: 0.33 vs 2.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "2-0",
+          "1-0",
+          "2-1",
+          "1-1",
+          "3-0"
+        ],
+        "lambda_local": 1.925,
+        "lambda_visitante": 0.953,
+        "interpretacion": "El marcador más probable es 2-0 (12.3%), coherente con Tijuana como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401877011",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Necaxa",
+    "visitante": "León",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/229.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/228.png",
+    "prob_local": 0.5421790828596114,
+    "prob_empate": 0.19929885330906139,
+    "prob_visitante": 0.2585220638313272,
+    "fuerza_local": 0.4673588235294117,
+    "fuerza_visitante": 0.3398035294117647,
+    "diferencia": 0.127555294117647,
+    "confianza": "favorable",
+    "prediccion": "Necaxa",
+    "resultado": "León",
+    "marcador": "1-2",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 1.7141424291064742,
+    "lambda_visitante": 1.0484900793650795,
+    "marcadores_probables": [
+      "1-0",
+      "2-0",
+      "1-1",
+      "2-1",
+      "3-0"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "bajo",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.45,
+          "ultimos_5": [
+            "L",
+            "W",
+            "W"
+          ],
+          "nombre": "Necaxa"
+        },
+        "visitante": {
+          "valor": 0.35,
+          "ultimos_5": [
+            "W",
+            "L",
+            "L"
+          ],
+          "nombre": "León"
+        },
+        "interpretacion": "Necaxa llega con mejor momentum: índice 0.45/1.0 frente a 0.35/1.0 de León. Últimos 5: 2V/0E/1D vs 1V/0E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 100.0,
+          "detalle": "2G/0E/0P",
+          "nombre": "Necaxa"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 0.0,
+          "detalle": "0G/0E/1P",
+          "nombre": "León"
+        },
+        "interpretacion": "Contraste marcado: Necaxa gana el 100% en casa (2G/0E/0P), León solo el 0% de visita (0G/0E/1P). La localía es determinante."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "alto",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Necaxa",
+          "goles_favor": 1.67,
+          "goles_contra": 1.67
+        },
+        "visitante": {
+          "nombre": "León",
+          "goles_favor": 1.0,
+          "goles_contra": 1.33
+        },
+        "interpretacion": "Necaxa más ofensivo: 1.67 vs 1.00 goles/partido. Defensa: 1.67 vs 1.33."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-0",
+          "2-0",
+          "1-1",
+          "2-1",
+          "3-0"
+        ],
+        "lambda_local": 1.714,
+        "lambda_visitante": 1.048,
+        "interpretacion": "El marcador más probable es 1-0 (11.8%), coherente con Necaxa como resultado favorito del modelo."
+      }
+    ]
+  },
+  {
+    "id": "401877010",
+    "torneo": "Fase Regular",
+    "perfil": "fase_regular",
+    "es_eliminatoria": false,
+    "local": "Pachuca",
+    "visitante": "Puebla",
+    "logo_local": "https://a.espncdn.com/i/teamlogos/soccer/500/234.png",
+    "logo_visitante": "https://a.espncdn.com/i/teamlogos/soccer/500/231.png",
+    "prob_local": 0.2868977008276763,
+    "prob_empate": 0.4103766727560786,
+    "prob_visitante": 0.30272562641624506,
+    "fuerza_local": 0.3161494117647059,
+    "fuerza_visitante": 0.4077411764705883,
+    "diferencia": 0.09159176470588237,
+    "confianza": "moderado",
+    "prediccion": "Empate",
+    "resultado": "Puebla",
+    "marcador": "2-3",
+    "vuelta_en_casa": "ninguno",
+    "lambda_local": 0.8914405228758169,
+    "lambda_visitante": 1.117628205128205,
+    "marcadores_probables": [
+      "1-1",
+      "0-1",
+      "0-0",
+      "1-0",
+      "0-2"
+    ],
+    "analisis": [
+      {
+        "factor": "Forma reciente",
+        "impacto": "medio",
+        "tipo": "forma",
+        "local": {
+          "valor": 0.2,
+          "ultimos_5": [
+            "L",
+            "L",
+            "W"
+          ],
+          "nombre": "Pachuca"
+        },
+        "visitante": {
+          "valor": 0.38,
+          "ultimos_5": [
+            "D",
+            "L",
+            "W"
+          ],
+          "nombre": "Puebla"
+        },
+        "interpretacion": "Puebla llega con mejor momentum: índice 0.38/1.0 frente a 0.20/1.0 de Pachuca. Últimos 5: 1V/1E/1D vs 1V/0E/2D."
+      },
+      {
+        "factor": "Rendimiento situacional",
+        "impacto": "alto",
+        "tipo": "barras",
+        "local": {
+          "etiqueta": "Win rate local",
+          "valor": 0.0,
+          "detalle": "0G/0E/1P",
+          "nombre": "Pachuca"
+        },
+        "visitante": {
+          "etiqueta": "Win rate visita",
+          "valor": 50.0,
+          "detalle": "1G/0E/1P",
+          "nombre": "Puebla"
+        },
+        "interpretacion": "Equilibrio situacional: Pachuca 0% local — Puebla 50% visita."
+      },
+      {
+        "factor": "Potencial ofensivo y defensivo",
+        "impacto": "medio",
+        "tipo": "doble_barra",
+        "local": {
+          "nombre": "Pachuca",
+          "goles_favor": 1.33,
+          "goles_contra": 1.0
+        },
+        "visitante": {
+          "nombre": "Puebla",
+          "goles_favor": 1.0,
+          "goles_contra": 1.0
+        },
+        "interpretacion": "Producción similar: Pachuca 1.33 goles/partido — Puebla 1.00. Defensa: 1.00 vs 1.00."
+      },
+      {
+        "factor": "Marcadores más probables",
+        "impacto": "informativo",
+        "tipo": "marcadores",
+        "marcadores": [
+          "1-1",
+          "0-1",
+          "0-0",
+          "1-0",
+          "0-2"
+        ],
+        "lambda_local": 0.891,
+        "lambda_visitante": 1.118,
+        "interpretacion": "El marcador más probable es 1-1 (13.5%), coherente con el empate como resultado favorito del modelo."
+      }
+    ]
+  }
+]
